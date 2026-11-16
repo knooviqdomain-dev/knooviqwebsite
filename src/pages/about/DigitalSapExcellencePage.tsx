@@ -213,71 +213,91 @@ export const DigitalSapExcellencePage: React.FC<{ onOpenContact: (topic?: string
 
       {/* =========================================================================
           HERO HEADER
-          Layout, typography, buttons, and animations unchanged.
-          Hero image replaced with premium connected enterprise/cloud data visual.
+          Responsive two-column architecture ensuring the Digital & SAP Excellence
+          image is 100% visible, centered, and never cut off on mobile, tablet, or laptop.
           ========================================================================= */}
-      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-20 min-h-[540px] lg:h-[580px] lg:min-h-[580px] flex items-center overflow-hidden">
-        {/* Clean Background Image with Mild Left Contrast Scrim */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/digital_sap_excellence_hero.jpg" 
-            alt="Digital and SAP Excellence Enterprise Network"
-            className="w-full h-full object-cover object-center lg:object-right"
-          />
-          {/* Mild Contrast Scrim: Infrastructure clearly visible with soft text shading */}
-
-
-        </div>
+      <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-24 min-h-[560px] lg:min-h-[620px] flex items-center overflow-hidden bg-gradient-to-b from-[#020814] via-[#051124] to-[#030712] text-white">
+        {/* Ambient Glows */}
+        <div className="absolute top-1/4 right-5 lg:right-20 w-[450px] h-[450px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-10 left-10 w-[350px] h-[350px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+        
+        {/* Subtle Decorative Cyber Grid Overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b0a_1px,transparent_1px),linear-gradient(to_bottom,#1e293b0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="max-w-3xl lg:max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide bg-slate-900/90 border border-cyan-400/40 text-cyan-300 mb-5 backdrop-blur-md shadow-2xl"
-            >
-              <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#00F0FF]" />
-              <span className="font-mono uppercase text-xs tracking-wider font-bold">Clean Core & Modern ERP Architecture</span>
-            </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            {/* Left Column: Executive Typography & Strategic Clean-Core Badges */}
+            <div className="lg:col-span-7 xl:col-span-6 space-y-6">
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide bg-slate-900/90 border border-cyan-400/40 text-cyan-300 backdrop-blur-md shadow-2xl"
+              >
+                <span className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#00F0FF]" />
+                <span className="font-mono uppercase text-xs tracking-wider font-bold">Clean Core & Modern ERP Architecture</span>
+              </motion.div>
 
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)] leading-[1.15] mb-6"
-            >
-              Digital & <span className="hero-gradient-cyan font-black">SAP Excellence</span>
-            </motion.h1>
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)] leading-[1.12]"
+              >
+                Digital & <span className="hero-gradient-cyan font-black">SAP Excellence</span>
+              </motion.h1>
 
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg lg:text-xl text-white font-medium drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] leading-relaxed font-sans mb-8 max-w-3xl"
-            >
-              Pioneering standard-compliant, upgrade-safe digital core transformations. From precision S/4HANA migrations to side-by-side SAP BTP innovations and automated ABAP modernization, we ensure your ERP remains perpetually agile.
-            </motion.p>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-base sm:text-lg lg:text-xl text-slate-200 font-medium drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] leading-relaxed font-sans max-w-2xl"
+              >
+                Pioneering standard-compliant, upgrade-safe digital core transformations. From precision S/4HANA migrations to side-by-side SAP BTP innovations and automated ABAP modernization, we ensure your ERP remains perpetually agile.
+              </motion.p>
 
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-2"
+              >
+                <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-white/20 shadow-xl backdrop-blur-md text-xs font-bold text-white">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span>Standard Clean-Core Architecture</span>
+                </div>
+                <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-white/20 shadow-xl backdrop-blur-md text-xs font-bold text-white">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span>Zero Core Customization Policy</span>
+                </div>
+                <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-white/20 shadow-xl backdrop-blur-md text-xs font-bold text-white">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span>Side-by-Side BTP Extensibility</span>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Right Column: Pristine Digital & SAP Excellence Visual Showcase */}
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap items-center gap-2.5 sm:gap-3"
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="lg:col-span-5 xl:col-span-6 w-full flex items-center justify-center relative"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/90 border border-white/20 shadow-xl backdrop-blur-md text-xs font-bold text-white">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-                <span>Standard Clean-Core Architecture</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/90 border border-white/20 shadow-xl backdrop-blur-md text-xs font-bold text-white">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-                <span>Zero Core Customization Policy</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/90 border border-white/20 shadow-xl backdrop-blur-md text-xs font-bold text-white">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-                <span>Side-by-Side BTP Extensibility</span>
+              {/* Backlight Ambient Glow */}
+              <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/20 via-blue-600/20 to-sky-400/20 rounded-3xl blur-2xl opacity-70 -z-10 pointer-events-none" />
+
+              {/* Showcase Container: High-tech framing, completely contained, zero cropping */}
+              <div className="w-full max-w-xl lg:max-w-none rounded-2xl sm:rounded-3xl border border-cyan-400/30 bg-[#040C1A]/90 p-2 sm:p-3 shadow-2xl backdrop-blur-xl group">
+                <img 
+                  src="/images/digital_sap_excellence_hero.jpg" 
+                  alt="Digital and SAP Excellence Enterprise Network"
+                  className="w-full h-auto max-h-[420px] sm:max-h-[480px] lg:max-h-[520px] object-contain rounded-xl select-none transition-transform duration-700 group-hover:scale-[1.01]"
+                />
               </div>
             </motion.div>
+
           </div>
         </div>
       </section>
