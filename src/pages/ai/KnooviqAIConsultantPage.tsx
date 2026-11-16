@@ -461,7 +461,7 @@ export const KnooviqAIConsultantPage: React.FC<KnooviqAIConsultantPageProps> = (
               One AI Consultant. Many Ways to Help.
             </h2>
 
-            <p className="text-slate-800 dark:text-slate-100 text-base sm:text-lg lg:text-xl leading-relaxed font-medium max-w-2xl mx-auto">
+            <p className="text-[#0F172A] dark:text-white text-[17px] sm:text-lg lg:text-xl leading-relaxed font-semibold max-w-3xl mx-auto text-center [text-wrap:balance] tracking-normal">
               Hover or select any capability around the central intelligence model to experience simulated natural language prompts and responses.
             </p>
           </div>
@@ -502,7 +502,7 @@ export const KnooviqAIConsultantPage: React.FC<KnooviqAIConsultantPageProps> = (
                           {cap.badge}
                         </span>
                       </div>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 line-clamp-1 font-medium">
+                      <p className="text-xs sm:text-[13px] text-slate-800 dark:text-slate-200 mt-1 line-clamp-1 font-semibold">
                         {cap.subtitle}
                       </p>
                     </div>
@@ -561,7 +561,7 @@ export const KnooviqAIConsultantPage: React.FC<KnooviqAIConsultantPageProps> = (
                       <Sparkles className="w-4 h-4 text-[#00A3E0]" />
                       <span>Knooviq AI Synthesized Response</span>
                     </span>
-                    <div className="p-5 rounded-2xl bg-sky-50 dark:bg-cyan-950/40 border-2 border-sky-200 dark:border-cyan-500/40 text-sm text-slate-800 dark:text-slate-100 leading-relaxed font-medium shadow-xs">
+                    <div className="p-5 rounded-2xl bg-sky-50 dark:bg-cyan-950/40 border-2 border-sky-200 dark:border-cyan-500/40 text-sm sm:text-base text-[#0F172A] dark:text-white leading-relaxed font-semibold shadow-xs">
                       {activeCapability.aiResponse}
                     </div>
                   </div>
