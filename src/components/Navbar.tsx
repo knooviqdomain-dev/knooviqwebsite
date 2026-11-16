@@ -1399,7 +1399,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
               >
                 <span className="flex items-center gap-2 text-[#00A3E0]">
                   <Building2 className="h-4 w-4" />
-                  <span className="text-sm font-bold">About Us</span>
+                  <span className="text-sm font-bold">About</span>
                 </span>
                 <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openSubmenus['about'] ? 'rotate-180' : ''}`} />
               </button>
@@ -1426,47 +1426,32 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
               >
                 <span className="flex items-center gap-2 text-[#00A3E0]">
                   <Layers className="h-4 w-4" />
-                  <span className="text-sm font-bold">Products & Accelerators</span>
+                  <span className="text-sm font-bold">Products</span>
                 </span>
                 <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openSubmenus['products'] ? 'rotate-180' : ''}`} />
               </button>
 
               {openSubmenus['products'] && (
                 <div className="pt-2 pl-2 space-y-2 border-t border-slate-200 dark:border-white/5 mt-1.5 text-xs">
-                  <p className="font-bold text-[#00A3E0] pt-1">Knooviq Accelerated Solutions</p>
-                  <Link to="/exim" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• EXIM (Export & Import Solutions)</Link>
-                  <Link to="/e-invoice" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• E-Invoice (Automated Compliance)</Link>
-                  <Link to="/eway-bill" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• E-Way Bill (Goods Movement & Compliance)</Link>
-                  <Link to="/products/gst" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• GST Compliance</Link>
-
-                  <p className="font-bold text-[#00A3E0] pt-1.5">Knooviq Enterprise Solutions</p>
-                  <Link to="/products/vendor-management" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Vendor Management</Link>
-                  <Link to="/products/field-service-management" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Field Service Management</Link>
-                  <Link to="/products/real-estate-management" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Real Estate Management</Link>
-                  <Link to="/products/distribution-management" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Distribution Management</Link>
-                  <Link to="/products/digital-retail-solution" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Digital Retail Solution</Link>
-                  <Link to="/products/subscription-billing" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Subscription Billing</Link>
-                  <Link to="/products/sales-force-automation" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Sales Force Automation</Link>
-                  <Link to="/products/dealer-management-system" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Dealer Management System</Link>
-                  <Link to="/products/asset-management" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Asset Management</Link>
-
-                  <p className="font-bold text-[#00A3E0] pt-1">Knooviq AI Studio</p>
-                  <Link to="/products/knooviq-ai-consultant" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Knooviq AI Consultant</Link>
-                  <Link to="/products/knooviq-ai-insights" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Knooviq AI Insights</Link>
-                  <Link to="/products/knooviq-ai-engagement" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Knooviq AI Engagement</Link>
-
-                  <p className="font-bold text-[#00A3E0] pt-1">Enterprise AI Products</p>
-                  <Link to="/products/bank-statement-intelligence" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Bank Statement Intelligence</Link>
-                  <Link to="/products/supply-chain-intelligence" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Supply Chain Intelligence</Link>
-                  <Link to="/products/document-intelligence" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Document Intelligence</Link>
-                  <Link to="/products/accounts-payable-intelligence" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Accounts Payable Intelligence</Link>
-                  <Link to="/products/expense-intelligence" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Expense Intelligence</Link>
-                  <Link to="/products/form-intelligence" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Form Intelligence</Link>
-
-                  <p className="font-bold text-[#00A3E0] pt-1.5">Knooviq Automation Suite</p>
-                  <Link to="/products/automation-studio" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Automation Studio</Link>
-                  <Link to="/products/automation-evolve" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Automation Evolve</Link>
-                  <Link to="/products/automation-manager" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Automation Manager</Link>
+                  {PRODUCTS_NAV_CATEGORIES.map((cat) => (
+                    <div key={cat.id} className="pt-1">
+                      <p className="font-bold text-[#00A3E0] pt-1">
+                        {cat.title}
+                      </p>
+                      <div className="space-y-1 pt-1 pl-2">
+                        {cat.items.map((item, idx) => (
+                          <Link
+                            key={idx}
+                            to={item.path}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5"
+                          >
+                            • {item.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               )}
             </div>
@@ -1519,7 +1504,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
               >
                 <span className="flex items-center gap-2 text-[#00A3E0]">
                   <Cloud className="h-4 w-4" />
-                  <span className="text-sm font-bold">Cloud & Operations (6 Capabilities)</span>
+                  <span className="text-sm font-bold">Cloud & Operations</span>
                 </span>
                 <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openSubmenus['cloud'] ? 'rotate-180' : ''}`} />
               </button>
@@ -1565,7 +1550,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
               >
                 <span className="flex items-center gap-2 text-[#00A3E0]">
                   <Brain className="h-4 w-4" />
-                  <span className="text-sm font-bold">Digital Intelligence (6 Practices)</span>
+                  <span className="text-sm font-bold">Digital Intelligence</span>
                 </span>
                 <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openSubmenus['services'] ? 'rotate-180' : ''}`} />
               </button>
@@ -1604,7 +1589,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
               >
                 <span className="flex items-center gap-2 text-[#00A3E0]">
                   <Store className="h-4 w-4" />
-                  <span className="text-sm font-bold">Industries (8 Practices)</span>
+                  <span className="text-sm font-bold">Industries</span>
                 </span>
                 <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openSubmenus['industries'] ? 'rotate-180' : ''}`} />
               </button>
