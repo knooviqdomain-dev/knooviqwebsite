@@ -331,23 +331,23 @@ export const ClientLogoMarquee: React.FC<{
         aria-hidden={isDuplicate ? true : undefined}
         onClick={(e) => handleLogoClick(e, client)}
         onKeyDown={(e) => handleLogoKeyDown(e, client)}
-        className="bg-white border border-slate-200/90 hover:border-sky-400 rounded-2xl px-6 py-3.5 flex flex-col items-center justify-between min-w-[250px] sm:min-w-[275px] h-[122px] flex-shrink-0 transition-all duration-200 shadow-[0_4px_18px_-2px_rgba(0,0,0,0.22)] hover:shadow-2xl hover:scale-[1.02] group/card relative overflow-hidden cursor-pointer select-none outline-none focus:outline-none focus:ring-0 focus-visible:outline-none ring-0"
+        className="bg-white border border-slate-200/90 hover:border-sky-400 rounded-2xl px-5 py-3.5 sm:px-6 sm:py-4 flex flex-col items-center justify-between min-w-[260px] sm:min-w-[280px] h-[132px] sm:h-[136px] flex-shrink-0 transition-all duration-200 shadow-[0_4px_18px_-2px_rgba(0,0,0,0.18)] hover:shadow-xl hover:scale-[1.01] group/card relative cursor-pointer select-none outline-none focus:outline-none focus:ring-0 focus-visible:outline-none ring-0"
       >
-        {/* Exact Authentic Logo Image Preserving Colors, Proportions & Clear Visible Text */}
-        <div className="h-[70px] sm:h-[72px] flex items-center justify-center w-full px-2 pointer-events-none transition-transform duration-200 group-hover/card:scale-105">
+        {/* Exact Authentic Logo Image - Sized & Centered with Generous Breathing Room so No Image is Ever Cut */}
+        <div className="h-[72px] sm:h-[76px] flex items-center justify-center w-full px-2 pointer-events-none">
           <img
             src={client.logoSrc}
             alt={client.name}
-            className="max-h-[60px] sm:max-h-[64px] max-w-[185px] sm:max-w-[205px] w-auto h-auto object-contain select-none"
+            className="max-h-[52px] sm:max-h-[58px] max-w-[175px] sm:max-w-[195px] w-auto h-auto object-contain select-none"
             style={{ imageRendering: '-webkit-optimize-contrast' }}
             loading="lazy"
             decoding="async"
           />
         </div>
 
-        {/* Crisp, High-Contrast Category Label */}
-        <div className="flex items-center justify-center w-full pt-1 pointer-events-none">
-          <span className="text-[11.5px] font-sans font-bold text-slate-600 tracking-tight truncate text-center">
+        {/* Crisp, Highly Readable Category Label Across Mobile, Tablet & Desktop */}
+        <div className="flex items-center justify-center w-full pt-1.5 pointer-events-none">
+          <span className="text-[12px] sm:text-[13px] font-bold text-slate-800 dark:text-slate-900 tracking-tight text-center leading-snug line-clamp-1 px-1">
             {client.category}
           </span>
         </div>
