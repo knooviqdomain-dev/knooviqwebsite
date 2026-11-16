@@ -16,6 +16,12 @@ export const SmoothScroll: React.FC<{ children: React.ReactNode }> = ({ children
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
 
+    // On touch devices (iPhone, iPad, Android), let native 120Hz ProMotion momentum scroll handle touch
+    const isTouchDevice = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    if (isTouchDevice) {
+      return;
+    }
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -23,7 +29,6 @@ export const SmoothScroll: React.FC<{ children: React.ReactNode }> = ({ children
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1,
-      touchMultiplier: 2,
     });
 
     lenisRef.current = lenis;
