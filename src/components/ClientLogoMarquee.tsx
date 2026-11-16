@@ -334,11 +334,11 @@ export const ClientLogoMarquee: React.FC<{
         className="bg-white border border-slate-200/90 hover:border-sky-400 rounded-2xl px-6 py-3.5 flex flex-col items-center justify-between min-w-[250px] sm:min-w-[275px] h-[122px] flex-shrink-0 transition-all duration-200 shadow-[0_4px_18px_-2px_rgba(0,0,0,0.22)] hover:shadow-2xl hover:scale-[1.02] group/card relative overflow-hidden cursor-pointer select-none outline-none focus:outline-none focus:ring-0 focus-visible:outline-none ring-0"
       >
         {/* Exact Authentic Logo Image Preserving Colors, Proportions & Clear Visible Text */}
-        <div className="h-16 flex items-center justify-center w-full px-2 py-1 pointer-events-none transition-transform duration-200 group-hover/card:scale-105">
+        <div className="h-16 flex items-center justify-center w-full px-2 pointer-events-none transition-transform duration-200 group-hover/card:scale-105">
           <img
             src={client.logoSrc}
             alt={client.name}
-            className="max-h-15 sm:max-h-16 max-w-[170px] w-auto h-auto object-contain select-none"
+            className="max-h-[50px] sm:max-h-[52px] max-w-[160px] sm:max-w-[170px] w-auto h-auto object-contain select-none"
             style={{ imageRendering: '-webkit-optimize-contrast' }}
             loading="lazy"
             decoding="async"
@@ -346,7 +346,7 @@ export const ClientLogoMarquee: React.FC<{
         </div>
 
         {/* Crisp, High-Contrast Category Label */}
-        <div className="flex items-center justify-center w-full pt-2 border-t border-slate-100 pointer-events-none">
+        <div className="flex items-center justify-center w-full pt-1 pointer-events-none">
           <span className="text-[11.5px] font-sans font-bold text-slate-600 tracking-tight truncate text-center">
             {client.category}
           </span>
