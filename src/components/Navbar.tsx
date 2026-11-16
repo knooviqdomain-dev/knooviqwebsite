@@ -1563,7 +1563,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                 onClick={() => toggleSubmenu('services')}
                 className="w-full flex items-center justify-between px-2 py-1.5 text-xs font-bold text-slate-800 dark:text-slate-200"
               >
-                <span className="flex items-center gap-2 text-sky-500">
+                <span className="flex items-center gap-2 text-[#00A3E0]">
                   <Brain className="h-4 w-4" />
                   <span className="text-sm font-bold">Digital Intelligence (6 Practices)</span>
                 </span>
@@ -1602,7 +1602,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                 onClick={() => toggleSubmenu('industries')}
                 className="w-full flex items-center justify-between px-2 py-1.5 text-xs font-bold text-slate-800 dark:text-slate-200"
               >
-                <span className="flex items-center gap-2 text-amber-500">
+                <span className="flex items-center gap-2 text-[#00A3E0]">
                   <Store className="h-4 w-4" />
                   <span className="text-sm font-bold">Industries (8 Practices)</span>
                 </span>
@@ -1633,18 +1633,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                 </div>
               )}
             </div>
-
-            {/* 8. Mobile Contact Direct Link */}
-            <button
-              type="button"
-              onClick={() => {
-                setMobileMenuOpen(false);
-                if (onOpenContact) onOpenContact();
-              }}
-              className="w-full text-left block px-3.5 py-2.5 text-sm font-bold text-slate-800 dark:text-slate-200 hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5 rounded-xl transition-colors cursor-pointer"
-            >
-              Contact Us
-            </button>
 
           </div>
 
