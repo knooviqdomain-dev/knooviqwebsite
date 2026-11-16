@@ -461,7 +461,7 @@ export const KnooviqAIConsultantPage: React.FC<KnooviqAIConsultantPageProps> = (
               One AI Consultant. Many Ways to Help.
             </h2>
 
-            <p className="text-slate-700 dark:text-slate-200 text-base leading-relaxed font-normal">
+            <p className="text-slate-800 dark:text-slate-100 text-base sm:text-lg lg:text-xl leading-relaxed font-medium max-w-2xl mx-auto">
               Hover or select any capability around the central intelligence model to experience simulated natural language prompts and responses.
             </p>
           </div>
