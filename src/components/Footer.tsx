@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
             <KnooviqLogo size="lg" />
           </Link>
 
-          <p className="text-[13px] sm:text-sm text-[#334155] dark:text-slate-300 font-medium leading-[1.7] max-w-xl">
+          <p className="text-[13px] sm:text-sm text-[#0F172A] dark:text-slate-200 font-medium leading-[1.7] max-w-xl">
             Enterprise Core Modernization, Cloud Operations &amp; Digital Intelligence
           </p>
 
@@ -123,37 +123,37 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-[13px] sm:text-sm leading-[1.7]">
               <li>
-                <Link to="/about/the-knooviq-story" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/about/the-knooviq-story" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   The KnoovIQ Story
                 </Link>
               </li>
               <li>
-                <Link to="/about/visionary-leadership" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/about/visionary-leadership" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Visionary Leadership
                 </Link>
               </li>
               <li>
-                <Link to="/about/digital-sap-excellence" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/about/digital-sap-excellence" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Digital &amp; SAP Excellence
                 </Link>
               </li>
               <li>
-                <Link to="/about/our-global-network" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/about/our-global-network" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Our Global Network
                 </Link>
               </li>
               <li>
-                <Link to="/about/grow-with-us" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/about/grow-with-us" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Grow With Us
                 </Link>
               </li>
               <li>
-                <Link to="/about/knooviq-connect" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/about/knooviq-connect" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   KnoovIQ Connect
                 </Link>
               </li>
               <li>
-                <Link to="/about/global-presence" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/about/global-presence" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Global Presence
                 </Link>
               </li>
@@ -167,37 +167,37 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-[13px] sm:text-sm leading-[1.7]">
               <li>
-                <Link to="/exim" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/exim" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Global Trade &amp; EXIM
                 </Link>
               </li>
               <li>
-                <Link to="/e-invoice" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/e-invoice" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   E-Invoicing Solutions
                 </Link>
               </li>
               <li>
-                <Link to="/eway-bill" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/eway-bill" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   E-Way Bill Management
                 </Link>
               </li>
               <li>
-                <Link to="/products/gst" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/products/gst" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   GST &amp; Tax Compliance
                 </Link>
               </li>
               <li>
-                <Link to="/products/knooviq-ai-consultant" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/products/knooviq-ai-consultant" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Knooviq AI Consultant
                 </Link>
               </li>
               <li>
-                <Link to="/products/bank-statement-intelligence" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/products/bank-statement-intelligence" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Bank Intelligence
                 </Link>
               </li>
               <li>
-                <Link to="/products/automation-suite" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/products/automation-suite" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Automation Suite
                 </Link>
               </li>
@@ -211,37 +211,37 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-[13px] sm:text-sm leading-[1.7]">
               <li>
-                <Link to="/transformation/sap-s4hana" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/transformation/sap-s4hana" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   SAP S/4HANA
                 </Link>
               </li>
               <li>
-                <Link to="/transformation/erp-transformation" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/transformation/erp-transformation" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   ERP Transformation
                 </Link>
               </li>
               <li>
-                <Link to="/transformation/digital-transformation" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/transformation/digital-transformation" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Digital Transformation
                 </Link>
               </li>
               <li>
-                <Link to="/transformation/rise-with-sap" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/transformation/rise-with-sap" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   RISE with SAP
                 </Link>
               </li>
               <li>
-                <Link to="/transformation/business-applications" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/transformation/business-applications" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Business Applications
                 </Link>
               </li>
               <li>
-                <Link to="/transformation/system-conversion" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/transformation/system-conversion" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Clean Core Architecture
                 </Link>
               </li>
               <li>
-                <Link to="/transformation/greenfield" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/transformation/greenfield" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Migration &amp; Modernization
                 </Link>
               </li>
@@ -255,37 +255,37 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-[13px] sm:text-sm leading-[1.7]">
               <li>
-                <Link to="/cloud-operations/strategy" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/cloud-operations/strategy" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Cloud Strategy
                 </Link>
               </li>
               <li>
-                <Link to="/cloud-operations/infrastructure" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/cloud-operations/infrastructure" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Cloud Infrastructure
                 </Link>
               </li>
               <li>
-                <Link to="/cloud-operations/aws" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/cloud-operations/aws" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Hyperscalers (AWS/Azure/GCP)
                 </Link>
               </li>
               <li>
-                <Link to="/cloud-operations/application-operations" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/cloud-operations/application-operations" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Application Operations
                 </Link>
               </li>
               <li>
-                <Link to="/cloud-operations/monitoring-observability" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/cloud-operations/monitoring-observability" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Monitoring &amp; APM
                 </Link>
               </li>
               <li>
-                <Link to="/cloud-operations/managed-operations" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/cloud-operations/managed-operations" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   24×7 Managed Operations
                 </Link>
               </li>
               <li>
-                <Link to="/cloud-operations/security" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/cloud-operations/security" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Security &amp; Resilience
                 </Link>
               </li>
@@ -299,37 +299,37 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-[13px] sm:text-sm leading-[1.7]">
               <li>
-                <Link to="/technology/sap-business-ai" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/technology/sap-business-ai" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   SAP Business AI
                 </Link>
               </li>
               <li>
-                <Link to="/digital-intelligence/generative-ai" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/digital-intelligence/generative-ai" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Generative AI
                 </Link>
               </li>
               <li>
-                <Link to="/digital-intelligence/ai-agents" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/digital-intelligence/ai-agents" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Autonomous AI Agents
                 </Link>
               </li>
               <li>
-                <Link to="/technology/sap-analytics-cloud" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/technology/sap-analytics-cloud" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   SAP Analytics Cloud
                 </Link>
               </li>
               <li>
-                <Link to="/technology/sap-datasphere" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/technology/sap-datasphere" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   SAP Datasphere
                 </Link>
               </li>
               <li>
-                <Link to="/digital-intelligence/process-automation" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/digital-intelligence/process-automation" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Intelligent Automation
                 </Link>
               </li>
               <li>
-                <Link to="/digital-intelligence/decision-support" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/digital-intelligence/decision-support" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Decision Intelligence
                 </Link>
               </li>
@@ -343,37 +343,37 @@ export const Footer: React.FC = () => {
             </h3>
             <ul className="space-y-2 text-[13px] sm:text-sm leading-[1.7]">
               <li>
-                <Link to="/industries/retail-ecommerce" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/industries/retail-ecommerce" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Retail &amp; Commerce
                 </Link>
               </li>
               <li>
-                <Link to="/industries/discrete-manufacturing" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/industries/discrete-manufacturing" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Manufacturing
                 </Link>
               </li>
               <li>
-                <Link to="/industries/automotive-mobility" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/industries/automotive-mobility" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Automotive &amp; Mobility
                 </Link>
               </li>
               <li>
-                <Link to="/industries/hospitals-healthcare" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/industries/hospitals-healthcare" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Health &amp; Life Sciences
                 </Link>
               </li>
               <li>
-                <Link to="/industries/power-utilities" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/industries/power-utilities" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Energy &amp; Utilities
                 </Link>
               </li>
               <li>
-                <Link to="/industries/transportation-logistics" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/industries/transportation-logistics" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Logistics &amp; Transport
                 </Link>
               </li>
               <li>
-                <Link to="/industries/banking" className="text-[#334155] dark:text-slate-300 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
+                <Link to="/industries/banking" className="text-[#0F172A] dark:text-slate-200 font-normal sm:font-medium hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors block leading-[1.7]">
                   Banking &amp; Finance
                 </Link>
               </li>
@@ -394,7 +394,7 @@ export const Footer: React.FC = () => {
                 <Phone className="w-5 h-5" />
               </div>
               <div className="min-w-0">
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#334155] dark:text-slate-400 block mb-0.5">
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#0F172A] dark:text-slate-200 block mb-0.5">
                   CALL US
                 </span>
                 <div className="text-[13px] sm:text-sm font-semibold text-[#0F172A] dark:text-white leading-[1.7] truncate">
@@ -415,7 +415,7 @@ export const Footer: React.FC = () => {
                 <Mail className="w-5 h-5" />
               </div>
               <div className="min-w-0">
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#334155] dark:text-slate-400 block mb-0.5">
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#0F172A] dark:text-slate-200 block mb-0.5">
                   EMAIL US
                 </span>
                 <div className="text-[13px] sm:text-sm font-semibold text-[#0F172A] dark:text-white leading-[1.7] truncate">
@@ -432,7 +432,7 @@ export const Footer: React.FC = () => {
                 <MapPin className="w-5 h-5" />
               </div>
               <div className="min-w-0">
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#334155] dark:text-slate-400 block mb-0.5">
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#0F172A] dark:text-slate-200 block mb-0.5">
                   HEAD OFFICE
                 </span>
                 <p className="text-[13px] sm:text-sm font-semibold text-[#0F172A] dark:text-white leading-[1.7]">
@@ -446,14 +446,14 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar: Copyright & Back to Top */}
-        <div className="pt-6 mt-6 border-t border-slate-200 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] sm:text-sm leading-[1.7] text-[#334155] dark:text-slate-300">
-          <p className="text-[#334155] dark:text-slate-300">
-            &copy; {new Date().getFullYear()} <strong className="font-bold text-[#334155] dark:text-slate-300">Knooviq Industries Pvt Ltd</strong>. All rights reserved.
+        <div className="pt-6 mt-6 border-t border-slate-200 dark:border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] sm:text-sm leading-[1.7] text-[#0F172A] dark:text-slate-200">
+          <p className="text-[#0F172A] dark:text-slate-200">
+            &copy; {new Date().getFullYear()} <strong className="font-bold text-[#0F172A] dark:text-slate-200">Knooviq Industries Pvt Ltd</strong>. All rights reserved.
           </p>
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 text-[#334155] dark:text-slate-300 hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors font-medium cursor-pointer"
+            className="flex items-center gap-1.5 text-[#0F172A] dark:text-slate-200 hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors font-medium cursor-pointer"
             aria-label="Back to top"
           >
             <span>Back to top</span>
