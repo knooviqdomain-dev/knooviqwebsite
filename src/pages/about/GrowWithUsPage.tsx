@@ -309,11 +309,9 @@ export const GrowWithUsPage: React.FC<{ onOpenContact: (topic?: string) => void 
   React.useEffect(() => {
     if (!isApplyModalOpen) return;
 
-    const card = modalCardRef.current;
-    if (!card) return;
+    const container = modalCardRef.current;
+    if (!container) return;
 
-    // Direct wheel handler: intercept wheel events anywhere over modal card or backdrop
-    // and smoothly scroll the modal card down or up
     const handleWheel = (e: WheelEvent) => {
       // Allow native scroll inside textarea if it has room to scroll in this direction
       if (e.target instanceof HTMLTextAreaElement) {
@@ -327,46 +325,16 @@ export const GrowWithUsPage: React.FC<{ onOpenContact: (topic?: string) => void 
       // Normalize delta across Windows wheel, Mac trackpad, and browsers
       const delta = e.deltaMode === 1 ? e.deltaY * 24 : e.deltaMode === 2 ? e.deltaY * 400 : e.deltaY;
       
-      // Stop background page jitter
       if (e.cancelable) {
         e.preventDefault();
       }
       
-      // Scroll the modal card directly
-      card.scrollTop += delta;
+      container.scrollTop += delta;
     };
 
-    // Attach with passive: false so e.preventDefault() works cleanly
-    card.addEventListener('wheel', handleWheel, { passive: false });
     window.addEventListener('wheel', handleWheel, { passive: false });
-
-    // Touch handler for mobile: allows touch swipe anywhere on backdrop or margins to scroll modal
-    let touchStartY = 0;
-    const handleTouchStart = (e: TouchEvent) => {
-      if (e.touches && e.touches.length > 0) {
-        touchStartY = e.touches[0].clientY;
-      }
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (!card.contains(e.target as Node)) {
-        if (e.touches && e.touches.length > 0) {
-          const currentY = e.touches[0].clientY;
-          const diff = touchStartY - currentY;
-          card.scrollTop += diff;
-          touchStartY = currentY;
-        }
-      }
-    };
-
-    window.addEventListener('touchstart', handleTouchStart, { passive: true });
-    window.addEventListener('touchmove', handleTouchMove, { passive: true });
-
     return () => {
-      card.removeEventListener('wheel', handleWheel);
       window.removeEventListener('wheel', handleWheel);
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('touchmove', handleTouchMove);
     };
   }, [isApplyModalOpen]);
 
@@ -1251,32 +1219,31 @@ export const GrowWithUsPage: React.FC<{ onOpenContact: (topic?: string) => void 
       <AnimatePresence>
         {isApplyModalOpen && (
           <div 
+            ref={modalCardRef}
             id="apply-modal-backdrop"
             data-lenis-prevent="true"
             data-lenis-prevent-wheel="true"
             data-lenis-prevent-touch="true"
             onClick={handleCloseApplyModal}
-            className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-slate-950/80 backdrop-blur-md"
+            className="fixed inset-0 z-[60] overflow-y-auto overscroll-contain bg-slate-950/80 backdrop-blur-md"
+            style={{
+              WebkitOverflowScrolling: 'touch',
+              touchAction: 'pan-y',
+            }}
           >
-            {/* Modal Card */}
-            <motion.div
-              ref={modalCardRef}
-              data-lenis-prevent="true"
-              data-lenis-prevent-wheel="true"
-              data-lenis-prevent-touch="true"
-              initial={{ opacity: 0, scale: 0.96, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.96, y: 15 }}
-              transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-4xl rounded-2xl sm:rounded-3xl border border-slate-200/90 dark:border-white/10 bg-white dark:bg-[#071324] shadow-[0_25px_70px_rgba(0,0,0,0.5)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.85)] z-10 max-h-[92dvh] sm:max-h-[88vh] overflow-y-auto overscroll-contain text-slate-900 dark:text-white"
-              style={{
-                scrollbarWidth: 'thin',
-                scrollbarColor: '#0052CC #F1F5F9',
-                WebkitOverflowScrolling: 'touch',
-                touchAction: 'pan-y',
-              }}
-            >
+            <div className="flex min-h-full items-center justify-center p-2 sm:p-4 md:p-6 text-center">
+              {/* Modal Card */}
+              <motion.div
+                data-lenis-prevent="true"
+                data-lenis-prevent-wheel="true"
+                data-lenis-prevent-touch="true"
+                initial={{ opacity: 0, scale: 0.96, y: 15 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.96, y: 15 }}
+                transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative w-full max-w-4xl rounded-2xl sm:rounded-3xl border border-slate-200/90 dark:border-white/10 bg-white dark:bg-[#071324] shadow-[0_25px_70px_rgba(0,0,0,0.5)] dark:shadow-[0_25px_70px_rgba(0,0,0,0.85)] z-10 text-left text-slate-900 dark:text-white my-auto overflow-hidden"
+              >
               {/* Top Brand Gradient Line */}
               <div className="sticky top-0 z-40 h-1.5 w-full bg-gradient-to-r from-[#0052CC] via-[#00A3E0] to-cyan-400 shrink-0" />
 
@@ -2029,6 +1996,7 @@ export const GrowWithUsPage: React.FC<{ onOpenContact: (topic?: string) => void 
             )}
                 </div>
               </motion.div>
+            </div>
           </div>
         )}
       </AnimatePresence>

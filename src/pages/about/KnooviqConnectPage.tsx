@@ -970,7 +970,7 @@ const ConnectFormSection: React.FC = () => {
     <form 
       onSubmit={handleSubmit}
       noValidate
-      className="rounded-3xl p-8 sm:p-10 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-white/10 shadow-2xl space-y-5"
+      className="rounded-3xl p-4 sm:p-8 md:p-10 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-white/10 shadow-2xl space-y-5"
     >
       <div className="border-b border-slate-200 dark:border-white/15 pb-4 mb-5">
         <h3 className="font-display text-xl sm:text-2xl font-black text-slate-900 dark:text-white">

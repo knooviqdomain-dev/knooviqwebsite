@@ -806,13 +806,74 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
   // Desktop active menu state: 'about' | 'products' | 'transformation' | 'cloud' | 'solutions' | 'services' | 'industries'
   const [activeMenu, setActiveMenu] = useState<'about' | 'products' | 'transformation' | 'cloud' | 'solutions' | 'services' | 'industries' | null>(null);
 
-  // Mobile accordion state
-  const [mobileSubmenu, setMobileSubmenu] = useState<string | null>(null);
+  // Mobile independent accordion state
+  const [openSubmenus, setOpenSubmenus] = useState<Record<string, boolean>>({});
+  const toggleSubmenu = (key: string) => {
+    setOpenSubmenus(prev => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
+  };
 
+  const mobileDrawerRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLElement | null>(null);
+  const [headerHeight, setHeaderHeight] = useState(64);
+
+  // Dynamic header height measurement
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      if (headerRef.current) {
+        setHeaderHeight(headerRef.current.offsetHeight);
+      }
+    };
+    updateHeaderHeight();
+    window.addEventListener('resize', updateHeaderHeight);
+    return () => window.removeEventListener('resize', updateHeaderHeight);
+  }, []);
+
+  // Lock background body scroll and pause Lenis while mobile menu is open
+  useEffect(() => {
+    const lenis = (window as any).__lenis;
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+      if (lenis) {
+        try { lenis.stop(); } catch (_) {}
+      }
+      if (headerRef.current) {
+        setHeaderHeight(headerRef.current.offsetHeight);
+      }
+    } else {
+      document.body.style.overflow = 'unset';
+      if (lenis) {
+        try { lenis.start(); } catch (_) {}
+      }
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+      if (lenis) {
+        try { lenis.start(); } catch (_) {}
+      }
+    };
+  }, [mobileMenuOpen]);
+
+  // Active wheel scroll for mobile drawer on laptops/desktops
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const drawer = mobileDrawerRef.current;
+    if (!drawer) return;
+    const handleWheel = (e: WheelEvent) => {
+      const delta = e.deltaMode === 1 ? e.deltaY * 24 : e.deltaMode === 2 ? e.deltaY * 400 : e.deltaY;
+      drawer.scrollTop += delta;
+      if (e.cancelable) e.preventDefault();
+    };
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+    };
+  }, [mobileMenuOpen]);
 
   const location = useLocation();
   const navigate = useNavigate();
-  const headerRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -863,7 +924,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
   const isTransparent = isHomePage && !isScrolled && !activeMenu && !mobileMenuOpen;
 
   const navLinkClass = (isActive: boolean) =>
-    `flex items-center gap-1 px-3 py-2 rounded-xl transition-all whitespace-nowrap shrink-0 ${
+    `flex items-center gap-1 px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl transition-all whitespace-nowrap shrink-0 text-xs xl:text-sm ${
       isActive
         ? 'text-white bg-[#00A3E0] font-bold shadow-md shadow-[#00A3E0]/25'
         : isTransparent
@@ -917,13 +978,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
             <nav className="hidden lg:flex items-center gap-1 xl:gap-2 text-xs xl:text-sm font-semibold">
 
               {/* Primary Navigation Links Group: Home to Industries (shifted slightly left via margins, without CSS transforms to preserve position:fixed mega menus) */}
-              <div className="flex items-center gap-1 xl:gap-2 -ml-3 sm:-ml-4 lg:-ml-5 xl:-ml-6 mr-2 sm:mr-3 lg:mr-4 xl:mr-5">
+              <div className="flex items-center gap-0.5 xl:gap-2 -ml-2 sm:-ml-3 lg:-ml-4 xl:-ml-6 mr-1 sm:mr-2 lg:mr-3 xl:mr-5">
 
                 {/* 1. HOME */}
               <Link
                 to="/"
                 onClick={() => { setActiveMenu(null); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                className={`px-3 py-2 rounded-xl transition-all ${
+                className={`px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl transition-all text-xs xl:text-sm ${
                   isTransparent
                     ? 'text-white hover:text-cyan-300 hover:bg-white/10'
                     : 'text-slate-800 dark:text-slate-200 hover:text-[#00A3E0] dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-white/5'
@@ -991,7 +1052,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                 {/* Products Mega Menu Dropdown */}
                 {activeMenu === 'products' && (
                   <div className="fixed left-0 right-0 top-[68px] w-full transition-all animate-in fade-in slide-in-from-top-1 duration-150 z-50 px-4 whitespace-normal">
-                    <div className="max-w-7xl mx-auto rounded-2xl border-2 border-slate-200 dark:border-[#00A3E0]/30 bg-white dark:bg-[#070E1C] p-4 lg:p-5 shadow-2xl">
+                    <div data-lenis-prevent="true" className="max-w-7xl mx-auto rounded-2xl border-2 border-slate-200 dark:border-[#00A3E0]/30 bg-white dark:bg-[#070E1C] p-4 lg:p-5 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto custom-scrollbar overscroll-contain">
                       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-2.5 lg:gap-3">
                         {PRODUCTS_NAV_CATEGORIES.map((cat) => (
                           <div
@@ -1041,7 +1102,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                 {/* Transformation Mega Menu Dropdown */}
                 {activeMenu === 'transformation' && (
                   <div className="fixed left-0 right-0 top-[68px] w-full transition-all animate-in fade-in slide-in-from-top-1 duration-150 z-50 px-4 whitespace-normal">
-                    <div className="max-w-7xl mx-auto rounded-2xl border-2 border-slate-200 dark:border-[#00A3E0]/30 bg-white dark:bg-[#070E1C] p-4 lg:p-5 shadow-2xl">
+                    <div data-lenis-prevent="true" className="max-w-7xl mx-auto rounded-2xl border-2 border-slate-200 dark:border-[#00A3E0]/30 bg-white dark:bg-[#070E1C] p-4 lg:p-5 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto custom-scrollbar overscroll-contain">
                       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-2.5 lg:gap-3">
                         {TRANSFORMATION_MEGA_MENU.map((category) => (
                           <div
@@ -1091,7 +1152,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                 {/* Cloud & Operations Mega Menu Dropdown */}
                 {activeMenu === 'cloud' && (
                   <div className="fixed left-0 right-0 top-[68px] w-full transition-all animate-in fade-in slide-in-from-top-1 duration-150 z-50 px-4 whitespace-normal">
-                    <div className="max-w-7xl mx-auto rounded-2xl border-2 border-slate-200 dark:border-[#00A3E0]/30 bg-white dark:bg-[#070E1C] p-4 lg:p-5 shadow-2xl">
+                    <div data-lenis-prevent="true" className="max-w-7xl mx-auto rounded-2xl border-2 border-slate-200 dark:border-[#00A3E0]/30 bg-white dark:bg-[#070E1C] p-4 lg:p-5 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto custom-scrollbar overscroll-contain">
                       
                       {/* 6 Cloud & Operations Capabilities in 1 Row - Identical Structure to Digital Intelligence */}
                       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-2.5 lg:gap-3">
@@ -1148,7 +1209,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                   <div
                     className="fixed left-0 right-0 top-[68px] w-full transition-all animate-in fade-in slide-in-from-top-1 duration-150 z-50 px-4 whitespace-normal"
                   >
-                    <div className="max-w-7xl mx-auto rounded-2xl border-2 border-slate-200 dark:border-[#00A3E0]/30 bg-white dark:bg-[#070E1C] p-4 lg:p-5 shadow-2xl">
+                    <div data-lenis-prevent="true" className="max-w-7xl mx-auto rounded-2xl border-2 border-slate-200 dark:border-[#00A3E0]/30 bg-white dark:bg-[#070E1C] p-4 lg:p-5 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto custom-scrollbar overscroll-contain">
 
                       {/* 6 Digital Intelligence Practices in 1 Row */}
                       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-2.5 lg:gap-3">
@@ -1205,7 +1266,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                   <div
                     className="fixed left-0 right-0 top-[68px] w-full transition-all animate-in fade-in slide-in-from-top-1 duration-150 z-50 px-4 whitespace-normal"
                   >
-                    <div className="max-w-7xl mx-auto rounded-2xl border-2 border-slate-200 dark:border-[#00A3E0]/30 bg-white dark:bg-[#070E1C] p-4 lg:p-5 shadow-2xl">
+                    <div data-lenis-prevent="true" className="max-w-7xl mx-auto rounded-2xl border-2 border-slate-200 dark:border-[#00A3E0]/30 bg-white dark:bg-[#070E1C] p-4 lg:p-5 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto custom-scrollbar overscroll-contain">
 
                       {/* 8 Industry Vertical Practices (4 Columns x 2 Rows) */}
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-2.5 lg:gap-3">
@@ -1267,7 +1328,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
               {/* CONTACT US -> Pill Button (matching user image) */}
               <button
                 onClick={() => onOpenContact && onOpenContact()}
-                className="btn-primary-gradient shimmer-sweep rounded-full px-5 py-2 text-xs font-bold uppercase tracking-wider text-white transition-all shadow-md shadow-blue-500/25 flex items-center gap-2 active:scale-95 font-display ml-1 shrink-0"
+                className="btn-primary-gradient shimmer-sweep rounded-full px-3.5 xl:px-5 py-1.5 xl:py-2 text-[11px] xl:text-xs font-bold uppercase tracking-wider text-white transition-all shadow-md shadow-blue-500/25 flex items-center gap-1.5 xl:gap-2 active:scale-95 font-display ml-1 shrink-0"
               >
                 <span>CONTACT US</span>
                 <ArrowRight className="h-3.5 w-3.5" />
@@ -1281,7 +1342,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className={`flex h-10 w-10 items-center justify-center rounded-xl border transition-all ${
-                  isTransparent
+                  mobileMenuOpen
+                    ? 'border-slate-300 dark:border-sky-500/20 bg-slate-100 dark:bg-[#0B1528] text-slate-800 dark:text-slate-200'
+                    : isTransparent
                     ? 'border-white/20 bg-white/10 text-white hover:bg-white/20'
                     : 'border-slate-300 dark:border-sky-500/20 bg-slate-100 dark:bg-[#0B1528] text-slate-800 dark:text-slate-200'
                 }`}
@@ -1293,137 +1356,149 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
 
           </div>
         </div>
-        {/* Mobile Drawer with sequence: Home, About, Products, Solutions, Services, Industries */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden border-b border-slate-200 dark:border-sky-500/25 bg-white dark:bg-[#070E1C] px-4 pt-3 pb-6 space-y-2 shadow-2xl max-h-[80vh] overflow-y-auto">
+      </header>
+
+      {/* Mobile Drawer with sequence: Home, About, Products, Transformation, Cloud & Operations, Digital Intelligence, Industries, Contact */}
+      {mobileMenuOpen && (
+        <div 
+          data-lenis-prevent="true"
+          data-lenis-prevent-wheel="true"
+          data-lenis-prevent-touch="true"
+          className="lg:hidden fixed inset-x-0 bottom-0 z-50 bg-white dark:bg-[#070E1C] flex flex-col shadow-2xl border-t border-slate-200 dark:border-white/10"
+          style={{ top: `${headerHeight}px`, height: `calc(100dvh - ${headerHeight}px)` }}
+        >
+          {/* Main Scrollable Navigation Area */}
+          <div
+            ref={mobileDrawerRef}
+            data-lenis-prevent="true"
+            data-lenis-prevent-wheel="true"
+            data-lenis-prevent-touch="true"
+            className="flex-1 overflow-y-auto overscroll-contain px-4 sm:px-6 pt-3.5 pb-8 space-y-2.5 custom-scrollbar"
+            style={{
+              WebkitOverflowScrolling: 'touch',
+              touchAction: 'pan-y',
+              scrollbarWidth: 'thin',
+            }}
+          >
 
             {/* 1. Mobile Home */}
             <Link
               to="/"
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 text-sm font-bold text-slate-800 dark:text-slate-200 hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5 rounded-xl"
+              className="block px-3.5 py-2.5 text-sm font-bold text-slate-800 dark:text-slate-200 hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5 rounded-xl transition-colors"
             >
               Home
             </Link>
 
             {/* 2. Mobile About Accordion */}
-            <div className="border border-slate-200 dark:border-white/10 rounded-2xl p-2 bg-slate-50 dark:bg-[#050B17]">
+            <div className="border border-slate-200 dark:border-white/10 rounded-2xl p-2.5 bg-slate-50 dark:bg-[#050B17]">
               <button
-                onClick={() => setMobileSubmenu(mobileSubmenu === 'about' ? null : 'about')}
+                type="button"
+                onClick={() => toggleSubmenu('about')}
                 className="w-full flex items-center justify-between px-2 py-1.5 text-xs font-bold text-slate-800 dark:text-slate-200"
               >
-                <span className="flex items-center gap-1.5 text-[#00A3E0]">
-                  <Building2 className="h-3.5 w-3.5" />
-                  <span>About Us</span>
+                <span className="flex items-center gap-2 text-[#00A3E0]">
+                  <Building2 className="h-4 w-4" />
+                  <span className="text-sm font-bold">About Us</span>
                 </span>
-                <ChevronDown className={`h-4 w-4 transition-transform ${mobileSubmenu === 'about' ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openSubmenus['about'] ? 'rotate-180' : ''}`} />
               </button>
 
-              {mobileSubmenu === 'about' && (
-                <div className="pt-2 pl-2 space-y-1.5 border-t border-slate-200 dark:border-white/5 mt-1 text-xs">
-                  <Link to="/about/the-knooviq-story" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• The Knooviq Story</Link>
-                  <Link to="/about/visionary-leadership" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Visionary Leadership</Link>
-                  <Link to="/about/digital-sap-excellence" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Digital & SAP Excellence</Link>
-                  <Link to="/about/our-global-network" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Our Global Network</Link>
-                  <Link to="/about/grow-with-us" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Grow With Us</Link>
-                  <Link to="/about/knooviq-connect" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Knooviq Connect</Link>
-                  <Link to="/about/global-presence" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Global Presence</Link>
+              {openSubmenus['about'] && (
+                <div className="pt-2 pl-2 space-y-1 border-t border-slate-200 dark:border-white/5 mt-1.5 text-xs">
+                  <Link to="/about/the-knooviq-story" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• The Knooviq Story</Link>
+                  <Link to="/about/visionary-leadership" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Visionary Leadership</Link>
+                  <Link to="/about/digital-sap-excellence" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Digital & SAP Excellence</Link>
+                  <Link to="/about/our-global-network" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Our Global Network</Link>
+                  <Link to="/about/grow-with-us" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Grow With Us</Link>
+                  <Link to="/about/knooviq-connect" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Knooviq Connect</Link>
+                  <Link to="/about/global-presence" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Global Presence</Link>
                 </div>
               )}
             </div>
 
             {/* 3. Mobile Products Accordion */}
-            <div className="border border-slate-200 dark:border-white/10 rounded-2xl p-2 bg-slate-50 dark:bg-[#050B17]">
+            <div className="border border-slate-200 dark:border-white/10 rounded-2xl p-2.5 bg-slate-50 dark:bg-[#050B17]">
               <button
-                onClick={() => setMobileSubmenu(mobileSubmenu === 'products' ? null : 'products')}
+                type="button"
+                onClick={() => toggleSubmenu('products')}
                 className="w-full flex items-center justify-between px-2 py-1.5 text-xs font-bold text-slate-800 dark:text-slate-200"
               >
-                <span className="flex items-center gap-1.5 text-[#00A3E0]">
-                  <Layers className="h-3.5 w-3.5" />
-                  <span>Products & Accelerators</span>
+                <span className="flex items-center gap-2 text-[#00A3E0]">
+                  <Layers className="h-4 w-4" />
+                  <span className="text-sm font-bold">Products & Accelerators</span>
                 </span>
-                <ChevronDown className={`h-4 w-4 transition-transform ${mobileSubmenu === 'products' ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openSubmenus['products'] ? 'rotate-180' : ''}`} />
               </button>
 
-              {mobileSubmenu === 'products' && (
-                <div className="pt-2 pl-2 space-y-1.5 border-t border-slate-200 dark:border-white/5 mt-1 text-xs">
+              {openSubmenus['products'] && (
+                <div className="pt-2 pl-2 space-y-2 border-t border-slate-200 dark:border-white/5 mt-1.5 text-xs">
                   <p className="font-bold text-[#00A3E0] pt-1">Knooviq Accelerated Solutions</p>
-                  <Link to="/exim" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• EXIM (Export & Import Solutions)</Link>
-                  <Link to="/e-invoice" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• E-Invoice (Automated Compliance)</Link>
-                  <Link to="/eway-bill" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• E-Way Bill (Goods Movement & Compliance)</Link>
-                  <Link to="/products/gst" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• GST Compliance</Link>
+                  <Link to="/exim" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• EXIM (Export & Import Solutions)</Link>
+                  <Link to="/e-invoice" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• E-Invoice (Automated Compliance)</Link>
+                  <Link to="/eway-bill" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• E-Way Bill (Goods Movement & Compliance)</Link>
+                  <Link to="/products/gst" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• GST Compliance</Link>
 
-                  <div className="pt-1.5 pb-0.5">
-                    <Link to="/products" onClick={() => setMobileMenuOpen(false)} className="font-bold text-[#00A3E0] hover:underline">
-                      Knooviq Enterprise Solutions
-                    </Link>
-                  </div>
-                  <Link to="/products/vendor-management" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Vendor Management</Link>
-                  <Link to="/products/field-service-management" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Field Service Management</Link>
-                  <Link to="/products/real-estate-management" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Real Estate Management</Link>
-                  <Link to="/products/distribution-management" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Distribution Management</Link>
-                  <Link to="/products/digital-retail-solution" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Digital Retail Solution</Link>
-                  <Link to="/products/subscription-billing" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Subscription Billing</Link>
-                  <Link to="/products/sales-force-automation" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Sales Force Automation</Link>
-                  <Link to="/products/dealer-management-system" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Dealer Management System</Link>
-                  <Link to="/products/asset-management" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Asset Management</Link>
+                  <p className="font-bold text-[#00A3E0] pt-1.5">Knooviq Enterprise Solutions</p>
+                  <Link to="/products/vendor-management" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Vendor Management</Link>
+                  <Link to="/products/field-service-management" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Field Service Management</Link>
+                  <Link to="/products/real-estate-management" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Real Estate Management</Link>
+                  <Link to="/products/distribution-management" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Distribution Management</Link>
+                  <Link to="/products/digital-retail-solution" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Digital Retail Solution</Link>
+                  <Link to="/products/subscription-billing" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Subscription Billing</Link>
+                  <Link to="/products/sales-force-automation" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Sales Force Automation</Link>
+                  <Link to="/products/dealer-management-system" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Dealer Management System</Link>
+                  <Link to="/products/asset-management" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Asset Management</Link>
 
                   <p className="font-bold text-[#00A3E0] pt-1">Knooviq AI Studio</p>
-                  <Link to="/products/knooviq-ai-consultant" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Knooviq AI Consultant</Link>
-                  <Link to="/products/knooviq-ai-insights" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Knooviq AI Insights</Link>
-                  <Link to="/products/knooviq-ai-engagement" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Knooviq AI Engagement</Link>
+                  <Link to="/products/knooviq-ai-consultant" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Knooviq AI Consultant</Link>
+                  <Link to="/products/knooviq-ai-insights" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Knooviq AI Insights</Link>
+                  <Link to="/products/knooviq-ai-engagement" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Knooviq AI Engagement</Link>
 
                   <p className="font-bold text-[#00A3E0] pt-1">Enterprise AI Products</p>
-                  <Link to="/products/bank-statement-intelligence" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Bank Statement Intelligence</Link>
-                  <Link to="/products/supply-chain-intelligence" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Supply Chain Intelligence</Link>
-                  <Link to="/products/document-intelligence" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Document Intelligence</Link>
-                  <Link to="/products/accounts-payable-intelligence" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Accounts Payable Intelligence</Link>
-                  <Link to="/products/expense-intelligence" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Expense Intelligence</Link>
-                  <Link to="/products/form-intelligence" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Form Intelligence</Link>
-                  <div className="pt-1.5 pb-0.5">
-                    <Link to="/products/automation-suite" onClick={() => setMobileMenuOpen(false)} className="font-bold text-[#00A3E0] hover:underline">
-                      Knooviq Automation Suite
-                    </Link>
-                  </div>
-                  <Link to="/products/automation-studio" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Automation Studio</Link>
-                  <Link to="/products/automation-evolve" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Automation Evolve</Link>
-                  <Link to="/products/automation-manager" onClick={() => setMobileMenuOpen(false)} className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium">• Automation Manager</Link>
+                  <Link to="/products/bank-statement-intelligence" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Bank Statement Intelligence</Link>
+                  <Link to="/products/supply-chain-intelligence" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Supply Chain Intelligence</Link>
+                  <Link to="/products/document-intelligence" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Document Intelligence</Link>
+                  <Link to="/products/accounts-payable-intelligence" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Accounts Payable Intelligence</Link>
+                  <Link to="/products/expense-intelligence" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Expense Intelligence</Link>
+                  <Link to="/products/form-intelligence" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Form Intelligence</Link>
+
+                  <p className="font-bold text-[#00A3E0] pt-1.5">Knooviq Automation Suite</p>
+                  <Link to="/products/automation-studio" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Automation Studio</Link>
+                  <Link to="/products/automation-evolve" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Automation Evolve</Link>
+                  <Link to="/products/automation-manager" onClick={() => setMobileMenuOpen(false)} className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5">• Automation Manager</Link>
                 </div>
               )}
             </div>
 
             {/* 4. Mobile Transformation Accordion */}
-            <div className="border border-slate-200 dark:border-white/10 rounded-2xl p-2 bg-slate-50 dark:bg-[#050B17]">
+            <div className="border border-slate-200 dark:border-white/10 rounded-2xl p-2.5 bg-slate-50 dark:bg-[#050B17]">
               <button
-                onClick={() => setMobileSubmenu(mobileSubmenu === 'transformation' ? null : 'transformation')}
+                type="button"
+                onClick={() => toggleSubmenu('transformation')}
                 className="w-full flex items-center justify-between px-2 py-1.5 text-xs font-bold text-slate-800 dark:text-slate-200"
               >
-                <span className="flex items-center gap-1.5 text-[#00A3E0]">
-                  <Workflow className="h-3.5 w-3.5" />
-                  <span>Transformation</span>
+                <span className="flex items-center gap-2 text-[#00A3E0]">
+                  <Workflow className="h-4 w-4" />
+                  <span className="text-sm font-bold">Transformation</span>
                 </span>
-                <ChevronDown className={`h-4 w-4 transition-transform ${mobileSubmenu === 'transformation' ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openSubmenus['transformation'] ? 'rotate-180' : ''}`} />
               </button>
 
-              {mobileSubmenu === 'transformation' && (
-                <div className="pt-2 pl-2 space-y-2 border-t border-slate-200 dark:border-white/5 mt-1 text-xs max-h-[460px] overflow-y-auto pr-1 custom-scrollbar">
+              {openSubmenus['transformation'] && (
+                <div className="pt-2 pl-2 space-y-2 border-t border-slate-200 dark:border-white/5 mt-1.5 text-xs">
                   {TRANSFORMATION_MEGA_MENU.map((category) => (
                     <div key={category.id} className="pt-1">
-                      <p className="font-bold text-[#00A3E0] pt-1 flex items-center justify-between">
-                        <span>{category.title}</span>
-                        {category.badge && (
-                          <span className="text-[9px] bg-[#00A3E0] text-white px-1.5 py-0.5 rounded font-bold">
-                            {category.badge}
-                          </span>
-                        )}
+                      <p className="font-bold text-[#00A3E0] pt-1">
+                        {category.title}
                       </p>
-                      <div className="space-y-0.5 pt-0.5 pl-2">
+                      <div className="space-y-1 pt-1 pl-2">
                         {category.items.map((item, idx) => (
                           <Link
                             key={idx}
                             to={item.path}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0]"
+                            className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5"
                           >
                             • {item.name}
                           </Link>
@@ -1431,46 +1506,32 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                       </div>
                     </div>
                   ))}
-                  <div className="pt-2 border-t border-slate-200 dark:border-white/5">
-                    <Link
-                      to="/transformation"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="font-bold text-[#00A3E0] hover:underline flex items-center gap-1"
-                    >
-                      <span>Explore All Transformation Practices</span>
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
-                  </div>
                 </div>
               )}
             </div>
 
-            {/* 4.5 Mobile Cloud & Operations Accordion */}
-            <div className="border border-slate-200 dark:border-white/10 rounded-2xl p-2 bg-slate-50 dark:bg-[#050B17]">
+            {/* 5. Mobile Cloud & Operations Accordion */}
+            <div className="border border-slate-200 dark:border-white/10 rounded-2xl p-2.5 bg-slate-50 dark:bg-[#050B17]">
               <button
-                onClick={() => setMobileSubmenu(mobileSubmenu === 'cloud' ? null : 'cloud')}
+                type="button"
+                onClick={() => toggleSubmenu('cloud')}
                 className="w-full flex items-center justify-between px-2 py-1.5 text-xs font-bold text-slate-800 dark:text-slate-200"
               >
-                <span className="flex items-center gap-1.5 text-[#00A3E0]">
-                  <Cloud className="h-3.5 w-3.5" />
-                  <span>Cloud & Operations (6 Capabilities)</span>
+                <span className="flex items-center gap-2 text-[#00A3E0]">
+                  <Cloud className="h-4 w-4" />
+                  <span className="text-sm font-bold">Cloud & Operations (6 Capabilities)</span>
                 </span>
-                <ChevronDown className={`h-4 w-4 transition-transform ${mobileSubmenu === 'cloud' ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openSubmenus['cloud'] ? 'rotate-180' : ''}`} />
               </button>
 
-              {mobileSubmenu === 'cloud' && (
-                <div className="pt-2 pl-2 space-y-2 border-t border-slate-200 dark:border-white/5 mt-1 text-xs max-h-[460px] overflow-y-auto pr-1 custom-scrollbar">
+              {openSubmenus['cloud'] && (
+                <div className="pt-2 pl-2 space-y-2 border-t border-slate-200 dark:border-white/5 mt-1.5 text-xs">
                   {CLOUD_OPS_MEGA_MENU.map((category) => (
                     <div key={category.id} className="pt-1">
-                      <p className="font-bold text-[#00A3E0] pt-1 flex items-center justify-between">
-                        <span>{category.title}</span>
-                        {category.badge && (
-                          <span className="text-[9px] bg-[#00A3E0] text-white px-1.5 py-0.5 rounded font-bold">
-                            {category.badge}
-                          </span>
-                        )}
+                      <p className="font-bold text-[#00A3E0] pt-1">
+                        {category.title}
                       </p>
-                      <div className="space-y-0.5 pt-0.5 pl-2">
+                      <div className="space-y-1 pt-1 pl-2">
                         {category.items.map((item, idx) => {
                           const isItemActive = location.pathname === item.path || (item.path.includes('?') && location.pathname + location.search === item.path);
                           return (
@@ -1481,7 +1542,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                               className={`block py-1 px-2 rounded-lg text-xs font-medium transition-colors ${
                                 isItemActive
                                   ? 'bg-[#00A3E0] text-white font-bold'
-                                  : 'text-slate-700 dark:text-slate-300 hover:text-[#00A3E0]'
+                                  : 'text-slate-700 dark:text-slate-300 hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5'
                               }`}
                             >
                               • {item.name}
@@ -1491,47 +1552,38 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                       </div>
                     </div>
                   ))}
-                  <div className="pt-2 border-t border-slate-200 dark:border-white/5">
-                    <Link
-                      to="/cloud-operations"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="font-bold text-[#00A3E0] hover:underline flex items-center gap-1"
-                    >
-                      <span>Explore All Cloud & Operations Capabilities</span>
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
-                  </div>
                 </div>
               )}
             </div>
 
-            {/* 5. Mobile Digital Intelligence Accordion */}
-            <div className="border border-slate-200 dark:border-white/10 rounded-2xl p-2 bg-slate-50 dark:bg-[#050B17]">
+            {/* 6. Mobile Digital Intelligence Accordion */}
+            <div className="border border-slate-200 dark:border-white/10 rounded-2xl p-2.5 bg-slate-50 dark:bg-[#050B17]">
               <button
-                onClick={() => setMobileSubmenu(mobileSubmenu === 'services' ? null : 'services')}
+                type="button"
+                onClick={() => toggleSubmenu('services')}
                 className="w-full flex items-center justify-between px-2 py-1.5 text-xs font-bold text-slate-800 dark:text-slate-200"
               >
-                <span className="flex items-center gap-1.5 text-sky-500">
-                  <Brain className="h-3.5 w-3.5" />
-                  <span>Digital Intelligence (6 Practices)</span>
+                <span className="flex items-center gap-2 text-sky-500">
+                  <Brain className="h-4 w-4" />
+                  <span className="text-sm font-bold">Digital Intelligence (6 Practices)</span>
                 </span>
-                <ChevronDown className={`h-4 w-4 transition-transform ${mobileSubmenu === 'services' ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openSubmenus['services'] ? 'rotate-180' : ''}`} />
               </button>
 
-              {mobileSubmenu === 'services' && (
-                <div className="pt-2 pl-2 space-y-2 border-t border-slate-200 dark:border-white/5 mt-1 text-xs max-h-[460px] overflow-y-auto pr-1 custom-scrollbar">
+              {openSubmenus['services'] && (
+                <div className="pt-2 pl-2 space-y-2 border-t border-slate-200 dark:border-white/5 mt-1.5 text-xs">
                   {DIGITAL_INTELLIGENCE_NAV_CATEGORIES.map((category) => (
                     <div key={category.id} className="pt-1.5">
                       <div className="font-black text-xs tracking-wider uppercase text-[#0A1931] dark:text-[#00A3E0] pb-0.5 border-b border-slate-200/50 dark:border-white/5">
                         {category.name}
                       </div>
-                      <div className="space-y-0.5 pt-1 pl-2">
+                      <div className="space-y-1 pt-1 pl-2">
                         {category.items.map((item, idx) => (
                           <Link
                             key={idx}
                             to={AI_PRACTICE_ROUTES[item] || `/digital-intelligence?category=${category.id}&item=${encodeURIComponent(item)}`}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block py-0.5 text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0]"
+                            className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5"
                           >
                             • {item}
                           </Link>
@@ -1539,98 +1591,79 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                       </div>
                     </div>
                   ))}
-                  <div className="pt-2 border-t border-slate-200 dark:border-white/5">
-                    <Link
-                      to="/digital-intelligence"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="font-bold text-[#00A3E0] hover:underline flex items-center gap-1"
-                    >
-                      <span>Explore All Digital Intelligence</span>
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
-                  </div>
                 </div>
               )}
             </div>
 
-            {/* 6. Mobile Industries Accordion */}
-            <div className="border border-slate-200 dark:border-white/10 rounded-2xl p-2 bg-slate-50 dark:bg-[#050B17]">
+            {/* 7. Mobile Industries Accordion */}
+            <div className="border border-slate-200 dark:border-white/10 rounded-2xl p-2.5 bg-slate-50 dark:bg-[#050B17]">
               <button
-                onClick={() => setMobileSubmenu(mobileSubmenu === 'industries' ? null : 'industries')}
+                type="button"
+                onClick={() => toggleSubmenu('industries')}
                 className="w-full flex items-center justify-between px-2 py-1.5 text-xs font-bold text-slate-800 dark:text-slate-200"
               >
-                <span className="flex items-center gap-1.5 text-amber-500">
-                  <Store className="h-3.5 w-3.5" />
-                  <span>Industries (8 Practices)</span>
+                <span className="flex items-center gap-2 text-amber-500">
+                  <Store className="h-4 w-4" />
+                  <span className="text-sm font-bold">Industries (8 Practices)</span>
                 </span>
-                <ChevronDown className={`h-4 w-4 transition-transform ${mobileSubmenu === 'industries' ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${openSubmenus['industries'] ? 'rotate-180' : ''}`} />
               </button>
 
-              {mobileSubmenu === 'industries' && (
-                <div className="pt-2 pl-2 space-y-2 border-t border-slate-200 dark:border-white/5 mt-1">
-                  <div className="pb-1.5 mb-1 border-b border-slate-200 dark:border-white/5 space-y-1">
-                    <p className="industry-category-title text-slate-500 dark:text-slate-400 px-2 pt-0.5">Industry Practices</p>
-                    {Object.entries(INDUSTRY_ROUTE_MAP).map(([name, path]) => (
-                      <Link
-                        key={name}
-                        to={path}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="industry-category-item flex items-center justify-between py-1.5 px-2.5 rounded-lg bg-[#0070C0]/10 text-[#0070C0] dark:text-cyan-300"
-                      >
-                        <span>{name}</span>
-                      </Link>
-                    ))}
-                  </div>
+              {openSubmenus['industries'] && (
+                <div className="pt-2 pl-2 space-y-2 border-t border-slate-200 dark:border-white/5 mt-1.5 text-xs">
                   {INDUSTRIES_NAV_CATEGORIES.map((cat) => (
-                    <Link
-                      key={cat.id}
-                      to="/industries"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="industry-category-item block py-1 px-2 text-slate-700 dark:text-slate-300 hover:text-[#00A3E0]"
-                    >
-                      • {cat.name}
-                    </Link>
+                    <div key={cat.id} className="pt-1.5">
+                      <div className="font-black text-xs tracking-wider uppercase text-[#0A1931] dark:text-[#00A3E0] pb-0.5 border-b border-slate-200/50 dark:border-white/5">
+                        {cat.name}
+                      </div>
+                      <div className="space-y-1 pt-1 pl-2">
+                        {cat.items.map((subItem) => (
+                          <Link
+                            key={subItem}
+                            to={INDUSTRY_ROUTE_MAP[subItem] || '/industries'}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5"
+                          >
+                            • {subItem}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   ))}
                 </div>
               )}
             </div>
 
-            {/* 8. Mobile Contact */}
+            {/* 8. Mobile Contact Direct Link */}
             <button
+              type="button"
               onClick={() => {
                 setMobileMenuOpen(false);
                 if (onOpenContact) onOpenContact();
               }}
-              className="w-full text-left block px-3 py-2 text-sm font-bold text-slate-800 dark:text-slate-200 hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5 rounded-xl"
+              className="w-full text-left block px-3.5 py-2.5 text-sm font-bold text-slate-800 dark:text-slate-200 hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5 rounded-xl transition-colors cursor-pointer"
             >
               Contact Us
             </button>
 
-            {/* Drawer Footer CTA */}
-            <div className="pt-3 border-t border-slate-200 dark:border-white/10 space-y-2">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  if (onOpenContact) onOpenContact();
-                }}
-                className="w-full justify-center inline-flex items-center gap-2 rounded-xl bg-[#E05A47] hover:bg-[#C94735] py-3 text-xs font-black uppercase tracking-wider text-white shadow-lg"
-              >
-                <span>Contact us</span>
-                <ArrowRight className="h-3.5 w-3.5" />
-              </button>
-
-              <Link
-                to="/admin/login"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full justify-center inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-sky-500/20 bg-slate-100 dark:bg-white/5 py-2.5 text-xs font-semibold text-slate-700 dark:text-slate-400 hover:text-[#00A3E0] dark:hover:text-white"
-              >
-                <ShieldCheck className="h-3.5 w-3.5 text-[#00A3E0]" />
-                <span>Internal Admin Security Console</span>
-              </Link>
-            </div>
           </div>
-        )}
-      </header>
+
+          {/* Pinned Sticky Bottom Bar: ALWAYS VISIBLE CONTACT US BUTTON ON PHONES */}
+          <div className="shrink-0 p-3.5 sm:p-4 border-t border-slate-200 dark:border-white/10 bg-white dark:bg-[#070E1C] shadow-lg pb-[calc(0.875rem+env(safe-area-inset-bottom,0px))]">
+            <button
+              type="button"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                if (onOpenContact) onOpenContact();
+              }}
+              className="w-full justify-center inline-flex items-center gap-2 rounded-xl bg-[#E05A47] hover:bg-[#C94735] active:bg-[#B33E2E] py-3 text-xs font-black uppercase tracking-wider text-white shadow-lg cursor-pointer active:scale-[0.99] transition-transform"
+            >
+              <span>Contact us</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };
