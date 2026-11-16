@@ -8,8 +8,8 @@ export const Fallback2D: React.FC = () => {
       <div className="absolute inset-0 bg-radial-gradient from-knooviq-blue/20 via-knooviq-electric/5 to-transparent blur-2xl" />
 
       {/* Interactive 2D Architecture Ring Layout */}
-      <div className="relative flex h-[380px] w-[380px] sm:h-[450px] sm:w-[450px] items-center justify-center rounded-full border border-sky-500/20 bg-navy-900/40 backdrop-blur-xl shadow-2xl shadow-sky-950/80">
-        
+      <div className="relative flex h-[280px] w-[280px] sm:h-[450px] sm:w-[450px] max-w-full items-center justify-center rounded-full border border-sky-500/20 bg-navy-900/40 backdrop-blur-xl shadow-2xl shadow-sky-950/80">
+
         {/* Orbital Ring 1 */}
         <div className="absolute h-[80%] w-[80%] rounded-full border border-dashed border-sky-400/20 animate-spin-slow" />
         {/* Orbital Ring 2 */}

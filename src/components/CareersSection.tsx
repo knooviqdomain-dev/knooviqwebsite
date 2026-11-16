@@ -38,6 +38,49 @@ export const CareersSection: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const modalCardRef = React.useRef<HTMLDivElement>(null);
+
+  // Lock background scroll and active wheel listener when job application modal is open
+  useEffect(() => {
+    const lenis = (window as any).__lenis;
+    if (selectedJob) {
+      document.body.style.overflow = 'hidden';
+      if (lenis) {
+        try { lenis.stop(); } catch (_) {}
+      }
+    } else {
+      document.body.style.overflow = 'unset';
+      if (lenis) {
+        try { lenis.start(); } catch (_) {}
+      }
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+      if (lenis) {
+        try { lenis.start(); } catch (_) {}
+      }
+    };
+  }, [selectedJob]);
+
+  useEffect(() => {
+    if (!selectedJob) return;
+    const modal = modalCardRef.current;
+    if (!modal) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      if (e.target instanceof HTMLTextAreaElement) {
+        const atTop = e.target.scrollTop <= 0 && e.deltaY < 0;
+        const atBottom = e.target.scrollTop + e.target.clientHeight >= e.target.scrollHeight && e.deltaY > 0;
+        if (!atTop && !atBottom) return;
+      }
+      const delta = e.deltaMode === 1 ? e.deltaY * 24 : e.deltaMode === 2 ? e.deltaY * 400 : e.deltaY;
+      modal.scrollTop += delta;
+      if (e.cancelable) e.preventDefault();
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    return () => window.removeEventListener('wheel', handleWheel);
+  }, [selectedJob]);
 
   useEffect(() => {
     async function load() {
@@ -252,13 +295,29 @@ export const CareersSection: React.FC = () => {
       {/* Application Modal */}
       <AnimatePresence>
         {selectedJob && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 dark:bg-[#050B17]/85 backdrop-blur-md">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              className="relative max-w-xl w-full rounded-3xl border border-slate-200 dark:border-sky-500/30 bg-white dark:bg-[#0B1528] p-6 sm:p-8 shadow-2xl overflow-y-auto max-h-[90vh] text-slate-900 dark:text-white"
-            >
+          <div 
+            ref={modalCardRef}
+            data-lenis-prevent="true"
+            data-lenis-prevent-wheel="true"
+            data-lenis-prevent-touch="true"
+            onClick={resetModal}
+            className="fixed inset-0 z-[60] overflow-y-auto overscroll-contain bg-black/65 dark:bg-[#050B17]/85 backdrop-blur-md"
+            style={{
+              WebkitOverflowScrolling: 'touch',
+              touchAction: 'pan-y',
+            }}
+          >
+            <div className="flex min-h-full items-center justify-center p-3 sm:p-5 md:p-6 text-center">
+              <motion.div
+                data-lenis-prevent="true"
+                data-lenis-prevent-wheel="true"
+                data-lenis-prevent-touch="true"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative max-w-xl w-full rounded-3xl border border-slate-200 dark:border-sky-500/30 bg-white dark:bg-[#0B1528] p-5 sm:p-8 shadow-2xl text-left text-slate-900 dark:text-white my-auto"
+              >
               <button
                 onClick={resetModal}
                 className="absolute top-6 right-6 flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 dark:bg-white/10 text-slate-500 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
@@ -511,8 +570,9 @@ export const CareersSection: React.FC = () => {
 
             </motion.div>
           </div>
-        )}
-      </AnimatePresence>
+        </div>
+      )}
+    </AnimatePresence>
 
     </section>
   );

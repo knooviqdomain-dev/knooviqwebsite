@@ -36,11 +36,61 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, def
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
+  const modalRef = React.useRef<HTMLDivElement>(null);
+
   React.useEffect(() => {
     if (defaultService) {
       setFormData((prev) => ({ ...prev, service: defaultService }));
     }
   }, [defaultService]);
+
+  // Lock background body scroll and pause Lenis while Contact modal is open
+  React.useEffect(() => {
+    const lenis = (window as any).__lenis;
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      if (lenis) {
+        try { lenis.stop(); } catch (_) {}
+      }
+      if (modalRef.current) {
+        modalRef.current.scrollTop = 0;
+      }
+    } else {
+      document.body.style.overflow = 'unset';
+      if (lenis) {
+        try { lenis.start(); } catch (_) {}
+      }
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+      if (lenis) {
+        try { lenis.start(); } catch (_) {}
+      }
+    };
+  }, [isOpen]);
+
+  // Guaranteed wheel and scroll listener
+  React.useEffect(() => {
+    if (!isOpen) return;
+    const modal = modalRef.current;
+    if (!modal) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      if (e.target instanceof HTMLTextAreaElement) {
+        const atTop = e.target.scrollTop <= 0 && e.deltaY < 0;
+        const atBottom = e.target.scrollTop + e.target.clientHeight >= e.target.scrollHeight && e.deltaY > 0;
+        if (!atTop && !atBottom) return;
+      }
+      const delta = e.deltaMode === 1 ? e.deltaY * 24 : e.deltaMode === 2 ? e.deltaY * 400 : e.deltaY;
+      modal.scrollTop += delta;
+      if (e.cancelable) e.preventDefault();
+    };
+
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -143,13 +193,29 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, def
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 dark:bg-[#050B17]/85 backdrop-blur-md">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.95 }}
-        className="relative max-w-xl w-full rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0A1120] p-6 sm:p-8 shadow-2xl overflow-y-auto max-h-[92vh] text-slate-900 dark:text-white"
-      >
+    <div 
+      ref={modalRef}
+      data-lenis-prevent="true"
+      data-lenis-prevent-wheel="true"
+      data-lenis-prevent-touch="true"
+      onClick={handleClose}
+      className="fixed inset-0 z-[60] overflow-y-auto overscroll-contain bg-black/65 dark:bg-[#050B17]/85 backdrop-blur-md"
+      style={{
+        WebkitOverflowScrolling: 'touch',
+        touchAction: 'pan-y',
+      }}
+    >
+      <div className="flex min-h-full items-center justify-center p-3 sm:p-6 md:p-8 text-center">
+        <motion.div
+          data-lenis-prevent="true"
+          data-lenis-prevent-wheel="true"
+          data-lenis-prevent-touch="true"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          onClick={(e) => e.stopPropagation()}
+          className="relative max-w-xl w-full rounded-2xl sm:rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0A1120] p-5 sm:p-8 shadow-2xl text-left text-slate-900 dark:text-white my-auto"
+        >
         <button
           onClick={handleClose}
           aria-label="Close modal"
@@ -402,7 +468,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, def
               </div>
             </div>
 
-            <div className="mt-6 flex items-center justify-end gap-3 pt-4 border-t border-slate-200 dark:border-white/10">
+            <div className="mt-6 flex items-center justify-end gap-3 pt-4 pb-4 border-t border-slate-200 dark:border-white/10">
               <button
                 type="button"
                 onClick={handleClose}
@@ -413,7 +479,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, def
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-2.5 text-xs sm:text-sm font-bold text-white bg-[#0070BA] hover:bg-[#005EA6] active:bg-[#004C87] shadow-md hover:shadow-lg transition-all cursor-pointer disabled:opacity-50"
+                className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-xs sm:text-sm font-bold text-white bg-[#0070BA] hover:bg-[#005EA6] active:bg-[#004C87] shadow-md hover:shadow-lg transition-all cursor-pointer disabled:opacity-50"
               >
                 {isSubmitting ? (
                   <>
@@ -431,7 +497,8 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, def
           </form>
         )}
 
-      </motion.div>
+        </motion.div>
+      </div>
     </div>
   );
 };
