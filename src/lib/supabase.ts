@@ -23,6 +23,7 @@ import {
   sanitizePhoneInput,
   parsePhoneAndCountryCode 
 } from './validation';
+import { saveUploadedResume, getStoredResume } from './resumeVault';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -667,6 +668,7 @@ export async function submitJobApplication(
       return { success: true };
     } else {
       const current = getLocalStore<JobApplicationSubmission>(LOCAL_APPLICATIONS_KEY, []);
+      const generatedId = `app-${Date.now()}`;
       const newRecord: JobApplicationSubmission = {
         ...application,
         full_name: cleanName,
@@ -674,11 +676,19 @@ export async function submitJobApplication(
         phone: cleanPhone,
         position: cleanPosition,
         experience: cleanExperience,
-        id: `app-${Date.now()}`,
+        id: generatedId,
         resume_storage_path: resumeFile ? `career-resumes/${resumeFile.name}` : 'career-resumes/candidate_resume.pdf',
         status: 'PENDING',
         created_at: new Date().toISOString(),
       };
+      if (resumeFile) {
+        try {
+          await saveUploadedResume(generatedId, resumeFile, newRecord.resume_storage_path);
+        } catch (e) {
+          console.warn('Could not cache file locally:', e);
+        }
+      }
+
       setLocalStore(LOCAL_APPLICATIONS_KEY, [newRecord, ...current]);
 
       pushNotification({
@@ -979,8 +989,12 @@ export async function getSignedResumeUrl(resumeStoragePath: string): Promise<{ u
       if (error) throw error;
       return { url: data.signedUrl };
     }
-    // Fallback simulated signed preview link
-    return { url: `https://knooviq.com/secure-vault/${resumeStoragePath}?token=simulated_jwt_temp_signature_${Date.now()}` };
+    // Check local encrypted IndexedDB vault
+    const local = await getStoredResume(resumeStoragePath);
+    if (local && local.blob) {
+      return { url: URL.createObjectURL(local.blob) };
+    }
+    return { url: null, error: 'File available for direct download in Admin Panel.' };
   } catch (err: unknown) {
     const errorMsg = err instanceof Error ? err.message : 'Unable to generate signed resume URL';
     return { url: null, error: errorMsg };

@@ -1,69 +1,133 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ShieldCheck, 
   Inbox, 
-  Mail, 
-  Eye, 
-  Phone, 
-  CheckCircle2, 
+  Mail,
+  Eye,
+  Phone,
+  CheckCircle2,
+  Copy,
+  Check,
   Search, 
   Filter, 
   Download, 
+  RefreshCw, 
+  Clock, 
+  FileText, 
   ExternalLink,
   ChevronDown,
+  Database,
+  UserCheck,
+  AlertCircle,
+  Edit3,
   Trash2,
   X,
-  Copy,
-  MessageCircle,
-  LogOut,
+  Building2,
   MapPin,
+  GraduationCap,
+  Calendar,
+  Globe,
   Briefcase,
-  FileText,
-  Clock,
-  Edit3,
-  Check
+  Users,
+  LogOut,
+  Send,
+  MessageCircle,
+  Activity
 } from 'lucide-react';
 import { 
   AdminProfile,
   ClientInquiry,
-  JobApplicationSubmission, 
-  AdminNotification,
+  InquiryFormType,
   InquiryStatus,
+  JobApplicationSubmission, 
+  AdminNotification, 
+  ActivityLog, 
+  DashboardStats,
+  AdminRole
 } from '../types';
 import { 
   getAdminSession, 
   adminLogout, 
   fetchClientInquiries,
   fetchJobApplications, 
+  fetchAdminNotifications, 
+  markNotificationRead, 
+  fetchActivityLogs, 
   updateClientInquiryStatus,
   deleteClientInquiry,
   updateJobApplicationStatus, 
   deleteRecord,
   getSignedResumeUrl, 
+  getDashboardStats, 
+  getSupabaseStatus,
+  fetchAdminProfiles,
+  updateAdminProfileRole
 } from '../lib/supabase';
+import { 
+  downloadExactCandidateFile 
+} from '../lib/resumeVault';
 
-// Unified format for submissions table matching the user's dashboard structure
-interface UnifiedSubmission {
+// Helper to resolve Country Name from country code or location
+function resolveCountry(countryCode?: string, location?: string): string {
+  if (countryCode) {
+    const clean = countryCode.trim();
+    if (clean === '+91') return 'India';
+    if (clean === '+1') return 'United States';
+    if (clean === '+44') return 'United Kingdom';
+    if (clean === '+31') return 'Netherlands';
+    if (clean === '+49') return 'Germany';
+    if (clean === '+971') return 'UAE';
+    if (clean === '+65') return 'Singapore';
+    if (clean === '+61') return 'Australia';
+    if (clean === '+33') return 'France';
+    if (clean === '+81') return 'Japan';
+  }
+  if (location) {
+    const locLower = location.toLowerCase();
+    if (locLower.includes('india') || locLower.includes('mumbai') || locLower.includes('bengaluru') || locLower.includes('pune') || locLower.includes('delhi')) {
+      return 'India';
+    }
+    if (locLower.includes('usa') || locLower.includes('united states') || locLower.includes('us')) return 'United States';
+    if (locLower.includes('uk') || locLower.includes('london')) return 'United Kingdom';
+    if (locLower.includes('netherlands') || locLower.includes('amsterdam')) return 'Netherlands';
+    return location.split(',').pop()?.trim() || 'India';
+  }
+  return 'India';
+}
+
+// Normalized status type for filtering
+type NormalizedStatus = 'ALL' | 'NEW' | 'REVIEWED' | 'CONTACTED' | 'RESOLVED' | 'REJECTED';
+
+// Form Filter Pill Type
+type FormCategoryPill = 'ALL' | 'CAREERS' | 'ENTERPRISE' | 'EXECUTIVE';
+
+// Unified item structure for the table
+interface UnifiedSubmissionItem {
   id: string;
   sourceForm: 'Enterprise Consultation' | 'Career Application' | 'Executive Inquiry';
-  fullName: string;
+  avatarInitial: string;
+  applicantOrCompany: string;
+  contactPerson: string;
   companyName?: string | null;
   email: string;
+  phone: string;
   countryCode: string;
-  phoneNumber: string;
-  typeOrPosition: string;
   country: string;
-  status: 'New' | 'Reviewed' | 'Contacted' | 'Hired / Partnered' | 'Rejected';
+  typeOrPosition: string;
+  requirementDetails?: string | null;
+  experience?: string;
+  education?: string;
+  location?: string;
+  resumeStoragePath?: string;
+  linkedinUrl?: string;
+  coverLetter?: string;
+  status: 'New' | 'Reviewed' | 'Contacted' | 'Hired' | 'Rejected';
+  normalizedStatus: NormalizedStatus;
   rawStatus: string;
-  createdDate: Date;
-  dateFormatted: { dayMonth: string; year: string };
-  details?: string | null;
-  resumeStoragePath?: string | null;
-  linkedinUrl?: string | null;
+  createdAt: string;
   internalNotes?: string | null;
-  experience?: string | null;
-  education?: string | null;
   rawRecord: ClientInquiry | JobApplicationSubmission;
 }
 
@@ -71,21 +135,30 @@ export const AdminDashboardPage: React.FC = () => {
   const navigate = useNavigate();
   const [admin, setAdmin] = useState<AdminProfile | null>(null);
 
-  // Raw data from DB
+  // System view drawer / modal
+  const [systemView, setSystemView] = useState<'submissions' | 'security' | 'audit' | 'team'>('submissions');
+
+  // Table records from Supabase / store
   const [clientInquiries, setClientInquiries] = useState<ClientInquiry[]>([]);
   const [applications, setApplications] = useState<JobApplicationSubmission[]>([]);
+  const [notifications, setNotifications] = useState<AdminNotification[]>([]);
+  const [activityLogs, setActivityLogs] = useState<ActivityLog[]>([]);
+  const [adminTeam, setAdminTeam] = useState<AdminProfile[]>([]);
+
+  // Filtering states
+  const [activeFormPill, setActiveFormPill] = useState<FormCategoryPill>('ALL');
+  const [activeStatusCard, setActiveStatusCard] = useState<NormalizedStatus>('ALL');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [countryFilter, setCountryFilter] = useState('ALL');
+  const [positionFilter, setPositionFilter] = useState('ALL');
+  const [statusDropdown, setStatusDropdown] = useState('ALL');
+
+  // UI state
   const [loading, setLoading] = useState(false);
+  const [copyFeedback, setCopyFeedback] = useState(false);
 
-  // Filter States
-  const [activeStatCard, setActiveStatCard] = useState<'TOTAL' | 'NEW' | 'REVIEWED' | 'CONTACTED' | 'HIRED'>('TOTAL');
-  const [activeFormPill, setActiveFormPill] = useState<'ALL' | 'CAREER' | 'B2B'>('ALL');
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCountry, setSelectedCountry] = useState('ALL');
-  const [selectedPosition, setSelectedPosition] = useState('ALL');
-  const [selectedStatus, setSelectedStatus] = useState('ALL');
-
-  // Modals & Feedback
-  const [detailsModalItem, setDetailsModalItem] = useState<UnifiedSubmission | null>(null);
+  // Modals
+  const [detailsModal, setDetailsModal] = useState<UnifiedSubmissionItem | null>(null);
   const [resumeModal, setResumeModal] = useState<{
     isOpen: boolean;
     candidateName: string;
@@ -98,11 +171,21 @@ export const AdminDashboardPage: React.FC = () => {
     loading: false,
   });
 
-  const [toastMessage, setToastMessage] = useState<string | null>(null);
-  const [internalNoteText, setInternalNoteText] = useState('');
-  const [isEditingNote, setIsEditingNote] = useState(false);
+  const [noteModal, setNoteModal] = useState<{
+    isOpen: boolean;
+    id: string;
+    type: 'client_inquiry' | 'career';
+    currentNote: string;
+    targetName?: string;
+  }>({
+    isOpen: false,
+    id: '',
+    type: 'client_inquiry',
+    currentNote: '',
+    targetName: '',
+  });
 
-  // Check auth session
+  // Verify auth session
   useEffect(() => {
     const currentSession = getAdminSession();
     if (!currentSession) {
@@ -112,15 +195,28 @@ export const AdminDashboardPage: React.FC = () => {
     }
   }, [navigate]);
 
-  // Load telemetry and records
+  // Load all telemetry
   const loadAllData = async () => {
     setLoading(true);
-    const [clientInqData, appData] = await Promise.all([
+    const [
+      clientInqData,
+      appData,
+      notifData,
+      logsData,
+      teamData
+    ] = await Promise.all([
       fetchClientInquiries(),
       fetchJobApplications(),
+      fetchAdminNotifications(),
+      fetchActivityLogs(),
+      fetchAdminProfiles()
     ]);
+
     setClientInquiries(clientInqData);
     setApplications(appData);
+    setNotifications(notifData);
+    setActivityLogs(logsData);
+    setAdminTeam(teamData);
     setLoading(false);
   };
 
@@ -130,1071 +226,1163 @@ export const AdminDashboardPage: React.FC = () => {
     }
   }, [admin]);
 
-  const showToast = (msg: string) => {
-    setToastMessage(msg);
-    setTimeout(() => {
-      setToastMessage(null);
-    }, 3000);
-  };
-
   const handleSignOut = () => {
     adminLogout();
     navigate('/admin/login');
   };
 
-  // Convert raw status string to normalized 5 dashboard statuses
-  const normalizeStatus = (raw: string): 'New' | 'Reviewed' | 'Contacted' | 'Hired / Partnered' | 'Rejected' => {
-    const upper = (raw || '').toUpperCase();
-    if (upper === 'NEW' || upper === 'PENDING') return 'New';
-    if (upper === 'REVIEWED' || upper === 'IN_REVIEW' || upper === 'IN REVIEW') return 'Reviewed';
-    if (upper === 'CONTACTED' || upper === 'INTERVIEW_SCHEDULED') return 'Contacted';
-    if (upper === 'HIRED' || upper === 'RESOLVED' || upper === 'OFFERED' || upper === 'PARTNERED') return 'Hired / Partnered';
-    if (upper === 'REJECTED' || upper === 'ARCHIVED') return 'Rejected';
-    return 'New';
+  // Copy Link Helper
+  const handleCopyLink = () => {
+    const link = `${window.location.origin}/connect`;
+    navigator.clipboard.writeText(link);
+    setCopyFeedback(true);
+    setTimeout(() => setCopyFeedback(false), 2000);
   };
 
-  // Helper to deduce country name
-  const deduceCountry = (countryCode?: string, location?: string): string => {
-    if (location && location.trim().length > 0) {
-      if (location.toLowerCase().includes('india')) return 'India';
-      if (location.toLowerCase().includes('netherlands')) return 'Netherlands';
-      if (location.toLowerCase().includes('usa') || location.toLowerCase().includes('united states')) return 'United States';
-      if (location.toLowerCase().includes('uk') || location.toLowerCase().includes('united kingdom')) return 'United Kingdom';
-      if (location.toLowerCase().includes('germany')) return 'Germany';
-      if (location.toLowerCase().includes('uae') || location.toLowerCase().includes('dubai')) return 'UAE';
-      return location.split(',').pop()?.trim() || location;
-    }
-    if (!countryCode) return 'India';
-    if (countryCode === '+91') return 'India';
-    if (countryCode === '+1') return 'United States';
-    if (countryCode === '+44') return 'United Kingdom';
-    if (countryCode === '+31') return 'Netherlands';
-    if (countryCode === '+49') return 'Germany';
-    if (countryCode === '+971') return 'UAE';
-    if (countryCode === '+65') return 'Singapore';
-    return 'India';
+  // Open WhatsApp Link
+  const handleWhatsAppLink = () => {
+    window.open('https://wa.me/918369225602?text=Hello%20Knooviq%20Industries%2C%20I%20would%20like%20to%20inquire%20about%20enterprise%20services.', '_blank');
   };
 
-  // Transform all records into unified list matching user screenshot
-  const unifiedSubmissions: UnifiedSubmission[] = useMemo(() => {
-    const list: UnifiedSubmission[] = [];
+  // Convert raw records into unified table items
+  const unifiedItems: UnifiedSubmissionItem[] = useMemo(() => {
+    const items: UnifiedSubmissionItem[] = [];
 
-    // 1. Enterprise Consultations (Form 1)
-    clientInquiries
-      .filter(i => i.form_type === 'Enterprise Consultation')
-      .forEach(inq => {
-        const d = inq.created_at ? new Date(inq.created_at) : new Date();
-        const dayMonth = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-        const year = String(d.getFullYear());
+    // Form 1: Enterprise Consultation & Form 3: Executive Inquiry
+    clientInquiries.forEach((inq) => {
+      const isExec = inq.form_type === 'Executive Inquiry';
+      const rawSt = (inq.status || 'Pending').toLowerCase();
+      let normalizedStatus: NormalizedStatus = 'NEW';
+      let displayStatus: 'New' | 'Reviewed' | 'Contacted' | 'Hired' | 'Rejected' = 'New';
 
-        list.push({
-          id: inq.id,
-          sourceForm: 'Enterprise Consultation',
-          fullName: inq.full_name,
-          companyName: inq.company_name,
-          email: inq.email,
-          countryCode: inq.country_code,
-          phoneNumber: inq.phone_number,
-          typeOrPosition: inq.service_requirement || 'SAP Consulting & Outsourcing',
-          country: deduceCountry(inq.country_code),
-          status: normalizeStatus(inq.status),
-          rawStatus: inq.status,
-          createdDate: d,
-          dateFormatted: { dayMonth, year },
-          details: inq.requirement_details,
-          internalNotes: inq.internal_notes,
-          rawRecord: inq,
-        });
+      if (rawSt === 'in review' || rawSt === 'reviewed') {
+        normalizedStatus = 'REVIEWED';
+        displayStatus = 'Reviewed';
+      } else if (rawSt === 'contacted') {
+        normalizedStatus = 'CONTACTED';
+        displayStatus = 'Contacted';
+      } else if (rawSt === 'resolved') {
+        normalizedStatus = 'RESOLVED';
+        displayStatus = 'Hired';
+      } else if (rawSt === 'archived' || rawSt === 'rejected') {
+        normalizedStatus = 'REJECTED';
+        displayStatus = 'Rejected';
+      } else {
+        normalizedStatus = 'NEW';
+        displayStatus = 'New';
+      }
+
+      const country = resolveCountry(inq.country_code);
+      const name = inq.full_name || 'Anonymous User';
+      const initial = (name.trim().charAt(0) || 'K').toUpperCase();
+
+      items.push({
+        id: inq.id,
+        sourceForm: isExec ? 'Executive Inquiry' : 'Enterprise Consultation',
+        avatarInitial: initial,
+        applicantOrCompany: name,
+        contactPerson: name,
+        companyName: inq.company_name,
+        email: inq.email,
+        phone: `${inq.country_code || '+91'} ${inq.phone_number || ''}`,
+        countryCode: inq.country_code || '+91',
+        country,
+        typeOrPosition: isExec ? (inq.enquiry_type || 'Executive Inquiry') : (inq.service_requirement || 'SAP Consulting'),
+        requirementDetails: inq.requirement_details,
+        status: displayStatus,
+        normalizedStatus,
+        rawStatus: inq.status,
+        createdAt: inq.created_at || new Date().toISOString(),
+        internalNotes: inq.internal_notes,
+        rawRecord: inq,
       });
+    });
 
-    // 2. Career Applications (Form 2)
-    applications.forEach(app => {
-      const d = app.created_at ? new Date(app.created_at) : new Date();
-      const dayMonth = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-      const year = String(d.getFullYear());
+    // Form 2: Career Applications
+    applications.forEach((app) => {
+      const rawSt = (app.status || 'PENDING').toUpperCase();
+      let normalizedStatus: NormalizedStatus = 'NEW';
+      let displayStatus: 'New' | 'Reviewed' | 'Contacted' | 'Hired' | 'Rejected' = 'New';
 
-      list.push({
-        id: app.id || `app-${app.email}`,
+      if (rawSt === 'REVIEWED') {
+        normalizedStatus = 'REVIEWED';
+        displayStatus = 'Reviewed';
+      } else if (rawSt === 'INTERVIEW_SCHEDULED') {
+        normalizedStatus = 'CONTACTED';
+        displayStatus = 'Contacted';
+      } else if (rawSt === 'OFFERED') {
+        normalizedStatus = 'RESOLVED';
+        displayStatus = 'Hired';
+      } else if (rawSt === 'REJECTED') {
+        normalizedStatus = 'REJECTED';
+        displayStatus = 'Rejected';
+      } else {
+        normalizedStatus = 'NEW';
+        displayStatus = 'New';
+      }
+
+      const country = resolveCountry(undefined, app.location);
+      const name = app.full_name || 'Candidate';
+      const initial = (name.trim().charAt(0) || 'C').toUpperCase();
+
+      items.push({
+        id: app.id || `app-${Date.now()}`,
         sourceForm: 'Career Application',
-        fullName: app.full_name,
+        avatarInitial: initial,
+        applicantOrCompany: name,
+        contactPerson: name,
+        companyName: null,
         email: app.email,
+        phone: app.phone || 'N/A',
         countryCode: '+91',
-        phoneNumber: app.phone || '',
-        typeOrPosition: app.position || 'SAP Specialist',
-        country: deduceCountry(undefined, app.location),
-        status: normalizeStatus(app.status || 'PENDING'),
-        rawStatus: app.status || 'PENDING',
-        createdDate: d,
-        dateFormatted: { dayMonth, year },
-        details: app.cover_letter || app.cover_note,
-        resumeStoragePath: app.resume_storage_path,
-        linkedinUrl: app.portfolio_linkedin,
-        internalNotes: app.internal_notes,
+        country,
+        typeOrPosition: app.position || 'Enterprise Specialist',
+        requirementDetails: null,
         experience: app.experience,
         education: app.education,
+        location: app.location,
+        resumeStoragePath: app.resume_storage_path,
+        linkedinUrl: app.portfolio_linkedin,
+        coverLetter: app.cover_letter || app.cover_note,
+        status: displayStatus,
+        normalizedStatus,
+        rawStatus: app.status || 'PENDING',
+        createdAt: app.created_at || new Date().toISOString(),
+        internalNotes: app.internal_notes,
         rawRecord: app,
       });
     });
 
-    // 3. Executive Inquiries (Form 3)
-    clientInquiries
-      .filter(i => i.form_type === 'Executive Inquiry')
-      .forEach(inq => {
-        const d = inq.created_at ? new Date(inq.created_at) : new Date();
-        const dayMonth = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-        const year = String(d.getFullYear());
-
-        list.push({
-          id: inq.id,
-          sourceForm: 'Executive Inquiry',
-          fullName: inq.full_name,
-          companyName: inq.company_name,
-          email: inq.email,
-          countryCode: inq.country_code,
-          phoneNumber: inq.phone_number,
-          typeOrPosition: inq.enquiry_type || 'Business Enquiry',
-          country: deduceCountry(inq.country_code),
-          status: normalizeStatus(inq.status),
-          rawStatus: inq.status,
-          createdDate: d,
-          dateFormatted: { dayMonth, year },
-          details: inq.requirement_details,
-          internalNotes: inq.internal_notes,
-          rawRecord: inq,
-        });
-      });
-
-    // Sort newest first
-    list.sort((a, b) => b.createdDate.getTime() - a.createdDate.getTime());
-    return list;
+    // Sort descending by date
+    items.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+    return items;
   }, [clientInquiries, applications]);
 
-  // Overall Counts for 5 Stat Cards
-  const totalCount = unifiedSubmissions.length;
-  const newCount = unifiedSubmissions.filter(s => s.status === 'New').length;
-  const reviewedCount = unifiedSubmissions.filter(s => s.status === 'Reviewed').length;
-  const contactedCount = unifiedSubmissions.filter(s => s.status === 'Contacted').length;
-  const hiredCount = unifiedSubmissions.filter(s => s.status === 'Hired / Partnered').length;
+  // Aggregate KPI Counts for the 5 Top Cards
+  const kpiCounts = useMemo(() => {
+    const total = unifiedItems.length;
+    const newCount = unifiedItems.filter(i => i.normalizedStatus === 'NEW').length;
+    const reviewedCount = unifiedItems.filter(i => i.normalizedStatus === 'REVIEWED').length;
+    const contactedCount = unifiedItems.filter(i => i.normalizedStatus === 'CONTACTED').length;
+    const hiredCount = unifiedItems.filter(i => i.normalizedStatus === 'RESOLVED').length;
+    return { total, newCount, reviewedCount, contactedCount, hiredCount };
+  }, [unifiedItems]);
 
-  // Counts for Form Tabs (Candidates vs B2B Partnerships / Inquiries)
-  const candidateCount = unifiedSubmissions.filter(s => s.sourceForm === 'Career Application').length;
-  const b2bCount = unifiedSubmissions.filter(s => s.sourceForm === 'Enterprise Consultation' || s.sourceForm === 'Executive Inquiry').length;
+  // Form Category Counts
+  const formCounts = useMemo(() => {
+    const careers = unifiedItems.filter(i => i.sourceForm === 'Career Application').length;
+    const enterprise = unifiedItems.filter(i => i.sourceForm === 'Enterprise Consultation').length;
+    const executive = unifiedItems.filter(i => i.sourceForm === 'Executive Inquiry').length;
+    return { careers, enterprise, executive };
+  }, [unifiedItems]);
 
-  // Distinct Lists for Dropdown Filters
-  const distinctCountries = useMemo(() => {
+  // Unique Countries for Filter Dropdown
+  const uniqueCountries = useMemo(() => {
     const set = new Set<string>();
-    unifiedSubmissions.forEach(s => { if (s.country) set.add(s.country); });
+    unifiedItems.forEach(i => {
+      if (i.country) set.add(i.country);
+    });
     return Array.from(set).sort();
-  }, [unifiedSubmissions]);
+  }, [unifiedItems]);
 
-  const distinctPositions = useMemo(() => {
+  // Unique Positions / Services for Filter Dropdown
+  const uniquePositions = useMemo(() => {
     const set = new Set<string>();
-    unifiedSubmissions.forEach(s => { if (s.typeOrPosition) set.add(s.typeOrPosition); });
+    unifiedItems.forEach(i => {
+      if (i.typeOrPosition) set.add(i.typeOrPosition);
+    });
     return Array.from(set).sort();
-  }, [unifiedSubmissions]);
+  }, [unifiedItems]);
 
-  // Filtered List for Table
+  // Filtered Submissions based on all active controls
   const filteredSubmissions = useMemo(() => {
-    return unifiedSubmissions.filter(item => {
-      // 1. Stat Card Filter (if user clicked a top card)
-      if (activeStatCard === 'NEW' && item.status !== 'New') return false;
-      if (activeStatCard === 'REVIEWED' && item.status !== 'Reviewed') return false;
-      if (activeStatCard === 'CONTACTED' && item.status !== 'Contacted') return false;
-      if (activeStatCard === 'HIRED' && item.status !== 'Hired / Partnered') return false;
+    return unifiedItems.filter((item) => {
+      // 1. Form Pill Filter
+      if (activeFormPill === 'CAREERS' && item.sourceForm !== 'Career Application') return false;
+      if (activeFormPill === 'ENTERPRISE' && item.sourceForm !== 'Enterprise Consultation') return false;
+      if (activeFormPill === 'EXECUTIVE' && item.sourceForm !== 'Executive Inquiry') return false;
 
-      // 2. Form Pill Filter
-      if (activeFormPill === 'CAREER' && item.sourceForm !== 'Career Application') return false;
-      if (activeFormPill === 'B2B' && (item.sourceForm !== 'Enterprise Consultation' && item.sourceForm !== 'Executive Inquiry')) return false;
+      // 2. Status Card / Status Filter
+      if (activeStatusCard !== 'ALL' && item.normalizedStatus !== activeStatusCard) return false;
+      if (statusDropdown !== 'ALL' && item.normalizedStatus !== statusDropdown) return false;
 
-      // 3. Search query
-      if (searchQuery.trim().length > 0) {
-        const q = searchQuery.toLowerCase();
-        const matchesName = item.fullName.toLowerCase().includes(q);
-        const matchesEmail = item.email.toLowerCase().includes(q);
-        const matchesPhone = item.phoneNumber.includes(q) || item.countryCode.includes(q);
-        const matchesType = item.typeOrPosition.toLowerCase().includes(q);
-        const matchesCompany = (item.companyName || '').toLowerCase().includes(q);
-        const matchesDetails = (item.details || '').toLowerCase().includes(q);
-        const matchesCountry = item.country.toLowerCase().includes(q);
+      // 3. Country Filter
+      if (countryFilter !== 'ALL' && item.country !== countryFilter) return false;
 
-        if (!matchesName && !matchesEmail && !matchesPhone && !matchesType && !matchesCompany && !matchesDetails && !matchesCountry) {
-          return false;
-        }
-      }
+      // 4. Position Filter
+      if (positionFilter !== 'ALL' && item.typeOrPosition !== positionFilter) return false;
 
-      // 4. Country Filter
-      if (selectedCountry !== 'ALL' && item.country !== selectedCountry) {
-        return false;
-      }
-
-      // 5. Position Filter
-      if (selectedPosition !== 'ALL' && item.typeOrPosition !== selectedPosition) {
-        return false;
-      }
-
-      // 6. Status Filter Dropdown
-      if (selectedStatus !== 'ALL' && item.status !== selectedStatus) {
-        return false;
+      // 5. Search Term
+      if (searchTerm.trim()) {
+        const q = searchTerm.toLowerCase();
+        const matches = 
+          item.applicantOrCompany.toLowerCase().includes(q) ||
+          item.email.toLowerCase().includes(q) ||
+          item.phone.toLowerCase().includes(q) ||
+          (item.companyName || '').toLowerCase().includes(q) ||
+          item.typeOrPosition.toLowerCase().includes(q) ||
+          item.country.toLowerCase().includes(q) ||
+          (item.requirementDetails || '').toLowerCase().includes(q) ||
+          (item.coverLetter || '').toLowerCase().includes(q);
+        if (!matches) return false;
       }
 
       return true;
     });
-  }, [unifiedSubmissions, activeStatCard, activeFormPill, searchQuery, selectedCountry, selectedPosition, selectedStatus]);
+  }, [
+    unifiedItems, 
+    activeFormPill, 
+    activeStatusCard, 
+    statusDropdown, 
+    countryFilter, 
+    positionFilter, 
+    searchTerm
+  ]);
 
-  // Actions
-  const handleCopyLink = () => {
-    const url = `${window.location.origin}/about/connect`;
-    navigator.clipboard.writeText(url);
-    showToast('Form link copied to clipboard!');
-  };
+  // Status Change Handler with full normalization & database sync
+  const handleUpdateStatus = async (item: UnifiedSubmissionItem, selectedStatus: string) => {
+    let dbStatus = selectedStatus;
+    let normalized: NormalizedStatus = 'NEW';
+    let displayStatus: 'New' | 'Reviewed' | 'Contacted' | 'Hired' | 'Rejected' = 'New';
 
-  const handleOpenWhatsApp = () => {
-    window.open('https://wa.me/919820145678?text=Hello%20Knooviq%20Industries%20Executive%20Desk', '_blank');
-  };
-
-  const handleViewForm = () => {
-    window.open('/about/connect', '_blank');
-  };
-
-  const handleViewResume = async (item: UnifiedSubmission) => {
-    if (!item.resumeStoragePath) {
-      alert('No resume attached for this candidate.');
-      return;
+    if (selectedStatus === 'New' || selectedStatus === 'New / Unread' || selectedStatus === 'Pending') {
+      dbStatus = item.sourceForm === 'Career Application' ? 'PENDING' : 'Pending';
+      normalized = 'NEW';
+      displayStatus = 'New';
+    } else if (selectedStatus === 'Reviewed' || selectedStatus === 'In Review') {
+      dbStatus = item.sourceForm === 'Career Application' ? 'REVIEWED' : 'In Review';
+      normalized = 'REVIEWED';
+      displayStatus = 'Reviewed';
+    } else if (selectedStatus === 'Contacted') {
+      dbStatus = item.sourceForm === 'Career Application' ? 'INTERVIEW_SCHEDULED' : 'Contacted';
+      normalized = 'CONTACTED';
+      displayStatus = 'Contacted';
+    } else if (selectedStatus === 'Hired' || selectedStatus === 'Hired / Partnered' || selectedStatus === 'Resolved') {
+      dbStatus = item.sourceForm === 'Career Application' ? 'OFFERED' : 'Resolved';
+      normalized = 'RESOLVED';
+      displayStatus = 'Hired';
+    } else if (selectedStatus === 'Rejected' || selectedStatus === 'Archived') {
+      dbStatus = item.sourceForm === 'Career Application' ? 'REJECTED' : 'Archived';
+      normalized = 'REJECTED';
+      displayStatus = 'Rejected';
     }
-    setResumeModal({
-      isOpen: true,
-      candidateName: item.fullName,
-      signedUrl: null,
-      loading: true,
-    });
-    const res = await getSignedResumeUrl(item.resumeStoragePath);
-    setResumeModal({
-      isOpen: true,
-      candidateName: item.fullName,
-      signedUrl: res.url,
-      loading: false,
-    });
+
+    if (item.sourceForm === 'Career Application') {
+      await updateJobApplicationStatus(item.id, dbStatus as any);
+      setApplications(prev => prev.map(a => a.id === item.id ? { ...a, status: dbStatus as any } : a));
+    } else {
+      await updateClientInquiryStatus(item.id, dbStatus as any);
+      setClientInquiries(prev => prev.map(c => c.id === item.id ? { ...c, status: dbStatus as any } : c));
+    }
+
+    if (detailsModal?.id === item.id) {
+      setDetailsModal(prev => prev ? { 
+        ...prev, 
+        status: displayStatus, 
+        normalizedStatus: normalized, 
+        rawStatus: dbStatus 
+      } : null);
+    }
+    loadAllData();
   };
 
-  const handleDeleteItem = async (item: UnifiedSubmission) => {
+  // Delete Handler
+  const handleDeleteItem = async (item: UnifiedSubmissionItem) => {
     if (admin?.role !== 'super_admin') {
-      alert('Only Super Administrators can delete submission records.');
+      alert('Only Super Administrators have permissions to delete records.');
       return;
     }
-    if (window.confirm(`Are you sure you want to delete the submission from "${item.fullName}"?`)) {
+    if (window.confirm(`Are you sure you want to permanently delete submission from ${item.applicantOrCompany}?`)) {
       if (item.sourceForm === 'Career Application') {
         await deleteRecord('career_applications', item.id);
       } else {
         await deleteClientInquiry(item.id);
       }
-      if (detailsModalItem?.id === item.id) {
-        setDetailsModalItem(null);
+      if (detailsModal?.id === item.id) {
+        setDetailsModal(null);
       }
-      showToast('Record deleted successfully.');
       loadAllData();
     }
   };
 
-  const handleUpdateStatus = async (item: UnifiedSubmission, newStatus: string) => {
-    if (item.sourceForm === 'Career Application') {
-      let careerStatus: JobApplicationSubmission['status'] = 'PENDING';
-      if (newStatus === 'New') careerStatus = 'PENDING';
-      else if (newStatus === 'Reviewed') careerStatus = 'REVIEWED';
-      else if (newStatus === 'Contacted') careerStatus = 'INTERVIEW_SCHEDULED';
-      else if (newStatus === 'Hired / Partnered') careerStatus = 'OFFERED';
-      else if (newStatus === 'Rejected') careerStatus = 'REJECTED';
-      
-      await updateJobApplicationStatus(item.id, careerStatus);
-    } else {
-      let inqStatus: InquiryStatus = 'Pending';
-      if (newStatus === 'New') inqStatus = 'Pending';
-      else if (newStatus === 'Reviewed') inqStatus = 'In Review';
-      else if (newStatus === 'Contacted') inqStatus = 'Contacted';
-      else if (newStatus === 'Hired / Partnered') inqStatus = 'Resolved';
-      else if (newStatus === 'Rejected') inqStatus = 'Archived';
+  // Direct File Download to PC's Downloads Folder (Exclusively for Candidates / Job Seekers)
+  const handleDownloadAction = async (item: UnifiedSubmissionItem) => {
+    if (item.sourceForm !== 'Career Application') return;
 
-      await updateClientInquiryStatus(item.id, inqStatus);
-    }
-
-    // Update in local state
-    loadAllData();
-    if (detailsModalItem && detailsModalItem.id === item.id) {
-      setDetailsModalItem(prev => prev ? { ...prev, status: newStatus as any } : null);
-    }
-    showToast(`Status updated to "${newStatus}"`);
+    // Downloads the EXACT candidate resume file (PDF/DOCX) directly to PC Downloads folder
+    await downloadExactCandidateFile({
+      id: item.id,
+      fullName: item.applicantOrCompany,
+      email: item.email,
+      phone: item.phone,
+      location: item.location || item.country,
+      position: item.typeOrPosition,
+      experienceLevel: item.experience || 'Experienced',
+      totalExperience: item.experience,
+      education: item.education,
+      portfolioLinkedin: item.linkedinUrl,
+      coverLetter: item.coverLetter,
+      resumeStoragePath: item.resumeStoragePath,
+      submissionId: item.id,
+      date: item.createdAt,
+    });
   };
 
-  const handleSaveInternalNote = async () => {
-    if (!detailsModalItem) return;
-    if (detailsModalItem.sourceForm === 'Career Application') {
-      const app = applications.find(a => a.id === detailsModalItem.id);
-      await updateJobApplicationStatus(detailsModalItem.id, app?.status || 'PENDING', internalNoteText);
-    } else {
-      const inq = clientInquiries.find(i => i.id === detailsModalItem.id);
-      await updateClientInquiryStatus(detailsModalItem.id, inq?.status || 'Pending', internalNoteText);
+  // Save Note Handler
+  const handleSaveNote = async () => {
+    if (noteModal.type === 'client_inquiry') {
+      const inq = clientInquiries.find(i => i.id === noteModal.id);
+      if (inq) await updateClientInquiryStatus(noteModal.id, inq.status, noteModal.currentNote);
+    } else if (noteModal.type === 'career') {
+      const app = applications.find(a => a.id === noteModal.id);
+      if (app) await updateJobApplicationStatus(noteModal.id, app.status, noteModal.currentNote);
     }
-    setDetailsModalItem(prev => prev ? { ...prev, internalNotes: internalNoteText } : null);
-    setIsEditingNote(false);
+    setNoteModal({ isOpen: false, id: '', type: 'client_inquiry', currentNote: '', targetName: '' });
     loadAllData();
-    showToast('Note updated successfully.');
-  };
-
-  // Open modal
-  const openDetailsModal = (item: UnifiedSubmission) => {
-    setDetailsModalItem(item);
-    setInternalNoteText(item.internalNotes || '');
-    setIsEditingNote(false);
   };
 
   if (!admin) return null;
 
   return (
-    <div className="min-h-screen bg-[#F4F6F9] text-slate-800 font-sans flex flex-col antialiased">
+    <div className="min-h-screen bg-[#F4F7FC] text-slate-800 font-sans flex flex-col">
       
-      {/* Toast Alert */}
-      {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-slate-900 text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-2xl border border-white/10 animate-fade-in">
-          <Check className="h-4 w-4 text-emerald-400" />
-          <span>{toastMessage}</span>
-        </div>
-      )}
-
       {/* =========================================================================
-          TOP NAV HEADER (NAVY SLATE WITH ROUNDED CORNERS & CLEAN BUTTONS)
+          TOP NAV HEADER (MATCHING SCREENSHOT WITH KNOOVIQ INTEGRATION)
           ========================================================================= */}
-      <header className="bg-[#0A1226] text-white px-4 sm:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4 shadow-md sticky top-0 z-30">
-        {/* Left Brand / Console Identity */}
-        <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-sky-500 text-white shadow-md">
-            <ShieldCheck className="h-6 w-6" />
+      <header className="bg-[#0B1528] text-white px-4 sm:px-8 py-3.5 shadow-md sticky top-0 z-40">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+          
+          {/* Left Brand & Title */}
+          <div className="flex items-center gap-3">
+            <div className="h-10 w-10 rounded-xl bg-sky-500 flex items-center justify-center text-white shadow-sm shrink-0">
+              <ShieldCheck className="h-6 w-6" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h1 className="font-display font-extrabold text-base sm:text-lg text-white tracking-tight leading-tight">
+                  Admin Dashboard
+                </h1>
+                <span className={`text-[9px] font-mono font-bold uppercase px-2 py-0.5 rounded ${
+                  admin.role === 'super_admin' ? 'bg-purple-500/20 text-purple-300 border border-purple-400/40' : 'bg-cyan-500/20 text-cyan-300 border border-cyan-400/40'
+                }`}>
+                  {admin.role.replace('_', ' ')}
+                </span>
+              </div>
+              <p className="text-[11px] text-slate-400 font-sans">
+                Knooviq Industries — Candidate & Client Inquiries Portal
+              </p>
+            </div>
           </div>
-          <div>
-            <h1 className="font-display text-base sm:text-lg font-bold text-white tracking-tight leading-tight">
-              Admin Dashboard
-            </h1>
-            <p className="text-[11px] sm:text-xs text-slate-400">
-              Dais World Endeavor — Candidate & B2B Portal
-            </p>
+
+          {/* Right Header Action Buttons */}
+          <div className="flex items-center gap-2 sm:gap-2.5 flex-wrap">
+            {/* View Form (/form) */}
+            <button
+              onClick={() => navigate('/connect')}
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-colors shadow-xs"
+              title="Open public contact form"
+            >
+              <span>View Form (/connect)</span>
+            </button>
+
+            {/* Copy Link */}
+            <button
+              onClick={handleCopyLink}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#132238] hover:bg-[#1a2f4c] text-slate-200 border border-slate-700 text-xs font-medium transition-colors"
+              title="Copy portal link"
+            >
+              {copyFeedback ? <Check className="h-3.5 w-3.5 text-emerald-400" /> : <Copy className="h-3.5 w-3.5 text-slate-300" />}
+              <span>{copyFeedback ? 'Copied!' : 'Copy Link'}</span>
+            </button>
+
+            {/* WhatsApp Link */}
+            <button
+              onClick={handleWhatsAppLink}
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold transition-colors shadow-xs"
+              title="Open direct WhatsApp chat"
+            >
+              <MessageCircle className="h-3.5 w-3.5 fill-white" />
+              <span>WhatsApp Link</span>
+            </button>
+
+            {/* Refresh DB */}
+            <button
+              onClick={loadAllData}
+              title="Refresh database records"
+              className="p-1.5 rounded-xl bg-[#132238] hover:bg-[#1a2f4c] text-slate-300 border border-slate-700 transition-colors"
+            >
+              <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
+            </button>
+
+            {/* Logout */}
+            <button
+              onClick={handleSignOut}
+              className="flex items-center gap-1 px-3 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold transition-colors shadow-xs"
+            >
+              <LogOut className="h-3.5 w-3.5" />
+              <span>Logout</span>
+            </button>
           </div>
-        </div>
-
-        {/* Right Header Action Buttons */}
-        <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
-          {/* View Form (/form) */}
-          <button
-            onClick={handleViewForm}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#1E40AF] hover:bg-blue-700 text-white text-xs font-bold transition-all shadow-xs"
-          >
-            <span>View Form (/form)</span>
-          </button>
-
-          {/* Copy Link */}
-          <button
-            onClick={handleCopyLink}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#1E293B] hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold transition-all border border-slate-700"
-          >
-            <Copy className="h-3.5 w-3.5 text-slate-300" />
-            <span>Copy Link</span>
-          </button>
-
-          {/* WhatsApp Link */}
-          <button
-            onClick={handleOpenWhatsApp}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#059669] hover:bg-emerald-600 text-white text-xs font-bold transition-all shadow-xs"
-          >
-            <MessageCircle className="h-3.5 w-3.5" />
-            <span>WhatsApp Link</span>
-          </button>
-
-          {/* Logout */}
-          <button
-            onClick={handleSignOut}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#DC2626] hover:bg-rose-700 text-white text-xs font-bold transition-all shadow-xs"
-          >
-            <LogOut className="h-3.5 w-3.5" />
-            <span>Logout</span>
-          </button>
         </div>
       </header>
 
       {/* =========================================================================
-          MAIN DASHBOARD BODY
+          MAIN BODY CONTAINER
           ========================================================================= */}
-      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-6">
+      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 md:p-8 space-y-6">
 
-        {/* =======================================================================
-            SECTION 1: THE 5 STAT CARDS
-            ======================================================================= */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        {/* =========================================================================
+            ROW 1: THE 5 STATUS KPI CARDS (MATCHING THE SCREENSHOT EXACTLY)
+            ========================================================================= */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4">
           
           {/* Card 1: TOTAL INQUIRIES */}
           <div
-            onClick={() => setActiveStatCard('TOTAL')}
-            className={`rounded-2xl p-5 bg-white shadow-xs cursor-pointer transition-all border ${
-              activeStatCard === 'TOTAL'
-                ? 'border-2 border-blue-500 shadow-md ring-2 ring-blue-500/10'
-                : 'border-slate-200/90 hover:border-blue-300'
+            onClick={() => { setActiveStatusCard('ALL'); setStatusDropdown('ALL'); }}
+            className={`bg-white rounded-2xl p-4 sm:p-5 cursor-pointer transition-all relative select-none ${
+              activeStatusCard === 'ALL'
+                ? 'border-2 border-blue-600 shadow-md ring-2 ring-blue-500/10'
+                : 'border border-slate-200/90 hover:border-blue-400 shadow-xs'
             }`}
           >
-            <div className="flex items-center justify-between mb-3">
-              <div className="h-9 w-9 rounded-xl bg-[#2563EB] text-white flex items-center justify-center shadow-xs">
+            <div className="flex items-start justify-between mb-3">
+              <div className="h-9 w-9 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-xs">
                 <Inbox className="h-5 w-5" />
               </div>
-              {activeStatCard === 'TOTAL' && (
-                <span className="px-2 py-0.5 rounded-full bg-[#1E40AF] text-white font-mono text-[9px] font-bold tracking-wider uppercase">
+              {activeStatusCard === 'ALL' && (
+                <span className="px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-blue-600 text-white">
                   ACTIVE
                 </span>
               )}
             </div>
-            <div className="font-display text-3xl font-extrabold text-slate-900 leading-tight">
-              {totalCount}
+            <div className="font-display text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-none mb-1">
+              {kpiCounts.total}
             </div>
-            <p className="text-[11px] font-bold tracking-wider text-slate-400 uppercase mt-1">
+            <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-400">
               TOTAL INQUIRIES
             </p>
           </div>
 
           {/* Card 2: NEW / UNREAD */}
           <div
-            onClick={() => setActiveStatCard('NEW')}
-            className={`rounded-2xl p-5 bg-white shadow-xs cursor-pointer transition-all border ${
-              activeStatCard === 'NEW'
-                ? 'border-2 border-sky-500 shadow-md ring-2 ring-sky-500/10'
-                : 'border-slate-200/90 hover:border-sky-300'
+            onClick={() => { setActiveStatusCard('NEW'); setStatusDropdown('NEW'); }}
+            className={`bg-white rounded-2xl p-4 sm:p-5 cursor-pointer transition-all relative select-none ${
+              activeStatusCard === 'NEW'
+                ? 'border-2 border-blue-600 shadow-md ring-2 ring-blue-500/10'
+                : 'border border-slate-200/90 hover:border-sky-400 shadow-xs'
             }`}
           >
-            <div className="flex items-center justify-between mb-3">
-              <div className="h-9 w-9 rounded-xl bg-[#0EA5E9] text-white flex items-center justify-center shadow-xs">
+            <div className="flex items-start justify-between mb-3">
+              <div className="h-9 w-9 rounded-xl bg-sky-500 text-white flex items-center justify-center shadow-xs">
                 <Mail className="h-5 w-5" />
               </div>
-              {activeStatCard === 'NEW' && (
-                <span className="px-2 py-0.5 rounded-full bg-[#0284C7] text-white font-mono text-[9px] font-bold tracking-wider uppercase">
+              {activeStatusCard === 'NEW' && (
+                <span className="px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-blue-600 text-white">
                   ACTIVE
                 </span>
               )}
             </div>
-            <div className="font-display text-3xl font-extrabold text-slate-900 leading-tight">
-              {newCount}
+            <div className="font-display text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-none mb-1">
+              {kpiCounts.newCount}
             </div>
-            <p className="text-[11px] font-bold tracking-wider text-slate-400 uppercase mt-1">
+            <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-400">
               NEW / UNREAD
             </p>
           </div>
 
           {/* Card 3: REVIEWED */}
           <div
-            onClick={() => setActiveStatCard('REVIEWED')}
-            className={`rounded-2xl p-5 bg-white shadow-xs cursor-pointer transition-all border ${
-              activeStatCard === 'REVIEWED'
-                ? 'border-2 border-amber-500 shadow-md ring-2 ring-amber-500/10'
-                : 'border-slate-200/90 hover:border-amber-300'
+            onClick={() => { setActiveStatusCard('REVIEWED'); setStatusDropdown('REVIEWED'); }}
+            className={`bg-white rounded-2xl p-4 sm:p-5 cursor-pointer transition-all relative select-none ${
+              activeStatusCard === 'REVIEWED'
+                ? 'border-2 border-blue-600 shadow-md ring-2 ring-blue-500/10'
+                : 'border border-slate-200/90 hover:border-amber-400 shadow-xs'
             }`}
           >
-            <div className="flex items-center justify-between mb-3">
-              <div className="h-9 w-9 rounded-xl bg-[#F59E0B] text-white flex items-center justify-center shadow-xs">
+            <div className="flex items-start justify-between mb-3">
+              <div className="h-9 w-9 rounded-xl bg-amber-500 text-white flex items-center justify-center shadow-xs">
                 <Eye className="h-5 w-5" />
               </div>
-              {activeStatCard === 'REVIEWED' && (
-                <span className="px-2 py-0.5 rounded-full bg-[#D97706] text-white font-mono text-[9px] font-bold tracking-wider uppercase">
+              {activeStatusCard === 'REVIEWED' && (
+                <span className="px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-blue-600 text-white">
                   ACTIVE
                 </span>
               )}
             </div>
-            <div className="font-display text-3xl font-extrabold text-slate-900 leading-tight">
-              {reviewedCount}
+            <div className="font-display text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-none mb-1">
+              {kpiCounts.reviewedCount}
             </div>
-            <p className="text-[11px] font-bold tracking-wider text-slate-400 uppercase mt-1">
+            <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-400">
               REVIEWED
             </p>
           </div>
 
           {/* Card 4: CONTACTED */}
           <div
-            onClick={() => setActiveStatCard('CONTACTED')}
-            className={`rounded-2xl p-5 bg-white shadow-xs cursor-pointer transition-all border ${
-              activeStatCard === 'CONTACTED'
-                ? 'border-2 border-purple-500 shadow-md ring-2 ring-purple-500/10'
-                : 'border-slate-200/90 hover:border-purple-300'
+            onClick={() => { setActiveStatusCard('CONTACTED'); setStatusDropdown('CONTACTED'); }}
+            className={`bg-white rounded-2xl p-4 sm:p-5 cursor-pointer transition-all relative select-none ${
+              activeStatusCard === 'CONTACTED'
+                ? 'border-2 border-blue-600 shadow-md ring-2 ring-blue-500/10'
+                : 'border border-slate-200/90 hover:border-purple-400 shadow-xs'
             }`}
           >
-            <div className="flex items-center justify-between mb-3">
-              <div className="h-9 w-9 rounded-xl bg-[#8B5CF6] text-white flex items-center justify-center shadow-xs">
+            <div className="flex items-start justify-between mb-3">
+              <div className="h-9 w-9 rounded-xl bg-purple-600 text-white flex items-center justify-center shadow-xs">
                 <Phone className="h-5 w-5" />
               </div>
-              {activeStatCard === 'CONTACTED' && (
-                <span className="px-2 py-0.5 rounded-full bg-[#7C3AED] text-white font-mono text-[9px] font-bold tracking-wider uppercase">
+              {activeStatusCard === 'CONTACTED' && (
+                <span className="px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-blue-600 text-white">
                   ACTIVE
                 </span>
               )}
             </div>
-            <div className="font-display text-3xl font-extrabold text-slate-900 leading-tight">
-              {contactedCount}
+            <div className="font-display text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-none mb-1">
+              {kpiCounts.contactedCount}
             </div>
-            <p className="text-[11px] font-bold tracking-wider text-slate-400 uppercase mt-1">
+            <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-400">
               CONTACTED
             </p>
           </div>
 
-          {/* Card 5: HIRED / PARTNERED */}
+          {/* Card 5: HIRED */}
           <div
-            onClick={() => setActiveStatCard('HIRED')}
-            className={`rounded-2xl p-5 bg-white shadow-xs cursor-pointer transition-all border col-span-2 sm:col-span-1 ${
-              activeStatCard === 'HIRED'
-                ? 'border-2 border-emerald-500 shadow-md ring-2 ring-emerald-500/10'
-                : 'border-slate-200/90 hover:border-emerald-300'
+            onClick={() => { setActiveStatusCard('RESOLVED'); setStatusDropdown('RESOLVED'); }}
+            className={`bg-white rounded-2xl p-4 sm:p-5 cursor-pointer transition-all relative select-none col-span-2 sm:col-span-1 ${
+              activeStatusCard === 'RESOLVED'
+                ? 'border-2 border-blue-600 shadow-md ring-2 ring-blue-500/10'
+                : 'border border-slate-200/90 hover:border-emerald-400 shadow-xs'
             }`}
           >
-            <div className="flex items-center justify-between mb-3">
-              <div className="h-9 w-9 rounded-xl bg-[#10B981] text-white flex items-center justify-center shadow-xs">
+            <div className="flex items-start justify-between mb-3">
+              <div className="h-9 w-9 rounded-xl bg-emerald-500 text-white flex items-center justify-center shadow-xs">
                 <CheckCircle2 className="h-5 w-5" />
               </div>
-              {activeStatCard === 'HIRED' && (
-                <span className="px-2 py-0.5 rounded-full bg-[#059669] text-white font-mono text-[9px] font-bold tracking-wider uppercase">
+              {activeStatusCard === 'RESOLVED' && (
+                <span className="px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-blue-600 text-white">
                   ACTIVE
                 </span>
               )}
             </div>
-            <div className="font-display text-3xl font-extrabold text-slate-900 leading-tight">
-              {hiredCount}
+            <div className="font-display text-2xl sm:text-3xl font-black text-slate-900 tracking-tight leading-none mb-1">
+              {kpiCounts.hiredCount}
             </div>
-            <p className="text-[11px] font-bold tracking-wider text-slate-400 uppercase mt-1">
-              HIRED / PARTNERED
+            <p className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-400">
+              HIRED
             </p>
           </div>
 
         </div>
 
-        {/* =======================================================================
-            SECTION 2: SUBMISSIONS PILL TABS
-            ======================================================================= */}
+        {/* =========================================================================
+            ROW 2: CATEGORY / FORM PILLS (EXACT MATCH FOR KNOOVIQ 3 FORMS)
+            ========================================================================= */}
         <div className="flex flex-wrap items-center gap-2.5">
-          {/* All Submissions */}
+          {/* Pill 1: All Submissions */}
           <button
             onClick={() => setActiveFormPill('ALL')}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 ${
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-xs ${
               activeFormPill === 'ALL'
-                ? 'bg-[#2563EB] text-white shadow-sm'
-                : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200/90'
+                ? 'bg-blue-600 text-white'
+                : 'bg-white hover:bg-slate-50 text-slate-700 border border-slate-200'
             }`}
           >
-            <span>All Submissions ({totalCount})</span>
+            All Submissions ({unifiedItems.length})
           </button>
 
-          {/* Candidates / Job Seekers (Form 2) */}
+          {/* Pill 2: Form 2 — Candidates / Job Seekers */}
           <button
-            onClick={() => setActiveFormPill('CAREER')}
+            onClick={() => setActiveFormPill('CAREERS')}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 ${
-              activeFormPill === 'CAREER'
-                ? 'bg-[#2563EB] text-white shadow-sm'
-                : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200/90'
+              activeFormPill === 'CAREERS'
+                ? 'bg-blue-600 text-white'
+                : 'bg-white hover:bg-slate-50 text-slate-700 border border-slate-200'
             }`}
           >
-            <span>🧑‍💼 Candidates / Job Seekers</span>
-            <span className={`px-1.5 py-0.5 rounded-full text-[10px] font-mono font-bold ${
-              activeFormPill === 'CAREER' ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600'
+            <span>🧑‍💼</span>
+            <span>Candidates / Job Seekers</span>
+            <span className={`px-1.5 py-0.2 rounded text-[10px] font-bold ${
+              activeFormPill === 'CAREERS' ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600'
             }`}>
-              {candidateCount}
+              {formCounts.careers}
             </span>
           </button>
 
-          {/* B2B & Housing Partnerships (Form 1 & Form 3) */}
+          {/* Pill 3: Form 1 — Enterprise Consultations */}
           <button
-            onClick={() => setActiveFormPill('B2B')}
+            onClick={() => setActiveFormPill('ENTERPRISE')}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 ${
-              activeFormPill === 'B2B'
-                ? 'bg-[#2563EB] text-white shadow-sm'
-                : 'bg-white text-slate-700 hover:bg-slate-50 border border-slate-200/90'
+              activeFormPill === 'ENTERPRISE'
+                ? 'bg-blue-600 text-white'
+                : 'bg-white hover:bg-slate-50 text-slate-700 border border-slate-200'
             }`}
           >
-            <span>🏢 B2B & Housing Partnerships</span>
-            <span className={`px-1.5 py-0.5 rounded-full text-[10px] font-mono font-bold ${
-              activeFormPill === 'B2B' ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600'
+            <span>🏢</span>
+            <span>Enterprise Consultations</span>
+            <span className={`px-1.5 py-0.2 rounded text-[10px] font-bold ${
+              activeFormPill === 'ENTERPRISE' ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600'
             }`}>
-              {b2bCount}
+              {formCounts.enterprise}
             </span>
           </button>
 
-          {/* Reset Filters Quick Button if active */}
-          {(activeStatCard !== 'TOTAL' || activeFormPill !== 'ALL' || searchQuery || selectedCountry !== 'ALL' || selectedPosition !== 'ALL' || selectedStatus !== 'ALL') && (
+          {/* Pill 4: Form 3 — Executive Inquiries */}
+          <button
+            onClick={() => setActiveFormPill('EXECUTIVE')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 ${
+              activeFormPill === 'EXECUTIVE'
+                ? 'bg-blue-600 text-white'
+                : 'bg-white hover:bg-slate-50 text-slate-700 border border-slate-200'
+            }`}
+          >
+            <span>💼</span>
+            <span>Executive Inquiries</span>
+            <span className={`px-1.5 py-0.2 rounded text-[10px] font-bold ${
+              activeFormPill === 'EXECUTIVE' ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-600'
+            }`}>
+              {formCounts.executive}
+            </span>
+          </button>
+
+          {/* System view toggle (Optional tool) */}
+          <div className="ml-auto flex items-center gap-2">
             <button
-              onClick={() => {
-                setActiveStatCard('TOTAL');
-                setActiveFormPill('ALL');
-                setSearchQuery('');
-                setSelectedCountry('ALL');
-                setSelectedPosition('ALL');
-                setSelectedStatus('ALL');
-              }}
-              className="text-xs text-blue-600 hover:text-blue-800 font-semibold underline px-2 py-1"
+              onClick={() => setSystemView(systemView === 'submissions' ? 'security' : 'submissions')}
+              className="text-xs font-bold text-slate-500 hover:text-blue-600 px-3 py-1.5 rounded-xl border border-slate-200 bg-white"
             >
-              Reset all filters
+              {systemView === 'submissions' ? 'View Database Health' : 'Back to Submissions'}
             </button>
-          )}
+          </div>
         </div>
 
-        {/* =======================================================================
-            SECTION 3: SEARCH BAR AND 3 DROPDOWNS
-            ======================================================================= */}
+        {/* =========================================================================
+            ROW 3: SEARCH & FILTER CONTROLS BAR (EXACT MATCH FOR SCREENSHOT)
+            ========================================================================= */}
         <div className="space-y-2">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
+          <div className="bg-white rounded-2xl border border-slate-200/90 p-2 sm:p-2.5 shadow-xs flex flex-wrap items-center gap-2.5">
             
-            {/* Search Input Box */}
-            <div className="md:col-span-5 relative">
-              <Search className="absolute left-3.5 top-3 h-4 w-4 text-slate-400 pointer-events-none" />
+            {/* Search Input */}
+            <div className="relative flex-1 min-w-[220px] flex items-center pl-3">
+              <Search className="h-4 w-4 text-slate-400 shrink-0 mr-2.5" />
               <input
                 type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Search name, email, phone, details..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white border border-slate-200/90 text-xs sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-blue-500 shadow-xs"
+                className="w-full bg-transparent text-xs sm:text-sm text-slate-800 placeholder-slate-400 outline-none"
               />
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery('')}
-                  className="absolute right-3 top-3 text-slate-400 hover:text-slate-600"
-                >
-                  <X className="h-4 w-4" />
+              {searchTerm && (
+                <button onClick={() => setSearchTerm('')} className="p-1 text-slate-400 hover:text-slate-600 mr-2">
+                  <X className="h-3.5 w-3.5" />
                 </button>
               )}
             </div>
 
-            {/* Dropdown 1: All Countries */}
-            <div className="md:col-span-2.5 relative">
-              <div className="relative">
-                <select
-                  value={selectedCountry}
-                  onChange={(e) => setSelectedCountry(e.target.value)}
-                  className="w-full appearance-none pl-8 pr-8 py-2.5 rounded-xl bg-white border border-slate-200/90 text-xs font-semibold text-slate-700 focus:outline-none focus:border-blue-500 shadow-xs cursor-pointer truncate"
-                >
-                  <option value="ALL">📍 🌍 All Countries ({distinctCountries.length || totalCount})</option>
-                  {distinctCountries.map(c => (
-                    <option key={c} value={c}>{c}</option>
-                  ))}
-                </select>
-                <MapPin className="absolute left-2.5 top-3 h-3.5 w-3.5 text-slate-400 pointer-events-none" />
-                <ChevronDown className="absolute right-2.5 top-3 h-4 w-4 text-slate-400 pointer-events-none" />
-              </div>
+            {/* Country Dropdown */}
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 bg-slate-50/50 text-xs text-slate-700">
+              <Globe className="h-3.5 w-3.5 text-blue-500 shrink-0" />
+              <select
+                value={countryFilter}
+                onChange={(e) => setCountryFilter(e.target.value)}
+                className="bg-transparent font-medium text-xs text-slate-800 outline-none cursor-pointer pr-1"
+              >
+                <option value="ALL">All Countries ({uniqueCountries.length})</option>
+                {uniqueCountries.map((c) => (
+                  <option key={c} value={c}>{c}</option>
+                ))}
+              </select>
             </div>
 
-            {/* Dropdown 2: All Positions */}
-            <div className="md:col-span-2.5 relative">
-              <div className="relative">
-                <select
-                  value={selectedPosition}
-                  onChange={(e) => setSelectedPosition(e.target.value)}
-                  className="w-full appearance-none pl-8 pr-8 py-2.5 rounded-xl bg-white border border-slate-200/90 text-xs font-semibold text-slate-700 focus:outline-none focus:border-blue-500 shadow-xs cursor-pointer truncate"
-                >
-                  <option value="ALL">💼 All Positions ({distinctPositions.length || totalCount})</option>
-                  {distinctPositions.map(pos => (
-                    <option key={pos} value={pos}>{pos}</option>
-                  ))}
-                </select>
-                <Briefcase className="absolute left-2.5 top-3 h-3.5 w-3.5 text-slate-400 pointer-events-none" />
-                <ChevronDown className="absolute right-2.5 top-3 h-4 w-4 text-slate-400 pointer-events-none" />
-              </div>
+            {/* Position / Service Dropdown */}
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 bg-slate-50/50 text-xs text-slate-700">
+              <Briefcase className="h-3.5 w-3.5 text-amber-600 shrink-0" />
+              <select
+                value={positionFilter}
+                onChange={(e) => setPositionFilter(e.target.value)}
+                className="bg-transparent font-medium text-xs text-slate-800 outline-none cursor-pointer pr-1 max-w-[180px] truncate"
+              >
+                <option value="ALL">All Positions ({uniquePositions.length})</option>
+                {uniquePositions.map((p) => (
+                  <option key={p} value={p}>{p}</option>
+                ))}
+              </select>
             </div>
 
-            {/* Dropdown 3: All Status */}
-            <div className="md:col-span-2 relative">
-              <div className="relative">
-                <select
-                  value={selectedStatus}
-                  onChange={(e) => setSelectedStatus(e.target.value)}
-                  className="w-full appearance-none pl-8 pr-8 py-2.5 rounded-xl bg-white border border-slate-200/90 text-xs font-semibold text-slate-700 focus:outline-none focus:border-blue-500 shadow-xs cursor-pointer truncate"
-                >
-                  <option value="ALL">All Status</option>
-                  <option value="New">New</option>
-                  <option value="Reviewed">Reviewed</option>
-                  <option value="Contacted">Contacted</option>
-                  <option value="Hired / Partnered">Hired / Partnered</option>
-                  <option value="Rejected">Rejected</option>
-                </select>
-                <Filter className="absolute left-2.5 top-3 h-3.5 w-3.5 text-slate-400 pointer-events-none" />
-                <ChevronDown className="absolute right-2.5 top-3 h-4 w-4 text-slate-400 pointer-events-none" />
-              </div>
+            {/* Status Dropdown */}
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-slate-200 bg-slate-50/50 text-xs text-slate-700">
+              <Filter className="h-3.5 w-3.5 text-slate-400 shrink-0" />
+              <select
+                value={statusDropdown}
+                onChange={(e) => {
+                  setStatusDropdown(e.target.value as NormalizedStatus);
+                  setActiveStatusCard(e.target.value as NormalizedStatus);
+                }}
+                className="bg-transparent font-medium text-xs text-slate-800 outline-none cursor-pointer pr-1"
+              >
+                <option value="ALL">All Status</option>
+                <option value="NEW">New / Unread</option>
+                <option value="REVIEWED">Reviewed</option>
+                <option value="CONTACTED">Contacted</option>
+                <option value="RESOLVED">Hired</option>
+                <option value="REJECTED">Rejected</option>
+              </select>
             </div>
 
           </div>
 
-          {/* Showing Subtext */}
-          <div className="text-[11px] font-semibold text-slate-400 px-1">
-            Showing {filteredSubmissions.length} of {totalCount} submissions
+          {/* Showing Submissions Counter */}
+          <div className="text-xs text-slate-500 font-medium px-1">
+            Showing <strong className="text-slate-800">{filteredSubmissions.length}</strong> of {unifiedItems.length} submissions
           </div>
         </div>
 
-        {/* =======================================================================
-            SECTION 4: SUBMISSIONS TABLE
-            ======================================================================= */}
-        <div className="bg-white rounded-2xl border border-slate-200/90 shadow-xs overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
-              {/* Table Header */}
-              <thead>
-                <tr className="border-b border-slate-200/90 bg-[#FAFBFD] text-[10px] sm:text-[11px] font-bold text-slate-400 uppercase tracking-wider">
-                  <th className="py-3.5 px-4 sm:px-6">COMPANY / APPLICANT</th>
-                  <th className="py-3.5 px-4 sm:px-6">TYPE / POSITION</th>
-                  <th className="py-3.5 px-4 sm:px-6">COUNTRY</th>
-                  <th className="py-3.5 px-4 sm:px-6">STATUS</th>
-                  <th className="py-3.5 px-4 sm:px-6">DATE</th>
-                  <th className="py-3.5 px-4 sm:px-6 text-center">ACTIONS</th>
-                </tr>
-              </thead>
-
-              {/* Table Body */}
-              <tbody className="divide-y divide-slate-100 text-xs sm:text-sm">
-                {filteredSubmissions.length === 0 ? (
-                  <tr>
-                    <td colSpan={6} className="text-center py-12 text-slate-400">
-                      <div className="max-w-xs mx-auto space-y-2">
-                        <Inbox className="h-8 w-8 text-slate-300 mx-auto" />
-                        <p className="font-bold text-slate-600 text-sm">No Submissions Found</p>
-                        <p className="text-xs text-slate-400">No records match your selected filters. Try adjusting search query or clearing filters.</p>
+        {/* =========================================================================
+            ROW 4: SUBMISSIONS DATA TABLE (EXACT MATCH FOR SCREENSHOT)
+            ========================================================================= */}
+        {systemView === 'submissions' ? (
+          <div className="bg-white rounded-2xl border border-slate-200/90 shadow-xs overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                
+                {/* Table Header Row */}
+                <thead>
+                  <tr className="bg-slate-50/75 border-b border-slate-200/90 text-[11px] font-black text-slate-500 uppercase tracking-wider">
+                    <th className="py-3.5 px-6 font-bold">COMPANY / APPLICANT</th>
+                    <th className="py-3.5 px-6 font-bold">TYPE / POSITION</th>
+                    <th className="py-3.5 px-6 font-bold">COUNTRY</th>
+                    <th className="py-3.5 px-6 font-bold">
+                      <div className="flex items-center gap-2">
+                        <span>STATUS</span>
+                        <select
+                          value={statusDropdown}
+                          onChange={(e) => {
+                            setStatusDropdown(e.target.value as NormalizedStatus);
+                            setActiveStatusCard(e.target.value as NormalizedStatus);
+                          }}
+                          className="bg-white border border-slate-300 rounded-md px-1.5 py-0.5 text-[10px] font-semibold text-slate-700 outline-none cursor-pointer"
+                          title="Filter status"
+                        >
+                          <option value="ALL">All</option>
+                          <option value="NEW">New / Unread</option>
+                          <option value="REVIEWED">Reviewed</option>
+                          <option value="CONTACTED">Contacted</option>
+                          <option value="RESOLVED">Hired</option>
+                          <option value="REJECTED">Rejected</option>
+                        </select>
                       </div>
-                    </td>
+                    </th>
+                    <th className="py-3.5 px-6 font-bold">DATE</th>
+                    <th className="py-3.5 px-6 font-bold text-right">ACTIONS</th>
                   </tr>
-                ) : (
-                  filteredSubmissions.map((sub) => {
-                    // Avatar initial
-                    const initial = (sub.fullName || 'U').trim().charAt(0).toUpperCase();
+                </thead>
 
-                    return (
-                      <tr 
-                        key={`${sub.sourceForm}-${sub.id}`}
-                        className="hover:bg-slate-50/80 transition-colors group"
-                      >
-                        {/* 1. COMPANY / APPLICANT */}
-                        <td className="py-4 px-4 sm:px-6">
-                          <div className="flex items-center gap-3">
-                            <div className="h-10 w-10 rounded-xl bg-[#0EA5E9] text-white flex items-center justify-center font-display font-extrabold text-sm shrink-0 shadow-xs">
-                              {initial}
-                            </div>
-                            <div className="min-w-0">
-                              <div className="flex items-center gap-1.5 flex-wrap">
-                                <span className="font-bold text-slate-900 text-sm leading-snug">
-                                  {sub.fullName}
-                                </span>
-                                {sub.companyName && (
-                                  <span className="text-xs text-slate-500 font-medium">
-                                    • {sub.companyName}
-                                  </span>
-                                )}
+                {/* Table Body Rows */}
+                <tbody className="divide-y divide-slate-100 text-xs text-slate-700">
+                  {filteredSubmissions.length === 0 ? (
+                    <tr>
+                      <td colSpan={6} className="py-12 text-center text-slate-400">
+                        <Inbox className="h-8 w-8 mx-auto text-slate-300 mb-2" />
+                        <p className="font-bold text-sm text-slate-600">No submissions found</p>
+                        <p className="text-xs text-slate-400 mt-1">Try resetting filters or clearing your search term.</p>
+                      </td>
+                    </tr>
+                  ) : (
+                    filteredSubmissions.map((item) => {
+                      const formattedDate = item.createdAt ? new Date(item.createdAt).toLocaleDateString(undefined, {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric'
+                      }) : '14 Nov 2026';
+
+                      return (
+                        <tr 
+                          key={`${item.sourceForm}-${item.id}`}
+                          className="hover:bg-slate-50/80 transition-colors group"
+                        >
+                          {/* Column 1: COMPANY / APPLICANT */}
+                          <td className="py-4 px-6">
+                            <div className="flex items-center gap-3">
+                              {/* Avatar initial square (matching screenshot e.g. blue square with white letter K) */}
+                              <div className="h-9 w-9 rounded-xl bg-sky-500 text-white font-black text-sm flex items-center justify-center shrink-0 shadow-xs">
+                                {item.avatarInitial}
                               </div>
-                              <p className="text-xs text-slate-400 font-sans mt-0.5 truncate">
-                                {sub.email} • {sub.phoneNumber ? `${sub.countryCode} ${sub.phoneNumber}` : 'No phone'}
-                              </p>
+                              <div className="min-w-0">
+                                <div className="flex items-center gap-1.5 flex-wrap">
+                                  <span className="font-bold text-slate-900 text-sm">
+                                    {item.applicantOrCompany}
+                                  </span>
+                                  {item.companyName && (
+                                    <span className="text-[11px] font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">
+                                      {item.companyName}
+                                    </span>
+                                  )}
+                                </div>
+                                <p className="text-[11px] text-slate-400 truncate mt-0.5">
+                                  <span>{item.email}</span>
+                                  <span className="mx-1">•</span>
+                                  <span>{item.phone}</span>
+                                </p>
+                              </div>
                             </div>
-                          </div>
-                        </td>
+                          </td>
 
-                        {/* 2. TYPE / POSITION */}
-                        <td className="py-4 px-4 sm:px-6">
-                          <p className="font-bold text-slate-800 text-sm leading-snug">
-                            {sub.typeOrPosition}
-                          </p>
-                          <span className={`inline-block mt-0.5 text-[10px] font-bold tracking-wider uppercase ${
-                            sub.sourceForm === 'Enterprise Consultation' 
-                              ? 'text-sky-600' 
-                              : sub.sourceForm === 'Career Application' 
-                              ? 'text-emerald-600' 
-                              : 'text-purple-600'
-                          }`}>
-                            {sub.sourceForm}
-                          </span>
-                        </td>
+                          {/* Column 2: TYPE / POSITION */}
+                          <td className="py-4 px-6">
+                            <div className="min-w-[140px]">
+                              <p className="font-bold text-slate-800 text-xs sm:text-sm leading-tight">
+                                {item.typeOrPosition}
+                              </p>
+                              <span className={`inline-block text-[10px] font-bold uppercase mt-1 tracking-wider ${
+                                item.sourceForm === 'Career Application' 
+                                  ? 'text-emerald-600' 
+                                  : item.sourceForm === 'Executive Inquiry'
+                                  ? 'text-purple-600'
+                                  : 'text-blue-600'
+                              }`}>
+                                {item.sourceForm}
+                              </span>
+                            </div>
+                          </td>
 
-                        {/* 3. COUNTRY */}
-                        <td className="py-4 px-4 sm:px-6">
-                          <span className="text-slate-700 font-medium text-xs sm:text-sm">
-                            {sub.country}
-                          </span>
-                        </td>
+                          {/* Column 3: COUNTRY */}
+                          <td className="py-4 px-6 text-slate-600 font-medium text-xs whitespace-nowrap">
+                            {item.country}
+                          </td>
 
-                        {/* 4. STATUS */}
-                        <td className="py-4 px-4 sm:px-6">
-                          <span className={`inline-flex items-center px-3 py-1 rounded-xl text-xs font-bold leading-none ${
-                            sub.status === 'New'
-                              ? 'bg-[#EBF5FF] text-[#1E40AF]'
-                              : sub.status === 'Reviewed'
-                              ? 'bg-[#FEF3C7] text-[#B45309]'
-                              : sub.status === 'Contacted'
-                              ? 'bg-[#F3E8FF] text-[#7E22CE]'
-                              : sub.status === 'Hired / Partnered'
-                              ? 'bg-[#D1FAE5] text-[#065F46]'
-                              : 'bg-[#FFE4E6] text-[#BE123C]'
-                          }`}>
-                            {sub.status}
-                          </span>
-                        </td>
+                          {/* Column 4: STATUS (INTERACTIVE DROPDOWN WITH EXACT OPTIONS & ACCORDING DATA UPDATE) */}
+                          <td className="py-4 px-6 whitespace-nowrap">
+                            <div className="relative inline-block">
+                              <select
+                                value={item.status}
+                                onChange={(e) => handleUpdateStatus(item, e.target.value)}
+                                className={`appearance-none font-semibold text-xs rounded-full pl-3 pr-7 py-1 cursor-pointer outline-none transition-all shadow-2xs ${
+                                  item.status === 'New'
+                                    ? 'bg-blue-100/90 text-blue-700 border border-blue-300 hover:bg-blue-200'
+                                    : item.status === 'Reviewed'
+                                    ? 'bg-orange-100/90 text-orange-700 border border-orange-300 hover:bg-orange-200'
+                                    : item.status === 'Contacted'
+                                    ? 'bg-purple-100/90 text-purple-700 border border-purple-300 hover:bg-purple-200'
+                                    : item.status === 'Hired'
+                                    ? 'bg-emerald-100/90 text-emerald-700 border border-emerald-300 hover:bg-emerald-200'
+                                    : 'bg-rose-100/90 text-rose-700 border border-rose-300 hover:bg-rose-200'
+                                }`}
+                              >
+                                <option value="New">New / Unread</option>
+                                <option value="Reviewed">Reviewed</option>
+                                <option value="Contacted">Contacted</option>
+                                <option value="Hired">Hired</option>
+                                <option value="Rejected">Rejected</option>
+                              </select>
+                              <ChevronDown className="h-3 w-3 text-slate-500 absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                            </div>
+                          </td>
 
-                        {/* 5. DATE */}
-                        <td className="py-4 px-4 sm:px-6 whitespace-nowrap text-xs text-slate-500 font-medium leading-tight">
-                          <div>{sub.dateFormatted.dayMonth}</div>
-                          <div className="text-[11px] text-slate-400">{sub.dateFormatted.year}</div>
-                        </td>
+                          {/* Column 5: DATE */}
+                          <td className="py-4 px-6 whitespace-nowrap text-slate-500 font-medium text-xs">
+                            {formattedDate}
+                          </td>
 
-                        {/* 6. ACTIONS (3 Round Action Buttons: Download, View Eye, Delete Trash) */}
-                        <td className="py-4 px-4 sm:px-6">
-                          <div className="flex items-center justify-center gap-2">
-                            {/* Download Action (Green) */}
-                            <button
-                              onClick={() => {
-                                if (sub.sourceForm === 'Career Application') {
-                                  handleViewResume(sub);
-                                } else {
-                                  openDetailsModal(sub);
-                                }
-                              }}
-                              title={sub.sourceForm === 'Career Application' ? 'Download Secure Signed Resume' : 'View Submission Details'}
-                              className="h-8 w-8 rounded-lg bg-[#ECFDF5] text-[#059669] hover:bg-emerald-100 border border-emerald-200/60 flex items-center justify-center transition-colors shadow-2xs"
-                            >
-                              <Download className="h-4 w-4" />
-                            </button>
+                          {/* Column 6: ACTIONS (3 ROUNDED ACTION ICONS) */}
+                          <td className="py-4 px-6 text-right whitespace-nowrap">
+                            <div className="flex items-center justify-end gap-1.5">
+                              
+                              {/* Green Download icon - EXCLUSIVELY FOR CANDIDATES / JOB SEEKERS */}
+                              {item.sourceForm === 'Career Application' && (
+                                <button
+                                  onClick={() => handleDownloadAction(item)}
+                                  title="Download candidate dossier to your PC"
+                                  className="h-8 w-8 rounded-xl bg-emerald-50 text-emerald-600 hover:bg-emerald-100 flex items-center justify-center transition-colors"
+                                >
+                                  <Download className="h-4 w-4" />
+                                </button>
+                              )}
 
-                            {/* View Action (Blue Eye) */}
-                            <button
-                              onClick={() => openDetailsModal(sub)}
-                              title="View Complete Submission Details"
-                              className="h-8 w-8 rounded-lg bg-[#EFF6FF] text-[#2563EB] hover:bg-blue-100 border border-blue-200/60 flex items-center justify-center transition-colors shadow-2xs"
-                            >
-                              <Eye className="h-4 w-4" />
-                            </button>
-
-                            {/* Delete Action (Red Trash) */}
-                            {admin.role === 'super_admin' && (
+                              {/* Blue Eye icon (View Details Modal) */}
                               <button
-                                onClick={() => handleDeleteItem(sub)}
-                                title="Delete record"
-                                className="h-8 w-8 rounded-lg bg-[#FEF2F2] text-[#DC2626] hover:bg-rose-100 border border-rose-200/60 flex items-center justify-center transition-colors shadow-2xs"
+                                onClick={() => setDetailsModal(item)}
+                                title="View full submission details"
+                                className="h-8 w-8 rounded-xl bg-blue-50 text-blue-600 hover:bg-blue-100 flex items-center justify-center transition-colors"
+                              >
+                                <Eye className="h-4 w-4" />
+                              </button>
+
+                              {/* Red Trash icon (Delete Record for Super Admin) */}
+                              <button
+                                onClick={() => handleDeleteItem(item)}
+                                title="Delete submission record"
+                                className="h-8 w-8 rounded-xl bg-rose-50 text-rose-600 hover:bg-rose-100 flex items-center justify-center transition-colors"
                               >
                                 <Trash2 className="h-4 w-4" />
                               </button>
-                            )}
-                          </div>
-                        </td>
-                      </tr>
-                    );
-                  })
-                )}
-              </tbody>
-            </table>
+                            </div>
+                          </td>
+                        </tr>
+                      );
+                    })
+                  )}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
+        ) : (
+          /* =========================================================================
+              SYSTEM HEALTH & RLS AUDIT VIEW
+              ========================================================================= */
+          <div className="bg-white rounded-2xl border border-slate-200/90 p-6 shadow-xs space-y-6">
+            <div className="flex items-center justify-between border-b border-slate-200 pb-4">
+              <div>
+                <h3 className="text-base font-bold text-slate-900 font-display">System Health & Database Architecture</h3>
+                <p className="text-xs text-slate-500">PostgreSQL RLS matrix verifying KNOOVIQ 3 forms data mapping.</p>
+              </div>
+              <button
+                onClick={() => setSystemView('submissions')}
+                className="px-4 py-2 rounded-xl bg-blue-600 text-white font-bold text-xs"
+              >
+                Back to Submissions
+              </button>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Form 1: Enterprise Consultation</span>
+                <p className="font-bold text-slate-800">Table: client_inquiries</p>
+                <p className="text-slate-500">Filtered by: form_type = &apos;Enterprise Consultation&apos;</p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Form 2: Career Application</span>
+                <p className="font-bold text-slate-800">Table: career_applications</p>
+                <p className="text-slate-500">Storage: career-resumes (Private Signed URLs)</p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Form 3: Executive Inquiry</span>
+                <p className="font-bold text-slate-800">Table: client_inquiries</p>
+                <p className="text-slate-500">Filtered by: form_type = &apos;Executive Inquiry&apos;</p>
+              </div>
+            </div>
+          </div>
+        )}
 
       </main>
 
       {/* =========================================================================
-          MODAL: SUBMISSION COMPLETE DETAILS (EYE BUTTON)
+          MODAL: SUBMISSION DETAILS VIEW (ALL 3 FORMS ANALYZED & ADAPTED)
           ========================================================================= */}
-      {detailsModalItem && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-fade-in">
-          <div className="rounded-3xl bg-white border border-slate-200 max-w-2xl w-full p-6 sm:p-8 shadow-2xl space-y-6 max-h-[92vh] overflow-y-auto text-slate-800">
-            {/* Modal Header */}
-            <div className="flex items-start justify-between gap-4 border-b border-slate-100 pb-4">
+      {detailsModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
+          <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 max-w-2xl w-full shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto text-slate-900">
+            
+            {/* Header */}
+            <div className="flex items-start justify-between gap-4 border-b border-slate-200 pb-4">
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <span className={`px-2.5 py-0.5 rounded-md text-[10px] font-bold tracking-wider uppercase ${
-                    detailsModalItem.sourceForm === 'Career Application'
+                  <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
+                    detailsModal.sourceForm === 'Career Application'
                       ? 'bg-emerald-100 text-emerald-800'
-                      : detailsModalItem.sourceForm === 'Enterprise Consultation'
-                      ? 'bg-blue-100 text-blue-800'
-                      : 'bg-purple-100 text-purple-800'
+                      : detailsModal.sourceForm === 'Executive Inquiry'
+                      ? 'bg-purple-100 text-purple-800'
+                      : 'bg-blue-100 text-blue-800'
                   }`}>
-                    {detailsModalItem.sourceForm}
+                    {detailsModal.sourceForm}
                   </span>
-                  <span className="text-xs font-mono text-slate-400">ID: {detailsModalItem.id}</span>
+                  <span className="text-xs font-mono text-slate-400">ID: {detailsModal.id}</span>
                 </div>
-                <h2 className="font-display text-xl font-bold text-slate-900">
-                  {detailsModalItem.fullName}
-                </h2>
-                {detailsModalItem.companyName && (
-                  <p className="text-xs text-blue-600 font-bold">{detailsModalItem.companyName}</p>
-                )}
+                <h3 className="text-2xl font-black text-slate-900 font-display">
+                  {detailsModal.applicantOrCompany}
+                </h3>
+                <p className="text-xs text-blue-600 font-bold">
+                  {detailsModal.typeOrPosition} {detailsModal.companyName ? `• ${detailsModal.companyName}` : ''}
+                </p>
               </div>
 
               <button
-                onClick={() => setDetailsModalItem(null)}
+                onClick={() => setDetailsModal(null)}
                 className="p-1.5 rounded-full text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+                aria-label="Close modal"
               >
                 <X className="h-5 w-5" />
               </button>
             </div>
 
-            {/* Quick Metadata Grid */}
+            {/* Information Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-              <div className="rounded-2xl bg-slate-50 p-3.5 border border-slate-200/80 space-y-1">
-                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">Email Address</span>
-                <a href={`mailto:${detailsModalItem.email}`} className="text-sm font-bold text-blue-600 hover:underline break-all">
-                  {detailsModalItem.email}
+              <div className="rounded-xl bg-slate-50 p-3.5 border border-slate-200 space-y-1">
+                <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block">Email Address</span>
+                <a href={`mailto:${detailsModal.email}`} className="text-sm font-bold text-blue-600 hover:underline break-all">
+                  {detailsModal.email}
                 </a>
               </div>
 
-              <div className="rounded-2xl bg-slate-50 p-3.5 border border-slate-200/80 space-y-1">
-                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">Phone Number</span>
-                <a href={`tel:${detailsModalItem.countryCode}${detailsModalItem.phoneNumber}`} className="text-sm font-bold text-slate-900 hover:underline">
-                  {detailsModalItem.countryCode} {detailsModalItem.phoneNumber}
+              <div className="rounded-xl bg-slate-50 p-3.5 border border-slate-200 space-y-1">
+                <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block">Phone Number</span>
+                <a href={`tel:${detailsModal.phone}`} className="text-sm font-bold text-slate-900 hover:underline">
+                  {detailsModal.phone}
                 </a>
               </div>
 
-              <div className="rounded-2xl bg-slate-50 p-3.5 border border-slate-200/80 space-y-1">
-                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">Requirement / Position</span>
-                <span className="text-sm font-bold text-slate-900 block">
-                  {detailsModalItem.typeOrPosition}
+              <div className="rounded-xl bg-slate-50 p-3.5 border border-slate-200 space-y-1">
+                <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block">Country / Location</span>
+                <span className="text-sm font-bold text-slate-800 block">
+                  {detailsModal.country} {detailsModal.location ? `(${detailsModal.location})` : ''}
                 </span>
               </div>
 
-              <div className="rounded-2xl bg-slate-50 p-3.5 border border-slate-200/80 space-y-1">
-                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">Country & Location</span>
-                <span className="text-sm font-bold text-slate-900 block">
-                  {detailsModalItem.country}
-                </span>
+              {/* Status Selector Inside Modal */}
+              <div className="rounded-xl bg-slate-50 p-3.5 border border-slate-200 space-y-1">
+                <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block">Change Status</span>
+                <select
+                  value={detailsModal.rawStatus}
+                  onChange={(e) => handleUpdateStatus(detailsModal, e.target.value)}
+                  className="rounded-lg bg-white border border-slate-300 px-2.5 py-1 text-xs font-bold text-blue-700 focus:outline-none"
+                >
+                  <option value="Pending">Pending / New</option>
+                  <option value="In Review">In Review / Reviewed</option>
+                  <option value="Contacted">Contacted / Interview</option>
+                  <option value="Resolved">Resolved / Offered</option>
+                  <option value="Archived">Archived / Rejected</option>
+                </select>
               </div>
             </div>
 
-            {/* Resume & LinkedIn (if Career Application) */}
-            {detailsModalItem.sourceForm === 'Career Application' && (
-              <div className="flex flex-wrap items-center gap-3 p-4 rounded-2xl bg-emerald-50/50 border border-emerald-200/60 text-xs">
-                <button
-                  onClick={() => handleViewResume(detailsModalItem)}
-                  className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-700 transition-colors shadow-xs"
-                >
-                  <Download className="h-4 w-4" />
-                  <span>Download Secure Signed Resume</span>
-                </button>
+            {/* Form 2 Specific: Experience, Qualification, Resume & LinkedIn */}
+            {detailsModal.sourceForm === 'Career Application' && (
+              <div className="space-y-4 pt-2 border-t border-slate-200">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                  <div className="rounded-xl bg-slate-50 p-3.5 border border-slate-200">
+                    <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block">Experience Level</span>
+                    <span className="font-bold text-slate-900 text-sm">{detailsModal.experience || 'Not specified'}</span>
+                  </div>
+                  <div className="rounded-xl bg-slate-50 p-3.5 border border-slate-200">
+                    <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block">Highest Qualification</span>
+                    <span className="font-bold text-slate-900 text-sm">{detailsModal.education || 'Graduate'}</span>
+                  </div>
+                </div>
 
-                {detailsModalItem.linkedinUrl && (
-                  <a
-                    href={detailsModalItem.linkedinUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white border border-slate-200 text-blue-600 hover:text-blue-800 font-semibold transition-colors"
-                  >
-                    <span>LinkedIn Profile</span>
-                    <ExternalLink className="h-3.5 w-3.5" />
-                  </a>
+                <div className="flex flex-wrap items-center gap-3">
+                  {detailsModal.resumeStoragePath && (
+                    <button
+                      onClick={() => handleDownloadAction(detailsModal)}
+                      className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-blue-600 text-white font-bold text-xs hover:bg-blue-700 transition-colors shadow-xs"
+                    >
+                      <FileText className="h-4 w-4" />
+                      <span>Download Secure Candidate Resume</span>
+                    </button>
+                  )}
+
+                  {detailsModal.linkedinUrl && (
+                    <a
+                      href={detailsModal.linkedinUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-slate-300 bg-white text-blue-600 font-semibold text-xs hover:bg-slate-50 transition-colors"
+                    >
+                      <span>LinkedIn Profile</span>
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </a>
+                  )}
+                </div>
+
+                {detailsModal.coverLetter && (
+                  <div className="rounded-xl bg-slate-50 p-4 border border-slate-200 space-y-1">
+                    <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block">Cover Letter / Message</span>
+                    <p className="text-xs text-slate-800 whitespace-pre-wrap leading-relaxed">
+                      {detailsModal.coverLetter}
+                    </p>
+                  </div>
                 )}
               </div>
             )}
 
-            {/* Status Change Selector */}
-            <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-50 border border-slate-200/80 text-xs">
-              <span className="font-bold text-slate-700 uppercase tracking-wider text-[11px]">Update Inquiry Status:</span>
-              <select
-                value={detailsModalItem.status}
-                onChange={(e) => handleUpdateStatus(detailsModalItem, e.target.value)}
-                className="rounded-xl px-3 py-1.5 text-xs font-bold border border-slate-300 bg-white text-slate-800 focus:outline-none focus:border-blue-500 shadow-2xs"
-              >
-                <option value="New">New</option>
-                <option value="Reviewed">Reviewed</option>
-                <option value="Contacted">Contacted</option>
-                <option value="Hired / Partnered">Hired / Partnered</option>
-                <option value="Rejected">Rejected</option>
-              </select>
-            </div>
-
-            {/* Requirement Details / Cover Letter */}
-            <div className="space-y-1.5">
-              <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">
-                {detailsModalItem.sourceForm === 'Career Application' ? 'Cover Letter / Candidate Message' : 'Requirement Details'}
-              </span>
-              <div className="rounded-2xl bg-slate-50 p-4 border border-slate-200/80 max-h-48 overflow-y-auto">
-                <p className="text-xs text-slate-700 leading-relaxed whitespace-pre-wrap font-sans">
-                  {detailsModalItem.details || <span className="text-slate-400 italic">No requirement details provided with this submission.</span>}
-                </p>
+            {/* Form 1 & Form 3 Specific: Requirement Details */}
+            {(detailsModal.sourceForm === 'Enterprise Consultation' || detailsModal.sourceForm === 'Executive Inquiry') && detailsModal.requirementDetails && (
+              <div className="space-y-1.5 pt-2 border-t border-slate-200">
+                <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider block">Requirement Details (Max 500 words)</span>
+                <div className="rounded-xl bg-slate-50 p-4 border border-slate-200 max-h-48 overflow-y-auto">
+                  <p className="text-xs text-slate-800 whitespace-pre-wrap leading-relaxed">
+                    {detailsModal.requirementDetails}
+                  </p>
+                </div>
               </div>
-            </div>
+            )}
 
-            {/* Internal Administrator Note */}
-            <div className="rounded-2xl bg-amber-50/60 border border-amber-200 p-4 space-y-2">
+            {/* Internal Review Notes */}
+            <div className="rounded-xl bg-amber-50 p-4 border border-amber-200 space-y-1.5">
               <div className="flex items-center justify-between">
-                <span className="text-[10px] uppercase font-bold text-amber-800 tracking-wider">Internal Administrator Review Note</span>
+                <span className="text-[10px] uppercase font-bold text-amber-800 tracking-wider">Internal Admin Review Note</span>
                 <button
-                  onClick={() => setIsEditingNote(!isEditingNote)}
-                  className="text-xs text-amber-700 hover:text-amber-900 font-bold underline"
+                  onClick={() => setNoteModal({
+                    isOpen: true,
+                    id: detailsModal.id,
+                    type: detailsModal.sourceForm === 'Career Application' ? 'career' : 'client_inquiry',
+                    currentNote: detailsModal.internalNotes || '',
+                    targetName: detailsModal.applicantOrCompany,
+                  })}
+                  className="text-xs text-blue-600 hover:underline flex items-center gap-1 font-bold"
                 >
-                  {isEditingNote ? 'Cancel' : detailsModalItem.internalNotes ? 'Edit Note' : 'Add Note'}
+                  <Edit3 className="h-3 w-3" />
+                  <span>{detailsModal.internalNotes ? 'Edit' : 'Add Note'}</span>
                 </button>
               </div>
-
-              {isEditingNote ? (
-                <div className="space-y-2 pt-1">
-                  <textarea
-                    value={internalNoteText}
-                    onChange={(e) => setInternalNoteText(e.target.value)}
-                    rows={3}
-                    placeholder="Add confidential notes or action items..."
-                    className="w-full rounded-xl border border-amber-300 bg-white p-3 text-xs text-slate-900 focus:outline-none focus:border-amber-500"
-                  />
-                  <div className="flex justify-end">
-                    <button
-                      onClick={handleSaveInternalNote}
-                      className="px-4 py-1.5 rounded-xl bg-amber-600 text-white font-bold text-xs hover:bg-amber-700 shadow-2xs"
-                    >
-                      Save Note
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                <p className="text-xs text-slate-600">
-                  {detailsModalItem.internalNotes || <span className="text-slate-400 italic">No internal note added yet.</span>}
-                </p>
-              )}
+              <p className="text-xs text-slate-700">
+                {detailsModal.internalNotes || <span className="text-slate-400 italic">No internal notes added yet.</span>}
+              </p>
             </div>
 
-            {/* Modal Footer */}
-            <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-100 text-xs text-slate-500">
-              <span>Submitted: {detailsModalItem.createdDate.toLocaleString()}</span>
+            {/* Footer */}
+            <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-slate-200 text-xs text-slate-500">
+              <span>Submitted: {detailsModal.createdAt ? new Date(detailsModal.createdAt).toLocaleString() : 'Recent'}</span>
               <div className="flex items-center gap-2">
                 {admin.role === 'super_admin' && (
                   <button
-                    onClick={() => handleDeleteItem(detailsModalItem)}
-                    className="px-3 py-1.5 rounded-xl border border-rose-300 bg-rose-50 text-rose-600 hover:bg-rose-100 text-xs font-semibold flex items-center gap-1 transition-colors"
+                    onClick={() => handleDeleteItem(detailsModal)}
+                    className="px-3 py-1.5 rounded-xl border border-rose-300 bg-rose-50 text-rose-700 font-bold hover:bg-rose-100 transition-colors"
                   >
-                    <Trash2 className="h-3.5 w-3.5" />
-                    <span>Delete</span>
+                    Delete Record
                   </button>
                 )}
                 <button
-                  onClick={() => setDetailsModalItem(null)}
-                  className="px-5 py-2 rounded-xl bg-slate-900 text-white font-bold text-xs hover:bg-slate-800 transition-colors"
+                  onClick={() => setDetailsModal(null)}
+                  className="px-5 py-2 rounded-xl bg-slate-900 text-white font-bold hover:bg-slate-800 transition-colors"
                 >
                   Close
                 </button>
               </div>
             </div>
+
           </div>
         </div>
       )}
 
       {/* =========================================================================
-          MODAL: SIGNED RESUME PREVIEW
+          MODAL: RESUME SIGNED PREVIEW
           ========================================================================= */}
       {resumeModal.isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-fade-in">
-          <div className="rounded-3xl bg-white border border-slate-200 p-6 max-w-md w-full shadow-2xl text-center space-y-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-600 mx-auto">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
+          <div className="rounded-3xl border border-slate-200 bg-white p-6 max-w-md w-full shadow-2xl text-center space-y-4">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 mx-auto">
               <FileText className="h-6 w-6" />
             </div>
-            <h3 className="text-sm font-bold text-slate-900">Candidate Resume Download</h3>
+            <h3 className="text-base font-bold text-slate-900 font-display">Candidate Resume Token</h3>
             <p className="text-xs text-slate-500">
-              Generating a 15-minute temporary authorized token for candidate: <strong className="text-slate-800">{resumeModal.candidateName}</strong>
+              Generating 15-minute temporary authorized link for: <strong className="text-slate-800">{resumeModal.candidateName}</strong>
             </p>
 
             {resumeModal.loading ? (
-              <div className="py-4 text-xs text-blue-600 animate-pulse font-semibold">Generating temporary cryptographic signature...</div>
+              <div className="py-4 text-xs text-blue-600 font-bold animate-pulse">Generating cryptographic token...</div>
             ) : resumeModal.signedUrl ? (
-              <div className="space-y-3 pt-2">
+              <div className="space-y-4 pt-2">
                 <a
                   href={resumeModal.signedUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="block w-full py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider hover:bg-emerald-700 transition-colors shadow-sm"
+                  className="block w-full py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold uppercase tracking-wider transition-colors shadow-sm"
                 >
-                  Open Signed Resume
+                  Open Candidate Resume Document
                 </a>
                 <span className="text-[10px] text-slate-400 block">Token valid for 900 seconds.</span>
               </div>
             ) : (
-              <p className="text-xs text-rose-500">Unable to generate token. File may not exist in storage.</p>
+              <p className="text-xs text-rose-500">File not found in storage bucket.</p>
             )}
 
             <button
@@ -1203,6 +1391,51 @@ export const AdminDashboardPage: React.FC = () => {
             >
               Close
             </button>
+          </div>
+        </div>
+      )}
+
+      {/* =========================================================================
+          MODAL: EDIT INTERNAL NOTE
+          ========================================================================= */}
+      {noteModal.isOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
+          <div className="rounded-3xl border border-slate-200 bg-white p-6 max-w-md w-full shadow-2xl space-y-4 text-slate-900">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-sm font-bold text-slate-900">Edit Internal Administrator Note</h3>
+                {noteModal.targetName && (
+                  <p className="text-xs text-blue-600 mt-0.5">Regarding: {noteModal.targetName}</p>
+                )}
+              </div>
+              <button 
+                onClick={() => setNoteModal({ isOpen: false, id: '', type: 'client_inquiry', currentNote: '', targetName: '' })} 
+                className="text-slate-400 hover:text-slate-700"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+            <textarea
+              value={noteModal.currentNote}
+              onChange={(e) => setNoteModal(prev => ({ ...prev, currentNote: e.target.value }))}
+              rows={4}
+              placeholder="Add confidential review notes, assessment criteria, or follow-up action items..."
+              className="w-full rounded-xl border border-slate-300 p-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500"
+            />
+            <div className="flex justify-end gap-2">
+              <button
+                onClick={() => setNoteModal({ isOpen: false, id: '', type: 'client_inquiry', currentNote: '', targetName: '' })}
+                className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-500 hover:text-slate-800"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleSaveNote}
+                className="px-5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-xs transition-colors"
+              >
+                Save Note
+              </button>
+            </div>
           </div>
         </div>
       )}
