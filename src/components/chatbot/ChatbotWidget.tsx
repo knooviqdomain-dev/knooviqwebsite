@@ -562,7 +562,7 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({ onOpenContact }) =
                     type="button"
                     onClick={handleOpen}
                     aria-label="Open KNOOVIQ AI Assistant"
-                    className="fixed bottom-6 right-6 z-40 flex items-center justify-center w-14 h-14 rounded-full bg-[#002B66] hover:bg-[#003882] text-white shadow-xl shadow-blue-950/40 border-2 border-white/20 transition-colors duration-200 cursor-pointer select-none print:hidden"
+                    className="fixed bottom-[max(1.25rem,calc(0.75rem+env(safe-area-inset-bottom,0px)))] sm:bottom-6 right-4 sm:right-6 z-40 flex items-center justify-center w-14 h-14 rounded-full bg-[#002B66] hover:bg-[#003882] text-white shadow-xl shadow-blue-950/40 border-2 border-white/20 transition-colors duration-200 cursor-pointer select-none print:hidden"
                 >
                     {/* White Outline Chat Speech Bubble Icon */}
                     <svg
@@ -590,7 +590,7 @@ export const ChatbotWidget: React.FC<ChatbotWidgetProps> = ({ onOpenContact }) =
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.15 }}
                         data-lenis-prevent="true"
-                        className="fixed bottom-6 right-6 z-40 flex flex-col w-[calc(100vw-2.5rem)] sm:w-[390px] md:w-[410px] h-[84vh] max-h-[660px] rounded-3xl border border-slate-200/90 bg-[#F8FAFC] shadow-2xl shadow-blue-950/30 overflow-hidden text-slate-900 select-none print:hidden"
+                        className="fixed bottom-[max(1rem,calc(0.75rem+env(safe-area-inset-bottom,0px)))] sm:bottom-6 right-3 sm:right-6 z-40 flex flex-col w-[calc(100vw-1.5rem)] sm:w-[390px] md:w-[410px] h-[84vh] max-h-[660px] rounded-3xl border border-slate-200/90 bg-[#F8FAFC] shadow-2xl shadow-blue-950/30 overflow-hidden text-slate-900 select-none print:hidden"
                         role="dialog"
                         aria-label="KNOOVIQ AI Assistant"
                     >

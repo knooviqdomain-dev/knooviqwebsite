@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --sat: env(safe-area-inset-top, 0px);
+  --sab: env(safe-area-inset-bottom, 0px);
+  --sal: env(safe-area-inset-left, 0px);
+  --sar: env(safe-area-inset-right, 0px);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -10,6 +17,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    min-height: 100%;
   }
 
   /* Light Theme Base */
@@ -21,7 +31,21 @@
     background-color: #F8FAFC;
     color: #1E293B; /* Crisp, accessible slate-800 */
     overflow-x: hidden;
+    max-width: 100%;
+    min-height: 100%;
+    min-height: 100dvh;
+    -webkit-overflow-scrolling: touch;
     transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Prevent iOS Safari 300ms tap delay & unintentional zooming */
+  button, a, input, select, textarea, [role="button"] {
+    touch-action: manipulation;
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
   }
 
   /* Dark Theme Base (Deep Obsidian Space) */
@@ -70,6 +94,15 @@
 
   button, input, optgroup, select, textarea {
     font-family: inherit;
+  }
+
+  /* iOS Safari: Prevent automatic viewport zoom on input focus on mobile devices (<768px) */
+  @media screen and (max-width: 768px) {
+    input:not([type="checkbox"]):not([type="radio"]),
+    select,
+    textarea {
+      font-size: 16px !important;
+    }
   }
 
   ::selection {

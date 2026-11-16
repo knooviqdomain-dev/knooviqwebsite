@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative bg-[#F4F8FC] dark:bg-[#070E1C] border-t border-slate-200 dark:border-white/10 pt-16 pb-12 transition-colors duration-300">
+    <footer className="relative bg-[#F4F8FC] dark:bg-[#070E1C] border-t border-slate-200 dark:border-white/10 pt-16 pb-12 pb-[max(3rem,calc(2rem+env(safe-area-inset-bottom,0px)))] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Top Row: Brand Logo on Left, Tagline in Center, Social Media Strip on Right */}

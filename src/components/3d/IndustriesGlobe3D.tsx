@@ -372,7 +372,7 @@ export const IndustriesGlobe3D: React.FC = () => {
           dpr={[1, 1.8]}
           gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
           className="w-full h-full cursor-pointer"
-          style={{ cursor: 'pointer' }}
+          style={{ cursor: 'pointer', touchAction: 'pan-y' }}
           onPointerDown={() => setSelectedIndustry(null)}
         >
           {/* Lighting */}
