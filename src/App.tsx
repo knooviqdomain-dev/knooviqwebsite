@@ -219,14 +219,14 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 flex flex-col selection:bg-cyan-500 selection:text-white transition-colors duration-300">
+    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 flex flex-col selection:bg-cyan-500 selection:text-white transition-colors duration-300 w-full max-w-full overflow-x-hidden overflow-x-clip">
       {/* Public Navigation */}
       {!isAdminRoute && (
         <Navbar onOpenContact={handleOpenContactModal} />
       )}
 
       {/* Main Routed Content */}
-      <main className="flex-1">
+      <main className="flex-1 w-full max-w-full min-w-0 overflow-x-hidden overflow-x-clip">
         <Routes>
           <Route path="/" element={<HomePage onOpenContact={handleOpenContactModal} />} />
 

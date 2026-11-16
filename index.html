@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth light">
+<html lang="en" class="scroll-smooth light overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/knooviq-logo.png" />
@@ -122,8 +122,8 @@
       })();
     </script>
   </head>
-  <body class="bg-white text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-[#00A3E0] selection:text-white">
-    <div id="root"></div>
+  <body class="bg-white text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-[#00A3E0] selection:text-white max-w-full">
+    <div id="root" class="w-full max-w-full overflow-x-hidden"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -205,7 +205,7 @@ export const DigitalSapExcellencePage: React.FC<{ onOpenContact: (topic?: string
 
 
   return (
-    <div className="pb-0 bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden">
+    <div className="relative w-full max-w-full pb-0 bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden overflow-x-clip">
       
       {/* Dynamic Background Aurora Blobs */}
       <div className="aurora-sphere-1 top-[680px] left-1/4 bg-[#00A3E0]/15 dark:bg-[#00F0FF]/15 pointer-events-none" />

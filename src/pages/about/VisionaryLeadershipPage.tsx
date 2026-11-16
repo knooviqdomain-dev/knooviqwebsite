@@ -113,11 +113,11 @@ const FUTURE_FOCUS_AREAS = [
 
 export const VisionaryLeadershipPage: React.FC<{ onOpenContact: (topic?: string) => void }> = ({ onOpenContact }) => {
   return (
-    <div className="pb-0 bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden">
+    <div className="relative w-full max-w-full pb-0 bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden overflow-x-clip">
       
       {/* Background Aurora Blobs */}
-      <div className="aurora-sphere-1 top-20 left-1/4 bg-[#00A3E0]/15 dark:bg-[#00F0FF]/15" />
-      <div className="aurora-sphere-2 top-96 right-10 bg-[#6366F1]/15 dark:bg-[#8B5CF6]/20" />
+      <div className="aurora-sphere-1 top-20 left-1/4 bg-[#00A3E0]/15 dark:bg-[#00F0FF]/15 pointer-events-none" />
+      <div className="aurora-sphere-2 top-96 right-10 bg-[#6366F1]/15 dark:bg-[#8B5CF6]/20 pointer-events-none" />
 
       {/* =========================================================================
           HERO HEADER (UNCHANGED)

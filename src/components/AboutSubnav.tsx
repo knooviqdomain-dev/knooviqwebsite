@@ -35,12 +35,12 @@ export const AboutSubnav: React.FC<{ activeTabTitle?: string }> = ({ activeTabTi
   };
 
   return (
-    <div className="sticky top-[68px] z-40 bg-white/95 backdrop-blur-xl border-y border-slate-200/90 py-2 sm:py-2.5 shadow-[0_4px_16px_-4px_rgba(10,37,64,0.06)] transition-colors duration-300 overflow-hidden">
+    <div className="sticky top-[68px] z-40 w-full max-w-full bg-white/95 backdrop-blur-xl border-y border-slate-200/90 py-2 sm:py-2.5 shadow-[0_4px_16px_-4px_rgba(10,37,64,0.06)] transition-colors duration-300 overflow-hidden overflow-x-clip">
       {/* Refined Edge Border Accents */}
       <div className="absolute top-0 inset-x-0 h-[1px] bg-slate-200/90 pointer-events-none" />
       <div className="absolute bottom-0 inset-x-0 h-[1px] bg-slate-200/90 pointer-events-none" />
 
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full max-w-full overflow-hidden overflow-x-clip">
         
         {/* Frosted Edge Blur Gradients */}
         <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-white via-white/80 to-transparent z-20 pointer-events-none" />

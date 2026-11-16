@@ -29,11 +29,11 @@ import { COMPANY_INFO } from '../../data/knooviqData';
 
 export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => void }> = ({ onOpenContact }) => {
   return (
-    <div className="pb-20 bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden">
+    <div className="relative w-full max-w-full pb-20 bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden overflow-x-clip">
       
       {/* Dynamic Background Aurora Blobs */}
-      <div className="aurora-sphere-1 top-20 left-1/4 bg-[#00A3E0]/15 dark:bg-[#00F0FF]/15" />
-      <div className="aurora-sphere-2 top-96 right-10 bg-[#6366F1]/15 dark:bg-[#8B5CF6]/20" />
+      <div className="aurora-sphere-1 top-20 left-1/4 bg-[#00A3E0]/15 dark:bg-[#00F0FF]/15 pointer-events-none" />
+      <div className="aurora-sphere-2 top-96 right-10 bg-[#6366F1]/15 dark:bg-[#8B5CF6]/20 pointer-events-none" />
 
       {/* Hero Header with Skyscraper Image & Mild Contrast Scrim */}
       <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-20 min-h-[540px] lg:h-[580px] lg:min-h-[580px] flex items-center overflow-hidden">
@@ -55,10 +55,10 @@ export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide bg-slate-900/90 border border-white/20 text-white mb-5 backdrop-blur-md shadow-2xl"
+              className="inline-flex items-center gap-2.5 px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-bold tracking-wide bg-slate-900/90 border border-white/20 text-white mb-5 backdrop-blur-md shadow-2xl max-w-full"
             >
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_#34D399]" />
-              <span className="font-mono uppercase text-xs tracking-wider font-bold">Corporate Genesis & Heritage Since 2006</span>
+              <span className="font-mono uppercase text-[10px] sm:text-xs tracking-wider font-bold truncate">Corporate Genesis & Heritage Since 2006</span>
             </motion.div>
 
             <motion.h1 

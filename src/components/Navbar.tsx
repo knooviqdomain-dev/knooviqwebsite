@@ -949,7 +949,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
 
       <header
         ref={headerRef}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full max-w-full overflow-x-clip ${
           isTransparent
             ? 'bg-transparent border-b border-transparent py-3.5'
             : 'bg-white/90 dark:bg-[#030712]/90 backdrop-blur-md border-b border-slate-200/80 dark:border-cyan-500/20 shadow-md py-3'
@@ -1337,7 +1337,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
             </nav>
 
             {/* Mobile Actions (Hamburger) */}
-            <div className="flex items-center gap-2 lg:hidden">
+            <div className="flex items-center gap-2 lg:hidden flex-shrink-0">
               <LanguageTranslator isMobile={true} />
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

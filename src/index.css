@@ -4,6 +4,9 @@
 
 @layer base {
   html {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-x: clip;
     scroll-behavior: smooth;
     font-family: 'Plus Jakarta Sans', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
@@ -14,6 +17,8 @@
 
   /* Light Theme Base */
   body {
+    max-width: 100%;
+    width: 100%;
     font-family: 'Plus Jakarta Sans', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-size: 1rem; /* 16px base */
     line-height: 1.68;
@@ -21,7 +26,15 @@
     background-color: #F8FAFC;
     color: #1E293B; /* Crisp, accessible slate-800 */
     overflow-x: hidden;
+    overflow-x: clip;
     transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  #root {
+    max-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   /* Dark Theme Base (Deep Obsidian Space) */
@@ -288,21 +301,36 @@
 .aurora-sphere-1 {
   position: absolute;
   width: 650px;
+  max-width: 90vw;
   height: 650px;
+  max-height: 90vw;
   border-radius: 9999px;
   filter: blur(140px);
   pointer-events: none;
   animation: float 10s ease-in-out infinite alternate;
+  overflow: hidden;
 }
 
 .aurora-sphere-2 {
   position: absolute;
   width: 500px;
+  max-width: 80vw;
   height: 500px;
+  max-height: 80vw;
   border-radius: 9999px;
   filter: blur(140px);
   pointer-events: none;
   animation: float-reverse 12s ease-in-out infinite alternate;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .aurora-sphere-1,
+  .aurora-sphere-2 {
+    max-width: 70vw;
+    max-height: 70vw;
+    filter: blur(80px);
+  }
 }
 
 /* Marquee Scroller */
