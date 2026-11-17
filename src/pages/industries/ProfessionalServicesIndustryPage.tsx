@@ -456,7 +456,7 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Panoramic Background - Aligned with AI Agents Reference)
@@ -505,7 +505,7 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-sm sm:text-base text-slate-100 font-normal leading-relaxed drop-shadow-sm max-w-2xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm max-w-2xl">
               Maximize billable consultant utilization, accelerate milestone invoicing, automate IFRS 15 / ASC 606 revenue recognition, and protect engagement margins on clean-core SAP architecture.
             </p>
 
@@ -598,12 +598,12 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
 
               {/* Executive Thesis Quote Card */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-xs sm:text-sm font-semibold text-slate-800 italic leading-relaxed">
+                <p className="font-sora text-sm font-medium text-slate-800 italic leading-[1.6]">
                   "Consulting, engineering, and IT services firms succeed on the speed with which skills are staffed and engagements are billed. Disconnected spreadsheets lead to bench waste and delayed billing that erode margin."
                 </p>
               </div>
 
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 In professional services, your inventory goes home in the elevator every night. Balancing high consultant utilization with sustainable delivery requires an integrated professional services automation (PSA) system. From algorithmic staffing matching and mobile timesheet approvals to automated IFRS 15 milestone billing, modern firms build transparency from proposal to cash collection.
               </p>
 
@@ -615,8 +615,8 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
                     <Users className="w-4 h-4" />
                   </div>
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-slate-900">Skills-Based Staffing Precision</h3>
-                    <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                    <h3 className="font-sora text-xs sm:text-sm font-medium text-slate-900">Skills-Based Staffing Precision</h3>
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       Match practitioners to engagements based on real-time availability, certifications, and target billing realization rates.
                     </p>
                   </div>
@@ -627,8 +627,8 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
                     <DollarSign className="w-4 h-4" />
                   </div>
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-slate-900">Frictionless Invoice Generation</h3>
-                    <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                    <h3 className="font-sora text-xs sm:text-sm font-medium text-slate-900">Frictionless Invoice Generation</h3>
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       Accelerate billing cycles by automatically consolidating approved hours, travel expenses, and milestone deliverables into client invoices.
                     </p>
                   </div>
@@ -639,8 +639,8 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
                     <Scale className="w-4 h-4" />
                   </div>
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-slate-900">Event-Based RevRec & Margin Control</h3>
-                    <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                    <h3 className="font-sora text-xs sm:text-sm font-medium text-slate-900">Event-Based RevRec & Margin Control</h3>
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       Automate IFRS 15 / ASC 606 revenue postings upon delivery and track live project contribution margins to stop scope creep.
                     </p>
                   </div>
@@ -712,7 +712,7 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
                   <span className="font-bold text-[#0070C0] uppercase">Selected Milestone Detail</span>
                   <span>{journeySteps[activeJourneyStep].sublabel}</span>
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed font-medium">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -738,7 +738,7 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Operational Challenges Impeding Consultancies & Services Firms
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               From unbilled scope creep to delayed timesheet approvals, services organizations face significant margin leakage without integrated PSA infrastructure.
             </p>
           </div>
@@ -762,11 +762,11 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
                       </span>
                     </div>
 
-                    <h3 className="text-base font-bold text-slate-900 tracking-tight leading-snug">
+                    <h3 className="font-sora text-base font-medium text-slate-900 tracking-tight leading-snug">
                       {challenge.title}
                     </h3>
 
-                    <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {challenge.desc}
                     </p>
                   </div>
@@ -801,7 +801,7 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
             <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
               Integrated Professional Services Platform Matrix
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               A synchronized enterprise PSA platform uniting skills scheduling, mobile time capture, automated milestone billing, and real-time engagement margins.
             </p>
           </div>
@@ -838,10 +838,10 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1008,10 +1008,10 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
                         }}
                       />
                       <div className="space-y-1 text-right">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1040,7 +1040,7 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for Professional Services
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Clean-core SAP S/4HANA Cloud for Professional Services layered with algorithmic resource matching, mobile Fiori timesheets, and event-based revenue recognition.
             </p>
           </div>
@@ -1054,10 +1054,10 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">PROJECT CORE</span>
                 <Briefcase className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP S/4HANA Professional Services Core
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Project-centric ERP uniting sales orders, work breakdown structures (WBS), billing plans, and ledger postings in a single database.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1072,10 +1072,10 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">RESOURCE MANAGEMENT</span>
                 <Users className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Resource Management
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Algorithmic scheduling engine matching certified practitioners to open project roles, minimizing unbilled bench time and maximizing realization.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1090,10 +1090,10 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">REVENUE RECOGNITION</span>
                 <Scale className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Event-Based RevRec
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automated revenue postings matching IFRS 15 / ASC 606 standards instantly as milestone deliverables are accepted or timesheets approved.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1108,10 +1108,10 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">MOBILE UX</span>
                 <Clock className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Fiori Mobile Timesheets
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Consumer-grade mobile time and expense entry with automated task codes, receipt image attachments, and instant manager approvals.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1126,10 +1126,10 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">PROFITABILITY</span>
                 <PieChart className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Profitability Analysis (CO-PA)
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Granular engagement margin analytics calculating direct consultant rates, loaded overheads, and subcontractor spend against billing caps.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1144,10 +1144,10 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">GLOBAL STAFFING</span>
                 <Building2 className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Advanced Intercompany Cross-Charging
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automated multi-subsidiary billing and transfer pricing markup generation when practitioners deliver services to international sister entities.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1175,7 +1175,7 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every Professional Services Domain
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize consulting, legal, and engineering practices across resource staffing, billing, and margin control.
             </p>
           </div>
@@ -1247,12 +1247,12 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
                         </div>
 
                         {/* Title - Bold & Compact */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description - Snug & Concise */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1294,7 +1294,7 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Transforming Service Delivery into Predictable Practice Margin
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When skills-based scheduling, automated billing, and event-based revenue recognition operate in real-time unison, firms expand realization while lowering administrative overhead.
             </p>
           </div>
@@ -1307,10 +1307,10 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Users className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 15%+ Higher Billable Utilization
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Algorithmic scheduling matches practitioners to open client roles days earlier, cutting costly unbilled bench time across practice groups.
               </p>
             </div>
@@ -1320,10 +1320,10 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <DollarSign className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Compress Billing Cycles by 20 Days
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Mobile timesheet submissions with automated manager signoffs allow monthly invoices to be issued on day one of the new month.
               </p>
             </div>
@@ -1333,10 +1333,10 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Scale className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Continuous IFRS 15 Revenue Audit Readiness
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Event-based revenue recognition automatically posts earnings upon milestone acceptance, providing instant audit lineage for contract assets.
               </p>
             </div>
@@ -1346,10 +1346,10 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <PieChart className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Zero Unbilled Scope Creep
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Formal digital change order signoffs ensure that out-of-scope client requests are captured, authorized, and billed before delivery begins.
               </p>
             </div>
@@ -1359,10 +1359,10 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Building2 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Frictionless Global Cross-Charging
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automated multi-subsidiary transfer pricing marks up cross-border consultant sharing without manual intercompany disputes.
               </p>
             </div>
@@ -1372,10 +1372,10 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Briefcase className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Total Subcontractor Spend Transparency
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Unified SOW milestone tracking ensures freelance contractors are paid strictly against accepted deliverables, preserving engagement margins.
               </p>
             </div>
@@ -1408,7 +1408,7 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               End-to-End Professional Services Progression
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How consulting, legal, and engineering practices advance from fragmented timesheets to an integrated, profitable practice management engine.
             </p>
           </div>
@@ -1460,7 +1460,7 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
@@ -1469,7 +1469,7 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1571,7 +1571,7 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
             Ready to Build a High-Utilization Services Enterprise?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Align skills-based staffing, eliminate delinquent timesheets, automate IFRS 15 milestone billing, and protect engagement margins with Knooviq.
           </p>
 

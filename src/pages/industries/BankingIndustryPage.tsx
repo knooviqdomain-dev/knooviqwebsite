@@ -455,7 +455,7 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Panoramic Background - Aligned with AI Agents Reference)
@@ -504,7 +504,7 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-sm sm:text-base text-slate-100 font-normal leading-relaxed drop-shadow-sm max-w-2xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm max-w-2xl">
               Modernize core banking ledgers, accelerate intraday liquidity, automate Basel IV capital compliance, and deliver frictionless ISO 20022 real-time payments on clean-core SAP architecture.
             </p>
 
@@ -597,12 +597,12 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
 
               {/* Executive Thesis Quote Card */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-xs sm:text-sm font-semibold text-slate-800 italic leading-relaxed">
+                <p className="font-sora text-sm font-medium text-slate-800 italic leading-[1.6]">
                   "Leading financial institutions are moving away from monolithic core legacy mainframes to composable, clean-core financial architectures where intraday liquidity and regulatory reporting execute in sub-seconds."
                 </p>
               </div>
 
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 As real-time payment schemes like FedNow and SEPA Instant become table stakes, banks can no longer afford overnight batch accounting windows. Modern financial leaders require real-time continuous sub-ledger visibility, predictive liquidity positioning, and automated compliance frameworks that turn regulatory reporting into a strategic operational advantage.
               </p>
 
@@ -614,8 +614,8 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
                     <Landmark className="w-4 h-4" />
                   </div>
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-slate-900">Unified Financial Accounting</h3>
-                    <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                    <h3 className="font-sora text-xs sm:text-sm font-medium text-slate-900">Unified Financial Accounting</h3>
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       Harmonize retail deposits, syndicated loans, and treasury postings on an in-memory continuous ledger without batch reconciliation latency.
                     </p>
                   </div>
@@ -626,8 +626,8 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
                     <Coins className="w-4 h-4" />
                   </div>
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-slate-900">Intraday Cash & Balance Precision</h3>
-                    <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                    <h3 className="font-sora text-xs sm:text-sm font-medium text-slate-900">Intraday Cash & Balance Precision</h3>
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       Monitor multi-currency Nostro accounts and central bank reserve ratios in real time, eliminating expensive overnight liquidity buffers.
                     </p>
                   </div>
@@ -638,8 +638,8 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-slate-900">Continuous Regulatory Assurance</h3>
-                    <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                    <h3 className="font-sora text-xs sm:text-sm font-medium text-slate-900">Continuous Regulatory Assurance</h3>
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       Embed automated Basel IV RWA computations and AI-powered AML transaction screening directly into core operational workflows.
                     </p>
                   </div>
@@ -711,7 +711,7 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
                   <span className="font-bold text-[#0070C0] uppercase">Selected Milestone Detail</span>
                   <span>{journeySteps[activeJourneyStep].sublabel}</span>
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed font-medium">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -737,7 +737,7 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Systemic Pressures Confronting Modern Banking Institutions
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               From inflexible batch-window accounting to rigid regulatory mandates, modern financial enterprises must resolve structural operational bottlenecks.
             </p>
           </div>
@@ -761,11 +761,11 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
                       </span>
                     </div>
 
-                    <h3 className="text-base font-bold text-slate-900 tracking-tight leading-snug">
+                    <h3 className="font-sora text-base font-medium text-slate-900 tracking-tight leading-snug">
                       {challenge.title}
                     </h3>
 
-                    <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {challenge.desc}
                     </p>
                   </div>
@@ -800,7 +800,7 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
             <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
               Composable Financial Platform Architecture
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               A synchronized enterprise banking matrix uniting core ledgers, intraday liquidity, automated loan origination, and real-time payment rails.
             </p>
           </div>
@@ -837,10 +837,10 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1007,10 +1007,10 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
                         }}
                       />
                       <div className="space-y-1 text-right">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1039,7 +1039,7 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for Next-Gen Banking
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Engineered on clean-core SAP technology suites layered with real-time ISO 20022 message parsers, algorithmic underwriting, and enterprise risk engines.
             </p>
           </div>
@@ -1053,10 +1053,10 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CORE FINANCIAL LEDGER</span>
                 <Landmark className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP S/4HANA Banking Ledger
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Universal in-memory financial sub-ledger capturing continuous multi-entity accounting entries across loans, deposits, and interbank clearings.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1071,10 +1071,10 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">TREASURY & LIQUIDITY</span>
                 <Coins className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Treasury & Cash Management
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Centralized global liquidity orchestration giving treasurers sub-second intraday cash positioning across all correspondent bank accounts.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1089,10 +1089,10 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">PAYMENTS CLEARING</span>
                 <CreditCard className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Financial Services Network
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Direct integration with global clearing systems, SWIFT networks, and domestic real-time settlement rails formatted in native ISO 20022 XML.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1107,10 +1107,10 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CAPITAL REGULATION</span>
                 <Scale className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Financial Risk & Basel Engine
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automated credit risk modeling, output floor calculation, and liquidity coverage ratio (LCR) simulations compliant with Basel IV guidelines.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1125,10 +1125,10 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">FINANCIAL CRIME</span>
                 <ShieldCheck className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 AI Sanction & AML Surveillance
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Continuous behavioral analytics and machine learning anomaly detection flagging suspicious transactional behavior and sanctions violations.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1143,10 +1143,10 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">API BANKING</span>
                 <Zap className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP BTP Open Banking Hub
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Secure microservices mesh exposing standardized BaaS APIs, consent management, and developer sandboxes for ecosystem partner integration.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1174,7 +1174,7 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every Banking Domain
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize banking operations across core sub-ledgers, commercial lending, and automated risk governance.
             </p>
           </div>
@@ -1246,12 +1246,12 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
                         </div>
 
                         {/* Title - Bold & Compact */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description - Snug & Concise */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1293,7 +1293,7 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Turning Core Modernization into Strategic Capital Advantage
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When core banking ledgers, treasury liquidity, and risk governance operate in real-time unison, institutions capture operational speed with audit-proof compliance.
             </p>
           </div>
@@ -1306,10 +1306,10 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Clock className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Continuous Sub-Second Financial Close
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Eliminate traditional 14-day month-end financial close bottlenecks with continuous in-memory sub-ledger entries and instant multi-GAAP consolidation.
               </p>
             </div>
@@ -1319,10 +1319,10 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Coins className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Intraday Liquidity Optimization
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Live cash position visibility across global clearing accounts minimizes idle overnight balances and avoids costly intraday liquidity penalty fees.
               </p>
             </div>
@@ -1332,10 +1332,10 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Scale className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Audit-Ready Basel IV Governance
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automated risk-weighted asset modeling and stress simulation provide instant lineage from regulatory reports down to individual loan transactions.
               </p>
             </div>
@@ -1345,10 +1345,10 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <CreditCard className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Frictionless Real-Time Payments
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Sub-second ISO 20022 clearing pipelines process millions of daily transactions with zero queue congestion across RTP, FedNow, and SWIFT networks.
               </p>
             </div>
@@ -1358,10 +1358,10 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Building2 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Accelerated Commercial Loan Closings
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automated covenant verification and algorithmic financial statement parsing compress corporate loan approval cycles from weeks to hours.
               </p>
             </div>
@@ -1371,10 +1371,10 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Proactive Fraud Interception
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Continuous AI behavioral analysis flags synthetic identities and illicit funds movement in real time while reducing false-positive review backlogs.
               </p>
             </div>
@@ -1407,7 +1407,7 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Clean-Core Financial Sub-Ledger Progression
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How tier-1 and regional financial institutions transition from legacy batch mainframes to an integrated, real-time banking platform.
             </p>
           </div>
@@ -1459,7 +1459,7 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
@@ -1468,7 +1468,7 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1570,7 +1570,7 @@ export const BankingIndustryPage: React.FC<BankingIndustryPageProps> = ({
             Ready to Build a High-Velocity Financial Institution?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Modernize your core ledger, automate Basel IV capital compliance, and deliver frictionless ISO 20022 payments with Knooviq.
           </p>
 

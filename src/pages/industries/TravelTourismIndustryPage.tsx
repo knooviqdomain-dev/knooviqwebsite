@@ -470,7 +470,7 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Travel Hero)
@@ -513,7 +513,7 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Real-Time GDS/NDC Distribution, Dynamic Tour Packaging & Automated BSP Clearing.
               </p>
             </motion.div>
@@ -525,7 +525,7 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering airlines, global OTAs, tour operators, and destination management networks with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, automated{' '}
                 <strong className="text-cyan-300 font-semibold">BSP Settlement Clearing</strong>, dynamic tour assembly, and automated multi-currency FX risk protection.
@@ -625,12 +625,12 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
 
               {/* Executive Thesis Quote */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 italic leading-[1.6]">
                   &ldquo;Modern travel and tourism scalability demands instantaneous coordination: unifying global booking aggregators, dynamic package engines, and complex multi-currency supplier clearinghouses into one robust digital core.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers an integrated travel ecosystem on SAP S/4HANA Clean Core. By bridging data across global reservation systems, payment acquirers, and tour allotment inventories, travel leaders gain continuous visibility, automated BSP clearing, and protected operating margins.
               </p>
 
@@ -641,8 +641,8 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
                     <Plane className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Unified Distribution & Dynamic NDC Pipeline</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Unified Distribution & Dynamic NDC Pipeline</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Single-pane-of-glass coordination across Amadeus, Sabre, and direct airline NDC APIs with sub-second inventory caches.
                     </p>
                   </div>
@@ -653,8 +653,8 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
                     <Luggage className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Real-Time Dynamic Packaging & Inventory Yield</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Real-Time Dynamic Packaging & Inventory Yield</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Algorithmic bundle pricing aligning flight legs, hotel allocations, and activities with automated gross margin safeguards.
                     </p>
                   </div>
@@ -665,8 +665,8 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
                     <Receipt className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Global Clearing & Multi-Currency Treasury Governance</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Global Clearing & Multi-Currency Treasury Governance</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Automated 3-way IATA BSP matching, agency commission tier overrides, and real-time cross-border FX hedge execution.
                     </p>
                   </div>
@@ -729,7 +729,7 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
                     {journeySteps[activeJourneyStep].tech}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -761,7 +761,7 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating the Complexity of Modern Travel
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Disjointed global distribution systems and manual accounting reconciliations compress operating margins. Knooviq addresses the six systemic bottlenecks travel operators face.
             </p>
           </motion.div>
@@ -788,10 +788,10 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -833,7 +833,7 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Modern Travel
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting booking channels, dynamic tour assembly, automated supplier clearing, clean ERP ledgers, and real-time FX hedging into one continuous loop.
             </p>
           </motion.div>
@@ -870,10 +870,10 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1034,10 +1034,10 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
                         }}
                       />
                       <div className="space-y-1 text-left flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1066,7 +1066,7 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for Intelligent Travel
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               We engineer clean-core SAP technology suites layered with modern cloud extensions, role-based interfaces, and autonomous business AI.
             </p>
           </div>
@@ -1080,10 +1080,10 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CORE ERP SUITE</span>
                 <Cpu className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP S/4HANA
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Integrated enterprise ledger uniting airline seat orders, tour contracts, supplier payables, and automated multi-currency FX treasury management.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1098,10 +1098,10 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">DOMAIN SOLUTION</span>
                 <Plane className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Travel & Transportation
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Domain-specific booking capabilities purpose-built for dynamic inventory allotment matrices, airline interline netting, and agency commission splits.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1116,10 +1116,10 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">INTEGRATION & EXTENSIONS</span>
                 <Cloud className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Business Technology Platform
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Seamless side-by-side extensibility keeping the ERP core clean while connecting GDS APIs, digital payment gateways, and custom agency booking portals.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1134,10 +1134,10 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">BUSINESS INTELLIGENCE</span>
                 <BarChart3 className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Analytics Cloud
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Real-time visibility into route profitability, passenger load factor velocity, agency margin yields, and corporate carbon emissions telemetry.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1152,10 +1152,10 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">ROLE-BASED UX</span>
                 <Scan className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Fiori
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Intuitive mobile and tablet applications designed specifically for tour operators, customer service rebooking desks, and financial settlement controllers.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1170,10 +1170,10 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">COGNITIVE ENGINES</span>
                 <Sparkles className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 AI & Automation
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Dynamic pricing yield algorithms, autonomous 3-way BSP statement reconciliation, and automated passenger voucher clearing upon flight delays.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1201,7 +1201,7 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every Stage of Travel
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize travel execution across global distribution, dynamic packaging, and supplier financial clearing.
             </p>
           </div>
@@ -1272,12 +1272,12 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
                         </div>
 
                         {/* Title - Bold & Compact */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description - Snug & Concise */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1320,7 +1320,7 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Turning Travel Complexity into Business Advantage
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When distribution aggregators, dynamic package pricing, supplier clearing, and financial ledgers operate in unison, travel organizations achieve sustainable commercial performance.
             </p>
           </div>
@@ -1333,10 +1333,10 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Plane className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Sub-Second Fare Caching
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Eradicate inventory lockouts and seat allotment drift with high-performance distributed caching across GDS networks and NDC airline pipes.
               </p>
             </div>
@@ -1346,10 +1346,10 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <DollarSign className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Zero FX Exposure Slippage
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automated currency hedge bookings protect tour operator margins against cross-border foreign exchange volatility on international hotel net allotments.
               </p>
             </div>
@@ -1359,10 +1359,10 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Receipt className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Touchless BSP Clearing
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Continuous 3-way automated matching between ticket sales logs, IATA billing statements, and payment acquirers eliminates disputed debit memos.
               </p>
             </div>
@@ -1372,10 +1372,10 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <RefreshCw className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Rapid Disruption Recovery
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Event-driven flight sensing automatically re-tickets affected travelers, issues hotel vouchers, and resolves compensation without call center gridlock.
               </p>
             </div>
@@ -1385,10 +1385,10 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Luggage className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Dynamic Tour Margin Protection
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Algorithmic yield markups adjust bundle pricing dynamically according to seasonal demand curves and real-time partner supplier availability.
               </p>
             </div>
@@ -1398,10 +1398,10 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Globe2 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Scalable Global Growth
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Rapidly onboard new airline corridors, hotel aggregators, regional ground operators, and B2B agency partners onto an enterprise clean core.
               </p>
             </div>
@@ -1434,7 +1434,7 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Intelligent Travel & Tourism Architecture
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How global travel platforms advance from fragmented reservation pipes to an integrated clean-core event ecosystem.
             </p>
           </div>
@@ -1486,7 +1486,7 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
@@ -1495,7 +1495,7 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1597,7 +1597,7 @@ export const TravelTourismIndustryPage: React.FC<TravelTourismIndustryPageProps>
             Ready to Build a Smarter Travel Platform?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your booking aggregators, dynamic package pricing, supplier clearing, and general ledger with Knooviq.
           </p>
 

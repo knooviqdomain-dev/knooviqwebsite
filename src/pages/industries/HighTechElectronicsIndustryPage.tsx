@@ -518,7 +518,7 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
   ];
 
   return (
-    <div className="bg-slate-900 text-white min-h-screen">
+    <div className="bg-slate-900 text-white min-h-screen cloud-sora-scope">
       {/* =========================================================================
           SECTION 1: HERO SECTION
           ========================================================================= */}

@@ -472,7 +472,7 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Education Hero)
@@ -515,7 +515,7 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Student Lifecycle (SLcM), Research Grant Accounting & Campus Asset Governance.
               </p>
             </motion.div>
@@ -527,7 +527,7 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering universities, research institutes, and multi-campus collegiate systems with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, automated{' '}
                 <strong className="text-cyan-300 font-semibold">Sponsored Grants Management</strong>, frictionless bursar net billing, and predictive student retention analytics.
@@ -627,12 +627,12 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
 
               {/* Executive Thesis Quote */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 italic leading-[1.6]">
                   &ldquo;Modern academic sustainability requires institutional synchronization: connecting student lifecycle services, sponsored research grant administration, and campus facility operations into one transparent, auditable digital ledger.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers an integrated higher education ecosystem on SAP S/4HANA Clean Core. By bridging data across student information systems, research grant contracts, and campus operations, collegiate leaders gain continuous visibility, automated bursar net billing, and defended institutional audits.
               </p>
 
@@ -643,8 +643,8 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
                     <GraduationCap className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Unified Student Lifecycle & Degree Progression</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Unified Student Lifecycle & Degree Progression</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Single-pane-of-glass coordination across admissions, course registration, tuition billing, and degree audit milestones.
                     </p>
                   </div>
@@ -655,8 +655,8 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
                     <Landmark className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Rigorous Sponsored Research & Grant Compliance</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Rigorous Sponsored Research & Grant Compliance</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Post-award budget governance, automated labor effort certification, and automated indirect cost overhead recovery.
                     </p>
                   </div>
@@ -667,8 +667,8 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
                     <Award className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Institutional Bursar, Endowment & Facility Governance</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Institutional Bursar, Endowment & Facility Governance</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Multi-campus fund accounting, donor endowment covenant tracking, and predictive physical plant maintenance.
                     </p>
                   </div>
@@ -732,7 +732,7 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
                     {journeySteps[activeJourneyStep].tech}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -764,7 +764,7 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating the Complexity of Modern Higher Education
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Siloed departmental information systems and disconnected research ledgers create institutional risk. Knooviq addresses the six systemic challenges collegiate administrators face.
             </p>
           </motion.div>
@@ -791,10 +791,10 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -836,7 +836,7 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Modern Universities
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting the student lifecycle, sponsored research grant accounting, campus facility MRO, clean ERP fund ledgers, and cognitive student advising into one continuous loop.
             </p>
           </motion.div>
@@ -873,10 +873,10 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1037,10 +1037,10 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
                         }}
                       />
                       <div className="space-y-1 text-left flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1069,7 +1069,7 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for Intelligent Higher Education
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               We engineer clean-core SAP technology suites layered with modern cloud extensions, role-based interfaces, and autonomous business AI.
             </p>
           </div>
@@ -1083,10 +1083,10 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CORE ERP SUITE</span>
                 <Cpu className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP S/4HANA
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Integrated institutional ledger uniting multi-fund accounting, research grant payables, endowment asset pools, and campus payroll into a single in-memory database.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1101,10 +1101,10 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">ACADEMIC SUITE</span>
                 <GraduationCap className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Student Lifecycle Management
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Higher-education capabilities purpose-built for multi-campus program catalogs, course prerequisites, registration pipelines, and degree audit checks.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1119,10 +1119,10 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">INTEGRATION & EXTENSIONS</span>
                 <Cloud className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Business Technology Platform
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Seamless side-by-side extensibility keeping the ERP core clean while connecting Canvas/Blackboard LMS, CommonApp, and federal financial aid portals.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1137,10 +1137,10 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">BUSINESS INTELLIGENCE</span>
                 <BarChart3 className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Analytics Cloud
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Real-time visibility into student retention velocity, sponsored research grant burn rates, instructional cost-per-credit-hour, and endowment yields.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1155,10 +1155,10 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">ROLE-BASED UX</span>
                 <Scan className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Fiori
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Intuitive mobile and tablet applications designed specifically for students, academic advisors, principal research investigators, and department deans.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1173,10 +1173,10 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">COGNITIVE ENGINES</span>
                 <Sparkles className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 AI & Automation
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Intelligent student degree progression pathfinding, predictive grant spend alerts, automated transcript evaluation, and touchless student fee refunds.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1204,7 +1204,7 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every Stage of Higher Education
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize university administration across the student lifecycle, research grants, and campus operations.
             </p>
           </div>
@@ -1276,12 +1276,12 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
                         </div>
 
                         {/* Title - Bold & Compact */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description - Snug & Concise */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1324,7 +1324,7 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Turning Academic Complexity into Institutional Advantage
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When student lifecycle management, sponsored research grants, campus facilities, and fund ledgers operate in unison, universities achieve sustainable excellence.
             </p>
           </div>
@@ -1337,10 +1337,10 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <GraduationCap className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Seamless Student Experience
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Frictionless enrollment, degree audit tracking, and mobile fee payments eliminate campus administrative queues and boost student satisfaction.
               </p>
             </div>
@@ -1350,10 +1350,10 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Landmark className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Audit-Defended Research Grants
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automate federal Uniform Guidance compliance, principal investigator effort certification, and maximum indirect cost (F&A) recovery without disallowances.
               </p>
             </div>
@@ -1363,10 +1363,10 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Receipt className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Transparent Bursar Reconciliation
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automatically reconcile institutional scholarships, government Title IV loans, and corporate third-party billing against fluctuating course registrations.
               </p>
             </div>
@@ -1376,10 +1376,10 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <School className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Maximized Facility Utilization
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 IoT telemetry and predictive maintenance protect campus cleanrooms, research laboratories, dormitories, and lecture hall capacity without outages.
               </p>
             </div>
@@ -1389,10 +1389,10 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Award className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Predictive Degree Completion
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Early cognitive warning models alert academic advisors to off-track student trajectories, protecting retention rates and timely graduation velocity.
               </p>
             </div>
@@ -1402,10 +1402,10 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Globe2 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Institutional Financial Stewardship
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Provide university trustees with auditable transparency across auxiliary enterprises, restricted donor covenants, and perpetual endowment investments.
               </p>
             </div>
@@ -1438,7 +1438,7 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Intelligent Higher Education Architecture
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How major universities and multi-campus collegiate systems advance from legacy SIS silos to an integrated clean-core event ecosystem.
             </p>
           </div>
@@ -1490,7 +1490,7 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
@@ -1499,7 +1499,7 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1601,7 +1601,7 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
             Ready to Build a Smarter University Enterprise?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your student lifecycle services, sponsored research grant administration, and campus general ledger with Knooviq.
           </p>
 

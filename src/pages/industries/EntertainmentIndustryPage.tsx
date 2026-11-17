@@ -472,7 +472,7 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Entertainment Hero)
@@ -514,7 +514,7 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Rights Management, Production Accounting & Guild Residuals Settlement on SAP Clean Core.
               </p>
             </motion.div>
@@ -526,7 +526,7 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering studios, broadcast networks, streaming platforms, and music publishers with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, automated{' '}
                 <strong className="text-cyan-300 font-semibold">SAG/WGA Guild Residuals</strong>, high-volume SAP BRIM consumption rating, and live production hot-cost controls.
@@ -626,12 +626,12 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
 
               {/* Executive Thesis Quote */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 italic leading-[1.6]">
                   &ldquo;In the modern streaming and content era, media profitability is determined by operational precision: harmonizing complex IP rights matrices, daily studio production costs, and high-volume digital consumption into an audit-proof financial core.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers an integrated entertainment ecosystem on SAP S/4HANA Clean Core. By bridging data across rights databases, production sets, and streaming distribution platforms, media executives gain continuous visibility, automated guild settlements, and protected film slate margins.
               </p>
 
@@ -642,8 +642,8 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
                     <Film className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Unified Rights & Content Windowing Backbone</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Unified Rights & Content Windowing Backbone</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Single-pane coordination of global exploitation rights, territorial windows, and language holdbacks without contract leakage.
                     </p>
                   </div>
@@ -654,8 +654,8 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
                     <Clapperboard className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Real-Time Studio Costing & Hot-Cost Control</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Real-Time Studio Costing & Hot-Cost Control</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Live set payroll tracking, catering vouchers, and estimated final cost (EFC) updates alerting controllers to variances in hours.
                     </p>
                   </div>
@@ -666,8 +666,8 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
                     <Receipt className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Consumption Rating & Guild Residuals Governance</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Consumption Rating & Guild Residuals Governance</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       High-throughput subscriber rating via SAP BRIM, automated SAG/WGA residuals calculation, and self-service participant portals.
                     </p>
                   </div>
@@ -731,7 +731,7 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
                     {journeySteps[activeJourneyStep].tech}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -763,7 +763,7 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating the Complexity of Modern Entertainment
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Disjointed rights databases and manual spreadsheet accounting constrain studio and streaming agility. Knooviq addresses the six systemic challenges media leaders face.
             </p>
           </motion.div>
@@ -790,10 +790,10 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -835,7 +835,7 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Modern Entertainment
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting IP rights, production studio accounting, high-volume streaming rating, clean ERP ledgers, and guild residual payouts into one continuous loop.
             </p>
           </motion.div>
@@ -872,10 +872,10 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1036,10 +1036,10 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
                         }}
                       />
                       <div className="space-y-1 text-left flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1068,7 +1068,7 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for Intelligent Media
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               We engineer clean-core SAP technology suites layered with modern cloud extensions, role-based interfaces, and autonomous business AI.
             </p>
           </div>
@@ -1082,10 +1082,10 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CORE ERP SUITE</span>
                 <Cpu className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP S/4HANA
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Integrated enterprise ledger uniting intellectual property assets, studio production contracts, co-production slates, and multi-entity global financials.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1100,10 +1100,10 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CONSUMPTION SUITE</span>
                 <Tv className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP BRIM
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Billing and Revenue Innovation Management purpose-built to rate billions of streaming events, SVOD subscriber tiers, and complex guild residual disbursements.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1118,10 +1118,10 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">INTEGRATION & EXTENSIONS</span>
                 <Cloud className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Business Technology Platform
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Seamless side-by-side extensibility keeping the ERP core clean while connecting digital asset management (DAM) repositories, streaming CDNs, and talent portals.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1136,10 +1136,10 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">BUSINESS INTELLIGENCE</span>
                 <BarChart3 className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Analytics Cloud
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Real-time visibility into film slate ROI, streaming subscriber churn, territory license yields, and talent participation statement modeling.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1154,10 +1154,10 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">ROLE-BASED UX</span>
                 <Scan className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Fiori
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Intuitive mobile and tablet applications designed specifically for line producers, rights licensing executives, and talent audit coordinators.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1172,10 +1172,10 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">COGNITIVE ENGINES</span>
                 <Sparkles className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 AI & Automation
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automated legal contract ingestion, predictive production cost overruns, and machine-learning reconciliation of ad server impression logs.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1203,7 +1203,7 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every Stage of Entertainment
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize media operations across IP rights, studio production accounting, and subscriber monetization.
             </p>
           </div>
@@ -1274,12 +1274,12 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
                         </div>
 
                         {/* Title - Bold & Compact */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description - Snug & Concise */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1322,7 +1322,7 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Turning Media Complexity into Business Advantage
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When IP rights, production studio accounting, streaming rating, and financial ledgers operate in unison, entertainment companies achieve sustainable commercial performance.
             </p>
           </div>
@@ -1335,10 +1335,10 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Film className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Precision Rights Monetization
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Know exactly what rights are available across every territory, language, and platform window. Eradicate accidental rights breaches and monetize unexploited library titles.
               </p>
             </div>
@@ -1348,10 +1348,10 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Clapperboard className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Real-Time Production Cost Control
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Generate morning hot-cost sheets for line producers and track daily payroll against estimated final costs (EFC) before budget overruns occur.
               </p>
             </div>
@@ -1361,10 +1361,10 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Tv className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 High-Throughput Event Rating
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Scale seamlessly to billions of concurrent streaming play events with SAP BRIM Convergent Mediation, ensuring zero lost usage or delayed billing cycles.
               </p>
             </div>
@@ -1374,10 +1374,10 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Receipt className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Audit-Proof Guild Residuals
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automate intricate SAG-AFTRA, DGA, and WGA residual rule tiers. Protect your studio against costly forensic audits and talent arbitration disputes.
               </p>
             </div>
@@ -1387,10 +1387,10 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <DollarSign className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Accelerated Financial Closing
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automate co-production waterfall splits, programmatic ad impression matching, and multi-currency ledger reconciliations into a single in-memory database.
               </p>
             </div>
@@ -1400,10 +1400,10 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Globe2 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Scalable Catalog Growth
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Rapidly onboard acquired film and TV catalogs, international streaming channels, and studio joint ventures onto a standardized Clean Core ERP foundation.
               </p>
             </div>
@@ -1436,7 +1436,7 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Intelligent Media & Entertainment Architecture
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How major studios and streaming platforms advance from fragmented rights spreadsheets to an integrated clean-core event ecosystem.
             </p>
           </div>
@@ -1488,7 +1488,7 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
@@ -1497,7 +1497,7 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1599,7 +1599,7 @@ export const EntertainmentIndustryPage: React.FC<EntertainmentIndustryPageProps>
             Ready to Build a Smarter Entertainment Enterprise?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your intellectual property rights, studio production accounting, streaming billing, and guild residuals with Knooviq.
           </p>
 
