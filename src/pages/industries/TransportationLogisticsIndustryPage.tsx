@@ -468,7 +468,7 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Transportation Hero)
@@ -511,7 +511,7 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Multi-Modal Freight Orchestration, Fleet Telematics & Automated Carrier Settlement.
               </p>
             </motion.div>
@@ -523,7 +523,7 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering freight carriers, 3PL logistics networks, and enterprise private fleet operators with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, automated{' '}
                 <strong className="text-cyan-300 font-semibold">SAP TM Dynamic Route Building</strong>, real-time IoT telematics, and touchless freight audit settlements.
@@ -623,12 +623,12 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
 
               {/* Executive Thesis Quote */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-[1.6] italic">
                   &ldquo;Logistics resilience is defined at the freight milestone: unifying carrier booking, multi-modal routing, and real-time fleet telematics into one cohesive operational core.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers an integrated enterprise ecosystem on SAP S/4HANA Clean Core. By bridging data across telematics systems, carrier networks, and distribution yards, logistics leaders eliminate deadhead miles, automate carrier settlement, and maintain continuous shipment visibility.
               </p>
 
@@ -639,8 +639,8 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
                     <Navigation className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Multi-Modal Carrier Optimization</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Multi-Modal Carrier Optimization</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Algorithmic 3D truckload optimization combining sales orders, stock transfers, and purchase orders into full truckload (FTL) and LTL routes.
                     </p>
                   </div>
@@ -651,8 +651,8 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
                     <Truck className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Live Fleet Telematics & Geofencing</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Live Fleet Telematics & Geofencing</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Sub-second GPS streaming, automated gate arrival triggers, cold chain reefer alerts, and driver hours-of-service compliance.
                     </p>
                   </div>
@@ -663,8 +663,8 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
                     <FileCheck className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Touchless Freight Audit & Settlement</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Touchless Freight Audit & Settlement</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Automated three-way invoice matching verifying negotiated contract tariffs, fuel surcharges, and validated detention time.
                     </p>
                   </div>
@@ -727,7 +727,7 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
                     {journeySteps[activeJourneyStep].tech}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -759,7 +759,7 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating the Complexity of Modern Transportation & Logistics
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Volatile carrier rates, empty return legs, and delayed milestone visibility constrain profitability. Knooviq addresses the six systemic challenges logistics leaders face.
             </p>
           </motion.div>
@@ -786,10 +786,10 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -831,7 +831,7 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Transportation & Fleet Logistics
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting freight routing, carrier tendering, yard dock booking, mobile e-POD, and automated audit settlement into one continuous loop.
             </p>
           </motion.div>
@@ -868,10 +868,10 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1032,10 +1032,10 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
                         }}
                       />
                       <div className="space-y-1 text-left flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1064,7 +1064,7 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for Transportation & Logistics
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               We engineer clean-core SAP technology suites layered with modern cloud extensions, IoT telematics interfaces, and touchless freight audit automation.
             </p>
           </div>
@@ -1078,10 +1078,10 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CORE ERP SUITE</span>
                 <Truck className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Transportation Management (TM)
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Integrated freight units, multi-modal routing algorithms, automated carrier tendering, and real-time freight cost calculation.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1096,10 +1096,10 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">DOMAIN SOLUTION</span>
                 <Boxes className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Yard Logistics (YL)
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Distribution center yard execution, driver self-service check-in, dock door appointment slots, and automated shunter truck dispatch.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1114,10 +1114,10 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">INTEGRATION & EXTENSIONS</span>
                 <Cloud className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Business Technology Platform
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Decoupled extension microservices ingesting millions of GPS telemetry pings, ELD hours-of-service feeds, and digital e-POD signatures.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1132,10 +1132,10 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">BUSINESS INTELLIGENCE</span>
                 <BarChart3 className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Analytics Cloud
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Real-time visibility into On-Time In-Full (OTIF) delivery rates, cost-per-ton-mile analytics, carrier performance rankings, and Scope 3 emissions.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1150,10 +1150,10 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">ROLE-BASED UX</span>
                 <Scan className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Fiori Logistics Mobile Apps
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Mobile smartphone and ruggedized cab tablet apps designed for truck drivers, yard security gate guards, and freight billing auditors.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1168,10 +1168,10 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">COGNITIVE ENGINES</span>
                 <Sparkles className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 AI Routing & Capacity Prediction
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Predictive algorithms analyzing historical route delays, weather anomalies, and spot rate curves to dynamically optimize logistics networks.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1199,7 +1199,7 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every Stage of Transportation & Logistics
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize transportation execution across multi-modal freight, fleet telematics, and automated carrier settlement.
             </p>
           </div>
@@ -1271,12 +1271,12 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
                         </div>
 
                         {/* Title - Bold & Compact */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description - Snug & Concise */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1318,7 +1318,7 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Turning Transportation Complexity into Business Advantage
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When multi-modal freight routing, live telematics, yard scheduling, and freight ledgers operate in unison, logistics enterprises achieve sustainable operational efficiency.
             </p>
           </div>
@@ -1331,10 +1331,10 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Truck className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Reduced Freight Spend
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Optimize carrier selection and load consolidation. Cut empty return deadhead miles through automated backhaul pairing algorithms.
               </p>
             </div>
@@ -1344,10 +1344,10 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <FileCheck className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Touchless Freight Audit & Settlement
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automate three-way carrier invoice reconciliation against contracted rate tariffs and verified GPS detention hours, eliminating overpayments.
               </p>
             </div>
@@ -1357,10 +1357,10 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Navigation className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Sub-Second Shipment Visibility
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Provide customers and distribution hubs with live GPS tracking, automated geofence milestone alerts, and dynamic arrival ETAs.
               </p>
             </div>
@@ -1370,10 +1370,10 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Boxes className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Eliminated Yard Detention Fees
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Synchronize driver dock appointments with warehouse loading crews, eradicating staging area gridlock and expensive driver waiting penalties.
               </p>
             </div>
@@ -1383,10 +1383,10 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <QrCode className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Instant Digital e-POD Verification
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Replace lost paper delivery notes with mobile glass signatures and photographic condition records, accelerating billing cash collection.
               </p>
             </div>
@@ -1396,10 +1396,10 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Audited Scope 3 Fleet Carbon Reductions
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Calculate and benchmark greenhouse gas emissions per ton-mile compliant with GLEC standards across owned fleets and subcontracted carriers.
               </p>
             </div>
@@ -1432,7 +1432,7 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Intelligent Transportation & Fleet Logistics Architecture
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How transportation enterprises advance from disconnected carrier tendering to an integrated clean-core event ecosystem.
             </p>
           </div>
@@ -1484,7 +1484,7 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
@@ -1493,7 +1493,7 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1594,7 +1594,7 @@ export const TransportationLogisticsIndustryPage: React.FC<TransportationLogisti
             Ready to Build a Smarter Transportation & Fleet Business?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your fleets, freight carriers, yards, and logistics partners with Knooviq.
           </p>
 

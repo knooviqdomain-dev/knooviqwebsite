@@ -477,7 +477,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Infrastructure Hero)
@@ -519,7 +519,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Capital Project Governance, Linear Asset Management (LRS) & PPP Annuity Ledgers.
               </p>
             </motion.div>
@@ -531,7 +531,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering highway authorities, rail corporations, and sovereign concessionaires with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA Linear Asset Management (LAM)</strong>, automated{' '}
                 <strong className="text-cyan-300 font-semibold">PPP Toll & Annuity Ledgers</strong>, and real-time structural health telemetry.
@@ -623,12 +623,12 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-[1.6] italic">
                   &ldquo;Infrastructure investments succeed when linear assets, capital funding appropriations, and concessionaire revenues are synchronized. Eliminating blindspots between the milepost and the ledger protects public funds.&rdquo;
                 </p>
               </div>
 
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 National infrastructure programs face acute fiscal risks when linear corridors (highways, tunnels, rail networks) lack dynamic chainage maintenance tracking and public-private partnership (PPP) concession ledgers suffer from reconciliation lag. Knooviq delivers an integrated digital core uniting geospatial GIS data, structural health sensors, and sovereign capital governance.
               </p>
 
@@ -665,7 +665,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                       <span className="px-2.5 py-0.5 rounded-full bg-cyan-400 text-slate-950 font-mono text-[10px] font-bold uppercase tracking-wider">
                         {journeySteps[activeJourneyStep].tech}
                       </span>
-                      <h3 className="text-base sm:text-lg font-bold text-white mt-1">
+                      <h3 className="font-sora text-base sm:text-lg font-medium text-white mt-1">
                         {journeySteps[activeJourneyStep].label}
                       </h3>
                     </div>
@@ -675,7 +675,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                   </div>
                 </div>
 
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed min-h-[44px]">
+                <p className="font-sora text-xs sm:text-sm text-[#102A43] leading-[1.6] min-h-[44px] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -727,7 +727,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Operational Challenges Across Megaproject Lifecycles
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Infrastructure authorities suffer massive financial penalties when linear asset maintenance, sovereign capital drawdowns, and concessionaire revenues operate on siloed legacy systems.
             </p>
           </div>
@@ -750,11 +750,11 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                       </div>
                     </div>
 
-                    <h3 className="text-base font-bold text-slate-900 leading-snug">
+                    <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                       {item.title}
                     </h3>
 
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -794,7 +794,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               KNOOVIQ Infrastructure Architecture Core
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Hover over any segment in the interlocking wheel to explore how Linear Asset Management, PPP concession ledgers, and structural health telemetry operate in seamless harmony.
             </p>
           </motion.div>
@@ -831,10 +831,10 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1004,10 +1004,10 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                         }}
                       />
                       <div className="space-y-1 text-right flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1036,7 +1036,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Enterprise Infrastructure Technology Blueprint
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Decoupling IoT structural strain sensors, GIS mapping, and concessionaire portals on SAP BTP while preserving an uncorrupted S/4HANA core.
             </p>
           </div>
@@ -1083,24 +1083,24 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                   <div className="flex items-center gap-3">
                     <Radio className="w-6 h-6 text-sky-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">Geospatial GIS & Structural Health Sensors</h3>
-                      <p className="text-xs text-slate-400 font-mono">ArcGIS • Fiber Optic Acoustic • Strain Gauges • Weather Stations • Drone Surveys</p>
+                      <h3 className="font-sora text-lg font-medium text-white">Geospatial GIS & Structural Health Sensors</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">ArcGIS • Fiber Optic Acoustic • Strain Gauges • Weather Stations • Drone Surveys</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-mono">Sub-Minute Feeds</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-sky-300 uppercase font-mono mb-1">Geospatial Cadastral Sync</h4>
-                    <p className="text-xs text-slate-300">Bi-directional GIS layer sync translating map coordinates into chainage mileposts in SAP LAM.</p>
+                    <h4 className="font-sora text-xs font-medium text-sky-300 uppercase font-mono mb-1">Geospatial Cadastral Sync</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Bi-directional GIS layer sync translating map coordinates into chainage mileposts in SAP LAM.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-sky-300 uppercase font-mono mb-1">Fiber-Optic Deflection</h4>
-                    <p className="text-xs text-slate-300">Continuous optical strain sensing monitors bridge girder load stress and foundation settlement.</p>
+                    <h4 className="font-sora text-xs font-medium text-sky-300 uppercase font-mono mb-1">Fiber-Optic Deflection</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Continuous optical strain sensing monitors bridge girder load stress and foundation settlement.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-sky-300 uppercase font-mono mb-1">Drone Photogrammetry</h4>
-                    <p className="text-xs text-slate-300">High-resolution drone ortho-mosaics automatically detect pavement cracking and slope erosion.</p>
+                    <h4 className="font-sora text-xs font-medium text-sky-300 uppercase font-mono mb-1">Drone Photogrammetry</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">High-resolution drone ortho-mosaics automatically detect pavement cracking and slope erosion.</p>
                   </div>
                 </div>
               </div>
@@ -1112,24 +1112,24 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                   <div className="flex items-center gap-3">
                     <Server className="w-6 h-6 text-[#0070C0]" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">SAP S/4HANA Linear Asset Management & Sovereign Funds Core</h3>
-                      <p className="text-xs text-slate-400 font-mono">SAP LAM • Funds Management (FM) • Universal Journal • Grant Accounting</p>
+                      <h3 className="font-sora text-lg font-medium text-white">SAP S/4HANA Linear Asset Management & Sovereign Funds Core</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">SAP LAM • Funds Management (FM) • Universal Journal • Grant Accounting</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-mono">Clean Core Standard</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-cyan-300 uppercase font-mono mb-1">Linear Referencing (LRS)</h4>
-                    <p className="text-xs text-slate-300">Assets and work orders anchored dynamically by Start Chainage, End Chainage, and Marker Posts.</p>
+                    <h4 className="font-sora text-xs font-medium text-cyan-300 uppercase font-mono mb-1">Linear Referencing (LRS)</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Assets and work orders anchored dynamically by Start Chainage, End Chainage, and Marker Posts.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-cyan-300 uppercase font-mono mb-1">Sovereign Tranche Controls</h4>
-                    <p className="text-xs text-slate-300">Budget availability controls prevent multi-year overspending on sovereign loan accounts.</p>
+                    <h4 className="font-sora text-xs font-medium text-cyan-300 uppercase font-mono mb-1">Sovereign Tranche Controls</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Budget availability controls prevent multi-year overspending on sovereign loan accounts.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-cyan-300 uppercase font-mono mb-1">IFRS 15 Concession Billing</h4>
-                    <p className="text-xs text-slate-300">Recognizes progressive construction revenue and automated post-COD annuity disbursements.</p>
+                    <h4 className="font-sora text-xs font-medium text-cyan-300 uppercase font-mono mb-1">IFRS 15 Concession Billing</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Recognizes progressive construction revenue and automated post-COD annuity disbursements.</p>
                   </div>
                 </div>
               </div>
@@ -1141,24 +1141,24 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                   <div className="flex items-center gap-3">
                     <Zap className="w-6 h-6 text-amber-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">SAP BTP Concessionaire & Lender Collaboration Suite</h3>
-                      <p className="text-xs text-slate-400 font-mono">BTP Event Mesh • ETC Toll Settlement API • Audit Portal</p>
+                      <h3 className="font-sora text-lg font-medium text-white">SAP BTP Concessionaire & Lender Collaboration Suite</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">BTP Event Mesh • ETC Toll Settlement API • Audit Portal</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-mono">Cloud Event Mesh</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-amber-300 uppercase font-mono mb-1">ETC Toll Clearinghouse</h4>
-                    <p className="text-xs text-slate-300">Ingests real-time FASTag, RFID, and ANPR camera feeds to verify concessionaire revenue splits.</p>
+                    <h4 className="font-sora text-xs font-medium text-amber-300 uppercase font-mono mb-1">ETC Toll Clearinghouse</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Ingests real-time FASTag, RFID, and ANPR camera feeds to verify concessionaire revenue splits.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-amber-300 uppercase font-mono mb-1">Multi-Lender Audit Vault</h4>
-                    <p className="text-xs text-slate-300">Secure digital repository providing sovereign auditors and bondholders real-time compliance docs.</p>
+                    <h4 className="font-sora text-xs font-medium text-amber-300 uppercase font-mono mb-1">Multi-Lender Audit Vault</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Secure digital repository providing sovereign auditors and bondholders real-time compliance docs.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-amber-300 uppercase font-mono mb-1">Predictive Corridor AI</h4>
-                    <p className="text-xs text-slate-300">Machine learning models forecast pavement deterioration and schedule resurfacing contracts.</p>
+                    <h4 className="font-sora text-xs font-medium text-amber-300 uppercase font-mono mb-1">Predictive Corridor AI</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Machine learning models forecast pavement deterioration and schedule resurfacing contracts.</p>
                   </div>
                 </div>
               </div>
@@ -1182,7 +1182,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Knooviq Infrastructure Solution Suites
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Targeted capability packages designed to modernize national infrastructure networks without disrupting operational traffic.
             </p>
           </div>
@@ -1236,10 +1236,10 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                       <span className="text-[10px] font-mono font-bold text-[#0070C0] uppercase tracking-wider bg-sky-50 px-2 py-0.5 rounded border border-sky-100">
                         {sol.categoryLabel}
                       </span>
-                      <h3 className="text-base sm:text-lg font-bold text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug line-clamp-2">
+                      <h3 className="font-sora text-base sm:text-lg font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug line-clamp-2">
                         {sol.title}
                       </h3>
-                      <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
+                      <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-3 font-normal">
                         {sol.description}
                       </p>
                     </div>
@@ -1275,7 +1275,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Legacy Infrastructure Silos vs Knooviq Clean Core
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Compare traditional public works administrative bottlenecks against Knooviq&apos;s real-time SAP S/4HANA Clean Core architecture.
             </p>
           </div>
@@ -1342,7 +1342,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Phased Roadmap to Autonomous Infrastructure Operations
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Inspect how legacy public works administration transforms into an orchestrated digital corridor across every stage of the SAP deployment.
             </p>
           </div>
@@ -1380,7 +1380,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                     </div>
 
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide mt-0.5">
@@ -1388,7 +1388,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                       </div>
                     </div>
 
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1417,7 +1417,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                     <span className={`text-[11px] font-mono font-bold uppercase tracking-wider ${currentStage.textColor}`}>
                       {currentStage.badge} ARCHITECTURAL DELTA
                     </span>
-                    <h3 className="text-lg font-bold text-white mt-0.5">
+                    <h3 className="font-sora text-lg font-medium text-white mt-0.5">
                       {currentStage.title} &mdash; {currentStage.subtitle}
                     </h3>
                   </div>
@@ -1429,11 +1429,11 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="p-4 rounded-xl bg-rose-950/30 border border-rose-500/30">
                     <div className="text-xs font-mono font-bold text-rose-400 uppercase tracking-wider mb-1">Legacy State</div>
-                    <p className="text-xs text-slate-200">{currentStage.before}</p>
+                    <p className="font-sora text-xs text-slate-200 leading-[1.6] font-normal">{currentStage.before}</p>
                   </div>
                   <div className="p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/30">
                     <div className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider mb-1">Modernized Clean Core</div>
-                    <p className="text-xs text-slate-200">{currentStage.after}</p>
+                    <p className="font-sora text-xs text-slate-200 leading-[1.6] font-normal">{currentStage.after}</p>
                   </div>
                 </div>
 
@@ -1467,7 +1467,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Strategic Value Drivers & Operational Safeguards
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Architectural outcomes delivered across sovereign infrastructure corridors and public-private concessionaires.
             </p>
           </div>
@@ -1478,10 +1478,10 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                 <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-[#0070C0]">
                   <Route className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
+                <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                   Corridor Maintenance Optimization
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   Dynamic chainage and milepost-based maintenance dispatch eliminating resurfacing guesswork and optimizing civil upkeep budgets.
                 </p>
               </div>
@@ -1496,10 +1496,10 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                 <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
                   <BarChart3 className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
+                <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                   Tolling Audit Integrity
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   Real-time electronic toll collection gateway integration ensuring continuous concessionaire revenue reconciliation and zero leakage.
                 </p>
               </div>
@@ -1514,10 +1514,10 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                 <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-[#0070C0]">
                   <Landmark className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
+                <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                   Sovereign Capex Compliance
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   Strict multi-tranche public finance and multilateral loan ledger controls, ensuring audit-proof documentation for capital grants.
                 </p>
               </div>
@@ -1532,10 +1532,10 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                 <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
                   <Gauge className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
+                <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                   Structural Longevity Assurance
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   Continuous IoT strain and vibration telemetry detecting structural fatigue early, extending the operational life of civil megastructures.
                 </p>
               </div>
@@ -1563,7 +1563,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Infrastructure Architecture Advisory
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Key technical and commercial considerations for transport authorities and sovereign concessionaires deploying SAP S/4HANA.
             </p>
           </div>
@@ -1630,7 +1630,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             Ready to Build Next-Generation Infrastructure Governance?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Synchronize your linear assets, concessionaire revenue ledgers, and sovereign grants with Knooviq.
           </p>
 

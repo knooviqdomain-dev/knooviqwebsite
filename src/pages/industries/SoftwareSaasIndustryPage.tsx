@@ -457,7 +457,7 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Software & SaaS Hero)
@@ -499,7 +499,7 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Automated Subscription Billing, Usage Rating & ASC 606 Revenue Recognition.
               </p>
             </motion.div>
@@ -511,7 +511,7 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering cloud software providers, digital platforms, and subscription enterprises with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, high-velocity{' '}
                 <strong className="text-cyan-300 font-semibold">BRIM Event Mediation</strong>, automated ASC 606 revenue compliance, and proactive churn recovery.
@@ -611,12 +611,12 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
 
               {/* Executive Thesis Quote */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-[1.6] italic">
                   &ldquo;Modern SaaS valuation is defined by monetization velocity: unifying product telemetry, consumption-based contracts, and statutory revenue ledgers into one cohesive operational core.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers an integrated revenue ecosystem on SAP S/4HANA Clean Core. By bridging data across cloud application telemetry and core general ledgers, SaaS leadership gains continuous visibility, automated billing flow, and audit-ready revenue realization.
               </p>
 
@@ -627,8 +627,8 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
                     <Zap className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">High-Throughput Consumption Rating</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">High-Throughput Consumption Rating</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Single-pane-of-glass coordination across millions of API events, compute telemetry, and tiered volume discounts without latency.
                     </p>
                   </div>
@@ -639,8 +639,8 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Statutory ASC 606 & IFRS 15 Compliance</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Statutory ASC 606 & IFRS 15 Compliance</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Automated standalone selling price (SSP) allocation and performance obligation scheduling on the Universal Journal.
                     </p>
                   </div>
@@ -651,8 +651,8 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
                     <RefreshCw className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Proactive Dunning & Churn Defense</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Proactive Dunning & Churn Defense</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Automated card updater networks and smart decline retry algorithms actively defending recurring annual revenue.
                     </p>
                   </div>
@@ -715,7 +715,7 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
                     {journeySteps[activeJourneyStep].tech}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -747,7 +747,7 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating the Complexity of Modern Cloud Billing
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Disjointed billing scripts and siloed product telemetry constrain ARR growth. Knooviq addresses the six systemic challenges cloud software leaders face.
             </p>
           </motion.div>
@@ -774,10 +774,10 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -819,7 +819,7 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Modern SaaS
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting usage metering, coterminous contracts, automated invoicing, ASC 606 general ledgers, and cognitive AI into one continuous loop.
             </p>
           </motion.div>
@@ -856,10 +856,10 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1025,10 +1025,10 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
                         }}
                       />
                       <div className="space-y-1 text-right">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1057,7 +1057,7 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for Intelligent SaaS
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               We engineer clean-core SAP technology suites layered with modern cloud event streaming, role-based interfaces, and autonomous business AI.
             </p>
           </div>
@@ -1071,10 +1071,10 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CORE ERP SUITE</span>
                 <Cpu className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP S/4HANA
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Integrated enterprise processes uniting financial ledgers, contract assets, subscription invoices, and profit center accounting into a single in-memory database.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1089,10 +1089,10 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">BILLING ENGINE</span>
                 <CreditCard className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP BRIM / Billing
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 High-volume convergent charging and invoicing engine capable of rating millions of consumption events and compiling single itemized bills.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1107,10 +1107,10 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">INTEGRATION & EVENT MESH</span>
                 <Cloud className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Business Technology Platform
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Seamless side-by-side extensibility keeping the ERP core clean while connecting cloud API telemetry, payment processors, and custom portals.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1125,10 +1125,10 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">REVENUE ACCOUNTING</span>
                 <ShieldCheck className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Revenue Accounting (RAR)
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automated statutory revenue compliance separating deferred contract liabilities from earned ARR with automated catch-up postings.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1143,10 +1143,10 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">BUSINESS INTELLIGENCE</span>
                 <BarChart3 className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Analytics Cloud
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Executive visibility into Net Retention Rate (NRR), customer cohort margins, churn velocity, and predictive subscription pipeline modeling.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1161,10 +1161,10 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">COGNITIVE ENGINES</span>
                 <Sparkles className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 AI & Churn Defense
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Intelligent payment retry logic factoring in banking clearing windows, automated card updater network sync, and predictive churn prevention.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1192,7 +1192,7 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every Stage of SaaS
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize cloud monetization across subscription plans, dynamic metering, and statutory ledgers.
             </p>
           </div>
@@ -1264,12 +1264,12 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
                         </div>
 
                         {/* Title - Bold & Compact */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description - Snug & Concise */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1311,7 +1311,7 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Turning Billing Complexity into Growth Advantage
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When usage telemetry, subscriptions, payment gateways, and statutory ledgers operate in unison, SaaS organizations achieve sustainable commercial acceleration.
             </p>
           </div>
@@ -1324,10 +1324,10 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Zap className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Touchless Month-End Close
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Eliminate manual spreadsheet reconciliations and proration calculations. Compress the monthly subscription billing close from weeks down to hours.
               </p>
             </div>
@@ -1337,10 +1337,10 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 100% ASC 606 Audit Traceability
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Deliver automated standalone selling price allocations and contract balance schedules, guaranteeing zero audit restatements or compliance penalties.
               </p>
             </div>
@@ -1350,10 +1350,10 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <RefreshCw className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 45% Involuntary Churn Recovery
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Recover failed transactions through automated card network updater synchronizations and smart multi-attempt dunning retry schedules.
               </p>
             </div>
@@ -1363,10 +1363,10 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Database className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Zero Unbilled Usage Leakage
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Process high-throughput API and consumption telemetry through an idempotent event mesh, ensuring zero dropped events or unrated consumption.
               </p>
             </div>
@@ -1376,10 +1376,10 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <FileCheck className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Frictionless Coterminous Expansion
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Enable sales teams to add seats and product tiers mid-contract with instant automated proration and aligned annual renewal cycles.
               </p>
             </div>
@@ -1389,10 +1389,10 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <BarChart3 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Live Cohort Margin & NRR Telemetry
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Arm executive leadership with real-time Net Retention Rate and customer profitability metrics reconciled directly against core finance ledgers.
               </p>
             </div>
@@ -1425,7 +1425,7 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Intelligent SaaS Revenue Architecture
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How high-growth cloud enterprises advance from fragmented billing scripts to an integrated clean-core subscription ecosystem.
             </p>
           </div>
@@ -1477,7 +1477,7 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
@@ -1486,7 +1486,7 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1588,7 +1588,7 @@ export const SoftwareSaasIndustryPage: React.FC<SoftwareSaasIndustryPageProps> =
             Ready to Build a Smarter Subscription Business?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your consumption metering, subscription billing, ASC 606 revenue recognition, and churn recovery with Knooviq.
           </p>
 

@@ -477,7 +477,7 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Facilities & Assets Hero)
@@ -519,7 +519,7 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 IoT-Driven Building Operations, Predictive APM & Dynamic Work Order Dispatch.
               </p>
             </motion.div>
@@ -531,7 +531,7 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering corporate real estate operators, industrial plant managers, and facility management service providers with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA Asset Management (PM/EAM)</strong>, automated{' '}
                 <strong className="text-cyan-300 font-semibold">Predictive APM Telemetry</strong>, and mobile field execution.
@@ -623,12 +623,12 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-[1.6] italic">
                   &ldquo;A facility is not a passive concrete shell—it is an intricate electro-mechanical ecosystem. Connecting sensor streams directly to maintenance work orders eliminates catastrophic downtime and halves utility costs.&rdquo;
                 </p>
               </div>
 
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Traditional facility management suffers from reactive firefighting: discovering chiller failures only after tenant complaints flood the helpdesk, paper work orders getting lost in transit, and multi-campus BMS systems operating in dark silos. Knooviq transforms facilities operations into an intelligent, closed-loop predictive enterprise running on SAP S/4HANA.
               </p>
 
@@ -665,7 +665,7 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
                       <span className="px-2.5 py-0.5 rounded-full bg-cyan-400 text-slate-950 font-mono text-[10px] font-bold uppercase tracking-wider">
                         {journeySteps[activeJourneyStep].tech}
                       </span>
-                      <h3 className="text-base sm:text-lg font-bold text-white mt-1">
+                      <h3 className="font-sora text-base sm:text-lg font-medium text-white mt-1">
                         {journeySteps[activeJourneyStep].label}
                       </h3>
                     </div>
@@ -675,7 +675,7 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
                   </div>
                 </div>
 
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed min-h-[44px]">
+                <p className="font-sora text-xs sm:text-sm text-[#102A43] leading-[1.6] min-h-[44px] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -727,7 +727,7 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Operational Challenges Across Facilities & Plant Operations
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Property and plant operators lose millions annually when building management systems, work order dispatch, and spare parts remain disconnected from ERP ledgers.
             </p>
           </div>
@@ -750,11 +750,11 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
                       </div>
                     </div>
 
-                    <h3 className="text-base font-bold text-slate-900 leading-snug">
+                    <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                       {item.title}
                     </h3>
 
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -794,7 +794,7 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               KNOOVIQ Facilities & Asset Performance Core
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Hover over any segment in the interlocking wheel to explore how IoT telemetry, mobile work orders, and predictive APM operate in continuous synchronization.
             </p>
           </motion.div>
@@ -831,10 +831,10 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1004,10 +1004,10 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
                         }}
                       />
                       <div className="space-y-1 text-right flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1036,7 +1036,7 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Enterprise Facilities Technology Blueprint
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Decoupling IoT BMS field gateways, technician mobile apps, and predictive analytics on SAP BTP while preserving an uncorrupted S/4HANA core.
             </p>
           </div>
@@ -1083,24 +1083,24 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
                   <div className="flex items-center gap-3">
                     <Radio className="w-6 h-6 text-sky-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">Multi-BMS Protocol Gateway & Sensor Telemetry</h3>
-                      <p className="text-xs text-slate-400 font-mono">BACnet/IP • Modbus TCP • LoRaWAN • OPC-UA • Vibration Accelerometers</p>
+                      <h3 className="font-sora text-lg font-medium text-white">Multi-BMS Protocol Gateway & Sensor Telemetry</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">BACnet/IP • Modbus TCP • LoRaWAN • OPC-UA • Vibration Accelerometers</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-mono">Sub-Second Streaming</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-sky-300 uppercase font-mono mb-1">Vibration FFT Analytics</h4>
-                    <p className="text-xs text-slate-300">Continuous tri-axial accelerometers detect unbalance, misalignment, and bearing raceway faults.</p>
+                    <h4 className="font-sora text-xs font-medium text-sky-300 uppercase font-mono mb-1">Vibration FFT Analytics</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Continuous tri-axial accelerometers detect unbalance, misalignment, and bearing raceway faults.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-sky-300 uppercase font-mono mb-1">Multi-Vendor BMS Bridge</h4>
-                    <p className="text-xs text-slate-300">Normalizes cooling setpoints and alarm telemetry across disparate Johnson Controls and Siemens hardware.</p>
+                    <h4 className="font-sora text-xs font-medium text-sky-300 uppercase font-mono mb-1">Multi-Vendor BMS Bridge</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Normalizes cooling setpoints and alarm telemetry across disparate Johnson Controls and Siemens hardware.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-sky-300 uppercase font-mono mb-1">IAQ Air Quality Feeds</h4>
-                    <p className="text-xs text-slate-300">CO2, particulate matter, and humidity streams drive demand-controlled ventilation dampers.</p>
+                    <h4 className="font-sora text-xs font-medium text-sky-300 uppercase font-mono mb-1">IAQ Air Quality Feeds</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">CO2, particulate matter, and humidity streams drive demand-controlled ventilation dampers.</p>
                   </div>
                 </div>
               </div>
@@ -1112,24 +1112,24 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
                   <div className="flex items-center gap-3">
                     <Server className="w-6 h-6 text-[#0070C0]" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">SAP S/4HANA Plant Maintenance (PM) & MRO Core</h3>
-                      <p className="text-xs text-slate-400 font-mono">Clean Core Standard • Asset Hierarchy • Universal Journal • Spare Parts BOM</p>
+                      <h3 className="font-sora text-lg font-medium text-white">SAP S/4HANA Plant Maintenance (PM) & MRO Core</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">Clean Core Standard • Asset Hierarchy • Universal Journal • Spare Parts BOM</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-mono">Zero Core Modifications</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-cyan-300 uppercase font-mono mb-1">Asset Master Hierarchy</h4>
-                    <p className="text-xs text-slate-300">Standardized functional locations and equipment records mapping every mechanical component.</p>
+                    <h4 className="font-sora text-xs font-medium text-cyan-300 uppercase font-mono mb-1">Asset Master Hierarchy</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Standardized functional locations and equipment records mapping every mechanical component.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-cyan-300 uppercase font-mono mb-1">Automated Work Orders</h4>
-                    <p className="text-xs text-slate-300">Converts APM sensor thresholds into formal maintenance orders with reserved replacement parts.</p>
+                    <h4 className="font-sora text-xs font-medium text-cyan-300 uppercase font-mono mb-1">Automated Work Orders</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Converts APM sensor thresholds into formal maintenance orders with reserved replacement parts.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-cyan-300 uppercase font-mono mb-1">Universal Journal Costing</h4>
-                    <p className="text-xs text-slate-300">Captures technician labor hours and vendor service invoices directly into property cost centers.</p>
+                    <h4 className="font-sora text-xs font-medium text-cyan-300 uppercase font-mono mb-1">Universal Journal Costing</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Captures technician labor hours and vendor service invoices directly into property cost centers.</p>
                   </div>
                 </div>
               </div>
@@ -1141,24 +1141,24 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
                   <div className="flex items-center gap-3">
                     <Zap className="w-6 h-6 text-amber-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">SAP BTP Mobile Execution & ESG Analytics Suite</h3>
-                      <p className="text-xs text-slate-400 font-mono">SAP Service & Asset Manager • BTP Event Mesh • ESG Sustainability Hub</p>
+                      <h3 className="font-sora text-lg font-medium text-white">SAP BTP Mobile Execution & ESG Analytics Suite</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">SAP Service & Asset Manager • BTP Event Mesh • ESG Sustainability Hub</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-mono">Offline Mobile Ready</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-amber-300 uppercase font-mono mb-1">Mobile Technician App</h4>
-                    <p className="text-xs text-slate-300">Step-by-step digital work instructions, electrical schematics, and barcode verification on mobile.</p>
+                    <h4 className="font-sora text-xs font-medium text-amber-300 uppercase font-mono mb-1">Mobile Technician App</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Step-by-step digital work instructions, electrical schematics, and barcode verification on mobile.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-amber-300 uppercase font-mono mb-1">ESG Carbon Footprint</h4>
-                    <p className="text-xs text-slate-300">Converts electricity and fuel meter streams into certified Scope 1 & 2 carbon emissions ledgers.</p>
+                    <h4 className="font-sora text-xs font-medium text-amber-300 uppercase font-mono mb-1">ESG Carbon Footprint</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Converts electricity and fuel meter streams into certified Scope 1 & 2 carbon emissions ledgers.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-amber-300 uppercase font-mono mb-1">Vendor SLA Scorecards</h4>
-                    <p className="text-xs text-slate-300">Evaluates external FM contractor response times and first-time fix rates against contract terms.</p>
+                    <h4 className="font-sora text-xs font-medium text-amber-300 uppercase font-mono mb-1">Vendor SLA Scorecards</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Evaluates external FM contractor response times and first-time fix rates against contract terms.</p>
                   </div>
                 </div>
               </div>
@@ -1182,7 +1182,7 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Knooviq Facilities & Asset Solution Suites
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Targeted capability packages designed to eliminate equipment downtime, cut energy waste, and streamline facility maintenance teams.
             </p>
           </div>
@@ -1236,10 +1236,10 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
                       <span className="text-[10px] font-mono font-bold text-[#0070C0] uppercase tracking-wider bg-sky-50 px-2 py-0.5 rounded border border-sky-100">
                         {sol.categoryLabel}
                       </span>
-                      <h3 className="text-base sm:text-lg font-bold text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug line-clamp-2">
+                      <h3 className="font-sora text-base sm:text-lg font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug line-clamp-2">
                         {sol.title}
                       </h3>
-                      <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
+                      <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-3 font-normal">
                         {sol.description}
                       </p>
                     </div>
@@ -1275,7 +1275,7 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Legacy Facilities Firefighting vs Knooviq Clean Core
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Compare reactive facilities management against Knooviq&apos;s predictive, IoT-driven SAP S/4HANA Clean Core architecture.
             </p>
           </div>
@@ -1342,7 +1342,7 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Phased Roadmap to Autonomous Facilities Operations
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Inspect how legacy manual facility maintenance transforms into an orchestrated predictive operational fabric across every stage of the SAP deployment.
             </p>
           </div>
@@ -1380,7 +1380,7 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
                     </div>
 
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide mt-0.5">
@@ -1388,7 +1388,7 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
                       </div>
                     </div>
 
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1417,7 +1417,7 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
                     <span className={`text-[11px] font-mono font-bold uppercase tracking-wider ${currentStage.textColor}`}>
                       {currentStage.badge} ARCHITECTURAL DELTA
                     </span>
-                    <h3 className="text-lg font-bold text-white mt-0.5">
+                    <h3 className="font-sora text-lg font-medium text-white mt-0.5">
                       {currentStage.title} &mdash; {currentStage.subtitle}
                     </h3>
                   </div>
@@ -1429,11 +1429,11 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="p-4 rounded-xl bg-rose-950/30 border border-rose-500/30">
                     <div className="text-xs font-mono font-bold text-rose-400 uppercase tracking-wider mb-1">Legacy State</div>
-                    <p className="text-xs text-slate-200">{currentStage.before}</p>
+                    <p className="font-sora text-xs text-slate-200 leading-[1.6] font-normal">{currentStage.before}</p>
                   </div>
                   <div className="p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/30">
                     <div className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider mb-1">Modernized Clean Core</div>
-                    <p className="text-xs text-slate-200">{currentStage.after}</p>
+                    <p className="font-sora text-xs text-slate-200 leading-[1.6] font-normal">{currentStage.after}</p>
                   </div>
                 </div>
 
@@ -1467,7 +1467,7 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Strategic Value Drivers & Operational Safeguards
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Architectural outcomes delivered across corporate campuses, healthcare centers, and industrial facilities.
             </p>
           </div>
@@ -1478,10 +1478,10 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
                 <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-[#0070C0]">
                   <Gauge className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
+                <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                   Catastrophic Downtime Prevention
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   Predictive APM vibration FFT alerts and thermal anomaly detection scheduling proactive repairs weeks before physical chiller failure.
                 </p>
               </div>
@@ -1496,10 +1496,10 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
                 <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
                   <Wrench className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
+                <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                   Field Technician Efficiency
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   Offline mobile work packs with digital schematics, automated spare reservations, and instant labor logging maximizing hands-on wrench time.
                 </p>
               </div>
@@ -1514,10 +1514,10 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
                 <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-[#0070C0]">
                   <Zap className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
+                <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                   Demand-Controlled Energy Savings
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   Dynamic HVAC ventilation and cooling adjustments synchronized with live zone occupancy and weather forecasts, eliminating utility waste.
                 </p>
               </div>
@@ -1532,10 +1532,10 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
                 <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
+                <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                   Vendor Maintenance SLA Integrity
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   Verified digital proof-of-service sign-offs and automated vendor SLA response time audit scoring eliminating maintenance fee leakage.
                 </p>
               </div>
@@ -1563,7 +1563,7 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Facilities & APM Architecture Advisory
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Key considerations for facility directors and asset operations managers evaluating SAP S/4HANA Asset Management.
             </p>
           </div>
@@ -1630,7 +1630,7 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
             Ready to Build Predictive, Autonomous Facilities Operations?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Synchronize your building management systems, mobile work orders, and asset lifecycle financials with Knooviq.
           </p>
 

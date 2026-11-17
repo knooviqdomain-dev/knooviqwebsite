@@ -465,7 +465,7 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Electronics Hero)
@@ -508,7 +508,7 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Zero-Defect PCBA Assembly, SMT Feeder Interlocks & Component Traceability.
               </p>
             </motion.div>
@@ -520,7 +520,7 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering contract manufacturers, electronics OEMs, and high-speed SMT assembly plants with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, automated{' '}
                 <strong className="text-cyan-300 font-semibold">SMT Feeder Barcode Interlocks</strong>, MSD moisture governance, and unbroken reel genealogy.
@@ -620,12 +620,12 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
 
               {/* Executive Thesis Quote */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-[1.6] italic">
                   &ldquo;Electronics manufacturing excellence is governed at the component reel: verifying thousands of microscopic placements per minute while maintaining unbroken component genealogy across high-speed SMT lines.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers an integrated enterprise ecosystem on SAP S/4HANA Clean Core. By bridging data across surface-mount equipment, optical inspection systems, and component warehouses, electronics leaders gain zero-defect assurance and continuous first-pass yield.
               </p>
 
@@ -636,8 +636,8 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
                     <Cpu className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">SMT Feeder Setup & Mistake-Proofing</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">SMT Feeder Setup & Mistake-Proofing</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Barcode verification locking pick-and-place heads until all component reels are validated against the setup sheet.
                     </p>
                   </div>
@@ -648,8 +648,8 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
                     <QrCode className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Component Reel & Lot Genealogy</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Component Reel & Lot Genealogy</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Trace every individual passive, resistor, and IC package back to the vendor batch for rapid RMA containment.
                     </p>
                   </div>
@@ -660,8 +660,8 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Closed-Loop SPI & AOI Quality Control</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Closed-Loop SPI & AOI Quality Control</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Real-time optical inspection telemetry triggering automatic stencil offsets and stopping the line on recurring defects.
                     </p>
                   </div>
@@ -724,7 +724,7 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
                     {journeySteps[activeJourneyStep].tech}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -756,7 +756,7 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating the Complexity of Advanced Electronics Manufacturing
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               High-speed component placement and harsh reflow environments introduce microscopic risks. Knooviq addresses the six systemic challenges electronics manufacturers face.
             </p>
           </motion.div>
@@ -783,10 +783,10 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -828,7 +828,7 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Electronics & Contract Mfg
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting SMT feeder setups, moisture controls, optical inspection, component genealogy, and yield AI into one continuous loop.
             </p>
           </motion.div>
@@ -865,10 +865,10 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1029,10 +1029,10 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
                         }}
                       />
                       <div className="space-y-1 text-left flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1061,7 +1061,7 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for Electronics Manufacturing
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               We engineer clean-core SAP technology suites layered with modern cloud extensions, SMT machine edge interfaces, and real-time AOI quality intelligence.
             </p>
           </div>
@@ -1075,10 +1075,10 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CORE ERP SUITE</span>
                 <Cpu className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP S/4HANA Discrete
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Multi-level electronics bill-of-materials, dynamic alternate component substitution rules, and discrete production order cost ledgers.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1093,10 +1093,10 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">DOMAIN SOLUTION</span>
                 <Factory className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Digital Manufacturing (DMC)
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Connect pick-and-place machines, automated screen printers, and reflow ovens with real-time barcode interlocks and line locks.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1111,10 +1111,10 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">INTEGRATION & EXTENSIONS</span>
                 <Cloud className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Business Technology Platform
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Decoupled extension microservices ingesting high-throughput SPI/AOI optical images and executing JEDEC J-STD-033 moisture timers.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1129,10 +1129,10 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">BUSINESS INTELLIGENCE</span>
                 <BarChart3 className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Analytics Cloud
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Real-time visibility into Defect Per Million Opportunities (DPMO), SMT line OEE benchmarks, and supplier component defect heatmaps.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1147,10 +1147,10 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">ROLE-BASED UX</span>
                 <Scan className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Fiori Operator Apps
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Ruggedized line tablet apps designed for SMT setup operators, reel splice confirmation, and rework station fault disposition.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1165,10 +1165,10 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">COGNITIVE ENGINES</span>
                 <Sparkles className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 AI Defect Predictive Engines
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Machine learning models correlating solder paste inspection thickness with reflow thermal zones to eliminate bridging defects.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1196,7 +1196,7 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every Stage of Electronics Manufacturing
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize electronics execution across high-speed SMT lines, component warehouses, and customer audits.
             </p>
           </div>
@@ -1268,12 +1268,12 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
                         </div>
 
                         {/* Title - Bold & Compact */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description - Snug & Concise */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1315,7 +1315,7 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Turning Electronics Complexity into Business Advantage
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When SMT feeders, optical inspection, component warehouses, and quality ledgers operate in unison, electronics manufacturers achieve sustainable commercial performance.
             </p>
           </div>
@@ -1328,10 +1328,10 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Cpu className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Zero Reel-Mount Escapes
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Barcode-verified feeder positions lock machine start until reels match the setup sheet. Eradicate entire batch scrapping caused by operator feeder loading mistakes.
               </p>
             </div>
@@ -1341,10 +1341,10 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Clock className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Eliminated Popcorning Scrap
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automated JEDEC countdown timers prevent moisture sensitive IC packages from entering reflow ovens after exceeding floor-life thresholds.
               </p>
             </div>
@@ -1354,10 +1354,10 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Activity className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 First-Pass Yield Acceleration
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Closed-loop optical inspection syncs paste print stencil offsets automatically. Detect solder bridging and tombstoning at board one.
               </p>
             </div>
@@ -1367,10 +1367,10 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <QrCode className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Sub-Second Reel Traceability
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Trace any suspect component reel to every finished PCBA serial number in seconds, containing recall exposure to specific board lots.
               </p>
             </div>
@@ -1380,10 +1380,10 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Touchless Audit Compliance
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Enforce IPC-A-610 Class 3 acceptance criteria with digital sign-offs, satisfying automotive IATF 16949 and medical ISO 13485 customer audits.
               </p>
             </div>
@@ -1393,10 +1393,10 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Globe2 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Global Multi-Plant Standardization
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Deploy standardized SMT processes, feeder charts, and quality gate logic across electronics manufacturing plants worldwide.
               </p>
             </div>
@@ -1429,7 +1429,7 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Intelligent Electronics & Contract Manufacturing Architecture
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How electronics manufacturers advance from siloed SMT lines to an integrated clean-core event ecosystem.
             </p>
           </div>
@@ -1481,7 +1481,7 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
@@ -1490,7 +1490,7 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1591,7 +1591,7 @@ export const ElectronicsIndustryPage: React.FC<ElectronicsIndustryPageProps> = (
             Ready to Build a Smarter Electronics Manufacturing Business?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your SMT lines, component supply chain, and quality systems with Knooviq.
           </p>
 

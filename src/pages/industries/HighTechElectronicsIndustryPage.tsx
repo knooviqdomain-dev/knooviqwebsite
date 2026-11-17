@@ -659,12 +659,12 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
               </h2>
 
               <div className="border-l-4 border-sky-500 pl-4 py-2 bg-white/5 rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-200 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-200 leading-[1.6] italic">
                   &ldquo;In high-tech contract manufacturing, operating excellence is achieved at the interface of component feeder verification, real-time AOI testing, and automated engineering change control.&rdquo;
                 </p>
               </div>
 
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="font-sora text-xs sm:text-sm text-slate-300 leading-[1.6] font-normal">
                 Electronics manufacturers face extreme margin pressure from semiconductor volatility, component feeder misloads, and stringent regulatory traceability mandates. When a critical IC experiences a supplier revision or shortage, the factory must pivot instantly without generating obsolete inventory. Knooviq establishes a closed-loop digital manufacturing thread connecting ECAD schematics, SMT pick-and-place lines, and the S/4HANA ERP core.
               </p>
 
@@ -737,7 +737,7 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
                         <span className="text-[10px] font-mono text-sky-400 font-bold uppercase tracking-wider block">
                           {journeySteps[activeJourneyStep].sublabel}
                         </span>
-                        <h4 className="text-base font-bold text-white">
+                        <h4 className="font-sora text-base font-medium text-white">
                           {journeySteps[activeJourneyStep].label}
                         </h4>
                       </div>
@@ -747,7 +747,7 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
                     </div>
                   </div>
                   <div className="p-4">
-                    <p className="text-xs text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                       {journeySteps[activeJourneyStep].desc}
                     </p>
                   </div>
@@ -775,7 +775,7 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Operational Vulnerabilities in High-Tech Manufacturing
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300">
+            <p className="font-sora text-xs sm:text-sm text-slate-300 leading-[1.6] font-normal">
               Critical bottlenecks that cause component scrap, production downtime, and regulatory shipment holds.
             </p>
           </div>
@@ -796,11 +796,11 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-white group-hover:text-sky-300 transition-colors">
+                  <h3 className="font-sora text-base font-medium text-white group-hover:text-sky-300 transition-colors">
                     {challenge.title}
                   </h3>
 
-                  <p className="text-xs text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                     {challenge.desc}
                   </p>
                 </div>
@@ -833,7 +833,7 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               KNOOVIQ High-Tech Electronics Ecosystem
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300">
+            <p className="font-sora text-xs sm:text-sm text-slate-300 leading-[1.6] font-normal">
               Eight interlocking capability modules orchestrating electronics assembly from design to reverse RMA logistics.
             </p>
           </div>
@@ -858,9 +858,9 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
                   >
                     <div className="flex items-center gap-2 mb-1">
                       <SegmentIcon className={`w-4 h-4 ${segment.textColor}`} />
-                      <h4 className="text-xs font-bold text-white truncate">{segment.title}</h4>
+                      <h4 className="font-sora text-xs font-medium text-white truncate">{segment.title}</h4>
                     </div>
-                    <p className="text-[11px] text-slate-300 leading-snug">{segment.desc}</p>
+                    <p className="font-sora text-[11px] text-slate-300 leading-[1.6]">{segment.desc}</p>
                   </div>
                 );
               })}
@@ -948,9 +948,9 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
                   >
                     <div className="flex items-center gap-2 mb-1">
                       <SegmentIcon className={`w-4 h-4 ${segment.textColor}`} />
-                      <h4 className="text-xs font-bold text-white truncate">{segment.title}</h4>
+                      <h4 className="font-sora text-xs font-medium text-white truncate">{segment.title}</h4>
                     </div>
-                    <p className="text-[11px] text-slate-300 leading-snug">{segment.desc}</p>
+                    <p className="font-sora text-[11px] text-slate-300 leading-[1.6]">{segment.desc}</p>
                   </div>
                 );
               })}
@@ -975,7 +975,7 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Three-Tier Electronics Manufacturing Architecture
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300">
+            <p className="font-sora text-xs sm:text-sm text-slate-300 leading-[1.6] font-normal">
               Decoupling shop-floor machine control from master BOMs and enterprise analytics.
             </p>
           </div>
@@ -1011,10 +1011,10 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
                     <span className="text-xs font-mono font-bold uppercase tracking-wider text-sky-400">
                       {currentTab.tag}
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white">
+                    <h3 className="font-sora text-xl sm:text-2xl font-medium text-white">
                       {currentTab.headline}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs sm:text-sm text-slate-300 leading-[1.6] font-normal">
                       {currentTab.desc}
                     </p>
 
@@ -1065,7 +1065,7 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Specialized Solutions for High-Tech Electronics
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300">
+            <p className="font-sora text-xs sm:text-sm text-slate-300 leading-[1.6] font-normal">
               Configurable modules supporting high-velocity contract manufacturing, SMT execution, and regulatory compliance.
             </p>
           </div>
@@ -1104,11 +1104,11 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-white">
+                  <h3 className="font-sora text-lg font-medium text-white">
                     {sol.title}
                   </h3>
 
-                  <p className="text-xs text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                     {sol.desc}
                   </p>
 
@@ -1153,7 +1153,7 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Legacy Practice vs. Modern Clean Core
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300">
+            <p className="font-sora text-xs sm:text-sm text-slate-300 leading-[1.6] font-normal">
               Eliminating manual BOM discrepancies and shop-floor errors with real-time digital thread automation.
             </p>
           </div>
@@ -1198,7 +1198,7 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Phased High-Tech Electronics Transformation
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300">
+            <p className="font-sora text-xs sm:text-sm text-slate-300 leading-[1.6] font-normal">
               Four progressive architectural stages transitioning electronics factories to zero-defect Clean Core execution.
             </p>
           </div>
@@ -1221,8 +1221,8 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
                     <span className={`text-[10px] font-mono font-bold uppercase tracking-wider ${stage.textColor}`}>
                       {stage.badge}
                     </span>
-                    <h4 className="text-sm font-bold text-white">{stage.title}</h4>
-                    <p className="text-[11px] text-slate-300 leading-snug">{stage.subtitle}</p>
+                    <h4 className="font-sora text-sm font-medium text-white">{stage.title}</h4>
+                    <p className="font-sora text-[11px] text-slate-300 leading-[1.6]">{stage.subtitle}</p>
                   </div>
                   <div className="pt-3 mt-3 border-t border-white/10 flex items-center justify-between text-[10px] font-mono">
                     <span className="text-slate-400">{stage.tag}</span>
@@ -1245,7 +1245,7 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
                     <span className={`text-xs font-mono font-bold uppercase tracking-wider ${currentStage.textColor}`}>
                       {currentStage.badge} ARCHITECTURAL DELTA
                     </span>
-                    <h3 className="text-lg font-bold text-white mt-0.5">
+                    <h3 className="font-sora text-lg font-medium text-white mt-0.5">
                       {currentStage.title} &mdash; {currentStage.subtitle}
                     </h3>
                   </div>
@@ -1257,11 +1257,11 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="p-4 rounded-xl bg-rose-950/30 border border-rose-500/30">
                     <div className="text-xs font-mono font-bold text-rose-400 uppercase tracking-wider mb-1">Legacy State</div>
-                    <p className="text-xs text-slate-200">{currentStage.before}</p>
+                    <p className="font-sora text-xs text-slate-200 leading-[1.6] font-normal">{currentStage.before}</p>
                   </div>
                   <div className="p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/30">
                     <div className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider mb-1">Modernized Clean Core</div>
-                    <p className="text-xs text-slate-200">{currentStage.after}</p>
+                    <p className="font-sora text-xs text-slate-200 leading-[1.6] font-normal">{currentStage.after}</p>
                   </div>
                 </div>
 
@@ -1295,7 +1295,7 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Strategic Safeguards for High-Tech Electronics
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300">
+            <p className="font-sora text-xs sm:text-sm text-slate-300 leading-[1.6] font-normal">
               Architectural advantages realized by electronics contract manufacturers running on SAP Clean Core.
             </p>
           </div>
@@ -1307,7 +1307,7 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
                   <Cpu className="w-5 h-5" />
                 </div>
                 <div className="text-base font-bold text-white">Flawless SMT Feeder Setup</div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                   Automated barcode interlocks enforce correct reel placement before pick-and-place lines start, preventing wrong-component placements permanently.
                 </p>
               </div>
@@ -1322,7 +1322,7 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
                   <CheckCircle2 className="w-5 h-5" />
                 </div>
                 <div className="text-base font-bold text-white">Surgical Lot Recall Precision</div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                   Component reel traceability tracks every passive and IC lot to its exact serialized chassis, isolating defective lots without broad recalls.
                 </p>
               </div>
@@ -1337,7 +1337,7 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
                   <Workflow className="w-5 h-5" />
                 </div>
                 <div className="text-base font-bold text-white">Zero Revision Scrap</div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                   Automated ECO cutovers synchronize drawings across engineering, suppliers, and shop-floor terminals, preventing obsolete board assembly.
                 </p>
               </div>
@@ -1352,7 +1352,7 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <div className="text-base font-bold text-white">Guaranteed Border Clearance</div>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                   Integrated substance declaration verifies RoHS, REACH, and conflict minerals compliance at dispatch, ensuring seamless global shipments.
                 </p>
               </div>
@@ -1379,7 +1379,7 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
             <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
               High-Tech & Electronics ERP Inquiries
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300">
+            <p className="font-sora text-xs sm:text-sm text-slate-300 leading-[1.6] font-normal">
               Critical architecture considerations for electronics contract manufacturers modernizing on SAP.
             </p>
           </div>
@@ -1426,7 +1426,7 @@ export const HighTechElectronicsIndustryPage: React.FC<IndustryPageProps> = ({ o
             Accelerate Your High-Tech Manufacturing Transformation
           </h2>
 
-          <p className="text-sm sm:text-base text-slate-200 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sora text-sm sm:text-base text-slate-200 max-w-2xl mx-auto leading-[1.6] font-normal">
             Schedule an architectural consultation with our SAP Discrete Manufacturing and MES specialists to evaluate your SMT line traceability, component allocation, and yield analytics.
           </p>
 
