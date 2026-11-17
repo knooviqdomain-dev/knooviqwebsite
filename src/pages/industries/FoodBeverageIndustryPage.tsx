@@ -472,7 +472,7 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
 
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Food & Beverage Hero)
@@ -513,7 +513,7 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Farm-to-Fork Traceability, Cold Chain Telemetry & Recipe Governance.
               </p>
             </motion.div>
@@ -525,7 +525,7 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering food processors, beverage manufacturers, and cold-chain distributors with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA Process Manufacturing</strong>, automated{' '}
                 <strong className="text-cyan-300 font-semibold">FEFO expiry control</strong>, and real-time IoT temperature monitoring.
@@ -623,12 +623,12 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
 
               {/* Executive Thesis Quote */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Modern food and beverage leaders win on freshness certainty: uniting grower intake, sterile recipe execution, unbroken cold chain logistics, and automated FEFO retail replenishment into one resilient operational core.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers a synchronized enterprise architecture on SAP S/4HANA Clean Core. By bridging real-time IoT thermal telemetry and digital batch records directly to enterprise ledgers, food and beverage executives safeguard consumer trust, eliminate spoilage, and achieve frictionless audit readiness.
               </p>
 
@@ -639,8 +639,8 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Sub-Second Batch Traceability & Safety</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Sub-Second Batch Traceability & Safety</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Instant bidirectional lot genealogy connecting raw agricultural lots, mixing tanks, and packaged retail cartons for seamless FSMA compliance.
                     </p>
                   </div>
@@ -651,8 +651,8 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
                     <Thermometer className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Unbroken Cold Chain Telemetry</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Unbroken Cold Chain Telemetry</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Continuous IoT sensor logging across refrigerated storage bays, blast freezers, and reefer transport fleets with instant thermal alerts.
                     </p>
                   </div>
@@ -663,8 +663,8 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
                     <Clock className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Intelligent FEFO Shelf Velocity</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Intelligent FEFO Shelf Velocity</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Automated wave replenishment prioritizing earliest-expiring inventory first, protecting gross margins and eliminating warehouse write-offs.
                     </p>
                   </div>
@@ -728,7 +728,7 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
                     {journeySteps[activeJourneyStep].tech}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -760,7 +760,7 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating the Complexity of Food & Beverage
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Perishable lifecycles, volatile ingredient yields, and stringent safety audits constrain operational efficiency. Knooviq solves the six critical friction points modern food enterprises face.
             </p>
           </motion.div>
@@ -787,10 +787,10 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -832,7 +832,7 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Food & Beverage
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-400 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting agricultural sourcing, recipe scaling, sterile processing, refrigerated warehousing, cold logistics, and cognitive shelf-life AI into one continuous loop.
             </p>
           </motion.div>
@@ -869,10 +869,10 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-medium">
                           {item.desc}
                         </p>
                       </div>
@@ -1033,10 +1033,10 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
                         }}
                       />
                       <div className="space-y-1 text-left flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-medium">
                           {item.desc}
                         </p>
                       </div>
@@ -1066,7 +1066,7 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for Intelligent Food & Beverage
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               We engineer clean-core SAP technology suites layered with real-time IoT sensors, cold warehouse automation, and autonomous business AI.
             </p>
           </div>
@@ -1080,10 +1080,10 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CORE ERP SUITE</span>
                 <Cpu className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP S/4HANA Process Manufacturing
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Integrated recipe formulation, process order execution, batch management, active ingredient potency scaling, and automated production order clearing.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1098,10 +1098,10 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">QUALITY & SAFETY</span>
                 <ShieldCheck className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Quality Management (QM)
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Automated electronic Certificates of Analysis, microbial lab test gates, allergen segregation rules, and instant forward/backward recall inquiry tools.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1116,10 +1116,10 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">INTEGRATION & IOT</span>
                 <Cloud className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Business Technology Platform
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Live IoT telemetry mesh connecting temperature sensors in cold rooms and reefer trucks directly to clean-core business event workflows.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1134,10 +1134,10 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">COLD WAREHOUSING</span>
                 <Thermometer className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Extended Warehouse Management
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Dynamic FEFO wave release algorithms, multi-temperature cold zone slotting, automated pallet shuttles, and blast freezer cycle timing.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1152,10 +1152,10 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">MOBILE SHOPFLOOR UX</span>
                 <Scan className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Fiori & Mobile Apps
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Intuitive mobile barcoding and weighing scale apps designed for mixing room operators, intake inspectors, and cold room pickers.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1170,10 +1170,10 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">COGNITIVE ENGINES</span>
                 <Sparkles className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 Freshness & Yield AI
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Machine learning models predicting agricultural intake yields, remaining shelf-life decay curves, and dynamic price markdowns to prevent waste.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1201,7 +1201,7 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every Stage of Food & Beverage
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize food execution across agricultural sourcing, processing plants, cold logistics, and supermarket shelf replenishment.
             </p>
           </div>
@@ -1273,12 +1273,12 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1321,7 +1321,7 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Operational Advantages of Connected F&B
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When harvest quality, recipe mixing, cold distribution, and shelf replenishment operate in unison, food enterprises minimize waste and ensure sustained margins.
             </p>
           </div>
@@ -1334,10 +1334,10 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Clock className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Minimized Expiry Waste
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Automated FEFO warehouse release algorithms ensure earliest expiring lots ship first, eliminating costly inventory obsolescence and write-downs.
               </p>
             </div>
@@ -1347,10 +1347,10 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Instant Recall Preparedness
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Execute bidirectional lot queries across suppliers, mixing vats, cold rooms, and retail shelves within seconds, passing regulatory audits effortlessly.
               </p>
             </div>
@@ -1360,10 +1360,10 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Thermometer className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Guaranteed Cold Chain Integrity
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Real-time IoT sensors prevent thermal excursions in warehouses and reefers, guaranteeing documented regulatory compliance and freshness.
               </p>
             </div>
@@ -1373,10 +1373,10 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Sliders className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Consistent Batch Quality
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Automate recipe scale integrations and ingredient dosing tolerances, maintaining uniform product flavor, texture, and nutritional consistency.
               </p>
             </div>
@@ -1386,10 +1386,10 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Building2 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Streamlined Grower Settlement
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Integrate intake weighbridge logs and lab assay deductions automatically into vendor accounting, accelerating grower payouts and strengthening sourcing trust.
               </p>
             </div>
@@ -1399,10 +1399,10 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Globe2 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Certified Export Readiness
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Generate international phytosanitary and food safety compliance certificates effortlessly from digital batch history logs for rapid customs clearance.
               </p>
             </div>
@@ -1435,7 +1435,7 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Cold Chain & Batch Traceability Architecture
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-400 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How a leading enterprise food processor modernized from legacy clipboard inspections to an automated clean-core IoT event fabric.
             </p>
           </div>
@@ -1487,7 +1487,7 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
@@ -1496,7 +1496,7 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1599,7 +1599,7 @@ export const FoodBeverageIndustryPage: React.FC<FoodBeverageIndustryPageProps> =
             Ready to Build a Resilient Food & Beverage Business?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your agricultural supply, sterile mixing, cold-chain operations, and retail replenishment with Knooviq.
           </p>
 

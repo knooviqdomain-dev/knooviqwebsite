@@ -548,7 +548,7 @@ export const DistributionIndustryPage: React.FC<DistributionIndustryPageProps> =
     : industrySolutions.filter(item => item.category === activeSolutionCategory);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Distribution Hero)
@@ -587,7 +587,7 @@ export const DistributionIndustryPage: React.FC<DistributionIndustryPageProps> =
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Maximizing Warehouse Slotting, Dynamic Fleet Routing & Touchless Billing Settlement.
               </p>
             </motion.div>
@@ -599,7 +599,7 @@ export const DistributionIndustryPage: React.FC<DistributionIndustryPageProps> =
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Transform wholesale distribution and 3PL networks with <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, <strong className="text-cyan-300 font-semibold">automated multi-drop route optimization</strong>, and <strong className="text-white font-semibold">touchless electronic proof-of-delivery</strong>.
               </p>
               
@@ -689,7 +689,7 @@ export const DistributionIndustryPage: React.FC<DistributionIndustryPageProps> =
               </h2>
 
               <div className="border-l-4 border-[#0070C0] pl-4 py-2 bg-gradient-to-r from-sky-50/80 to-transparent rounded-r-lg">
-                <p className="text-sm sm:text-base font-semibold text-slate-800 italic">
+                <p className="font-sora text-sm sm:text-base font-medium text-slate-800 italic">
                   "Wholesale distribution is a game of millimeters and minutes. Empty space in truck trailers and excessive picker walking steps in the warehouse quietly erode operating margins."
                 </p>
               </div>
@@ -821,7 +821,7 @@ export const DistributionIndustryPage: React.FC<DistributionIndustryPageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">
               Critical Obstacles Constraining <span className="text-[#0070C0]">Wholesale Distributors</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">
               High-velocity distribution networks battle fuel inefficiencies, manual dispatch bottlenecks, picker transit fatigue, and billing reconciliations.
             </p>
           </div>
@@ -844,11 +844,11 @@ export const DistributionIndustryPage: React.FC<DistributionIndustryPageProps> =
                       </div>
                     </div>
 
-                    <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base sm:text-lg font-medium text-slate-900 leading-snug group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -887,7 +887,7 @@ export const DistributionIndustryPage: React.FC<DistributionIndustryPageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Unified <span className="text-[#38BDF8]">Wholesale Distribution Platform</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 font-normal leading-[1.6]">
               Eight synchronized architectural capabilities connecting supplier ASNs, high-bay slotting, dynamic multi-drop routing, and touchless digital EPOD billing.
             </p>
           </div>
@@ -932,7 +932,7 @@ export const DistributionIndustryPage: React.FC<DistributionIndustryPageProps> =
                         <h4 className={`text-sm font-bold transition-colors ${isHighlighted ? 'text-white' : 'text-slate-200'}`}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed font-normal">
+                        <p className="font-sora text-xs text-slate-400 line-clamp-2 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1055,7 +1055,7 @@ export const DistributionIndustryPage: React.FC<DistributionIndustryPageProps> =
                         <h4 className={`text-sm font-bold transition-colors ${isHighlighted ? 'text-white' : 'text-slate-200'}`}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed font-normal">
+                        <p className="font-sora text-xs text-slate-400 line-clamp-2 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1086,7 +1086,7 @@ export const DistributionIndustryPage: React.FC<DistributionIndustryPageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">
               Enterprise SAP Architecture for <span className="text-[#0070C0]">Wholesale Distribution</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">
               Engineered on a Clean Core foundation, combining SAP S/4HANA Wholesale Distribution, Extended Warehouse Management (EWM), and Transportation Management (TM).
             </p>
           </div>
@@ -1109,11 +1109,11 @@ export const DistributionIndustryPage: React.FC<DistributionIndustryPageProps> =
                       </div>
                     </div>
 
-                    <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base sm:text-lg font-medium text-slate-900 leading-snug group-hover:text-[#0070C0] transition-colors">
                       {sol.title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {sol.desc}
                     </p>
 
@@ -1153,7 +1153,7 @@ export const DistributionIndustryPage: React.FC<DistributionIndustryPageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">
               Pre-Packaged Capabilities for <span className="text-[#0070C0]">Distribution Networks</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">
               Specialized functional accelerators designed for rapid implementation across 3PL facilities, private truck fleets, and distributor trade channels.
             </p>
 
@@ -1210,10 +1210,10 @@ export const DistributionIndustryPage: React.FC<DistributionIndustryPageProps> =
                   {/* Body Content - 50% Height */}
                   <div className="h-1/2 p-4 sm:p-5 flex flex-col justify-between overflow-hidden">
                     <div>
-                      <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                      <h3 className="font-sora text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                         {item.title}
                       </h3>
-                      <p className="text-xs text-slate-600 leading-relaxed font-normal mt-1 line-clamp-2">
+                      <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal mt-1 line-clamp-2">
                         {item.description}
                       </p>
                     </div>
@@ -1249,7 +1249,7 @@ export const DistributionIndustryPage: React.FC<DistributionIndustryPageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">
               Measurable ROI Across Enterprise <span className="text-[#0070C0]">Distributors</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">
               Verified operational efficiencies and financial gains documented across high-bay wholesale distribution and 3PL networks.
             </p>
           </div>
@@ -1272,11 +1272,11 @@ export const DistributionIndustryPage: React.FC<DistributionIndustryPageProps> =
                       </div>
                     </div>
 
-                    <h3 className="text-base font-bold text-slate-900 leading-snug">
+                    <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                       {item.label}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -1312,7 +1312,7 @@ export const DistributionIndustryPage: React.FC<DistributionIndustryPageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Executing the Distribution Transformation <span className="text-[#38BDF8]">Roadmap</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 font-normal leading-[1.6]">
               A structured four-phase modernization journey elevating wholesale distributors from manual whiteboard dispatch to an autonomous, touchless logistics powerhouse.
             </p>
           </div>
@@ -1346,11 +1346,11 @@ export const DistributionIndustryPage: React.FC<DistributionIndustryPageProps> =
                       }`}>
                         {stage.badge}
                       </span>
-                      <h3 className="text-base font-bold text-white pt-1">{stage.title}</h3>
+                      <h3 className="font-sora text-base font-medium text-white pt-1">{stage.title}</h3>
                       <div className="text-xs text-slate-400 font-medium">{stage.subtitle}</div>
                     </div>
 
-                    <p className="text-xs text-slate-300 leading-relaxed font-normal line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal line-clamp-3">
                       {stage.description}
                     </p>
                   </div>
@@ -1429,7 +1429,7 @@ export const DistributionIndustryPage: React.FC<DistributionIndustryPageProps> =
             <span className="text-cyan-200">Touchless Distribution Velocity?</span>
           </h2>
 
-          <p className="text-sm sm:text-base lg:text-lg text-slate-100 max-w-2xl mx-auto font-normal leading-relaxed">
+          <p className="font-sora text-[15px] sm:text-[16px] lg:text-lg text-slate-100 max-w-2xl mx-auto font-normal leading-[1.6]">
             Partner with KNOOVIQ's senior warehouse and transportation architects to design an agile SAP S/4HANA distribution network customized for your operations.
           </p>
 

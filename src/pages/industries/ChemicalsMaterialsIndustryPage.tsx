@@ -269,7 +269,7 @@ export const ChemicalsMaterialsIndustryPage: React.FC<ChemicalsMaterialsIndustry
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* SECTION 1: HERO */}
       <section className="relative w-full min-h-[620px] lg:min-h-[680px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-16 overflow-hidden bg-slate-900">
@@ -308,7 +308,7 @@ export const ChemicalsMaterialsIndustryPage: React.FC<ChemicalsMaterialsIndustry
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Delivering Automated Regulatory Compliance, Global GHS Hazard Labeling & EHS Safety.
               </p>
             </motion.div>
@@ -319,7 +319,7 @@ export const ChemicalsMaterialsIndustryPage: React.FC<ChemicalsMaterialsIndustry
               transition={{ duration: 0.6, delay: 0.1 }}
               className="space-y-3 max-w-2xl"
             >
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Scale complex chemical operations with <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, <strong className="text-cyan-300 font-semibold">automated 16-section SDS generation</strong>, REACH/TSCA volume tracking, and <strong className="text-white font-semibold">dangerous goods dispatch governance</strong>.
               </p>
               
@@ -383,7 +383,7 @@ export const ChemicalsMaterialsIndustryPage: React.FC<ChemicalsMaterialsIndustry
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight leading-tight">
                 Operating Secure Chemical Plants in an Unforgiving Global Regulatory Landscape
               </h2>
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Chemical and materials manufacturers navigate stringent regulatory compliance: an outdated Safety Data Sheet or incorrect tanker placard can hold up an entire shipment. Knooviq automates substance tracking and EHS compliance directly within SAP S/4HANA core.
               </p>
               
@@ -430,7 +430,7 @@ export const ChemicalsMaterialsIndustryPage: React.FC<ChemicalsMaterialsIndustry
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating High-Stakes Chemical Risks
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Customs detentions, process safety incidents, and substance volume overruns jeopardize license-to-operate.
             </p>
           </div>
@@ -452,10 +452,10 @@ export const ChemicalsMaterialsIndustryPage: React.FC<ChemicalsMaterialsIndustry
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-950 leading-snug group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-950 leading-snug group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -480,7 +480,7 @@ export const ChemicalsMaterialsIndustryPage: React.FC<ChemicalsMaterialsIndustry
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Connected Chemical Core: From Sensor to Hazardous Logistics
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] max-w-2xl mx-auto font-normal">
               Closed-loop architecture synchronizing plant safety instrumented systems (SIS) with global compliance engines.
             </p>
           </div>
@@ -498,7 +498,7 @@ export const ChemicalsMaterialsIndustryPage: React.FC<ChemicalsMaterialsIndustry
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <h3 className="text-sm sm:text-base font-bold text-white">{layer.title}</h3>
+                    <h3 className="font-sora text-sm sm:text-base font-medium text-white">{layer.title}</h3>
                     <ChevronRight className={`w-4 h-4 transition-transform ${activeLayer === idx ? 'rotate-90 text-cyan-300' : 'text-slate-400'}`} />
                   </div>
                   <div className="text-xs sm:text-sm text-slate-300 mt-1">{layer.subtitle}</div>
@@ -511,13 +511,13 @@ export const ChemicalsMaterialsIndustryPage: React.FC<ChemicalsMaterialsIndustry
                 <Zap className="w-4 h-4 text-cyan-300" />
                 <span>Architecture Tier {activeLayer + 1} of 4</span>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-cyan-300 mb-2">
+              <h3 className="font-sora text-lg sm:text-xl font-medium text-cyan-300 mb-2">
                 {architectureLayers[activeLayer].title}
               </h3>
-              <p className="text-sm sm:text-base text-cyan-200/90 font-medium mb-3">
+              <p className="font-sora text-[15px] sm:text-[16px] text-cyan-200/90 font-medium mb-3 leading-[1.6]">
                 {architectureLayers[activeLayer].subtitle}
               </p>
-              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed mb-6">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] mb-6 font-normal">
                 {architectureLayers[activeLayer].desc}
               </p>
 
@@ -548,7 +548,7 @@ export const ChemicalsMaterialsIndustryPage: React.FC<ChemicalsMaterialsIndustry
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Pre-Configured Chemical & Materials Modules
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Production-tested modules addressing hazardous substance tracking, dangerous goods transport, and process safety.
             </p>
           </div>
@@ -611,11 +611,11 @@ export const ChemicalsMaterialsIndustryPage: React.FC<ChemicalsMaterialsIndustry
                           </div>
                         </div>
 
-                        <h3 className="text-base sm:text-lg font-bold text-slate-950 line-clamp-2 leading-snug group-hover:text-[#0070C0] transition-colors" title={sol.title}>
+                        <h3 className="font-sora text-base sm:text-lg font-medium text-slate-950 line-clamp-2 leading-snug group-hover:text-[#0070C0] transition-colors" title={sol.title}>
                           {sol.title}
                         </h3>
 
-                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -648,7 +648,7 @@ export const ChemicalsMaterialsIndustryPage: React.FC<ChemicalsMaterialsIndustry
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Chemical Innovators Transforming with Knooviq
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Real results delivered for global petrochemical, specialty polymer, and solvent distribution leaders.
             </p>
           </div>
@@ -660,20 +660,20 @@ export const ChemicalsMaterialsIndustryPage: React.FC<ChemicalsMaterialsIndustry
                   <div className="inline-block px-2.5 py-1 rounded-md bg-sky-50 text-xs font-mono font-bold text-[#0070C0] border border-sky-200 mb-3">
                     {cs.badge}
                   </div>
-                  <h3 className="text-base font-bold text-slate-950 mb-2 leading-snug">
+                  <h3 className="font-sora text-base font-medium text-slate-950 mb-2 leading-snug">
                     {cs.title}
                   </h3>
                   <div className="text-xs font-mono text-slate-500 font-medium mb-3">
                     {cs.client}
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed mb-5">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mb-5 font-normal">
                     {cs.desc}
                   </p>
                 </div>
 
                 <div className="pt-3 border-t border-slate-100">
                   <span className="text-xs font-mono uppercase font-bold text-emerald-700 block mb-1">Delivered Outcome</span>
-                  <p className="text-sm font-semibold text-slate-950 leading-relaxed">{cs.impact}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] font-semibold text-slate-950 leading-[1.6] font-normal">{cs.impact}</p>
                 </div>
               </div>
             ))}
@@ -723,7 +723,7 @@ export const ChemicalsMaterialsIndustryPage: React.FC<ChemicalsMaterialsIndustry
             Ready to Build a Smarter Chemicals & Materials Operation?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your chemical formulations, automated SDS compliance, dangerous goods transport, and tank farm telemetry with Knooviq.
           </p>
 

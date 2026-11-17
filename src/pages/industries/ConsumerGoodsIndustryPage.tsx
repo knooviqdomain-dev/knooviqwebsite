@@ -471,7 +471,7 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
 
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise FMCG Hero - Zero Shading on Image)
@@ -512,7 +512,7 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Unified Route-to-Market, Trade Promotion Governance & Secondary Sales Control.
               </p>
             </motion.div>
@@ -524,7 +524,7 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering FMCG brands, packaged goods manufacturers, and trade distributors with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA Consumer Products</strong>, automated{' '}
                 <strong className="text-cyan-300 font-semibold">Trade Promotion Management (TPM)</strong>, and real-time distributor synchronization.
@@ -622,12 +622,12 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
 
               {/* Executive Thesis Quote */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Consumer goods leadership hinges on channel responsiveness: harmonizing primary manufacturing batches, distributor warehouse pools, trade promotion schemes, and retail shelf availability into a synchronized digital core.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers a synchronized enterprise architecture on SAP S/4HANA Clean Core. By bridging distributor management systems, field sales automation, and trade promotion engines directly to enterprise ledgers, FMCG executives eliminate margin leakage, end channel blindspots, and guarantee on-shelf availability.
               </p>
 
@@ -638,8 +638,8 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
                     <Share2 className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Secondary Sales & Route-to-Market Visibility</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Secondary Sales & Route-to-Market Visibility</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Instant visibility into distributor stock positions, localized order booking, and retailer shelf availability without blindspots.
                     </p>
                   </div>
@@ -650,8 +650,8 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
                     <Sliders className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Trade Promotion Governance (TPM)</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Trade Promotion Governance (TPM)</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Transparent scheme budgeting, automated bill-back claim validation, and closed-loop promotional return on investment.
                     </p>
                   </div>
@@ -662,8 +662,8 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
                     <Workflow className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Integrated Business Planning (IBP)</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Integrated Business Planning (IBP)</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Synchronizing multi-echelon replenishment across mother DCs and regional stockists with live consumer demand signals.
                     </p>
                   </div>
@@ -726,7 +726,7 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
                     {journeySteps[activeJourneyStep].tech}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -758,7 +758,7 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating the Complexity of Consumer Goods
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Multi-tiered distribution, untracked trade spend, and unpredictable consumption patterns constrain market agility. Knooviq solves the six critical friction points modern FMCG enterprises face.
             </p>
           </motion.div>
@@ -785,10 +785,10 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -830,7 +830,7 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Consumer Goods
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-400 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting raw material procurement, high-velocity factory packaging, mother DC logistics, distributor network portals, mobile route-to-market, and cognitive demand sensing into one continuous loop.
             </p>
           </motion.div>
@@ -867,10 +867,10 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-medium">
                           {item.desc}
                         </p>
                       </div>
@@ -1031,10 +1031,10 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
                         }}
                       />
                       <div className="space-y-1 text-left flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-medium">
                           {item.desc}
                         </p>
                       </div>
@@ -1065,7 +1065,7 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for Intelligent Consumer Goods
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               We engineer clean-core SAP technology suites layered with distributor portal networks, mobile field apps, and autonomous demand AI.
             </p>
           </div>
@@ -1079,10 +1079,10 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CORE ERP SUITE</span>
                 <Cpu className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP S/4HANA Consumer Products
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Integrated enterprise core uniting financial ledgers, packaging line production runs, batch traceability, and primary distributor dispatches on an in-memory database.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1097,10 +1097,10 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">COMMERCIAL ENGINE</span>
                 <Sliders className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 Trade Promotion Management (TPM)
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Rules-driven trade marketing promotion budgets, discount ladder formulation, electronic bill-back verification, and rebate ledger clearing.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1115,10 +1115,10 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">INTEGRATION & PORTALS</span>
                 <Cloud className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Business Technology Platform
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Robust API mesh powering the cloud Distributor Management System (DMS) and field sales mobile apps while keeping the ERP core pristine and clean.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1133,10 +1133,10 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">SUPPLY CHAIN PLANNING</span>
                 <Workflow className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Integrated Business Planning
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Multi-echelon inventory balancing across central factories, regional distribution centers, and primary stockists based on dynamic consumption algorithms.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1151,10 +1151,10 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">FIELD MOBILITY UX</span>
                 <Scan className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Fiori & Field SFA Apps
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Offline-capable mobile apps for route van drivers, merchandisers, and field reps featuring GPS beat tracking, instant order booking, and printer pairing.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1169,10 +1169,10 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">COGNITIVE ENGINES</span>
                 <Sparkles className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 Demand Sensing & Trade AI
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Predictive machine learning analyzing retailer sell-through curves, competitor price shifts, and seasonal weather patterns to auto-tune reorder wave releases.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1200,7 +1200,7 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every Stage of Consumer Goods
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize consumer goods execution across manufacturing plants, primary logistics, distributor portals, and retail store shelves.
             </p>
           </div>
@@ -1272,12 +1272,12 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1320,7 +1320,7 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Operational Advantages of Connected Consumer Goods
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When trade marketing schemes, distributor stock pools, route logistics, and retail shelf replenishment operate in unison, consumer brands achieve sustained market leadership.
             </p>
           </div>
@@ -1333,10 +1333,10 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Share2 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Unified Secondary Visibility
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Eradicate blindspots between mother DCs and distributor warehouses. Track true localized sell-through and prevent phantom out-of-stocks across markets.
               </p>
             </div>
@@ -1346,10 +1346,10 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Sliders className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Zero Trade Spend Leakage
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Automate claim matching against verified distributor sales scan data, eliminating unearned discounts and protecting full-price brand margins.
               </p>
             </div>
@@ -1359,10 +1359,10 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Boxes className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Maximized On-Shelf Availability
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Ensure high-velocity SKUs are always in stock at the retail shelf through automated replenishment triggers and responsive beat delivery routes.
               </p>
             </div>
@@ -1372,10 +1372,10 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Clock className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Accelerated Order-to-Cash
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Eliminate manual PO re-keying and protracted dispute reconciliation between distributors and finance, drastically lowering commercial DSO.
               </p>
             </div>
@@ -1385,10 +1385,10 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Workflow className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Optimized Multi-Echelon Stock
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Synchronize factory packaging runs directly with regional distributor absorption rates, eliminating bullwhip stockpiles and obsolete inventory.
               </p>
             </div>
@@ -1398,10 +1398,10 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Globe2 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Scalable Multi-Country Operations
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Build a standardized clean-core trade template capable of onboarding regional master stockists and international export markets rapidly.
               </p>
             </div>
@@ -1434,7 +1434,7 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Consumer Goods Route-to-Market & TPM Architecture
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-400 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How a leading FMCG enterprise modernized from legacy trade spreadsheets to an automated clean-core distributor network.
             </p>
           </div>
@@ -1486,7 +1486,7 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
@@ -1495,7 +1495,7 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1598,7 +1598,7 @@ export const ConsumerGoodsIndustryPage: React.FC<ConsumerGoodsIndustryPageProps>
             Ready to Build a Resilient Consumer Goods Enterprise?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your primary manufacturing, mother DC logistics, distributor network, and field route-to-market with Knooviq.
           </p>
 

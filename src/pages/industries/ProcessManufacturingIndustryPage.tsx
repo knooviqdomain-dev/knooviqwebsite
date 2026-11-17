@@ -270,7 +270,7 @@ export const ProcessManufacturingIndustryPage: React.FC<ProcessManufacturingIndu
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* SECTION 1: HERO */}
       <section className="relative w-full min-h-[680px] lg:min-h-[760px] flex flex-col justify-center pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 overflow-hidden bg-slate-900">
@@ -309,7 +309,7 @@ export const ProcessManufacturingIndustryPage: React.FC<ProcessManufacturingIndu
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Automating Recipe Potency Compensation, ISA-88 Batch Execution & Paperless Compliance.
               </p>
             </motion.div>
@@ -320,7 +320,7 @@ export const ProcessManufacturingIndustryPage: React.FC<ProcessManufacturingIndu
               transition={{ duration: 0.6, delay: 0.1 }}
               className="space-y-3 max-w-2xl"
             >
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Scale formulation and continuous processing with <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, <strong className="text-cyan-300 font-semibold">dynamic potency compensation</strong>, automated electronic batch records (EBR), and <strong className="text-white font-semibold">validated CIP sanitation governance</strong>.
               </p>
               
@@ -384,7 +384,7 @@ export const ProcessManufacturingIndustryPage: React.FC<ProcessManufacturingIndu
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight leading-tight">
                 Mastering Continuous Reaction Dynamics and Stringent Batch Integrity
               </h2>
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Process manufacturing requires dynamic flexibility: raw material potencies drift, tank levels fluctuate, and CIP cycles must be rigorously verified. Knooviq transforms static recipes into adaptive in-memory execution engines that ensure high yield and paperless compliance.
               </p>
               
@@ -431,7 +431,7 @@ export const ProcessManufacturingIndustryPage: React.FC<ProcessManufacturingIndu
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating High-Consequence Process Challenges
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Potency variance, paper record delays, and vessel cross-contamination undermine process plant throughput.
             </p>
           </div>
@@ -453,10 +453,10 @@ export const ProcessManufacturingIndustryPage: React.FC<ProcessManufacturingIndu
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-950 leading-snug group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-950 leading-snug group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -481,7 +481,7 @@ export const ProcessManufacturingIndustryPage: React.FC<ProcessManufacturingIndu
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Process Stack: From Distributed Control (DCS) to S/4HANA
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] max-w-2xl mx-auto font-normal">
               Closed-loop synchronization connecting reactor SCADA/DCS systems with electronic batch records and quality release.
             </p>
           </div>
@@ -499,7 +499,7 @@ export const ProcessManufacturingIndustryPage: React.FC<ProcessManufacturingIndu
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <h3 className="text-sm sm:text-base font-bold text-white">{layer.title}</h3>
+                    <h3 className="font-sora text-sm sm:text-base font-medium text-white">{layer.title}</h3>
                     <ChevronRight className={`w-4 h-4 transition-transform ${activeLayer === idx ? 'rotate-90 text-cyan-300' : 'text-slate-400'}`} />
                   </div>
                   <div className="text-xs sm:text-sm text-slate-300 mt-1">{layer.subtitle}</div>
@@ -512,13 +512,13 @@ export const ProcessManufacturingIndustryPage: React.FC<ProcessManufacturingIndu
                 <Zap className="w-4 h-4 text-cyan-300" />
                 <span>Architecture Tier {activeLayer + 1} of 4</span>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-cyan-300 mb-2">
+              <h3 className="font-sora text-lg sm:text-xl font-medium text-cyan-300 mb-2">
                 {architectureLayers[activeLayer].title}
               </h3>
-              <p className="text-sm sm:text-base text-cyan-200/90 font-medium mb-3">
+              <p className="font-sora text-[15px] sm:text-[16px] text-cyan-200/90 font-medium mb-3 leading-[1.6]">
                 {architectureLayers[activeLayer].subtitle}
               </p>
-              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed mb-6">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] mb-6 font-normal">
                 {architectureLayers[activeLayer].desc}
               </p>
 
@@ -549,7 +549,7 @@ export const ProcessManufacturingIndustryPage: React.FC<ProcessManufacturingIndu
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Pre-Configured Process SAP Modules
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Production-tested solutions for continuous and batch chemical, pharmaceutical ingredient, and specialty fluid processors.
             </p>
           </div>
@@ -617,11 +617,11 @@ export const ProcessManufacturingIndustryPage: React.FC<ProcessManufacturingIndu
                           </div>
                         </div>
 
-                        <h3 className="text-base sm:text-lg font-bold text-slate-950 line-clamp-2 leading-snug group-hover:text-[#0070C0] transition-colors" title={sol.title}>
+                        <h3 className="font-sora text-base sm:text-lg font-medium text-slate-950 line-clamp-2 leading-snug group-hover:text-[#0070C0] transition-colors" title={sol.title}>
                           {sol.title}
                         </h3>
 
-                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -654,7 +654,7 @@ export const ProcessManufacturingIndustryPage: React.FC<ProcessManufacturingIndu
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Process Leaders Transforming with Knooviq
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               See how chemical and ingredient leaders eliminated manual batch records and maximized yield.
             </p>
           </div>
@@ -666,20 +666,20 @@ export const ProcessManufacturingIndustryPage: React.FC<ProcessManufacturingIndu
                   <div className="inline-block px-2.5 py-1 rounded-md bg-sky-50 text-xs font-mono font-bold text-[#0070C0] border border-sky-200 mb-3">
                     {cs.badge}
                   </div>
-                  <h3 className="text-base font-bold text-slate-950 mb-2 leading-snug">
+                  <h3 className="font-sora text-base font-medium text-slate-950 mb-2 leading-snug">
                     {cs.title}
                   </h3>
                   <div className="text-xs font-mono text-slate-500 font-medium mb-3">
                     {cs.client}
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed mb-5">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mb-5 font-normal">
                     {cs.desc}
                   </p>
                 </div>
 
                 <div className="pt-3 border-t border-slate-100">
                   <span className="text-xs font-mono uppercase font-bold text-emerald-700 block mb-1">Delivered Outcome</span>
-                  <p className="text-sm font-semibold text-slate-950 leading-relaxed">{cs.impact}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] font-semibold text-slate-950 leading-[1.6] font-normal">{cs.impact}</p>
                 </div>
               </div>
             ))}
@@ -729,7 +729,7 @@ export const ProcessManufacturingIndustryPage: React.FC<ProcessManufacturingIndu
             Ready to Build a Smarter Process Manufacturing Operation?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your recipe execution, active potency compensation, EBR validation, and DCS automation with Knooviq.
           </p>
 
