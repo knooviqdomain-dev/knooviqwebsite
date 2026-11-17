@@ -273,6 +273,8 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
             alt="Enterprise Application Operations Full Screen Architecture"
             className="w-full h-full object-cover object-right lg:object-center brightness-[1.05] contrast-[1.05]"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
           {/* Subtle directional dark gradient on the left ensures pristine text readability without dimming the engineer visual on the right */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/90 via-45% to-transparent w-full lg:w-[65%]" />
           {/* Bottom subtle edge blend */}
@@ -302,6 +304,15 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12]">
                 Keep Enterprise Applications Reliable, Responsive, and Ready for Business.
               </h1>
+            </div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/app_ops_hero.png"
+                alt="Keep Enterprise Applications Reliable, Responsive, and Ready for Business. - Application Operations Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
 
             {/* Description */}
