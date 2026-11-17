@@ -519,7 +519,7 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
     : modularSolutions.filter(s => s.category === activeSolutionCategory);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden selection:bg-[#0070C0] selection:text-white">
+    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden selection:bg-[#0070C0] selection:text-white cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Panoramic Background - Aligned with AI Agents Reference)
@@ -567,12 +567,12 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
             </h1>
 
             {/* Subheading / Value Proposition */}
-            <p className="text-lg sm:text-xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            <p className="font-sora text-lg sm:text-xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               Orchestrating Upstream Telemetry, Midstream Logistics & Refinery Reliability on One Unified Core.
             </p>
 
             {/* Clear Open Typography */}
-            <p className="text-sm sm:text-base text-slate-100 font-normal leading-relaxed drop-shadow-sm max-w-2xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm max-w-2xl">
               Transform energy operations with integrated <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, automated <strong className="text-cyan-300 font-semibold">Production Revenue Accounting (PRA)</strong>, predictive turnaround scheduling, and real-time custody transfer tracking.
             </p>
             
@@ -659,12 +659,12 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-[1.6] italic">
                   &ldquo;Energy profitability is preserved at the custody handoffs: between wellheads, pipeline batches, refinery distillation units, and terminal racks.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq bridges operational SCADA field telemetry directly with enterprise financial ledgers on SAP S/4HANA. Eliminating manual reconciliation spreadsheets safeguards joint-venture audit compliance, accelerates turnaround schedules, and mitigates ESG regulatory risks.
               </p>
 
@@ -675,8 +675,8 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
                     <Droplet className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Continuous Volumetric Reconciliation</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Continuous Volumetric Reconciliation</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Instant division of interest allocations distributing hydrocarbons from flow meters back to ownership partners.
                     </p>
                   </div>
@@ -687,8 +687,8 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
                     <Layers className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Dynamic Terminal & Pipeline Logistics</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Dynamic Terminal & Pipeline Logistics</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Unified scheduling aligning pipeline nominations, marine tanker berthing, and tank farm inventory.
                     </p>
                   </div>
@@ -699,8 +699,8 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Process Safety & Emissions Shield</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Process Safety & Emissions Shield</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Integrated digital permits-to-work, visual SIMOPS clash detection, and real-time flare stack carbon accounting.
                     </p>
                   </div>
@@ -731,7 +731,7 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
                   <div className="text-sm sm:text-base font-bold text-white leading-snug">
                     {journeySteps[activeJourneyStep].label}
                   </div>
-                  <p className="text-xs text-slate-300 mt-1 leading-relaxed line-clamp-2">
+                  <p className="font-sora text-xs text-slate-300 mt-1 leading-[1.6] line-clamp-2 font-normal">
                     {journeySteps[activeJourneyStep].desc}
                   </p>
                 </div>
@@ -784,7 +784,7 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Operational Challenges Across the Energy Lifecycle
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Energy enterprises lose margin and incur heavy compliance risks when physical flow meters, pipeline schedules, and maintenance work packs remain disconnected from ERP ledgers.
             </p>
           </div>
@@ -806,10 +806,10 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 leading-snug">
+                    <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -853,7 +853,7 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Modern Energy
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting upstream wellhead telemetry, midstream scheduling, refinery asset performance, and real-time ESG ledgers into one continuous loop.
             </p>
           </motion.div>
@@ -890,10 +890,10 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1053,10 +1053,10 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
                         }}
                       />
                       <div className="space-y-1 text-right flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1085,7 +1085,7 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Enterprise Hydrocarbon Technology Blueprint
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Decoupling field telemetry and complex joint-venture logic through SAP BTP while preserving standard S/4HANA core upgradability.
             </p>
           </div>
@@ -1132,24 +1132,24 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
                   <div className="flex items-center gap-3">
                     <Radio className="w-6 h-6 text-sky-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">Edge Telemetry, Flow Meters & SCADA Gateways</h3>
-                      <p className="text-xs text-slate-400 font-mono">OPC-UA • MQTT • Modbus TCP • Radar Tank Gauges</p>
+                      <h3 className="font-sora text-lg font-medium text-white">Edge Telemetry, Flow Meters & SCADA Gateways</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">OPC-UA • MQTT • Modbus TCP • Radar Tank Gauges</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-mono">Sub-Second Streaming</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-sky-300 mb-1">Wellhead Choke Telemetry</h4>
-                    <p className="text-xs text-slate-300">Continuous tubing pressure, casing pressure, and multi-phase flow meter readings.</p>
+                    <h4 className="font-sora text-sm font-medium text-sky-300 mb-1">Wellhead Choke Telemetry</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Continuous tubing pressure, casing pressure, and multi-phase flow meter readings.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-sky-300 mb-1">Pipeline Custody Transfer</h4>
-                    <p className="text-xs text-slate-300">Custody measurement verification, temperature compensation, and BS&W water-cut analysis.</p>
+                    <h4 className="font-sora text-sm font-medium text-sky-300 mb-1">Pipeline Custody Transfer</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Custody measurement verification, temperature compensation, and BS&W water-cut analysis.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-sky-300 mb-1">Refinery DCS Telemetry</h4>
-                    <p className="text-xs text-slate-300">Compressor vibration, distillation column temperature profiles, and flare gas flow meters.</p>
+                    <h4 className="font-sora text-sm font-medium text-sky-300 mb-1">Refinery DCS Telemetry</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Compressor vibration, distillation column temperature profiles, and flare gas flow meters.</p>
                   </div>
                 </div>
               </div>
@@ -1161,24 +1161,24 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
                   <div className="flex items-center gap-3">
                     <Cpu className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">SAP S/4HANA Oil & Gas Digital Clean Core</h3>
-                      <p className="text-xs text-slate-400 font-mono">SAP PRA • SAP TSW • SAP EAM • Universal Journal</p>
+                      <h3 className="font-sora text-lg font-medium text-white">SAP S/4HANA Oil & Gas Digital Clean Core</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">SAP PRA • SAP TSW • SAP EAM • Universal Journal</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-mono">Clean Core Standard</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-cyan-300 mb-1">Production Revenue Accounting</h4>
-                    <p className="text-xs text-slate-300">Division of interest (DOI) allocation, state severance tax filings, and joint-venture audit ledgers.</p>
+                    <h4 className="font-sora text-sm font-medium text-cyan-300 mb-1">Production Revenue Accounting</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Division of interest (DOI) allocation, state severance tax filings, and joint-venture audit ledgers.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-cyan-300 mb-1">Trader's & Scheduler's TSW</h4>
-                    <p className="text-xs text-slate-300">Integrated nominations, batch sequence tracking, tank farm tickets, and marine charter demurrage control.</p>
+                    <h4 className="font-sora text-sm font-medium text-cyan-300 mb-1">Trader's & Scheduler's TSW</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Integrated nominations, batch sequence tracking, tank farm tickets, and marine charter demurrage control.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-cyan-300 mb-1">Downstream SDM & RFNO</h4>
-                    <p className="text-xs text-slate-300">Multi-compartment tank truck loading, electronic bill of lading, and forecourt wet stock reconciliation.</p>
+                    <h4 className="font-sora text-sm font-medium text-cyan-300 mb-1">Downstream SDM & RFNO</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Multi-compartment tank truck loading, electronic bill of lading, and forecourt wet stock reconciliation.</p>
                   </div>
                 </div>
               </div>
@@ -1190,24 +1190,24 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
                   <div className="flex items-center gap-3">
                     <Zap className="w-6 h-6 text-emerald-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">SAP BTP & Predictive Enterprise AI</h3>
-                      <p className="text-xs text-slate-400 font-mono">SAP APM • Sustainability Control Tower • Predictive ML</p>
+                      <h3 className="font-sora text-lg font-medium text-white">SAP BTP & Predictive Enterprise AI</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">SAP APM • Sustainability Control Tower • Predictive ML</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-mono">Cognitive Layer</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-emerald-300 mb-1">Asset Performance (APM)</h4>
-                    <p className="text-xs text-slate-300">Ultrasonic corrosion thickness trends, RUL forecasting, and digitized turnaround work packs.</p>
+                    <h4 className="font-sora text-sm font-medium text-emerald-300 mb-1">Asset Performance (APM)</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Ultrasonic corrosion thickness trends, RUL forecasting, and digitized turnaround work packs.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-emerald-300 mb-1">Sustainability Control Tower</h4>
-                    <p className="text-xs text-slate-300">Scope 1 & 2 carbon accounting, automated flaring reports, and optical gas imaging repair logs.</p>
+                    <h4 className="font-sora text-sm font-medium text-emerald-300 mb-1">Sustainability Control Tower</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Scope 1 & 2 carbon accounting, automated flaring reports, and optical gas imaging repair logs.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-emerald-300 mb-1">AI Process Optimization</h4>
-                    <p className="text-xs text-slate-300">Refinery distillation setpoint optimization and predictive fuel replenishment demand sensing.</p>
+                    <h4 className="font-sora text-sm font-medium text-emerald-300 mb-1">AI Process Optimization</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Refinery distillation setpoint optimization and predictive fuel replenishment demand sensing.</p>
                   </div>
                 </div>
               </div>
@@ -1231,7 +1231,7 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Pre-Configured Enterprise Energy Modules
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Rapidly deployable solution packages engineered for upstream exploration, midstream pipelines, and complex refining operations.
             </p>
           </div>
@@ -1285,10 +1285,10 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
                       <span className="text-[10px] font-mono font-bold text-[#0070C0] uppercase tracking-wider bg-sky-50 px-2 py-0.5 rounded border border-sky-100">
                         {sol.categoryLabel}
                       </span>
-                      <h3 className="text-base sm:text-lg font-bold text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug line-clamp-2">
+                      <h3 className="font-sora text-base sm:text-lg font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug line-clamp-2">
                         {sol.title}
                       </h3>
-                      <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
+                      <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-3 font-normal">
                         {sol.description}
                       </p>
                     </div>
@@ -1324,7 +1324,7 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Standardizing Complex Energy Business Logic
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               How Knooviq eliminates brittle Z-customizations with SAP standard Oil & Gas industry packages.
             </p>
           </div>
@@ -1404,7 +1404,7 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Four Phases to Autonomous Energy Operations
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Inspect how legacy manual workflows transform into intelligent real-time operations across every phase of the SAP deployment.
             </p>
           </div>
@@ -1442,7 +1442,7 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
                     </div>
 
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide mt-0.5">
@@ -1450,7 +1450,7 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
                       </div>
                     </div>
 
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1530,7 +1530,7 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Enterprise Client Success Stories
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Real outcomes delivered for offshore exploration operators, pipeline carriers, and complex global refineries.
             </p>
           </div>
@@ -1545,13 +1545,13 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
                   <span className="text-[10px] font-mono font-bold text-[#0070C0] bg-sky-50 px-2 py-0.5 rounded border border-sky-100 uppercase tracking-wider">
                     {cs.badge}
                   </span>
-                  <h3 className="text-base font-bold text-slate-950 leading-snug">
+                  <h3 className="font-sora text-base font-medium text-slate-950 leading-snug">
                     {cs.title}
                   </h3>
                   <div className="text-xs font-medium text-slate-500">
                     {cs.client}
                   </div>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     {cs.desc}
                   </p>
                 </div>
@@ -1585,7 +1585,7 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Oil & Gas Architecture Advisory
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Common technical considerations for energy operators embarking on SAP S/4HANA transformation.
             </p>
           </div>
@@ -1652,7 +1652,7 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
             Ready to Build a Smarter Oil & Gas Enterprise?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your upstream wells, midstream pipelines, refinery units, and commercial ledgers with Knooviq.
           </p>
 

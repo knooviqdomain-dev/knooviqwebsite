@@ -495,7 +495,7 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
     : modularSolutions.filter(s => s.category === activeSolutionCategory);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden selection:bg-[#0070C0] selection:text-white">
+    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden selection:bg-[#0070C0] selection:text-white cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Panoramic Background - Aligned with AI Agents Reference)
@@ -543,12 +543,12 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             </h1>
 
             {/* Subheading / Value Proposition */}
-            <p className="text-lg sm:text-xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            <p className="font-sora text-lg sm:text-xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               Maximizing Wind, Solar, Battery Storage & Green Hydrogen Asset Lifecycles on SAP S/4HANA.
             </p>
 
             {/* Clear Open Typography */}
-            <p className="text-sm sm:text-base text-slate-100 font-normal leading-relaxed drop-shadow-sm max-w-2xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm max-w-2xl">
               Accelerate clean energy profitability with integrated <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, predictive <strong className="text-cyan-300 font-semibold">Wind & Solar Digital Twins</strong>, BESS battery degradation models, and <strong className="text-white font-semibold">automated PPA / REC settlement ledgers</strong> across global generation fleets.
             </p>
             
@@ -634,12 +634,12 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-[1.6] italic">
                   &ldquo;Renewable profitability is won through precision asset uptime and automated commercial settlements that capture every generated megawatt-hour.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq integrates heterogeneous wind, solar, and battery storage fleets into SAP S/4HANA Clean Core. Eliminating fragmented OEM dashboards accelerates predictive maintenance response, automates complex PPA settlements, and guarantees auditable carbon credit certification.
               </p>
 
@@ -649,8 +649,8 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                     <Activity className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Fleet-Wide Predictive Asset Management</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Fleet-Wide Predictive Asset Management</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Physics-informed machine learning anticipating solar inverter overheating and wind turbine drivetrain wear.
                     </p>
                   </div>
@@ -661,8 +661,8 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                     <FileText className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Automated PPA & Nodal Settlements</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Automated PPA & Nodal Settlements</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Real-time energy contract reconciliation matching metered generation against wholesale market locational marginal prices.
                     </p>
                   </div>
@@ -673,8 +673,8 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Granular Carbon & REC Accounting</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Granular Carbon & REC Accounting</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Verifiable generation timestamping proving green energy provenance for corporate buyers and hydrogen standards.
                     </p>
                   </div>
@@ -704,7 +704,7 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                   <div className="text-sm sm:text-base font-bold text-white leading-snug">
                     {journeySteps[activeJourneyStep].label}
                   </div>
-                  <p className="text-xs text-slate-300 mt-1 leading-relaxed line-clamp-2">
+                  <p className="font-sora text-xs text-slate-300 mt-1 leading-[1.6] line-clamp-2 font-normal">
                     {journeySteps[activeJourneyStep].desc}
                   </p>
                 </div>
@@ -756,7 +756,7 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Operational Challenges Across the Renewable Lifecycle
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When wind farm telemetry, solar inverter health, and complex energy contracts remain isolated in disparate software, yield falls and contract disputes multiply.
             </p>
           </div>
@@ -778,10 +778,10 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 leading-snug">
+                    <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -822,7 +822,7 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Modern Clean Tech
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting solar inverters, wind aerodynamic twins, BESS degradation tracking, and automated PPA settlements into one continuous loop.
             </p>
           </motion.div>
@@ -858,10 +858,10 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1015,10 +1015,10 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                         }}
                       />
                       <div className="space-y-1 text-right flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1047,7 +1047,7 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Enterprise Renewable Technology Blueprint
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Decoupling high-frequency SCADA telemetry and nodal PPA calculations on SAP BTP while maintaining standard S/4HANA core upgradability.
             </p>
           </div>
@@ -1092,24 +1092,24 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                   <div className="flex items-center gap-3">
                     <Radio className="w-6 h-6 text-sky-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">Plant SCADA, Inverter Telemetry & Weather Stations</h3>
-                      <p className="text-xs text-slate-400 font-mono">OPC-UA • Modbus RTU • Solar Pyranometer • Anemometer Masts</p>
+                      <h3 className="font-sora text-lg font-medium text-white">Plant SCADA, Inverter Telemetry & Weather Stations</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">OPC-UA • Modbus RTU • Solar Pyranometer • Anemometer Masts</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-mono">Real-Time Ingestion</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-sky-300 mb-1">Solar Inverter String Telemetry</h4>
-                    <p className="text-xs text-slate-300">Continuous DC input voltage, MPPT efficiency, and transformer temperature logs.</p>
+                    <h4 className="font-sora text-sm font-medium text-sky-300 mb-1">Solar Inverter String Telemetry</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Continuous DC input voltage, MPPT efficiency, and transformer temperature logs.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-sky-300 mb-1">Wind Turbine Drivetrain Telemetry</h4>
-                    <p className="text-xs text-slate-300">High-frequency vibration sensors, gearbox oil temperature, and yaw system alignment.</p>
+                    <h4 className="font-sora text-sm font-medium text-sky-300 mb-1">Wind Turbine Drivetrain Telemetry</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">High-frequency vibration sensors, gearbox oil temperature, and yaw system alignment.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-sky-300 mb-1">BESS Battery Rack Telemetry</h4>
-                    <p className="text-xs text-slate-300">Module cell temperature, voltage balance, state-of-charge (SoC), and depth-of-discharge.</p>
+                    <h4 className="font-sora text-sm font-medium text-sky-300 mb-1">BESS Battery Rack Telemetry</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Module cell temperature, voltage balance, state-of-charge (SoC), and depth-of-discharge.</p>
                   </div>
                 </div>
               </div>
@@ -1121,24 +1121,24 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                   <div className="flex items-center gap-3">
                     <Cpu className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">SAP S/4HANA Clean Core Renewable Backbone</h3>
-                      <p className="text-xs text-slate-400 font-mono">SAP EAM • SAP RE-FX • Universal Journal • Revenue Recognition</p>
+                      <h3 className="font-sora text-lg font-medium text-white">SAP S/4HANA Clean Core Renewable Backbone</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">SAP EAM • SAP RE-FX • Universal Journal • Revenue Recognition</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-mono">Clean Core Standard</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-cyan-300 mb-1">Enterprise Asset Management (EAM)</h4>
-                    <p className="text-xs text-slate-300">Standard equipment hierarchies for wind turbines, string arrays, and subsea inter-array cables.</p>
+                    <h4 className="font-sora text-sm font-medium text-cyan-300 mb-1">Enterprise Asset Management (EAM)</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Standard equipment hierarchies for wind turbines, string arrays, and subsea inter-array cables.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-cyan-300 mb-1">Automated Landowner Royalties</h4>
-                    <p className="text-xs text-slate-300">SAP RE-FX calculating variable turbine pad land lease royalties based on metered generation.</p>
+                    <h4 className="font-sora text-sm font-medium text-cyan-300 mb-1">Automated Landowner Royalties</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">SAP RE-FX calculating variable turbine pad land lease royalties based on metered generation.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-cyan-300 mb-1">PPA Settlement Engine</h4>
-                    <p className="text-xs text-slate-300">Automated multi-buyer invoicing, nodal market reconciliations, and contract floor accounting.</p>
+                    <h4 className="font-sora text-sm font-medium text-cyan-300 mb-1">PPA Settlement Engine</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Automated multi-buyer invoicing, nodal market reconciliations, and contract floor accounting.</p>
                   </div>
                 </div>
               </div>
@@ -1150,24 +1150,24 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                   <div className="flex items-center gap-3">
                     <Zap className="w-6 h-6 text-emerald-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">SAP BTP & Predictive Yield Intelligence</h3>
-                      <p className="text-xs text-slate-400 font-mono">SAP APM • Sustainability Control Tower • Machine Learning</p>
+                      <h3 className="font-sora text-lg font-medium text-white">SAP BTP & Predictive Yield Intelligence</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">SAP APM • Sustainability Control Tower • Machine Learning</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-mono">Cognitive Layer</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-emerald-300 mb-1">Drivetrain Digital Twins</h4>
-                    <p className="text-xs text-slate-300">Physics-informed machine learning anticipating main bearing and blade pitch fatigue.</p>
+                    <h4 className="font-sora text-sm font-medium text-emerald-300 mb-1">Drivetrain Digital Twins</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Physics-informed machine learning anticipating main bearing and blade pitch fatigue.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-emerald-300 mb-1">BESS Degradation Tracking</h4>
-                    <p className="text-xs text-slate-300">Continuous state-of-health modeling protecting EPC battery capacity warranties.</p>
+                    <h4 className="font-sora text-sm font-medium text-emerald-300 mb-1">BESS Degradation Tracking</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Continuous state-of-health modeling protecting EPC battery capacity warranties.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-emerald-300 mb-1">Sustainability Control Tower</h4>
-                    <p className="text-xs text-slate-300">Timestamped REC issuance, 24/7 carbon matching, and green hydrogen batch verification.</p>
+                    <h4 className="font-sora text-sm font-medium text-emerald-300 mb-1">Sustainability Control Tower</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Timestamped REC issuance, 24/7 carbon matching, and green hydrogen batch verification.</p>
                   </div>
                 </div>
               </div>
@@ -1191,7 +1191,7 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Pre-Configured Enterprise Renewable Modules
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Rapidly deployable solution packages engineered for utility solar, onshore and offshore wind, battery storage, and power purchase settlements.
             </p>
           </div>
@@ -1243,10 +1243,10 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                       <span className="text-[10px] font-mono font-bold text-[#0070C0] uppercase tracking-wider bg-sky-50 px-2 py-0.5 rounded border border-sky-100">
                         {sol.categoryLabel}
                       </span>
-                      <h3 className="text-base sm:text-lg font-bold text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug line-clamp-2">
+                      <h3 className="font-sora text-base sm:text-lg font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug line-clamp-2">
                         {sol.title}
                       </h3>
-                      <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
+                      <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-3 font-normal">
                         {sol.description}
                       </p>
                     </div>
@@ -1282,7 +1282,7 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Standardizing Complex Renewable Operations
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               How Knooviq eliminates brittle Z-customizations with SAP standard clean energy industry packages.
             </p>
           </div>
@@ -1360,7 +1360,7 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Four Phases to Autonomous Renewable Operations
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Inspect how legacy manual workflows transform into intelligent real-time operations across every phase of the SAP deployment.
             </p>
           </div>
@@ -1397,7 +1397,7 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                     </div>
 
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide mt-0.5">
@@ -1405,7 +1405,7 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                       </div>
                     </div>
 
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1483,7 +1483,7 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Enterprise Client Success Stories
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Real operational outcomes delivered for utility-scale solar arrays, offshore wind farms, and grid-scale battery systems.
             </p>
           </div>
@@ -1498,13 +1498,13 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                   <span className="text-[10px] font-mono font-bold text-[#0070C0] bg-sky-50 px-2 py-0.5 rounded border border-sky-100 uppercase tracking-wider">
                     {cs.badge}
                   </span>
-                  <h3 className="text-base font-bold text-slate-950 leading-snug">
+                  <h3 className="font-sora text-base font-medium text-slate-950 leading-snug">
                     {cs.title}
                   </h3>
                   <div className="text-xs font-medium text-slate-500">
                     {cs.client}
                   </div>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     {cs.desc}
                   </p>
                 </div>
@@ -1538,7 +1538,7 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Renewable Energy Architecture Advisory
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Technical considerations for clean energy executives scaling generation assets on SAP S/4HANA.
             </p>
           </div>
@@ -1604,7 +1604,7 @@ export const RenewableEnergyIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             Ready to Build a Smarter Renewable Energy Enterprise?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your wind farms, solar plants, battery storage, and energy contracts with Knooviq.
           </p>
 

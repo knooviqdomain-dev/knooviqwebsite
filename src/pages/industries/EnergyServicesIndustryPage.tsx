@@ -496,7 +496,7 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
     : modularSolutions.filter(s => s.category === activeSolutionCategory);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden selection:bg-[#0070C0] selection:text-white">
+    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden selection:bg-[#0070C0] selection:text-white cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Panoramic Background - Aligned with AI Agents Reference)
@@ -544,12 +544,12 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             </h1>
 
             {/* Subheading / Value Proposition */}
-            <p className="text-lg sm:text-xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            <p className="font-sora text-lg sm:text-xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               Empowering Wellsite Dispatch, Mobile e-Ticketing & Downhole Tool Serialization on SAP S/4HANA.
             </p>
 
             {/* Clear Open Typography */}
-            <p className="text-sm sm:text-base text-slate-100 font-normal leading-relaxed drop-shadow-sm max-w-2xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm max-w-2xl">
               Supercharge field service productivity with integrated <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, offline-capable <strong className="text-cyan-300 font-semibold">Mobile Wellsite e-Ticketing</strong>, heavy haul rig movement logistics, and <strong className="text-white font-semibold">predictive downhole tool fatigue tracking</strong>.
             </p>
             
@@ -635,12 +635,12 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-[1.6] italic">
                   &ldquo;In energy services, cash flow is won at the wellsite: when digital field tickets are approved instantaneously with zero pricing disputes.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq bridges remote wellsite technicians, downhole tool workshops, heavy haul transporters, and corporate billing ledgers onto SAP S/4HANA. Eliminating paper tickets accelerates cash flow, prevents downhole motor fatigue failures, and enforces strict contractor safety compliance.
               </p>
 
@@ -650,8 +650,8 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                     <FileText className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Immediate Wellsite Digital Sign-Off</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Immediate Wellsite Digital Sign-Off</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Rugged tablet e-ticketing capturing customer company-man approvals without paper processing delays.
                     </p>
                   </div>
@@ -662,8 +662,8 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                     <Gauge className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Serialized Downhole Fatigue Tracking</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Serialized Downhole Fatigue Tracking</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Accumulated rotating hours and shock telemetry triggering automated workshop inspections before drill-string failure.
                     </p>
                   </div>
@@ -674,8 +674,8 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Rig Site Crew Competency Governance</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Rig Site Crew Competency Governance</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Automatic dispatch blocking for personnel with expired well control or survival passes, mitigating liability risks.
                     </p>
                   </div>
@@ -705,7 +705,7 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                   <div className="text-sm sm:text-base font-bold text-white leading-snug">
                     {journeySteps[activeJourneyStep].label}
                   </div>
-                  <p className="text-xs text-slate-300 mt-1 leading-relaxed line-clamp-2">
+                  <p className="font-sora text-xs text-slate-300 mt-1 leading-[1.6] line-clamp-2 font-normal">
                     {journeySteps[activeJourneyStep].desc}
                   </p>
                 </div>
@@ -757,7 +757,7 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Operational Challenges Across the Field Service Lifecycle
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When wellsite tickets remain on paper, downhole tools lack cumulative rotating hour records, and rig move convoys lack unified tracking, service margins decline and cash flow stalls.
             </p>
           </div>
@@ -779,10 +779,10 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 leading-snug">
+                    <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -823,7 +823,7 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Oilfield Services
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting wellsite mobile e-ticketing, serialized downhole tool tracking, heavy rig move logistics, and customer billing into one continuous loop.
             </p>
           </motion.div>
@@ -859,10 +859,10 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1016,10 +1016,10 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                         }}
                       />
                       <div className="space-y-1 text-right flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1048,7 +1048,7 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Enterprise Energy Services Technology Blueprint
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Decoupling offline mobile field ticketing and specialized rig move logistics on SAP BTP while maintaining standard S/4HANA core upgradability.
             </p>
           </div>
@@ -1093,24 +1093,24 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                   <div className="flex items-center gap-3">
                     <Radio className="w-6 h-6 text-sky-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">Rugged Mobile Tablets & Wellsite SCADA Ingestion</h3>
-                      <p className="text-xs text-slate-400 font-mono">Offline SQLite • Satellite Sync • MWD Shock Sensors • WITSML Uplink</p>
+                      <h3 className="font-sora text-lg font-medium text-white">Rugged Mobile Tablets & Wellsite SCADA Ingestion</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">Offline SQLite • Satellite Sync • MWD Shock Sensors • WITSML Uplink</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-mono">Offline-First Resilient</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-sky-300 mb-1">Ruggedized Mobile e-Ticketing</h4>
-                    <p className="text-xs text-slate-300">Offline sign-off by company-men on remote drilling pads with geofenced digital signatures.</p>
+                    <h4 className="font-sora text-sm font-medium text-sky-300 mb-1">Ruggedized Mobile e-Ticketing</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Offline sign-off by company-men on remote drilling pads with geofenced digital signatures.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-sky-300 mb-1">Downhole Tool Shock Telemetry</h4>
-                    <p className="text-xs text-slate-300">Continuous MWD/LWD drilling dynamics, vibration bursts, and circulating temperature logs.</p>
+                    <h4 className="font-sora text-sm font-medium text-sky-300 mb-1">Downhole Tool Shock Telemetry</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Continuous MWD/LWD drilling dynamics, vibration bursts, and circulating temperature logs.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-sky-300 mb-1">Heavy Haul Rig GPS Convoys</h4>
-                    <p className="text-xs text-slate-300">Real-time convoy telematics ensuring oversized transport loads adhere to highway permit corridors.</p>
+                    <h4 className="font-sora text-sm font-medium text-sky-300 mb-1">Heavy Haul Rig GPS Convoys</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Real-time convoy telematics ensuring oversized transport loads adhere to highway permit corridors.</p>
                   </div>
                 </div>
               </div>
@@ -1122,24 +1122,24 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                   <div className="flex items-center gap-3">
                     <Cpu className="w-6 h-6 text-cyan-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">SAP S/4HANA Oilfield Services Digital Clean Core</h3>
-                      <p className="text-xs text-slate-400 font-mono">SAP FSM • SAP EAM Serialization • SAP TM • Universal Financials</p>
+                      <h3 className="font-sora text-lg font-medium text-white">SAP S/4HANA Oilfield Services Digital Clean Core</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">SAP FSM • SAP EAM Serialization • SAP TM • Universal Financials</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-mono">Clean Core Standard</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-cyan-300 mb-1">Master Services Agreement (MSA) Billing</h4>
-                    <p className="text-xs text-slate-300">Automated price books calculating rig day-rates, standby fees, and consumables without manual review.</p>
+                    <h4 className="font-sora text-sm font-medium text-cyan-300 mb-1">Master Services Agreement (MSA) Billing</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Automated price books calculating rig day-rates, standby fees, and consumables without manual review.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-cyan-300 mb-1">Downhole Tool Serialization (EAM)</h4>
-                    <p className="text-xs text-slate-300">Individual serial number history tracking rotating hours, component stress, and NDT inspection passports.</p>
+                    <h4 className="font-sora text-sm font-medium text-cyan-300 mb-1">Downhole Tool Serialization (EAM)</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Individual serial number history tracking rotating hours, component stress, and NDT inspection passports.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-cyan-300 mb-1">Rig Move Logistics (SAP TM)</h4>
-                    <p className="text-xs text-slate-300">Automated dispatching of specialized trailers, cranes, and escort vehicles between drilling pads.</p>
+                    <h4 className="font-sora text-sm font-medium text-cyan-300 mb-1">Rig Move Logistics (SAP TM)</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Automated dispatching of specialized trailers, cranes, and escort vehicles between drilling pads.</p>
                   </div>
                 </div>
               </div>
@@ -1151,24 +1151,24 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                   <div className="flex items-center gap-3">
                     <Zap className="w-6 h-6 text-emerald-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">SAP BTP & Predictive Energy Services AI</h3>
-                      <p className="text-xs text-slate-400 font-mono">SAP APM • SuccessFactors Skills • Offshore Deck Cloud</p>
+                      <h3 className="font-sora text-lg font-medium text-white">SAP BTP & Predictive Energy Services AI</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">SAP APM • SuccessFactors Skills • Offshore Deck Cloud</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-mono">Cognitive Layer</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-emerald-300 mb-1">Downhole Motor Predictive RUL</h4>
-                    <p className="text-xs text-slate-300">Machine learning models anticipating elastomer stator de-bonding and bearing wear in drilling motors.</p>
+                    <h4 className="font-sora text-sm font-medium text-emerald-300 mb-1">Downhole Motor Predictive RUL</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Machine learning models anticipating elastomer stator de-bonding and bearing wear in drilling motors.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-emerald-300 mb-1">Field Crew Competency Gating</h4>
-                    <p className="text-xs text-slate-300">Real-time credential verification preventing uncertified personnel from being dispatched to high-risk wells.</p>
+                    <h4 className="font-sora text-sm font-medium text-emerald-300 mb-1">Field Crew Competency Gating</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Real-time credential verification preventing uncertified personnel from being dispatched to high-risk wells.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-emerald-300 mb-1">Visual PSV Deck Optimization</h4>
-                    <p className="text-xs text-slate-300">3D visual stowage algorithms organizing offshore vessel cargo manifests for fastest port turnaround.</p>
+                    <h4 className="font-sora text-sm font-medium text-emerald-300 mb-1">Visual PSV Deck Optimization</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">3D visual stowage algorithms organizing offshore vessel cargo manifests for fastest port turnaround.</p>
                   </div>
                 </div>
               </div>
@@ -1192,7 +1192,7 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Pre-Configured Energy Services Modules
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Rapidly deployable solution packages engineered for wellsite execution, downhole tool maintenance, rig moves, and offshore vessel supply chains.
             </p>
           </div>
@@ -1244,10 +1244,10 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                       <span className="text-[10px] font-mono font-bold text-[#0070C0] uppercase tracking-wider bg-sky-50 px-2 py-0.5 rounded border border-sky-100">
                         {sol.categoryLabel}
                       </span>
-                      <h3 className="text-base sm:text-lg font-bold text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug line-clamp-2">
+                      <h3 className="font-sora text-base sm:text-lg font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug line-clamp-2">
                         {sol.title}
                       </h3>
-                      <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
+                      <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-3 font-normal">
                         {sol.description}
                       </p>
                     </div>
@@ -1283,7 +1283,7 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Standardizing Complex Energy Services
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               How Knooviq replaces brittle custom billing and dispatch scripts with SAP standard oilfield industry packages.
             </p>
           </div>
@@ -1361,7 +1361,7 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Four Phases to Autonomous Field Services
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Inspect how legacy manual workflows transform into intelligent real-time operations across every phase of the SAP deployment.
             </p>
           </div>
@@ -1398,7 +1398,7 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                     </div>
 
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide mt-0.5">
@@ -1406,7 +1406,7 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                       </div>
                     </div>
 
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1484,7 +1484,7 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Enterprise Client Success Stories
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Real operational outcomes delivered for directional drilling contractors, offshore drillship fleets, and rig transport specialists.
             </p>
           </div>
@@ -1499,13 +1499,13 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                   <span className="text-[10px] font-mono font-bold text-[#0070C0] bg-sky-50 px-2 py-0.5 rounded border border-sky-100 uppercase tracking-wider">
                     {cs.badge}
                   </span>
-                  <h3 className="text-base font-bold text-slate-950 leading-snug">
+                  <h3 className="font-sora text-base font-medium text-slate-950 leading-snug">
                     {cs.title}
                   </h3>
                   <div className="text-xs font-medium text-slate-500">
                     {cs.client}
                   </div>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     {cs.desc}
                   </p>
                 </div>
@@ -1539,7 +1539,7 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Energy Services Architecture Advisory
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Technical considerations for oilfield service executives modernizing wellsite execution and contract billing on SAP S/4HANA.
             </p>
           </div>
@@ -1605,7 +1605,7 @@ export const EnergyServicesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             Ready to Build a Smarter Energy Services Enterprise?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your wellsite crews, downhole tools, rig transports, and billing contracts with Knooviq.
           </p>
 
