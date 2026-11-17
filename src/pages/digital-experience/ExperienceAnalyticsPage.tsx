@@ -583,7 +583,7 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
   const currentSegment = wheelSegments[hoveredWheelIndex ?? 0];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-[#0070C0] selection:text-white">
+    <div className="min-h-screen bg-white text-slate-900 font-sans cloud-sora-scope antialiased overflow-x-hidden selection:bg-[#0070C0] selection:text-white">
       {/* =========================================================================
           SECTION 1: HERO SECTION
           ========================================================================= */}
@@ -698,12 +698,12 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-5 py-3.5 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-2xl">
-                <p className="text-base sm:text-lg font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-base sm:text-lg font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Traditional web analytics captures delayed pageviews and vanity traffic counts; modern digital intelligence demands real-time journey telemetry that diagnoses why enterprise customers hesitate, where workflows stall, and how experience directly governs gross margin and contract renewal.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 KNOOVIQ helps enterprise leadership transition away from sampled, isolated clickstream silos toward unified behavioral telemetry graphs. We connect raw client-side interactions directly to persistent customer identity graphs, conversion funnels, and ERP revenue realization with deterministic audit compliance.
               </p>
 
@@ -714,8 +714,8 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
                     <Radio className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Lossless Stream Ingestion</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Lossless Stream Ingestion</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Sub-second event streaming capturing DOM changes, API latency events, and micro-interactions with zero client-side browser overhead.
                     </p>
                   </div>
@@ -726,8 +726,8 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
                     <GitBranch className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Deterministic Identity Graphing</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Deterministic Identity Graphing</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Stitching anonymous multi-device browsing sessions to verified customer accounts and ERP billing trees with persistent journey continuity.
                     </p>
                   </div>
@@ -738,8 +738,8 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Automated Closed-Loop Remediation</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Automated Closed-Loop Remediation</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Event webhooks dispatching proactive intervention alerts to customer success teams and automated tickets to engineering desks.
                     </p>
                   </div>
@@ -770,7 +770,7 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
 
                 <div className="absolute bottom-4 left-4 right-4 text-white space-y-1.5 p-3.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-700/80">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-normal leading-relaxed line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -821,7 +821,7 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight leading-tight">
               Why Legacy Web Analytics Fails Modern Enterprise Ecosystems
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+            <p className="font-sora mt-4 text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               When business-critical revenue depends on omnichannel portals and complex B2B buyer journeys, simplistic pageview metrics leave enterprise leadership operating with massive blind spots.
             </p>
           </div>
@@ -843,10 +843,10 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
                     </span>
                     <XCircle className="w-4 h-4 text-red-400" />
                   </div>
-                  <h3 className="text-base font-bold text-slate-900 mb-2 leading-snug">
+                  <h3 className="font-sora text-base font-medium text-slate-900 mb-2 leading-snug">
                     {card.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                     {card.desc}
                   </p>
                 </div>
@@ -855,7 +855,7 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
                     <ShieldCheck className="w-3.5 h-3.5 text-[#0070C0]" />
                     <span>KNOOVIQ REMEDY</span>
                   </div>
-                  <p className="text-xs text-slate-700 leading-relaxed font-normal">
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     {card.remedy}
                   </p>
                 </div>
@@ -880,7 +880,7 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
               An Integrated Behavioral Intelligence Architecture
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora mt-4 text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Hover over or inspect each interconnected telemetry segment to examine how KNOOVIQ unifies real-time event streaming, deterministic identity graphs, and predictive retention modeling.
             </p>
           </div>
@@ -911,10 +911,10 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
                       </span>
                       <IconComponent className={`w-4 h-4 ${isHovered ? seg.textColor : 'text-slate-500'}`} />
                     </div>
-                    <h4 className="text-xs font-bold text-white mb-1 leading-snug">
+                    <h4 className="font-sora text-xs font-medium text-white mb-1 leading-snug">
                       {seg.title}
                     </h4>
-                    <p className="text-[11px] text-slate-400 line-clamp-2 leading-relaxed">
+                    <p className="font-sora text-[11px] text-slate-400 line-clamp-2 leading-[1.6] font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -1024,10 +1024,10 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
                       </span>
                       <IconComponent className={`w-4 h-4 ${isHovered ? seg.textColor : 'text-slate-500'}`} />
                     </div>
-                    <h4 className="text-xs font-bold text-white mb-1 leading-snug">
+                    <h4 className="font-sora text-xs font-medium text-white mb-1 leading-snug">
                       {seg.title}
                     </h4>
-                    <p className="text-[11px] text-slate-400 line-clamp-2 leading-relaxed">
+                    <p className="font-sora text-[11px] text-slate-400 line-clamp-2 leading-[1.6] font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -1051,7 +1051,7 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight leading-tight">
               Architectural Rigor vs. Legacy Siloed Analytics
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+            <p className="font-sora mt-4 text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Compare conventional aggregated web metrics with KNOOVIQ&rsquo;s real-time journey telemetry mesh, or inspect our 4-tier streaming technical architecture.
             </p>
 
@@ -1165,15 +1165,15 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
                 {architectureLayers.map((layer, idx) => (
                   <div key={idx} className="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
                     <div className="text-xs font-mono font-bold text-[#0070C0] mb-1">{layer.layer}</div>
-                    <h4 className="text-base font-bold text-slate-900 mb-2">{layer.title}</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal mb-4">
+                    <h4 className="font-sora text-base font-medium text-slate-900 mb-2">{layer.title}</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal mb-4">
                       {layer.desc}
                     </p>
                     <div className="pt-3 border-t border-slate-200">
                       <span className="text-[11px] font-mono font-semibold text-slate-500 uppercase tracking-wider">
                         CORE STACK:
                       </span>
-                      <p className="text-xs font-mono font-bold text-slate-800 mt-0.5">{layer.tech}</p>
+                      <p className="font-sora text-xs font-mono font-medium text-slate-800 mt-0.5">{layer.tech}</p>
                     </div>
                   </div>
                 ))}
@@ -1195,7 +1195,7 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
                   <div className="text-xs font-mono text-cyan-400 uppercase tracking-widest font-bold">
                     INTERACTIVE TELEMETRY LAB
                   </div>
-                  <h3 className="text-lg sm:text-xl font-black text-white mt-0.5">
+                  <h3 className="font-sora text-lg sm:text-xl font-medium text-white mt-0.5">
                     Live Experience Telemetry Simulations
                   </h3>
                 </div>
@@ -1224,10 +1224,10 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
                   <div className="inline-block px-2.5 py-1 rounded bg-cyan-950 border border-cyan-800 text-cyan-300 font-mono text-[11px]">
                     {telemetryScenarios[activeTelemetryTab].accuracy}
                   </div>
-                  <h4 className="text-xl font-bold text-white">
+                  <h4 className="font-sora text-xl font-medium text-white">
                     {telemetryScenarios[activeTelemetryTab].title}
                   </h4>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                     {telemetryScenarios[activeTelemetryTab].summary}
                   </p>
                   <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs font-mono text-slate-400">
@@ -1244,7 +1244,7 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
                           {f.metric}
                         </span>
                       </div>
-                      <p className="text-xs text-slate-400 leading-relaxed font-normal">{f.desc}</p>
+                      <p className="font-sora text-xs text-slate-400 leading-[1.6] font-normal">{f.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -1276,7 +1276,7 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight leading-tight">
               A 16-Week Journey Telemetry Implementation Methodology
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+            <p className="font-sora mt-4 text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               From audit and event taxonomy design to machine learning friction radar and closed-loop enterprise governance, our structured framework ensures measurable risk mitigation and accelerated time-to-insight.
             </p>
           </div>
@@ -1298,7 +1298,7 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
                     </span>
                     <span className="text-[11px] font-mono text-slate-400 font-semibold">{stage.weeks}</span>
                   </div>
-                  <h3 className="text-base font-bold text-slate-900 mb-1 leading-snug">
+                  <h3 className="font-sora text-base font-medium text-slate-900 mb-1 leading-snug">
                     {stage.title}
                   </h3>
                   <div className="text-xs font-mono text-cyan-700 font-semibold mb-4">
@@ -1336,7 +1336,7 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight leading-tight">
               Enterprise Journey Telemetry &amp; Analytics FAQs
             </h2>
-            <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+            <p className="font-sora mt-4 text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Direct insights into architecture migration, privacy compliance, client-side latency, and closed-loop operational governance.
             </p>
           </div>
@@ -1413,7 +1413,7 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
             Ready to Unify Journey Telemetry &amp; Eliminate Silent Enterprise Friction?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Partner with KNOOVIQ to deploy real-time behavioral ingestion, cross-device identity graphs, and multi-touch revenue attribution across your digital landscape.
           </p>
 

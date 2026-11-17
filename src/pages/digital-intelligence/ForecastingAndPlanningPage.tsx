@@ -207,7 +207,7 @@ export const ForecastingAndPlanningPage: React.FC<ForecastingAndPlanningPageProp
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#0070C0] selection:text-white antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 font-sans cloud-sora-scope selection:bg-[#0070C0] selection:text-white antialiased overflow-x-hidden">
 
       {/* ========================================================================= */}
       {/* SECTION 1: HERO SECTION (AI Agents Style Full Bleed Panoramic Background) */}
@@ -253,7 +253,7 @@ export const ForecastingAndPlanningPage: React.FC<ForecastingAndPlanningPageProp
               </h1>
 
               {/* Subtitle with High Legibility */}
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal pt-1">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal pt-1">
                 Replace static spreadsheet forecasts with continuous, probabilistic demand sensing. Synchronize commercial projections, supply chain capacities, and financial budgets across your enterprise, driving autonomous inventory alignment and agile executive sales and operations planning with SAP Clean Core.
               </p>
             </motion.div>
@@ -296,7 +296,7 @@ export const ForecastingAndPlanningPage: React.FC<ForecastingAndPlanningPageProp
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Algorithmic Forecasting Built for Market Volatility
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Static historical averages cannot predict modern disruptions. Our architecture detects early demand shifts, calculates risk quantiles, and aligns corporate plans autonomously.
             </p>
           </div>
@@ -312,10 +312,10 @@ export const ForecastingAndPlanningPage: React.FC<ForecastingAndPlanningPageProp
                   <div className="rounded-xl bg-sky-50 border border-sky-100 p-3 text-[#0070C0] w-fit mb-5">
                     <pillar.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 mb-2">
                     {pillar.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                     {pillar.desc}
                   </p>
                 </div>
@@ -344,7 +344,7 @@ export const ForecastingAndPlanningPage: React.FC<ForecastingAndPlanningPageProp
                 Eliminate the Bullwhip Effect Across the Enterprise Value Chain
               </h2>
 
-              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+              <p className="font-sora text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
                 Departmental planning silos cause magnified demand volatility, resulting in concurrent inventory stockouts and costly warehouse surplus. KNOOVIQ Forecasting &amp; Planning establishes a continuous digital thread connecting customer demand signals directly to factory schedules and raw material procurement.
               </p>
 
@@ -352,24 +352,24 @@ export const ForecastingAndPlanningPage: React.FC<ForecastingAndPlanningPageProp
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[#0070C0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Unified Sales &amp; Operations Planning</h4>
-                    <p className="text-xs sm:text-sm text-slate-600">Aligns commercial leadership, plant managers, and finance executives around a shared real-time planning baseline.</p>
+                    <h4 className="font-sora text-sm font-medium text-slate-900">Unified Sales &amp; Operations Planning</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">Aligns commercial leadership, plant managers, and finance executives around a shared real-time planning baseline.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[#0070C0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Automated Signal Disaggregation</h4>
-                    <p className="text-xs sm:text-sm text-slate-600">Dynamically breaks down macro aggregate forecasts into regional distribution center and SKU-level execution schedules.</p>
+                    <h4 className="font-sora text-sm font-medium text-slate-900">Automated Signal Disaggregation</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">Dynamically breaks down macro aggregate forecasts into regional distribution center and SKU-level execution schedules.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[#0070C0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Continuous Clean-Core Feedback</h4>
-                    <p className="text-xs sm:text-sm text-slate-600">Continuously reconciles executed production batches and customer fulfillments against forecast expectations to refine planning accuracy.</p>
+                    <h4 className="font-sora text-sm font-medium text-slate-900">Continuous Clean-Core Feedback</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">Continuously reconciles executed production batches and customer fulfillments against forecast expectations to refine planning accuracy.</p>
                   </div>
                 </div>
               </div>
@@ -391,7 +391,7 @@ export const ForecastingAndPlanningPage: React.FC<ForecastingAndPlanningPageProp
                     <div className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
                     <span className="text-xs font-semibold text-slate-200">Demand Sensing Engine</span>
                   </div>
-                  <p className="text-sm font-bold text-white mt-1">Real-Time Signal Mesh</p>
+                  <p className="font-sora text-sm font-medium text-white mt-1">Real-Time Signal Mesh</p>
                 </div>
 
                 {/* Floating Glassmorphic Badge 2 */}
@@ -400,7 +400,7 @@ export const ForecastingAndPlanningPage: React.FC<ForecastingAndPlanningPageProp
                     <Sparkles className="h-3.5 w-3.5 text-cyan-300" />
                     <span className="text-xs font-semibold">Clean-Core Alignment</span>
                   </div>
-                  <p className="text-sm font-bold mt-1">Automated IBP Sync</p>
+                  <p className="font-sora text-sm font-medium mt-1">Automated IBP Sync</p>
                 </div>
               </div>
             </div>
@@ -423,7 +423,7 @@ export const ForecastingAndPlanningPage: React.FC<ForecastingAndPlanningPageProp
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               A Seamless Probabilistic Planning Cycle
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Experience how external demand signals flow through algorithmic consensus to trigger synchronized enterprise execution.
             </p>
           </div>
@@ -444,10 +444,10 @@ export const ForecastingAndPlanningPage: React.FC<ForecastingAndPlanningPageProp
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 mb-2">
                     {ws.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                     {ws.desc}
                   </p>
                 </div>
@@ -471,7 +471,7 @@ export const ForecastingAndPlanningPage: React.FC<ForecastingAndPlanningPageProp
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Engineered for Complex Enterprise Horizons
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Pre-configured forecasting algorithms and consensus workflows tailored to core operational functions across the enterprise.
             </p>
           </div>
@@ -490,12 +490,12 @@ export const ForecastingAndPlanningPage: React.FC<ForecastingAndPlanningPageProp
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-2">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 flex items-center gap-2.5 mb-2">
                     <domain.icon className="h-5 w-5 text-[#0070C0] shrink-0" />
                     <span>{domain.title}</span>
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mb-6 font-normal">
                     {domain.desc}
                   </p>
                 </div>
@@ -524,7 +524,7 @@ export const ForecastingAndPlanningPage: React.FC<ForecastingAndPlanningPageProp
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Topological Architecture &amp; Comparative Analysis
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Contrast autonomous demand sensing against legacy spreadsheet planning, and inspect our full-stack enterprise forecasting architecture.
             </p>
 
@@ -593,20 +593,20 @@ export const ForecastingAndPlanningPage: React.FC<ForecastingAndPlanningPageProp
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="text-sm font-bold text-slate-900 mb-2">Signal Ingestion &amp; Feature Store</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Signal Ingestion &amp; Feature Store</h4>
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     Ingests channel telemetry, point-of-sale feeds, supplier lead times, and economic indices into standardized time-series matrices with zero loss.
                   </p>
                 </div>
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="text-sm font-bold text-slate-900 mb-2">Probabilistic Modeling Core</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Probabilistic Modeling Core</h4>
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     Executes ensemble algorithms, neural demand transformers, and multi-objective optimization to generate consensus execution schedules.
                   </p>
                 </div>
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="text-sm font-bold text-slate-900 mb-2">Enterprise Clean-Core Sync</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Enterprise Clean-Core Sync</h4>
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     High-reliability connectors that publish validated replenishment parameters and production runs directly into SAP S/4HANA via native BAPIs.
                   </p>
                 </div>
@@ -630,7 +630,7 @@ export const ForecastingAndPlanningPage: React.FC<ForecastingAndPlanningPageProp
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Executive FAQs: Forecasting &amp; Planning
             </h2>
-            <p className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora mt-4 text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Essential answers addressing demand volatility, consensus alignment, probabilistic modeling, and SAP Clean Core integration.
             </p>
           </div>
@@ -679,7 +679,7 @@ export const ForecastingAndPlanningPage: React.FC<ForecastingAndPlanningPageProp
             Ready to Eliminate Planning Blind Spots and Synchronize Your Enterprise?
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sora mt-4 text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Partner with KNOOVIQ to benchmark your forecasting accuracy, deploy probabilistic demand sensing, and achieve closed-loop integrated business planning with SAP S/4HANA.
           </p>
 

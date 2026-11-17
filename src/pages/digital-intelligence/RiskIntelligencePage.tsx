@@ -205,7 +205,7 @@ export const RiskIntelligencePage: React.FC<RiskIntelligencePageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#0070C0] selection:text-white antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 font-sans cloud-sora-scope selection:bg-[#0070C0] selection:text-white antialiased overflow-x-hidden">
       
       {/* ========================================================================= */}
       {/* SECTION 1: HERO SECTION (AI Agents Style Full Bleed Panoramic Background) */}
@@ -252,7 +252,7 @@ export const RiskIntelligencePage: React.FC<RiskIntelligencePageProps> = ({
               </h1>
 
               {/* Subtitle with High Legibility */}
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal pt-1 drop-shadow-md">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal pt-1 drop-shadow-md">
                 Transition from retrospective compliance audits to autonomous, continuous risk intelligence. Monitor multi-tier vendor vulnerabilities, counterparty credit defaults, regulatory shifts, and supply chain bottlenecks in real time with predictive early-warning radar integrated into SAP Clean Core.
               </p>
             </motion.div>
@@ -295,7 +295,7 @@ export const RiskIntelligencePage: React.FC<RiskIntelligencePageProps> = ({
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Continuous Risk Radar Engineered for Enterprise Protection
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Periodic checklists miss emergent operational vulnerabilities. Our intelligence fabric monitors thousands of internal and external threat signals continuously.
             </p>
           </div>
@@ -311,10 +311,10 @@ export const RiskIntelligencePage: React.FC<RiskIntelligencePageProps> = ({
                   <div className="rounded-xl bg-sky-50 border border-sky-100 p-3 text-[#0070C0] w-fit mb-5">
                     <pillar.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 mb-2">
                     {pillar.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                     {pillar.desc}
                   </p>
                 </div>
@@ -343,7 +343,7 @@ export const RiskIntelligencePage: React.FC<RiskIntelligencePageProps> = ({
                 Eliminate Blind Spots Across Global Enterprise Operations
               </h2>
               
-              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+              <p className="font-sora text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
                 Most enterprises only discover critical counterparty insolvency or regulatory non-compliance after contracts fail or shipments are held at customs. KNOOVIQ Risk Intelligence transforms risk management into a proactive shield, delivering real-time situational clarity and actionable risk mitigation playbooks.
               </p>
 
@@ -351,24 +351,24 @@ export const RiskIntelligencePage: React.FC<RiskIntelligencePageProps> = ({
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[#0070C0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Unified Threat Telemetry Grid</h4>
-                    <p className="text-xs sm:text-sm text-slate-600">Aggregates external market alerts, sanctions lists, financial ratings, and internal transactional metrics into a unified risk dashboard.</p>
+                    <h4 className="font-sora text-sm font-medium text-slate-900">Unified Threat Telemetry Grid</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">Aggregates external market alerts, sanctions lists, financial ratings, and internal transactional metrics into a unified risk dashboard.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[#0070C0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Automated Compensating Mitigations</h4>
-                    <p className="text-xs sm:text-sm text-slate-600">Traces how localized supplier failures ripple through work-in-progress inventory, finished goods, and revenue timing.</p>
+                    <h4 className="font-sora text-sm font-medium text-slate-900">Automated Compensating Mitigations</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">Traces how localized supplier failures ripple through work-in-progress inventory, finished goods, and revenue timing.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[#0070C0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Immutable Audit Lineage</h4>
-                    <p className="text-xs sm:text-sm text-slate-600">Records every evaluated risk signal, algorithmic risk determination, and executive mitigation decision with complete cryptographic traceability.</p>
+                    <h4 className="font-sora text-sm font-medium text-slate-900">Immutable Audit Lineage</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">Records every evaluated risk signal, algorithmic risk determination, and executive mitigation decision with complete cryptographic traceability.</p>
                   </div>
                 </div>
               </div>
@@ -403,7 +403,7 @@ export const RiskIntelligencePage: React.FC<RiskIntelligencePageProps> = ({
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               A Continuous Autonomous Risk Lifecycle
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Experience how external risk signals are detected, evaluated against enterprise tolerance thresholds, and mitigated automatically.
             </p>
           </div>
@@ -424,10 +424,10 @@ export const RiskIntelligencePage: React.FC<RiskIntelligencePageProps> = ({
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 mb-2">
                     {ws.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                     {ws.desc}
                   </p>
                 </div>
@@ -451,7 +451,7 @@ export const RiskIntelligencePage: React.FC<RiskIntelligencePageProps> = ({
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Comprehensive Protection Across Core Corporate Vectors
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Pre-configured risk sensing models and automated response workflows tailored to critical corporate functions across the enterprise.
             </p>
           </div>
@@ -470,12 +470,12 @@ export const RiskIntelligencePage: React.FC<RiskIntelligencePageProps> = ({
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-2">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 flex items-center gap-2.5 mb-2">
                     <domain.icon className="h-5 w-5 text-[#0070C0] shrink-0" />
                     <span>{domain.title}</span>
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mb-6 font-normal">
                     {domain.desc}
                   </p>
                 </div>
@@ -504,7 +504,7 @@ export const RiskIntelligencePage: React.FC<RiskIntelligencePageProps> = ({
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Topological Architecture &amp; Comparative Analysis
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Contrast autonomous continuous risk intelligence against periodic manual audits, and inspect our full-stack enterprise risk architecture.
             </p>
 
@@ -575,20 +575,20 @@ export const RiskIntelligencePage: React.FC<RiskIntelligencePageProps> = ({
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="text-sm font-bold text-slate-900 mb-2">Threat Radar &amp; Signal Bus</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Threat Radar &amp; Signal Bus</h4>
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     High-throughput ingestion connecting credit feeds, regulatory watchlists, news feeds, and environmental sensors with zero lag.
                   </p>
                 </div>
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="text-sm font-bold text-slate-900 mb-2">Systemic Graph Analytics Core</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Systemic Graph Analytics Core</h4>
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     Graph neural networks mapping enterprise balance sheets, dependency matrices, and multi-tier supplier relationships.
                   </p>
                 </div>
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="text-sm font-bold text-slate-900 mb-2">Clean-Core Mitigation Engine</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Clean-Core Mitigation Engine</h4>
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     Secure connectors executing automated credit adjustments, vendor holds, and executive escalations in SAP S/4HANA via native BAPIs.
                   </p>
                 </div>
@@ -612,7 +612,7 @@ export const RiskIntelligencePage: React.FC<RiskIntelligencePageProps> = ({
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Executive FAQs: Enterprise Risk Intelligence
             </h2>
-            <p className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora mt-4 text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Essential answers addressing continuous threat sensing, multi-tier supply visibility, compliance auditability, and SAP Clean Core controls.
             </p>
           </div>
@@ -662,7 +662,7 @@ export const RiskIntelligencePage: React.FC<RiskIntelligencePageProps> = ({
             Ready to Build an Autonomous Early-Warning Shield for Your Business?
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sora mt-4 text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Partner with KNOOVIQ to benchmark your enterprise risk exposure, map multi-tier supply vulnerabilities, and deploy continuous risk intelligence integrated with SAP S/4HANA.
           </p>
 

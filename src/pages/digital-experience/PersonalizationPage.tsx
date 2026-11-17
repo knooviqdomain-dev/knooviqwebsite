@@ -562,7 +562,7 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] cloud-sora-scope selection:text-white font-sans antialiased overflow-x-hidden">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Clean, High-Contrast, Professional Static Hero)
@@ -602,7 +602,7 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
             </h1>
 
             {/* Subtitle with High Legibility */}
-            <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal max-w-2xl pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal max-w-2xl pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
               Real-time vector preference modeling, contextual Next-Best-Action (NBA) arbitration, dynamic catalog re-ranking, and zero-party privacy governance across enterprise commerce touchpoints.
             </p>
 
@@ -655,12 +655,12 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-5 py-3.5 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-2xl">
-                <p className="text-base sm:text-lg font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-base sm:text-lg font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Effective enterprise personalization is not about generic product recommendations—it is about real-time contextual decisioning that matches client need with commercial contract rules and live inventory.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 KNOOVIQ helps enterprise commerce and revenue leaders transition away from static catalog layouts and delayed batch recommendation lists. We build real-time vector affinity models and Next-Best-Action arbitration engines connected directly to SAP S/4HANA stock and pricing masters, delivering individualized B2B and B2C experiences with complete margin protection.
               </p>
 
@@ -671,8 +671,8 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
                     <Fingerprint className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Dynamic Vector Preference Modeling</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Dynamic Vector Preference Modeling</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       High-dimensional vector embeddings mapping real-time clickstream events and historical purchases to catalog hierarchies.
                     </p>
                   </div>
@@ -683,8 +683,8 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
                     <Target className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Commercially Governed NBA Decisioning</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Commercially Governed NBA Decisioning</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Next-Best-Action arbitration balancing buyer affinity with real-time ERP inventory availability and corporate profit margins.
                     </p>
                   </div>
@@ -695,8 +695,8 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Zero-Party Privacy Architecture</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Zero-Party Privacy Architecture</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Audit-proof consent management personalizing solely on explicit customer intent signals without third-party tracking cookies.
                     </p>
                   </div>
@@ -727,7 +727,7 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
 
                 <div className="absolute bottom-4 left-4 right-4 text-white space-y-1.5 p-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-700/80">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-normal leading-relaxed line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -778,7 +778,7 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Strategic Hurdles Facing Legacy Recommendation Engines
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Why traditional one-size-fits-all product catalogs, overnight batch models, and margin-blind recommendation widgets damage customer loyalty and profitability.
             </p>
           </div>
@@ -800,10 +800,10 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
                         <ChallengeIcon className="w-5 h-5" />
                       </div>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -832,7 +832,7 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
               The KNOOVIQ Unified Personalization Mesh
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Explore the eight mutually reinforcing layers of our modern hyper-personalization architecture. Hover over any segment to inspect its architectural role.
             </p>
           </div>
@@ -859,7 +859,7 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -980,7 +980,7 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -1006,7 +1006,7 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Contextual Next-Best-Action &amp; Personalization Architecture Matrix
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Examine the concrete architectural difference between legacy rules-based recommendations and KNOOVIQ real-time vector decisioning mesh frameworks.
             </p>
           </div>
@@ -1127,8 +1127,8 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER ONE: INTENT STREAMING
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Event-Driven Preference Graph</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Event-Driven Preference Graph</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Captures micro-interactions and search queries in real time, stitching them to verified customer accounts.
                     </p>
                   </div>
@@ -1137,8 +1137,8 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER TWO: VECTOR PREDICTION
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">HANA Cloud Vector Embeddings</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">HANA Cloud Vector Embeddings</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Transforms catalogs and buyer activity into high-dimensional vector spaces for instant semantic relevance scoring.
                     </p>
                   </div>
@@ -1147,8 +1147,8 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER THREE: DECISION ARBITRATION
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Contextual NBA Arbitration</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Contextual NBA Arbitration</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Arbitrates ranked recommendations against commercial business rules, inventory availability, and margin thresholds.
                     </p>
                   </div>
@@ -1157,8 +1157,8 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER FOUR: OMNICHANNEL DELIVERY
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Edge Micro-Frontend Delivery</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Edge Micro-Frontend Delivery</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Delivers personalized content, custom bundles, and pricing tiers to web storefronts and sales rep cockpits.
                     </p>
                   </div>
@@ -1223,7 +1223,7 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
                       <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
                       <span>Decision Optimization Directive</span>
                     </div>
-                    <p className="text-xs text-cyan-100 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-cyan-100 leading-[1.6] font-normal">
                       {diagnosticProcesses[activeTelemetryTab].recommendation}
                     </p>
                   </div>
@@ -1250,10 +1250,10 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
                             {finding.source}
                           </span>
                         </div>
-                        <h4 className="text-sm sm:text-base font-bold text-white">
+                        <h4 className="font-sora text-sm sm:text-base font-medium text-white">
                           {finding.title}
                         </h4>
-                        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                        <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                           {finding.desc}
                         </p>
                       </div>
@@ -1281,7 +1281,7 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Phased Enterprise Implementation Roadmap
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               A structured, risk-mitigated journey from static product catalogs to an enterprise-wide, governed hyper-personalization decisioning mesh.
             </p>
           </div>
@@ -1304,11 +1304,11 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
                       </div>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {phase.title}
                     </h3>
 
-                    <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {phase.focus}
                     </p>
                   </div>
@@ -1347,7 +1347,7 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
               Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#005A9C] via-[#0070C0] to-sky-500">Strategic Questions</span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal max-w-2xl mx-auto">
               Addressing vector affinity models, Next-Best-Action decisioning with ERP margin guards, sub-second vector scoring, and zero-party privacy for technology leaders.
             </p>
           </div>
@@ -1422,7 +1422,7 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
             Ready to Accelerate Your Enterprise Personalization Strategy?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Collaborate with senior decisioning architects to build real-time vector affinity models, deploy Next-Best-Action arbitration with margin guards, and safeguard client privacy.
           </p>
 

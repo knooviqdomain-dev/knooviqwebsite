@@ -562,7 +562,7 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] cloud-sora-scope selection:text-white font-sans antialiased overflow-x-hidden">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Clean, High-Contrast, Professional Static Hero)
@@ -602,7 +602,7 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
             </h1>
 
             {/* Subtitle with High Legibility */}
-            <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal max-w-2xl pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal max-w-2xl pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
               Decoupled cloud-native microservices architecture, modern headless micro-frontends, offline-first mobile enterprise apps, and clean core SAP BTP extensions across multi-cloud footprints.
             </p>
 
@@ -655,12 +655,12 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-5 py-3.5 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-2xl">
-                <p className="text-base sm:text-lg font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-base sm:text-lg font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Enterprise agility requires decoupling business innovation from monolithic database cores. Clean core architectures liberate custom development, allowing rapid innovation without upgrade lock-in.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 KNOOVIQ helps enterprise technology leaders decompose brittle monolithic software into scalable, event-driven microservices. We build modern digital applications on SAP Business Technology Platform (BTP) and cloud-native frameworks, preserving core ERP integrity while accelerating time-to-market.
               </p>
 
@@ -671,8 +671,8 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
                     <Cloud className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Decoupled Clean Core BTP Extensions</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Decoupled Clean Core BTP Extensions</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Custom business applications engineered side-by-side on SAP BTP, reading and writing strictly via published standard APIs.
                     </p>
                   </div>
@@ -683,8 +683,8 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
                     <Server className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Elastic Cloud-Native Microservices</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Elastic Cloud-Native Microservices</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Containerized microservices that autoscale horizontally under peak transaction loads, eliminating operational downtime.
                     </p>
                   </div>
@@ -695,8 +695,8 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
                     <Smartphone className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Offline-Resilient Mobile Systems</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Offline-Resilient Mobile Systems</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Field applications with embedded client-side database caching, enabling continuous productivity during cellular dropouts.
                     </p>
                   </div>
@@ -727,7 +727,7 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
 
                 <div className="absolute bottom-4 left-4 right-4 text-white space-y-1.5 p-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-700/80">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-normal leading-relaxed line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -778,7 +778,7 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Strategic Hurdles Facing Legacy Enterprise Software
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Why traditional monolithic applications, tight ERP customizations, and manual deployments stall innovation and generate severe maintenance costs.
             </p>
           </div>
@@ -800,10 +800,10 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
                         <ChallengeIcon className="w-5 h-5" />
                       </div>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -832,7 +832,7 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
               The KNOOVIQ Unified Digital Application Mesh
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Explore the eight mutually reinforcing layers of our modern application architecture. Hover over any segment to inspect its architectural role.
             </p>
           </div>
@@ -859,7 +859,7 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -980,7 +980,7 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -1006,7 +1006,7 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Cloud-Native Applications &amp; Clean Core Architecture Matrix
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Examine the concrete architectural difference between legacy monolithic applications and KNOOVIQ decoupled cloud-native microservices frameworks.
             </p>
           </div>
@@ -1127,8 +1127,8 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER ONE: CLOUD INFRASTRUCTURE
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Multi-Cloud Container Fabric</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Multi-Cloud Container Fabric</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Resilient Kubernetes orchestration supporting automated horizontal scaling and multi-region redundancy.
                     </p>
                   </div>
@@ -1137,8 +1137,8 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER TWO: BUSINESS MICROSERVICES
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Domain-Driven Microservices</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Domain-Driven Microservices</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Modular stateless services executing business logic without creating cross-application database locks.
                     </p>
                   </div>
@@ -1147,8 +1147,8 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER THREE: CLEAN CORE EXTENSIONS
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">SAP BTP CAP Framework</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">SAP BTP CAP Framework</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Side-by-side extension platform connecting custom digital apps to SAP S/4HANA via clean core APIs.
                     </p>
                   </div>
@@ -1157,8 +1157,8 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER FOUR: HEADLESS UX &amp; MOBILE
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Modern Micro-Frontends</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Modern Micro-Frontends</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Consumer-grade responsive frontends and native mobile apps engineered with offline SQLite synchronization.
                     </p>
                   </div>
@@ -1223,7 +1223,7 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
                       <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
                       <span>Application Architecture Directive</span>
                     </div>
-                    <p className="text-xs text-cyan-100 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-cyan-100 leading-[1.6] font-normal">
                       {diagnosticProcesses[activeTelemetryTab].recommendation}
                     </p>
                   </div>
@@ -1250,10 +1250,10 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
                             {finding.source}
                           </span>
                         </div>
-                        <h4 className="text-sm sm:text-base font-bold text-white">
+                        <h4 className="font-sora text-sm sm:text-base font-medium text-white">
                           {finding.title}
                         </h4>
-                        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                        <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                           {finding.desc}
                         </p>
                       </div>
@@ -1281,7 +1281,7 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Phased Enterprise Implementation Roadmap
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               A structured, risk-mitigated journey from monolithic legacy codebases to an enterprise-wide, governed cloud-native application mesh.
             </p>
           </div>
@@ -1304,11 +1304,11 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
                       </div>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {phase.title}
                     </h3>
 
-                    <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {phase.focus}
                     </p>
                   </div>
@@ -1347,7 +1347,7 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
               Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#005A9C] via-[#0070C0] to-sky-500">Strategic Questions</span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal max-w-2xl mx-auto">
               Addressing cloud-native modernization, SAP BTP clean core extensions, offline-first mobile sync, and DevSecOps pipelines for technology leaders.
             </p>
           </div>
@@ -1422,7 +1422,7 @@ export const DigitalApplicationsPage: React.FC<DigitalApplicationsPageProps> = (
             Ready to Modernize Your Enterprise Application Landscape?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Collaborate with senior software architects to refactor monolithic applications into scalable microservices, build clean core SAP BTP extensions, and automate continuous DevSecOps delivery.
           </p>
 
