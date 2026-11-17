@@ -1073,9 +1073,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                                   <Link
                                     to={item.path}
                                     onClick={() => setActiveMenu(null)}
-                                    className="industry-category-item px-2 py-0.5 rounded-lg block transition-colors text-slate-700 dark:text-slate-200 hover:text-[#00A3E0] dark:hover:text-cyan-300 hover:bg-white dark:hover:bg-white/10 text-[11px] font-medium leading-snug"
+                                    className="industry-category-item px-2 py-0.5 rounded-lg block text-left transition-colors text-slate-700 dark:text-slate-200 hover:text-[#00A3E0] dark:hover:text-cyan-300 hover:bg-white dark:hover:bg-white/10 text-[11px] font-medium leading-snug"
                                   >
-                                    <span>{item.name}</span>
+                                    <span className="block text-left">{item.name}</span>
                                   </Link>
                                 </li>
                               ))}
@@ -1123,9 +1123,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                                   <Link
                                     to={item.path}
                                     onClick={() => setActiveMenu(null)}
-                                    className="industry-category-item px-2 py-0.5 rounded-lg block transition-colors text-slate-700 dark:text-slate-200 hover:text-[#00A3E0] dark:hover:text-cyan-300 hover:bg-white dark:hover:bg-white/10 text-[11px] font-medium leading-snug"
+                                    className="industry-category-item px-2 py-0.5 rounded-lg block text-left transition-colors text-slate-700 dark:text-slate-200 hover:text-[#00A3E0] dark:hover:text-cyan-300 hover:bg-white dark:hover:bg-white/10 text-[11px] font-medium leading-snug"
                                   >
-                                    <span>{item.name}</span>
+                                    <span className="block text-left">{item.name}</span>
                                   </Link>
                                 </li>
                               ))}
@@ -1175,9 +1175,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                                   <Link
                                     to={item.path}
                                     onClick={() => setActiveMenu(null)}
-                                    className="industry-category-item px-2 py-0.5 rounded-lg block transition-colors text-slate-700 dark:text-slate-200 hover:text-[#00A3E0] dark:hover:text-cyan-300 hover:bg-white dark:hover:bg-white/10 text-[11px] font-medium leading-snug"
+                                    className="industry-category-item px-2 py-0.5 rounded-lg block text-left transition-colors text-slate-700 dark:text-slate-200 hover:text-[#00A3E0] dark:hover:text-cyan-300 hover:bg-white dark:hover:bg-white/10 text-[11px] font-medium leading-snug"
                                   >
-                                    <span>{item.name}</span>
+                                    <span className="block text-left">{item.name}</span>
                                   </Link>
                                 </li>
                               ))}

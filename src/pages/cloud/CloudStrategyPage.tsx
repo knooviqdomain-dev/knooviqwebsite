@@ -500,7 +500,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="text-left max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-100/70 dark:bg-cyan-500/15 border border-cyan-300/60 dark:border-cyan-400/30 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>SECTION 03 &bull; ARCHITECTURAL PILLARS</span>
             </div>
@@ -860,7 +860,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     </div>
 
                     <div className="pl-7 sm:pl-0 shrink-0">
-                      <span className="text-[11px] font-mono text-slate-400 bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5 px-3 py-1.5 rounded-lg block text-right sm:text-left">
+                      <span className="text-[11px] font-mono text-slate-400 bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5 px-3 py-1.5 rounded-lg block text-left">
                         {del.format}
                       </span>
                     </div>

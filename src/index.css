@@ -656,12 +656,14 @@
   white-space: normal !important;
   word-break: normal !important;
   overflow-wrap: break-word !important;
+  text-align: left !important;
 }
 
 @media (min-width: 640px) {
   .industry-category-item {
     font-size: 0.875rem; /* 14px */
     line-height: 1.5;
+    text-align: left !important;
   }
 }
 

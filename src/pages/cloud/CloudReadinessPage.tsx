@@ -480,96 +480,56 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
   ];
 
   return (
-    <div className="bg-white dark:bg-[#070E1C] text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div className="relative w-full max-w-full overflow-x-clip min-h-screen bg-white dark:bg-[#070E1C] text-slate-900 dark:text-slate-100 transition-colors duration-300">
       
       {/* =========================================================================
           SECTION 2: HERO SECTION (Cinematic Architectural Hero - Unified Knooviq Suite Format)
          ========================================================================= */}
-      <section className="relative w-full min-h-[540px] sm:min-h-[560px] lg:min-h-[580px] flex items-center overflow-hidden bg-[#040B17] text-white border-b border-slate-200/20 dark:border-white/10 shadow-2xl py-10 sm:py-12 lg:py-14">
+      <section className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 overflow-hidden bg-black text-white">
         
-        {/* Full-Bleed Enterprise Background Image */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Full-Bleed 16:9 Panoramic Image - Zero Cropping on Subject */}
+        <div className="absolute inset-0 z-0">
           <img 
             src="/images/cloud/cloud_readiness_hero.jpg" 
-            alt="Knooviq Cloud Readiness Consulting and Architecture Assessment" 
-            className="w-full h-full object-cover object-right"
+            alt="Assess. Plan. Prepare. Accelerate." 
+            className="w-full h-full object-cover object-right sm:object-[78%_center] lg:object-center brightness-105 contrast-[1.02]"
           />
-          {/* Subtle smooth gradient on the left edge for text legibility while keeping the cloud graphic 100% luminous and crystal clear */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#040B17]/85 via-[#040B17]/35 to-transparent pointer-events-none" />
-          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#040B17] to-transparent pointer-events-none" />
-
-          {/* Top Hairline Accent */}
-          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0] to-transparent" />
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="max-w-3xl space-y-2.5 sm:space-y-3">
-            
-            {/* Category Dash & Tag */}
-            <div className="flex flex-wrap items-center gap-2">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-cyan-400/30 text-[11px] font-mono font-bold uppercase tracking-wider text-cyan-300 shadow-xl">
-                <Sparkles className="w-3.5 h-3.5 text-[#00A3E0]" />
-                <span>CLOUD STRATEGY &amp; ADVISORY</span>
-              </div>
-              <span className="text-slate-400 text-xs font-mono">/</span>
-              <span className="text-[11px] font-mono font-bold text-slate-300 uppercase tracking-wider bg-black/30 px-2.5 py-0.5 rounded-full border border-white/10 backdrop-blur-sm shadow-md">
-                CLOUD READINESS ASSESSMENT
-              </span>
+          <div className="max-w-2xl lg:max-w-xl space-y-6 relative">
+            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/25 text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider backdrop-blur-md">
+              <Sparkles className="w-3.5 h-3.5 text-[#00A3E0]" />
+              <span>CLOUD STRATEGY &amp; ADVISORY</span>
             </div>
 
-            {/* Hero Title */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.18]">
-              Assess. Plan. Prepare. Accelerate.
-            </h1>
+            <div className="space-y-3">
+              <span className="block text-xs sm:text-sm font-mono font-semibold uppercase tracking-wider text-[#00A3E0]">
+                Cloud Readiness Assessment
+              </span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
+                Assess. Plan. Prepare. Accelerate.
+              </h1>
+            </div>
 
-            {/* Subtitle / Strategic Narrative */}
-            <p className="text-base sm:text-lg font-normal text-slate-200 leading-relaxed max-w-2xl mt-3">
+            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl pt-1">
               Knooviq systematically evaluates existing enterprise IT infrastructure, applications, data stores, security perimeters, operating workflows, and organizational skills before cloud adoption. We uncover hidden technical debt, quantify migration risks, and design a validated roadmap to ensure seamless, predictable modernization with zero core business disruption.
             </p>
 
-            {/* Architectural Feature Checkpoints */}
-            <div className="flex flex-wrap items-center gap-2 pt-0.5">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/35 backdrop-blur-md border border-white/15 text-[11px] font-medium text-slate-200 shadow-lg">
-                <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
+            {/* Badges */}
+            <div className="flex flex-wrap items-center gap-3 pt-1">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-950/70 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-cyan-200 shadow-lg">
+                <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
                 <span>Agentless IT Discovery</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/35 backdrop-blur-md border border-white/15 text-[11px] font-medium text-slate-200 shadow-lg">
-                <Zap className="w-3.5 h-3.5 text-amber-400" />
-                <span>Objective 7 R’s Framework</span>
-              </span>
-              <span className="inline-flex items-center gap-2.5 px-2.5 py-1 rounded-full bg-black/35 backdrop-blur-md border border-white/15 text-[11px] font-medium text-slate-200 shadow-lg">
-                <Database className="w-3.5 h-3.5 text-[#00A3E0]" />
-                <span>Zero Disruption Assurance</span>
-              </span>
-            </div>
-
-            {/* Strategic Content Blocks (Pure Information - Zero Clutter) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-0.5">
-              <div className="px-3 py-2 rounded-xl bg-black/35 backdrop-blur-md border border-white/15 shadow-md">
-                <div className="flex items-center gap-1.5 mb-0.5">
-                  <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
-                  <span className="text-[10.5px] font-mono font-bold uppercase text-white">
-                    AGENTLESS IT DISCOVERY
-                  </span>
-                </div>
-                <p className="text-[11px] text-slate-300 leading-snug font-normal">
-                  Single Source of Full-Stack Telemetry &amp; Workload Dependencies
-                </p>
               </div>
-
-              <div className="px-3 py-2 rounded-xl bg-black/35 backdrop-blur-md border border-white/15 shadow-md">
-                <div className="flex items-center gap-1.5 mb-0.5">
-                  <Activity className="w-3.5 h-3.5 text-amber-400" />
-                  <span className="text-[10.5px] font-mono font-bold uppercase text-white">
-                    FINOPS &amp; 7 R’S ROADMAP
-                  </span>
-                </div>
-                <p className="text-[11px] text-slate-300 leading-snug font-normal">
-                  Deterministic 3-Year TCO Modeling &amp; Migration Economics
-                </p>
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-950/70 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-emerald-200 shadow-lg">
+                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>Deterministic 7-Rs Framework</span>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -835,7 +795,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                         </div>
                       </div>
 
-                      <div className="text-right sm:block">
+                      <div className="text-left sm:text-right sm:block">
                         <span className="text-[11px] font-mono text-slate-400 block uppercase">Scope Focus</span>
                         <span className="text-xs font-bold text-slate-700 dark:text-slate-300">{selected.scope}</span>
                       </div>
@@ -1342,14 +1302,14 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
       <section className="py-20 bg-slate-50 dark:bg-[#050B17] transition-colors">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
-          <div className="text-center space-y-3">
+          <div className="text-left space-y-3">
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#00A3E0] block">
               READINESS CLARITY
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
               Frequently Asked Questions
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-xl mx-auto">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-xl">
               Answers to common executive and technical questions regarding Knooviq&apos;s Cloud Readiness Assessment engagement.
             </p>
           </div>

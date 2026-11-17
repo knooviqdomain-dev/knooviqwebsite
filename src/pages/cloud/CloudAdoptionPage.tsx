@@ -548,7 +548,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                     {activeMigrationWave === idx && (
                       <div className="pt-2 border-t border-slate-100 dark:border-white/5 flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-slate-400">
                         <span className="text-[#00A3E0] font-bold">Validation Gate:</span>
-                        <span className="text-right truncate max-w-xs">{wave.validation}</span>
+                        <span className="text-left sm:text-right truncate max-w-xs">{wave.validation}</span>
                       </div>
                     )}
                   </div>
