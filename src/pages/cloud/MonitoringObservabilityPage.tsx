@@ -257,7 +257,7 @@ export const MonitoringObservabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white cloud-sora-scope">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Immersive Canvas with 16:9 Uncropped HD Visual)
@@ -297,13 +297,13 @@ export const MonitoringObservabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12]">
                 Monitoring &amp; Observability
               </h1>
-              <p className="text-lg sm:text-xl font-bold text-cyan-300 tracking-tight">
+              <p className="font-sora text-lg sm:text-xl font-medium text-cyan-300 tracking-tight">
                 Full Visibility. Faster Insights. Better Decisions.
               </p>
             </div>
 
             {/* Description */}
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal max-w-2xl">
               Knooviq helps organizations gain deeper visibility into applications and infrastructure through application monitoring, centralized logging, metrics, and distributed tracing. Our approach helps teams identify issues earlier, understand service dependencies, investigate root causes, and maintain dependable application operations.
             </p>
 
@@ -367,7 +367,7 @@ export const MonitoringObservabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Modern Applications Are Complex. Keeping Them Visible Isn't Easy.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal max-w-3xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal max-w-3xl">
               Distributed applications and interconnected services make it difficult to understand system behavior from isolated monitoring tools. Teams face fragmented telemetry, elusive performance bottlenecks, cascading cross-tier dependencies, and delayed incident triage that impact business-critical transactions.
             </p>
           </div>
@@ -391,17 +391,17 @@ export const MonitoringObservabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2.5 tracking-tight">
+                <h3 className="font-sora text-lg font-medium text-slate-900 dark:text-white mb-2.5 tracking-tight">
                   {challenge.title}
                 </h3>
 
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] mb-4 font-normal">
                   {challenge.description}
                 </p>
 
                 <div className="pt-3.5 border-t border-slate-100 dark:border-white/10 flex items-start gap-2.5 text-xs text-slate-500 dark:text-slate-400">
                   <div className="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 shrink-0" />
-                  <p className="leading-relaxed">
+                  <p className="font-sora leading-[1.6] font-normal">
                     <strong className="text-slate-700 dark:text-slate-200 font-semibold">Business Risk: </strong>
                     {challenge.impact}
                   </p>
@@ -424,7 +424,7 @@ export const MonitoringObservabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Full Visibility Across Every Layer of the Application Stack
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal max-w-3xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal max-w-3xl">
               Knooviq integrates metrics, logs, distributed tracing, and AIOps into a cohesive operational fabric, giving your engineering and SRE teams the real-time context needed to protect critical business outcomes.
             </p>
           </div>
@@ -444,11 +444,11 @@ export const MonitoringObservabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
                       <span>{cap.badge}</span>
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight leading-snug">
+                    <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white tracking-tight leading-snug">
                       {cap.title}
                     </h3>
 
-                    <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {cap.subtitle}
                     </p>
 
@@ -514,7 +514,7 @@ export const MonitoringObservabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Our 4-Stage Observability Lifecycle
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal max-w-3xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal max-w-3xl">
               A proven engineering framework that guides organizations from fragmented tool sprawl to systematic telemetry governance, automated root-cause discovery, and proactive reliability.
             </p>
           </div>
@@ -553,7 +553,7 @@ export const MonitoringObservabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0] dark:text-cyan-400">
                   PHASE 0{activeApproachStage + 1} OVERVIEW
                 </span>
-                <h3 className="text-2xl font-black text-slate-900 dark:text-white tracking-tight">
+                <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white tracking-tight">
                   Stage {operationalStages[activeApproachStage].step}: {operationalStages[activeApproachStage].name}
                 </h3>
               </div>
@@ -563,12 +563,12 @@ export const MonitoringObservabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
               </div>
             </div>
 
-            <p className="text-base text-slate-700 dark:text-slate-200 font-medium">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-700 dark:text-slate-200 font-medium leading-[1.6]">
               {operationalStages[activeApproachStage].tagline}
             </p>
 
             <div className="space-y-3">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+              <h4 className="font-sora text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 KEY STAGE DELIVERABLES &amp; ACTIVITIES:
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
@@ -606,7 +606,7 @@ export const MonitoringObservabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
               Actionable Observability That Protects Digital Revenue
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Eliminate operational blind spots and transform fragmented alerts into reliable engineering intelligence that elevates system uptime and releases developer velocity.
             </p>
           </div>
@@ -621,10 +621,10 @@ export const MonitoringObservabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
                 <div className="text-3xl sm:text-4xl font-black text-white tracking-tight">
                   <span className="text-[#00A3E0]">{item.value}</span>
                 </div>
-                <h3 className="text-base font-bold text-white tracking-tight">
+                <h3 className="font-sora text-base font-medium text-white tracking-tight">
                   {item.metric}
                 </h3>
-                <p className="text-xs text-slate-400 leading-relaxed font-normal">
+                <p className="font-sora text-xs text-slate-400 leading-[1.6] font-normal">
                   {item.description}
                 </p>
               </div>
@@ -637,10 +637,10 @@ export const MonitoringObservabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
               <span className="text-xs font-bold uppercase tracking-wider text-cyan-300 block">
                 PARTNER WITH SRE &amp; OBSERVABILITY EXPERTS
               </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
                 Ready to Achieve Complete Application Visibility?
               </h3>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                 Schedule a technical discovery session with Knooviq architects. We will audit your current telemetry architecture and deliver a concrete observability roadmap.
               </p>
             </div>

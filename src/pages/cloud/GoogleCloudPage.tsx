@@ -414,7 +414,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300 selection:bg-[#4285F4]/20 selection:text-[#4285F4]">
+    <div className="min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300 selection:bg-[#4285F4]/20 selection:text-[#4285F4] cloud-sora-scope">
 
       {/* ============================================================ */}
       {/* ============================================================ */}
@@ -470,7 +470,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl drop-shadow-sm">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl drop-shadow-sm">
               Help enterprises build secure cloud foundations, modern applications, and data-driven solutions with Google Cloud.
               Knooviq supports cloud architecture, infrastructure modernization, analytics, AI/ML implementation,
               and operational management aligned with business and technical requirements.
@@ -537,7 +537,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Modern Architecture for Scalable Innovation
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Google Cloud services combine to deliver an agile, software-defined enterprise cloud foundation.
               Review the five foundational architectural layers supporting modern applications, global networking,
               high-durability persistence, serverless data engineering, and proactive security.
@@ -592,13 +592,13 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                     Auto-cycles • click to pause
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white">
                   {architectureLayers[activeArchIdx].name}
                 </h3>
-                <p className="text-xs font-mono font-bold text-[#4285F4] dark:text-cyan-400">
+                <p className="font-sora text-xs font-mono font-medium text-[#4285F4] dark:text-cyan-400">
                   {architectureLayers[activeArchIdx].tagline}
                 </p>
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed pt-1">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] pt-1 font-normal">
                   {architectureLayers[activeArchIdx].description}
                 </p>
               </div>
@@ -616,11 +616,11 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                     >
                       <div className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-[#4285F4] dark:text-cyan-400 shrink-0" />
-                        <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                        <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                           {svc.name}
                         </h4>
                       </div>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 pl-6 leading-relaxed">
+                      <p className="font-sora text-xs text-slate-600 dark:text-slate-300 pl-6 leading-[1.6] font-normal">
                         {svc.role}
                       </p>
                     </div>
@@ -663,10 +663,10 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                 <span className="text-xs font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   GCP LANDING ZONE BLUEPRINT
                 </span>
-                <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
+                <h3 className="font-sora text-lg sm:text-xl font-medium text-white tracking-tight">
                   Resource Hierarchy, Shared VPC &amp; Global Anycast Architecture
                 </h3>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                   Enterprise Google Cloud fabric unifying global Anycast edge routing, Andromeda software-defined networking, GKE container clusters, BigQuery data platforms, and Security Command Center.
                 </p>
               </div>
@@ -691,7 +691,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Transform Enterprise Data into Actionable Insights
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Google Cloud’s data analytics stack is an industry benchmark for enterprise scale.
               Unify real-time streaming event ingestion, batch ETL transformations, petabyte data warehousing with BigQuery,
               and universal data governance via Dataplex.
@@ -744,11 +744,11 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                       STEP 0{activeDataStage + 1} • {dataJourneyStages[activeDataStage].name.toUpperCase()}
                     </span>
                     <span className="text-slate-300 dark:text-slate-600">|</span>
-                    <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                       {dataJourneyStages[activeDataStage].service}
                     </h3>
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {dataJourneyStages[activeDataStage].description}
                   </p>
                 </div>
@@ -779,7 +779,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                   <div className="text-xs font-mono text-[#4285F4] font-bold">
                     SERVERLESS BIGQUERY ENGINE
                   </div>
-                  <p className="text-[11px] text-slate-300">
+                  <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                     Columnar Capacitor storage with federated query execution across Cloud Storage, Spanner, and multi-cloud datasets.
                   </p>
                 </div>
@@ -787,10 +787,10 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
             </div>
 
             <div className="lg:col-span-7 space-y-4">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white">
                 Dataplex Universal Catalog &amp; Governed Self-Service
               </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Modern enterprise analytics requires robust data governance. Dataplex enables centralized data discovery,
                 automated metadata harvesting, and unified policy enforcement across data lakes, warehouses, and operational stores,
                 empowering business units with self-service discovery without risking data compliance.
@@ -802,7 +802,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                     <Database className="w-3.5 h-3.5 text-[#4285F4]" />
                     <span>BigQuery Studio &amp; BI Engine</span>
                   </div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Unified analytics workspace supporting SQL, Python, Spark, and sub-second in-memory BI caching.
                   </p>
                 </div>
@@ -812,7 +812,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                     <FileSearch className="w-3.5 h-3.5 text-[#34A853]" />
                     <span>Dataplex Governance</span>
                   </div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Automated data quality checks, data lineage tracking, and column-level access controls.
                   </p>
                 </div>
@@ -851,7 +851,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                     <span className="text-[#4285F4] font-bold">VERTEX AI PLATFORM</span>
                     <span className="text-[#FBBC05] font-semibold">GEMINI 1.5 PRO READY</span>
                   </div>
-                  <p className="text-[11px] text-slate-300">
+                  <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                     2 Million token context windows, enterprise RAG grounding, and custom model tuning with total data isolation.
                   </p>
                 </div>
@@ -863,7 +863,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                   <Shield className="w-3.5 h-3.5" />
                   <span>RESPONSIBLE AI GOVERNANCE</span>
                 </div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Customer enterprise data is never used to train foundational Google models without explicit consent,
                   ensuring total intellectual property isolation and regulatory compliance.
                 </p>
@@ -880,7 +880,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Build Intelligent Applications with Google Cloud AI
                 </h2>
-                <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Google Cloud offers an end-to-end artificial intelligence ecosystem.
                   From accessing frontier Gemini foundation models through Vertex AI Model Garden to managing feature stores,
                   training custom models on Cloud TPUs, and operationalizing MLOps deployments, we help organizations implement
@@ -922,11 +922,11 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                   >
                     <div className="flex items-center gap-2">
                       <Sparkles className="w-4 h-4 text-[#4285F4] dark:text-cyan-400 shrink-0" />
-                      <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h3>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -959,7 +959,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Build and Deploy Applications for the Cloud
                 </h2>
-                <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Adopt a high-velocity engineering posture with modern application runtimes.
                   Whether leveraging container orchestration on Google Kubernetes Engine (GKE), serverless containers with Cloud Run,
                   or declarative GitOps delivery with Cloud Build and Terraform, our teams construct scalable, resilient software delivery platforms.
@@ -974,14 +974,14 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                     className="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1528] border border-slate-200/80 dark:border-white/10 space-y-1.5 hover:border-[#4285F4]/40 transition-colors"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                      <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                         {p.title}
                       </h3>
                       <span className="text-[10px] font-mono font-bold text-[#4285F4] dark:text-cyan-400">
                         {p.service}
                       </span>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {p.description}
                     </p>
                   </div>
@@ -1008,7 +1008,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                     <span className="text-[#4285F4] font-bold">GKE AUTOPILOT FLEETS</span>
                     <span className="text-[#34A853] font-semibold">CLOUD RUN SERVERLESS</span>
                   </div>
-                  <p className="text-[11px] text-slate-300">
+                  <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                     Automated horizontal pod autoscaling, binary authorization security signatures, and continuous delivery via Cloud Deploy.
                   </p>
                 </div>
@@ -1020,7 +1020,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                   <Terminal className="w-3.5 h-3.5" />
                   <span>DEVELOPER EXPERIENCE (DEVEX)</span>
                 </div>
-                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-700 dark:text-slate-300 leading-[1.6] font-normal">
                   Cloud Code extensions for VS Code and Cloud Workstations provide isolated, pre-configured development
                   environments with integrated security scanning and rapid local emulation.
                 </p>
@@ -1060,7 +1060,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                     <span className="text-[#4285F4] font-bold">MIGRATE TO VMS &amp; DMS</span>
                     <span className="text-[#34A853] font-semibold">MINIMAL OVERHEAD</span>
                   </div>
-                  <p className="text-[11px] text-slate-300">
+                  <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                     Non-disruptive continuous data streaming replication with automated validation drills prior to cutover.
                   </p>
                 </div>
@@ -1072,7 +1072,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   <span>DATABASE MIGRATION SERVICE (DMS)</span>
                 </div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Serverless database replication streams data continuously from on-prem MySQL, PostgreSQL, and Oracle systems into
                   Cloud SQL and Spanner with sub-second replication latency and zero cutover data loss.
                 </p>
@@ -1089,7 +1089,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Modernize Your Infrastructure with a Clear Roadmap
                 </h2>
-                <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Enterprise migrations succeed when anchored in structured discovery, dependency assessment, and automated validation.
                   We lead organizations through each wave of the Google Cloud migration journey, transforming legacy workloads
                   into scalable, cost-optimized cloud architectures.
@@ -1139,10 +1139,10 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                         PHASE {stg.step}
                       </span>
                     </div>
-                    <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                       {stg.title}
                     </h3>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {stg.desc}
                     </p>
                   </div>
@@ -1175,7 +1175,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Protect Workloads and Strengthen Cloud Governance
                 </h2>
-                <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Enterprise cloud security requires holistic governance. Google Cloud’s Zero-Trust architecture protects workloads
                   through context-aware IAM, centralized Security Command Center visibility, Cloud KMS cryptographic controls,
                   and automated compliance auditing aligned with organizational obligations.
@@ -1216,11 +1216,11 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                   >
                     <div className="flex items-center gap-2">
                       <Lock className="w-4 h-4 text-[#4285F4] dark:text-cyan-400 shrink-0" />
-                      <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                         {item.title}
                       </h3>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -1248,7 +1248,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                     <span className="text-[#4285F4] font-bold">BEYONDCORP &amp; VPC SC</span>
                     <span className="text-[#34A853] font-semibold">ZERO EXFILTRATION</span>
                   </div>
-                  <p className="text-[11px] text-slate-300">
+                  <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                     Cryptographic security perimeters preventing data movement outside authorized Google Cloud projects.
                   </p>
                 </div>
@@ -1260,7 +1260,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                   <Shield className="w-3.5 h-3.5" />
                   <span>COMPLIANCE CERTIFICATIONS</span>
                 </div>
-                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-700 dark:text-slate-300 leading-[1.6] font-normal">
                   Automated Security Command Center mapping enforces continuous alignment with ISO 27001, SOC 2, HIPAA,
                   PCI-DSS, and the CIS Google Cloud Computing Foundations Benchmark.
                 </p>
@@ -1287,7 +1287,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Connect Workloads Across Environments
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Modern enterprises operate across hybrid datacenters, edge locations, and multi-cloud environments.
               Google Cloud’s distributed infrastructure technologies enable consistent container management,
               low-latency private interconnectivity, and unified operational control.
@@ -1313,10 +1313,10 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                       </span>
                       <Radio className="w-3.5 h-3.5 text-[#34A853]" />
                     </div>
-                    <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                       {comp.name}
                     </h3>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {comp.role}
                     </p>
                   </div>
@@ -1343,10 +1343,10 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                     <span className="text-xs font-mono font-bold text-[#4285F4] uppercase">
                       ANYCAST MULTI-REGION RESILIENCE
                     </span>
-                    <h4 className="text-lg font-bold">
+                    <h4 className="font-sora text-lg font-medium">
                       Zero-RPO Cross-Region Availability
                     </h4>
-                    <p className="text-xs text-slate-300">
+                    <p className="font-sora text-xs text-slate-300 font-normal leading-[1.6]">
                       Synchronous intra-region clustering combined with automated health-check Anycast DNS routing
                       ensures seamless failover to secondary regions without customer disruption.
                     </p>
@@ -1360,7 +1360,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                 <span className="text-xs font-mono font-bold text-[#4285F4] dark:text-cyan-300 uppercase tracking-wider">
                   ARCHITECTURAL BOUNDARIES NOTE:
                 </span>
-                <p className="text-xs text-slate-700 dark:text-slate-300">
+                <p className="font-sora text-xs text-slate-700 dark:text-slate-300 font-normal leading-[1.6]">
                   Workload placement and portability depend on latency constraints, data residency regulations, and specific hardware requirements.
                 </p>
               </div>
@@ -1398,7 +1398,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                     <span className="text-[#4285F4] font-bold">ACTIVE ASSIST &amp; FINOPS</span>
                     <span className="text-[#34A853] font-semibold">24/7 SRE OBSERVABILITY</span>
                   </div>
-                  <p className="text-[11px] text-slate-300">
+                  <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                     Full-stack metrics telemetry, Cloud Trace distributed waterfall analysis, and committed use discount modeling.
                   </p>
                 </div>
@@ -1410,7 +1410,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                   <Gauge className="w-3.5 h-3.5" />
                   <span>ACTIVE ASSIST COST OPTIMIZATION</span>
                 </div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Machine learning recommendations identify idle disks, over-provisioned VMs, and unattached IP addresses,
                   ensuring cloud consumption directly maps to business value.
                 </p>
@@ -1427,7 +1427,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Operate Google Cloud with Confidence
                 </h2>
-                <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Operating enterprise cloud platforms demands continuous observability, rapid incident response,
                   and structured cost visibility. We combine Site Reliability Engineering (SRE) practices,
                   Cloud Monitoring dashboards, and continuous Cloud Billing governance.
@@ -1468,11 +1468,11 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                   >
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-[#4285F4] dark:text-cyan-400 shrink-0" />
-                      <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                         {op.title}
                       </h3>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {op.desc}
                     </p>
                   </div>
@@ -1501,7 +1501,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Google Cloud Implementation Approach
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Our structured engineering sequence ensures risk-mitigated delivery across five connected stages,
               from initial workload discovery through continuous operational optimization.
             </p>
@@ -1533,10 +1533,10 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                     </span>
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                       {item.name}
                     </h3>
-                    <p className="text-xs font-mono text-[#4285F4] dark:text-cyan-400 font-medium mt-0.5 line-clamp-1">
+                    <p className="font-sora text-xs font-mono text-[#4285F4] dark:text-cyan-400 font-medium mt-0.5 line-clamp-1">
                       {item.tagline}
                     </p>
                   </div>
@@ -1552,13 +1552,13 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                 <span className="text-xs font-mono font-bold text-[#4285F4] dark:text-cyan-400 uppercase tracking-wider">
                   STAGE {implementationSequence[activeSeqIdx].step} • ENGINEERING DELIVERABLE
                 </span>
-                <h3 className="text-2xl font-black text-slate-900 dark:text-white">
+                <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white">
                   {implementationSequence[activeSeqIdx].name} — {implementationSequence[activeSeqIdx].tagline}
                 </h3>
               </div>
             </div>
 
-            <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed max-w-4xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-700 dark:text-slate-300 leading-[1.6] max-w-4xl font-normal">
               {implementationSequence[activeSeqIdx].description}
             </p>
 
@@ -1611,7 +1611,7 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
             Build Your Next Chapter on Google Cloud
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 max-w-2xl mx-auto leading-[1.6] font-normal">
             Whether you are planning a cloud migration, developing a modern data platform, introducing AI capabilities,
             or improving your cloud operations, Knooviq can help you define a practical technical roadmap.
           </p>
@@ -1676,10 +1676,10 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
                     {lightboxImage.badge}
                   </span>
                 )}
-                <h3 className="text-lg font-bold text-white mt-1">
+                <h3 className="font-sora text-lg font-medium text-white mt-1">
                   {lightboxImage.title}
                 </h3>
-                <p className="text-xs text-slate-400 mt-0.5">
+                <p className="font-sora text-xs text-slate-400 mt-0.5 font-normal leading-[1.6]">
                   {lightboxImage.subtitle}
                 </p>
               </div>
