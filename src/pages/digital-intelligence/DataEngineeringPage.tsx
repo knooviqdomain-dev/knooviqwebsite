@@ -402,7 +402,7 @@ export const DataEngineeringPage: React.FC<DataEngineeringPageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Panoramic Background - Aligned with AI Agents Reference)
@@ -444,7 +444,7 @@ export const DataEngineeringPage: React.FC<DataEngineeringPageProps> = ({
               </h1>
 
               {/* Sub-headline */}
-              <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Build autonomous, high-throughput data engineering pipelines with declarative ELT orchestration, sub-second Change Data Capture, programmatic data quality gates, and scalable multi-cloud ingestion fabrics.
               </p>
             </motion.div>
@@ -488,12 +488,12 @@ export const DataEngineeringPage: React.FC<DataEngineeringPageProps> = ({
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-xs sm:text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-xs sm:text-sm font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Resilient data engineering is about building autonomous, self-healing pipelines that treat data models as version-controlled software assets, with programmatic quality guarantees at every stage.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-700 text-xs sm:text-sm leading-relaxed font-normal">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq transforms legacy, batch-driven data pipelines into continuous, declarative data engineering fabrics. We eliminate overnight job failures, automate schema contract enforcement, and ensure that analytical data products are continuously synchronized with operational ERPs.
               </p>
 
@@ -503,8 +503,8 @@ export const DataEngineeringPage: React.FC<DataEngineeringPageProps> = ({
                   <div className="w-8 h-8 rounded-lg bg-sky-50 text-[#0070C0] flex items-center justify-center border border-sky-200">
                     <Activity className="w-4 h-4" />
                   </div>
-                  <h4 className="text-xs font-bold text-slate-950">Zero-Lock Extraction</h4>
-                  <p className="text-[11px] text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-xs font-medium text-slate-950">Zero-Lock Extraction</h4>
+                  <p className="font-sora text-[11px] text-[#102A43] leading-[1.6] font-normal">
                     Log-based CDC streams deltas without locking production tables.
                   </p>
                 </div>
@@ -513,8 +513,8 @@ export const DataEngineeringPage: React.FC<DataEngineeringPageProps> = ({
                   <div className="w-8 h-8 rounded-lg bg-sky-50 text-[#0070C0] flex items-center justify-center border border-sky-200">
                     <Workflow className="w-4 h-4" />
                   </div>
-                  <h4 className="text-xs font-bold text-slate-950">Declarative DAGs</h4>
-                  <p className="text-[11px] text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-xs font-medium text-slate-950">Declarative DAGs</h4>
+                  <p className="font-sora text-[11px] text-[#102A43] leading-[1.6] font-normal">
                     Version-controlled models with automated idempotent execution.
                   </p>
                 </div>
@@ -523,8 +523,8 @@ export const DataEngineeringPage: React.FC<DataEngineeringPageProps> = ({
                   <div className="w-8 h-8 rounded-lg bg-sky-50 text-[#0070C0] flex items-center justify-center border border-sky-200">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
-                  <h4 className="text-xs font-bold text-slate-950">Anomaly Interception</h4>
-                  <p className="text-[11px] text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-xs font-medium text-slate-950">Anomaly Interception</h4>
+                  <p className="font-sora text-[11px] text-[#102A43] leading-[1.6] font-normal">
                     Automated quality gates quarantine breaking schema drift in-flight.
                   </p>
                 </div>
@@ -556,14 +556,14 @@ export const DataEngineeringPage: React.FC<DataEngineeringPageProps> = ({
 
                 <div className="absolute bottom-3 left-3 right-3 text-white">
                   <div className="flex items-center justify-between gap-2">
-                    <h3 className="text-sm sm:text-base font-bold tracking-tight text-white truncate">
+                    <h3 className="font-sora text-sm sm:text-base font-medium tracking-tight text-white truncate">
                       {journeySteps[activeJourneyStep].label}
                     </h3>
                     <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-sky-500/20 text-cyan-300 border border-sky-400/30 shrink-0">
                       {journeySteps[activeJourneyStep].tech}
                     </span>
                   </div>
-                  <p className="text-[11px] sm:text-xs text-slate-300 font-normal leading-relaxed line-clamp-2 mt-0.5">
+                  <p className="font-sora text-[11px] sm:text-xs text-slate-300 font-normal leading-[1.6] line-clamp-2 mt-0.5">
                     {journeySteps[activeJourneyStep].desc}
                   </p>
                 </div>
@@ -617,7 +617,7 @@ export const DataEngineeringPage: React.FC<DataEngineeringPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
               The Reality of <span className="text-cyan-400">Legacy Data Pipelines</span>
             </h2>
-            <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Enterprise engineering teams spend excessive time debugging brittle midnight batch runs and repairing downstream reports caused by unannounced schema modifications.
             </p>
           </div>
@@ -637,10 +637,10 @@ export const DataEngineeringPage: React.FC<DataEngineeringPageProps> = ({
                       </span>
                       <Icon className="w-5 h-5 text-slate-400 group-hover:text-cyan-400 transition-colors" />
                     </div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
+                    <h3 className="font-sora text-lg font-medium text-white group-hover:text-cyan-300 transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -671,7 +671,7 @@ export const DataEngineeringPage: React.FC<DataEngineeringPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight leading-tight">
               Integrated <span className="text-[#0070C0]">Pipeline Architecture Wheel</span>
             </h2>
-            <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               An end-to-end declarative pipeline framework unifying real-time Change Data Capture, modular medallion storage, automated schema gates, and closed-loop operationalization.
             </p>
 
@@ -745,7 +745,7 @@ export const DataEngineeringPage: React.FC<DataEngineeringPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight leading-tight">
               Legacy Monolithic ETL vs. <span className="text-[#0070C0]">Declarative Pipeline Fabric</span>
             </h2>
-            <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               A comprehensive technical comparison contrasting legacy procedural ETL with Knooviq&apos;s modern declarative, event-driven data engineering standard.
             </p>
           </div>
@@ -824,7 +824,7 @@ export const DataEngineeringPage: React.FC<DataEngineeringPageProps> = ({
                 <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight leading-tight">
                   Declarative Pipeline <span className="text-[#0070C0]">Execution Blueprints</span>
                 </h2>
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
+                <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                   Explore how Knooviq engineers declarative data pipelines from high-throughput log ingestion through Medallion lakehouse structuring and continuous schema contract gating.
                 </p>
               </div>
@@ -869,10 +869,10 @@ export const DataEngineeringPage: React.FC<DataEngineeringPageProps> = ({
                   <span className="text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-sky-100 text-[#0070C0]">
                     {sandboxDetails[activeSandboxTab].badge}
                   </span>
-                  <h3 className="text-base sm:text-lg font-bold text-slate-950 mt-1">
+                  <h3 className="font-sora text-base sm:text-lg font-medium text-slate-950 mt-1">
                     {sandboxDetails[activeSandboxTab].title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal mt-0.5">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal mt-0.5">
                     {sandboxDetails[activeSandboxTab].desc}
                   </p>
                 </div>
@@ -897,9 +897,9 @@ export const DataEngineeringPage: React.FC<DataEngineeringPageProps> = ({
                           <span className="w-4 h-4 rounded-full bg-sky-50 text-[#0070C0] border border-sky-200 text-[10px] font-mono font-bold flex items-center justify-center shrink-0">
                             {idx + 1}
                           </span>
-                          <h4 className="text-xs font-bold text-slate-900 truncate">{st.name}</h4>
+                          <h4 className="font-sora text-xs font-medium text-slate-900 truncate">{st.name}</h4>
                         </div>
-                        <p className="text-[11px] text-slate-600 leading-relaxed font-normal line-clamp-3">{st.detail}</p>
+                        <p className="font-sora text-[11px] text-[#102A43] leading-[1.6] font-normal line-clamp-3">{st.detail}</p>
                       </div>
                     ))}
                   </div>
@@ -931,7 +931,7 @@ export const DataEngineeringPage: React.FC<DataEngineeringPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight leading-tight">
               Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#005A9C] via-[#0070C0] to-sky-500">Engineering Questions</span>
             </h2>
-            <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-normal max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal max-w-2xl mx-auto">
               Technical insights on architecting autonomous, streaming data engineering pipelines across complex enterprise landscapes.
             </p>
           </div>
@@ -1004,7 +1004,7 @@ export const DataEngineeringPage: React.FC<DataEngineeringPageProps> = ({
             Ready to Build Resilient, <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-cyan-300 to-indigo-300">Streaming Data Pipelines</span>?
           </h2>
 
-          <p className="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed font-normal max-w-2xl mx-auto">
+          <p className="font-sora text-[15px] sm:text-[16px] lg:text-xl text-slate-300 leading-[1.6] font-normal max-w-2xl mx-auto">
             Partner with Knooviq&apos;s data engineering architects to design declarative ELT workflows, sub-second Change Data Capture, and automated schema contracts tailored to your enterprise systems.
           </p>
 

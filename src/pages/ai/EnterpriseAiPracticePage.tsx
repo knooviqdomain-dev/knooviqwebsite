@@ -594,7 +594,7 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Ultra-Clean & Sleek)
@@ -634,7 +634,7 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Sovereign foundation models, deterministic Clean Core orchestration, and sub-20ms event mesh fabrics engineered on SAP BTP and private enterprise infrastructure.
               </p>
             </motion.div>
@@ -673,11 +673,11 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
                 Architecting Sovereign <span className="text-[#0070C0]">Enterprise AI Intelligence</span>
               </h2>
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Enterprise AI delivers enduring operational advantage only when autonomous inference is decoupled from the core ERP, governed by zero-trust policies, and grounded in real-time transactional events.&rdquo;
                 </p>
               </div>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers production-grade Enterprise AI fabrics that bridge SAP S/4HANA transactional systems, SAP BTP event streaming, and sovereign private foundation models. We empower global enterprises to deploy autonomous decision loops without contaminating the transactional core or leaking proprietary trade secrets.
               </p>
               <div className="space-y-2.5 pt-1">
@@ -686,8 +686,8 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
                     <Database className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Clean Core Side-by-Side Decoupling</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Clean Core Side-by-Side Decoupling</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Extend standard ERP processes through SAP BTP and event meshes without embedding custom ABAP code or model weights into standard core tables.
                     </p>
                   </div>
@@ -698,8 +698,8 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Dual-Pass Safety & Token Firewall</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Dual-Pass Safety & Token Firewall</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Deep packet inspection sanitizes PII, neutralizes adversarial prompt injection, and verifies regulatory adherence before inference.
                     </p>
                   </div>
@@ -710,8 +710,8 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
                     <Zap className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Real-Time Event-Driven Autonomous Orchestration</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Real-Time Event-Driven Autonomous Orchestration</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Sub-20ms event brokers dispatch transactional updates directly to domain-specific agents for continuous self-correcting business logic.
                     </p>
                   </div>
@@ -733,7 +733,7 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
                 </div>
                 <div className="absolute bottom-3 left-3 right-3 text-white space-y-1">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-medium line-clamp-2 leading-relaxed">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-medium line-clamp-2 leading-[1.6]">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -771,7 +771,7 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
                     {journeySteps[activeJourneyStep].tech}
                   </span>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">{journeySteps[activeJourneyStep].desc}</p>
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">{journeySteps[activeJourneyStep].desc}</p>
               </div>
             </div>
           </div>
@@ -791,7 +791,7 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating Enterprise AI Modernization Challenges
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Transitioning from isolated algorithmic experiments to mission-critical autonomous enterprise intelligence demands overcoming six systemic architectural barriers.
             </p>
           </motion.div>
@@ -818,10 +818,10 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-lg font-black text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                    <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                       {item.desc}
                     </p>
                   </div>
@@ -874,7 +874,7 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
               Ecosystem for Sovereign Enterprise AI Intelligence
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto font-normal">
+            <p className="font-sora text-slate-400 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized radial platform uniting Clean Core BTP decoupling, air-gapped sovereign models, dual-pass safety firewalls, and sub-20ms event mesh orchestration.
             </p>
 
@@ -935,8 +935,7 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
                             {item.badge}
                           </span>
                         </div>
-                        <h4 
-                          className="text-xs sm:text-[13px] font-bold tracking-tight text-white truncate transition-colors"
+                        <h4 className="font-sora text-xs sm:text-[13px] font-medium tracking-tight text-white truncate transition-colors"
                           style={{ color: isHovered ? item.color : undefined }}
                         >
                           {item.title}
@@ -1212,8 +1211,7 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
                             {item.badge}
                           </span>
                         </div>
-                        <h4 
-                          className="text-xs sm:text-[13px] font-bold tracking-tight text-white truncate transition-colors"
+                        <h4 className="font-sora text-xs sm:text-[13px] font-medium tracking-tight text-white truncate transition-colors"
                           style={{ color: isHovered ? item.color : undefined }}
                         >
                           {item.title}
@@ -1361,10 +1359,10 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
                       >
                         {activeItem.badge}
                       </span>
-                      <h4 className="text-sm font-bold text-white">
+                      <h4 className="font-sora text-sm font-medium text-white">
                         {activeItem.title}
                       </h4>
-                      <p className="text-xs text-slate-300 leading-relaxed">
+                      <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                         {activeItem.desc}
                       </p>
                       <div className="pt-1 flex items-center gap-1.5 text-[10.5px] font-mono text-slate-400">
@@ -1438,7 +1436,7 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Clean Core Enterprise AI Blueprint
             </h2>
-            <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-medium">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-medium">
               Stateless side-by-side extension architecture linking SAP S/4HANA, SAP BTP Event Mesh, and private sovereign foundation models with zero core contamination.
             </p>
           </div>
@@ -1463,10 +1461,10 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
                 <div className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest">
                   Decoupled Autonomous Intelligence Fabric
                 </div>
-                <h3 className="text-xl sm:text-2xl font-black tracking-tight text-white leading-snug">
+                <h3 className="font-sora text-xl sm:text-2xl font-medium tracking-tight text-white leading-snug">
                   Enterprise AI Core & Clean Core Gateway
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                   Interlinking SAP S/4HANA, SAP BTP event brokers, and sovereign foundation models via stateless proxy gateways. Zero PII leakage and zero foundational model retraining on sensitive corporate records.
                 </p>
                 <div className="pt-2 flex flex-wrap gap-2 text-[11px] font-mono text-cyan-200">
@@ -1493,7 +1491,7 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Modular Enterprise AI Solutions
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Production-ready enterprise modules engineered to automate complex reconciliations, sense supply chain shifts, and optimize operations.
             </p>
           </div>
@@ -1544,12 +1542,12 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
                         <div className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider mb-1">
                           {sol.categoryLabel}
                         </div>
-                        <h3 className="text-lg sm:text-xl font-black text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
                       </div>
 
-                      <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                      <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                         {sol.description}
                       </p>
                     </div>
@@ -1587,7 +1585,7 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Enterprise Value & Architectural Pillars
             </h2>
-            <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-medium max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-medium max-w-2xl mx-auto">
               Core architectural foundations achieved when autonomous AI is decoupled and anchored to real-time Clean Core ERP events.
             </p>
           </div>
@@ -1614,11 +1612,11 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
                       {item.badge}
                     </span>
 
-                    <h3 className="text-lg font-black text-slate-900 leading-snug">
+                    <h3 className="font-sora text-lg font-medium text-slate-900 leading-snug">
                       {item.title}
                     </h3>
 
-                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                       {item.desc}
                     </p>
                   </div>
@@ -1648,7 +1646,7 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
             <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
               Autonomous Intelligence Audit Sandbox
             </h2>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto font-normal">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-xl mx-auto font-normal">
               Inspecting Clean Core RAP extensibility, sovereign model token isolation, and autonomous execution logs with exact compliance proof.
             </p>
           </div>
@@ -1683,7 +1681,7 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
                 </div>
 
                 <div className="pt-0.5 flex flex-wrap items-center gap-2">
-                  <h3 className="text-base sm:text-lg font-bold text-white">
+                  <h3 className="font-sora text-base sm:text-lg font-medium text-white">
                     {auditDocuments[activeDocTab].title}
                   </h3>
                   <span className="text-[11px] sm:text-xs text-slate-400">
@@ -1743,11 +1741,11 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
                           <span className={`px-1.5 py-0.5 rounded border text-[10px] font-mono font-bold uppercase ${finding.levelColor}`}>
                             {finding.level}
                           </span>
-                          <h4 className="text-xs sm:text-sm font-bold text-white">
+                          <h4 className="font-sora text-xs sm:text-sm font-medium text-white">
                             {finding.title}
                           </h4>
                         </div>
-                        <p className="text-xs text-slate-200 font-normal leading-relaxed">
+                        <p className="font-sora text-xs text-slate-200 font-normal leading-[1.6]">
                           {finding.desc}
                         </p>
                       </div>
@@ -1767,7 +1765,7 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
                     <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
                     <span>EXECUTIVE ACTION RECOMMENDATION</span>
                   </div>
-                  <p className="text-xs text-white font-medium leading-relaxed">
+                  <p className="font-sora text-xs text-white font-medium leading-[1.6]">
                     {auditDocuments[activeDocTab].recommendation}
                   </p>
                 </div>
@@ -1794,7 +1792,7 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
             Ready to Deploy Autonomous Enterprise Intelligence?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Ground autonomous decision-making in real-time transactional context with zero core contamination and complete sovereign privacy.
           </p>
 

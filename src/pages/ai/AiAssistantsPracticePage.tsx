@@ -563,7 +563,7 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
   }, [isAutoRotating, wheelSegments.length]);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Image 1 of 4 - Ultra-Clean & Sleek 2-Column Showcase, NO Buttons)
@@ -601,7 +601,7 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                 Context-aware conversational copilots, multimodal enterprise assistants, and seamless SAP Joule orchestration grounded on private corporate knowledge.
               </p>
             </motion.div>
@@ -644,12 +644,12 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Enterprise AI assistants succeed only when deeply integrated into daily operational workflows, providing contextualized business intelligence with zero data leakage.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers purpose-built enterprise assistants that bridge natural language queries with live enterprise records across SAP ERP, CRM, and corporate knowledge bases.
               </p>
 
@@ -659,8 +659,8 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
                     <Database className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Real-Time Enterprise Grounding</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Real-Time Enterprise Grounding</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Deep context indexing connecting directly into SAP CDS views and unstructured document lakes.
                     </p>
                   </div>
@@ -671,8 +671,8 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
                     <CheckSquare className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Multimodal Task Execution</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Multimodal Task Execution</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Ingesting invoices, technical drawings, and natural speech to generate structured ERP action items.
                     </p>
                   </div>
@@ -683,8 +683,8 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
                     <Lock className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Sovereign Privacy Perimeter</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Sovereign Privacy Perimeter</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Strict tenant isolation guaranteeing that enterprise prompts and proprietary context never train public foundation models.
                     </p>
                   </div>
@@ -707,7 +707,7 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
                 </div>
                 <div className="absolute bottom-3 left-3 right-3 text-white space-y-1">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-medium line-clamp-2 leading-relaxed">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-medium line-clamp-2 leading-[1.6]">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -757,7 +757,7 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating Enterprise Copilot Deployment Challenges
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Overcoming the fundamental barriers that prevent conversational assistants from delivering real business utility.
             </p>
           </motion.div>
@@ -784,10 +784,10 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-lg font-black text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                    <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                       {item.desc}
                     </p>
                   </div>
@@ -820,7 +820,7 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
               Enterprise AI Assistant Orchestration Engine
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto font-normal">
+            <p className="font-sora text-slate-400 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Continuous coordination loop balancing natural conversation, live ERP context hydration, and sovereign data privacy.
             </p>
           </div>
@@ -1026,7 +1026,7 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Sovereign Enterprise Copilot Fabric
             </h2>
-            <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-medium">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-medium">
               High-density vector grounding, semantic context proxying, and SAP Joule orchestration within a zero-trust enterprise security perimeter.
             </p>
           </div>
@@ -1051,10 +1051,10 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
                 <div className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest">
                   Unified Copilot Fabric
                 </div>
-                <h3 className="text-xl sm:text-2xl font-black tracking-tight text-white leading-snug">
+                <h3 className="font-sora text-xl sm:text-2xl font-medium tracking-tight text-white leading-snug">
                   Multimodal Enterprise Assistant Core & Joule Gateway
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                   Unifying SAP CDS views, unstructured document repositories, and fine-tuned domain LLMs via private proxy architecture. Zero PII exposure and complete data sovereign control.
                 </p>
                 <div className="pt-2 flex flex-wrap gap-2 text-[11px] font-mono text-cyan-200">
@@ -1081,7 +1081,7 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Modular Enterprise AI Assistant Solutions
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Production-ready enterprise assistants engineered to synthesize corporate records, guide transactional workflows, and boost workforce productivity.
             </p>
           </div>
@@ -1130,11 +1130,11 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
                         </div>
                       </div>
 
-                      <h3 className="text-lg font-bold text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
+                      <h3 className="font-sora text-lg font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
                         {sol.title}
                       </h3>
 
-                      <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                      <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                         {sol.description}
                       </p>
 
@@ -1178,7 +1178,7 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Enterprise Value Architecture Scorecard
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Core architectural foundations achieved when conversational copilots are grounded in private enterprise context.
             </p>
           </div>
@@ -1205,11 +1205,11 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
                       {item.badge}
                     </span>
 
-                    <h3 className="text-lg font-black text-slate-900 leading-snug">
+                    <h3 className="font-sora text-lg font-medium text-slate-900 leading-snug">
                       {item.title}
                     </h3>
 
-                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                       {item.desc}
                     </p>
                   </div>
@@ -1239,7 +1239,7 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
             <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
               Shop-Floor Plant Maintenance Voice &amp; Visual Copilot
             </h2>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto font-normal">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-xl mx-auto font-normal">
               Observe multimodal copilots ingest voice telemetry, scan equipment diagnostics, and retrieve SAP Plant Maintenance records with zero latency.
             </p>
           </div>
@@ -1274,7 +1274,7 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
                 </div>
 
                 <div className="pt-0.5 flex flex-wrap items-center gap-2">
-                  <h3 className="text-base sm:text-lg font-bold text-white">
+                  <h3 className="font-sora text-base sm:text-lg font-medium text-white">
                     {auditDocuments[activeDocTab].title}
                   </h3>
                   <span className="text-[11px] sm:text-xs text-slate-400">
@@ -1325,11 +1325,11 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
                           <span className={`px-1.5 py-0.5 rounded border text-[10px] font-mono font-bold uppercase ${finding.levelColor}`}>
                             {finding.level}
                           </span>
-                          <h4 className="text-xs sm:text-sm font-bold text-white">
+                          <h4 className="font-sora text-xs sm:text-sm font-medium text-white">
                             {finding.title}
                           </h4>
                         </div>
-                        <p className="text-[11px] sm:text-xs text-slate-300 line-clamp-2">
+                        <p className="font-sora text-[11px] sm:text-xs text-slate-300 line-clamp-2 font-normal leading-[1.6]">
                           {finding.desc}
                         </p>
                       </div>
@@ -1349,7 +1349,7 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
                     <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
                     <span>EXECUTIVE ACTION RECOMMENDATION</span>
                   </div>
-                  <p className="text-xs text-white font-medium leading-relaxed">
+                  <p className="font-sora text-xs text-white font-medium leading-[1.6]">
                     {auditDocuments[activeDocTab].recommendation}
                   </p>
                 </div>
@@ -1378,7 +1378,7 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
             Ready to Empower Your Enterprise with Intelligent Copilots?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Equip your workforce with context-aware conversational assistants, live S/4HANA grounding, and sovereign privacy guarantees.
           </p>
 

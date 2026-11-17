@@ -501,7 +501,7 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-[#0070C0] selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans cloud-sora-scope selection:bg-[#0070C0] selection:text-white">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Panoramic Background - Aligned with AI Agents Reference)
@@ -548,7 +548,7 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
               </h1>
 
               {/* Subtitle with High Legibility */}
-              <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Unified semantic data fabrics, sub-second executive boardroom cockpits, conversational NLQ intelligence, and live transactional drill-through directly connected to enterprise ERP cores.
               </p>
             </motion.div>
@@ -599,12 +599,12 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-5 py-3.5 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-2xl">
-                <p className="text-base sm:text-lg font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-base sm:text-lg font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Business intelligence must evolve beyond static, stale PDF decks and fragmented departmental dashboards. True enterprise BI provides a unified semantic cockpit—where executive queries trigger sub-second in-situ pushdown into live operational ledgers with complete mathematical auditability.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq transforms legacy, delayed reporting workflows into active, augmented business intelligence fabrics. We harmonize conflicting departmental definitions into canonical enterprise metric models, empower executive decision-makers with natural language conversational querying, and bridge transactional ERP backbones directly to modern analytics visualization suites without staging extract latency.
               </p>
 
@@ -615,8 +615,8 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
                     <Layers className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Canonical Enterprise Semantic Layer</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Canonical Enterprise Semantic Layer</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Single source of truth metrics modeling business KPIs consistently across ERP upgrades and multi-cloud dashboards.
                     </p>
                   </div>
@@ -627,8 +627,8 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
                     <Zap className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">In-Situ Operational Drill-Through</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">In-Situ Operational Drill-Through</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Real-time drill-down capabilities from consolidated high-level EBITDA and revenue figures directly into raw ERP ledger transactions.
                     </p>
                   </div>
@@ -639,8 +639,8 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
                     <Sparkles className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Augmented Conversational Analytics</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Augmented Conversational Analytics</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       AI-driven automated variance analysis, driver discovery, and natural language query generation eliminating executive reporting bottlenecks.
                     </p>
                   </div>
@@ -675,7 +675,7 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
               <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-3">
                 <div>
                   <div className="text-xs font-mono font-bold text-[#0070C0] uppercase tracking-wider">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-700 font-normal leading-relaxed">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -727,7 +727,7 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Critical Roadblocks in Legacy Business Intelligence
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Why traditional static reporting dashboards generate metric disputes, shadow spreadsheets, and decision paralysis.
             </p>
           </div>
@@ -749,10 +749,10 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
                         <ChallengeIcon className="w-5 h-5" />
                       </div>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -781,7 +781,7 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
               The KNOOVIQ Augmented Intelligence Mesh
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Explore the eight mutually reinforcing layers of our modern business intelligence foundation. Hover over any segment to inspect its architectural role.
             </p>
           </div>
@@ -809,7 +809,7 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -931,7 +931,7 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -958,7 +958,7 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Augmented Business Intelligence &amp; Analytics Matrix
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Examine the concrete architectural difference between legacy static reporting dashboards and KNOOVIQ augmented business intelligence fabrics.
             </p>
           </div>
@@ -1082,8 +1082,8 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER ONE: SEMANTICS
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Canonical Enterprise Metric Fabric</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Canonical Enterprise Metric Fabric</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Standardized business formulas, dimensional hierarchies, and real-time multi-currency conversions.
                     </p>
                   </div>
@@ -1092,8 +1092,8 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER TWO: IN-SITU PUSHDOWN
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Direct Operational Query Federation</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Direct Operational Query Federation</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Queries translated and pushed down directly into transactional ERP backbones with zero data duplication.
                     </p>
                   </div>
@@ -1102,8 +1102,8 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER THREE: AUGMENTATION
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Machine Learning Driver Attribution</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Machine Learning Driver Attribution</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Automated variance analysis surfacing root-cause drivers behind complex financial and operational shifts.
                     </p>
                   </div>
@@ -1112,8 +1112,8 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER FOUR: GOVERNANCE
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Audited Row-Level Security &amp; Lineage</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Audited Row-Level Security &amp; Lineage</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Cryptographic data provenance connecting executive KPIs directly to underlying transactional ledger hashes.
                     </p>
                   </div>
@@ -1171,10 +1171,10 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
                   <span className="text-xs font-mono font-bold uppercase px-3 py-1 rounded-md bg-sky-100 text-[#0070C0]">
                     {protocolDetails[activeProtocolTab].badge}
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-black text-slate-950 mt-2">
+                  <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-950 mt-2">
                     {protocolDetails[activeProtocolTab].title}
                   </h3>
-                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mt-1">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal mt-1">
                     {protocolDetails[activeProtocolTab].desc}
                   </p>
                 </div>
@@ -1201,9 +1201,9 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
                           <span className="w-5 h-5 rounded-full bg-sky-100 text-[#0070C0] text-xs font-bold flex items-center justify-center shrink-0">
                             <Check className="w-3.5 h-3.5" />
                           </span>
-                          <h4 className="text-sm font-bold text-slate-900 truncate">{st.name}</h4>
+                          <h4 className="font-sora text-sm font-medium text-slate-900 truncate">{st.name}</h4>
                         </div>
-                        <p className="text-xs text-slate-600 leading-relaxed font-normal">{st.detail}</p>
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">{st.detail}</p>
                       </div>
                     ))}
                   </div>
@@ -1228,7 +1228,7 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Phased Enterprise Business Intelligence Roadmap
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               A structured, risk-mitigated journey from fragmented reporting workbooks to an augmented executive decision cockpit.
             </p>
           </div>
@@ -1251,11 +1251,11 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
                       </div>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {phase.title}
                     </h3>
 
-                    <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {phase.focus}
                     </p>
                   </div>
@@ -1294,7 +1294,7 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
               Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#005A9C] via-[#0070C0] to-sky-500">Analytics Questions</span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal max-w-2xl mx-auto">
               Addressing key strategic, operational, and architectural business intelligence considerations for enterprise technology leaders.
             </p>
           </div>
@@ -1369,7 +1369,7 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
             Ready to Upgrade to Augmented Enterprise Business Intelligence?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Collaborate with senior analytics architects to establish your canonical semantic layer, deploy sub-second executive boardroom cockpits, and unlock conversational AI decision intelligence.
           </p>
 

@@ -427,7 +427,7 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Generative AI Style with Rich Dynamic Animations)
@@ -541,12 +541,12 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-5 py-3.5 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-2xl">
-                <p className="text-base sm:text-lg font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-base sm:text-lg font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Enterprise data architecture must be decoupled, elastic, and sovereign—enabling independent compute engines to query open standard tables without vendor captivity or brittle point-to-point ETL pipelines.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq constructs production-grade multi-tier data architectures that liberate data from monolithic databases and proprietary cloud formats. We establish decoupled open lakehouses, event-driven streaming backbones, and zero-copy virtualization fabrics that empower modern business intelligence and autonomous AI.
               </p>
 
@@ -557,8 +557,8 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
                     <Server className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Decoupled Multi-Engine Compute</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Decoupled Multi-Engine Compute</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Analytical query clusters scale dynamically per workload, querying uniform storage layers without blocking core enterprise ERP transactions.
                     </p>
                   </div>
@@ -569,8 +569,8 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
                     <Activity className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Event-Driven Transactional CDC</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Event-Driven Transactional CDC</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Database mutation logs are captured at sub-second intervals and streamed across enterprise layers, replacing delayed overnight batch ingestion scripts.
                     </p>
                   </div>
@@ -581,8 +581,8 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Programmatic Data Contracts</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Programmatic Data Contracts</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Contract-driven schema governance verifies breaking changes before code deployment, protecting downstream reports, dashboards, and AI agents.
                     </p>
                   </div>
@@ -614,7 +614,7 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
 
                 <div className="absolute bottom-4 left-4 right-4 text-white space-y-1.5 p-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-700/80">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-normal leading-relaxed line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -665,7 +665,7 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Critical Bottlenecks Facing Legacy Data Stacks
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Why traditional tightly coupled warehouses and fragile batch ingestion scripts impede operational speed and inflate costs.
             </p>
           </div>
@@ -687,10 +687,10 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
                         <ChallengeIcon className="w-5 h-5" />
                       </div>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -719,7 +719,7 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
               The KNOOVIQ Data Architecture Ecosystem
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Explore the eight mutually reinforcing layers of our modern enterprise data topology. Hover over any segment to inspect its architectural role.
             </p>
           </div>
@@ -746,7 +746,7 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -867,7 +867,7 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -893,7 +893,7 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Modern Data Architecture vs. Legacy Monoliths
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Examine the concrete architectural distinction between legacy tightly coupled data silos and KNOOVIQ decoupled open lakehouse architectures.
             </p>
           </div>
@@ -1014,8 +1014,8 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       TIER ONE: DATABASE CONNECTORS
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Decoupled Operational Backbones</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Decoupled Operational Backbones</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       SAP S/4HANA ERP instances, cloud databases, and event topics connected via zero-impact commit log listeners.
                     </p>
                   </div>
@@ -1024,8 +1024,8 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       TIER TWO: STREAMING DATA BUS
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Event-Driven Distribution Fabric</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Event-Driven Distribution Fabric</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Sub-second delta streaming routing transactional mutations to analytical caches without batch latency.
                     </p>
                   </div>
@@ -1034,8 +1034,8 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       TIER THREE: OPEN LAKEHOUSE TABLES
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">ACID Transactional Storage</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">ACID Transactional Storage</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Standardized open table formats on sovereign object storage enabling concurrent read-write access.
                     </p>
                   </div>
@@ -1044,8 +1044,8 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       TIER FOUR: SEMANTIC MODELING & SECURITY
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Unified Business Entities & Policies</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Unified Business Entities & Policies</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Air-gapped data contracts and continuous attribute-based security governing self-service analytics and AI.
                     </p>
                   </div>
@@ -1071,7 +1071,7 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Phased Enterprise Implementation Roadmap
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               A structured, risk-mitigated journey from monolithic data silos to an enterprise-wide, decoupled lakehouse mesh.
             </p>
           </div>
@@ -1094,11 +1094,11 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
                       </div>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {phase.title}
                     </h3>
 
-                    <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {phase.focus}
                     </p>
                   </div>
@@ -1137,7 +1137,7 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
               Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#005A9C] via-[#0070C0] to-sky-500">Architecture Questions</span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal max-w-2xl mx-auto">
               Addressing key structural, scalability, and governance considerations for enterprise chief architects and technology leaders.
             </p>
           </div>
@@ -1212,7 +1212,7 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
             Ready to Modernize Your Enterprise Data Architecture?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Collaborate with senior data architects to design your decoupled lakehouse blueprint, establish real-time CDC pipelines, and enforce automated data contracts.
           </p>
 

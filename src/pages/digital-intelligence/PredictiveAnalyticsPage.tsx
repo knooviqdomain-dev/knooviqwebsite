@@ -513,7 +513,7 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-[#0070C0] selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans cloud-sora-scope selection:bg-[#0070C0] selection:text-white">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (AI Agents Style Full Bleed Panoramic Background)
@@ -559,7 +559,7 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
               </h1>
 
               {/* Subtitle with High Legibility */}
-              <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Transform static historical reporting into production algorithmic foresight. KNOOVIQ engineers stochastic time-series models, predictive asset maintenance, churn propensity engines, and closed-loop ERP automated decisioning.
               </p>
             </motion.div>
@@ -610,12 +610,12 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-5 py-3.5 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-2xl">
-                <p className="text-base sm:text-lg font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-base sm:text-lg font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Descriptive BI tells leadership why margins eroded last quarter; Predictive Analytics alerts the executive team 90 days in advance, quantifies the volatility corridor, and automatically prescribes corrective supply adjustments directly in the ERP.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers production-grade predictive intelligence platforms that liberate enterprises from fragile spreadsheets and retrospective reporting. We build stochastic time-series models, automated drift detection shields, and real-time feature stores that write back directly into operational SAP S/4HANA workflows.
               </p>
 
@@ -626,8 +626,8 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
                     <TrendingUp className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Algorithmic Rigor &amp; Ensembles</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Algorithmic Rigor &amp; Ensembles</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Combining stochastic time-series, deep temporal transformers, and non-linear gradient boosting to capture volatile real-world dynamics.
                     </p>
                   </div>
@@ -638,8 +638,8 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
                     <Activity className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Industrial MLOps &amp; Drift Defense</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Industrial MLOps &amp; Drift Defense</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Production feature stores, low-latency API serving, and 24/7 population stability testing (PSI) triggering autonomous model recalibration.
                     </p>
                   </div>
@@ -650,8 +650,8 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
                     <Zap className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Closed-Loop ERP Automation</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Closed-Loop ERP Automation</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Writing predicted demand and asset maintenance scores directly into operational SAP S/4HANA workflows to trigger dynamic replenishment.
                     </p>
                   </div>
@@ -684,7 +684,7 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
 
                 <div className="absolute bottom-4 left-4 right-4 text-white space-y-1.5 p-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-700/80">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-normal leading-relaxed line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -736,7 +736,7 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Critical Impediments in Legacy Forecasting
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Why manual spreadsheets, untracked concept drift, and disconnected analytics create costly inventory gluts and missed commercial opportunities.
             </p>
           </div>
@@ -758,10 +758,10 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
                         <ChallengeIcon className="w-5 h-5" />
                       </div>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -790,7 +790,7 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
               The KNOOVIQ Algorithmic Intelligence Fabric
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Explore the eight mutually reinforcing layers of our production predictive analytics foundation. Hover over any segment to inspect its algorithmic mechanics.
             </p>
           </div>
@@ -818,7 +818,7 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -940,7 +940,7 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -967,7 +967,7 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Modern Algorithmic Architecture vs. Legacy Heuristics
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Examine the concrete architectural difference between fragile spreadsheet forecasts and KNOOVIQ production-grade predictive intelligence.
             </p>
           </div>
@@ -1082,7 +1082,7 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
                   <div className="text-sm sm:text-base font-mono font-bold text-cyan-300">
                     High-Throughput Feature Serving &amp; Real-Time ERP Automation
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 font-normal leading-[1.6]">
                     Decoupled online/offline feature store architecture ensuring sub-10ms inference latencies across cloud environments, zero feature leakage, and automated write-backs into SAP S/4HANA.
                   </p>
                 </div>
@@ -1095,8 +1095,8 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
                     <Database className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-slate-900">Unified Feature Store</h4>
-                    <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                    <h4 className="font-sora text-base font-medium text-slate-900">Unified Feature Store</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] mt-1 leading-[1.6] font-normal">
                       Point-in-time correct temporal joins preventing training-serving skew across online and offline repositories.
                     </p>
                   </div>
@@ -1107,8 +1107,8 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
                     <Activity className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-slate-900">Automated Drift Telemetry</h4>
-                    <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                    <h4 className="font-sora text-base font-medium text-slate-900">Automated Drift Telemetry</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] mt-1 leading-[1.6] font-normal">
                       Continuous Population Stability Index (PSI) testing triggering automated zero-downtime model retrains.
                     </p>
                   </div>
@@ -1119,8 +1119,8 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
                     <Zap className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-slate-900">ERP Closed-Loop Action</h4>
-                    <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                    <h4 className="font-sora text-base font-medium text-slate-900">ERP Closed-Loop Action</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] mt-1 leading-[1.6] font-normal">
                       Direct transactional write-back into SAP S/4HANA automatically updating safety stocks and triggering work orders.
                     </p>
                   </div>
@@ -1178,10 +1178,10 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
                     <span className="text-xs font-mono font-bold tracking-widest text-[#0070C0] uppercase px-3 py-1 rounded-lg bg-sky-50 border border-sky-200">
                       {protocolDetails[activeProtocolTab].badge}
                     </span>
-                    <h3 className="text-2xl font-black text-slate-950 mt-3 mb-2">
+                    <h3 className="font-sora text-2xl font-medium text-slate-950 mt-3 mb-2">
                       {protocolDetails[activeProtocolTab].title}
                     </h3>
-                    <p className="text-base text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {protocolDetails[activeProtocolTab].desc}
                     </p>
                   </div>
@@ -1243,7 +1243,7 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               4-Stage Phased Implementation Roadmap
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               A structured, risk-mitigated journey from fragile spreadsheet heuristics to production algorithmic foresight.
             </p>
           </div>
@@ -1266,11 +1266,11 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
                       </div>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {phase.title}
                     </h3>
 
-                    <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {phase.focus}
                     </p>
                   </div>
@@ -1309,7 +1309,7 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
               Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#005A9C] via-[#0070C0] to-sky-500">Predictive Questions</span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal max-w-2xl mx-auto">
               Addressing key strategic, operational, and architectural considerations for enterprise technology leaders.
             </p>
           </div>
@@ -1384,7 +1384,7 @@ export const PredictiveAnalyticsPage: React.FC<PredictiveAnalyticsPageProps> = (
             Ready to Replace Guesswork with Algorithmic Foresight?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Collaborate with senior data science architects to audit your existing forecast baseline, identify high-ROI predictive opportunities, and deploy production MLOps pipelines.
           </p>
 

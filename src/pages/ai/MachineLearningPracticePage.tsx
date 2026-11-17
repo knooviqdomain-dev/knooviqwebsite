@@ -557,7 +557,7 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
   }, [isAutoRotating, wheelSegments.length]);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Image 1 of 4 - Ultra-Clean & Sleek 2-Column Showcase, NO Buttons)
@@ -686,12 +686,12 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Machine learning creates scalable enterprise value when algorithms run directly where transaction data lives—eliminating brittle ETL pipelines and latency overhead.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq activates in-database machine learning via SAP HANA Automated Predictive Library (APL) and Predictive Analysis Integrator (PAi), embedding real-time predictive scores directly into operational business processes.
               </p>
 
@@ -701,8 +701,8 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
                     <Database className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">In-Database In-Memory Execution</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">In-Database In-Memory Execution</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Training and scoring predictive algorithms directly inside SAP HANA Cloud without moving gigabytes of sensitive data.
                     </p>
                   </div>
@@ -713,8 +713,8 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
                     <Workflow className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">End-to-End MLOps Lifecycle</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">End-to-End MLOps Lifecycle</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Automated model registration, hyperparameter optimization, and shadow canary deployments maintaining model accuracy.
                     </p>
                   </div>
@@ -725,8 +725,8 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
                     <RefreshCw className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Automated Drift Sentinel</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Automated Drift Sentinel</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Continuous monitoring detecting concept and feature drift, triggering automated retraining before prediction degradation occurs.
                     </p>
                   </div>
@@ -749,7 +749,7 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
                 </div>
                 <div className="absolute bottom-3 left-3 right-3 text-white space-y-1">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-medium line-clamp-2 leading-relaxed">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-medium line-clamp-2 leading-[1.6]">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -798,7 +798,7 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating Enterprise ML Deployment Hurdles
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Overcoming the architectural barriers that prevent enterprise machine learning models from scaling reliably in production.
             </p>
           </motion.div>
@@ -825,10 +825,10 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-lg font-black text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                    <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                       {item.desc}
                     </p>
                   </div>
@@ -861,7 +861,7 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
             <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
               Enterprise Machine Learning Engine
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto font-normal">
+            <p className="font-sora text-slate-400 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Continuous MLOps cycle balancing in-database algorithmic training, feature registration, and real-time model drift sentinels.
             </p>
           </div>
@@ -1064,7 +1064,7 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Clean Core Machine Learning & MLOps Fabric
             </h2>
-            <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-medium">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-medium">
               In-database algorithmic execution, automated feature registry management, and zero-downtime canary inference within SAP HANA Cloud.
             </p>
           </div>
@@ -1089,10 +1089,10 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
                 <div className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest">
                   Clean Core MLOps Fabric
                 </div>
-                <h3 className="text-xl sm:text-2xl font-black tracking-tight text-white leading-snug">
+                <h3 className="font-sora text-xl sm:text-2xl font-medium tracking-tight text-white leading-snug">
                   In-Database Predictive Engine & Feature Registry
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                   Eliminating external ETL data pipelines by running APL machine learning algorithms directly where transactions are committed. Real-time inference scored within microsecond windows.
                 </p>
                 <div className="pt-2 flex flex-wrap gap-2 text-[11px] font-mono text-cyan-200">
@@ -1119,7 +1119,7 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Modular Enterprise Machine Learning Solutions
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Production-ready predictive pipelines engineered to forecast demand, detect financial anomalies, and optimize plant assets.
             </p>
           </div>
@@ -1167,11 +1167,11 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
                         </div>
                       </div>
 
-                      <h3 className="text-lg font-bold text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
+                      <h3 className="font-sora text-lg font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
                         {sol.title}
                       </h3>
 
-                      <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                      <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                         {sol.description}
                       </p>
 
@@ -1215,7 +1215,7 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Enterprise Value Architecture Scorecard
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Core architectural foundations achieved when machine learning models are grounded directly inside SAP enterprise databases.
             </p>
           </div>
@@ -1242,11 +1242,11 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
                       {item.badge}
                     </span>
 
-                    <h3 className="text-lg font-black text-slate-900 leading-snug">
+                    <h3 className="font-sora text-lg font-medium text-slate-900 leading-snug">
                       {item.title}
                     </h3>
 
-                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                       {item.desc}
                     </p>
                   </div>
@@ -1276,7 +1276,7 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
             <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
               Real-Time Model Inference & Drift Detection
             </h2>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto font-normal">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-xl mx-auto font-normal">
               Observe in-database predictive models evaluate transactional parameters, score anomaly likelihoods, and track feature drift.
             </p>
           </div>
@@ -1310,7 +1310,7 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
                 </div>
 
                 <div className="pt-0.5 flex flex-wrap items-center gap-2">
-                  <h3 className="text-base sm:text-lg font-bold text-white">
+                  <h3 className="font-sora text-base sm:text-lg font-medium text-white">
                     {auditDocuments[activeDocTab].title}
                   </h3>
                   <span className="text-[11px] sm:text-xs text-slate-400">
@@ -1370,11 +1370,11 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
                           <span className={`px-1.5 py-0.5 rounded border text-[10px] font-mono font-bold uppercase ${finding.levelColor}`}>
                             {finding.level}
                           </span>
-                          <h4 className="text-xs sm:text-sm font-bold text-white">
+                          <h4 className="font-sora text-xs sm:text-sm font-medium text-white">
                             {finding.title}
                           </h4>
                         </div>
-                        <p className="text-[11px] sm:text-xs text-slate-300 line-clamp-2">
+                        <p className="font-sora text-[11px] sm:text-xs text-slate-300 line-clamp-2 font-normal leading-[1.6]">
                           {finding.desc}
                         </p>
                       </div>
@@ -1394,7 +1394,7 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
                     <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
                     <span>EXECUTIVE ACTION RECOMMENDATION</span>
                   </div>
-                  <p className="text-xs text-white font-medium leading-relaxed">
+                  <p className="font-sora text-xs text-white font-medium leading-[1.6]">
                     {auditDocuments[activeDocTab].recommendation}
                   </p>
                 </div>
@@ -1421,7 +1421,7 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
             Ready to Accelerate In-Database Machine Learning?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Run algorithms directly on SAP HANA Cloud, eliminate ETL bottlenecks, and empower your enterprise with real-time predictive intelligence.
           </p>
 

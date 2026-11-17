@@ -499,7 +499,7 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-[#0070C0] selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans cloud-sora-scope selection:bg-[#0070C0] selection:text-white">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (AI Agents Style Full Bleed Panoramic Background)
@@ -545,7 +545,7 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
               </h1>
 
               {/* Subtitle with High Legibility */}
-              <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 High-throughput cloud data platforms, open table format lakehouses, serverless elastic compute clusters, and sovereign multi-cloud data fabric infrastructures.
               </p>
             </motion.div>
@@ -596,12 +596,12 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-5 py-3.5 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-2xl">
-                <p className="text-base sm:text-lg font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-base sm:text-lg font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Enterprise data platforms must transcend proprietary hyperscaler lock-in and runaway cloud compute costs. Modern data architectures demand open table formats, zero-copy query federation, and decoupled elastic compute clusters that scale dynamically without duplicating multi-petabyte datasets.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers high-performance, cost-governed enterprise data platforms that seamlessly bridge operational SAP cores with multi-cloud analytics ecosystems. We unify Apache Iceberg, Delta Lake, SAP Datasphere, and hyperscaler lakehouses into an interoperable, sovereign data foundation with automated FinOps cost controls.
               </p>
 
@@ -612,8 +612,8 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
                     <Database className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Decoupled Multi-Cloud Storage</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Decoupled Multi-Cloud Storage</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Separation of persistent open table storage from ephemeral query clusters, eliminating proprietary cloud lock-in and vendor egress penalties.
                     </p>
                   </div>
@@ -624,8 +624,8 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
                     <Zap className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Multi-Engine Query Federation</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Multi-Engine Query Federation</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Sub-second in-situ analytical processing pushing distributed queries across SAP HANA, Snowflake, and Databricks without data movement.
                     </p>
                   </div>
@@ -636,8 +636,8 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
                     <BarChart3 className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Autonomous FinOps Governance</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Autonomous FinOps Governance</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Dynamic workload auto-scaling, intelligent cache tiering, and proactive cluster throttling preventing runaway cloud infrastructure bills.
                     </p>
                   </div>
@@ -672,7 +672,7 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
               <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-3">
                 <div>
                   <div className="text-xs font-mono font-bold text-[#0070C0] uppercase tracking-wider">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-700 font-normal leading-relaxed">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -724,7 +724,7 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Critical Impediments in Legacy Cloud Platforms
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Why proprietary cloud data warehouses and tightly coupled architectures create unmanageable financial and operational burdens.
             </p>
           </div>
@@ -746,10 +746,10 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
                         <ChallengeIcon className="w-5 h-5" />
                       </div>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -778,7 +778,7 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
               The KNOOVIQ Multi-Cloud Platform Fabric
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Explore the eight mutually reinforcing layers of our sovereign, decoupled data platform foundation. Hover over any segment to inspect its architectural role.
             </p>
           </div>
@@ -806,7 +806,7 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -928,7 +928,7 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -955,7 +955,7 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Modern Data Platforms &amp; Multi-Cloud Fabric Matrix
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Examine the concrete architectural difference between legacy proprietary cloud warehouses and KNOOVIQ decoupled open lakehouse platforms.
             </p>
           </div>
@@ -1079,8 +1079,8 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER ONE: STORAGE
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Decoupled Open Table Storage</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Decoupled Open Table Storage</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Immutable object stores formatted with Apache Iceberg and Delta Lake accessible by multiple query engines.
                     </p>
                   </div>
@@ -1089,8 +1089,8 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER TWO: COMPUTE
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Ephemeral Elastic Compute</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Ephemeral Elastic Compute</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Serverless query worker clusters auto-scaling to workload intensity and scaling to zero during idle periods.
                     </p>
                   </div>
@@ -1099,8 +1099,8 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER THREE: VIRTUALIZATION
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Zero-Copy In-Situ Pushdown</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Zero-Copy In-Situ Pushdown</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Direct transactional database query federation eliminating multi-hop ETL replication across cloud regions.
                     </p>
                   </div>
@@ -1109,8 +1109,8 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER FOUR: GOVERNANCE
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Autonomous FinOps &amp; Security</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Autonomous FinOps &amp; Security</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Algorithmic cloud spend controls, automated query throttling, and sovereign air-gapped security enclaves.
                     </p>
                   </div>
@@ -1168,10 +1168,10 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
                   <span className="text-xs font-mono font-bold uppercase px-3 py-1 rounded-md bg-sky-100 text-[#0070C0]">
                     {protocolDetails[activeProtocolTab].badge}
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-black text-slate-950 mt-2">
+                  <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-950 mt-2">
                     {protocolDetails[activeProtocolTab].title}
                   </h3>
-                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mt-1">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal mt-1">
                     {protocolDetails[activeProtocolTab].desc}
                   </p>
                 </div>
@@ -1198,9 +1198,9 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
                           <span className="w-5 h-5 rounded-full bg-sky-100 text-[#0070C0] text-xs font-bold flex items-center justify-center shrink-0">
                             <Check className="w-3.5 h-3.5" />
                           </span>
-                          <h4 className="text-sm font-bold text-slate-900 truncate">{st.name}</h4>
+                          <h4 className="font-sora text-sm font-medium text-slate-900 truncate">{st.name}</h4>
                         </div>
-                        <p className="text-xs text-slate-600 leading-relaxed font-normal">{st.detail}</p>
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">{st.detail}</p>
                       </div>
                     ))}
                   </div>
@@ -1225,7 +1225,7 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Phased Enterprise Data Platform Roadmap
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               A structured, risk-mitigated journey from fragmented cloud warehouses to an open, sovereign lakehouse platform.
             </p>
           </div>
@@ -1248,11 +1248,11 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
                       </div>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {phase.title}
                     </h3>
 
-                    <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {phase.focus}
                     </p>
                   </div>
@@ -1291,7 +1291,7 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
               Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#005A9C] via-[#0070C0] to-sky-500">Platform Questions</span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal max-w-2xl mx-auto">
               Addressing key strategic, operational, and architectural considerations for enterprise technology leaders.
             </p>
           </div>
@@ -1366,7 +1366,7 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
             Ready to Unify Your Multi-Cloud Enterprise Data Platform?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Collaborate with senior cloud architects to decouple storage with open table formats, deploy zero-copy query federation, and enforce autonomous FinOps cost controls.
           </p>
 

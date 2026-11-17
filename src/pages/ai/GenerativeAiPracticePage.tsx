@@ -589,7 +589,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Panoramic Full-Bleed Enterprise GenAI Showcase)
@@ -729,11 +729,11 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                 Architecting Trusted <span className="text-[#0070C0]">Enterprise Generative AI</span>
               </h2>
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Generative AI delivers transformational business value only when responses are deterministically grounded in verified corporate systems with strict citation traceability.&rdquo;
                 </p>
               </div>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq constructs production-grade Retrieval-Augmented Generation (RAG) fabrics integrated directly into SAP BTP and cloud lakehouses. We eliminate hallucination risk and secure your intellectual property while giving teams instant access to verified corporate knowledge.
               </p>
               <div className="space-y-2.5 pt-1">
@@ -742,8 +742,8 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                     <Database className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">High-Density Vector Storage</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">High-Density Vector Storage</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Embed enterprise knowledge alongside transactional data in SAP HANA Cloud without third-party data synchronization overhead.
                     </p>
                   </div>
@@ -754,8 +754,8 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Deterministic Output Guardrails</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Deterministic Output Guardrails</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Active real-time validation layers that score responses against retrieved source passages, blocking ungrounded answers.
                     </p>
                   </div>
@@ -766,8 +766,8 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                     <Zap className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Optimized Compute & Token Caching</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Optimized Compute & Token Caching</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Semantic caching clusters delivering instant in-memory responses on repeated inquiries and drastically slashing LLM inference billing.
                     </p>
                   </div>
@@ -789,7 +789,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                 </div>
                 <div className="absolute bottom-3 left-3 right-3 text-white space-y-1">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-medium line-clamp-2 leading-relaxed">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-medium line-clamp-2 leading-[1.6]">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -827,7 +827,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                     {journeySteps[activeJourneyStep].tech}
                   </span>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">{journeySteps[activeJourneyStep].desc}</p>
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">{journeySteps[activeJourneyStep].desc}</p>
               </div>
             </div>
           </div>
@@ -847,7 +847,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating Generative AI Deployment Challenges
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Moving from simple pilot demonstrations to enterprise-scale production requires solving six fundamental architectural vulnerabilities.
             </p>
           </motion.div>
@@ -874,10 +874,10 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-lg font-black text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                    <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                       {item.desc}
                     </p>
                   </div>
@@ -930,7 +930,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
               Ecosystem for Enterprise Knowledge Synthesis
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto font-normal">
+            <p className="font-sora text-slate-400 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized radial platform uniting private vector embeddings, parameter fine-tuning, deterministic guardrails, and multimodal document understanding.
             </p>
 
@@ -991,8 +991,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                             {item.badge}
                           </span>
                         </div>
-                        <h4 
-                          className="text-xs sm:text-[13px] font-bold tracking-tight text-white truncate transition-colors"
+                        <h4 className="font-sora text-xs sm:text-[13px] font-medium tracking-tight text-white truncate transition-colors"
                           style={{ color: isHovered ? item.color : undefined }}
                         >
                           {item.title}
@@ -1272,8 +1271,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                             {item.badge}
                           </span>
                         </div>
-                        <h4 
-                          className="text-xs sm:text-[13px] font-bold tracking-tight text-white truncate transition-colors"
+                        <h4 className="font-sora text-xs sm:text-[13px] font-medium tracking-tight text-white truncate transition-colors"
                           style={{ color: isHovered ? item.color : undefined }}
                         >
                           {item.title}
@@ -1421,10 +1419,10 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                       >
                         {activeItem.badge}
                       </span>
-                      <h4 className="text-sm font-bold text-white">
+                      <h4 className="font-sora text-sm font-medium text-white">
                         {activeItem.title}
                       </h4>
-                      <p className="text-xs text-slate-300 leading-relaxed">
+                      <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                         {activeItem.desc}
                       </p>
                       <div className="pt-1 flex items-center gap-1.5 text-[10.5px] font-mono text-slate-400">
@@ -1498,7 +1496,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Enterprise Neural Knowledge Mesh
             </h2>
-            <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-medium">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-medium">
               Stateless proxy gateways connecting SAP HANA Cloud Vector Engine, private fine-tuned LLMs, and enterprise applications with zero data leakage.
             </p>
           </div>
@@ -1529,10 +1527,10 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                     <Zap className="w-3.5 h-3.5 text-cyan-400" />
                     <span>Unified Enterprise Knowledge Fabric</span>
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white leading-tight">
+                  <h3 className="font-sora text-2xl sm:text-3xl font-medium tracking-tight text-white leading-tight">
                     Multi-Model Knowledge Mesh &amp; Clean Core Gateway
                   </h3>
-                  <p className="text-sm text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                     Interlinking distributed enterprise document lakes, SAP HANA Cloud Vector Engine, and hyperscaler foundation models through high-throughput, low-latency stateless proxy gateways. Delivers zero PII leakage, deterministic role-based data partitioning, and zero foundational model retraining on confidential corporate intelligence.
                   </p>
                 </div>
@@ -1544,7 +1542,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                       <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0" />
                       <span>Stateless Zero-Trust Proxy</span>
                     </div>
-                    <p className="text-[11px] text-slate-300 font-normal leading-relaxed">
+                    <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                       In-line pseudonymization scrubs corporate PII, salary tables, and supplier pricing before external model tokenization.
                     </p>
                   </div>
@@ -1554,7 +1552,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                       <Database className="w-4 h-4 text-cyan-400 shrink-0" />
                       <span>HANA Vector Mesh Grounding</span>
                     </div>
-                    <p className="text-[11px] text-slate-300 font-normal leading-relaxed">
+                    <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                       Real-time cosine similarity search executed in-memory directly alongside SAP transactional tables with ACID consistency.
                     </p>
                   </div>
@@ -1564,7 +1562,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                       <Cpu className="w-4 h-4 text-cyan-400 shrink-0" />
                       <span>Multi-Model Dynamic Router</span>
                     </div>
-                    <p className="text-[11px] text-slate-300 font-normal leading-relaxed">
+                    <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                       Intelligent routing between Claude 3.5, GPT-4o, and private on-prem models with semantic vector caching to slash inference cost.
                     </p>
                   </div>
@@ -1574,7 +1572,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                       <Workflow className="w-4 h-4 text-cyan-400 shrink-0" />
                       <span>5G &amp; Clean Core Edge Fabric</span>
                     </div>
-                    <p className="text-[11px] text-slate-300 font-normal leading-relaxed">
+                    <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                       Event-driven edge microservices dispatching autonomous actions directly into SAP S/4HANA core via verified RAP business objects.
                     </p>
                   </div>
@@ -1616,7 +1614,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Modular Generative AI Solutions
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Production-ready enterprise modules engineered to synthesize knowledge, automate contract verification, and accelerate development.
             </p>
           </div>
@@ -1667,12 +1665,12 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                         <div className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider mb-1">
                           {sol.categoryLabel}
                         </div>
-                        <h3 className="text-lg sm:text-xl font-black text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
                       </div>
 
-                      <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                      <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                         {sol.description}
                       </p>
                     </div>
@@ -1710,7 +1708,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Enterprise Value & Architectural Pillars
             </h2>
-            <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-medium max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-medium max-w-2xl mx-auto">
               Core architectural foundations achieved when foundation models are grounded in private enterprise context.
             </p>
           </div>
@@ -1737,11 +1735,11 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                       {item.badge}
                     </span>
 
-                    <h3 className="text-lg font-black text-slate-900 leading-snug">
+                    <h3 className="font-sora text-lg font-medium text-slate-900 leading-snug">
                       {item.title}
                     </h3>
 
-                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                       {item.desc}
                     </p>
                   </div>
@@ -1771,7 +1769,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
             <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
               Autonomous Contract & Policy Analysis
             </h2>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto font-normal">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-xl mx-auto font-normal">
               Transforming complex agreements, ERP specs, and compliance covenants into verified executive risk decisions with exact citation proof.
             </p>
           </div>
@@ -1806,7 +1804,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                 </div>
 
                 <div className="pt-0.5 flex flex-wrap items-center gap-2">
-                  <h3 className="text-base sm:text-lg font-bold text-white">
+                  <h3 className="font-sora text-base sm:text-lg font-medium text-white">
                     {auditDocuments[activeDocTab].title}
                   </h3>
                   <span className="text-[11px] sm:text-xs text-slate-400">
@@ -1857,11 +1855,11 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                           <span className={`px-1.5 py-0.5 rounded border text-[10px] font-mono font-bold uppercase ${finding.levelColor}`}>
                             {finding.level}
                           </span>
-                          <h4 className="text-xs sm:text-sm font-bold text-white">
+                          <h4 className="font-sora text-xs sm:text-sm font-medium text-white">
                             {finding.title}
                           </h4>
                         </div>
-                        <p className="text-xs text-slate-200 font-normal leading-relaxed">
+                        <p className="font-sora text-xs text-slate-200 font-normal leading-[1.6]">
                           {finding.desc}
                         </p>
                       </div>
@@ -1881,7 +1879,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                     <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
                     <span>EXECUTIVE ACTION RECOMMENDATION</span>
                   </div>
-                  <p className="text-xs text-white font-medium leading-relaxed">
+                  <p className="font-sora text-xs text-white font-medium leading-[1.6]">
                     {auditDocuments[activeDocTab].recommendation}
                   </p>
                 </div>
@@ -1908,7 +1906,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
             Ready to Harness Grounded Generative Intelligence?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Ground your models in verified corporate context with zero hallucination risk and complete IP privacy.
           </p>
 

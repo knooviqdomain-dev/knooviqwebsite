@@ -424,7 +424,7 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Generative AI Style with Rich Dynamic Animations)
@@ -538,12 +538,12 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-5 py-3.5 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-2xl">
-                <p className="text-base sm:text-lg font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-base sm:text-lg font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;A competitive data strategy is no longer about consolidating physical bytes into a single monolithic lake—it is about establishing a unified logical semantic layer that federates queries in-situ with deterministic trust.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq helps enterprise leadership transition away from rigid, centralized batch architectures toward modern, domain-driven data meshes. We decouple business semantic models from underlying transactional schemas, empowering business units to self-serve validated analytical products with continuous compliance.
               </p>
 
@@ -554,8 +554,8 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
                     <Layers className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Decoupled Business Semantics</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Decoupled Business Semantics</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Canonical business definitions established independently from physical database column keys, ensuring metric stability across ERP upgrades.
                     </p>
                   </div>
@@ -566,8 +566,8 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
                     <Zap className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Zero-Copy In-Situ Query Pushdown</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Zero-Copy In-Situ Query Pushdown</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Analytical queries are translated into native source dialects and executed directly inside operational databases, eliminating multi-terabyte data copying.
                     </p>
                   </div>
@@ -578,8 +578,8 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Continuous Master Data Governance</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Continuous Master Data Governance</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Automated golden record harmonization across customer, vendor, and material entities with deterministic cryptographic lineage tracking.
                     </p>
                   </div>
@@ -611,7 +611,7 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
 
                 <div className="absolute bottom-4 left-4 right-4 text-white space-y-1.5 p-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-700/80">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-normal leading-relaxed line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -662,7 +662,7 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Strategic Hurdles Facing Legacy Data Architectures
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Why traditional centralized data warehousing models fail in distributed enterprises and generate severe technical debt.
             </p>
           </div>
@@ -684,10 +684,10 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
                         <ChallengeIcon className="w-5 h-5" />
                       </div>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -716,7 +716,7 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
               The KNOOVIQ Unified Data Strategy Mesh
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Explore the eight mutually reinforcing layers of our modern enterprise data foundation. Hover over any segment to inspect its architectural role.
             </p>
           </div>
@@ -743,7 +743,7 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -864,7 +864,7 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -890,7 +890,7 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Zero-Copy Lakehouse & Modern Data Strategy Matrix
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Examine the concrete architectural difference between legacy physical data warehouses and KNOOVIQ zero-copy semantic data fabrics.
             </p>
           </div>
@@ -1011,8 +1011,8 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER ONE: OPERATIONAL SOURCES
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Decoupled ERP & Lakehouses</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Decoupled ERP & Lakehouses</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       SAP S/4HANA transactional backbones and external data streams federated without lock contention.
                     </p>
                   </div>
@@ -1021,8 +1021,8 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER TWO: ZERO-COPY VIRTUALIZATION
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Logical Pushdown Engine</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Logical Pushdown Engine</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Direct queries executed in-situ across underlying nodes with zero intermediate staging copies.
                     </p>
                   </div>
@@ -1031,8 +1031,8 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER THREE: UNIFIED BUSINESS SEMANTICS
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Canonical Enterprise Metrics</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Canonical Enterprise Metrics</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Unified KPI taxonomy with built-in multi-currency, calendar hierarchies, and audited dimensions.
                     </p>
                   </div>
@@ -1041,8 +1041,8 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER FOUR: SECURE CONSUMPTION
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Autonomous Analytics & AI</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Autonomous Analytics & AI</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Audited live dashboards, predictive models, and autonomous AI agents consuming validated data products.
                     </p>
                   </div>
@@ -1068,7 +1068,7 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Phased Enterprise Implementation Roadmap
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               A structured, risk-mitigated journey from fragmented operational silos to an enterprise-wide, governed data mesh.
             </p>
           </div>
@@ -1091,11 +1091,11 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
                       </div>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {phase.title}
                     </h3>
 
-                    <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {phase.focus}
                     </p>
                   </div>
@@ -1134,7 +1134,7 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
               Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#005A9C] via-[#0070C0] to-sky-500">Strategic Questions</span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal max-w-2xl mx-auto">
               Addressing core architectural paradigms, zero-copy virtualization, regulatory compliance, and cross-platform semantic governance for technology leaders.
             </p>
           </div>
@@ -1209,7 +1209,7 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
             Ready to Unify Your Enterprise Data Architecture?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Collaborate with senior enterprise architects to formulate your zero-copy virtualization roadmap, establish deterministic master data lineage, and decouple core business semantics.
           </p>
 

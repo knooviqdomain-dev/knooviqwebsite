@@ -498,7 +498,7 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-[#0070C0] selection:text-white">      {/* =========================================================================
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans cloud-sora-scope selection:bg-[#0070C0] selection:text-white">      {/* =========================================================================
           SECTION 1: HERO SECTION (AI Agents Style Full Bleed Panoramic Background)
           IMAGE: /images/data-quality/enterprise_quality_observability_hero.png
           ========================================================================= */}
@@ -542,7 +542,7 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
               </h1>
 
               {/* Subtitle with High Legibility */}
-              <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Continuous data profiling, automated anomaly firewalls, declarative quality contracts, and closed-loop golden record remediation across enterprise lakehouses and operational ERP backbones.
               </p>
             </motion.div>
@@ -593,12 +593,12 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-5 py-3.5 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-2xl">
-                <p className="text-base sm:text-lg font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-base sm:text-lg font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Data quality cannot be an afterthought audited only when executive dashboards break or machine learning predictions fail. In modern enterprise architectures, quality is an autonomous, self-healing control plane embedded at ingestion boundaries, intercepting corrupt records in-flight before they pollute operational ERP and analytics layers.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq shifts enterprise data quality from reactive manual cleanup spreadsheets into an active, continuous defense fabric. We deploy automated profiling algorithms that detect statistical distribution shifts, enforce declarative schema contracts, and orchestrate automated deduplication without interrupting transactional throughput.
               </p>
 
@@ -609,8 +609,8 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
                     <BarChart3 className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Autonomous Statistical Profiling</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Autonomous Statistical Profiling</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Continuous monitoring of record volumes, distribution variance, nullability thresholds, and semantic drift across all ingestion streams.
                     </p>
                   </div>
@@ -621,8 +621,8 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">In-Flight Quality Firewalls</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">In-Flight Quality Firewalls</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Programmatic data contract gates intercepting malformed payloads, invalid currencies, and corrupted foreign keys at producer boundaries.
                     </p>
                   </div>
@@ -633,8 +633,8 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
                     <Database className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Closed-Loop Golden Record Healing</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Closed-Loop Golden Record Healing</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Automated entity matching, multi-source resolution, and bidirectional reverse-ETL synchronizing validated master records back to source ERPs.
                     </p>
                   </div>
@@ -669,7 +669,7 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
               <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-3">
                 <div>
                   <div className="text-xs font-mono font-bold text-[#0070C0] uppercase tracking-wider">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-700 font-normal leading-relaxed">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -721,7 +721,7 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Critical Failures in Legacy Data Quality Management
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Why traditional manual data cleansing and fragmented validation rules generate operational risks and analytics debt.
             </p>
           </div>
@@ -743,10 +743,10 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
                         <ChallengeIcon className="w-5 h-5" />
                       </div>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -775,7 +775,7 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
               The KNOOVIQ Autonomous Data Quality Mesh
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Explore the eight mutually reinforcing layers of our continuous data quality foundation. Hover over any segment to inspect its architectural role.
             </p>
           </div>
@@ -803,7 +803,7 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -925,7 +925,7 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -952,7 +952,7 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Autonomous Data Quality &amp; Remediation Matrix
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Examine the concrete architectural difference between legacy post-ingestion cleanup and KNOOVIQ autonomous in-flight data quality fabrics.
             </p>
           </div>
@@ -1076,8 +1076,8 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER ONE: PROFILING
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Autonomous Ingestion Profilers</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Autonomous Ingestion Profilers</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Continuous real-time statistical evaluation calculating cardinality, completeness, and distribution baselines.
                     </p>
                   </div>
@@ -1086,8 +1086,8 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER TWO: INGESTION GATES
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">In-Flight Quality Firewalls</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">In-Flight Quality Firewalls</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Sub-millisecond data contracts intercepting schema drift and invalid business payloads before storage arrival.
                     </p>
                   </div>
@@ -1096,8 +1096,8 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER THREE: RESOLUTION
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Probabilistic Golden Record Match</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Probabilistic Golden Record Match</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Multi-field fuzzy graph linkage synthesizing contradictory customer, vendor, and product entity fragments.
                     </p>
                   </div>
@@ -1106,8 +1106,8 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER FOUR: OPERATIONALIZATION
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Closed-Loop S/4HANA Reverse-ETL</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Closed-Loop S/4HANA Reverse-ETL</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Continuous synchronization of cleansed master records back into core ERP backbones with zero transactional drift.
                     </p>
                   </div>
@@ -1165,10 +1165,10 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
                   <span className="text-xs font-mono font-bold uppercase px-3 py-1 rounded-md bg-sky-100 text-[#0070C0]">
                     {protocolDetails[activeProtocolTab].badge}
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-black text-slate-950 mt-2">
+                  <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-950 mt-2">
                     {protocolDetails[activeProtocolTab].title}
                   </h3>
-                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mt-1">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal mt-1">
                     {protocolDetails[activeProtocolTab].desc}
                   </p>
                 </div>
@@ -1195,9 +1195,9 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
                           <span className="w-5 h-5 rounded-full bg-sky-100 text-[#0070C0] text-xs font-bold flex items-center justify-center shrink-0">
                             <Check className="w-3.5 h-3.5" />
                           </span>
-                          <h4 className="text-sm font-bold text-slate-900 truncate">{st.name}</h4>
+                          <h4 className="font-sora text-sm font-medium text-slate-900 truncate">{st.name}</h4>
                         </div>
-                        <p className="text-xs text-slate-600 leading-relaxed font-normal">{st.detail}</p>
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">{st.detail}</p>
                       </div>
                     ))}
                   </div>
@@ -1222,7 +1222,7 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Phased Enterprise Data Quality Roadmap
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               A structured, risk-mitigated journey from reactive manual data repair to an automated, self-healing quality fabric.
             </p>
           </div>
@@ -1245,11 +1245,11 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
                       </div>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {phase.title}
                     </h3>
 
-                    <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {phase.focus}
                     </p>
                   </div>
@@ -1288,7 +1288,7 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
               Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#005A9C] via-[#0070C0] to-sky-500">Data Quality Questions</span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal max-w-2xl mx-auto">
               Addressing key strategic, operational, and architectural data quality considerations for enterprise technology leaders.
             </p>
           </div>
@@ -1363,7 +1363,7 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
             Ready to Eliminate Bad Data with an Autonomous Quality Fabric?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Collaborate with senior data architects and quality engineers to deploy in-flight anomaly firewalls, automated golden record resolution, and closed-loop ERP reverse-synchronization.
           </p>
 
