@@ -529,7 +529,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] cloud-sora-scope selection:text-white font-sans antialiased overflow-x-hidden">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Panoramic Background - Aligned with AI Agents)
@@ -569,7 +569,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
               </h1>
 
               {/* Sub-headline */}
-              <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Surveil live enterprise transaction streams, intercept SLA drifts before breaches occur, and trigger autonomous closed-loop exception resolution across SAP S/4HANA and multi-cloud environments.
               </p>
             </motion.div>
@@ -609,11 +609,11 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                 Transitioning from Periodic Audits to <span className="text-[#0070C0]">Continuous Operational Radar</span>
               </h2>
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Enterprise processes cannot be governed through retrospective reviews; resilient organizations require continuous execution radar to isolate friction the instant it emerges.&rdquo;
                 </p>
               </div>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq shifts process intelligence from static diagnostics to active, 24/7 operational surveillance. By intercepting live change-data capture streams from SAP S/4HANA, we evaluate process health dynamically, preventing SLA breaches before they manifest.
               </p>
 
@@ -623,8 +623,8 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                     <Database className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Zero-Latency Event Telemetry</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Zero-Latency Event Telemetry</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Continuous listening directly on SAP change data logs (CDHDR, CDPOS, BKPF) ensures instant event capture without operational overhead.
                     </p>
                   </div>
@@ -635,8 +635,8 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Predictive SLA Drift Interception</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Predictive SLA Drift Interception</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Lead-time algorithms detect queue dwell anomalies in early process stages, alerting process owners before downstream deadlines are compromised.
                     </p>
                   </div>
@@ -647,8 +647,8 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                     <Zap className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Autonomous Closed-Loop Resolution</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Autonomous Closed-Loop Resolution</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Pre-authorized remediation recipes automatically clear standard delivery blocks, adjust payment schedules, and dispatch RPA intervention bots.
                     </p>
                   </div>
@@ -674,7 +674,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                 </div>
                 <div className="absolute bottom-3 left-3 right-3 text-white space-y-1 p-3 rounded-xl bg-slate-950/85 backdrop-blur-md border border-white/10 shadow-lg">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-medium line-clamp-2 leading-relaxed">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-medium line-clamp-2 leading-[1.6]">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -722,7 +722,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Execution Hazards That Compromise Enterprise Commitments
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Without real-time surveillance, workflow deviations multiply unchecked, compounding into customer delivery failures, audit penalties, and margin leaks.
             </p>
           </div>
@@ -744,10 +744,10 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-950 leading-snug group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-950 leading-snug group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -777,7 +777,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Closed-Loop Process Surveillance Ecosystem
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] max-w-2xl mx-auto font-normal">
               An interlocking real-time operational engine designed to detect, diagnose, and resolve execution friction continuously.
             </p>
 
@@ -839,8 +839,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                             {item.badge}
                           </span>
                         </div>
-                        <h4
-                          className="text-xs sm:text-[13px] font-bold tracking-tight text-white truncate transition-colors"
+                        <h4 className="font-sora text-xs sm:text-[13px] font-medium tracking-tight text-white truncate transition-colors"
                           style={{ color: isHovered ? item.color : undefined }}
                         >
                           {item.title}
@@ -961,7 +960,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                           <div className="text-xs font-black text-white leading-tight">
                             {wheelSegments[hoveredWheelIndex].title}
                           </div>
-                          <p className="text-[10px] text-slate-300 line-clamp-2 leading-tight">
+                          <p className="font-sora text-[10px] text-slate-300 line-clamp-2 leading-tight font-normal">
                             {wheelSegments[hoveredWheelIndex].desc}
                           </p>
                         </div>
@@ -1041,8 +1040,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                             {item.badge}
                           </span>
                         </div>
-                        <h4
-                          className="text-xs sm:text-[13px] font-bold tracking-tight text-white truncate transition-colors"
+                        <h4 className="font-sora text-xs sm:text-[13px] font-medium tracking-tight text-white truncate transition-colors"
                           style={{ color: isHovered ? item.color : undefined }}
                         >
                           {item.title}
@@ -1075,8 +1073,8 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                     </span>
                     <ItemIcon className="w-4 h-4" style={{ color: item.color }} />
                   </div>
-                  <h4 className="text-sm font-bold text-white">{item.title}</h4>
-                  <p className="text-xs text-slate-400">{item.desc}</p>
+                  <h4 className="font-sora text-sm font-medium text-white">{item.title}</h4>
+                  <p className="font-sora text-xs text-slate-400 font-normal leading-[1.6]">{item.desc}</p>
                 </div>
               );
             })}
@@ -1098,7 +1096,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Continuous Process Monitoring Architecture
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Engineered for real-time telemetry streaming and automated closed-loop remediation across SAP S/4HANA and multi-cloud backbones.
             </p>
           </div>
@@ -1144,13 +1142,13 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                   <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-[#0070C0] text-white text-[9.5px] font-mono font-bold uppercase tracking-wider">
                     ARCHITECTURAL LAYER
                   </div>
-                  <h3 className="text-sm font-bold text-slate-950 leading-snug">
+                  <h3 className="font-sora text-sm font-medium text-slate-950 leading-snug">
                     {layer.title}
                   </h3>
                   <div className="text-[11px] font-semibold text-[#0070C0]">
                     {layer.subtitle}
                   </div>
-                  <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                     {layer.desc}
                   </p>
                 </div>
@@ -1185,7 +1183,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Pre-Built Continuous Monitoring Accelerators
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Domain-specific process surveillance engines pre-mapped to SAP S/4HANA operational modules and real-time SLA thresholds.
             </p>
           </div>
@@ -1235,12 +1233,12 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                         <div className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider mb-1">
                           {sol.categoryLabel}
                         </div>
-                        <h3 className="text-lg sm:text-xl font-black text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
                       </div>
 
-                      <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                      <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                         {sol.description}
                       </p>
                     </div>
@@ -1279,7 +1277,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Operational Advantages of Continuous Process Radar
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Replace retrospective error correction with continuous proactive operational governance and automated workflow defense.
             </p>
           </div>
@@ -1294,7 +1292,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                   <div className="text-lg font-black text-slate-950">Preemptive SLA Protection</div>
                   <div className="text-xs font-semibold text-emerald-600">Real-Time Risk Interception</div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Catches internal workflow delays while remediation is still possible, avoiding customer SLA breaches and contract penalty deductions.
                 </p>
               </div>
@@ -1312,7 +1310,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                   <div className="text-lg font-black text-slate-950">Frictionless Process Velocity</div>
                   <div className="text-xs font-semibold text-[#0070C0]">Continuous Cycle Acceleration</div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Eliminates micro-dwell states in cross-functional handoffs, maximizing touchless execution across enterprise sales, procurement, and billing.
                 </p>
               </div>
@@ -1330,7 +1328,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                   <div className="text-lg font-black text-slate-950">Deterministic Compliance Custody</div>
                   <div className="text-xs font-semibold text-cyan-600">Continuous Audit Readiness</div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Maintains continuous verification of Segregation of Duties (SoD), statutory mandates, and internal approval matrices across all global entities.
                 </p>
               </div>
@@ -1348,7 +1346,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                   <div className="text-lg font-black text-slate-950">Autonomous Operational Agility</div>
                   <div className="text-xs font-semibold text-purple-600">Closed-Loop Integration</div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Closes the loop between continuous observation and action by triggering automated ERP parameter adjustments and task bots.
                 </p>
               </div>
@@ -1374,7 +1372,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
             <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
               Real-Time Execution & SLA Telemetry Cockpit
             </h2>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto font-normal">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-xl mx-auto font-normal">
               Simulating live enterprise event log surveillance across core value streams to intercept deviations and trigger remediation.
             </p>
           </div>
@@ -1407,7 +1405,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                 </div>
 
                 <div className="pt-0.5 flex flex-wrap items-center gap-2">
-                  <h3 className="text-base sm:text-lg font-bold text-white">
+                  <h3 className="font-sora text-base sm:text-lg font-medium text-white">
                     {diagnosticProcesses[activeProcessTab].title}
                   </h3>
                   <span className="text-[11px] sm:text-xs text-slate-400">
@@ -1444,7 +1442,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                   <span className="text-[10px] font-mono font-bold text-cyan-300 uppercase tracking-wider block">
                     Prescriptive Action Trigger
                   </span>
-                  <p className="text-xs text-slate-200 line-clamp-2">
+                  <p className="font-sora text-xs text-slate-200 line-clamp-2 font-normal leading-[1.6]">
                     {diagnosticProcesses[activeProcessTab].recommendation}
                   </p>
                 </div>
@@ -1471,10 +1469,10 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
                           {finding.source}
                         </span>
                       </div>
-                      <h4 className="text-xs sm:text-sm font-bold text-white">
+                      <h4 className="font-sora text-xs sm:text-sm font-medium text-white">
                         {finding.title}
                       </h4>
-                      <p className="text-xs text-slate-300 leading-relaxed">
+                      <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                         {finding.desc}
                       </p>
                     </div>
@@ -1505,7 +1503,7 @@ export const ProcessMonitoringPage: React.FC<ProcessMonitoringPageProps> = ({
             Transition from Reactive Audits to Continuous Execution Radar
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Partner with KNOOVIQ&rsquo;s Process Intelligence practice to deploy non-invasive real-time process monitoring across SAP S/4HANA and mission-critical cloud applications.
           </p>
 

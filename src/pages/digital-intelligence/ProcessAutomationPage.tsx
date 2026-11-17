@@ -209,7 +209,7 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#0070C0] selection:text-white antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 font-sans cloud-sora-scope selection:bg-[#0070C0] selection:text-white antialiased overflow-x-hidden">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (AI Agents Style Full Bleed Panoramic Background)
@@ -255,7 +255,7 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
               </h1>
 
               {/* Subtitle with High Legibility */}
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal pt-1 drop-shadow-md">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal pt-1 drop-shadow-md">
                 Orchestrate complex cross-departmental operations with event-driven state machines, declarative decision tables, and continuous ledger reconciliation while maintaining an uncompromised SAP Clean-Core foundation.
               </p>
             </motion.div>
@@ -298,7 +298,7 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Autonomous Orchestration Designed for Enterprise Resilience
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Move beyond brittle scripts. Our platform coordinates distributed applications, synchronizes enterprise state machines, and enforces governance across your entire operational landscape.
             </p>
           </div>
@@ -314,10 +314,10 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
                   <div className="rounded-xl bg-sky-50 border border-sky-100 p-3 text-[#0070C0] w-fit mb-5">
                     <pillar.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 mb-2">
                     {pillar.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                     {pillar.desc}
                   </p>
                 </div>
@@ -346,7 +346,7 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
                 Synchronize Distributed Systems Without Custom Spaghetti Code
               </h2>
 
-              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+              <p className="font-sora text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
                 Traditional automation architectures rely on point-to-point batch scripts that break during upgrades and leave ledgers out of balance. KNOOVIQ Process Automation decouples workflow logic from underlying business services using modern event broker architecture.
               </p>
 
@@ -354,24 +354,24 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[#0070C0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Decoupled Microservice Sagas</h4>
-                    <p className="text-xs sm:text-sm text-slate-600">Coordinates distributed transactional commits across enterprise software platforms with full compensatory rollback capabilities.</p>
+                    <h4 className="font-sora text-sm font-medium text-slate-900">Decoupled Microservice Sagas</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">Coordinates distributed transactional commits across enterprise software platforms with full compensatory rollback capabilities.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[#0070C0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Dynamic Context-Aware Routing</h4>
-                    <p className="text-xs sm:text-sm text-slate-600">Evaluates organizational thresholds, regional jurisdictions, and risk scores in real time to determine operational paths.</p>
+                    <h4 className="font-sora text-sm font-medium text-slate-900">Dynamic Context-Aware Routing</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">Evaluates organizational thresholds, regional jurisdictions, and risk scores in real time to determine operational paths.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[#0070C0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Zero-Impact ERP Extensibility</h4>
-                    <p className="text-xs sm:text-sm text-slate-600">Operates seamlessly on SAP Business Technology Platform, ensuring your SAP S/4HANA digital core remains pristine and cloud-ready.</p>
+                    <h4 className="font-sora text-sm font-medium text-slate-900">Zero-Impact ERP Extensibility</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">Operates seamlessly on SAP Business Technology Platform, ensuring your SAP S/4HANA digital core remains pristine and cloud-ready.</p>
                   </div>
                 </div>
               </div>
@@ -393,7 +393,7 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
                     <div className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
                     <span className="text-xs font-semibold text-slate-200">Autonomous Process Fabric</span>
                   </div>
-                  <p className="text-sm font-bold text-white mt-1">Real-Time State Machine</p>
+                  <p className="font-sora text-sm font-medium text-white mt-1">Real-Time State Machine</p>
                 </div>
 
                 {/* Floating Glassmorphic Badge 2 */}
@@ -402,7 +402,7 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
                     <Sparkles className="h-3.5 w-3.5 text-cyan-300" />
                     <span className="text-xs font-semibold">Clean-Core Compliance</span>
                   </div>
-                  <p className="text-sm font-bold mt-1">Event-Driven Orchestrator</p>
+                  <p className="font-sora text-sm font-medium mt-1">Event-Driven Orchestrator</p>
                 </div>
               </div>
             </div>
@@ -425,7 +425,7 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               A Seamless Lifecycle Architecture
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               From initial inbound trigger to immutable ledger confirmation, observe how enterprise operations execute autonomously across decoupled architectures.
             </p>
           </div>
@@ -446,10 +446,10 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 mb-2">
                     {ws.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                     {ws.desc}
                   </p>
                 </div>
@@ -473,7 +473,7 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Engineered for High-Stakes Operational Workflows
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Pre-configured state machines and compliance logic tailored to mission-critical corporate functions across the enterprise.
             </p>
           </div>
@@ -492,12 +492,12 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-2">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 flex items-center gap-2.5 mb-2">
                     <domain.icon className="h-5 w-5 text-[#0070C0] shrink-0" />
                     <span>{domain.title}</span>
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mb-6 font-normal">
                     {domain.desc}
                   </p>
                 </div>
@@ -526,7 +526,7 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Topological Architecture &amp; Comparative Analysis
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Evaluate our event-driven autonomous process fabric against legacy point-to-point scripts, and examine our full-stack enterprise orchestration architecture.
             </p>
 
@@ -595,20 +595,20 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="text-sm font-bold text-slate-900 mb-2">Event Mesh &amp; Ingestion Fabric</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Event Mesh &amp; Ingestion Fabric</h4>
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     High-throughput asynchronous message bus connecting heterogeneous cloud ecosystems, IoT sensors, webhooks, and enterprise queues with zero data loss.
                   </p>
                 </div>
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="text-sm font-bold text-slate-900 mb-2">Decision Engine &amp; State Core</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Decision Engine &amp; State Core</h4>
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     High-concurrency workflow orchestrator executing declarative rules, parallel branched execution paths, and fault-tolerant distributed transaction sagas.
                   </p>
                 </div>
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="text-sm font-bold text-slate-900 mb-2">Clean-Core ERP Integration</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Clean-Core ERP Integration</h4>
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     Bi-directional connectors integrating with SAP S/4HANA and enterprise application networks via secure OData APIs and native business events.
                   </p>
                 </div>
@@ -632,7 +632,7 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Executive FAQs: Enterprise Process Automation
             </h2>
-            <p className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora mt-4 text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Clear answers to foundational questions regarding Clean Core compliance, distributed transactional sagas, exception governance, and enterprise security.
             </p>
           </div>
@@ -681,7 +681,7 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
             Ready to Eliminate Operational Bottlenecks and Automate Enterprise Processes?
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sora mt-4 text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Collaborate with KNOOVIQ to map cross-departmental value streams, decouple brittle legacy scripts, and deploy resilient event-driven orchestration integrated with SAP S/4HANA.
           </p>
 

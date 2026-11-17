@@ -216,7 +216,7 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#0070C0] selection:text-white antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 font-sans cloud-sora-scope selection:bg-[#0070C0] selection:text-white antialiased overflow-x-hidden">
          {/* =========================================================================
           SECTION 1: HERO SECTION (AI Agents Style Full Bleed Panoramic Background)
           IMAGE: /images/idp/intelligent_document_processing_cognitive_ai_hero.jpg
@@ -259,7 +259,7 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
               </h1>
 
               {/* Subtitle with High Legibility */}
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal pt-1 drop-shadow-md">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal pt-1 drop-shadow-md">
                 Transcend rigid zonal OCR. Deploy spatial vision-language models, table spatial transformers, and automated human-in-the-loop validation that parse complex unstructured PDFs, bills of lading, invoices, and contracts into clean SAP ERP transactions.
               </p>
             </motion.div>
@@ -302,7 +302,7 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Cognitive Understanding Designed for Enterprise Scale
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Legacy zonal OCR breaks when margins shift. Our cognitive architecture treats documents contextually, extracting multi-page tables, cursive annotations, and complex financial line items without static templates.
             </p>
           </div>
@@ -318,10 +318,10 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
                   <div className="rounded-xl bg-sky-50 border border-sky-100 p-3 text-[#0070C0] w-fit mb-5">
                     <pillar.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 mb-2">
                     {pillar.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                     {pillar.desc}
                   </p>
                 </div>
@@ -350,7 +350,7 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
                 From Unstructured Paperwork to Instant ERP Transactions
               </h2>
               
-              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+              <p className="font-sora text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
                 Eliminate manual exception queues and late-payment penalties. By understanding 2D spatial layouts and semantic language simultaneously, KNOOVIQ reads invoices, bills of lading, and custom declarations like an experienced forensic accountant.
               </p>
 
@@ -358,24 +358,24 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[#0070C0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Zero Static Template Setup</h4>
-                    <p className="text-xs sm:text-sm text-slate-600">Instantly processes novel vendor formats and irregular column structures without manual bounding boxes.</p>
+                    <h4 className="font-sora text-sm font-medium text-slate-900">Zero Static Template Setup</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">Instantly processes novel vendor formats and irregular column structures without manual bounding boxes.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[#0070C0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Direct Purchase Order Reconciliation</h4>
-                    <p className="text-xs sm:text-sm text-slate-600">Cross-checks quantities, unit rates, and tax sub-totals directly against SAP goods receipts in real time.</p>
+                    <h4 className="font-sora text-sm font-medium text-slate-900">Direct Purchase Order Reconciliation</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">Cross-checks quantities, unit rates, and tax sub-totals directly against SAP goods receipts in real time.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[#0070C0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Air-Gapped Data Privacy &amp; Masking</h4>
-                    <p className="text-xs sm:text-sm text-slate-600">Deterministic entity recognition masks personal identities and bank tokens prior to cloud transmission.</p>
+                    <h4 className="font-sora text-sm font-medium text-slate-900">Air-Gapped Data Privacy &amp; Masking</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">Deterministic entity recognition masks personal identities and bank tokens prior to cloud transmission.</p>
                   </div>
                 </div>
               </div>
@@ -397,7 +397,7 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
                     <div className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
                     <span className="text-xs font-semibold text-slate-200">Autonomous Execution Engine</span>
                   </div>
-                  <p className="text-sm font-bold text-white mt-1">Straight-Through Processing</p>
+                  <p className="font-sora text-sm font-medium text-white mt-1">Straight-Through Processing</p>
                 </div>
 
                 {/* Floating Glassmorphic Badge 2 */}
@@ -406,7 +406,7 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
                     <Sparkles className="h-3.5 w-3.5 text-cyan-300" />
                     <span className="text-xs font-semibold">Zero-Template Config</span>
                   </div>
-                  <p className="text-sm font-bold mt-1">Spatial Vision-Language LLM</p>
+                  <p className="font-sora text-sm font-medium mt-1">Spatial Vision-Language LLM</p>
                 </div>
               </div>
             </div>
@@ -429,7 +429,7 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               A Seamless Three-Step Cognitive Lifecycle
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               From multi-channel inbound arrival to pristine ERP journal posting, experience how documents flow autonomously through our cognitive architecture.
             </p>
           </div>
@@ -450,10 +450,10 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 mb-2">
                     {ws.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                     {ws.desc}
                   </p>
                 </div>
@@ -477,7 +477,7 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Trained for Mission-Critical Enterprise Workloads
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Pre-trained domain models optimized for enterprise finance, global shipping, corporate treasury, and international trade compliance.
             </p>
           </div>
@@ -496,12 +496,12 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-2">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 flex items-center gap-2.5 mb-2">
                     <doc.icon className="h-5 w-5 text-[#0070C0] shrink-0" />
                     <span>{doc.title}</span>
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mb-6 font-normal">
                     {doc.desc}
                   </p>
                 </div>
@@ -530,7 +530,7 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Topological Architecture &amp; Comparative Analysis
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Evaluate our zero-template cognitive IDP fabric against traditional coordinate OCR, and examine our full-stack enterprise integration architecture.
             </p>
 
@@ -601,20 +601,20 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="text-sm font-bold text-slate-900 mb-2">Ingestion &amp; Normalization Layer</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Ingestion &amp; Normalization Layer</h4>
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     Decoupled message queues ingesting PDFs, TIFFs, and mobile captures. Generative filters perform orientation rotation, deskewing, and super-resolution de-noising.
                   </p>
                 </div>
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="text-sm font-bold text-slate-900 mb-2">Spatial Layout &amp; Graph Extraction</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Spatial Layout &amp; Graph Extraction</h4>
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     Spatial foundation models and graph neural networks parse semantic key-values and tabular structures, generating field-level Bayesian confidence evaluations.
                   </p>
                 </div>
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="text-sm font-bold text-slate-900 mb-2">Active-Learning HITL &amp; ERP Sync</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Active-Learning HITL &amp; ERP Sync</h4>
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     Side-by-side verification cockpits handle exceptions with single-click feedback, while validated payloads post directly into SAP S/4HANA via native BAPIs.
                   </p>
                 </div>
@@ -638,7 +638,7 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Executive FAQs: Cognitive Document Intelligence
             </h2>
-            <p className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora mt-4 text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Clear answers to the most common architectural, accuracy, privacy, and ERP integration questions.
             </p>
           </div>
@@ -688,7 +688,7 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
             Ready to Eliminate Template Brittleness and Automate Enterprise Document Processing?
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sora mt-4 text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Partner with KNOOVIQ to benchmark your documents, audit straight-through potential, and deploy self-learning multimodal vision transformers integrated with SAP S/4HANA.
           </p>
 

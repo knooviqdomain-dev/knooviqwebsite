@@ -564,7 +564,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] cloud-sora-scope selection:text-white font-sans antialiased overflow-x-hidden">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Panoramic Background - Aligned with AI Agents)
@@ -604,7 +604,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
               </h1>
 
               {/* Sub-headline */}
-              <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Ingest multi-system ERP transaction logs to reconstruct living digital process twins, isolate hidden bottlenecks, and measure conformance in real time.
               </p>
             </motion.div>
@@ -644,11 +644,11 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                 Illuminating Dark Processes & <span className="text-[#0070C0]">Operational Inefficiencies</span>
               </h2>
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Enterprises don&rsquo;t fail from flawed strategies; they hemorrhage margin through hidden process deviations, manual rework loops, and untracked handoff friction.&rdquo;
                 </p>
               </div>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq transforms transactional ERP change logs (`CDHDR`, `VBAK`, `EKKO`, `BKPF`) into living digital process twins. We replace guesswork with empirical fact, isolating exact points where cycle time stalls and compliance drifts.
               </p>
 
@@ -658,8 +658,8 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                     <Database className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Zero-Impact Transaction Ingestion</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Zero-Impact Transaction Ingestion</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Continuous Change Data Capture (CDC) from SAP S/4HANA without imposing any performance overhead on the transactional core.
                     </p>
                   </div>
@@ -670,8 +670,8 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Deterministic Conformance Scoring</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Deterministic Conformance Scoring</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Automated conformance checking algorithms contrast live event sequences against standard reference models to flag non-compliant deviations.
                     </p>
                   </div>
@@ -682,8 +682,8 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                     <Zap className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Algorithmic Root-Cause Attribution</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Algorithmic Root-Cause Attribution</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Machine learning classifiers correlate throughput delays with specific plant locations, material groups, or vendor entities to drive targeted remediation.
                     </p>
                   </div>
@@ -710,7 +710,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                 </div>
                 <div className="absolute bottom-3 left-3 right-3 text-white space-y-1">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-medium line-clamp-2 leading-relaxed">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-medium line-clamp-2 leading-[1.6]">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -759,7 +759,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Hidden Frictions That Hemorrhage Corporate Margin
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Behind clean process flowcharts lie unapproved variants, maverick purchases, and manual rework loops that inflate cost.
             </p>
           </div>
@@ -781,10 +781,10 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-950 leading-snug group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-950 leading-snug group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -833,7 +833,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
               Ecosystem for Continuous Process Discovery
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto font-normal">
+            <p className="font-sora text-slate-400 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized radial platform uniting raw transaction log ingestion, digital twin synthesis, conformance checking, and automated closed-loop remediation.
             </p>
 
@@ -896,8 +896,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                             {item.badge}
                           </span>
                         </div>
-                        <h4 
-                          className="text-xs sm:text-[13px] font-bold tracking-tight text-white truncate transition-colors"
+                        <h4 className="font-sora text-xs sm:text-[13px] font-medium tracking-tight text-white truncate transition-colors"
                           style={{ color: isHovered ? item.color : undefined }}
                         >
                           {item.title}
@@ -1009,7 +1008,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                           <div className="text-xs font-black text-white leading-tight">
                             {wheelSegments[hoveredWheelIndex].title}
                           </div>
-                          <p className="text-[10px] text-slate-300 line-clamp-2 leading-tight">
+                          <p className="font-sora text-[10px] text-slate-300 line-clamp-2 leading-tight font-normal">
                             {wheelSegments[hoveredWheelIndex].desc}
                           </p>
                         </div>
@@ -1091,8 +1090,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                             {item.badge}
                           </span>
                         </div>
-                        <h4 
-                          className="text-xs sm:text-[13px] font-bold tracking-tight text-white truncate transition-colors"
+                        <h4 className="font-sora text-xs sm:text-[13px] font-medium tracking-tight text-white truncate transition-colors"
                           style={{ color: isHovered ? item.color : undefined }}
                         >
                           {item.title}
@@ -1129,8 +1127,8 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                     </span>
                     <ItemIcon className="w-4 h-4" style={{ color: item.color }} />
                   </div>
-                  <h4 className="text-sm font-bold text-white">{item.title}</h4>
-                  <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
+                  <h4 className="font-sora text-sm font-medium text-white">{item.title}</h4>
+                  <p className="font-sora text-xs text-slate-400 leading-[1.6] font-normal">{item.desc}</p>
                   <div className="text-[10px] font-mono text-cyan-300 pt-1 border-t border-white/5">
                     {item.metric}
                   </div>
@@ -1157,7 +1155,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Enterprise Process Intelligence <span className="text-[#0070C0]">Architecture</span>
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal max-w-2xl mx-auto">
               A non-invasive, four-tier event fabric engineered for seamless interoperability with SAP S/4HANA, Salesforce, and multi-cloud data lakes without production overhead.
             </p>
           </div>
@@ -1183,7 +1181,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                 <span className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider block">
                   Living Enterprise Digital Process Twin &bull; Dynamic Petri-Net Construction
                 </span>
-                <p className="text-xs text-slate-300 max-w-2xl font-normal">
+                <p className="font-sora text-xs text-slate-300 max-w-2xl font-normal leading-[1.6]">
                   Continuous event graph reconstruction across SAP S/4HANA transactional tables (CDHDR, CDPOS, BKPF, VBAK) with zero transactional latency.
                 </p>
               </div>
@@ -1258,7 +1256,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                       <div className="text-[10px] font-mono font-bold uppercase tracking-wider" style={{ color: layer.color }}>
                         {layer.statusBadge}
                       </div>
-                      <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                      <h3 className="font-sora text-sm font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                         {layer.title}
                       </h3>
                       <div className="text-[11px] font-medium text-slate-500">
@@ -1266,7 +1264,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                       </div>
                     </div>
 
-                    <p className="text-xs text-slate-600 leading-relaxed font-normal line-clamp-2">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal line-clamp-2">
                       {layer.desc}
                     </p>
                   </div>
@@ -1310,7 +1308,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Pre-Built Process Mining Accelerators
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Domain-specific process discovery models pre-mapped to SAP S/4HANA transactional tables and standard industry value streams.
             </p>
           </div>
@@ -1361,12 +1359,12 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                         <div className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider mb-1">
                           {sol.categoryLabel}
                         </div>
-                        <h3 className="text-lg sm:text-xl font-black text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
                       </div>
 
-                      <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                      <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                         {sol.description}
                       </p>
                     </div>
@@ -1405,7 +1403,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Enterprise Value Delivered at Scale
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Architectural and governance outcomes realized across global manufacturing, logistics, and corporate shared services.
             </p>
           </div>
@@ -1420,7 +1418,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                   <div className="text-lg font-black text-slate-950">Accelerated Cycle Velocity</div>
                   <div className="text-xs font-semibold text-[#0070C0]">Continuous Lead-Time Compression</div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Eliminates procedural wait states, queues, and cross-functional friction across Order-to-Cash and Procure-to-Pay fulfillment pipelines.
                 </p>
               </div>
@@ -1438,7 +1436,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                   <div className="text-lg font-black text-slate-950">Deterministic Governance</div>
                   <div className="text-xs font-semibold text-emerald-600">Policy Conformance & SOX Assurance</div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Replaces unapproved spreadsheet bypasses and shadow workflows with fully audited, compliant standard execution paths.
                 </p>
               </div>
@@ -1456,7 +1454,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                   <div className="text-lg font-black text-slate-950">Working Capital Protection</div>
                   <div className="text-xs font-semibold text-cyan-600">Frictionless Invoicing & Cash Capture</div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Ensures timely capture of supplier payment terms discounts, prevents overpayments, and halts revenue leakage across invoicing.
                 </p>
               </div>
@@ -1474,7 +1472,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                   <div className="text-lg font-black text-slate-950">Targeted Automation Focus</div>
                   <div className="text-xs font-semibold text-indigo-600">Evidence-Based Transformation</div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Pinpoints high-yield workflow candidates for robotic and AI automation based on empirical execution evidence rather than assumptions.
                 </p>
               </div>
@@ -1500,7 +1498,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
             <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
               Interactive Value-Stream Diagnostic Telemetry
             </h2>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto font-normal">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-xl mx-auto font-normal">
               Simulating live enterprise event log ingestion across core transaction value streams to identify deviations and root causes.
             </p>
           </div>
@@ -1534,7 +1532,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                 </div>
 
                 <div className="pt-0.5 flex flex-wrap items-center gap-2">
-                  <h3 className="text-base sm:text-lg font-bold text-white">
+                  <h3 className="font-sora text-base sm:text-lg font-medium text-white">
                     {diagnosticProcesses[activeProcessTab].title}
                   </h3>
                   <span className="text-[11px] sm:text-xs text-slate-400">
@@ -1593,10 +1591,10 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
                         {f.source}
                       </span>
                     </div>
-                    <h4 className="text-sm font-bold text-white leading-tight">
+                    <h4 className="font-sora text-sm font-medium text-white leading-tight">
                       {f.title}
                     </h4>
-                    <p className="text-xs text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                       {f.desc}
                     </p>
                   </div>
@@ -1626,7 +1624,7 @@ export const ProcessDiscoveryPage: React.FC<ProcessDiscoveryPageProps> = ({
             Ready to Uncover Dark Processes and Maximize ERP Yield?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Partner with KNOOVIQ&rsquo;s Process Intelligence practice to perform a comprehensive event log diagnostic of your high-impact business value streams.
           </p>
 

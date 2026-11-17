@@ -534,7 +534,7 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-[#0070C0] selection:text-white antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans cloud-sora-scope selection:bg-[#0070C0] selection:text-white antialiased overflow-x-hidden">
       {/* =========================================================================
           SECTION 1: HERO SECTION (AI Agents Style Full Bleed Panoramic Background)
           IMAGE: /images/workflow-automation/enterprise_intelligent_workflow_automation_hero.png
@@ -579,7 +579,7 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
               </h1>
 
               {/* Subtitle with High Legibility */}
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal pt-1 drop-shadow-md">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal pt-1 drop-shadow-md">
                 End-to-end hyperautomation, human-in-the-loop task routing, cross-system ERP process choreography, and autonomous decision agents unifying fragmented enterprise workflows.
               </p>
             </motion.div>
@@ -630,12 +630,12 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-5 py-3.5 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-2xl">
-                <p className="text-base sm:text-lg font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-base sm:text-lg font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Point automation tools create fragile task silos; true enterprise velocity requires intelligent workflow orchestration that choreographs transactions across ERPs, legacy systems, and human approvals with auditable compliance and zero manual handoff friction.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers end-to-end hyperautomation ecosystems that bridge core operational systems with cognitive AI agents. We deploy modern workflow engines, API-first RPA bots, multimodal document processors, and clean core SAP BTP extensions to liberate enterprise talent from routine swivel-chair administration.
               </p>
 
@@ -646,8 +646,8 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
                     <Workflow className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Unified Process Orchestration</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Unified Process Orchestration</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Decoupled workflow state engines managing long-running distributed sagas across multi-cloud enterprise ERPs.
                     </p>
                   </div>
@@ -658,8 +658,8 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
                     <BrainCircuit className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Context-Aware Cognitive Routing</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Context-Aware Cognitive Routing</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       AI-assisted task triage and anomaly detection routing complex edge cases to the right human specialists with pre-filled context.
                     </p>
                   </div>
@@ -670,8 +670,8 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Closed-Loop Audit &amp; Compliance</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Closed-Loop Audit &amp; Compliance</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Continuous telemetry, cryptographic transaction tracking, and automated SOX regulatory conformance evidence collection.
                     </p>
                   </div>
@@ -699,7 +699,7 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
 
                 <div className="absolute bottom-4 left-4 right-4 text-white space-y-1.5 p-3 rounded-xl bg-slate-900/85 backdrop-blur-md border border-slate-700/80 z-10">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-normal leading-relaxed line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -751,7 +751,7 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Critical Impediments in Fragmented Manual Workflows
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Why brittle task scripts, manual copy-pasting, and disconnected approval queues restrict enterprise velocity and erode margins.
             </p>
           </div>
@@ -773,10 +773,10 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
                         <ChallengeIcon className="w-5 h-5" />
                       </div>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -805,7 +805,7 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
               The KNOOVIQ Hyperautomation Fabric
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Explore the eight mutually reinforcing layers of our enterprise workflow orchestration platform. Hover over any segment to inspect its runtime mechanics.
             </p>
           </div>
@@ -833,7 +833,7 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -948,7 +948,7 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -975,7 +975,7 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Modern Workflow Orchestration vs. Legacy Silos
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Examine the concrete architectural difference between fragile point scripts and KNOOVIQ distributed enterprise workflow hyperautomation.
             </p>
           </div>
@@ -1090,7 +1090,7 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
                   <div className="text-sm sm:text-base font-mono font-bold text-cyan-300">
                     Unified Event Induction, Distributed State Machine &amp; Clean Core ERP Connectors
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 font-normal leading-[1.6]">
                     Decoupled orchestration engine coordinating API transactions across SAP S/4HANA, Salesforce, and cognitive AI extractors with automated two-phase compensations and sub-second SLA monitoring.
                   </p>
                 </div>
@@ -1103,8 +1103,8 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
                     <Zap className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-slate-900">Event Ingestion Gateway</h4>
-                    <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                    <h4 className="font-sora text-base font-medium text-slate-900">Event Ingestion Gateway</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] mt-1 leading-[1.6] font-normal">
                       Sub-second event capture listening to ERP commits, customer portal webhooks, and IoT triggers.
                     </p>
                   </div>
@@ -1115,8 +1115,8 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
                     <Workflow className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-slate-900">Distributed State Engine</h4>
-                    <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                    <h4 className="font-sora text-base font-medium text-slate-900">Distributed State Engine</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] mt-1 leading-[1.6] font-normal">
                       Resilient saga coordinator executing atomic multi-system updates with automatic rollback compensation.
                     </p>
                   </div>
@@ -1127,8 +1127,8 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-slate-900">Clean Core ERP Connectors</h4>
-                    <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                    <h4 className="font-sora text-base font-medium text-slate-900">Clean Core ERP Connectors</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] mt-1 leading-[1.6] font-normal">
                       Standard OData and RFC integrations keeping the operational SAP S/4HANA core 100% upgrade-ready.
                     </p>
                   </div>
@@ -1186,10 +1186,10 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
                     <span className="text-xs font-mono font-bold tracking-widest text-[#0070C0] uppercase px-3 py-1 rounded-lg bg-sky-50 border border-sky-200">
                       {protocolDetails[activeProtocolTab].badge}
                     </span>
-                    <h3 className="text-2xl font-black text-slate-950 mt-3 mb-2">
+                    <h3 className="font-sora text-2xl font-medium text-slate-950 mt-3 mb-2">
                       {protocolDetails[activeProtocolTab].title}
                     </h3>
-                    <p className="text-base text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {protocolDetails[activeProtocolTab].desc}
                     </p>
                   </div>
@@ -1251,7 +1251,7 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               4-Stage Phased Implementation Roadmap
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               A structured, risk-mitigated journey from fragmented manual tasks to enterprise-wide intelligent hyperautomation.
             </p>
           </div>
@@ -1274,11 +1274,11 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
                       </div>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {phase.title}
                     </h3>
 
-                    <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {phase.focus}
                     </p>
                   </div>
@@ -1312,7 +1312,7 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Frequently Asked Automation Questions
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Addressing key strategic, operational, and architectural considerations for enterprise technology leaders.
             </p>
           </div>
@@ -1378,7 +1378,7 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
             Ready to Eliminate Swivel-Chair Overhead and Automate Workflows?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Collaborate with senior automation architects to audit manual process bottlenecks, deploy cross-system distributed sagas, and unlock 70%+ cycle time compressions.
           </p>
 

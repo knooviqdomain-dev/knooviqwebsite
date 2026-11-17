@@ -540,7 +540,7 @@ export const RpaPage: React.FC<RpaPageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-[#0070C0] selection:text-white antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans cloud-sora-scope selection:bg-[#0070C0] selection:text-white antialiased overflow-x-hidden">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (AI Agents Style Full Bleed Panoramic Background)
@@ -586,7 +586,7 @@ export const RpaPage: React.FC<RpaPageProps> = ({
               </h1>
 
               {/* Subtitle with High Legibility */}
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal pt-1 drop-shadow-md">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal pt-1 drop-shadow-md">
                 Resilient unattended software bots, self-healing UI selectors, cognitive computer vision, and centralized multi-tenant orchestrators automating high-volume repetitive enterprise operations.
               </p>
             </motion.div>
@@ -637,12 +637,12 @@ export const RpaPage: React.FC<RpaPageProps> = ({
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-5 py-3.5 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-2xl">
-                <p className="text-base sm:text-lg font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-base sm:text-lg font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;First-generation RPA bots broke every time an application button moved three pixels. Enterprise-grade modern RPA demands cognitive computer vision, self-healing DOM selectors, and centralized fleet governance that keeps critical transactional robots operating uninterrupted 24/7/365.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers cognitive robotic process automation fleets that liberate human professionals from repetitive swivel-chair administration. We deploy unattended cloud worker swarms, attended desktop copilots, and optical vision models that interface seamlessly with SAP S/4HANA, banking portals, and legacy virtualized terminal environments.
               </p>
 
@@ -653,8 +653,8 @@ export const RpaPage: React.FC<RpaPageProps> = ({
                     <Wrench className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Resilient Self-Healing Selectors</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Resilient Self-Healing Selectors</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Multi-anchor DOM and computer vision fallbacks that automatically adapt when underlying web or desktop application interfaces change.
                     </p>
                   </div>
@@ -665,8 +665,8 @@ export const RpaPage: React.FC<RpaPageProps> = ({
                     <Gauge className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Centralized Fleet Orchestration</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Centralized Fleet Orchestration</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Dynamic workload load-balancing, auto-scaling virtual machine pools, and sub-second job dispatch across global enterprise tenants.
                     </p>
                   </div>
@@ -677,8 +677,8 @@ export const RpaPage: React.FC<RpaPageProps> = ({
                     <Key className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Zero-Trust Credential Vaulting</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Zero-Trust Credential Vaulting</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Automated hardware-backed password vaulting ensuring software robots authenticate without human credential exposure or plain-text secrets.
                     </p>
                   </div>
@@ -706,7 +706,7 @@ export const RpaPage: React.FC<RpaPageProps> = ({
 
                 <div className="absolute bottom-4 left-4 right-4 text-white space-y-1.5 p-3 rounded-xl bg-slate-900/85 backdrop-blur-md border border-slate-700/80 z-10">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-normal leading-relaxed line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -758,7 +758,7 @@ export const RpaPage: React.FC<RpaPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Critical Impediments in First-Generation RPA
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Why brittle desktop macros, unmanaged robot sprawl, and hardcoded credentials create mounting maintenance overhead and security vulnerabilities.
             </p>
           </div>
@@ -780,10 +780,10 @@ export const RpaPage: React.FC<RpaPageProps> = ({
                         <ChallengeIcon className="w-5 h-5" />
                       </div>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -812,7 +812,7 @@ export const RpaPage: React.FC<RpaPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
               The KNOOVIQ Cognitive RPA Framework
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Explore the eight mutually reinforcing layers of our production-grade bot execution platform. Hover over any segment to inspect its runtime mechanics.
             </p>
           </div>
@@ -840,7 +840,7 @@ export const RpaPage: React.FC<RpaPageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -955,7 +955,7 @@ export const RpaPage: React.FC<RpaPageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -982,7 +982,7 @@ export const RpaPage: React.FC<RpaPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Modern Cognitive RPA vs. Legacy Desktop Macros
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Examine the concrete architectural difference between fragile desktop scripts and KNOOVIQ enterprise-governed cognitive bot swarms.
             </p>
           </div>
@@ -1097,7 +1097,7 @@ export const RpaPage: React.FC<RpaPageProps> = ({
                   <div className="text-sm sm:text-base font-mono font-bold text-cyan-300">
                     Central Fleet Controller, Virtual Runner Swarm &amp; CyberArk Credential Vault
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 font-normal leading-[1.6]">
                     Zero-trust robotic architecture deploying headless virtual runners, hardware HSM credential injection, self-healing computer vision selectors, and sub-second queue balancing across enterprise tenants.
                   </p>
                 </div>
@@ -1110,8 +1110,8 @@ export const RpaPage: React.FC<RpaPageProps> = ({
                     <Gauge className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-slate-900">Fleet Control Tower</h4>
-                    <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                    <h4 className="font-sora text-base font-medium text-slate-900">Fleet Control Tower</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] mt-1 leading-[1.6] font-normal">
                       Real-time heartbeat monitoring, automated exception failover, and dynamic workload load-balancing.
                     </p>
                   </div>
@@ -1122,8 +1122,8 @@ export const RpaPage: React.FC<RpaPageProps> = ({
                     <Wrench className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-slate-900">Self-Healing Selectors</h4>
-                    <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                    <h4 className="font-sora text-base font-medium text-slate-900">Self-Healing Selectors</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] mt-1 leading-[1.6] font-normal">
                       Multi-anchor fuzzy DOM algorithms adapting dynamically when SaaS or desktop screens receive layout changes.
                     </p>
                   </div>
@@ -1134,8 +1134,8 @@ export const RpaPage: React.FC<RpaPageProps> = ({
                     <Key className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-slate-900">CyberArk Vault Integration</h4>
-                    <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                    <h4 className="font-sora text-base font-medium text-slate-900">CyberArk Vault Integration</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] mt-1 leading-[1.6] font-normal">
                       Dynamic, ephemeral single-use credential injection eliminating hardcoded passwords and plain-text secrets.
                     </p>
                   </div>
@@ -1193,10 +1193,10 @@ export const RpaPage: React.FC<RpaPageProps> = ({
                     <span className="text-xs font-mono font-bold tracking-widest text-[#0070C0] uppercase px-3 py-1 rounded-lg bg-sky-50 border border-sky-200">
                       {protocolDetails[activeProtocolTab].badge}
                     </span>
-                    <h3 className="text-2xl font-black text-slate-950 mt-3 mb-2">
+                    <h3 className="font-sora text-2xl font-medium text-slate-950 mt-3 mb-2">
                       {protocolDetails[activeProtocolTab].title}
                     </h3>
-                    <p className="text-base text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {protocolDetails[activeProtocolTab].desc}
                     </p>
                   </div>
@@ -1258,7 +1258,7 @@ export const RpaPage: React.FC<RpaPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               4-Stage Phased Implementation Roadmap
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               A structured, risk-mitigated journey from fragile desktop scripts to enterprise-wide cognitive bot fleet orchestration.
             </p>
           </div>
@@ -1281,11 +1281,11 @@ export const RpaPage: React.FC<RpaPageProps> = ({
                       </div>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {phase.title}
                     </h3>
 
-                    <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {phase.focus}
                     </p>
                   </div>
@@ -1319,7 +1319,7 @@ export const RpaPage: React.FC<RpaPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Frequently Asked RPA Fleet Questions
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Addressing key strategic, operational, and architectural considerations for enterprise technology leaders.
             </p>
           </div>
@@ -1385,7 +1385,7 @@ export const RpaPage: React.FC<RpaPageProps> = ({
             Ready to Modernize Your Enterprise RPA Fleet?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Collaborate with senior automation architects to eliminate fragile desktop scripts, implement self-healing computer vision, and deploy hardware-backed credential vaulting.
           </p>
 
