@@ -146,10 +146,10 @@ export const HomeIndustriesSection: React.FC<HomeIndustriesSectionProps> = () =>
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.06 }}
-                className="h-[400px] rounded-xl bg-white border-2 border-slate-300 shadow-xs hover:border-[#0070C0] hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col group"
+                className="min-h-[410px] h-full rounded-xl bg-white border-2 border-slate-300 shadow-xs hover:border-[#0070C0] hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-col group"
               >
-                {/* 1. TOP IMAGE BANNER - 50% Pure Photo */}
-                <div className="relative h-1/2 w-full overflow-hidden bg-slate-100 shrink-0">
+                {/* 1. TOP IMAGE BANNER */}
+                <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-slate-100 shrink-0">
                   <img
                     src={sol.image}
                     alt={sol.title}
@@ -164,8 +164,8 @@ export const HomeIndustriesSection: React.FC<HomeIndustriesSectionProps> = () =>
                   </div>
                 </div>
 
-                {/* 2. CARD CONTENT BODY - 50% Height */}
-                <div className="h-1/2 p-3.5 sm:p-4 flex flex-col justify-between space-y-2.5 overflow-hidden">
+                {/* 2. CARD CONTENT BODY */}
+                <div className="flex-1 p-3.5 sm:p-4 flex flex-col justify-between space-y-2.5">
 
                   <div className="space-y-1.5">
                     {/* Category Label & Icon Indicator */}
