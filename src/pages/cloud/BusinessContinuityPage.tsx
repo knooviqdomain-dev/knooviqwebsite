@@ -246,13 +246,13 @@ export const BusinessContinuityPage: React.FC<ChildPageProps> = ({ onOpenContact
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12] drop-shadow-lg">
                 Keep Critical Business Operations Moving
               </h1>
-              <p className="text-lg sm:text-xl font-bold text-cyan-300 tracking-tight drop-shadow-md">
+              <p className="font-sora text-lg sm:text-xl font-medium text-cyan-300 tracking-tight drop-shadow-md">
                 Anticipate Disruption. Sustain Operations. Safeguard Enterprise Value.
               </p>
             </div>
 
             {/* Description */}
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl drop-shadow">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl drop-shadow">
               Build resilience into your business with continuity strategies that help essential services remain available during unexpected disruptions. Knooviq helps organizations prepare for operational challenges, coordinate response activities, and develop practical plans for maintaining critical business functions.
             </p>
 
@@ -315,11 +315,11 @@ export const BusinessContinuityPage: React.FC<ChildPageProps> = ({ onOpenContact
                 Business Impact Analysis
               </h2>
 
-              <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Understand which business functions must remain available and how disruptions could affect operations. Knooviq helps identify critical processes, dependencies, essential resources, and operational priorities so organizations can make informed continuity decisions.
               </p>
 
-              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] dark:text-slate-400 leading-[1.6] font-normal">
                 Through structured interviews, data gathering, and dependency modeling, we assess both financial and non-financial impacts over time. This enables business units to establish defensible Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO) aligned with regulatory requirements, contractual commitments, and operational tolerances.
               </p>
 
@@ -410,11 +410,11 @@ export const BusinessContinuityPage: React.FC<ChildPageProps> = ({ onOpenContact
                 Continuity Strategy &amp; Planning
               </h2>
 
-              <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Develop practical continuity plans that define how essential operations will continue when normal working conditions are disrupted. Establish clear responsibilities, alternate arrangements, escalation procedures, and communication protocols.
               </p>
 
-              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] dark:text-slate-400 leading-[1.6] font-normal">
                 Instead of producing dense binder documentation that sits unused during an incident, Knooviq designs practical, modular runbooks tailored to specific operational roles. We structure contingency pathways that outline concrete steps for operating without primary applications, facilities, or critical staff.
               </p>
 
@@ -470,11 +470,11 @@ export const BusinessContinuityPage: React.FC<ChildPageProps> = ({ onOpenContact
                 Critical Service Continuity
               </h2>
 
-              <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Identify the relationships between business processes, enterprise applications, cloud platforms, infrastructure, suppliers, and essential services. Develop continuity measures that account for these dependencies and reduce the risk of one disruption affecting multiple operations.
               </p>
 
-              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] dark:text-slate-400 leading-[1.6] font-normal">
                 Modern enterprise operations depend on multi-layered ecosystems spanning on-premises systems, hyperscaler clouds, SaaS products, payment gateways, and logistics providers. Knooviq helps organizations map these complex relationships to identify single points of failure and establish contingency mechanisms that maintain service delivery even when specific components fail.
               </p>
 
@@ -545,7 +545,7 @@ export const BusinessContinuityPage: React.FC<ChildPageProps> = ({ onOpenContact
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                 Response &amp; Crisis Coordination
               </h2>
-              <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Prepare teams to respond in a coordinated manner when unexpected events interrupt normal operations. Define decision-making responsibilities, incident escalation routes, stakeholder communication, and operational response procedures.
               </p>
             </div>
@@ -570,7 +570,7 @@ export const BusinessContinuityPage: React.FC<ChildPageProps> = ({ onOpenContact
 
               {/* Explanatory & Focus Areas Column */}
               <div className="lg:col-span-6 space-y-5">
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   When a disruption strikes, disorganized decision-making and mixed messaging amplify operational stress. Knooviq establishes a disciplined incident command framework that provides operational leaders with clear governance guidelines, escalation triggers, and pre-scripted communications templates for all key audiences.
                 </p>
 
@@ -633,11 +633,11 @@ export const BusinessContinuityPage: React.FC<ChildPageProps> = ({ onOpenContact
                 Continuity Testing &amp; Validation
               </h2>
 
-              <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Validate continuity plans through structured exercises and scenario reviews. Help teams understand their responsibilities, assess whether procedures are practical, identify gaps, and improve readiness before a real disruption occurs.
               </p>
 
-              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] dark:text-slate-400 leading-[1.6] font-normal">
                 A business continuity plan is only as reliable as the testing that supports it. Knooviq conducts realistic tabletop exercises, walkthroughs, and simulation drills that place operational teams into realistic disruption scenarios without creating operational risk. We challenge assumptions, verify contact directories, and evaluate procedural handoffs.
               </p>
 
@@ -728,11 +728,11 @@ export const BusinessContinuityPage: React.FC<ChildPageProps> = ({ onOpenContact
                 Continuous Resilience Improvement
               </h2>
 
-              <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Keep continuity arrangements aligned with changing business processes, technology environments, supplier relationships, and organizational priorities. Review lessons learned, update plans, and refine procedures as business requirements evolve.
               </p>
 
-              <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] dark:text-slate-400 leading-[1.6] font-normal">
                 Business continuity is an ongoing organizational discipline, not a one-time project. As enterprises adopt new SaaS applications, reconfigure cloud environments, onboard new vendors, or acquire businesses, continuity plans must evolve concurrently. Knooviq establishes governance cadences that keep resilience strategies current and actionable.
               </p>
 
@@ -790,7 +790,7 @@ export const BusinessContinuityPage: React.FC<ChildPageProps> = ({ onOpenContact
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               A Practical Approach to Business Continuity
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               A disciplined five-stage methodology that transitions organizations from operational assessment through strategy formulation to ongoing, tested resilience.
             </p>
           </div>
@@ -833,16 +833,16 @@ export const BusinessContinuityPage: React.FC<ChildPageProps> = ({ onOpenContact
 
                       {/* Title & Tagline */}
                       <div className="space-y-1">
-                        <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                        <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                           {stage.title}
                         </h3>
-                        <p className="text-xs font-medium text-[#00A3E0] leading-snug">
+                        <p className="font-sora text-xs font-medium text-[#00A3E0] leading-snug">
                           {stage.tagline}
                         </p>
                       </div>
 
                       {/* Explanation */}
-                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                      <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                         {stage.description}
                       </p>
                     </div>
@@ -876,7 +876,7 @@ export const BusinessContinuityPage: React.FC<ChildPageProps> = ({ onOpenContact
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Business Continuity vs. Disaster Recovery
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               While frequently mentioned in the same breath, Business Continuity and Disaster Recovery address distinct operational domains. An effective enterprise resilience posture coordinates both disciplines.
             </p>
           </div>
@@ -892,11 +892,11 @@ export const BusinessContinuityPage: React.FC<ChildPageProps> = ({ onOpenContact
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white">
                   Business Continuity (BC)
                 </h3>
 
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-medium">
                   Focuses on maintaining or resuming essential business functions, coordinating people and processes, and enabling critical services to continue during disruption.
                 </p>
 
@@ -940,11 +940,11 @@ export const BusinessContinuityPage: React.FC<ChildPageProps> = ({ onOpenContact
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white">
                   Disaster Recovery (DR)
                 </h3>
 
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-medium">
                   Focuses on restoring IT systems, applications, infrastructure, and data following an outage or disruptive event.
                 </p>
 
@@ -1007,7 +1007,7 @@ export const BusinessContinuityPage: React.FC<ChildPageProps> = ({ onOpenContact
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Practical Deliverables for Business Resilience
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Structured, auditable deliverables developed during a Knooviq business continuity engagement to guide leadership and operational teams.
             </p>
           </div>
@@ -1040,16 +1040,16 @@ export const BusinessContinuityPage: React.FC<ChildPageProps> = ({ onOpenContact
 
                     {/* Title & Subtitle */}
                     <div className="space-y-1">
-                      <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                      <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                         {item.title}
                       </h3>
-                      <p className="text-xs text-[#00A3E0] font-medium">
+                      <p className="font-sora text-xs text-[#00A3E0] font-medium leading-[1.6]">
                         {item.subtitle}
                       </p>
                     </div>
 
                     {/* Description */}
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {item.description}
                     </p>
 
@@ -1096,7 +1096,7 @@ export const BusinessContinuityPage: React.FC<ChildPageProps> = ({ onOpenContact
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
                 Build Resilience Before Disruption Happens.
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                 Prepare your organization to respond confidently, maintain essential services, and adapt when unexpected events challenge business operations.
               </p>
             </div>

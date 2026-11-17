@@ -464,7 +464,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white cloud-sora-scope">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Panoramic Full-Screen Cinematic Hero)
@@ -503,13 +503,13 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12] drop-shadow-lg">
                 Cybersecurity
               </h1>
-              <p className="text-lg sm:text-xl font-bold text-cyan-300 tracking-tight drop-shadow-md">
+              <p className="font-sora text-lg sm:text-xl font-medium text-cyan-300 tracking-tight drop-shadow-md">
                 Protect Your Enterprise. Anticipate Threats. Strengthen Trust.
               </p>
             </div>
 
             {/* Description */}
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl drop-shadow">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl drop-shadow">
               Knooviq helps organizations strengthen their cybersecurity posture through security assessments, threat and vulnerability management, security architecture, detection and response planning, and governance practices. We help businesses understand their exposure, prioritize security risks, protect critical technology assets, and build security practices aligned with their operational needs.
             </p>
 
@@ -577,7 +577,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Security That Starts with Understanding Risk.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Modern enterprises depend on connected applications, cloud platforms, endpoints, identities, networks, and data. Protecting these environments requires more than isolated security tools. Organizations need a coordinated approach to understanding exposure, establishing safeguards, detecting suspicious activity, responding to incidents, and continuously improving security practices.
             </p>
           </div>
@@ -590,10 +590,10 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0] block">
                   HOLISTIC PROTECTION ECOSYSTEM
                 </span>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white">
                   Coordinating Safeguards Across the Technology Landscape
                 </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Effective defense connects technical controls to business priorities. Rather than treating security as an afterthought or a friction-heavy gate, we integrate visibility and protective boundaries into everyday architectural workflows.
                 </p>
 
@@ -667,7 +667,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Protecting an Enterprise Requires More Than One Layer of Defense.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Modern cyber threats target multiple entry vectors simultaneously. Organizations must prepare across all operational fronts to prevent isolated vulnerabilities from compromising core business continuity.
             </p>
           </div>
@@ -690,15 +690,15 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     </div>
 
                     <div className="space-y-1.5">
-                      <h3 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-[#00A3E0] dark:group-hover:text-cyan-300 transition-colors">
+                      <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white group-hover:text-[#00A3E0] dark:group-hover:text-cyan-300 transition-colors">
                         {challenge.title}
                       </h3>
-                      <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 leading-snug">
+                      <p className="font-sora text-xs font-medium text-slate-500 dark:text-slate-400 leading-snug">
                         {challenge.tagline}
                       </p>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {challenge.description}
                     </p>
                   </div>
@@ -730,7 +730,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               A Coordinated Approach to Enterprise Protection
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Knooviq helps organizations evaluate their security posture, strengthen technical controls, improve threat visibility, and establish practical security governance across their technology environments.
             </p>
           </div>
@@ -749,15 +749,15 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[0].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[0].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[0].description}
                   </p>
 
@@ -809,15 +809,15 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[1].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[1].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[1].description}
                   </p>
 
@@ -847,15 +847,15 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[2].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[2].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[2].description}
                   </p>
 
@@ -907,15 +907,15 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[3].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[3].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[3].description}
                   </p>
 
@@ -945,15 +945,15 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[4].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[4].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[4].description}
                   </p>
 
@@ -1005,15 +1005,15 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[5].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[5].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[5].description}
                   </p>
 
@@ -1052,7 +1052,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Connect Security Controls Across Your Enterprise.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Effective cybersecurity requires controls that work together across identity, endpoints, applications, networks, cloud platforms, data, and security operations. A defense-in-depth approach combines complementary safeguards so that a weakness in one control does not automatically expose the entire environment.
             </p>
           </div>
@@ -1065,10 +1065,10 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0] block">
                   LAYERED PROTECTION ARCHITECTURE
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-2xl sm:text-3xl font-medium text-slate-900 dark:text-white">
                   Six Complementary Safeguards Spanning the Enterprise
                 </h3>
-                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Overarching security governance and risk management span all six layers, ensuring that identity policies, endpoint controls, network firewalls, and application code adhere to consistent institutional baselines.
                 </p>
               </div>
@@ -1107,13 +1107,13 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     </div>
 
                     <div className="space-y-1">
-                      <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                         {layer.title}
                       </h4>
                       <span className="text-[10px] font-bold uppercase tracking-wider text-[#00A3E0] block">
                         {layer.tag}
                       </span>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal pt-1">
+                      <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal pt-1">
                         {layer.description}
                       </p>
                     </div>
@@ -1154,7 +1154,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Assess. Prioritize. Strengthen. Reassess.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Cybersecurity is an iterative journey rather than a one-time project. Our continuous improvement model structures protection into a repeating cycle centered around Enterprise Security Posture.
             </p>
           </div>
@@ -1166,7 +1166,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0] block">
                   CONTINUOUS POSTURE MATURATION
                 </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white">
                   Five-Stage Security Maturation Cycle
                 </h3>
               </div>
@@ -1200,7 +1200,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                       </div>
 
                       <div className="space-y-1">
-                        <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                        <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                           {stage.title}
                         </h4>
                         <span className="text-[11px] font-semibold text-[#00A3E0] block">
@@ -1208,7 +1208,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                         </span>
                       </div>
 
-                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                      <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                         {stage.description}
                       </p>
                     </div>
@@ -1228,7 +1228,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                 <Activity className="w-4 h-4" />
                 <span>STAGE {improvementStages[activeLifecycleStage].step} OPERATIONAL FOCUS: {improvementStages[activeLifecycleStage].title.toUpperCase()}</span>
               </div>
-              <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-700 dark:text-slate-300 leading-[1.6] font-normal">
                 {improvementStages[activeLifecycleStage].focus}
               </p>
             </div>
@@ -1252,7 +1252,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Protect the Technology Your Business Depends On.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Cybersecurity controls must account for heterogeneous operating environments without introducing performance bottlenecks or administrative fragmentation.
             </p>
           </div>
@@ -1286,10 +1286,10 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-400/20 text-[#00A3E0] flex items-center justify-center">
                       <Icon className="w-4 h-4" />
                     </div>
-                    <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                    <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                       {env.name}
                     </h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {env.desc}
                     </p>
                   </div>
@@ -1299,7 +1299,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
 
           </div>
 
-          <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed italic border-t border-slate-200 dark:border-white/5 pt-4">
+          <p className="font-sora text-xs text-slate-500 dark:text-slate-400 leading-[1.6] italic border-t border-slate-200 dark:border-white/5 pt-4 font-normal">
             Note: Specific safeguards, network boundaries, and deployment configurations depend on each organization's unique software architecture, legacy dependencies, operational constraints, and risk profile.
           </p>
 
@@ -1321,7 +1321,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Make Security Decisions Based on Risk.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Not all security vulnerabilities carry equal consequence. By grounding remediation decisions in empirical business impact and technical exploitability, organizations maximize security return on engineering investment.
             </p>
           </div>
@@ -1331,37 +1331,37 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
 
             {/* Left: 6 Evaluation Criteria */}
             <div className="lg:col-span-6 space-y-4">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Core Risk Evaluation Criteria
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Security findings are triaged through six objective lenses to determine genuine operational exposure before work is scheduled:
               </p>
 
               <div className="space-y-3 pt-2">
                 <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#0B1528] border border-slate-200/80 dark:border-white/5 space-y-1">
                   <span className="text-xs font-bold text-[#00A3E0] block">1. Asset Criticality</span>
-                  <p className="text-xs text-slate-600 dark:text-slate-300">Revenue generation, regulatory compliance exposure, or core business operations.</p>
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">Revenue generation, regulatory compliance exposure, or core business operations.</p>
                 </div>
                 <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#0B1528] border border-slate-200/80 dark:border-white/5 space-y-1">
                   <span className="text-xs font-bold text-[#00A3E0] block">2. Likelihood &amp; Exploitability</span>
-                  <p className="text-xs text-slate-600 dark:text-slate-300">Public exploit maturity, weaponized proof-of-concepts, and active adversary campaigns.</p>
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">Public exploit maturity, weaponized proof-of-concepts, and active adversary campaigns.</p>
                 </div>
                 <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#0B1528] border border-slate-200/80 dark:border-white/5 space-y-1">
                   <span className="text-xs font-bold text-[#00A3E0] block">3. External Exposure</span>
-                  <p className="text-xs text-slate-600 dark:text-slate-300">Direct internet ingress vs. air-gapped or internal micro-segmented backends.</p>
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">Direct internet ingress vs. air-gapped or internal micro-segmented backends.</p>
                 </div>
                 <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#0B1528] border border-slate-200/80 dark:border-white/5 space-y-1">
                   <span className="text-xs font-bold text-[#00A3E0] block">4. Compensating Controls</span>
-                  <p className="text-xs text-slate-600 dark:text-slate-300">WAF rules, PAM credential rotation, or network access controls that mitigate exposure.</p>
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">WAF rules, PAM credential rotation, or network access controls that mitigate exposure.</p>
                 </div>
                 <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#0B1528] border border-slate-200/80 dark:border-white/5 space-y-1">
                   <span className="text-xs font-bold text-[#00A3E0] block">5. Business Dependencies</span>
-                  <p className="text-xs text-slate-600 dark:text-slate-300">Customer SLAs, operational work schedules, and supply-chain contractual mandates.</p>
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">Customer SLAs, operational work schedules, and supply-chain contractual mandates.</p>
                 </div>
                 <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#0B1528] border border-slate-200/80 dark:border-white/5 space-y-1">
                   <span className="text-xs font-bold text-[#00A3E0] block">6. Remediation Feasibility</span>
-                  <p className="text-xs text-slate-600 dark:text-slate-300">Vendor patch availability, configuration complexity, and required testing downtime.</p>
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">Vendor patch availability, configuration complexity, and required testing downtime.</p>
                 </div>
               </div>
             </div>
@@ -1372,7 +1372,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0] block">
                   ILLUSTRATIVE RISK MATRIX
                 </span>
-                <h4 className="text-lg font-bold text-slate-900 dark:text-white">
+                <h4 className="font-sora text-lg font-medium text-slate-900 dark:text-white">
                   Triage &amp; Treatment Posture
                 </h4>
               </div>
@@ -1383,7 +1383,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     <span className="text-xs font-bold text-rose-500 uppercase tracking-wider">Critical Severity (P1)</span>
                     <span className="text-[10px] font-bold text-rose-400">Immediate Remediation</span>
                   </div>
-                  <p className="text-xs text-slate-700 dark:text-slate-300">
+                  <p className="font-sora text-xs text-slate-700 dark:text-slate-300 font-normal leading-[1.6]">
                     Remotely exploitable vulnerability on internet-facing critical business asset with active threat intelligence.
                   </p>
                 </div>
@@ -1393,7 +1393,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     <span className="text-xs font-bold text-amber-500 uppercase tracking-wider">High Severity (P2)</span>
                     <span className="text-[10px] font-bold text-amber-400">Expedited Sprint Action</span>
                   </div>
-                  <p className="text-xs text-slate-700 dark:text-slate-300">
+                  <p className="font-sora text-xs text-slate-700 dark:text-slate-300 font-normal leading-[1.6]">
                     High exploitability on internal core systems or medium exploitability on public endpoints without compensating control.
                   </p>
                 </div>
@@ -1403,7 +1403,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     <span className="text-xs font-bold text-blue-500 uppercase tracking-wider">Medium Severity (P3)</span>
                     <span className="text-[10px] font-bold text-blue-400">Scheduled Patch Cycle</span>
                   </div>
-                  <p className="text-xs text-slate-700 dark:text-slate-300">
+                  <p className="font-sora text-xs text-slate-700 dark:text-slate-300 font-normal leading-[1.6]">
                     Vulnerabilities requiring local authentication or existing compensating controls that prevent direct exploitation.
                   </p>
                 </div>
@@ -1413,13 +1413,13 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Low Severity (P4)</span>
                     <span className="text-[10px] font-bold text-slate-400">Routine Maintenance</span>
                   </div>
-                  <p className="text-xs text-slate-700 dark:text-slate-300">
+                  <p className="font-sora text-xs text-slate-700 dark:text-slate-300 font-normal leading-[1.6]">
                     Minor configuration recommendations or informational findings handled during standard system updates.
                   </p>
                 </div>
               </div>
 
-              <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed italic border-t border-slate-200 dark:border-white/5 pt-4">
+              <p className="font-sora text-xs text-slate-500 dark:text-slate-400 leading-[1.6] italic border-t border-slate-200 dark:border-white/5 pt-4 font-normal">
                 Note: This prioritization framework serves as an illustrative conceptual model. Actual risk classification matrices, remediation timelines, and treatment approvals adapt to each client's operational architecture and governance requirements.
               </p>
             </div>
@@ -1444,7 +1444,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               From Security Findings to Actionable Improvements.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Every cybersecurity engagement concludes with structured, audit-ready deliverables designed to help technical teams execute improvements smoothly and demonstrate compliance progress to leadership.
             </p>
           </div>
@@ -1460,10 +1460,10 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                   <div className="w-7 h-7 rounded-lg bg-cyan-500/10 border border-cyan-400/20 text-[#00A3E0] text-xs font-bold flex items-center justify-center">
                     0{idx + 1}
                   </div>
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                     {item.title}
                   </h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {item.desc}
                   </p>
                 </div>
@@ -1493,7 +1493,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Stronger Controls. Clearer Security Decisions.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Structured cybersecurity replaces fear and uncertainty with disciplined risk evaluation, pragmatic engineering remediation, and defensible compliance records.
             </p>
           </div>
@@ -1512,11 +1512,11 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     <Icon className="w-5 h-5" />
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     {outcome.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {outcome.description}
                   </p>
 
@@ -1547,7 +1547,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Clear Answers on Enterprise Cybersecurity
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Insights into our assessment methods, risk prioritization frameworks, and defense-in-depth principles.
             </p>
           </div>
@@ -1612,7 +1612,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
                 Strengthen Your Security Posture with Confidence.
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                 Understand your security risks, improve protection across your technology environment, and develop a practical cybersecurity roadmap aligned with your business needs.
               </p>
             </div>

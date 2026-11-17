@@ -461,7 +461,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white cloud-sora-scope">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Immersive Canvas with 16:9 Uncropped HD Visual)
@@ -504,13 +504,13 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12]">
                 Problem Management
               </h1>
-              <p className="text-lg sm:text-xl font-bold text-cyan-300 tracking-tight">
+              <p className="font-sora text-lg sm:text-xl font-medium text-cyan-300 tracking-tight">
                 Find the Cause. Fix the Pattern. Prevent Recurrence.
               </p>
             </div>
 
             {/* Description */}
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal max-w-2xl">
               Knooviq helps organizations investigate recurring IT issues, identify underlying causes, document known errors, and coordinate corrective actions. Our problem management approach focuses on learning from incidents, understanding technical dependencies, and reducing the recurrence of operational disruptions through structured analysis and evidence-based improvement.
             </p>
 
@@ -571,7 +571,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Move Beyond Symptoms to Understand the Cause.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Repeated incidents can point to an underlying issue in application logic, system configuration, infrastructure dependencies, integrations, or operational procedures. Problem management examines these patterns to help teams understand why issues occur and determine appropriate actions to prevent or reduce recurrence.
             </p>
           </div>
@@ -583,7 +583,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0] block">
                   SYSTEMATIC INVESTIGATION PROGRESSION
                 </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white">
                   From Disruption Evidence to Long-Term Prevention
                 </h3>
               </div>
@@ -609,7 +609,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                       )}
                     </div>
 
-                    <h4 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-[#00A3E0] dark:group-hover:text-cyan-300 transition-colors">
+                    <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white group-hover:text-[#00A3E0] dark:group-hover:text-cyan-300 transition-colors">
                       {item.title}
                     </h4>
 
@@ -617,7 +617,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                       {item.tagline}
                     </span>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -650,7 +650,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Recurring Incidents Often Have Deeper Causes.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               When organizations treat every incident in isolation, underlying architectural flaws remain undetected, accumulating technical debt and operational risk.
             </p>
           </div>
@@ -673,15 +673,15 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                     </div>
 
                     <div className="space-y-1.5">
-                      <h3 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-[#00A3E0] dark:group-hover:text-cyan-300 transition-colors">
+                      <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white group-hover:text-[#00A3E0] dark:group-hover:text-cyan-300 transition-colors">
                         {challenge.title}
                       </h3>
-                      <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 leading-snug">
+                      <p className="font-sora text-xs font-medium text-slate-500 dark:text-slate-400 leading-snug">
                         {challenge.tagline}
                       </p>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {challenge.description}
                     </p>
                   </div>
@@ -713,7 +713,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               A Structured Approach to Root-Cause Resolution
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Knooviq helps organizations turn incident history and technical evidence into actionable findings, documented knowledge, and coordinated corrective actions.
             </p>
           </div>
@@ -732,15 +732,15 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[0].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[0].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[0].description}
                   </p>
 
@@ -804,15 +804,15 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[1].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[1].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[1].description}
                   </p>
 
@@ -842,15 +842,15 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[2].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[2].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[2].description}
                   </p>
 
@@ -914,15 +914,15 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[3].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[3].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[3].description}
                   </p>
 
@@ -952,15 +952,15 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[4].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[4].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[4].description}
                   </p>
 
@@ -1016,7 +1016,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Follow the Evidence. Validate the Cause.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               A distinctive analytical investigation workflow grounds problem resolution in empirical evidence, distinguishing verified root causes from unproven hypotheses.
             </p>
           </div>
@@ -1029,7 +1029,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0] block">
                   EVIDENCE-TO-CAUSE PROGRESSION
                 </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white">
                   Five-Stage Investigation Framework
                 </h3>
               </div>
@@ -1066,7 +1066,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                       </div>
 
                       <div className="space-y-1">
-                        <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                        <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                           {stage.title}
                         </h4>
                         <span className="text-[11px] font-semibold text-[#00A3E0] block">
@@ -1074,7 +1074,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                         </span>
                       </div>
 
-                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                      <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                         {stage.description}
                       </p>
                     </div>
@@ -1095,7 +1095,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                   <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0]">
                     STAGE {analysisFrameworkStages[activeApproachStage].step} ARTIFACTS &bull; {analysisFrameworkStages[activeApproachStage].tagline}
                   </span>
-                  <h4 className="text-lg font-bold text-slate-900 dark:text-white">
+                  <h4 className="font-sora text-lg font-medium text-slate-900 dark:text-white">
                     {analysisFrameworkStages[activeApproachStage].title} Deliverables
                   </h4>
                 </div>
@@ -1111,7 +1111,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                       <CheckCircle2 className="w-4 h-4 text-[#00A3E0] shrink-0" />
                       <span>Deliverable 0{dIdx + 1}</span>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {deliv}
                     </p>
                   </div>
@@ -1125,7 +1125,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                   <span className="font-bold text-slate-900 dark:text-white block mb-0.5">
                     Scientific Investigation Principle: Confirmed Causes vs. Hypotheses
                   </span>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Problem investigations must strictly separate confirmed empirical root causes from working hypotheses. A theory is only promoted to a verified root cause after evidence conclusively accounts for all observed symptoms, and corrective tests confirm that neutralizing the condition eliminates recurrence.
                   </p>
                 </div>
@@ -1152,7 +1152,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Preserve Knowledge. Improve Future Diagnosis.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Structured problem records capture comprehensive investigation findings, transforming fleeting operational knowledge into an enduring technical asset.
             </p>
           </div>
@@ -1178,7 +1178,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
               {/* Relationship Flow Card */}
               <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#0B1528] border border-slate-200/80 dark:border-white/10 space-y-3 shadow-xs">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0] block">RELATIONSHIP CHAIN</span>
-                <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                   How Problem Knowledge Connects
                 </h4>
                 <div className="space-y-2 text-xs text-slate-600 dark:text-slate-300">
@@ -1230,10 +1230,10 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                     </div>
 
                     <div className="space-y-1">
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                         {comp.title}
                       </h4>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                      <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                         {comp.description}
                       </p>
                     </div>
@@ -1273,7 +1273,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Connect Investigation with Operational Action.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Problem Management acts as the analytical bridge, turning incident signals and infrastructure evidence into approved change requests and verified service improvements.
             </p>
           </div>
@@ -1294,7 +1294,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                           <Icon className="w-5 h-5" />
                         </div>
                         <div>
-                          <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                          <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                             {collab.title}
                           </h4>
                           <span className="text-[11px] font-semibold text-[#00A3E0]">
@@ -1307,7 +1307,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                       </span>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {collab.description}
                     </p>
 
@@ -1349,7 +1349,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Less Guesswork. Better Technical Decisions.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Structured problem management delivers tangible operational consistency, helping engineering teams reduce disruption recurrence through empirical investigation and disciplined knowledge sharing.
             </p>
           </div>
@@ -1367,11 +1367,11 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
                     <Icon className="w-5 h-5" />
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     {outcome.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {outcome.description}
                   </p>
 
@@ -1411,7 +1411,7 @@ export const ProblemManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
                 Turn Repeated Issues into Lasting Improvements.
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                 Build a disciplined approach to root-cause analysis, technical knowledge, and corrective action with Knooviq.
               </p>
             </div>

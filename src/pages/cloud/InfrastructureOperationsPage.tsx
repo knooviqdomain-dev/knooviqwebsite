@@ -368,7 +368,7 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white cloud-sora-scope">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Immersive Canvas with 16:9 Uncropped HD Visual)
@@ -411,13 +411,13 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12]">
                 Infrastructure Operations
               </h1>
-              <p className="text-lg sm:text-xl font-bold text-cyan-300 tracking-tight">
+              <p className="font-sora text-lg sm:text-xl font-medium text-cyan-300 tracking-tight">
                 Reliable Infrastructure. Consistent Operations. Business Continuity.
               </p>
             </div>
 
             {/* Description */}
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal max-w-2xl">
               Knooviq helps organizations maintain dependable IT infrastructure through structured infrastructure management, resource oversight, operational monitoring, and maintenance practices. From servers and storage to networks and cloud-connected environments, we help teams maintain visibility, address operational risks, and support the technology foundations that enterprise applications depend on.
             </p>
 
@@ -478,7 +478,7 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Strong Infrastructure Starts with Consistent Operations.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Enterprise infrastructure consists of interconnected compute, storage, networking, virtualization, and cloud resources. Maintaining these environments requires clear operational procedures, resource visibility, configuration discipline, and coordinated maintenance.
             </p>
           </div>
@@ -503,15 +503,15 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-[#00A3E0] dark:group-hover:text-cyan-300 transition-colors">
+                      <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white group-hover:text-[#00A3E0] dark:group-hover:text-cyan-300 transition-colors">
                         {challenge.title}
                       </h3>
-                      <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                      <p className="font-sora text-xs font-medium text-slate-500 dark:text-slate-400">
                         {challenge.tagline}
                       </p>
                     </div>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {challenge.description}
                     </p>
                   </div>
@@ -543,7 +543,7 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Managing the Technology Behind Your Business
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Knooviq supports infrastructure operations through structured management practices designed to improve visibility, maintain operational consistency, and support dependable enterprise technology environments.
             </p>
           </div>
@@ -562,15 +562,15 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[0].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[0].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[0].description}
                   </p>
 
@@ -630,15 +630,15 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[1].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[1].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[1].description}
                   </p>
 
@@ -668,15 +668,15 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[2].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[2].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[2].description}
                   </p>
 
@@ -736,15 +736,15 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[3].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[3].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[3].description}
                   </p>
 
@@ -774,15 +774,15 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[4].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[4].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[4].description}
                   </p>
 
@@ -836,7 +836,7 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               From Infrastructure Visibility to Operational Control
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               A structured operational workflow that uncovers infrastructure dependencies, establishes proactive oversight, ensures coordinated maintenance, and drives continuous operational refinement.
             </p>
           </div>
@@ -864,10 +864,10 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
                   </span>
                   <div className={`w-3 h-3 rounded-full ${activeApproachStage === idx ? 'bg-[#00A3E0]' : 'bg-slate-300 dark:bg-slate-700'}`} />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-lg font-medium text-slate-900 dark:text-white">
                   {stage.title}
                 </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 line-clamp-2 leading-relaxed">
+                <p className="font-sora text-xs text-slate-500 dark:text-slate-400 mt-2 line-clamp-2 leading-[1.6] font-normal">
                   {stage.tagline}
                 </p>
               </button>
@@ -881,7 +881,7 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0] block">
                   STAGE {approachStages[activeApproachStage].num} &bull; DETAILED OPERATIONAL ACTIVITIES
                 </span>
-                <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-2xl font-extrabold text-slate-900 dark:text-white">
                   {approachStages[activeApproachStage].title}
                 </h3>
               </div>
@@ -890,12 +890,12 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
               </span>
             </div>
 
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               {approachStages[activeApproachStage].description}
             </p>
 
             <div className="space-y-3 pt-2">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+              <h4 className="font-sora text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 Key Operational Deliverables &amp; Focus Tasks:
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -955,7 +955,7 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Infrastructure Operations Across Your Technology Landscape
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Infrastructure operations must account for the relationships between physical systems, virtualized resources, network connectivity, storage, and cloud platforms. Knooviq helps organizations establish consistent operational practices across their infrastructure landscape.
             </p>
           </div>
@@ -971,7 +971,7 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
             <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-[#070E1E]/90 backdrop-blur-md border border-white/15 flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs text-slate-300">
               <div className="space-y-0.5">
                 <span className="font-bold text-white text-sm">Enterprise Technology Infrastructure Topology</span>
-                <p className="text-slate-300 text-xs">Compute Racks &bull; Core Switching &bull; SAN Storage &bull; Hypervisor Clusters &bull; Cloud Landing Zones</p>
+                <p className="font-sora text-slate-300 text-xs font-normal leading-[1.6]">Compute Racks &bull; Core Switching &bull; SAN Storage &bull; Hypervisor Clusters &bull; Cloud Landing Zones</p>
               </div>
               <span className="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-400/20 text-cyan-300 font-bold shrink-0">
                 Unified Infrastructure Landscape
@@ -994,10 +994,10 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
                 </div>
 
                 <div className="space-y-2">
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     {env.name}
                   </h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {env.description}
                   </p>
                 </div>
@@ -1006,7 +1006,7 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
                   <span className="text-[11px] font-bold text-slate-500 dark:text-slate-400 block">
                     Operational Continuity Focus:
                   </span>
-                  <p className="text-xs text-slate-700 dark:text-slate-200 font-medium">
+                  <p className="font-sora text-xs text-slate-700 dark:text-slate-200 font-medium leading-[1.6]">
                     {env.focus}
                   </p>
                 </div>
@@ -1032,7 +1032,7 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Consistency Through Operational Discipline
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Well-defined operational practices help organizations maintain clarity, reduce configuration drift, and ensure dependable coordination across teams.
             </p>
           </div>
@@ -1052,11 +1052,11 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
                     <Icon className="w-5 h-5" />
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     {tenet.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {tenet.description}
                   </p>
 
@@ -1087,7 +1087,7 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               A Stronger Foundation for Enterprise IT
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Structured infrastructure management delivers dependable operational consistency, enhanced clarity, and resilience across the entire organization.
             </p>
           </div>
@@ -1107,11 +1107,11 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
                     <Icon className="w-5 h-5" />
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     {outcome.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {outcome.description}
                   </p>
 
@@ -1151,7 +1151,7 @@ export const InfrastructureOperationsPage: React.FC<ChildPageProps> = ({ onOpenC
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
                 Build a More Dependable Infrastructure Foundation.
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                 Strengthen infrastructure oversight, improve operational consistency, and establish practical management processes aligned with your enterprise technology environment.
               </p>
             </div>
