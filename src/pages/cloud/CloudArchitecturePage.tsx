@@ -398,6 +398,8 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
             alt="Enterprise Cloud Architecture & Technical Foundation"
             className="w-full h-full object-cover object-center lg:object-[65%_center] filter brightness-105 contrast-105"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#060D1A]/95 via-[#060D1A]/90 to-[#060D1A] pointer-events-none" />
           {/* Directional scrim: smoothly protects text readability on the left while keeping center & right visuals 100% bright */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#060D1A] via-[#060D1A]/85 sm:via-[#060D1A]/70 md:via-[#060D1A]/50 to-transparent w-full lg:w-3/5" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#060D1A] via-transparent to-[#060D1A]/50" />
@@ -406,16 +408,27 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full py-16 sm:py-20 lg:py-24 space-y-8">
           
-          <div className="max-w-2xl lg:max-w-3xl space-y-6">
+          <div className="max-w-2xl lg:max-w-3xl space-y-5 sm:space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00A3E0]/10 border border-[#00A3E0]/30 text-[#00A3E0] text-xs font-mono font-semibold uppercase tracking-wider backdrop-blur-md">
               <Compass className="w-3.5 h-3.5 text-[#00A3E0]" />
               <span>ENTERPRISE SYSTEMS ARCHITECTURE</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight leading-[1.12] text-white drop-shadow-md">
-              Architect the Foundation of{' '}
-              <span className="text-[#00A3E0]">Your Cloud Future</span>
-            </h1>
+            <div className="space-y-2 sm:space-y-3">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight leading-[1.12] text-white drop-shadow-md">
+                Architect the Foundation of{' '}
+                <span className="text-[#00A3E0]">Your Cloud Future</span>
+              </h1>
+            </div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/cloud_architecture_designer_robot.png"
+                alt="Architect the Foundation of Your Cloud Future - Cloud Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
 
             <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 font-normal leading-[1.6] max-w-2xl drop-shadow-sm">
               Design cloud environments around your enterprise applications, infrastructure requirements, security

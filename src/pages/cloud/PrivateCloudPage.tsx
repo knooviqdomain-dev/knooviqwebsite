@@ -447,6 +447,8 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
             className="w-full h-full object-cover object-center md:object-[82%_center] transition-transform duration-1000 ease-out group-hover/hero:scale-102 filter brightness-[0.9] contrast-105"
             loading="eager"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#040B17]/95 via-[#040B17]/90 to-[#040B17] pointer-events-none" />
           {/* Smooth gradient overlay on left for razor-sharp typography readability while letting the visual shine on right */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#040B17]/95 via-[#040B17]/85 sm:via-[#040B17]/70 md:via-[#040B17]/45 to-transparent pointer-events-none" />
           <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#040B17] via-[#040B17]/60 to-transparent pointer-events-none" />
@@ -458,17 +460,28 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
 
         {/* Hero Content Layer */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
-          <div className="max-w-2xl lg:max-w-3xl space-y-6">
+          <div className="max-w-2xl lg:max-w-3xl space-y-5 sm:space-y-6">
             
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00A3E0]/20 border border-[#00A3E0]/40 text-[#00A3E0] text-xs font-mono font-semibold uppercase tracking-wider backdrop-blur-md">
               <Shield className="w-3.5 h-3.5 text-[#00A3E0]" />
               <span>DEDICATED ENTERPRISE INFRASTRUCTURE</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.16] text-white drop-shadow-md">
-              Private Cloud Solutions for{' '}
-              <span className="text-[#00A3E0]">Enterprise Control and Security</span>
-            </h1>
+            <div className="space-y-2 sm:space-y-3">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.16] text-white drop-shadow-md">
+                Private Cloud Solutions for{' '}
+                <span className="text-[#00A3E0]">Enterprise Control and Security</span>
+              </h1>
+            </div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img 
+                src="/images/cloud/private_cloud_hero.jpg" 
+                alt="Private Cloud Solutions for Enterprise Control and Security - Private Cloud Architecture Blueprint" 
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
 
             <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 font-normal leading-[1.6] drop-shadow-sm max-w-2xl text-left">
               Build a secure, dedicated cloud environment designed around your organization's infrastructure, governance, performance, and operational requirements. Knooviq helps enterprises design, modernize, and operate private cloud platforms that support critical workloads while maintaining control over data, access, and resources.

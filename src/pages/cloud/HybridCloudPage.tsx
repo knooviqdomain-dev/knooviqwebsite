@@ -200,6 +200,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
             alt="Enterprise Hybrid Cloud & Orchestration"
             className="w-full h-full object-cover object-center lg:object-[65%_center] filter brightness-105 contrast-105"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#040812]/95 via-[#040812]/90 to-[#040812] pointer-events-none" />
           {/* Directional scrim: smoothly protects text readability on the left while keeping center & right visuals 100% bright */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#040812] via-[#040812]/85 sm:via-[#040812]/70 md:via-[#040812]/50 to-transparent w-full lg:w-3/5" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#040812] via-transparent to-[#040812]/50" />
@@ -208,18 +210,29 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-16 sm:py-20 lg:py-24 space-y-8">
 
-          <div className="max-w-2xl lg:max-w-3xl space-y-6">
+          <div className="max-w-2xl lg:max-w-3xl space-y-5 sm:space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-400 text-xs font-mono font-semibold tracking-wide uppercase backdrop-blur-md">
               <Network className="w-3.5 h-3.5 text-[#00A3E0]" />
               <span>Enterprise Hybrid Cloud &amp; Orchestration</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight text-white leading-[1.12] drop-shadow-md">
-              Connect Your Enterprise.{' '}
-              <span className="bg-gradient-to-r from-[#00A3E0] via-cyan-300 to-sky-400 bg-clip-text text-transparent">
-                Orchestrate Your Cloud.
-              </span>
-            </h1>
+            <div className="space-y-2 sm:space-y-3">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight text-white leading-[1.12] drop-shadow-md">
+                Connect Your Enterprise.{' '}
+                <span className="bg-gradient-to-r from-[#00A3E0] via-cyan-300 to-sky-400 bg-clip-text text-transparent">
+                  Orchestrate Your Cloud.
+                </span>
+              </h1>
+            </div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/hybrid_cloud_hero.png"
+                alt="Enterprise Hybrid Cloud & Orchestration - Hybrid Cloud Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
 
             <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl drop-shadow-sm">
               Bring private infrastructure, public cloud services, and on-premises applications together through a

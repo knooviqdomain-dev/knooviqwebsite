@@ -429,6 +429,8 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
             alt="Google Cloud Platform Enterprise Practice - AI Cognitive Intelligence and Global Data Network"
             className="w-full h-full object-cover object-[right_top] sm:object-[center_top] lg:object-center filter brightness-110 contrast-105"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#050B17]/95 via-[#050B17]/90 to-[#050B17] pointer-events-none" />
           {/* Directional scrim: smoothly protects text readability on the left while keeping the AI character and global constellation 100% bright and clear */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#050B17]/95 via-[#050B17]/75 sm:via-[#050B17]/40 md:via-transparent to-transparent w-full lg:w-3/5 pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050B17] via-transparent to-[#050B17]/40 pointer-events-none" />
@@ -462,13 +464,24 @@ export const GoogleCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => 
           </div>
 
           {/* Hero Header Content: Heading, Description & Action Buttons */}
-          <div className="max-w-2xl lg:max-w-3xl space-y-6">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.12] drop-shadow-md">
-              Turn Data into Intelligence with{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-[#4285F4]">
-                Google Cloud
-              </span>
-            </h1>
+          <div className="max-w-2xl lg:max-w-3xl space-y-5 sm:space-y-6">
+            <div className="space-y-2 sm:space-y-3">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.12] drop-shadow-md">
+                Turn Data into Intelligence with{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-[#4285F4]">
+                  Google Cloud
+                </span>
+              </h1>
+            </div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/gcp/gcp_hero_panoramic.jpg"
+                alt="Turn Data into Intelligence with Google Cloud - GCP Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
 
             <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl drop-shadow-sm">
               Help enterprises build secure cloud foundations, modern applications, and data-driven solutions with Google Cloud.

@@ -499,6 +499,8 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
             alt="Amazon Web Services Enterprise Practice"
             className="w-full h-full object-cover object-center lg:object-[65%_center] filter brightness-105 contrast-105"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#050B17]/95 via-[#050B17]/90 to-[#050B17] pointer-events-none" />
           {/* Directional scrim: smoothly protects text readability on the left while keeping center & right visuals 100% bright */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#050B17] via-[#050B17]/85 sm:via-[#050B17]/70 md:via-[#050B17]/50 to-transparent w-full lg:w-3/5" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050B17] via-transparent to-[#050B17]/50" />
@@ -526,13 +528,24 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
           </div>
 
           {/* Text Content Block */}
-          <div className="max-w-2xl lg:max-w-3xl space-y-6">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12] drop-shadow-md">
-              Build, Modernize and Scale on{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-[#FF9900]">
-                Amazon Web Services
-              </span>
-            </h1>
+          <div className="max-w-2xl lg:max-w-3xl space-y-5 sm:space-y-6">
+            <div className="space-y-2 sm:space-y-3">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12] drop-shadow-md">
+                Build, Modernize and Scale on{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-[#FF9900]">
+                  Amazon Web Services
+                </span>
+              </h1>
+            </div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/aws/aws_datacenter_hero.jpg"
+                alt="Amazon Web Services Enterprise Practice - AWS Cloud Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
 
             <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl drop-shadow-sm">
               Help enterprises design secure, resilient, and scalable AWS environments through cloud strategy,
