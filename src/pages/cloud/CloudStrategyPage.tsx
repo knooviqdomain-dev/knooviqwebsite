@@ -598,7 +598,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             </div>
 
             {/* Right Side: Unique Image 3 (Architectural concept illustrating cloud progression) */}
-            <div className="lg:col-span-5 sticky top-28">
+            <div className="lg:col-span-5 lg:sticky lg:top-28">
               <div className="rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0B1528] shadow-xl group">
                 <div className="relative h-80 sm:h-96 w-full overflow-hidden">
                   <img
@@ -803,7 +803,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             
             {/* Left Side: Unique Image 5 (Close-up photograph of enterprise strategy binder & documentation) */}
-            <div className="lg:col-span-5 sticky top-28 space-y-4">
+            <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-4">
               <div className="rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0B1528] shadow-xl group">
                 <div className="relative h-80 sm:h-[420px] w-full overflow-hidden">
                   <img
@@ -937,7 +937,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             </div>
 
             {/* Right Side: Unique Image 6 (Enterprise architecture multi-cloud command room) */}
-            <div className="lg:col-span-5 sticky top-28">
+            <div className="lg:col-span-5 lg:sticky lg:top-28">
               <div className="rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0B1528] shadow-xl group">
                 <div className="relative h-80 sm:h-[440px] w-full overflow-hidden">
                   <img
