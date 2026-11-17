@@ -221,6 +221,8 @@ export const BusinessContinuityPage: React.FC<ChildPageProps> = ({ onOpenContact
             alt="Enterprise Operational Resilience Command Center and Continuity Operations"
             className="w-full h-full object-cover object-[75%_center] filter brightness-[1.06] contrast-[1.05]"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
           {/* Subtle directional gradient on left for razor-sharp typography readability; right 55%+ visual is 100% untouched */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/80 sm:via-[#030712]/60 via-35% to-transparent w-full lg:w-[52%] pointer-events-none" />
           <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-[#030712] via-[#030712]/50 to-transparent pointer-events-none" />
@@ -249,6 +251,15 @@ export const BusinessContinuityPage: React.FC<ChildPageProps> = ({ onOpenContact
               <p className="font-sora text-lg sm:text-xl font-medium text-cyan-300 tracking-tight drop-shadow-md">
                 Anticipate Disruption. Sustain Operations. Safeguard Enterprise Value.
               </p>
+            </div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/business_continuity_hero_wide.jpg"
+                alt="Enterprise Operational Resilience Command Center and Continuity Operations - Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
 
             {/* Description */}
