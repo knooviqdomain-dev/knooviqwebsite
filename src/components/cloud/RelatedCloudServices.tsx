@@ -140,7 +140,7 @@ export const RelatedCloudServices: React.FC<RelatedCloudServicesProps> = ({ curr
           <span className="text-xs font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
             COMPLEMENTARY CAPABILITIES
           </span>
-          <h3 className="text-2xl font-black text-slate-900 dark:text-white tracking-tight mt-1">
+          <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white tracking-tight mt-1">
             Related Cloud &amp; Operations Practices
           </h3>
         </div>
@@ -162,10 +162,10 @@ export const RelatedCloudServices: React.FC<RelatedCloudServicesProps> = ({ curr
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
-                  <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     {s.title}
                   </h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-sm text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {s.description}
                   </p>
                 </div>

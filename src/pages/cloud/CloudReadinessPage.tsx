@@ -479,7 +479,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
   ];
 
   return (
-    <div className="relative w-full max-w-full overflow-x-clip min-h-screen bg-white dark:bg-[#070E1C] text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div className="relative w-full max-w-full overflow-x-clip min-h-screen bg-white dark:bg-[#070E1C] text-slate-900 dark:text-slate-100 transition-colors duration-300 cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 2: HERO SECTION (Cinematic Architectural Hero - Unified Knooviq Suite Format)
@@ -525,7 +525,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
               />
             </div>
 
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl pt-1">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl pt-1">
               Knooviq systematically evaluates existing enterprise IT infrastructure, applications, data stores, security perimeters, operating workflows, and organizational skills before cloud adoption. We uncover hidden technical debt, quantify migration risks, and design a validated roadmap to ensure seamless, predictable modernization with zero core business disruption.
             </p>
 
@@ -613,7 +613,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Build a Strong Foundation for Your Cloud Journey
             </h2>
-            <p className="text-sm sm:text-base text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
               Moving workloads to the cloud without an objective readiness assessment leads to unexpected cost blowouts, stalled migration waves, compliance violations, and post-cutover performance degradation. Knooviq establishes certainty before a single server is migrated.
             </p>
           </div>
@@ -638,10 +638,10 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-[#00A3E0] transition-colors">
+                      <h3 className="font-sora text-lg font-medium text-slate-900 dark:text-white group-hover:text-[#00A3E0] transition-colors">
                         {cap.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
+                      <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
                         {cap.description}
                       </p>
                     </div>
@@ -662,10 +662,10 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
               <span className="text-xs font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                 ENTERPRISE READINESS INSIGHT
               </span>
-              <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+              <h4 className="font-sora text-base sm:text-lg font-medium text-slate-900 dark:text-white">
                 Eliminate Cloud Migration Surprises Before Deployment
               </h4>
-              <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
                 Organizations that conduct structured technical and organizational assessments experience up to 45% lower post-migration operating expenses and complete cutovers without rollback cycles.
               </p>
             </div>
@@ -707,7 +707,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
                 Cloud Readiness Assessment Areas
               </h2>
-              <p className="text-sm sm:text-base text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
                 Knooviq examines your enterprise landscape across six interdependent dimensions. Our structured framework evaluates technical feasibility, operational maturity, and governance readiness to form a complete architectural picture.
               </p>
             </div>
@@ -772,7 +772,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                       }`}>
                         {area.title}
                       </h3>
-                      <p className="text-xs text-slate-700 dark:text-slate-300 truncate mt-1 font-medium">
+                      <p className="font-sora text-xs text-slate-700 dark:text-slate-300 truncate mt-1 font-medium leading-[1.6]">
                         {area.scope}
                       </p>
                     </div>
@@ -799,7 +799,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                           <span className="text-xs font-mono font-bold text-[#0070C0] dark:text-cyan-400 uppercase tracking-wider block">
                             ASSESSMENT DOMAIN {selected.number}
                           </span>
-                          <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+                          <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white">
                             {selected.title}
                           </h3>
                         </div>
@@ -812,13 +812,13 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                     </div>
 
                     {/* Overview Description */}
-                    <p className="text-sm sm:text-base text-slate-900 dark:text-slate-100 font-normal leading-[1.6]">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] dark:text-slate-200 font-normal leading-[1.6]">
                       {selected.overview}
                     </p>
 
                     {/* Key Technical Evaluations */}
                     <div className="space-y-3 pt-2">
-                      <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-xs font-mono font-medium uppercase tracking-wider text-slate-900 dark:text-white">
                         CORE EVALUATION CHECKPOINTS
                       </h4>
                       <div className="space-y-2.5">
@@ -842,7 +842,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                         <span className="font-mono font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider block text-[11px]">
                           EVALUATION METHODOLOGY
                         </span>
-                        <p className="text-slate-900 dark:text-slate-100 leading-relaxed font-medium">
+                        <p className="font-sora text-[#102A43] dark:text-slate-200 leading-[1.6] font-medium">
                           {selected.methodology}
                         </p>
                       </div>
@@ -851,7 +851,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                         <span className="font-mono font-bold text-[#0070C0] dark:text-cyan-400 uppercase tracking-wider block text-[11px]">
                           DIAGNOSTIC ARTIFACT
                         </span>
-                        <p className="font-bold text-slate-900 dark:text-white">
+                        <p className="font-sora font-bold text-slate-900 dark:text-white leading-[1.6]">
                           {selected.outcomeMetric}
                         </p>
                       </div>
@@ -881,7 +881,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               A Structured Path to Cloud Confidence
             </h2>
-            <p className="text-sm sm:text-base text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
               Knooviq executes a five-stage readiness assessment framework engineered for enterprise rigor. We turn ambiguous IT landscapes into deterministic migration programs backed by empirical data.
             </p>
           </div>
@@ -920,7 +920,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                         }`}>
                           {step.title}
                         </h3>
-                        <p className="text-xs text-slate-700 dark:text-slate-300 line-clamp-2 font-medium">
+                        <p className="font-sora text-xs text-slate-700 dark:text-slate-300 line-clamp-2 font-medium leading-[1.6]">
                           {step.lead}
                         </p>
                       </div>
@@ -960,7 +960,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                     <span className="text-xs font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                       STAGE {current.step} EXECUTION DETAIL
                     </span>
-                    <h3 className="text-2xl font-black text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white">
                       Step {current.step} — {current.title}: {current.lead}
                     </h3>
                   </div>
@@ -969,13 +969,13 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                   </span>
                 </div>
 
-                <p className="text-sm sm:text-base text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
                   {current.description}
                 </p>
 
                 {/* Key Activities */}
                 <div className="space-y-3">
-                  <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 dark:text-white">
+                  <h4 className="font-sora text-xs font-mono font-medium uppercase tracking-wider text-slate-900 dark:text-white">
                     CORE ACTIVITIES &amp; WORKSTREAMS
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -1050,7 +1050,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight">
                 What Your Readiness Assessment Delivers
               </h2>
-              <p className="text-sm sm:text-base text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
                 Our assessment concludes with comprehensive, board-ready architectural documentation and technical workbooks that serve as the single source of truth for your cloud transformation.
               </p>
             </div>
@@ -1122,7 +1122,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                             DELIVERABLE 0{activeDeliverableTab + 1}
                           </span>
                         </div>
-                        <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white">
+                        <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white">
                           {activeDoc.title}
                         </h3>
                       </div>
@@ -1133,13 +1133,13 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                     </div>
 
                     {/* Summary Narrative */}
-                    <p className="text-sm sm:text-base text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
                       {activeDoc.summary}
                     </p>
 
                     {/* Deliverable Inclusions */}
                     <div className="space-y-3 pt-2">
-                      <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-xs font-mono font-medium uppercase tracking-wider text-slate-900 dark:text-white">
                         TECHNICAL CONTENT INCLUDED IN THIS ARTIFACT
                       </h4>
                       <div className="space-y-2.5">
@@ -1203,7 +1203,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
                   Ready to Understand Your Cloud Readiness?
                 </h2>
-                <p className="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] lg:text-lg text-slate-300 leading-[1.6] font-normal">
                   Identify your cloud adoption priorities, address readiness gaps, and establish a clear path toward a secure and well-planned cloud environment.
                 </p>
               </div>
@@ -1291,11 +1291,11 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     {service.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
                     {service.description}
                   </p>
                 </div>
@@ -1319,7 +1319,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
             <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
               Frequently Asked Questions
             </h2>
-            <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-[1.6] max-w-xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] max-w-xl font-normal">
               Answers to common executive and technical questions regarding Knooviq&apos;s Cloud Readiness Assessment engagement.
             </p>
           </div>

@@ -201,7 +201,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#060D1A] text-slate-900 dark:text-slate-100 transition-colors">
+    <div className="min-h-screen bg-white dark:bg-[#060D1A] text-slate-900 dark:text-slate-100 transition-colors cloud-sora-scope">
       
       {/* =========================================================================
           HERO SECTION — CLOUD ADOPTION
@@ -246,12 +246,12 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
                 Move to the Cloud with Confidence
               </h1>
-              <p className="text-base sm:text-lg font-medium text-cyan-300 tracking-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] font-medium text-cyan-300 tracking-normal leading-[1.6]">
                 Execution-Led Migration, Modernization, and Hybrid Operations
               </p>
             </div>
 
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl pt-1">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl pt-1">
               Build a practical cloud adoption strategy that aligns business requirements, application dependencies, infrastructure readiness, security, and operational needs. Knooviq helps enterprises plan and execute cloud adoption through a structured, secure, and business-aligned approach.
             </p>
 
@@ -318,7 +318,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Cloud Adoption Assessment
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Assess existing infrastructure, applications, workloads, dependencies, and organizational readiness before planning cloud migration. Knooviq conducts rigorous portfolio discovery to eliminate hidden legacy blockers before any workloads move.
             </p>
           </div>
@@ -344,7 +344,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                         <Search className="w-3.5 h-3.5" />
                         Infrastructure &amp; Dependency Audit
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Analyzing server topologies, database clustering, and network latencies.
                       </p>
                     </div>
@@ -357,7 +357,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   Discovery Methodology
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Utilizes automated discovery agents, agentless network packet inspections, and CMDB reconciliations to detect shadow IT and dormant database links.
                 </p>
               </div>
@@ -365,7 +365,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
 
             {/* Right Interactive Assessment Domains */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Four Essential Dimensions of Cloud Readiness
               </h3>
 
@@ -399,7 +399,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                     <span className="text-xs font-mono font-bold uppercase text-[#00A3E0]">
                       Investigation Scope
                     </span>
-                    <h4 className="text-lg font-bold text-slate-900 dark:text-white mt-0.5">
+                    <h4 className="font-sora text-lg font-medium text-slate-900 dark:text-white mt-0.5">
                       {assessmentDomains[activeAssessmentDomain].title}
                     </h4>
                   </div>
@@ -408,7 +408,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                   </span>
                 </div>
 
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-sm text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   {assessmentDomains[activeAssessmentDomain].summary}
                 </p>
 
@@ -447,11 +447,11 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                 <span className="text-xs font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   SYSTEMATIC CLASSIFICATION
                 </span>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mt-1">
+                <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white mt-1">
                   The 6R Workload Treatment Framework
                 </h3>
               </div>
-              <p className="text-xs text-slate-500 dark:text-slate-400 max-w-md">
+              <p className="font-sora text-xs text-slate-500 dark:text-slate-400 max-w-md font-normal leading-[1.6]">
                 Every enterprise service receives a documented rationale, technical feasibility score, and cost model before scheduling.
               </p>
             </div>
@@ -469,7 +469,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                   <span className="px-2 py-0.5 rounded-md bg-cyan-50 dark:bg-cyan-500/10 text-[#00A3E0] dark:text-cyan-300 font-mono font-bold text-[11px] inline-block">
                     {item.r}
                   </span>
-                  <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed pt-1">{item.desc}</p>
+                  <p className="font-sora text-[11px] text-slate-500 dark:text-slate-400 leading-[1.6] pt-1 font-normal">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -497,7 +497,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Cloud Migration Planning
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Develop workload migration plans based on business priorities, application dependencies, technical complexity, and migration sequencing. Our wave-based engineering model prevents operational disruption and guarantees business continuity.
             </p>
           </div>
@@ -507,11 +507,11 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
             
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Dependency-Aware Migration Wave Orchestration
               </h3>
               
-              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-sm text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Rather than attempting risky big-bang cutovers, Knooviq groups workloads into tightly coordinated migration batches. Workloads with heavy synchronous coupling are migrated together or isolated with transient network proxy meshes to maintain low latencies during intermediate hybrid states.
               </p>
 
@@ -532,7 +532,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                         <span className="px-2.5 py-0.5 rounded-md bg-cyan-100 dark:bg-cyan-500/20 text-[#00A3E0] dark:text-cyan-300 font-mono font-bold text-xs">
                           {wave.wave}
                         </span>
-                        <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                        <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                           {wave.title}
                         </h4>
                       </div>
@@ -541,7 +541,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                       </span>
                     </div>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-2">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] mb-2 font-normal">
                       {wave.scope}
                     </p>
 
@@ -575,7 +575,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                         <Workflow className="w-3.5 h-3.5" />
                         Controlled Workload Cutover
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Coordinated wave scheduling with pre-flight rehearsal dry-runs.
                       </p>
                     </div>
@@ -589,7 +589,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                   <ShieldCheck className="w-4 h-4" />
                   <span>Zero-Downtime Rollback Guarantee</span>
                 </div>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Every cutover script contains an automated fallback trigger. If database validation latency or API error thresholds are violated, traffic rolls back seamlessly within 120 seconds.
                 </p>
               </div>
@@ -619,7 +619,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Application Modernization
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Identify opportunities to refactor, replatform, containerize, or redesign applications to make them suitable for cloud-native environments. Unlock elasticity, developer speed, and lower operational maintenance by modernizing legacy application tiers.
             </p>
           </div>
@@ -645,7 +645,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                         <Box className="w-3.5 h-3.5" />
                         Containers, APIs &amp; Microservices
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Decoupling monolithic dependencies into horizontally scalable services.
                       </p>
                     </div>
@@ -658,7 +658,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   Decoupled Runtime Velocity
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Moving from monolithic release trains to isolated containerized releases increases deployment frequency from quarterly freezes to daily continuous deliveries.
                 </p>
               </div>
@@ -666,7 +666,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
 
             {/* Right Modernization Pathways Grid */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Four Modernization Pathways
               </h3>
 
@@ -690,11 +690,11 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                       </span>
                     </div>
 
-                    <h4 className="text-base font-bold text-slate-900 dark:text-white mb-1.5">
+                    <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white mb-1.5">
                       {item.pathway}
                     </h4>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] mb-3 font-normal">
                       {item.description}
                     </p>
 
@@ -737,7 +737,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Cloud Platform Adoption
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Help enterprises select and adopt suitable services across AWS, Microsoft Azure, Google Cloud, and hybrid environments according to their requirements. We design landing zones tailored to enterprise governance, data residency, and application performance.
             </p>
           </div>
@@ -747,11 +747,11 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
             
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Objective Platform Placement &amp; Landing Zone Design
               </h3>
 
-              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-sm text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Knooviq provides objective, workload-centric platform guidance. Rather than imposing a single provider, we evaluate compute requirements, licensing footprints, regional latency constraints, and existing enterprise software agreements to establish resilient landing zones.
               </p>
 
@@ -763,10 +763,10 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                     <span className="text-xs font-mono font-bold text-[#00A3E0]">AWS ECOSYSTEM</span>
                     <Cloud className="w-4 h-4 text-[#00A3E0]" />
                   </div>
-                  <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     Amazon Web Services
                   </h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Optimal for global distributed microservices, massive container clusters (EKS), Aurora relational databases, and enterprise serverless architectures.
                   </p>
                   <div className="pt-2 border-t border-slate-100 dark:border-white/5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
@@ -779,10 +779,10 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                     <span className="text-xs font-mono font-bold text-[#00A3E0]">MICROSOFT ECOSYSTEM</span>
                     <Layers className="w-4 h-4 text-[#00A3E0]" />
                   </div>
-                  <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     Microsoft Azure
                   </h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Premier choice for enterprise Windows/SQL estates, Active Directory / Entra ID federations, Microsoft 365 integrations, and hybrid Azure Arc management.
                   </p>
                   <div className="pt-2 border-t border-slate-100 dark:border-white/5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
@@ -795,10 +795,10 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                     <span className="text-xs font-mono font-bold text-[#00A3E0]">GOOGLE ECOSYSTEM</span>
                     <Cpu className="w-4 h-4 text-[#00A3E0]" />
                   </div>
-                  <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     Google Cloud (GCP)
                   </h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Exceptional for enterprise data lakes (BigQuery), automated Kubernetes orchestration (GKE Autopilot), AI/ML workloads, and global multi-region networks.
                   </p>
                   <div className="pt-2 border-t border-slate-100 dark:border-white/5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
@@ -811,10 +811,10 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                     <span className="text-xs font-mono font-bold text-[#00A3E0]">HYBRID / PRIVATE</span>
                     <Server className="w-4 h-4 text-[#00A3E0]" />
                   </div>
-                  <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     Hybrid &amp; Private Cloud
                   </h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Designed for data residency mandates, sovereign clouds, and ultra-low-latency on-premises manufacturing or healthcare operations requiring direct interconnects.
                   </p>
                   <div className="pt-2 border-t border-slate-100 dark:border-white/5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
@@ -844,7 +844,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                         <Network className="w-3.5 h-3.5" />
                         Multi-Cloud Infrastructure Interconnect
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Unified network transit routing across public and private estates.
                       </p>
                     </div>
@@ -857,7 +857,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   Enterprise Landing Zone Blueprint
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Every landing zone includes automated organizational units, centralized logging, strict network egress firewalls, and least-privilege IAM guardrails provisioned via Infrastructure as Code (Terraform).
                 </p>
               </div>
@@ -888,7 +888,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Cloud Security and Governance
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Integrate identity and access management, security controls, data protection, compliance requirements, and governance policies into the adoption process. We implement defense-in-depth security directly into deployment pipelines from Day One.
             </p>
           </div>
@@ -914,7 +914,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                         <Lock className="w-3.5 h-3.5" />
                         Zero-Trust Security Architecture
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Centralized IAM, microsegmentation, and Customer-Managed Key encryption.
                       </p>
                     </div>
@@ -927,7 +927,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   Continuous Compliance Guardrails
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Automated Cloud Security Posture Management (CSPM) continuously audits landing zones against CIS Benchmarks, ISO 27001, SOC 2, and regional privacy mandates.
                 </p>
               </div>
@@ -935,7 +935,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
 
             {/* Right 4 Core Security Pillars */}
             <div className="lg:col-span-7 space-y-4">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Four Zero-Trust Security Tenets
               </h3>
 
@@ -975,12 +975,12 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <Icon className="w-4 h-4 text-[#00A3E0]" />
-                          <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                          <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                             {item.title}
                           </h4>
                         </div>
                       </div>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                      <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                         {item.desc}
                       </p>
                       <div className="pt-2 border-t border-slate-200/60 dark:border-white/10 text-[11px] font-mono text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
@@ -1019,7 +1019,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Data and Workload Transition
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Plan the movement of enterprise data, application workloads, integrations, and business services while addressing validation, dependencies, and transition risks. Zero data loss and verified transactional integrity are guaranteed at every milestone.
             </p>
           </div>
@@ -1029,11 +1029,11 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
             
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Continuous Data Replication &amp; Cutover Architecture
               </h3>
 
-              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-sm text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Enterprise data movement cannot rely on static database export/import passes. We implement real-time log-based Change Data Capture (CDC) pipelines that synchronize multi-terabyte transactional databases to the cloud continuously, reducing cutover downtime to minutes.
               </p>
 
@@ -1054,13 +1054,13 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                         <span className="px-2.5 py-0.5 rounded-md bg-cyan-100 dark:bg-cyan-500/20 text-[#00A3E0] dark:text-cyan-300 font-mono font-bold text-xs">
                           {item.stage}
                         </span>
-                        <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                        <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                           {item.title}
                         </h4>
                       </div>
                     </div>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-2">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] mb-2 font-normal">
                       {item.description}
                     </p>
 
@@ -1092,7 +1092,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                         <Database className="w-3.5 h-3.5" />
                         Live CDC Pipelines &amp; Message Mesh
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Continuous asynchronous data flight between legacy servers and cloud targets.
                       </p>
                     </div>
@@ -1106,7 +1106,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                   <FileCheck className="w-4 h-4" />
                   <span>Row-Count &amp; Cryptographic Hash Verification</span>
                 </div>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Before cutover sign-off, automated validators run row-level counts and SHA-256 block checksum comparisons between source and target tables, guaranteeing 100% data integrity.
                 </p>
               </div>
@@ -1138,7 +1138,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Cloud Optimization and Continuous Improvement
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Establish practices for resource management, cost visibility, workload performance, operational monitoring, and ongoing cloud environment improvement. Cloud adoption succeeds in Day 2 through disciplined engineering practices and transparent economics.
             </p>
           </div>
@@ -1164,7 +1164,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                         <Activity className="w-3.5 h-3.5" />
                         Infrastructure Telemetry &amp; SRE Practice
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Proactive reliability engineering without dashboard fatigue.
                       </p>
                     </div>
@@ -1177,7 +1177,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   FinOps Unit Economics
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   We align infrastructure expense with actual business metrics (cost per customer transaction, cost per order booked) rather than abstract virtual machine billing.
                 </p>
               </div>
@@ -1185,7 +1185,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
 
             {/* Right 4 Operational Tenets (Clean engineering focus, avoiding dashboard clutter) */}
             <div className="lg:col-span-7 space-y-4">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Four Pillars of Ongoing Cloud Optimization
               </h3>
 
@@ -1196,10 +1196,10 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                     <span className="text-xs font-mono font-bold text-[#00A3E0]">FINOPS CADENCE</span>
                     <BarChart3 className="w-4 h-4 text-[#00A3E0]" />
                   </div>
-                  <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     Cost Visibility &amp; Rightsizing
                   </h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Automated rightsizing algorithms identify over-provisioned memory or compute tiers, while automated commitment discount models (Savings Plans &amp; Reserved Instances) optimize baseline spend.
                   </p>
                   <div className="pt-2 border-t border-slate-200/60 dark:border-white/5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
@@ -1212,10 +1212,10 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                     <span className="text-xs font-mono font-bold text-[#00A3E0]">RELIABILITY (SRE)</span>
                     <Activity className="w-4 h-4 text-[#00A3E0]" />
                   </div>
-                  <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     Full-Stack OpenTelemetry
                   </h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Vendor-neutral OpenTelemetry instrumentation collects distributed traces, latency distributions, and runtime exceptions, enabling pinpoint root-cause analysis in under 5 minutes.
                   </p>
                   <div className="pt-2 border-t border-slate-200/60 dark:border-white/5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
@@ -1228,10 +1228,10 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                     <span className="text-xs font-mono font-bold text-[#00A3E0]">AUTONOMOUS OPS</span>
                     <Zap className="w-4 h-4 text-[#00A3E0]" />
                   </div>
-                  <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     Self-Healing Runbooks
                   </h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Event-driven automation handles standard operational remediations (disk expansions, pod restarts, SSL certificate rotations) without waking on-call engineers.
                   </p>
                   <div className="pt-2 border-t border-slate-200/60 dark:border-white/5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
@@ -1244,10 +1244,10 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                     <span className="text-xs font-mono font-bold text-[#00A3E0]">ARCHITECTURE REVIEW</span>
                     <RefreshCw className="w-4 h-4 text-[#00A3E0]" />
                   </div>
-                  <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     Well-Architected Reviews
                   </h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Quarterly Well-Architected Framework reviews evaluate operational resilience, cost efficiency, and security posture against evolving cloud provider capabilities.
                   </p>
                   <div className="pt-2 border-t border-slate-200/60 dark:border-white/5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
@@ -1291,7 +1291,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                 Ready to Move to the Cloud with Predictable Execution?
               </h2>
               
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                 Connect directly with certified Knooviq enterprise architects to evaluate workload readiness, structure deterministic migration waves, and safeguard business continuity across AWS, Azure, and Google Cloud.
               </p>
             </div>

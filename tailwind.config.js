@@ -8,6 +8,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        deepNavy: '#102A43',
         navy: {
           950: '#030712',
           900: '#070E1E',
@@ -32,6 +33,7 @@ export default {
         }
       },
       fontFamily: {
+        sora: ['"Sora"', 'sans-serif'],
         sans: ['"Plus Jakarta Sans"', 'Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
         display: ['"Plus Jakarta Sans"', 'Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
         heading: ['"Plus Jakarta Sans"', 'Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],

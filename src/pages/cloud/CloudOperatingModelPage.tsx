@@ -95,7 +95,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#060D1A] text-slate-900 dark:text-slate-100 transition-colors">
+    <div className="min-h-screen bg-white dark:bg-[#060D1A] text-slate-900 dark:text-slate-100 transition-colors cloud-sora-scope">
       
       {/* =========================================================================
           HERO SECTION — CLOUD OPERATING MODEL
@@ -146,12 +146,12 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
                 Design a Cloud Operating Model Built for Enterprise Scale
               </h1>
-              <p className="text-base sm:text-lg font-medium text-cyan-300 tracking-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] font-medium text-cyan-300 tracking-normal leading-[1.6]">
                 Align People, Governance, Platform Capabilities, and Commercial Outcomes
               </p>
             </div>
 
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl pt-1">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl pt-1">
               Establish the people, processes, governance, and technology practices required to manage cloud services effectively. Knooviq helps organizations define cloud responsibilities, structure cross-functional teams, establish decision-making frameworks, and align cloud delivery with enterprise priorities.
             </p>
 
@@ -219,7 +219,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               The Five Dimensions of a Mature Operating Model
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               A high-performing cloud organization does not happen by accident. It requires intentional design connecting people, decision rights, consumption models, platform engineering, and financial accountability into one cohesive delivery engine.
             </p>
           </div>
@@ -243,11 +243,11 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                       </span>
                     </div>
 
-                    <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                       {p.title}
                     </h3>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {p.desc}
                     </p>
                   </div>
@@ -286,7 +286,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Build the Right Teams for Cloud Delivery
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Define the organizational structure required to deliver and manage cloud services consistently. Establish clear responsibilities across cloud platform teams, application owners, security specialists, infrastructure teams, and business stakeholders. Knooviq helps organizations determine team responsibilities, ownership boundaries, collaboration practices, and decision-making authority to support effective cloud delivery.
             </p>
           </div>
@@ -312,7 +312,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                         <Users className="w-3.5 h-3.5" />
                         Team Topologies &amp; Interaction Modes
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Enabling autonomous stream-aligned delivery with platform enablement.
                       </p>
                     </div>
@@ -325,7 +325,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   Team Interaction Contracts
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   We define clear collaboration modes (X-as-a-Service, Facilitating, Collaboration) between platform engineering and line-of-business application teams to prevent communication bottlenecks.
                 </p>
               </div>
@@ -333,7 +333,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
 
             {/* Right Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Team Topology &amp; Ownership Capabilities
               </h3>
 
@@ -366,11 +366,11 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                   >
                     <div className="flex items-center gap-2.5">
                       <UserCheck className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-6.5">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -407,7 +407,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Establish Clear Rules and Accountable Decisions
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Create a governance framework that defines how cloud decisions are made, who owns them, and how policies are maintained across the organization. Establish appropriate controls without creating unnecessary barriers to delivery. Knooviq supports governance structures that align platform standards, security requirements, architecture decisions, and business accountability.
             </p>
           </div>
@@ -417,7 +417,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             
             {/* Left Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Accountable Decision Frameworks
               </h3>
 
@@ -450,11 +450,11 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                   >
                     <div className="flex items-center gap-2.5">
                       <Compass className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-6.5">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -481,7 +481,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                         <Compass className="w-3.5 h-3.5" />
                         Decision Rights &amp; Policy Layers
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Transparent architectural authority, exception management, and committee cadences.
                       </p>
                     </div>
@@ -494,7 +494,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   Frictionless Governance Principles
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Governance works when rules are automated as code rather than trapped in static PDF manuals. We translate compliance mandates into automated guardrails enforced directly in deployment pipelines.
                 </p>
               </div>
@@ -528,7 +528,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Make Cloud Services Easy to Consume
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Define how internal teams request, access, and consume cloud services. Establish clear engagement models between cloud platform teams and application or business teams, supported by standardized service offerings and transparent delivery processes. Knooviq helps organizations create service catalogs, request workflows, service ownership practices, and collaboration models that improve consistency across cloud delivery.
             </p>
           </div>
@@ -554,7 +554,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                         <Layers className="w-3.5 h-3.5" />
                         Curated Cloud Service Catalog
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Standardized, pre-approved patterns for databases, compute, and networking.
                       </p>
                     </div>
@@ -567,7 +567,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   Product Management for Platforms
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   We guide platform teams to treat developer squads as internal customers, tracking Net Promoter Scores (NPS), lead time to first deployment, and catalog adoption rates.
                 </p>
               </div>
@@ -575,7 +575,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
 
             {/* Right Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Service Engagement &amp; Delivery Framework
               </h3>
 
@@ -608,11 +608,11 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                   >
                     <div className="flex items-center gap-2.5">
                       <Layers className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-6.5">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -649,7 +649,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Create Consistent Cloud Experiences for Delivery Teams
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Establish shared cloud platforms and reusable engineering capabilities that help application teams provision approved infrastructure and deploy workloads consistently. Define how automation, reusable templates, platform standards, and self-service capabilities are delivered and maintained. Knooviq supports platform engineering practices that balance developer autonomy with enterprise standards and operational controls.
             </p>
           </div>
@@ -659,7 +659,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             
             {/* Left Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Internal Developer Platform (IDP) Capabilities
               </h3>
 
@@ -692,11 +692,11 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                   >
                     <div className="flex items-center gap-2.5">
                       <Cpu className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-6.5">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -723,7 +723,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                         <Cpu className="w-3.5 h-3.5" />
                         Platform-as-a-Product Architecture
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Reusable IaC modules, automated testing, and developer self-service.
                       </p>
                     </div>
@@ -736,7 +736,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   Paved Road Engineering
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   We build golden deployment pathways so appealing, safe, and fast that development teams choose to adopt enterprise standards organically rather than seeking shadow workarounds.
                 </p>
               </div>
@@ -771,7 +771,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Connect Cloud Consumption with Business Ownership
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Define how cloud costs are allocated, reviewed, and managed across business units, products, and technology teams. Establish clear financial responsibilities and collaborative practices between engineering, finance, and business stakeholders. Knooviq helps organizations incorporate cost visibility, resource ownership, budgeting processes, and optimization responsibilities into their cloud operating model.
             </p>
           </div>
@@ -797,7 +797,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                         <BarChart3 className="w-3.5 h-3.5" />
                         FinOps Operating Cadence
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Connecting cloud resource usage directly to product unit economics.
                       </p>
                     </div>
@@ -810,7 +810,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   Showback Culture Transformation
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Engineers make better design decisions when cost is treated as a first-class architectural metric alongside latency, reliability, and security.
                 </p>
               </div>
@@ -818,7 +818,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
 
             {/* Right Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 FinOps Operating Model &amp; Cost Ownership
               </h3>
 
@@ -851,11 +851,11 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                   >
                     <div className="flex items-center gap-2.5">
                       <BarChart3 className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-6.5">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -893,7 +893,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Embed Security into Every Cloud Responsibility
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Define how security, risk management, and compliance responsibilities are distributed across cloud teams. Establish clear ownership for access controls, security policies, risk assessment, evidence collection, and exception handling. Knooviq helps organizations integrate security responsibilities into everyday cloud decisions while maintaining clear accountability across technical and business functions.
             </p>
           </div>
@@ -903,7 +903,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             
             {/* Left Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Distributed Security &amp; Compliance Ownership
               </h3>
 
@@ -936,11 +936,11 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                   >
                     <div className="flex items-center gap-2.5">
                       <ShieldCheck className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-6.5">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -967,7 +967,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                         <Lock className="w-3.5 h-3.5" />
                         Integrated Security Accountability
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Clear boundaries between platform guardrails, app code, and governance.
                       </p>
                     </div>
@@ -980,7 +980,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   Security as an Enabler
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Instead of functioning as a gatekeeper at the end of the development lifecycle, security teams provide pre-approved, compliant golden modules that let developers ship faster with confidence.
                 </p>
               </div>
@@ -1014,7 +1014,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Evolve Your Operating Model as Your Business Changes
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Create a sustainable approach to cloud skills development, service ownership, operating reviews, and organizational improvement. Define how teams develop expertise, review service delivery, learn from operational feedback, and adapt cloud practices as business and technology requirements evolve. Knooviq helps organizations establish improvement mechanisms that support a mature, accountable, and adaptable cloud operating model.
             </p>
           </div>
@@ -1040,7 +1040,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                         <RefreshCw className="w-3.5 h-3.5" />
                         Continuous Organizational Evolution
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Maturity assessment, role enablement, and learning feedback loops.
                       </p>
                     </div>
@@ -1053,7 +1053,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   Operating Model Maturity Cadence
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   We institute bi-annual Operating Model Maturity Assessments to evaluate how effectively teams consume cloud capabilities, identify emerging bottlenecks, and refine organizational topologies.
                 </p>
               </div>
@@ -1061,7 +1061,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
 
             {/* Right Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Enablement, Performance &amp; Maturity Mechanisms
               </h3>
 
@@ -1094,11 +1094,11 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                   >
                     <div className="flex items-center gap-2.5">
                       <BookOpen className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-6.5">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -1139,7 +1139,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 Design an Operating Model Built for Your Business
               </h2>
               
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                 Partner with Knooviq enterprise advisors to structure your Cloud Center of Excellence, clarify cross-functional decision rights, and build self-service platform capabilities that scale.
               </p>
             </div>

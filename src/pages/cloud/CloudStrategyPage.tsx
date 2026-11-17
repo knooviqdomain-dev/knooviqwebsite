@@ -346,7 +346,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
   ];
 
   return (
-    <div className="bg-white dark:bg-[#070E1C] text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div className="bg-white dark:bg-[#070E1C] text-slate-900 dark:text-slate-100 transition-colors duration-300 cloud-sora-scope">
 
       {/* =========================================================================
       {/* =========================================================================
@@ -383,7 +383,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
               </h1>
             </div>
 
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl pt-1">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl pt-1">
               Establish an enterprise cloud strategy aligned to business velocity, resilient architecture, CapEx-to-OpEx economics, and regulatory compliance across public, private, and hybrid estates.
             </p>
 
@@ -422,7 +422,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               A Strategic Approach for a Cloud-First Future
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Moving workloads to the cloud without an overarching strategy frequently produces unpredictable operational spend, fragmented identity silos, security vulnerabilities, and stalled migration programs. Knooviq helps organizations make informed technology decisions, manage enterprise risks, plan capital and operating resources, and establish a scalable cloud foundation tailored to long-term commercial goals.
             </p>
           </div>
@@ -448,10 +448,10 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                           0{idx + 1}
                         </span>
                       </div>
-                      <h3 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-[#00A3E0] transition-colors">
+                      <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white group-hover:text-[#00A3E0] transition-colors">
                         {benefit.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                         {benefit.description}
                       </p>
                     </div>
@@ -475,7 +475,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     <span className="text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-wider block">
                       Multi-Cloud Collaborative Review
                     </span>
-                    <p className="text-xs text-slate-200 mt-1 font-medium">
+                    <p className="font-sora text-xs text-slate-200 mt-1 font-medium leading-[1.6]">
                       Rigorous architecture sessions resolving systemic dependencies prior to migration wave execution.
                     </p>
                   </div>
@@ -507,7 +507,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Building a Future-Ready Cloud Strategy
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Sustainable enterprise transformation requires a balanced framework that spans roadmaps, landing zones, security policies, and FinOps economics. Knooviq anchors your cloud journey across five future-ready pillars.
             </p>
           </div>
@@ -560,7 +560,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                         }`}>
                           {pillar.title}
                         </h3>
-                        <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                        <p className="font-sora text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-normal leading-[1.6]">
                           {pillar.tagline}
                         </p>
                       </div>
@@ -569,7 +569,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     {/* Expanded Content Details */}
                     {isActive && (
                       <div className="px-5 pb-5 pt-1 space-y-4 border-t border-slate-100 dark:border-white/5 animate-in fade-in duration-200">
-                        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                           {pillar.description}
                         </p>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
@@ -602,7 +602,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     <span className="text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-wider block">
                       Architectural Modeling &amp; Validation
                     </span>
-                    <p className="text-xs text-slate-200">
+                    <p className="font-sora text-xs text-slate-200 font-normal leading-[1.6]">
                       Multi-tier roadmap models uniting on-premises datacenters, AWS, Azure, and target hybrid landing zones.
                     </p>
                   </div>
@@ -637,7 +637,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               A Structured Approach to Cloud Success
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Our 5-phase strategic framework eliminates guesswork, converting complex multi-tier application estates into sequenced, predictable transformation waves with zero disruption to active business transactions.
             </p>
           </div>
@@ -690,14 +690,14 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                       <span className="text-[10px] font-mono font-bold uppercase text-[#00A3E0] block">
                         {approachSteps[activeApproachStep].tag}
                       </span>
-                      <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+                      <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white">
                         {approachSteps[activeApproachStep].title} Phase
                       </h3>
                     </div>
                   </div>
                 </div>
 
-                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   {approachSteps[activeApproachStep].description}
                 </p>
 
@@ -751,7 +751,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     <span className="text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-wider block">
                       Phase 04: Blueprint Execution Plans
                     </span>
-                    <p className="text-xs text-slate-200 mt-1">
+                    <p className="font-sora text-xs text-slate-200 mt-1 font-normal leading-[1.6]">
                       Translating workload telemetry into definitive migration runbooks and architecture specifications.
                     </p>
                   </div>
@@ -784,7 +784,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               What You Get with Our Cloud Strategy
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               We provide actionable, enterprise-ready engineering assets, executive dossiers, and technical blueprints—not generic presentations. Every deliverable is customized to your existing IT assets and commercial objectives.
             </p>
           </div>
@@ -807,7 +807,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     <span className="text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-wider block">
                       Audit-Ready Deliverables Dossier
                     </span>
-                    <p className="text-xs text-slate-200 mt-1">
+                    <p className="font-sora text-xs text-slate-200 mt-1 font-normal leading-[1.6]">
                       Complete architectural binders ready for executive review, board approval, and migration factory handover.
                     </p>
                   </div>
@@ -847,14 +847,14 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                         <span className="w-5 h-5 rounded-full bg-[#00A3E0]/10 text-[#00A3E0] text-[10px] font-mono font-bold flex items-center justify-center">
                           {idx + 1}
                         </span>
-                        <h3 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-[#00A3E0] transition-colors">
+                        <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white group-hover:text-[#00A3E0] transition-colors">
                           {del.title}
                         </h3>
                         <span className="text-[9px] font-mono uppercase px-2 py-0.5 rounded bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400 ml-auto sm:ml-2">
                           {del.category}
                         </span>
                       </div>
-                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed pl-7">
+                      <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] pl-7 font-normal">
                         {del.summary}
                       </p>
                     </div>
@@ -893,7 +893,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Strategic Services for Your Cloud Journey
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Whether you are architecting a net-new multi-cloud footprint or modernizing legacy mission-critical applications, our consulting practice delivers specialized advisory for every stage of your transformation.
             </p>
           </div>
@@ -912,13 +912,13 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#00A3E0] block">
                       {area.badge}
                     </span>
-                    <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                       {area.title}
                     </h3>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                    <p className="font-sora text-xs text-slate-500 dark:text-slate-400 font-medium leading-[1.6]">
                       {area.summary}
                     </p>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-1">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pt-1 font-normal">
                       {area.description}
                     </p>
                   </div>
@@ -941,7 +941,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     <span className="text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-wider block">
                       Global Cloud Network Topologies
                     </span>
-                    <p className="text-xs text-slate-200">
+                    <p className="font-sora text-xs text-slate-200 font-normal leading-[1.6]">
                       Cross-provider connectivity linking AWS, Azure, Google Cloud, and private enterprise datacenters seamlessly.
                     </p>
                   </div>
@@ -997,7 +997,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                   </h2>
                 </div>
 
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] max-w-xl font-normal">
                   Define your cloud direction, align technology with business priorities, and establish a practical roadmap for sustainable transformation.
                 </p>
 
@@ -1058,7 +1058,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                       <span className="text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-wider block">
                         Enterprise Infrastructure Ready
                       </span>
-                      <p className="text-xs text-slate-200 mt-1">
+                      <p className="font-sora text-xs text-slate-200 mt-1 font-normal leading-[1.6]">
                         SLA-governed enterprise hosting linking on-premises estates to hyperscaler cloud zones.
                       </p>
                     </div>

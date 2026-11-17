@@ -414,7 +414,7 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#060D1A] text-slate-900 dark:text-white transition-colors">
+    <div className="min-h-screen bg-white dark:bg-[#060D1A] text-slate-900 dark:text-white transition-colors cloud-sora-scope">
       
       {/* =========================================================================
           BREADCRUMB BAR
@@ -470,7 +470,7 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
               <span className="text-[#00A3E0]">Enterprise Control and Security</span>
             </h1>
 
-            <p className="text-[14px] text-slate-200 font-normal leading-[1.6] drop-shadow-sm max-w-2xl text-left">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 font-normal leading-[1.6] drop-shadow-sm max-w-2xl text-left">
               Build a secure, dedicated cloud environment designed around your organization's infrastructure, governance, performance, and operational requirements. Knooviq helps enterprises design, modernize, and operate private cloud platforms that support critical workloads while maintaining control over data, access, and resources.
             </p>
 
@@ -509,7 +509,7 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Infrastructure Built Around Your Enterprise
             </h2>
-            <p className="text-[14px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal text-left">
+            <p className="font-sora text-[14px] text-[#102A43] dark:text-slate-200 leading-[1.6] font-normal text-left">
               Private cloud delivers dedicated physical compute, storage, and networking resources along with complete authority over security policies, data placement, workload configurations, and operational governance. It is designed specifically for organizations navigating specialized regulatory constraints, sensitive intellectual property, legacy application dependencies, and sustained, predictable infrastructure demands.
             </p>
           </div>
@@ -521,10 +521,10 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <div className="space-y-2">
-                <h3 className="text-[16px] font-medium text-slate-900 dark:text-white leading-[1.5] text-left">
+                <h3 className="font-sora text-[16px] font-medium text-slate-900 dark:text-white leading-[1.5] text-left">
                   Architectural Rigor and Operational Nuance
                 </h3>
-                <p className="text-[14px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal text-left">
+                <p className="font-sora text-[14px] text-[#102A43] dark:text-slate-200 leading-[1.6] font-normal text-left">
                   Private cloud is not automatically more secure, compliant, or cost-effective in every situation. Optimal enterprise outcomes depend directly on intentional architecture, automated configuration management, disciplined patching, policy-as-code guardrails, and rigorous operational governance. Knooviq assists enterprises in evaluating trade-offs between dedicated capital investment and hyperscaler operational agility to formulate the optimal infrastructure placement strategy.
                 </p>
               </div>
@@ -533,15 +533,15 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-slate-100 dark:border-white/5 text-xs">
               <div className="space-y-1">
                 <span className="font-mono text-[#00A3E0] font-bold block text-[14px]">Physical Control</span>
-                <span className="text-[14px] text-slate-600 dark:text-slate-400 font-normal leading-[1.6] block text-left">Total ownership over CPU microcode, firmware, and physical access controls.</span>
+                <span className="font-sora text-[14px] text-slate-600 dark:text-slate-400 font-normal leading-[1.6] block text-left">Total ownership over CPU microcode, firmware, and physical access controls.</span>
               </div>
               <div className="space-y-1">
                 <span className="font-mono text-[#00A3E0] font-bold block text-[14px]">Data Placement</span>
-                <span className="text-[14px] text-slate-600 dark:text-slate-400 font-normal leading-[1.6] block text-left">Deterministic storage residency with zero multi-tenant geographic cross-border leakage.</span>
+                <span className="font-sora text-[14px] text-slate-600 dark:text-slate-400 font-normal leading-[1.6] block text-left">Deterministic storage residency with zero multi-tenant geographic cross-border leakage.</span>
               </div>
               <div className="space-y-1">
                 <span className="font-mono text-[#00A3E0] font-bold block text-[14px]">Predictable Economics</span>
-                <span className="text-[14px] text-slate-600 dark:text-slate-400 font-normal leading-[1.6] block text-left">Fixed monthly cost structures without unexpected network egress or API call spikes.</span>
+                <span className="font-sora text-[14px] text-slate-600 dark:text-slate-400 font-normal leading-[1.6] block text-left">Fixed monthly cost structures without unexpected network egress or API call spikes.</span>
               </div>
             </div>
           </div>
@@ -583,13 +583,13 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
                     <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
                       {service.heading}
                     </h2>
-                    <p className="text-[16px] font-medium text-[#0070C0] dark:text-cyan-400 leading-[1.5] text-left">
+                    <p className="font-sora text-[16px] font-medium text-[#0070C0] dark:text-cyan-400 leading-[1.5] text-left">
                       {service.subheading}
                     </p>
                   </div>
 
                   {/* Description */}
-                  <p className="text-[14px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal text-left">
+                  <p className="font-sora text-[14px] text-[#102A43] dark:text-slate-200 leading-[1.6] font-normal text-left">
                     {service.description}
                   </p>
 
@@ -604,7 +604,7 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
                           <span className="font-mono text-slate-500 dark:text-slate-400 block text-[10px] uppercase">
                             {item.label}
                           </span>
-                          <span className="text-[14px] font-normal text-slate-800 dark:text-slate-200 block leading-[1.5] text-left">
+                          <span className="font-sora text-[15px] font-normal text-[#102A43] dark:text-slate-200 block leading-[1.6] text-left">
                             {item.value}
                           </span>
                         </div>
@@ -624,7 +624,7 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
                           className="flex items-start gap-2.5 text-slate-700 dark:text-slate-200"
                         >
                           <CheckCircle2 className="w-3.5 h-3.5 text-[#00A3E0] shrink-0 mt-0.5" />
-                          <span className="text-[14px] leading-[1.6] font-normal text-slate-700 dark:text-slate-200 text-left">{cap}</span>
+                          <span className="font-sora text-[14px] leading-[1.6] font-normal text-slate-700 dark:text-slate-200 text-left">{cap}</span>
                         </div>
                       ))}
                     </div>
@@ -693,7 +693,7 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Key Business Benefits of Dedicated Private Cloud
             </h2>
-            <p className="text-[14px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal text-left">
+            <p className="font-sora text-[14px] text-[#102A43] dark:text-slate-200 leading-[1.6] font-normal text-left">
               Private cloud delivers clear strategic advantages when specialized workload controls, data residency guarantees, and predictable unit economics are enterprise imperatives.
             </p>
           </div>
@@ -716,11 +716,11 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
                       </span>
                     </div>
 
-                    <h3 className="text-[16px] font-medium text-slate-900 dark:text-white leading-[1.4] text-left">
+                    <h3 className="font-sora text-[16px] font-medium text-slate-900 dark:text-white leading-[1.4] text-left">
                       {benefit.title}
                     </h3>
 
-                    <p className="text-[14px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal text-left">
+                    <p className="font-sora text-[14px] text-[#102A43] dark:text-slate-200 leading-[1.6] font-normal text-left">
                       {benefit.description}
                     </p>
                   </div>
@@ -745,7 +745,7 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Where Private Cloud Fits Best
             </h2>
-            <p className="text-[14px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal text-left">
+            <p className="font-sora text-[14px] text-[#102A43] dark:text-slate-200 leading-[1.6] font-normal text-left">
               Not all applications belong in the public cloud. Private cloud establishes a deterministic foundation for workloads with strict governance, specialized performance requirements, or persistent data gravity.
             </p>
           </div>
@@ -800,7 +800,7 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Our Private Cloud Implementation Approach
             </h2>
-            <p className="text-[14px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal text-left">
+            <p className="font-sora text-[14px] text-[#102A43] dark:text-slate-200 leading-[1.6] font-normal text-left">
               A disciplined, phased engineering methodology designed to mitigate cutover risk, ensure predictable delivery, and establish enterprise operational readiness.
             </p>
           </div>
@@ -821,11 +821,11 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
                     </span>
                   </div>
 
-                  <h3 className="text-[16px] font-medium text-slate-900 dark:text-white leading-[1.4] text-left">
+                  <h3 className="font-sora text-[16px] font-medium text-slate-900 dark:text-white leading-[1.4] text-left">
                     {phase.title}
                   </h3>
 
-                  <p className="text-[14px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal text-left">
+                  <p className="font-sora text-[14px] text-[#102A43] dark:text-slate-200 leading-[1.6] font-normal text-left">
                     {phase.description}
                   </p>
                 </div>
@@ -854,7 +854,7 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Frequently Asked Questions
             </h2>
-            <p className="text-[14px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal max-w-2xl mx-auto">
+            <p className="font-sora text-[14px] text-[#102A43] dark:text-slate-200 leading-[1.6] font-normal max-w-2xl mx-auto">
               Practical answers regarding private cloud architecture, deployment trade-offs, security controls, and operational models.
             </p>
           </div>
@@ -884,7 +884,7 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
                 </button>
 
                 {openFaqIndex === fIdx && (
-                  <div className="px-5 pb-6 sm:px-6 sm:pb-6 text-[14px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal text-left border-t border-slate-200/60 dark:border-white/5 pt-4">
+                  <div className="font-sora px-5 pb-6 sm:px-6 sm:pb-6 text-[14px] text-[#102A43] dark:text-slate-200 leading-[1.6] font-normal text-left border-t border-slate-200/60 dark:border-white/5 pt-4">
                     {faq.a}
                   </div>
                 )}
@@ -936,7 +936,7 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
                     {lightboxImage.figure} &bull; FULL-SCREEN INFRASTRUCTURE BLUEPRINT
                   </span>
                 )}
-                <h3 className="text-base sm:text-xl font-bold text-white tracking-tight">
+                <h3 className="font-sora text-base sm:text-xl font-medium text-white tracking-tight">
                   {lightboxImage.title}
                 </h3>
               </div>
@@ -961,7 +961,7 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
 
             {/* Modal Footer */}
             <div className="p-4 sm:p-5 border-t border-white/10 bg-[#0B1528] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs shrink-0">
-              <p className="text-[14px] text-slate-300 font-normal leading-[1.5] text-left">
+              <p className="font-sora text-[14px] text-slate-300 font-normal leading-[1.5] text-left">
                 {lightboxImage.subtitle}
               </p>
               <div className="flex items-center gap-2 font-mono text-[11px] text-cyan-400 shrink-0">

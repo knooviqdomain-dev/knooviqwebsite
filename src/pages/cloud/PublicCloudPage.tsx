@@ -313,7 +313,7 @@ export const PublicCloudPage: React.FC<PublicCloudPageProps> = ({ onOpenContact 
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#060D1A] text-slate-900 dark:text-white transition-colors">
+    <div className="min-h-screen bg-white dark:bg-[#060D1A] text-slate-900 dark:text-white transition-colors cloud-sora-scope">
       
       {/* =========================================================================
           BREADCRUMB BAR
@@ -362,7 +362,7 @@ export const PublicCloudPage: React.FC<PublicCloudPageProps> = ({ onOpenContact 
               <span className="text-[#00A3E0]">Public Cloud</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed max-w-2xl pt-1">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 font-normal leading-[1.6] max-w-2xl pt-1">
               Public cloud provides access to computing, storage, networking, databases, and managed services without requiring organizations to own and maintain all the underlying infrastructure. Knooviq supports the design of cloud environments around application requirements, security policies, infrastructure needs, and long-term technology plans.
             </p>
 
@@ -399,7 +399,7 @@ export const PublicCloudPage: React.FC<PublicCloudPageProps> = ({ onOpenContact 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight">
               The Public Cloud Advantage
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Public cloud gives organizations the flexibility to scale, innovate, and respond to changing business needs. The right architecture, governance, and operating practices help establish a reliable foundation for enterprise workloads.
             </p>
           </div>
@@ -417,10 +417,10 @@ export const PublicCloudPage: React.FC<PublicCloudPageProps> = ({ onOpenContact 
                     <div className="w-10 h-10 rounded-xl bg-cyan-50 dark:bg-cyan-950/40 border border-cyan-100 dark:border-cyan-800/30 flex items-center justify-center text-[#00A3E0]">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="text-sm font-semibold text-slate-900 dark:text-white leading-snug">
+                    <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {item.description}
                     </p>
                   </div>
@@ -463,13 +463,13 @@ export const PublicCloudPage: React.FC<PublicCloudPageProps> = ({ onOpenContact 
                     <h2 className="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
                       {service.heading}
                     </h2>
-                    <p className="text-sm sm:text-base font-semibold text-[#0070C0] dark:text-cyan-400">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#0070C0] dark:text-cyan-400">
                       {service.subheading}
                     </p>
                   </div>
 
                   {/* Short Description */}
-                  <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {service.description}
                   </p>
 
@@ -555,7 +555,7 @@ export const PublicCloudPage: React.FC<PublicCloudPageProps> = ({ onOpenContact 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white tracking-tight">
               Public Cloud Platforms We Work With
             </h2>
-            <p className="text-base text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Cloud architecture and implementation can be tailored to the organization's workloads, technical requirements, and preferred cloud environment.
             </p>
           </div>
@@ -577,15 +577,15 @@ export const PublicCloudPage: React.FC<PublicCloudPageProps> = ({ onOpenContact 
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-semibold text-white">
+                    <h3 className="font-sora text-lg font-medium text-white">
                       {provider.name}
                     </h3>
-                    <p className="text-xs font-mono text-[#00A3E0] mt-1">
+                    <p className="font-sora text-xs font-mono text-[#00A3E0] mt-1">
                       {provider.tagline}
                     </p>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                     {provider.description}
                   </p>
 
@@ -651,7 +651,7 @@ export const PublicCloudPage: React.FC<PublicCloudPageProps> = ({ onOpenContact 
                     {lightboxImage.figure} &bull; FULL-SCREEN ARCHITECTURE BLUEPRINT
                   </span>
                 )}
-                <h3 className="text-base sm:text-xl font-bold text-white tracking-tight">
+                <h3 className="font-sora text-base sm:text-xl font-medium text-white tracking-tight">
                   {lightboxImage.title}
                 </h3>
               </div>
@@ -676,7 +676,7 @@ export const PublicCloudPage: React.FC<PublicCloudPageProps> = ({ onOpenContact 
 
             {/* Modal Footer */}
             <div className="p-4 sm:p-5 border-t border-white/10 bg-[#0B1528] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs shrink-0">
-              <p className="text-slate-300 font-medium">
+              <p className="font-sora text-slate-300 font-medium leading-[1.6]">
                 {lightboxImage.subtitle}
               </p>
               <div className="flex items-center gap-2 font-mono text-[11px] text-cyan-400 shrink-0">

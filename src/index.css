@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -99,8 +101,10 @@
   }
 
   p {
-    line-height: 1.7;
-    letter-spacing: -0.006em;
+    font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
     text-wrap: pretty;
   }
 
@@ -121,6 +125,51 @@
     background-color: #0A2540;
     color: #FFFFFF;
   }
+}
+
+/* =========================================================================
+   SORA PARAGRAPH & SUBHEADING SYSTEM (Knooviq Cloud Pages)
+   ========================================================================= */
+.cloud-sora-scope {
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+.cloud-sora-scope p {
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Light Theme Deep Navy (#102A43) for paragraphs on light surfaces */
+.cloud-sora-scope p:not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-white"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#0070C0]"]) {
+  color: #102A43;
+}
+
+/* Mobile Paragraph Font Size: 15px mobile, 16px desktop */
+@media (max-width: 639px) {
+  .cloud-sora-scope p:not(.text-xs):not(.text-\[10px\]):not(.text-\[11px\]):not(.text-\[12px\]) {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+@media (min-width: 640px) {
+  .cloud-sora-scope p:not(.text-xs):not(.text-\[10px\]):not(.text-\[11px\]):not(.text-\[12px\]) {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+/* Dark mode paragraph readability */
+.dark .cloud-sora-scope p:not([class*="text-white"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#0070C0]"]) {
+  color: #E2E8F0;
+}
+
+/* Sora Medium (500) for Subheadings */
+.cloud-sora-scope h3,
+.cloud-sora-scope h4,
+.cloud-sora-scope .sora-subheading {
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 500;
 }
 
 /* Custom Sleek Scrollbar */
