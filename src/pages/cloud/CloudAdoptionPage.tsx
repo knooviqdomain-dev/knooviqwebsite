@@ -534,7 +534,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                         <span className="px-2.5 py-0.5 rounded-md bg-cyan-100 dark:bg-cyan-500/20 text-[#00A3E0] dark:text-cyan-300 font-mono font-bold text-xs">
                           {wave.wave}
                         </span>
-                        <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
+                        <h4 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                           {wave.title}
                         </h4>
                       </div>
@@ -543,7 +543,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                       </span>
                     </div>
 
-                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] mb-2 font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] mb-2 font-normal">
                       {wave.scope}
                     </p>
 
@@ -696,7 +696,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                       {item.pathway}
                     </h4>
 
-                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] mb-3 font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] mb-3 font-normal">
                       {item.description}
                     </p>
 
@@ -768,7 +768,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                   <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     Amazon Web Services
                   </h4>
-                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Optimal for global distributed microservices, massive container clusters (EKS), Aurora relational databases, and enterprise serverless architectures.
                   </p>
                   <div className="pt-2 border-t border-slate-100 dark:border-white/5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
@@ -784,7 +784,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                   <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     Microsoft Azure
                   </h4>
-                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Premier choice for enterprise Windows/SQL estates, Active Directory / Entra ID federations, Microsoft 365 integrations, and hybrid Azure Arc management.
                   </p>
                   <div className="pt-2 border-t border-slate-100 dark:border-white/5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
@@ -800,7 +800,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                   <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     Google Cloud (GCP)
                   </h4>
-                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Exceptional for enterprise data lakes (BigQuery), automated Kubernetes orchestration (GKE Autopilot), AI/ML workloads, and global multi-region networks.
                   </p>
                   <div className="pt-2 border-t border-slate-100 dark:border-white/5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
@@ -816,7 +816,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                   <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     Hybrid &amp; Private Cloud
                   </h4>
-                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Designed for data residency mandates, sovereign clouds, and ultra-low-latency on-premises manufacturing or healthcare operations requiring direct interconnects.
                   </p>
                   <div className="pt-2 border-t border-slate-100 dark:border-white/5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
@@ -972,17 +972,17 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                   return (
                     <div
                       key={idx}
-                      className="p-4.5 rounded-2xl bg-slate-50 dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-2"
+                      className="p-5 sm:p-6 lg:p-4.5 rounded-2xl bg-slate-50 dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-3 lg:space-y-2"
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <Icon className="w-4 h-4 text-[#00A3E0]" />
-                          <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
+                          <h4 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                             {item.title}
                           </h4>
                         </div>
                       </div>
-                      <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
+                      <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                         {item.desc}
                       </p>
                       <div className="pt-2 border-t border-slate-200/60 dark:border-white/10 text-[11px] font-mono text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
@@ -1056,13 +1056,13 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                         <span className="px-2.5 py-0.5 rounded-md bg-cyan-100 dark:bg-cyan-500/20 text-[#00A3E0] dark:text-cyan-300 font-mono font-bold text-xs">
                           {item.stage}
                         </span>
-                        <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
+                        <h4 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                           {item.title}
                         </h4>
                       </div>
                     </div>
 
-                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] mb-2 font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] mb-2 font-normal">
                       {item.description}
                     </p>
 
@@ -1201,7 +1201,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                   <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     Cost Visibility &amp; Rightsizing
                   </h4>
-                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Automated rightsizing algorithms identify over-provisioned memory or compute tiers, while automated commitment discount models (Savings Plans &amp; Reserved Instances) optimize baseline spend.
                   </p>
                   <div className="pt-2 border-t border-slate-200/60 dark:border-white/5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
@@ -1217,7 +1217,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                   <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     Full-Stack OpenTelemetry
                   </h4>
-                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Vendor-neutral OpenTelemetry instrumentation collects distributed traces, latency distributions, and runtime exceptions, enabling pinpoint root-cause analysis in under 5 minutes.
                   </p>
                   <div className="pt-2 border-t border-slate-200/60 dark:border-white/5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
@@ -1233,7 +1233,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                   <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     Self-Healing Runbooks
                   </h4>
-                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Event-driven automation handles standard operational remediations (disk expansions, pod restarts, SSL certificate rotations) without waking on-call engineers.
                   </p>
                   <div className="pt-2 border-t border-slate-200/60 dark:border-white/5 text-[11px] font-mono text-slate-500 dark:text-slate-400">
@@ -1249,7 +1249,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
                   <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     Well-Architected Reviews
                   </h4>
-                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Quarterly Well-Architected Framework reviews evaluate operational resilience, cost efficiency, and security posture against evolving cloud provider capabilities.
                   </p>
                   <div className="pt-2 border-t border-slate-200/60 dark:border-white/5 text-[11px] font-mono text-slate-500 dark:text-slate-400">

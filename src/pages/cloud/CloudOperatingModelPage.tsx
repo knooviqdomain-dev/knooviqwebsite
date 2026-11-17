@@ -242,11 +242,11 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                       </span>
                     </div>
 
-                    <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                       {p.title}
                     </h3>
 
-                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {p.desc}
                     </p>
                   </div>
@@ -361,15 +361,15 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 ].map((cap, idx) => (
                   <div
                     key={idx}
-                    className="p-4.5 rounded-2xl bg-slate-50 dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all"
+                    className="p-5 sm:p-6 lg:p-4.5 rounded-2xl bg-slate-50 dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-2.5 lg:space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all"
                   >
                     <div className="flex items-center gap-2.5">
                       <UserCheck className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-6.5 font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-0 lg:pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -445,15 +445,15 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 ].map((cap, idx) => (
                   <div
                     key={idx}
-                    className="p-4.5 rounded-2xl bg-white dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all shadow-sm"
+                    className="p-5 sm:p-6 lg:p-4.5 rounded-2xl bg-white dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-2.5 lg:space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all shadow-sm"
                   >
                     <div className="flex items-center gap-2.5">
                       <Compass className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-6.5 font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-0 lg:pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -603,15 +603,15 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 ].map((cap, idx) => (
                   <div
                     key={idx}
-                    className="p-4.5 rounded-2xl bg-slate-50 dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all"
+                    className="p-5 sm:p-6 lg:p-4.5 rounded-2xl bg-slate-50 dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-2.5 lg:space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all"
                   >
                     <div className="flex items-center gap-2.5">
                       <Layers className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-6.5 font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-0 lg:pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -687,15 +687,15 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 ].map((cap, idx) => (
                   <div
                     key={idx}
-                    className="p-4.5 rounded-2xl bg-white dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all shadow-sm"
+                    className="p-5 sm:p-6 lg:p-4.5 rounded-2xl bg-white dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-2.5 lg:space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all shadow-sm"
                   >
                     <div className="flex items-center gap-2.5">
                       <Cpu className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-6.5 font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-0 lg:pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -846,15 +846,15 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 ].map((cap, idx) => (
                   <div
                     key={idx}
-                    className="p-4.5 rounded-2xl bg-slate-50 dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all"
+                    className="p-5 sm:p-6 lg:p-4.5 rounded-2xl bg-slate-50 dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-2.5 lg:space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all"
                   >
                     <div className="flex items-center gap-2.5">
                       <BarChart3 className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-6.5 font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-0 lg:pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -931,15 +931,15 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 ].map((cap, idx) => (
                   <div
                     key={idx}
-                    className="p-4.5 rounded-2xl bg-white dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all shadow-sm"
+                    className="p-5 sm:p-6 lg:p-4.5 rounded-2xl bg-white dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-2.5 lg:space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all shadow-sm"
                   >
                     <div className="flex items-center gap-2.5">
                       <ShieldCheck className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-6.5 font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-0 lg:pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -1089,15 +1089,15 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 ].map((cap, idx) => (
                   <div
                     key={idx}
-                    className="p-4.5 rounded-2xl bg-slate-50 dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all"
+                    className="p-5 sm:p-6 lg:p-4.5 rounded-2xl bg-slate-50 dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-2.5 lg:space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all"
                   >
                     <div className="flex items-center gap-2.5">
                       <BookOpen className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-6.5 font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-0 lg:pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
