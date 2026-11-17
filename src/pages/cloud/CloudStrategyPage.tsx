@@ -349,7 +349,6 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
     <div className="bg-white dark:bg-[#070E1C] text-slate-900 dark:text-slate-100 transition-colors duration-300 cloud-sora-scope">
 
       {/* =========================================================================
-      {/* =========================================================================
           SECTION 1: CLOUD STRATEGY HERO (Cinematic Full-Bleed Enterprise Hero)
           Includes breadcrumb: Home → Cloud & Operations → Cloud Strategy
          ========================================================================= */}
@@ -362,25 +361,36 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             alt="Plan Smarter. Build Stronger. Scale Faster."
             className="w-full h-full object-cover object-right sm:object-[78%_center] lg:object-[center_25%] brightness-105 contrast-[1.02]"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#040B17]/95 via-[#040B17]/90 to-[#040B17] pointer-events-none" />
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="max-w-2xl lg:max-w-xl space-y-6 relative">
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+          <div className="max-w-2xl lg:max-w-xl space-y-5 sm:space-y-6 relative">
+            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none hidden sm:block" />
 
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/25 text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider backdrop-blur-md">
               <Compass className="w-3.5 h-3.5 text-[#00A3E0]" />
               <span>CLOUD STRATEGY &amp; ADVISORY</span>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               <span className="block text-xs sm:text-sm font-mono font-semibold uppercase tracking-wider text-[#00A3E0]">
                 Cloud Strategy
               </span>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
                 Plan Smarter. Build Stronger. Scale Faster.
               </h1>
+            </div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/strategy_hero.png"
+                alt="Plan Smarter. Build Stronger. Scale Faster. - Cloud Strategy Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
 
             <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl pt-1">

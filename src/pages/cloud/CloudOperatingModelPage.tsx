@@ -96,19 +96,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#060D1A] text-slate-900 dark:text-slate-100 transition-colors cloud-sora-scope">
-      
-      {/* =========================================================================
-          HERO SECTION — CLOUD OPERATING MODEL
-          Eyebrow: CLOUD & OPERATIONS
-          Heading: Design a Cloud Operating Model Built for Enterprise Scale
-          Description: Establish the people, processes, governance, and technology
-          practices required to manage cloud services effectively. Knooviq helps
-          organizations define cloud responsibilities, structure cross-functional
-          teams, establish decision-making frameworks, and align cloud delivery
-          with enterprise priorities.
-          Primary CTA: Discuss Your Cloud Operating Model
-          Secondary CTA: Explore Our Capabilities
-          ========================================================================= */}
+
       {/* =========================================================================
           HERO SECTION — CLOUD OPERATING MODEL (Cinematic Full-Bleed Enterprise Hero)
           Eyebrow: CLOUD & OPERATIONS
@@ -122,7 +110,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           Secondary CTA: Explore Our Capabilities
           ========================================================================= */}
       <section className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 overflow-hidden bg-black text-white">
-        
+
         {/* Full-Bleed 16:9 Panoramic Image - Zero Cropping on Subject */}
         <div className="absolute inset-0 z-0">
           <img
@@ -130,25 +118,36 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             alt="Design a Cloud Operating Model Built for Enterprise Scale"
             className="w-full h-full object-cover object-right sm:object-[78%_center] lg:object-[center_25%] brightness-105 contrast-[1.02]"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#040B17]/95 via-[#040B17]/90 to-[#040B17] pointer-events-none" />
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="max-w-2xl lg:max-w-xl space-y-6 relative">
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+          <div className="max-w-2xl lg:max-w-xl space-y-5 sm:space-y-6 relative">
+            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none hidden sm:block" />
 
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/25 text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider backdrop-blur-md">
               <Sparkles className="w-3.5 h-3.5 text-[#00A3E0]" />
               <span>CLOUD &amp; OPERATIONS</span>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
                 Design a Cloud Operating Model Built for Enterprise Scale
               </h1>
               <p className="font-sora text-[15px] sm:text-[16px] font-medium text-cyan-300 tracking-normal leading-[1.6]">
                 Align People, Governance, Platform Capabilities, and Commercial Outcomes
               </p>
+            </div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/cloud_op_model_hero.png"
+                alt="Design a Cloud Operating Model Built for Enterprise Scale - Cloud Operating Model Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
 
             <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl pt-1">
@@ -176,7 +175,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
 
       {/* Full-Screen Lightbox Modal */}
       {lightboxImage && (
-        <div 
+        <div
           className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8 animate-in fade-in duration-200"
           onClick={() => setLightboxImage(null)}
         >
@@ -187,12 +186,12 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           >
             <X className="w-6 h-6" />
           </button>
-          <div 
+          <div
             className="relative max-w-7xl w-full max-h-[92vh] flex flex-col items-center justify-center gap-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <img 
-              src={lightboxImage.src} 
+            <img
+              src={lightboxImage.src}
               alt={lightboxImage.caption}
               className="max-w-full max-h-[85vh] object-contain rounded-2xl border border-white/20 shadow-2xl"
             />
@@ -211,7 +210,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           ========================================================================= */}
       <section id="operating-model-overview" className="py-20 bg-slate-50 dark:bg-[#07101E] border-b border-slate-200 dark:border-white/10 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>OPERATING ECOSYSTEM ARCHITECTURE</span>
@@ -278,7 +277,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           ========================================================================= */}
       <section id="organization-teams" className="py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          
+
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>ORGANIZATIONAL ARCHITECTURE &amp; TEAMS</span>
@@ -293,7 +292,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
 
           {/* Main Grid: Left Image, Right Key Capabilities */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Image Showcase */}
             <div className="lg:col-span-5 space-y-4">
               <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-900 shadow-xl group">
@@ -305,7 +304,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-                  
+
                   <div className="absolute bottom-4 left-4 right-4">
                     <div className="p-3.5 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 text-xs text-white space-y-1">
                       <div className="font-bold flex items-center gap-1.5 text-cyan-300">
@@ -399,7 +398,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           ========================================================================= */}
       <section id="governance-decisions" className="py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          
+
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>DECISION RIGHTS &amp; GOVERNANCE</span>
@@ -414,7 +413,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
 
           {/* Main Grid: Left Capabilities, Right Image Showcase */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
               <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
@@ -474,7 +473,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                  
+
                   <div className="absolute bottom-4 left-4 right-4 select-text">
                     <div className="p-3.5 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 text-xs text-white space-y-1">
                       <div className="font-bold flex items-center gap-1.5 text-cyan-300">
@@ -520,7 +519,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           ========================================================================= */}
       <section id="service-delivery" className="py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          
+
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>SERVICE DELIVERY &amp; CONSUMPTION</span>
@@ -535,7 +534,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
 
           {/* Main Grid: Left Image, Right Capabilities */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Image Showcase */}
             <div className="lg:col-span-5 space-y-4">
               <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-900 shadow-xl group">
@@ -547,7 +546,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                  
+
                   <div className="absolute bottom-4 left-4 right-4 select-text">
                     <div className="p-3.5 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 text-xs text-white space-y-1">
                       <div className="font-bold flex items-center gap-1.5 text-cyan-300">
@@ -641,7 +640,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           ========================================================================= */}
       <section id="platform-engineering" className="py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          
+
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>PLATFORM ENGINEERING &amp; SELF-SERVICE</span>
@@ -656,7 +655,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
 
           {/* Main Grid: Left Capabilities, Right Image Showcase */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
               <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
@@ -716,7 +715,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                  
+
                   <div className="absolute bottom-4 left-4 right-4 select-text">
                     <div className="p-3.5 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 text-xs text-white space-y-1">
                       <div className="font-bold flex items-center gap-1.5 text-cyan-300">
@@ -763,7 +762,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           ========================================================================= */}
       <section id="financial-management" className="py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          
+
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>FINANCIAL ACCOUNTABILITY &amp; FINOPS</span>
@@ -778,7 +777,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
 
           {/* Main Grid: Left Image, Right Capabilities */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Image Showcase */}
             <div className="lg:col-span-5 space-y-4">
               <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-900 shadow-xl group">
@@ -790,7 +789,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                  
+
                   <div className="absolute bottom-4 left-4 right-4 select-text">
                     <div className="p-3.5 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 text-xs text-white space-y-1">
                       <div className="font-bold flex items-center gap-1.5 text-cyan-300">
@@ -885,7 +884,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           ========================================================================= */}
       <section id="security-risk" className="py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          
+
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>SHARED SECURITY RESPONSIBILITIES</span>
@@ -900,7 +899,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
 
           {/* Main Grid: Left Capabilities, Right Image Showcase */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
               <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
@@ -960,7 +959,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                  
+
                   <div className="absolute bottom-4 left-4 right-4 select-text">
                     <div className="p-3.5 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 text-xs text-white space-y-1">
                       <div className="font-bold flex items-center gap-1.5 text-cyan-300">
@@ -1006,7 +1005,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           ========================================================================= */}
       <section id="skills-improvement" className="py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          
+
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>CAPABILITY EVOLUTION &amp; MATURITY</span>
@@ -1021,7 +1020,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
 
           {/* Main Grid: Left Image, Right Capabilities */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Image Showcase */}
             <div className="lg:col-span-5 space-y-4">
               <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-900 shadow-xl group">
@@ -1033,7 +1032,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                  
+
                   <div className="absolute bottom-4 left-4 right-4 select-text">
                     <div className="p-3.5 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 text-xs text-white space-y-1">
                       <div className="font-bold flex items-center gap-1.5 text-cyan-300">
@@ -1125,20 +1124,20 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
       <section className="py-20 bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-[#060D1A] dark:via-[#081224] dark:to-[#050A14] border-t border-slate-200 dark:border-white/10 transition-colors">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-8 sm:p-14 rounded-3xl bg-gradient-to-br from-slate-900 via-[#0A1A33] to-[#050E1F] border border-cyan-500/30 text-white shadow-2xl relative overflow-hidden space-y-8">
-            
+
             {/* Ambient Cyan Accent Glow */}
             <div className="absolute -top-24 -right-24 w-80 h-80 bg-[#00A3E0]/20 rounded-full blur-3xl pointer-events-none" />
-            
+
             <div className="relative space-y-4 max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/30 text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5 text-[#00A3E0]" />
                 <span>EXECUTIVE ADVISORY &amp; ARCHITECTURE</span>
               </div>
-              
+
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
                 Design an Operating Model Built for Your Business
               </h2>
-              
+
               <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                 Partner with Knooviq enterprise advisors to structure your Cloud Center of Excellence, clarify cross-functional decision rights, and build self-service platform capabilities that scale.
               </p>
