@@ -58,7 +58,7 @@ export const Hero: React.FC<HeroProps> = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Video autoplay for both desktop background and mobile showcase
+  // Video autoplay for both desktop background and mobile/tablet showcase
   useEffect(() => {
     const videos = [desktopVideoRef.current, mobileVideoRef.current];
     videos.forEach((video) => {
@@ -80,7 +80,7 @@ export const Hero: React.FC<HeroProps> = () => {
       id="hero"
       className="relative w-full overflow-hidden bg-[#020617] flex items-center justify-center select-none pt-[72px] sm:pt-[80px] lg:pt-[84px] min-h-[600px] sm:min-h-[660px] lg:h-screen lg:min-h-[680px] lg:max-h-[1080px]"
     >
-      {/* 100% Screen Cover Background Video for Desktop/Laptops (Seamless 60fps Loop) */}
+      {/* 100% Screen Cover Background Video for Laptops & Desktops (Seamless 60fps Loop) */}
       <video
         ref={desktopVideoRef}
         autoPlay
@@ -88,7 +88,7 @@ export const Hero: React.FC<HeroProps> = () => {
         muted
         playsInline
         preload="auto"
-        className="hidden lg:block absolute inset-0 w-full h-full object-cover object-top"
+        className="hidden xl:block absolute inset-0 w-full h-full object-cover object-top"
         style={{
           transform: 'translateZ(0)',
           WebkitTransform: 'translateZ(0)',
@@ -159,7 +159,7 @@ export const Hero: React.FC<HeroProps> = () => {
         </p>
 
         {/* Mobile & Tablet Dedicated Showcase Video: 100% Full Uncut Logo & 16:9 Aspect Ratio */}
-        <div className="lg:hidden w-full my-6 sm:my-8 rounded-2xl sm:rounded-3xl overflow-hidden border border-cyan-500/35 shadow-[0_0_35px_rgba(0,163,224,0.22)] bg-slate-950 relative aspect-video">
+        <div className="xl:hidden w-full max-w-4xl mx-auto my-6 sm:my-8 rounded-2xl sm:rounded-3xl overflow-hidden border border-cyan-500/35 shadow-[0_0_35px_rgba(0,163,224,0.22)] bg-slate-950 relative aspect-video">
           <video
             ref={mobileVideoRef}
             autoPlay
@@ -182,7 +182,7 @@ export const Hero: React.FC<HeroProps> = () => {
         </div>
 
         {/* Floating Enterprise Telemetry Highlights Strip (Fills Space with High-Credibility Architecture Metrics) */}
-        <div className="mt-2 sm:mt-4 lg:mt-12 w-full grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 pointer-events-auto">
+        <div className="mt-2 sm:mt-4 xl:mt-12 w-full grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 pointer-events-auto">
           {highlights.map((item, idx) => {
             const Icon = item.icon;
             return (
