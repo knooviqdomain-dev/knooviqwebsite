@@ -482,7 +482,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
         {/* FULL-SCREEN HERO BACKGROUND IMAGE (16:9 Widescreen Crystal Clear HD Visual) */}
         <div className="absolute inset-0 w-full h-full pointer-events-none select-none overflow-hidden">
           <img
-            src="/images/cloud/change_mgmt_hero_wide.jpg"
+            src="/images/cloud/change_mgmt_hero_wide.jpg?v=2"
             alt="Enterprise Technology Change Management and Digital Transformation"
             className="w-full h-full object-cover object-right lg:object-center brightness-[1.05] contrast-[1.05]"
           />
@@ -525,7 +525,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
             {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
             <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
               <img
-                src="/images/cloud/change_mgmt_hero_wide.jpg"
+                src="/images/cloud/change_mgmt_hero_wide.jpg?v=2"
                 alt="Change Management - Enterprise Technology Change Management Architecture Blueprint"
                 className="w-full h-full object-cover object-center"
               />
@@ -1524,7 +1524,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
             </div>
             <div className="relative flex-1 flex items-center justify-center p-2 sm:p-4 overflow-auto bg-black">
               <img
-                src="/images/cloud/change_mgmt_hero_wide.jpg"
+                src="/images/cloud/change_mgmt_hero_wide.jpg?v=2"
                 alt="Change Management"
                 className="max-h-[82vh] w-auto max-w-full object-contain rounded-lg"
               />
