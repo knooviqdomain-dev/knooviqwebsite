@@ -1048,16 +1048,15 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
           {/* Architecture Neural Mesh Visual Card (Image 3 of 4) */}
           <div className="rounded-3xl overflow-hidden border-2 border-slate-200 bg-slate-950 shadow-xl relative group">
             <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
-              <div className="lg:col-span-7 relative h-72 sm:h-80 lg:h-96 overflow-hidden">
+              <div className="lg:col-span-7 relative w-full aspect-[16/9] sm:aspect-auto sm:h-80 lg:h-96 overflow-hidden bg-slate-950 flex items-center justify-center">
                 <img
                   src="/images/ai_assistants_architecture_mesh.jpg"
                   alt="Enterprise AI Assistants & Copilots Architecture Blueprint"
-                  className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-contain sm:object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-slate-950/90 hidden lg:block pointer-events-none" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent lg:hidden pointer-events-none" />
-                <div className="absolute top-4 left-4 px-3 py-1.5 rounded-lg bg-slate-950/80 backdrop-blur-md border border-cyan-400/40 text-xs font-mono font-bold text-cyan-300 shadow-sm flex items-center gap-1.5">
-                  <Database className="w-4 h-4 text-cyan-400" />
+                <div className="absolute top-3 left-3 sm:top-4 sm:left-4 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg bg-slate-950/90 backdrop-blur-md border border-cyan-400/40 text-[10px] sm:text-xs font-mono font-bold text-cyan-300 shadow-sm flex items-center gap-1.5 z-10">
+                  <Database className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400" />
                   <span>ENTERPRISE COPILOT BLUEPRINT</span>
                 </div>
               </div>
