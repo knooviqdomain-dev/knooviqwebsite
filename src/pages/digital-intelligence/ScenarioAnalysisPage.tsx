@@ -259,11 +259,11 @@ export const ScenarioAnalysisPage: React.FC<ScenarioAnalysisPageProps> = ({
               </h1>
 
             {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
-            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
               <img
                 src="/images/digital-intelligence/scenario_analysis_digital_twin_simulation.png"
                 alt="Enterprise Scenario Analysis Digital Twin Simulation & Stress Testing - Architecture Blueprint"
-                className="w-full h-full object-cover object-right"
+                className="w-full h-auto block select-none"
               />
             </div>
 
