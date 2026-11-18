@@ -651,6 +651,10 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
           />
         </div>
 
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
+
         {/* Directional High-Contrast Scrim for 100% Crystal-Clear Text Readability */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-r from-slate-950/95 via-slate-950/80 sm:via-slate-950/65 to-transparent pointer-events-none" />
 
@@ -670,6 +674,16 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
                   Predictive AI &amp; Demand Sensing
                 </span>
               </h1>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/predictive_ai_hero_widescreen.png"
+                alt="Enterprise Predictive AI & Neural Forecasting - Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
 
               <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Transition your enterprise from reactive supply chain firefighting to deterministic foresight with neural time-series engines, dynamic safety buffer optimization, and closed-loop SAP execution.

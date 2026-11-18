@@ -444,6 +444,10 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
           />
         </div>
 
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
+
         {/* Lighter Directional Scrim for Maximum Visual Clarity & Text Contrast */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-r from-slate-950/70 via-slate-950/30 to-transparent pointer-events-none" />
 
@@ -473,6 +477,16 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
                 Data Strategy &amp; Semantic Fabric
               </span>
             </motion.h1>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/data-strategy/transforming_enterprise_data_hero.png"
+                alt="Enterprise Data Strategy & Semantic Fabric - Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
 
             {/* Subtitle with High Legibility */}
             <motion.p

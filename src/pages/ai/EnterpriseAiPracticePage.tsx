@@ -614,6 +614,10 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
           />
         </div>
 
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
+
         {/* Directional Soft Scrim for Clean Text Readability while keeping artwork bright and visible */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-r from-slate-950/65 via-slate-950/25 to-transparent pointer-events-none" />
 
@@ -633,6 +637,16 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
                   Autonomous AI &amp; Clean Core
                 </span>
               </h1>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/enterprise_ai_autonomous_clean_core_hero.jpg"
+                alt="Enterprise Autonomous AI & Clean Core Fabric - Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
 
               <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Sovereign foundation models, deterministic Clean Core orchestration, and sub-20ms event mesh fabrics engineered on SAP BTP and private enterprise infrastructure.

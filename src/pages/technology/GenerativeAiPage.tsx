@@ -273,6 +273,10 @@ export const GenerativeAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact 
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
 
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           <div className="max-w-xl lg:max-w-2xl space-y-4 relative">
             {/* Seamless Soft Contrast Aura — ensures text is 100% legible with Zero Box and Zero dark blue shade */}
@@ -288,6 +292,16 @@ export const GenerativeAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact 
                 Grounded Enterprise <br />
                 <span className="text-[#00A3E0]">GenAI With Sovereign Privacy</span>
               </h1>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/generative_ai_hero.jpg"
+                alt="Knooviq Enterprise Generative AI Command Center - Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
               <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal max-w-2xl pt-1 drop-shadow-md">
                 Harness the world's most capable foundation models anchored directly to your internal enterprise documents, SAP ERP databases, and proprietary business knowledge with guaranteed zero data leakage.
               </p>

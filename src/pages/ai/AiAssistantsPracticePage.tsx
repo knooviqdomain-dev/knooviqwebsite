@@ -583,6 +583,10 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
           />
         </div>
 
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-2xl lg:max-w-xl space-y-6">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="space-y-4">
@@ -600,6 +604,16 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
                   AI Assistants &amp; Copilots
                 </span>
               </h1>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/ai_assistants_hero.png"
+                alt="Enterprise AI Assistants & Intelligent Copilots - Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
 
               <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                 Context-aware conversational copilots, multimodal enterprise assistants, and seamless SAP Joule orchestration grounded on private corporate knowledge.

@@ -576,6 +576,10 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
           />
         </div>
 
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-3xl lg:max-w-4xl">
             {/* Glowing Pill Badge with Micro-Animation */}
@@ -605,6 +609,16 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
                 Machine Learning &amp; MLOps
               </span>
             </motion.h1>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/machine_learning_hero.png"
+                alt="Enterprise Machine Learning & Predictive MLOps - Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
 
             {/* Sub-headline with Smooth Fade-Up */}
             <motion.p
