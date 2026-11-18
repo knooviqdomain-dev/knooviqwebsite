@@ -259,7 +259,7 @@ export const BusinessPerformanceInsightsPage: React.FC<BusinessPerformanceInsigh
             {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
             <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
               <img
-                src="/images/digital-intelligence/business_performance_insights_value_driver_trees.png"
+                src="/images/digital-intelligence/business_performance_insights_value_driver_trees_mobile.png"
                 alt="Enterprise Business Performance Insights & Value Driver Trees - Architecture Blueprint"
                 className="w-full h-auto block select-none"
               />
