@@ -496,6 +496,10 @@ export const EngineeringIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCon
         {/* Seamless Cinematic Left Scrim */}
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-slate-950/95 via-slate-950/85 sm:via-slate-950/65 to-transparent pointer-events-none" />
 
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           <div className="max-w-3xl space-y-4">
             
@@ -522,6 +526,15 @@ export const EngineeringIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCon
                 CAD/BIM-to-ERP Synchronization, Work Breakdown Structure Governance & EBOM/MBOM Control.
               </p>
             </motion.div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2000&q=80"
+                alt="Intelligent ERP for Engineering & Industrial Design - Architecture Blueprint"
+                className="w-full h-auto block select-none"
+              />
+            </div>
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }}

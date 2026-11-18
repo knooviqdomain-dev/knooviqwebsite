@@ -292,6 +292,10 @@ export const WellnessCareIndustryPage: React.FC<WellnessCareIndustryPageProps> =
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-transparent to-slate-950/15 pointer-events-none" />
         </div>
 
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           
           <div className="max-w-3xl space-y-4">
@@ -318,6 +322,15 @@ export const WellnessCareIndustryPage: React.FC<WellnessCareIndustryPageProps> =
                 Unifying Multi-Clinic Procurement, Membership Recurring Billing & Patient Care Kit Fulfillment.
               </p>
             </motion.div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=2000&q=80"
+                alt="Intelligent ERP for Wellness & Care - Architecture Blueprint"
+                className="w-full h-auto block select-none"
+              />
+            </div>
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
