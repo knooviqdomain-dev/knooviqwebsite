@@ -484,7 +484,7 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
         {/* Full-bleed High Resolution Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=2000&q=90" 
+            src="/images/fashion_lifestyle_hero.jpg" 
             alt="Fashion Enterprise Logistics & Merchandising"
             className="w-full h-full object-cover object-center"
           />
@@ -527,7 +527,7 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
             {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
             <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
               <img
-                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=2000&q=90"
+                src="/images/fashion_lifestyle_hero.jpg"
                 alt="Intelligent ERP for Fashion & Lifestyle - Architecture Blueprint"
                 className="w-full h-auto block select-none"
               />
