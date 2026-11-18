@@ -922,13 +922,12 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Supporting Software Architecture Visual 5 */}
               <div className="lg:col-span-5">
-                <div className="relative rounded-xl overflow-hidden border border-slate-300 dark:border-slate-700 aspect-[4/3] bg-slate-950 group shadow-md">
+                <div className="relative rounded-xl overflow-hidden border border-slate-300 dark:border-slate-700 aspect-[4/3] bg-white dark:bg-slate-900 group shadow-md flex items-center justify-center">
                   <img
                     src="/images/cloud/cloud_app_integration.png"
                     alt="Application & Integration Architecture - Engineering teams designing AI neural software architectures, API event streams, and decoupled systems"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-95"
+                    className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
                   <div className="absolute bottom-3 left-3 text-[11px] font-mono text-cyan-300 bg-slate-900/80 px-2.5 py-1 rounded border border-slate-700 select-text">
                     DECOUPLED SERVICE TOPOLOGY
                   </div>
@@ -1225,11 +1224,11 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Supporting Visual 8: Architecture Governance */}
               <div className="lg:col-span-5">
-                <div className="relative rounded-xl overflow-hidden border border-slate-300 dark:border-slate-700 aspect-[4/3] bg-slate-950 group shadow-md">
+                <div className="relative rounded-xl overflow-hidden border border-slate-300 dark:border-slate-700 aspect-[4/5] bg-slate-950 group shadow-md">
                   <img
                     src="/images/cloud/cloud_architecture_governance.png"
                     alt="Architecture Governance, Standards & Evolution - AI Code Generator holographic interface with robotic engineering assistant"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-95"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 opacity-95"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
                   <div className="absolute bottom-3 left-3 text-[11px] font-mono text-cyan-300 bg-slate-900/80 px-2.5 py-1 rounded border border-slate-700 select-text">
