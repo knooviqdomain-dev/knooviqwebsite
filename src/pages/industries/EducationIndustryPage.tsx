@@ -526,7 +526,7 @@ export const EducationIndustryPage: React.FC<EducationIndustryPageProps> = ({
             {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
             <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
               <img
-                src="/images/education/education_hero.jpg"
+                src="/images/education/education_hero_mobile.jpg"
                 alt="Intelligent ERP for Higher Education - Campus & Student Lifecycle"
                 className="w-full h-auto block select-none"
               />

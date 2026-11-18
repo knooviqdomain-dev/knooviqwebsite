@@ -514,7 +514,7 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
             {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
             <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
               <img
-                src="/images/fintech/fintech_hero_widescreen.jpg"
+                src="/images/fintech/fintech_hero_mobile.jpg"
                 alt="FinTech Digital Payments & High-Velocity Rails"
                 className="w-full h-auto block select-none"
               />
