@@ -227,6 +227,10 @@ export const ScenarioAnalysisPage: React.FC<ScenarioAnalysisPageProps> = ({
           <div className="absolute inset-0 bg-sky-500/[0.07] mix-blend-screen pointer-events-none" />
         </div>
 
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-2xl lg:max-w-xl space-y-6">
 
@@ -253,8 +257,18 @@ export const ScenarioAnalysisPage: React.FC<ScenarioAnalysisPageProps> = ({
                 </span>
               </h1>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/digital-intelligence/scenario_analysis_digital_twin_simulation.png"
+                alt="Enterprise Scenario Analysis Digital Twin Simulation & Stress Testing - Architecture Blueprint"
+                className="w-full h-full object-cover object-right"
+              />
+            </div>
+
+
               {/* Subtitle with High Legibility */}
-              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal pt-1 drop-shadow-md">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal pt-1 drop-shadow-md">
                 Evaluate the operational and financial impact of volatile market shifts before they occur. Simulate counterfactual disruptions, test multi-dimensional stress hypotheses, and assess organizational resilience across supply chains, pricing models, and capital allocations with SAP Clean Core.
               </p>
             </motion.div>

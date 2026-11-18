@@ -582,6 +582,10 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
         {/* Lighter Directional Scrim for Crystal-Clear Text Readability & Brighter Visuals */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-r from-slate-950/75 via-slate-950/45 sm:via-slate-950/20 to-transparent pointer-events-none" />
 
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           <div className="max-w-3xl space-y-4">
 
@@ -601,8 +605,18 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
               </span>
             </h1>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/enterprise_hyper_personalization_contextual_decisioning_hero.png"
+                alt="Enterprise Hyper-Personalization & Contextual Decisioning - Architecture Blueprint"
+                className="w-full h-full object-cover object-right"
+              />
+            </div>
+
+
             {/* Subtitle with High Legibility */}
-            <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal max-w-2xl pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal max-w-2xl pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
               Real-time vector preference modeling, contextual Next-Best-Action (NBA) arbitration, dynamic catalog re-ranking, and zero-party privacy governance across enterprise commerce touchpoints.
             </p>
 
