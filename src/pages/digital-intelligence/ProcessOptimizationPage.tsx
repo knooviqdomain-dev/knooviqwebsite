@@ -541,6 +541,10 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
           />
         </div>
 
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
+
         {/* Lighter Directional Scrim for Maximum Visual Clarity & Text Contrast */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-r from-slate-950/70 via-slate-950/30 to-transparent pointer-events-none" />
 
@@ -557,7 +561,17 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                   Process Optimization &amp; Flow Acceleration
                 </span>
               </h1>
-              <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal max-w-2xl pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/process_optimization_ai_innovation_hero.jpg"
+                alt="Autonomous Enterprise Process Optimization & Flow Acceleration - Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal max-w-2xl pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Eliminate operational friction, compress cycle times, and automate straight-through execution across mission-critical SAP S/4HANA value streams.
               </p>
             </motion.div>

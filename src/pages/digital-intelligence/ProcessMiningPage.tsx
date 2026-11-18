@@ -549,6 +549,10 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
           />
         </div>
 
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
+
         {/* Lighter Directional Scrim - Reduced Blue Shade for Maximum Image Clarity */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-r from-slate-950/75 via-slate-950/35 to-transparent pointer-events-none" />
 
@@ -571,8 +575,18 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                 </span>
               </h1>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/process_mining_execution_hero.jpg"
+                alt="Enterprise Process Mining & Automated Execution - Architecture Blueprint"
+                className="w-full h-full object-cover object-right"
+              />
+            </div>
+
+
               {/* Sub-headline */}
-              <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Transform enterprise transaction trails into actionable operational intelligence. Bridge SAP S/4HANA systems, uncover systemic friction points, and automate closed-loop process execution.
               </p>
             </motion.div>

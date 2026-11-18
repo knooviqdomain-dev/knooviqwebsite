@@ -553,6 +553,10 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
           <div className="absolute inset-0 bg-sky-500/10 mix-blend-screen pointer-events-none" />
         </div>
 
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-2xl lg:max-w-xl space-y-6">
             
@@ -578,8 +582,18 @@ export const WorkflowAutomationPage: React.FC<WorkflowAutomationPageProps> = ({
                 </span>
               </h1>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/workflow-automation/enterprise_intelligent_workflow_automation_hero.png"
+                alt="Enterprise Intelligent Workflow Automation & Process Orchestration - Architecture Blueprint"
+                className="w-full h-full object-cover object-right"
+              />
+            </div>
+
+
               {/* Subtitle with High Legibility */}
-              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal pt-1 drop-shadow-md">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal pt-1 drop-shadow-md">
                 End-to-end hyperautomation, human-in-the-loop task routing, cross-system ERP process choreography, and autonomous decision agents unifying fragmented enterprise workflows.
               </p>
             </motion.div>

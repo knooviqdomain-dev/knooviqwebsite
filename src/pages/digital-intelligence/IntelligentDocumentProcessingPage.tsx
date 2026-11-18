@@ -233,6 +233,10 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
           {/* Hero background image without dark blue overlays */}
         </div>
 
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-2xl lg:max-w-xl space-y-6">
             
@@ -258,8 +262,18 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
                 </span>
               </h1>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/idp/intelligent_document_processing_cognitive_ai_hero.jpg"
+                alt="Enterprise Intelligent Document Processing & Cognitive AI - Architecture Blueprint"
+                className="w-full h-full object-cover object-right"
+              />
+            </div>
+
+
               {/* Subtitle with High Legibility */}
-              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal pt-1 drop-shadow-md">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal pt-1 drop-shadow-md">
                 Transcend rigid zonal OCR. Deploy spatial vision-language models, table spatial transformers, and automated human-in-the-loop validation that parse complex unstructured PDFs, bills of lading, invoices, and contracts into clean SAP ERP transactions.
               </p>
             </motion.div>
