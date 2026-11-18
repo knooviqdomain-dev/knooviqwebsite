@@ -1064,7 +1064,45 @@ export const PersonalizationPage: React.FC<PersonalizationPageProps> = ({
               transition={{ duration: 0.3 }}
               className="rounded-3xl border border-slate-200 overflow-hidden shadow-sm"
             >
-              <div className="overflow-x-auto">
+              {/* Mobile Card-Based Comparison View (Zero Cutoff, 100% Fits Inside Screen) */}
+              <div className="sm:hidden space-y-3.5 p-3.5 bg-slate-50/50">
+                {architecturalComparison.map((row, rIdx) => (
+                  <div key={rIdx} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-3">
+                    <div className="flex items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
+                      <div className="font-bold text-slate-900 text-sm flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                        <span>{row.dimension}</span>
+                      </div>
+                      {row.statusBadge && (
+                        <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase bg-sky-100 text-[#0070C0] border border-sky-300 shrink-0">
+                          {row.statusBadge}
+                        </span>
+                      )}
+                    </div>
+                    <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                      <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                        <span>KNOOVIQ Cognitive Decisioning Mesh</span>
+                      </div>
+                      <p className="text-xs text-slate-900 font-semibold leading-relaxed">
+                        {row.modernApproach}
+                      </p>
+                    </div>
+                    <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                      <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                        <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                        <span>Legacy Static Rules &amp; Segmentation</span>
+                      </div>
+                      <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                        {row.legacyApproach}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop Full-Bleed Comparison Table (100% Preserved) */}
+              <div className="hidden sm:block overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="bg-slate-100 border-b border-slate-200 text-xs sm:text-sm font-mono uppercase text-slate-700 tracking-wider">

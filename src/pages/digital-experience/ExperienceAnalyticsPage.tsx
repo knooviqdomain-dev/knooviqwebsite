@@ -1115,7 +1115,38 @@ export const ExperienceAnalyticsPage: React.FC<ExperienceAnalyticsPageProps> = (
               transition={{ duration: 0.4 }}
               className="rounded-2xl border border-slate-200 overflow-hidden shadow-sm"
             >
-              <div className="overflow-x-auto">
+              {/* Mobile Card-Based Comparison View (Zero Cutoff, 100% Fits Inside Screen) */}
+              <div className="sm:hidden space-y-3.5 p-3.5 bg-slate-50/50">
+                {comparisonRows.map((row, idx) => (
+                  <div key={idx} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-3">
+                    <div className="font-bold text-slate-900 text-sm flex items-center gap-2 border-b border-slate-100 pb-2.5">
+                      <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                      <span>{row.capability}</span>
+                    </div>
+                    <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                      <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                        <span>KNOOVIQ Journey Telemetry Mesh</span>
+                      </div>
+                      <p className="text-xs text-slate-900 font-semibold leading-relaxed">
+                        {row.knooviq}
+                      </p>
+                    </div>
+                    <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                      <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                        <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                        <span>Legacy Web Analytics</span>
+                      </div>
+                      <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                        {row.legacy}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop Full-Bleed Comparison Table (100% Preserved) */}
+              <div className="hidden sm:block overflow-x-auto">
                 <table className="w-full text-left border-collapse text-xs sm:text-sm">
                   <thead>
                     <tr className="bg-slate-900 text-white font-mono uppercase tracking-wider text-xs">
