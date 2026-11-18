@@ -552,7 +552,7 @@ export const PowerUtilitiesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
             <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
               <img
-                src="/images/power-utilities/power_utilities_hero_widescreen.jpg"
+                src="/images/power-utilities/power_utilities_hero_mobile.jpg"
                 alt="Intelligent ERP for Power & Utilities"
                 className="w-full h-auto block select-none"
               />

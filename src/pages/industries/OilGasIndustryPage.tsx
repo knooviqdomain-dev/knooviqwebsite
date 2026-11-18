@@ -577,7 +577,7 @@ export const OilGasIndustryPage: React.FC<IndustryPageProps> = ({ onOpenContact 
             {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
             <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
               <img
-                src="/images/oil-gas/oil_gas_hero_widescreen.jpg"
+                src="/images/oil-gas/oil_gas_hero_uncropped.jpg"
                 alt="Intelligent ERP for Oil & Gas Energy"
                 className="w-full h-auto block select-none"
               />
