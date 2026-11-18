@@ -502,11 +502,11 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
 
               {/* Right Column: Architectural Image Showcase */}
               <div className="lg:col-span-5 space-y-4">
-                <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-slate-900 aspect-[16/10] sm:aspect-video lg:aspect-[4/3] group">
+                <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-slate-900 aspect-[735/828] group">
                   <img
                     src="/images/cloud/app_ops_mgmt.jpg"
                     alt="Application operations management architectural visual showing runtime systems, health review coordination, and release stability pipelines"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050B17]/90 via-transparent to-transparent pointer-events-none" />
@@ -755,7 +755,7 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
 
               {/* Right Column: High-Availability Visual */}
               <div className="lg:col-span-5 space-y-4">
-                <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-slate-900 aspect-[16/10] sm:aspect-video lg:aspect-[4/3] group">
+                <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-slate-900 aspect-square group">
                   <img
                     src="/images/cloud/app_ops_reliability.jpg"
                     alt="Service availability and reliability visual showing multi-zone redundancy, failover routing, and mirrored database clusters"
