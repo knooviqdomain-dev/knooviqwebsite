@@ -680,7 +680,7 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
               <img
                 src="/images/predictive_ai_hero_widescreen.png"
                 alt="Enterprise Predictive AI & Neural Forecasting - Architecture Blueprint"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-right"
               />
             </div>
 

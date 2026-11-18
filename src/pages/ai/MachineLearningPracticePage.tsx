@@ -615,7 +615,7 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
               <img
                 src="/images/machine_learning_hero.png"
                 alt="Enterprise Machine Learning & Predictive MLOps - Architecture Blueprint"
-                className="w-full h-full object-cover object-right"
+                className="w-full h-full object-cover object-right scale-[1.2] origin-right"
               />
             </div>
 
