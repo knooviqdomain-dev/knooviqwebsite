@@ -127,7 +127,7 @@ export const CybersecurityPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
       tagline: 'Evaluate security posture, identify exposure, prioritize risks, and build actionable roadmaps.',
       description:
         'Knooviq helps organizations systematically evaluate their security controls against practical operational risks. We identify critical assets, analyze threat exposure across architecture tiers, evaluate existing preventive safeguards, and translate assessment findings into a prioritized, business-aligned security remediation roadmap.',
-      image: '/images/cloud/cyber_assessment.jpg?v=8',
+      image: '/images/cloud/cyber_assessment.jpg?v=11',
       points: [
         'Security posture assessments evaluating technical controls across on-premise, cloud, and hybrid tiers',
         'Asset discovery and business-criticality classification to focus protection on core revenue drivers',

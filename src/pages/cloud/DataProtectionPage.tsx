@@ -193,7 +193,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
       tagline: 'Align data management with global privacy standards, data minimization, and statutory obligations.',
       description:
         'Regulatory frameworks such as the EU GDPR and India\'s Digital Personal Data Protection (DPDP) Act 2023 require disciplined personal data stewardship. Knooviq helps organizations embed privacy-by-design principles: documenting lawful business purposes, maintaining consent registers, establishing data minimization gates, and fulfilling Data Subject Access Requests (DSAR).',
-      image: '/images/cloud/data_privacy_governance.jpg?v=9',
+      image: '/images/cloud/data_privacy_governance.jpg?v=11',
       points: [
         'Personal data mapping documenting legal bases, cross-border flows, and processing purposes',
         'Data minimization gates restricting collection strictly to verified operational necessities',
@@ -1094,11 +1094,11 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
           </div>
 
           {/* Wide Architecture Graphic */}
-          <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-slate-900">
+          <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-slate-900 group">
             <img
-              src="/images/cloud/data_environments.jpg"
+              src="/images/cloud/data_environments.jpg?v=11"
               alt="Connected enterprise data environments including on-premises databases, multi-cloud storage, document hubs, endpoints, and APIs"
-              className="w-full h-[260px] sm:h-[340px] object-cover object-center"
+              className="w-full h-auto block group-hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
           </div>
