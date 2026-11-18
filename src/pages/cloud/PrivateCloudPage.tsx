@@ -763,7 +763,8 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-slate-200 dark:border-white/10 shadow-sm bg-white dark:bg-[#091528]">
+          {/* Desktop Table View (Hidden on mobile/tablet) */}
+          <div className="hidden lg:block overflow-x-auto rounded-2xl border border-slate-200 dark:border-white/10 shadow-sm bg-white dark:bg-[#091528]">
             <table className="w-full text-left text-xs sm:text-sm">
               <thead className="bg-slate-50 dark:bg-[#0B1528] text-slate-700 dark:text-slate-300 font-mono text-[11px] uppercase tracking-wider border-b border-slate-200 dark:border-white/10">
                 <tr>
@@ -795,6 +796,54 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
                 ))}
               </tbody>
             </table>
+          </div>
+
+          {/* Mobile Card View (Optimized for small screens, ensures no data overflows) */}
+          <div className="lg:hidden space-y-4">
+            {wherePrivateCloudFits.map((item, idx) => (
+              <div
+                key={idx}
+                className="p-5 rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-[#091528] shadow-sm space-y-4 transition-colors"
+              >
+                {/* Workload Category */}
+                <div className="flex items-center gap-2.5 pb-3 border-b border-slate-100 dark:border-white/10">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#00A3E0] shrink-0" />
+                  <h3 className="font-sora text-[15px] sm:text-[16px] font-semibold text-slate-900 dark:text-white leading-snug">
+                    {item.category}
+                  </h3>
+                </div>
+
+                {/* Enterprise Suitability */}
+                <div className="space-y-1.5">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#00A3E0] dark:text-cyan-400 block">
+                    Enterprise Suitability
+                  </span>
+                  <p className="font-sora text-[14px] text-[#102A43] dark:text-slate-200 leading-[1.6] font-normal text-left">
+                    {item.suitability}
+                  </p>
+                </div>
+
+                {/* Typical Systems */}
+                <div className="space-y-1.5">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 block">
+                    Typical Systems
+                  </span>
+                  <div className="p-3 rounded-xl bg-slate-50 dark:bg-[#0B1528] border border-slate-200/80 dark:border-white/5 font-mono text-[13px] text-slate-700 dark:text-slate-300 leading-relaxed break-words text-left">
+                    {item.examples}
+                  </div>
+                </div>
+
+                {/* Primary Architectural Driver */}
+                <div className="space-y-1.5 pt-1 border-t border-slate-100 dark:border-white/5">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400 block">
+                    Primary Architectural Driver
+                  </span>
+                  <div className="p-3 rounded-xl bg-cyan-50/50 dark:bg-cyan-950/20 border border-cyan-100 dark:border-cyan-800/30 text-[#0070C0] dark:text-cyan-300 font-sora text-[13px] font-medium leading-[1.5] text-left">
+                    {item.keyDriver}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
 
         </div>
