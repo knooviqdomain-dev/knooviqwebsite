@@ -562,7 +562,7 @@ export const BusinessIntelligencePage: React.FC<BusinessIntelligencePageProps> =
 
 
               {/* Subtitle with High Legibility */}
-              <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Unified semantic data fabrics, sub-second executive boardroom cockpits, conversational NLQ intelligence, and live transactional drill-through directly connected to enterprise ERP cores.
               </p>
             </motion.div>

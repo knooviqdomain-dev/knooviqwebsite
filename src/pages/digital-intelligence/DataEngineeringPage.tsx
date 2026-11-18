@@ -458,7 +458,7 @@ export const DataEngineeringPage: React.FC<DataEngineeringPageProps> = ({
 
 
               {/* Sub-headline */}
-              <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Build autonomous, high-throughput data engineering pipelines with declarative ELT orchestration, sub-second Change Data Capture, programmatic data quality gates, and scalable multi-cloud ingestion fabrics.
               </p>
             </motion.div>

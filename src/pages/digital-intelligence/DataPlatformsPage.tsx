@@ -559,7 +559,7 @@ export const DataPlatformsPage: React.FC<DataPlatformsPageProps> = ({
 
 
               {/* Subtitle with High Legibility */}
-              <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 High-throughput cloud data platforms, open table format lakehouses, serverless elastic compute clusters, and sovereign multi-cloud data fabric infrastructures.
               </p>
             </motion.div>

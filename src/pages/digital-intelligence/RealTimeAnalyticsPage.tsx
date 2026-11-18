@@ -576,7 +576,7 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
 
 
               {/* Subtitle with High Legibility */}
-              <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Sub-second stream processing, distributed event mesh backbones, in-memory continuous aggregations, and automated operational reflex actions for mission-critical enterprise environments.
               </p>
             </motion.div>

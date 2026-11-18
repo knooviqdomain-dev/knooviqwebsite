@@ -659,7 +659,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
               <img
                 src="/images/generative_ai_llm_hero.png"
                 alt="Enterprise Generative AI & Sovereign LLMs - Architecture Blueprint"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-right"
               />
             </div>
 

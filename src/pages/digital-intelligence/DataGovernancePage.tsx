@@ -549,7 +549,7 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
 
 
               {/* Sub-headline */}
-              <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Active metadata catalogs, end-to-end cryptographic column lineage, declarative schema contracts, and dynamic attribute-based access controls across modern enterprise lakehouses.
               </p>
             </motion.div>

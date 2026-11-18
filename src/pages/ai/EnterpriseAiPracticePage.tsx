@@ -648,7 +648,7 @@ export const EnterpriseAiPracticePage: React.FC<EnterpriseAiPracticePageProps> =
             </div>
 
 
-              <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Sovereign foundation models, deterministic Clean Core orchestration, and sub-20ms event mesh fabrics engineered on SAP BTP and private enterprise infrastructure.
               </p>
             </motion.div>

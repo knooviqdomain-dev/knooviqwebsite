@@ -685,7 +685,7 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
             </div>
 
 
-              <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Transition your enterprise from reactive supply chain firefighting to deterministic foresight with neural time-series engines, dynamic safety buffer optimization, and closed-loop SAP execution.
               </p>
             </motion.div>

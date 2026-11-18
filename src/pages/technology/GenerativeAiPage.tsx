@@ -298,7 +298,7 @@ export const GenerativeAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact 
               <img
                 src="/images/generative_ai_hero.jpg"
                 alt="Knooviq Enterprise Generative AI Command Center - Architecture Blueprint"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-right"
               />
             </div>
 

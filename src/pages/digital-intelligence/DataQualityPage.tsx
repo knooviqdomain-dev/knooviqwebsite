@@ -556,7 +556,7 @@ export const DataQualityPage: React.FC<DataQualityPageProps> = ({
 
 
               {/* Subtitle with High Legibility */}
-              <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 leading-[1.6] font-normal pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Continuous data profiling, automated anomaly firewalls, declarative quality contracts, and closed-loop golden record remediation across enterprise lakehouses and operational ERP backbones.
               </p>
             </motion.div>

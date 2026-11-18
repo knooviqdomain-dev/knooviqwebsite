@@ -496,7 +496,7 @@ export const DataArchitecturePage: React.FC<DataArchitecturePageProps> = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal max-w-2xl pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]"
+              className="text-base sm:text-lg text-slate-200 text-white/90 leading-relaxed font-normal max-w-2xl pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]"
             >
               Engineer resilient, decoupled enterprise data foundations with open table lakehouses, event-driven Change Data Capture, in-situ virtualization, and programmatic data contracts across multi-cloud footprints.
             </motion.p>
