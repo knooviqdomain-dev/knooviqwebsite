@@ -131,7 +131,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
       tagline: 'Systematic report intake, initial validation, categorization, and appropriate routing.',
       description:
         'Knooviq helps organizations establish rapid, dependable intake channels that capture disruption signals from monitoring tools, support tickets, and service desk notifications. We categorize reports according to business urgency and potential operational reach, validating raw signals to filter false alarms and route genuine disruptions directly to qualified responders.',
-      image: '/images/cloud/incident_mgmt_triage.png',
+      image: '/images/cloud/incident_mgmt_triage.png?v=2',
       points: [
         'Multi-source ingestion aggregating telemetry alerts, user reports, and system exceptions',
         'Initial signal validation and correlation to prevent alert fatigue and redundant ticket creation',
@@ -146,7 +146,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
       tagline: 'Evaluate service dependencies, estimate blast radius, and escalate to technical specialists.',
       description:
         'Understanding how a localized component disruption affects downstream applications and business operations is critical for proper prioritization. We help teams analyze service dependencies, determine user impact, and execute tiered escalation paths that bring the right domain experts and decision-makers together without organizational friction.',
-      image: '/images/cloud/incident_mgmt_impact.png',
+      image: '/images/cloud/incident_mgmt_impact.png?v=2',
       points: [
         'Interdependent service mapping to evaluate whether core business transactions are compromised',
         'Impact estimation assessing affected user populations, transactional throughput, and regulatory exposure',
@@ -650,8 +650,8 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                 </div>
 
                 <div className="lg:col-span-6 flex flex-col justify-center">
-                  <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-slate-950 group flex flex-col">
-                    <div className="w-full overflow-hidden bg-slate-950">
+                  <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-white dark:bg-slate-900 group flex flex-col">
+                    <div className="w-full overflow-hidden bg-white dark:bg-slate-900">
                       <img
                         src={capabilities[0].image}
                         alt="Enterprise incident coordination workspace focused on incoming incident reports and structured triage"

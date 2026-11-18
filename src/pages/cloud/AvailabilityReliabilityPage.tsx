@@ -894,19 +894,19 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
           </div>
 
           {/* Wide Technical Illustration */}
-          <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-2xl bg-slate-900 aspect-[21/9] sm:aspect-[16/7] group">
+          <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-2xl bg-slate-900 aspect-square sm:aspect-[16/7] lg:aspect-[21/9] group">
             <img
               src="/images/cloud/avail_across_environments.jpg"
               alt="Multi-tier enterprise availability architecture showing relationships between applications, load balancing, compute, storage, recovery, and business users"
               className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050B17]/95 via-[#050B17]/40 to-transparent pointer-events-none" />
-            <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-[#070E1E]/90 backdrop-blur-md border border-white/15 flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs text-slate-300">
+            <div className="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#070E1E]/90 backdrop-blur-md border border-white/15 flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4 text-xs text-slate-300">
               <div className="space-y-0.5">
-                <span className="font-bold text-white text-sm">Unified Enterprise Continuity Fabric</span>
-                <p className="font-sora text-slate-300 text-xs font-normal leading-[1.6]">Applications &bull; Load Distribution &bull; Compute Nodes &bull; Persistent Storage &bull; Recovery Systems</p>
+                <span className="font-bold text-white text-xs sm:text-sm block">Unified Enterprise Continuity Fabric</span>
+                <p className="font-sora text-slate-300 text-[11px] sm:text-xs font-normal leading-[1.6]">Applications &bull; Load Distribution &bull; Compute Nodes &bull; Persistent Storage &bull; Recovery Systems</p>
               </div>
-              <span className="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-400/20 text-cyan-300 font-bold shrink-0">
+              <span className="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-400/20 text-cyan-300 font-bold shrink-0 text-center text-xs">
                 End-to-End Resilience Topology
               </span>
             </div>
