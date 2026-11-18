@@ -134,7 +134,7 @@ export const RelatedCloudServices: React.FC<RelatedCloudServicesProps> = ({ curr
   }).slice(0, limit);
 
   return (
-    <section className="py-16 bg-slate-50 dark:bg-[#070E1E] border-b border-slate-200 dark:border-white/10 transition-colors">
+    <section className="py-12 sm:py-16 bg-slate-50 dark:bg-[#070E1E] border-b border-slate-200 dark:border-white/10 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div>
           <span className="text-xs font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">

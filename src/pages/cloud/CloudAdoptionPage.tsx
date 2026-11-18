@@ -309,8 +309,8 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
           Image: Enterprise IT professionals reviewing application architecture and
           infrastructure dependencies (/images/cloud/cloud_adoption_assessment.jpg)
           ========================================================================= */}
-      <section id="assessment" className="py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section id="assessment" className="py-12 sm:py-16 lg:py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
           
           {/* Clean Enterprise Section Header without robotic numbering */}
           <div className="max-w-3xl space-y-3">
@@ -326,7 +326,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
           </div>
 
           {/* Section Main Content: Left Image, Right Structured Assessment Domains */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
             
             {/* Left Image Showcase */}
             <div className="lg:col-span-5 space-y-4">
@@ -395,7 +395,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
               </div>
 
               {/* Active Assessment Domain Details Card */}
-              <div className="p-6 rounded-3xl bg-slate-50 dark:bg-[#0B1528] border border-slate-200 dark:border-white/10 space-y-5">
+              <div className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-slate-50 dark:bg-[#0B1528] border border-slate-200 dark:border-white/10 space-y-4 sm:space-y-5">
                 <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-4">
                   <div>
                     <span className="text-xs font-mono font-bold uppercase text-[#00A3E0]">
@@ -443,7 +443,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
           </div>
 
           {/* 6R Workload Treatment Breakdown Callout */}
-          <div className="p-8 rounded-3xl bg-slate-50 dark:bg-[#07101F] border border-slate-200 dark:border-white/10 space-y-6">
+          <div className="p-5 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 dark:bg-[#07101F] border border-slate-200 dark:border-white/10 space-y-4 sm:space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
                 <span className="text-xs font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
@@ -458,7 +458,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
               {[
                 { r: 'Rehost', desc: 'Lift-and-shift VMs to cloud compute with minimal architecture changes.' },
                 { r: 'Replatform', desc: 'Move to managed databases and containers without rewriting core code.' },
@@ -488,8 +488,8 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
           Image: Enterprise application migration from legacy infrastructure to modern
           cloud environments (/images/cloud/cloud_adoption_migration.jpg)
           ========================================================================= */}
-      <section id="migration-planning" className="py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section id="migration-planning" className="py-12 sm:py-16 lg:py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
           
           {/* Clean Enterprise Section Header */}
           <div className="max-w-3xl space-y-3">
@@ -505,7 +505,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
           </div>
 
           {/* Section Main Content: Left Strategy Details, Right Image Showcase */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
             
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-6">
@@ -610,8 +610,8 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
           Image: Modern enterprise application architecture with containers, APIs,
           and cloud-native services (/images/cloud/cloud_adoption_modernization.jpg)
           ========================================================================= */}
-      <section id="modernization" className="py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section id="modernization" className="py-12 sm:py-16 lg:py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
           
           {/* Clean Enterprise Section Header */}
           <div className="max-w-3xl space-y-3">
@@ -627,7 +627,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
           </div>
 
           {/* Section Main Content: Left Image, Right Modernization Architecture */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
             
             {/* Left Image Showcase */}
             <div className="lg:col-span-5 space-y-4">
@@ -728,8 +728,8 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
           Image: A sophisticated multi-cloud infrastructure visualization with
           interconnected cloud environments (/images/cloud/cloud_adoption_platforms.jpg)
           ========================================================================= */}
-      <section id="platforms" className="py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section id="platforms" className="py-12 sm:py-16 lg:py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
           
           {/* Clean Enterprise Section Header */}
           <div className="max-w-3xl space-y-3">
@@ -745,7 +745,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
           </div>
 
           {/* Section Main Content: Left Platform Evaluation, Right Image Showcase */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
             
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-6">
@@ -879,8 +879,8 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
           Image: Enterprise cloud security architecture showing identity controls,
           protected data flows, and secure infrastructure (/images/cloud/cloud_adoption_security.jpg)
           ========================================================================= */}
-      <section id="security" className="py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section id="security" className="py-12 sm:py-16 lg:py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
           
           {/* Clean Enterprise Section Header */}
           <div className="max-w-3xl space-y-3">
@@ -896,7 +896,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
           </div>
 
           {/* Section Main Content: Left Image, Right Security Framework */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
             
             {/* Left Image Showcase */}
             <div className="lg:col-span-5 space-y-4">
@@ -1010,8 +1010,8 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
           Image: Data pipelines and interconnected enterprise workloads moving between
           legacy systems and cloud infrastructure (/images/cloud/cloud_adoption_transition.jpg)
           ========================================================================= */}
-      <section id="transition" className="py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section id="transition" className="py-12 sm:py-16 lg:py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
           
           {/* Clean Enterprise Section Header */}
           <div className="max-w-3xl space-y-3">
@@ -1027,7 +1027,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
           </div>
 
           {/* Section Main Content: Left Transition Protocol, Right Image Showcase */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
             
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-6">
@@ -1129,8 +1129,8 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
           resource utilization in a realistic operations environment. Avoid
           dashboard-heavy website layouts.
           ========================================================================= */}
-      <section id="optimization" className="py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section id="optimization" className="py-12 sm:py-16 lg:py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
           
           {/* Clean Enterprise Section Header */}
           <div className="max-w-3xl space-y-3">
@@ -1146,7 +1146,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
           </div>
 
           {/* Section Main Content: Left Image, Right Continuous Improvement Framework */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
             
             {/* Left Image Showcase */}
             <div className="lg:col-span-5 space-y-4">
@@ -1276,7 +1276,7 @@ export const CloudAdoptionPage: React.FC<CloudAdoptionPageProps> = ({ onOpenCont
       {/* =========================================================================
           SECTION 9: CONTACT CTA SECTION
           ========================================================================= */}
-      <section className="py-20 bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-[#060D1A] dark:via-[#081224] dark:to-[#050A14] border-t border-slate-200 dark:border-white/10 transition-colors">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-[#060D1A] dark:via-[#081224] dark:to-[#050A14] border-t border-slate-200 dark:border-white/10 transition-colors">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-8 sm:p-14 rounded-3xl bg-gradient-to-br from-slate-900 via-[#0A1A33] to-[#050E1F] border border-cyan-500/30 text-white shadow-2xl relative overflow-hidden space-y-8">
             

@@ -208,8 +208,8 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           Explaining the relationship between people, processes, governance,
           platforms, and business outcomes.
           ========================================================================= */}
-      <section id="operating-model-overview" className="py-20 bg-slate-50 dark:bg-[#07101E] border-b border-slate-200 dark:border-white/10 transition-colors">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section id="operating-model-overview" className="py-12 sm:py-16 lg:py-20 bg-slate-50 dark:bg-[#07101E] border-b border-slate-200 dark:border-white/10 transition-colors">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-12">
 
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
@@ -275,8 +275,8 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           Image: Organizational architecture illustration showing interconnected
           teams (/images/cloud/cloud_op_model_teams.jpg)
           ========================================================================= */}
-      <section id="organization-teams" className="py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section id="organization-teams" className="py-12 sm:py-16 lg:py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
 
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
@@ -291,7 +291,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           </div>
 
           {/* Main Grid: Left Image, Right Key Capabilities */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
 
             {/* Left Image Showcase */}
             <div className="lg:col-span-5 space-y-4">
@@ -336,7 +336,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 Team Topology &amp; Ownership Capabilities
               </h3>
 
-              <div className="space-y-3.5">
+              <div className="space-y-4 lg:space-y-3.5">
                 {[
                   {
                     title: 'Cloud team structure and role definition',
@@ -396,8 +396,8 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           Image: Governance framework illustration featuring policy layers and
           decision pathways (/images/cloud/cloud_op_model_governance.jpg)
           ========================================================================= */}
-      <section id="governance-decisions" className="py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section id="governance-decisions" className="py-12 sm:py-16 lg:py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
 
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
@@ -412,7 +412,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           </div>
 
           {/* Main Grid: Left Capabilities, Right Image Showcase */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
 
             {/* Left Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
@@ -420,7 +420,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 Accountable Decision Frameworks
               </h3>
 
-              <div className="space-y-3.5">
+              <div className="space-y-4 lg:space-y-3.5">
                 {[
                   {
                     title: 'Cloud governance framework design',
@@ -517,8 +517,8 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           Image: Enterprise service delivery illustration showing business teams
           accessing curated cloud services (/images/cloud/cloud_op_model_service_delivery.jpg)
           ========================================================================= */}
-      <section id="service-delivery" className="py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section id="service-delivery" className="py-12 sm:py-16 lg:py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
 
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
@@ -533,7 +533,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           </div>
 
           {/* Main Grid: Left Image, Right Capabilities */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
 
             {/* Left Image Showcase */}
             <div className="lg:col-span-5 space-y-4">
@@ -578,7 +578,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 Service Engagement &amp; Delivery Framework
               </h3>
 
-              <div className="space-y-3.5">
+              <div className="space-y-4 lg:space-y-3.5">
                 {[
                   {
                     title: 'Cloud service catalog design',
@@ -638,8 +638,8 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           Image: Detailed technical architecture showing shared platform, reusable
           modules, and pipelines (/images/cloud/cloud_op_model_platform_engineering.jpg)
           ========================================================================= */}
-      <section id="platform-engineering" className="py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section id="platform-engineering" className="py-12 sm:py-16 lg:py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
 
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
@@ -654,7 +654,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           </div>
 
           {/* Main Grid: Left Capabilities, Right Image Showcase */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
 
             {/* Left Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
@@ -662,7 +662,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 Internal Developer Platform (IDP) Capabilities
               </h3>
 
-              <div className="space-y-3.5">
+              <div className="space-y-4 lg:space-y-3.5">
                 {[
                   {
                     title: 'Internal developer platform planning',
@@ -760,8 +760,8 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           connected to finance, engineering, and business functions
           (/images/cloud/cloud_op_model_financial_mgmt.jpg)
           ========================================================================= */}
-      <section id="financial-management" className="py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section id="financial-management" className="py-12 sm:py-16 lg:py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
 
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
@@ -776,7 +776,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           </div>
 
           {/* Main Grid: Left Image, Right Capabilities */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
 
             {/* Left Image Showcase */}
             <div className="lg:col-span-5 space-y-4">
@@ -821,7 +821,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 FinOps Operating Model &amp; Cost Ownership
               </h3>
 
-              <div className="space-y-3.5">
+              <div className="space-y-4 lg:space-y-3.5">
                 {[
                   {
                     title: 'Cloud cost ownership and allocation',
@@ -882,8 +882,8 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           security responsibilities across platform, application, and governance
           (/images/cloud/cloud_op_model_security_risk.jpg)
           ========================================================================= */}
-      <section id="security-risk" className="py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section id="security-risk" className="py-12 sm:py-16 lg:py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
 
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
@@ -898,7 +898,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           </div>
 
           {/* Main Grid: Left Capabilities, Right Image Showcase */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
 
             {/* Left Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
@@ -906,7 +906,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 Distributed Security &amp; Compliance Ownership
               </h3>
 
-              <div className="space-y-3.5">
+              <div className="space-y-4 lg:space-y-3.5">
                 {[
                   {
                     title: 'Shared responsibility model definition',
@@ -1003,8 +1003,8 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           Image: Enterprise illustration showing connected teams, knowledge-sharing,
           and continuous improvement cycles (/images/cloud/cloud_op_model_continuous_improvement.jpg)
           ========================================================================= */}
-      <section id="skills-improvement" className="py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section id="skills-improvement" className="py-12 sm:py-16 lg:py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
 
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
@@ -1019,7 +1019,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           </div>
 
           {/* Main Grid: Left Image, Right Capabilities */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
 
             {/* Left Image Showcase */}
             <div className="lg:col-span-5 space-y-4">
@@ -1064,7 +1064,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 Enablement, Performance &amp; Maturity Mechanisms
               </h3>
 
-              <div className="space-y-3.5">
+              <div className="space-y-4 lg:space-y-3.5">
                 {[
                   {
                     title: 'Cloud skills and competency planning',
@@ -1121,7 +1121,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
       {/* =========================================================================
           CONSULTATION CTA SECTION
           ========================================================================= */}
-      <section className="py-20 bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-[#060D1A] dark:via-[#081224] dark:to-[#050A14] border-t border-slate-200 dark:border-white/10 transition-colors">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-[#060D1A] dark:via-[#081224] dark:to-[#050A14] border-t border-slate-200 dark:border-white/10 transition-colors">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-8 sm:p-14 rounded-3xl bg-gradient-to-br from-slate-900 via-[#0A1A33] to-[#050E1F] border border-cyan-500/30 text-white shadow-2xl relative overflow-hidden space-y-8">
 
