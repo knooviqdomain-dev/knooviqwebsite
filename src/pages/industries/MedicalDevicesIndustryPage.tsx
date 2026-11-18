@@ -651,7 +651,7 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
               </p>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap sm:flex-nowrap items-center gap-2">
               {(['ALL', 'COMPLIANCE', 'MANUFACTURING', 'SERVICE'] as const).map(cat => (
                 <button
                   key={cat}

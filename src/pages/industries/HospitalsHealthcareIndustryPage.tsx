@@ -646,7 +646,7 @@ export const HospitalsHealthcareIndustryPage: React.FC<HospitalsHealthcareIndust
               </p>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap sm:flex-nowrap items-center gap-2">
               {(['ALL', 'CLINICAL', 'LOGISTICS', 'GOVERNANCE'] as const).map(cat => (
                 <button
                   key={cat}

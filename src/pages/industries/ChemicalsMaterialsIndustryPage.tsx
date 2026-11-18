@@ -590,22 +590,33 @@ export const ChemicalsMaterialsIndustryPage: React.FC<ChemicalsMaterialsIndustry
               .filter((sol) => activeSolutionCategory === 'ALL' || sol.category === activeSolutionCategory)
               .map((sol) => {
                 const IconComponent = sol.icon;
+                const isSds = sol.title === 'Automated Safety Data Sheet (SDS) Engine';
                 return (
                   <div
                     key={sol.title}
                     className="rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-[#0070C0] hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group h-full"
                   >
                     {/* 1. Top Image Portion */}
-                    <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-slate-900 shrink-0 border-b border-slate-100">
+                    <div className={`relative w-full overflow-hidden shrink-0 ${
+                      isSds 
+                        ? 'aspect-[1024/572] bg-[#020b18]' 
+                        : 'h-52 sm:h-56 bg-slate-900 border-b border-slate-100'
+                    }`}>
                       <img 
                         src={sol.image} 
                         alt={sol.title}
                         onError={(e) => {
                           e.currentTarget.src = 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=800&q=80';
                         }}
-                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" 
+                        className={`w-full h-full ${
+                          isSds
+                            ? 'object-contain object-center select-none'
+                            : 'object-cover object-center group-hover:scale-105 transition-transform duration-500'
+                        }`} 
                       />
-                      <div className="absolute inset-0 bg-slate-950/10 group-hover:bg-transparent transition-colors pointer-events-none" />
+                      {!isSds && (
+                        <div className="absolute inset-0 bg-slate-950/10 group-hover:bg-transparent transition-colors pointer-events-none" />
+                      )}
                       
                       <div className="absolute top-3 left-3 bg-slate-950/85 backdrop-blur-md px-3 py-1 rounded-full text-xs font-mono font-bold text-cyan-300 uppercase">
                         {sol.tag}
