@@ -174,7 +174,7 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
       tagline: 'Systemic risk assessment, structured incident triage, root-cause analysis, and operational learning.',
       description:
         'Reliability engineering relies on structured risk assessment and disciplined learning from operational incidents. We help organizations establish clear incident response workflows, conduct blameless failure analysis, and turn operational findings into preventative engineering safeguards.',
-      image: '/images/cloud/avail_incident_management_wide.jpg?v=2',
+      image: '/images/cloud/avail_incident_management_wide.jpg?v=3',
       points: [
         'Reliability risk assessment identifying architectural vulnerabilities and operational exposures',
         'Structured incident response protocols with defined commander roles and escalation workflows',
