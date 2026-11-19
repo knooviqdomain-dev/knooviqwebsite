@@ -635,13 +635,6 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
           {/* TAB 2: Full-Stack Architecture Visual */}
           {activeTab === 'architecture' && (
             <div className="space-y-8">
-              <div className="rounded-2xl border border-slate-200 bg-slate-950 p-3 shadow-xl overflow-hidden">
-                <img
-                  src="/images/sap_btp_architecture_3d.jpg"
-                  alt="KNOOVIQ Full-Stack Process Automation Architecture"
-                  className="w-full h-auto sm:h-[480px] object-contain sm:object-cover rounded-xl block"
-                />
-              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
