@@ -665,16 +665,16 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
             <div className="lg:col-span-6 space-y-4">
               
               {/* Dynamic Photo Showcase */}
-              <div className="relative aspect-[16/9] sm:aspect-[1024/558] w-full min-h-[260px] sm:min-h-[300px] rounded-2xl overflow-hidden border-2 border-slate-300 shadow-md bg-slate-950">
+              <div className="relative aspect-[16/9] sm:aspect-[1024/558] w-full min-h-0 sm:min-h-[300px] rounded-2xl overflow-hidden border-2 border-slate-300 shadow-md bg-slate-950 flex items-center justify-center">
                 <img 
                   src={journeySteps[activeJourneyStep].image} 
                   alt={journeySteps[activeJourneyStep].label} 
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-contain sm:object-cover sm:object-top object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 via-45% to-transparent pointer-events-none" />
+                <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 via-45% to-transparent pointer-events-none" />
                 
-                {/* Overlay Text on Image */}
-                <div className="absolute bottom-4 left-4 right-4 text-white">
+                {/* Overlay Text on Image (Desktop only) */}
+                <div className="hidden sm:block absolute bottom-4 left-4 right-4 text-white">
                   <div className="text-[10px] font-mono font-bold text-cyan-400 uppercase tracking-wider">
                     STAGE {activeJourneyStep + 1} OF 6 • {journeySteps[activeJourneyStep].tech}
                   </div>
@@ -685,6 +685,21 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
                     {journeySteps[activeJourneyStep].desc}
                   </div>
                 </div>
+              </div>
+
+              {/* Mobile Info Header (below image so diagram is 100% visible and unblocked) */}
+              <div className="sm:hidden p-3 rounded-xl border border-slate-200 bg-white shadow-xs">
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <span className="text-[10px] font-mono font-bold text-[#0070C0] uppercase tracking-wider bg-sky-50 px-2 py-0.5 rounded border border-sky-100">
+                    STAGE {activeJourneyStep + 1} OF 6 • {journeySteps[activeJourneyStep].tech}
+                  </span>
+                  <span className="text-[10px] font-mono text-slate-500 font-semibold">
+                    {journeySteps[activeJourneyStep].sublabel}
+                  </span>
+                </div>
+                <h3 className="font-sora text-sm sm:text-base font-bold text-slate-950 mt-0.5">
+                  {journeySteps[activeJourneyStep].label}
+                </h3>
               </div>
 
               {/* 6 Stage Navigation Buttons */}
