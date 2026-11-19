@@ -479,11 +479,11 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
             </motion.h1>
 
             {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
-            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
               <img
                 src="/images/data-strategy/transforming_enterprise_data_hero.png"
                 alt="Enterprise Data Strategy & Semantic Fabric - Architecture Blueprint"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-auto object-contain block"
               />
             </div>
 
@@ -606,7 +606,7 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
             <div className="lg:col-span-6 space-y-5">
 
               <div
-                className="relative rounded-2xl overflow-hidden border-2 border-slate-300 shadow-xl bg-slate-900 group h-96 sm:h-[440px] lg:h-[490px] w-full cursor-pointer"
+                className="relative rounded-2xl overflow-hidden border-2 border-slate-300 shadow-xl bg-slate-900 group aspect-[4/3] sm:aspect-none h-auto sm:h-[440px] lg:h-[490px] w-full cursor-pointer flex items-center justify-center"
                 onClick={() => setActiveJourneyStep((activeJourneyStep + 1) % journeySteps.length)}
                 title="Click image to advance to next architecture step"
               >
@@ -614,18 +614,18 @@ export const DataStrategyPage: React.FC<DataStrategyPageProps> = ({
                 <img
                   src="/images/data-strategy/sovereign_enterprise_data_mesh.jpg"
                   alt="Architecting the Sovereign Enterprise Data Mesh"
-                  className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-contain sm:object-cover sm:object-center transform transition-transform duration-700 group-hover:scale-105 block"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent pointer-events-none" />
 
-                <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-lg bg-slate-900/90 backdrop-blur-md border border-cyan-400/50 text-xs sm:text-sm font-mono font-bold text-cyan-300 flex items-center gap-2">
+                <div className="absolute top-2 left-2 sm:top-4 sm:left-4 px-2.5 py-1 sm:px-3.5 sm:py-1.5 rounded-lg bg-slate-900/90 backdrop-blur-md border border-cyan-400/50 text-[10px] sm:text-xs font-mono font-bold text-cyan-300 flex items-center gap-1.5 sm:gap-2 z-10">
                   <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shrink-0" />
                   <span>ARCHITECTURE FOCUS: {journeySteps[activeJourneyStep].label.toUpperCase()}</span>
                 </div>
 
-                <div className="absolute bottom-4 left-4 right-4 text-white space-y-1.5 p-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-700/80">
+                <div className="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 text-white space-y-1 sm:space-y-1.5 p-2 sm:p-3 rounded-xl bg-slate-900/90 backdrop-blur-md border border-slate-700/80 z-10">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-xs sm:text-[15px] lg:text-[16px] text-slate-100 font-normal leading-[1.4] sm:leading-[1.6] line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 

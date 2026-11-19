@@ -655,7 +655,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
             </motion.h1>
 
             {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
-            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
               <img
                 src="/images/generative_ai_llm_hero.png"
                 alt="Enterprise Generative AI & Sovereign LLMs - Architecture Blueprint"
@@ -1517,13 +1517,13 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
             <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
               
               {/* Left Column: Natural 5G Knowledge Mesh Architecture (Fits Pure Box Seamlessly) */}
-              <div className="lg:col-span-5 relative w-full h-full min-h-[380px] sm:min-h-[440px] lg:min-h-[480px] flex items-center justify-center bg-gradient-to-b from-[#0d3b6d] via-[#09264f] to-[#002b52] overflow-hidden border-b lg:border-b-0 lg:border-r border-cyan-500/20">
+              <div className="lg:col-span-5 relative w-full h-auto lg:h-full min-h-[320px] sm:min-h-[400px] lg:min-h-[480px] p-3 sm:p-5 lg:p-0 flex items-center justify-center bg-gradient-to-b from-[#0d3b6d] via-[#09264f] to-[#002b52] overflow-hidden border-b lg:border-b-0 lg:border-r border-cyan-500/20">
                 <img
                   src="/images/generative_ai_knowledge_mesh_network.png"
                   alt="Multi-Model Knowledge Mesh & Clean Core Gateway Network"
-                  className="w-full h-full object-contain filter brightness-105 contrast-105"
+                  className="w-full h-auto max-h-[420px] lg:max-h-none lg:h-full object-contain filter brightness-105 contrast-105 block"
                 />
-                <div className="absolute top-3 left-3 px-3 py-1.5 rounded-lg bg-slate-950/85 backdrop-blur-md border border-cyan-400/50 text-xs font-mono font-bold text-cyan-300 shadow-sm flex items-center gap-1.5 pointer-events-none">
+                <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-slate-950/90 backdrop-blur-md border border-cyan-400/50 text-[10px] sm:text-xs font-mono font-bold text-cyan-300 shadow-sm flex items-center gap-1.5 pointer-events-none z-10">
                   <Network className="w-4 h-4 text-cyan-400" />
                   <span>MULTI-MODEL KNOWLEDGE MESH</span>
                 </div>

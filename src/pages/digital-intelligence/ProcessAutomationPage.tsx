@@ -260,11 +260,11 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
               </h1>
 
             {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
-            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
               <img
                 src="/images/digital-intelligence/process_automation_clean_core_erp.png"
                 alt="Enterprise Process Automation & Clean-Core ERP Orchestration - Architecture Blueprint"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-auto object-contain block"
               />
             </div>
 
@@ -394,11 +394,11 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
 
             {/* Right Column: Visual Dashboard Screen */}
             <div className="lg:col-span-6">
-              <div className="relative rounded-3xl border border-slate-200 shadow-xl overflow-hidden group h-[380px] sm:h-[440px] w-full bg-slate-900">
+              <div className="relative rounded-3xl border border-slate-200 shadow-xl overflow-hidden group aspect-[16/10] sm:aspect-none h-auto sm:h-[440px] w-full bg-slate-900 flex items-center justify-center">
                 <img
                   src="/images/sap_btp_command_center.jpg"
                   alt="Process Automation Command Center"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-auto sm:h-full object-contain sm:object-cover sm:object-center transition-transform duration-700 group-hover:scale-105 block"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
 
@@ -639,7 +639,7 @@ export const ProcessAutomationPage: React.FC<ProcessAutomationPageProps> = ({
                 <img
                   src="/images/sap_btp_architecture_3d.jpg"
                   alt="KNOOVIQ Full-Stack Process Automation Architecture"
-                  className="w-full h-[400px] sm:h-[480px] object-cover rounded-xl"
+                  className="w-full h-auto sm:h-[480px] object-contain sm:object-cover rounded-xl block"
                 />
               </div>
 

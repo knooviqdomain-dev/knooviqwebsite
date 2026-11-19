@@ -264,7 +264,7 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
               </h1>
 
             {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
-            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
               <img
                 src="/images/idp/intelligent_document_processing_cognitive_ai_hero.jpg"
                 alt="Enterprise Intelligent Document Processing & Cognitive AI - Architecture Blueprint"
@@ -398,30 +398,30 @@ export const IntelligentDocumentProcessingPage: React.FC<IntelligentDocumentProc
 
             {/* Right Column: Visual Dashboard Screen */}
             <div className="lg:col-span-6">
-              <div className="relative rounded-3xl border border-slate-200 shadow-xl overflow-hidden group h-[380px] sm:h-[440px] w-full bg-slate-900">
+              <div className="relative rounded-3xl border border-slate-200 shadow-xl overflow-hidden group aspect-[16/10] sm:aspect-none h-auto sm:h-[440px] w-full bg-slate-900 flex items-center justify-center">
                 <img
                   src="/images/idp/idp_extraction_engine.png"
                   alt="Cognitive Document Understanding Engine"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-auto sm:h-full object-contain sm:object-cover sm:object-center transition-transform duration-700 group-hover:scale-105 block"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
 
                 {/* Floating Glassmorphic Badge 1 */}
-                <div className="absolute top-6 left-6 rounded-xl bg-slate-900/90 border border-slate-700 p-3.5 backdrop-blur-md shadow-lg">
+                <div className="absolute top-2.5 left-2.5 sm:top-6 sm:left-6 rounded-lg sm:rounded-xl bg-slate-900/90 border border-slate-700 p-2 sm:p-3.5 backdrop-blur-md shadow-lg z-10">
                   <div className="flex items-center gap-2">
                     <div className="h-2 w-2 rounded-full bg-emerald-400 animate-ping" />
-                    <span className="text-xs font-semibold text-slate-200">Autonomous Execution Engine</span>
+                    <span className="text-[10px] sm:text-xs font-semibold text-slate-200">Autonomous Execution Engine</span>
                   </div>
-                  <p className="font-sora text-sm font-medium text-white mt-1">Straight-Through Processing</p>
+                  <p className="font-sora text-xs sm:text-sm font-medium text-white mt-0.5 sm:mt-1">Straight-Through Processing</p>
                 </div>
 
                 {/* Floating Glassmorphic Badge 2 */}
-                <div className="absolute bottom-6 right-6 rounded-xl bg-[#0070C0]/90 border border-sky-400/40 p-3.5 backdrop-blur-md shadow-lg text-white">
+                <div className="absolute bottom-2.5 right-2.5 sm:bottom-6 sm:right-6 rounded-lg sm:rounded-xl bg-[#0070C0]/90 border border-sky-400/40 p-2 sm:p-3.5 backdrop-blur-md shadow-lg text-white z-10">
                   <div className="flex items-center gap-1.5">
                     <Sparkles className="h-3.5 w-3.5 text-cyan-300" />
-                    <span className="text-xs font-semibold">Zero-Template Config</span>
+                    <span className="text-[10px] sm:text-xs font-semibold">Zero-Template Config</span>
                   </div>
-                  <p className="font-sora text-sm font-medium mt-1">Spatial Vision-Language LLM</p>
+                  <p className="font-sora text-xs sm:text-sm font-medium mt-0.5 sm:mt-1">Spatial Vision-Language LLM</p>
                 </div>
               </div>
             </div>
