@@ -665,16 +665,16 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
             {/* Right Interactive Visualizer: Journey Step Console */}
             <div className="lg:col-span-6 space-y-4">
               
-              <div className="rounded-2xl border-2 border-slate-200 bg-white p-5 shadow-lg relative overflow-hidden">
-                <div className="relative h-64 sm:h-72 rounded-xl overflow-hidden mb-4">
+              <div className="rounded-2xl border-2 border-slate-200 bg-white p-4 sm:p-5 shadow-lg relative overflow-hidden">
+                <div className="relative aspect-[16/9] sm:aspect-auto sm:h-72 rounded-xl overflow-hidden mb-3 sm:mb-4 bg-slate-950 flex items-center justify-center border border-slate-200/50">
                   <img 
                     src={journeySteps[activeJourneyStep].image} 
                     alt={journeySteps[activeJourneyStep].label} 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain sm:object-cover object-center"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                  <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
                   
-                  <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
+                  <div className="hidden sm:flex absolute bottom-3 left-3 right-3 items-end justify-between">
                     <div>
                       <span className="px-2.5 py-0.5 rounded-full bg-cyan-400 text-slate-950 font-mono text-[10px] font-bold uppercase tracking-wider">
                         {journeySteps[activeJourneyStep].tech}
@@ -687,6 +687,21 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                       STAGE WORKFLOW
                     </span>
                   </div>
+                </div>
+
+                {/* Mobile Info Header (below image so diagram is 100% visible and unblocked) */}
+                <div className="sm:hidden mb-2.5">
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <span className="px-2 py-0.5 rounded-full bg-cyan-50 text-[#0070C0] font-mono text-[10px] font-bold uppercase tracking-wider border border-cyan-200">
+                      {journeySteps[activeJourneyStep].tech}
+                    </span>
+                    <span className="text-[10px] font-mono font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
+                      STAGE WORKFLOW
+                    </span>
+                  </div>
+                  <h3 className="font-sora text-base font-semibold text-slate-900">
+                    {journeySteps[activeJourneyStep].label}
+                  </h3>
                 </div>
 
                 <p className="font-sora text-xs sm:text-sm text-[#102A43] leading-[1.6] min-h-[44px] font-normal">
