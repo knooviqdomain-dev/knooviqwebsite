@@ -697,12 +697,12 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
             </div>
 
             <div className="lg:col-span-6 space-y-3.5">
-              <div className="rounded-2xl overflow-hidden border-2 border-slate-300 shadow-md bg-slate-950">
-                <div className="relative aspect-[16/9] w-full bg-slate-950">
+              <div className="rounded-2xl overflow-hidden shadow-md bg-slate-950 border border-slate-800/80">
+                <div className="relative aspect-[16/9] w-full bg-slate-950 overflow-hidden">
                   <img 
                     src={journeySteps[activeJourneyStep].image} 
                     alt={journeySteps[activeJourneyStep].label} 
-                    className="w-full h-full object-contain object-top"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
                 <div className="p-3.5 sm:p-4 bg-slate-900 border-t border-slate-800 text-white">
@@ -1238,7 +1238,7 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
                     <img 
                       src={sol.image} 
                       alt={sol.title} 
-                      className="w-full h-full object-contain object-top"
+                      className="w-full h-full object-cover object-center"
                       onError={(e) => {
                         (e.target as HTMLElement).style.display = 'none';
                       }}
