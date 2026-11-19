@@ -475,11 +475,11 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
             </div>
 
             {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
-            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
               <img 
                 src="/images/cloud/private_cloud_hero.jpg" 
                 alt="Private Cloud Solutions for Enterprise Control and Security - Private Cloud Architecture Blueprint" 
-                className="w-full h-full object-cover object-center"
+                className="w-full h-auto object-contain block"
               />
             </div>
 
@@ -649,14 +649,14 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
                 <div className={`lg:col-span-6 ${service.imageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
                   <div className="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-slate-900 transition-all">
                     {/* Fixed High-DPI Aspect Ratio Container */}
-                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-950">
+                    <div className="relative aspect-auto lg:aspect-[16/10] w-full overflow-hidden bg-slate-950 flex items-center justify-center">
                       <img
                         src={service.image}
                         alt={service.imageAlt}
-                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 filter brightness-95 contrast-105"
+                        className="w-full h-auto lg:h-full object-contain lg:object-cover transform group-hover:scale-105 transition-transform duration-700 filter brightness-95 contrast-105 block"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/15 to-transparent pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent lg:from-slate-950/85 lg:via-slate-950/15 pointer-events-none" />
 
                       {/* Floating Badge (Top Left) */}
                       <div className="absolute top-3.5 left-3.5">

@@ -269,7 +269,7 @@ export const MonitoringObservabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
           <img
             src="/images/cloud/monitoring_observability_hero.png"
             alt="Monitoring &amp; Observability Full Screen Architecture"
-            className="w-full h-full object-cover object-right lg:object-center brightness-[1.05] contrast-[1.05]"
+            className="w-full h-full object-cover object-top lg:object-center brightness-[1.05] contrast-[1.05]"
           />
           {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
           <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
@@ -305,11 +305,11 @@ export const MonitoringObservabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
             </div>
 
             {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
-            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
               <img
                 src="/images/cloud/monitoring_observability_hero.png"
                 alt="Monitoring & Observability - Full Visibility and Insights Architecture Blueprint"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-auto object-contain block"
               />
             </div>
 
