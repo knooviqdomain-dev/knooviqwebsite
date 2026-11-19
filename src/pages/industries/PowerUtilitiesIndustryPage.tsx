@@ -506,7 +506,7 @@ export const PowerUtilitiesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
           <img
             src="/images/power-utilities/power_utilities_hero_widescreen.jpg"
             alt="Intelligent ERP for Power & Utilities"
-            className="w-full h-full object-cover object-right sm:object-[78%_center] lg:object-center brightness-105 contrast-[1.02]"
+            className="w-full h-full object-cover object-center brightness-105 contrast-[1.02]"
           />
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
@@ -698,12 +698,12 @@ export const PowerUtilitiesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
 
             {/* Right Side: Visual Photography Showcase & Stage Navigator */}
             <div className="lg:col-span-6 space-y-3.5">
-              <div className="rounded-2xl overflow-hidden border-2 border-slate-300 shadow-md bg-slate-950">
-                <div className="relative aspect-[16/9] w-full bg-slate-950">
+              <div className="rounded-2xl overflow-hidden shadow-md bg-slate-950 border border-slate-800/80">
+                <div className="relative aspect-[16/9] w-full bg-slate-950 overflow-hidden">
                   <img 
                     src={journeySteps[activeJourneyStep].image} 
                     alt={journeySteps[activeJourneyStep].label} 
-                    className="w-full h-full object-contain object-top"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
                 <div className="p-3.5 sm:p-4 bg-slate-900 border-t border-slate-800 text-white">
@@ -1241,7 +1241,7 @@ export const PowerUtilitiesIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
                     <img 
                       src={sol.image} 
                       alt={sol.title} 
-                      className="w-full h-full object-contain object-top"
+                      className="w-full h-full object-cover object-center"
                       onError={(e) => {
                         (e.target as HTMLElement).style.display = 'none';
                       }}

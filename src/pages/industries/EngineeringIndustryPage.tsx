@@ -10,7 +10,8 @@ import {
   Gauge, 
   TrendingUp, 
   BarChart3, 
-  CheckCircle2, 
+  CheckCircle2,
+  XCircle, 
   ArrowRight, 
   ChevronRight, 
   ChevronDown, 
@@ -1293,8 +1294,213 @@ export const EngineeringIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCon
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
-            <table className="w-full text-left text-xs sm:text-sm border-collapse">
+          <div className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+            {/* Mobile Card-Based Comparison View (Zero Cutoff, 100% Fits Inside Screen) */}
+            <div className="sm:hidden space-y-3.5 p-3.5 bg-slate-50/50">
+              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-2.5">
+                <div className="font-bold text-slate-900 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                  <span>CAD & ERP Handshake</span>
+                </div>
+
+                {/* KNOOVIQ Clean Core */}
+                <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                    <span>Knooviq S/4HANA Clean Core</span>
+                  </div>
+                  <p className="text-xs text-slate-800 font-semibold leading-relaxed">
+                    Native SAP ECTR bi-directional PLM data stream.
+                  </p>
+                </div>
+
+                {/* Legacy Approach */}
+                <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                    <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                    <span>Legacy / Siloed Approach</span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                    Manual re-entry of drawing part lists into ERP spreadsheets.
+                  </p>
+                </div>
+
+                {/* Measurable Value Impact */}
+                <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-emerald-700 tracking-wider flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Measurable Value Impact</span>
+                  </div>
+                  <p className="text-xs text-emerald-700 font-semibold leading-relaxed">
+                    Complete BOM synchronization and elimination of transcription errors.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-2.5">
+                <div className="font-bold text-slate-900 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                  <span>Engineering Change Orders</span>
+                </div>
+
+                {/* KNOOVIQ Clean Core */}
+                <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                    <span>Knooviq S/4HANA Clean Core</span>
+                  </div>
+                  <p className="text-xs text-slate-800 font-semibold leading-relaxed">
+                    BTP digital ECO/ECR workflow with automated scrap ledger.
+                  </p>
+                </div>
+
+                {/* Legacy Approach */}
+                <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                    <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                    <span>Legacy / Siloed Approach</span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                    Email threads and verbal requests with no financial tracking.
+                  </p>
+                </div>
+
+                {/* Measurable Value Impact */}
+                <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-emerald-700 tracking-wider flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Measurable Value Impact</span>
+                  </div>
+                  <p className="text-xs text-emerald-700 font-semibold leading-relaxed">
+                    Elimination of unauthorized scrap and complete billable recovery.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-2.5">
+                <div className="font-bold text-slate-900 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                  <span>Project Cost Control</span>
+                </div>
+
+                {/* KNOOVIQ Clean Core */}
+                <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                    <span>Knooviq S/4HANA Clean Core</span>
+                  </div>
+                  <p className="text-xs text-slate-800 font-semibold leading-relaxed">
+                    Real-time Earned Value Management in SAP PS.
+                  </p>
+                </div>
+
+                {/* Legacy Approach */}
+                <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                    <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                    <span>Legacy / Siloed Approach</span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                    Static monthly accounting spreadsheets with retrospective variance.
+                  </p>
+                </div>
+
+                {/* Measurable Value Impact */}
+                <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-emerald-700 tracking-wider flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Measurable Value Impact</span>
+                  </div>
+                  <p className="text-xs text-emerald-700 font-semibold leading-relaxed">
+                    Systemic prevention of budget overruns through live cost variance triggers.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-2.5">
+                <div className="font-bold text-slate-900 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                  <span>Long-Lead Procurement</span>
+                </div>
+
+                {/* KNOOVIQ Clean Core */}
+                <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                    <span>Knooviq S/4HANA Clean Core</span>
+                  </div>
+                  <p className="text-xs text-slate-800 font-semibold leading-relaxed">
+                    Pre-engineering purchase reservations tied to WBS codes.
+                  </p>
+                </div>
+
+                {/* Legacy Approach */}
+                <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                    <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                    <span>Legacy / Siloed Approach</span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                    Purchase orders delayed until detailed drawing sign-off.
+                  </p>
+                </div>
+
+                {/* Measurable Value Impact */}
+                <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-emerald-700 tracking-wider flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Measurable Value Impact</span>
+                  </div>
+                  <p className="text-xs text-emerald-700 font-semibold leading-relaxed">
+                    Significant cycle time compression on critical equipment procurement paths.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-2.5">
+                <div className="font-bold text-slate-900 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                  <span>Client As-Built Handover</span>
+                </div>
+
+                {/* KNOOVIQ Clean Core */}
+                <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                    <span>Knooviq S/4HANA Clean Core</span>
+                  </div>
+                  <p className="text-xs text-slate-800 font-semibold leading-relaxed">
+                    Digital twin export with verified asset tag hierarchies.
+                  </p>
+                </div>
+
+                {/* Legacy Approach */}
+                <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                    <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                    <span>Legacy / Siloed Approach</span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                    Manual compilation of paper binders and redline drawings.
+                  </p>
+                </div>
+
+                {/* Measurable Value Impact */}
+                <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-emerald-700 tracking-wider flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Measurable Value Impact</span>
+                  </div>
+                  <p className="text-xs text-emerald-700 font-semibold leading-relaxed">
+                    Accelerated final retention cash collection and rapid defect liability clearance.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop Full-Bleed Comparison Table (100% Preserved) */}
+            <div className="hidden sm:block overflow-x-auto">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse">
               <thead>
                 <tr className="bg-slate-900 text-white font-mono text-[11px] uppercase tracking-wider">
                   <th className="p-4 sm:p-5">Engineering Dimension</th>
@@ -1336,6 +1542,7 @@ export const EngineeringIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCon
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
 
         </div>
