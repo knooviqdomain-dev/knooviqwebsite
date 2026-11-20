@@ -46,7 +46,8 @@ const highlights = [
 ];
 
 export const Hero: React.FC<HeroProps> = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
   const [phraseIndex, setPhraseIndex] = useState(0);
 
   // Rotating dynamic heading timer (changes smoothly every 3.2s)
@@ -57,22 +58,21 @@ export const Hero: React.FC<HeroProps> = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Video autoplay
+  // Video autoplay for both desktop background and mobile/tablet showcase
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    video.muted = true;
-
-    const playVideo = async () => {
-      try {
-        await video.play();
-      } catch (err) {
-        console.warn('Autoplay waiting for user gesture or loading:', err);
-      }
-    };
-
-    playVideo();
+    const videos = [desktopVideoRef.current, mobileVideoRef.current];
+    videos.forEach((video) => {
+      if (!video) return;
+      video.muted = true;
+      const playVideo = async () => {
+        try {
+          await video.play();
+        } catch (err) {
+          console.warn('Autoplay waiting for user gesture or loading:', err);
+        }
+      };
+      playVideo();
+    });
   }, []);
 
   return (
@@ -80,15 +80,15 @@ export const Hero: React.FC<HeroProps> = () => {
       id="hero"
       className="relative w-full overflow-hidden bg-[#020617] flex items-center justify-center select-none pt-[72px] sm:pt-[80px] lg:pt-[84px] min-h-[600px] sm:min-h-[660px] lg:h-screen lg:min-h-[680px] lg:max-h-[1080px]"
     >
-      {/* 100% Screen Cover Background Video (Seamless 60fps Loop) */}
+      {/* 100% Screen Cover Background Video for Laptops & Desktops (Seamless 60fps Loop) */}
       <video
-        ref={videoRef}
+        ref={desktopVideoRef}
         autoPlay
         loop
         muted
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover object-top"
+        className="hidden xl:block absolute inset-0 w-full h-full object-cover object-top"
         style={{
           transform: 'translateZ(0)',
           WebkitTransform: 'translateZ(0)',
@@ -116,7 +116,7 @@ export const Hero: React.FC<HeroProps> = () => {
       />
 
       {/* Hero Foreground Content: Dynamic Heading, Subtitle & Interactive Telemetry Highlights */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-10 sm:py-14 lg:py-16 flex flex-col justify-center items-start text-left">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-10 lg:py-16 flex flex-col justify-center items-start text-left">
         
         {/* Live Status Pill with Pulsing Indicator */}
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-950/70 border border-cyan-400/35 text-cyan-300 text-xs font-semibold tracking-wide backdrop-blur-md mb-4 sm:mb-6 shadow-[0_0_20px_rgba(0,163,224,0.25)]">
@@ -158,8 +158,31 @@ export const Hero: React.FC<HeroProps> = () => {
           Empowering global businesses through SAP solutions, enterprise transformation, intelligent automation and next-generation digital technologies to accelerate innovation and sustainable growth.
         </p>
 
+        {/* Mobile & Tablet Dedicated Showcase Video: 100% Full Uncut Logo & 16:9 Aspect Ratio */}
+        <div className="xl:hidden w-full max-w-4xl mx-auto my-6 sm:my-8 rounded-2xl sm:rounded-3xl overflow-hidden border border-cyan-500/35 shadow-[0_0_35px_rgba(0,163,224,0.22)] bg-slate-950 relative aspect-video">
+          <video
+            ref={mobileVideoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+            className="w-full h-full object-contain bg-slate-950"
+            style={{
+              transform: 'translateZ(0)',
+              WebkitTransform: 'translateZ(0)',
+              backfaceVisibility: 'hidden',
+              WebkitBackfaceVisibility: 'hidden',
+            }}
+          >
+            <source src="/videos/hero-video.mp4?v=20261114_AD4A88FC" type="video/mp4" />
+            <source src="/videos/Hero-section-video.MOV?v=20261114_AD4A88FC" type="video/quicktime" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
         {/* Floating Enterprise Telemetry Highlights Strip (Fills Space with High-Credibility Architecture Metrics) */}
-        <div className="mt-8 sm:mt-12 w-full grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 pointer-events-auto">
+        <div className="mt-2 sm:mt-4 xl:mt-12 w-full grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 pointer-events-auto">
           {highlights.map((item, idx) => {
             const Icon = item.icon;
             return (

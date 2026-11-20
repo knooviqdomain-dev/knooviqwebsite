@@ -83,7 +83,7 @@ export const FeaturedSolutionsSection: React.FC<{ onOpenContact?: (service?: str
             </div>
 
             {/* Right Visual Area: Interactive 3D Industries Globe */}
-            <div className="w-full lg:w-[460px] xl:w-[500px] h-[380px] sm:h-[420px] lg:h-[440px] flex-shrink-0 flex items-center justify-center relative">
+            <div className="w-full lg:w-[460px] xl:w-[500px] h-[320px] sm:h-[380px] lg:h-[440px] flex-shrink-0 flex items-center justify-center relative">
               <IndustriesGlobe3D />
             </div>
 
