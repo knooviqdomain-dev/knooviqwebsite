@@ -8,6 +8,7 @@ import {
   Zap,
   CheckCircle2,
   Building2,
+  Handshake,
   Truck,
   ShoppingBag,
   CreditCard,
@@ -57,7 +58,7 @@ const RAAPYD_PRODUCTS: ProductItem[] = [
     ],
     sapBackbone: 'SAP S/4HANA MM & Ariba Network',
     route: '/products/vendor-management',
-    icon: Building2,
+    icon: Handshake,
     accentColor: 'from-blue-600 to-cyan-500',
     badge: 'Procurement Core'
   },
@@ -304,7 +305,7 @@ export const RaapydProductsPage: React.FC<RaapydProductsPageProps> = ({ onOpenCo
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div className="product-typography font-sora min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
       
       {/* ========================================================================= */}
       {/* SECTION 1: HERO — THE CONNECTED ENTERPRISE PRODUCT SUITE                  */}
@@ -448,16 +449,16 @@ export const RaapydProductsPage: React.FC<RaapydProductsPageProps> = ({ onOpenCo
                 </div>
 
                 {/* Bottom Quick Feature Strip */}
-                <div className="grid grid-cols-3 gap-2 mt-3 pt-2 border-t border-slate-200 dark:border-white/10 text-center">
-                  <div className="p-2 rounded-lg bg-slate-50 dark:bg-white/5">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-3 pt-2 border-t border-slate-200 dark:border-white/10 text-center">
+                  <div className="p-2 rounded-lg bg-slate-50 dark:bg-white/5 min-w-0">
                     <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Modularity</p>
                     <p className="text-xs font-black text-slate-800 dark:text-slate-200">Plug & Play</p>
                   </div>
-                  <div className="p-2 rounded-lg bg-slate-50 dark:bg-white/5">
+                  <div className="p-2 rounded-lg bg-slate-50 dark:bg-white/5 min-w-0">
                     <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Connectivity</p>
                     <p className="text-xs font-black text-slate-800 dark:text-slate-200">BAPI & OData</p>
                   </div>
-                  <div className="p-2 rounded-lg bg-slate-50 dark:bg-white/5">
+                  <div className="p-2 rounded-lg bg-slate-50 dark:bg-white/5 min-w-0">
                     <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Governance</p>
                     <p className="text-xs font-black text-slate-800 dark:text-slate-200">Zero Debt</p>
                   </div>

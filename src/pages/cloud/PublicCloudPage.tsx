@@ -367,16 +367,16 @@ export const PublicCloudPage: React.FC<PublicCloudPageProps> = ({ onOpenContact 
             </p>
 
             {/* Key Architecture Badges */}
-            <div className="pt-4 border-t border-white/15 grid grid-cols-3 gap-4 text-xs max-w-xl">
-              <div>
+            <div className="pt-4 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-xs max-w-xl">
+              <div className="min-w-0">
                 <span className="font-mono text-[#00A3E0] font-bold block text-sm sm:text-base">Multi-AZ</span>
                 <span className="text-slate-300 mt-0.5 block">High Availability</span>
               </div>
-              <div>
+              <div className="min-w-0">
                 <span className="font-mono text-[#00A3E0] font-bold block text-sm sm:text-base">Zero-Trust</span>
                 <span className="text-slate-300 mt-0.5 block">Security Baseline</span>
               </div>
-              <div>
+              <div className="min-w-0">
                 <span className="font-mono text-[#00A3E0] font-bold block text-sm sm:text-base">FinOps</span>
                 <span className="text-slate-300 mt-0.5 block">Automated Cost Control</span>
               </div>

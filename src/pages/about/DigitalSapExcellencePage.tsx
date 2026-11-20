@@ -205,7 +205,7 @@ export const DigitalSapExcellencePage: React.FC<{ onOpenContact: (topic?: string
 
 
   return (
-    <div className="relative w-full max-w-full pb-0 bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden overflow-x-clip">
+    <div className="about-typography font-sora relative w-full max-w-full pb-0 bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden overflow-x-clip">
       
       {/* Dynamic Background Aurora Blobs */}
       <div className="aurora-sphere-1 top-[680px] left-1/4 bg-[#00A3E0]/15 dark:bg-[#00F0FF]/15 pointer-events-none" />
@@ -594,7 +594,7 @@ export const DigitalSapExcellencePage: React.FC<{ onOpenContact: (topic?: string
           Industry Cards: Manufacturing, Oil & Gas, Automotive, Retail, Healthcare, Energy & Utilities
           Subtle reference to: Trading & Distribution, Metals & Mining, Construction, Logistics, etc.
           ========================================================================= */}
-      <section className="py-20 sm:py-24 relative overflow-hidden bg-white dark:bg-[#030712]">
+      <section className="transformation-section py-20 sm:py-24 relative overflow-hidden bg-white dark:bg-[#030712]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <motion.div

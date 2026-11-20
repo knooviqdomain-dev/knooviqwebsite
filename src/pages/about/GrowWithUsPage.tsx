@@ -617,7 +617,7 @@ export const GrowWithUsPage: React.FC<{ onOpenContact: (topic?: string) => void 
   };
 
   return (
-    <div className="relative w-full max-w-full pb-0 bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden overflow-x-clip font-sans">
+    <div className="about-typography font-sora relative w-full max-w-full pb-0 bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden overflow-x-clip">
       
       {/* Background Aurora */}
       <div className="aurora-sphere-1 top-20 left-1/4 bg-[#00A3E0]/15 dark:bg-[#00F0FF]/15 pointer-events-none" />
@@ -626,11 +626,12 @@ export const GrowWithUsPage: React.FC<{ onOpenContact: (topic?: string) => void 
       {/* =========================================================================
           HERO SECTION — EXACT SAME LAYOUT, ONLY HERO IMAGE REPLACED
           Concept: CAREER GROWTH + PEOPLE + LEARNING + OPPORTUNITY
-          Replaced with modern corporate visual of diverse professionals collaborating
+          Desktop: Full-screen background image untouched
+          Mobile: Clean atmosphere with dedicated showcase card (No text clash)
           ========================================================================= */}
-      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-20 min-h-[540px] lg:h-[580px] lg:min-h-[580px] flex items-center overflow-hidden">
-        {/* Clean Background Image with Directional Left Contrast Scrim */}
-        <div className="absolute inset-0 z-0">
+      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-20 min-h-[540px] lg:h-[580px] lg:min-h-[580px] flex items-center overflow-hidden bg-[#080D20] text-white">
+        {/* Desktop-Only Full Background Visual (100% Untouched on Desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
           <img 
             src="/images/grow_with_us_hero.jpg" 
             alt="Careers and Professional Growth at KNOOVIQ"
@@ -640,6 +641,11 @@ export const GrowWithUsPage: React.FC<{ onOpenContact: (topic?: string) => void 
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/60 via-slate-950/35 to-transparent pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
         </div>
+
+        {/* Mobile-Only Ambient Atmosphere (Clean dark background on mobile, no image behind text) */}
+        <div className="lg:hidden absolute inset-0 bg-[#080D20] pointer-events-none" />
+        <div className="lg:hidden absolute top-20 left-1/4 w-[400px] h-[300px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-40 right-1/4 w-[350px] h-[300px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-3xl lg:max-w-4xl">
@@ -688,6 +694,23 @@ export const GrowWithUsPage: React.FC<{ onOpenContact: (topic?: string) => void 
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/90 border border-white/20 shadow-xl backdrop-blur-md text-xs font-bold text-white">
                 <CheckCircle2 className="h-4 w-4 text-emerald-400" />
                 <span>High-Trust Autonomous Culture</span>
+              </div>
+            </motion.div>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+              className="lg:hidden relative flex justify-center items-center mt-6 w-full"
+            >
+              <div className="relative w-full max-w-lg rounded-2xl sm:rounded-3xl overflow-hidden border border-white/15 bg-slate-900/60 shadow-[0_12px_40px_rgba(0,112,192,0.2)]">
+                <img 
+                  src="/images/grow_with_us_hero.jpg" 
+                  alt="KNOOVIQ Careers and Architectural Growth Culture"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl select-none"
+                  loading="eager"
+                />
               </div>
             </motion.div>
           </div>

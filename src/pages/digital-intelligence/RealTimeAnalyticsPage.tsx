@@ -714,7 +714,7 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
                         <StepIcon className="w-4 h-4" />
                       </div>
                       <div className="min-w-0">
-                        <div className="text-xs sm:text-sm font-bold truncate">{step.label}</div>
+                        <div className="text-xs sm:text-sm font-bold break-words leading-tight">{step.label}</div>
                         <div className={`text-xs truncate ${isSelected ? 'text-sky-100 font-medium' : 'text-slate-500'}`}>{step.sublabel}</div>
                       </div>
                     </button>
@@ -1021,7 +1021,7 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
               className="rounded-3xl border border-slate-200 overflow-hidden shadow-sm"
             >
               <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
+                <table className="w-full min-w-[640px] text-left border-collapse">
                   <thead>
                     <tr className="bg-slate-100 border-b border-slate-200 text-xs sm:text-sm font-mono uppercase text-slate-700 tracking-wider">
                       <th className="py-4 px-6 font-bold w-1/4">Streaming Dimension</th>

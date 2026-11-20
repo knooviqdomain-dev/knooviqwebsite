@@ -34,9 +34,9 @@ export const SapFioriPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) =
           SECTION 1: RESPONSIVE MULTI-DEVICE ENTERPRISE HERO
           (Blue & White, Pure Information, Full-Screen Workflow Automation Showcase)
           ========================================================================= */}
-      <section className="relative w-full min-h-[520px] sm:min-h-[560px] lg:min-h-[600px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 overflow-hidden bg-black">
-        {/* Full-Box Background Image — 100% Clear with Zero Dark Blue Shade */}
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <section className="relative w-full min-h-[520px] sm:min-h-[560px] lg:min-h-[600px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 overflow-hidden bg-black text-white">
+        {/* Desktop-Only Full-Bleed 16:9 Background Image (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
             src="/images/sap_fiori_workflow_automation_hero.png"
             alt="Consumer-Grade Simplicity for Mission-Critical Workflows"
@@ -47,10 +47,14 @@ export const SapFioriPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) =
         {/* Top Hairline Accent */}
         <div className="absolute top-0 left-0 right-0 z-10 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
 
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           <div className="max-w-2xl space-y-4 relative">
-            {/* Seamless Soft Contrast Aura — ensures text is 100% legible against the background image with Zero Box and Zero dark blue shade */}
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/90 via-black/60 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/90 via-black/60 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="space-y-3">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-xs font-mono font-bold uppercase tracking-wider text-[#00A3E0] shadow-md">
@@ -62,7 +66,7 @@ export const SapFioriPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) =
                 Consumer-Grade <br />
                 <span className="text-[#00A3E0] drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">Simplicity for Mission-Critical Workflows</span>
               </h1>
-              <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-medium max-w-xl pt-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+              <p className="text-base sm:text-lg text-white leading-relaxed font-normal max-w-xl pt-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
                 Transform complex SAP GUI transactions into intuitive, role-based, multi-device digital experiences. Empower desktop knowledge workers, tablet field managers, and mobile warehouse operators with consistent Horizon design and context-aware Joule AI.
               </p>
             </motion.div>
@@ -82,6 +86,18 @@ export const SapFioriPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) =
                 <span>WCAG 2.1 AA Standard</span>
               </div>
             </motion.div>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                <img
+                  src="/images/sap_fiori_workflow_automation_hero.png"
+                  alt="Consumer-Grade Simplicity for Mission-Critical Workflows"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -117,8 +133,8 @@ export const SapFioriPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) =
                     alt="List Report & Object Page Floorplan"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent to-transparent" />
-                  <span className="absolute top-3 left-3 px-2 py-0.5 rounded bg-blue-950/80 text-[10px] font-mono text-white font-bold border border-blue-400/30">
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-950/20 via-transparent to-transparent pointer-events-none" />
+                  <span className="absolute top-3 left-3 z-10 px-2 py-0.5 rounded bg-blue-950/90 text-[10px] font-mono text-white font-bold border border-blue-400/40 shadow-sm">
                     FLOORPLAN 01
                   </span>
                 </div>
@@ -149,8 +165,8 @@ export const SapFioriPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) =
                     alt="Analytical List Page Floorplan"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent to-transparent" />
-                  <span className="absolute top-3 left-3 px-2 py-0.5 rounded bg-blue-950/80 text-[10px] font-mono text-white font-bold border border-blue-400/30">
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-950/20 via-transparent to-transparent pointer-events-none" />
+                  <span className="absolute top-3 left-3 z-10 px-2 py-0.5 rounded bg-blue-950/90 text-[10px] font-mono text-white font-bold border border-blue-400/40 shadow-sm">
                     FLOORPLAN 02
                   </span>
                 </div>
@@ -181,8 +197,8 @@ export const SapFioriPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) =
                     alt="Overview Page Floorplan"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent to-transparent" />
-                  <span className="absolute top-3 left-3 px-2 py-0.5 rounded bg-blue-950/80 text-[10px] font-mono text-white font-bold border border-blue-400/30">
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-950/20 via-transparent to-transparent pointer-events-none" />
+                  <span className="absolute top-3 left-3 z-10 px-2 py-0.5 rounded bg-blue-950/90 text-[10px] font-mono text-white font-bold border border-blue-400/40 shadow-sm">
                     FLOORPLAN 03
                   </span>
                 </div>
@@ -213,8 +229,8 @@ export const SapFioriPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) =
                     alt="Worklist Page Floorplan"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent to-transparent" />
-                  <span className="absolute top-3 left-3 px-2 py-0.5 rounded bg-blue-950/80 text-[10px] font-mono text-white font-bold border border-blue-400/30">
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-950/20 via-transparent to-transparent pointer-events-none" />
+                  <span className="absolute top-3 left-3 z-10 px-2 py-0.5 rounded bg-blue-950/90 text-[10px] font-mono text-white font-bold border border-blue-400/40 shadow-sm">
                     FLOORPLAN 04
                   </span>
                 </div>
@@ -279,7 +295,7 @@ export const SapFioriPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) =
           </div>
 
           <div className="overflow-x-auto rounded-2xl border border-blue-200 bg-white shadow-md">
-            <table className="w-full text-left border-collapse text-xs sm:text-sm">
+            <table className="w-full min-w-[640px] text-left border-collapse text-xs sm:text-sm">
               <thead>
                 <tr className="border-b border-blue-200 bg-blue-950 text-white font-mono text-xs">
                   <th className="p-4 sm:p-5 font-bold uppercase">Architectural Dimension</th>

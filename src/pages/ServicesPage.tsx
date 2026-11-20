@@ -325,7 +325,7 @@ export const ServicesPage: React.FC<{ onOpenContact: (topic?: string) => void }>
             </div>
 
             <div className="overflow-x-auto rounded-2xl border border-slate-200 dark:border-white/10 shadow-sm">
-              <table className="w-full text-left text-xs">
+              <table className="w-full min-w-[640px] text-left text-xs">
                 <thead className="bg-slate-100 dark:bg-[#0B1528] text-slate-700 dark:text-slate-300 uppercase tracking-wider font-bold">
                   <tr>
                     <th className="py-3 px-4">Severity Tier</th>

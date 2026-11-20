@@ -216,8 +216,8 @@ export const SolutionArchitecturePage: React.FC<SolutionArchitecturePageProps> =
         {/* Decorative Top Hairline */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#00A3E0]/40 to-transparent pointer-events-none" />
 
-        {/* Full-Bleed Background Visual — 100% Clear with Zero Dark Shade */}
-        <div className="absolute inset-0 z-0">
+        {/* Desktop-Only Full-Bleed Background Visual (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
           <img
             src="/images/architecture/solution-architecture-hero.jpg"
             alt="Enterprise SAP Solution Architecture Blueprint Overview"
@@ -225,11 +225,16 @@ export const SolutionArchitecturePage: React.FC<SolutionArchitecturePageProps> =
           />
         </div>
 
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
 
           <div className="max-w-3xl space-y-5 text-left relative">
-            {/* Seamless Soft Contrast Aura — ensures text is 100% legible with zero dark shade on image */}
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#00A3E0] text-xs font-mono font-bold tracking-wider uppercase shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
@@ -251,6 +256,18 @@ export const SolutionArchitecturePage: React.FC<SolutionArchitecturePageProps> =
             <p className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed max-w-2xl">
               Translate complex business strategies into robust, modular, and future-proof enterprise architectures. Knooviq designs decoupled SAP solution blueprints uniting cloud ERP cores, real-time integration meshes, intelligent data fabrics, and multi-cloud platforms.
             </p>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                <img
+                  src="/images/architecture/solution-architecture-hero.jpg"
+                  alt="Enterprise SAP Solution Architecture Blueprint Overview"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
+              </div>
+            </div>
           </div>
 
         </div>
@@ -464,11 +481,11 @@ export const SolutionArchitecturePage: React.FC<SolutionArchitecturePageProps> =
           </div>
 
           {/* IMAGE 3: Integration Mesh & Event-Driven Architecture Visual */}
-          <div className="mb-12 rounded-3xl overflow-hidden border border-slate-200 shadow-lg bg-white">
+          <div className="mb-12 rounded-3xl overflow-hidden border border-slate-200 dark:border-cyan-500/30 shadow-lg bg-[#08152B]">
             <img
               src="/images/architecture/solution-integration-mesh.jpg"
-              alt="Enterprise SAP Integration Architecture: 3D Multi-Tier Integration Mesh"
-              className="w-full h-auto object-cover"
+              alt="Enterprise SAP Integration Architecture: Decoupled API Fabric, Event Mesh & Secure Protocol Orchestration"
+              className="w-full h-auto object-contain block mx-auto"
             />
           </div>
 

@@ -392,7 +392,7 @@ export const VendorDashboard: React.FC = () => {
 
           {/* Desktop Table View */}
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs">
+            <table className="w-full min-w-[640px] text-left text-xs">
               <thead className="bg-slate-50 dark:bg-slate-800/60 text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider border-b border-slate-200 dark:border-white/5">
                 <tr>
                   <th className="px-5 py-3">Vendor / ID</th>

@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useSearchParams, Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  Search, 
-  Settings, 
-  TrendingUp, 
-  Lightbulb, 
-  ShieldCheck, 
-  BarChart3, 
-  Database, 
-  Maximize2, 
-  Target, 
-  Zap, 
-  Sparkles, 
-  Layers, 
-  Globe, 
-  RefreshCw, 
+import {
+  ArrowRight,
+  Search,
+  Settings,
+  TrendingUp,
+  Lightbulb,
+  ShieldCheck,
+  BarChart3,
+  Database,
+  Maximize2,
+  Target,
+  Zap,
+  Sparkles,
+  Layers,
+  Globe,
+  RefreshCw,
   Cpu,
   Waves,
   X,
@@ -32,7 +32,14 @@ import {
   PhoneCall,
   Clock,
   Award,
-  HelpCircle
+  HelpCircle,
+  Network,
+  Bot,
+  Boxes,
+  Compass,
+  Rocket,
+  Gauge,
+  Activity
 } from 'lucide-react';
 import { DigitalTransformationView } from '../../components/transformation/DigitalTransformationView';
 import { RiseWithSapView } from '../../components/transformation/RiseWithSapView';
@@ -77,7 +84,7 @@ interface TransformationContent {
   heroSubtitle: string;
   heroImage?: string;
   ctaText: string;
-  
+
   overviewHeading: string;
   overviewParagraph1: string;
   overviewParagraph2: string;
@@ -85,7 +92,7 @@ interface TransformationContent {
 
   cloudDeploymentOptions?: CloudDeploymentOption[];
   migrationPathways?: MigrationPathway[];
-  
+
   approachHeading: string;
   approachCards: {
     title: string;
@@ -95,7 +102,7 @@ interface TransformationContent {
     iconBg: string;
     icon: React.ReactNode;
   }[];
-  
+
   journeyHeading: string;
   journeySubtitle: string;
   journeySteps: {
@@ -105,7 +112,7 @@ interface TransformationContent {
     highlight?: string;
     image?: string;
   }[];
-  
+
   benefitsHeading: string;
   benefitsSubtitle: string;
   benefitsCards: {
@@ -113,7 +120,7 @@ interface TransformationContent {
     description: string;
     icon: React.ReactNode;
   }[];
-  
+
   ctaBannerHeading: string;
   ctaBannerSubtext: string;
   ctaBannerButton: string;
@@ -135,16 +142,16 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
     heroSubtitle: 'Transform your business with intelligent, scalable and future-ready SAP solutions.',
     heroImage: '/images/sap_s4hana_transformation_hero.png',
     ctaText: 'Talk to an Expert',
-    
+
     overviewHeading: 'Transform Your Enterprise',
-    overviewParagraph1: "SAP S/4HANA is more than just a system upgrade — it's a strategic transformation that helps you simplify processes, improve efficiency and unlock real-time insights. We help you move to SAP S/4HANA with minimal disruption and maximum value.",
+    overviewParagraph1: "SAP S/4HANA is more than just a system upgrade; it's a strategic transformation that helps you simplify processes, improve efficiency and unlock real-time insights. We help you move to SAP S/4HANA with minimal disruption and maximum value.",
     overviewParagraph2: 'Our Clean Core methodology decouples standard enterprise capabilities from bespoke innovation, ensuring your digital core remains pristine and continuously upgradeable while advanced capabilities thrive independently on the SAP Business Technology Platform.',
     overviewPills: [
       { label: 'Modern Platform', icon: <ShieldCheck className="w-4 h-4 text-[#00A3E0]" /> },
       { label: 'Real-time Insights', icon: <BarChart3 className="w-4 h-4 text-emerald-500" /> },
       { label: 'Future Ready', icon: <Zap className="w-4 h-4 text-amber-500" /> },
     ],
-    
+
     approachHeading: 'Our S/4HANA Transformation Approach',
     approachCards: [
       {
@@ -161,7 +168,7 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         bullets: ['Greenfield, Brownfield & Selective', 'Automated Data Cleansing', 'Near-Zero Downtime Cutover', 'Robust Quality Assurance'],
         iconColor: 'text-purple-500',
         iconBg: 'bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/20',
-        icon: <Settings className="w-5 h-5 text-purple-500" />
+        icon: <Workflow className="w-5 h-5 text-purple-500" />
       },
       {
         title: 'Process Optimization',
@@ -177,10 +184,10 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         bullets: ['SAP BTP Extension Framework', 'Embedded Enterprise AI', 'Automated Workflow Triggers', 'Ongoing Capability Enablement'],
         iconColor: 'text-amber-500',
         iconBg: 'bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20',
-        icon: <Lightbulb className="w-5 h-5 text-amber-500" />
+        icon: <Sparkles className="w-5 h-5 text-amber-500" />
       }
     ],
-    
+
     journeyHeading: 'The Transformation Journey',
     journeySubtitle: 'A structured approach to ensure a smooth and successful transition.',
     journeySteps: [
@@ -209,7 +216,7 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         highlight: 'Hypercare & Value Realization'
       }
     ],
-    
+
     benefitsHeading: 'Key Benefits',
     benefitsSubtitle: 'Achieve more with SAP S/4HANA.',
     benefitsCards: [
@@ -221,17 +228,17 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
       {
         title: 'Real-time Insights',
         description: 'Make data-driven decisions, faster, using live transactional data.',
-        icon: <Database className="w-5 h-5 text-[#00A3E0]" />
+        icon: <BarChart3 className="w-5 h-5 text-[#00A3E0]" />
       },
       {
         title: 'Improved Efficiency',
         description: 'Optimize resources and reduce operational overheads seamlessly.',
-        icon: <Settings className="w-5 h-5 text-[#00A3E0]" />
+        icon: <Gauge className="w-5 h-5 text-[#00A3E0]" />
       },
       {
         title: 'Scalable Architecture',
         description: 'Grow with a flexible and secure platform decoupled from core debt.',
-        icon: <Maximize2 className="w-5 h-5 text-[#00A3E0]" />
+        icon: <Layers className="w-5 h-5 text-[#00A3E0]" />
       },
       {
         title: 'Better Decision-Making',
@@ -239,12 +246,12 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         icon: <Target className="w-5 h-5 text-[#00A3E0]" />
       }
     ],
-    
+
     ctaBannerHeading: 'Ready to transform your business with SAP S/4HANA?',
     ctaBannerSubtext: "Let's build a smarter, more agile and future-ready enterprise together.",
     ctaBannerButton: 'Contact Us'
   },
-  
+
   'erp': {
     id: 'erp',
     tabLabel: 'ERP Transformation',
@@ -253,7 +260,7 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
     heroSubtitle: 'Modernize to an agile, clean-core digital backbone across modern deployment editions with pre-built industry accelerators, zero core modifications, and One Piece Flow delivery.',
     heroImage: '/images/erp_transformation_hero.png',
     ctaText: 'Talk to an SAP Expert',
-    
+
     overviewHeading: 'Modernize to an Autonomous, Clean-Core ERP Architecture',
     overviewParagraph1: 'Legacy on-premise ERP landscapes accumulate unsustainable technical debt, interface fragmentation, and high maintenance costs that restrict market adaptability. Our ERP Transformation practice equips forward-thinking enterprises with a pristine, standardized digital backbone designed for continuous agility and automated innovation.',
     overviewParagraph2: 'By decoupling bespoke extensions onto the SAP Business Technology Platform (BTP) and adopting pre-configured industry best practices, we ensure your digital core remains pristine, continuously upgradeable, and primed for autonomous AI workflows without disrupting day-to-day operations.',
@@ -345,7 +352,7 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         icon: <Workflow className="w-5 h-5 text-indigo-400" />
       }
     ],
-    
+
     approachHeading: 'Our ERP Transformation Methodology',
     approachCards: [
       {
@@ -354,7 +361,7 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         bullets: ['SAP Best Practice Scoping', 'Process Gap Rationalization', 'Signavio Process Mining', 'Standard Operating Alignment'],
         iconColor: 'text-blue-500',
         iconBg: 'bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20',
-        icon: <Search className="w-5 h-5 text-blue-500" />
+        icon: <Compass className="w-5 h-5 text-blue-500" />
       },
       {
         title: 'Clean Core & BTP Architecture',
@@ -362,7 +369,7 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         bullets: ['Side-by-Side Microservices', 'API-Led Integration Mesh', 'Custom Code Retirement', 'Continuous Upgradability'],
         iconColor: 'text-purple-500',
         iconBg: 'bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/20',
-        icon: <Settings className="w-5 h-5 text-purple-500" />
+        icon: <Layers className="w-5 h-5 text-purple-500" />
       },
       {
         title: 'Embedded AI & Predictive Analytics',
@@ -370,7 +377,7 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         bullets: ['SAP Joule Contextual Guidance', 'Automated Matching & Reconciliation', 'Predictive Supply Chain Signals', 'Real-Time Financial Close'],
         iconColor: 'text-teal-500',
         iconBg: 'bg-teal-50 dark:bg-teal-500/10 border border-teal-200 dark:border-teal-500/20',
-        icon: <TrendingUp className="w-5 h-5 text-teal-500" />
+        icon: <Bot className="w-5 h-5 text-teal-500" />
       },
       {
         title: 'Dual-Run Cutover & 24/7 AMS',
@@ -378,10 +385,10 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         bullets: ['Automated Data Reconciliation', 'Weekend Technical Cutover', 'Global Hypercare Command Center', 'Continuous Optimization Services'],
         iconColor: 'text-amber-500',
         iconBg: 'bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20',
-        icon: <Lightbulb className="w-5 h-5 text-amber-500" />
+        icon: <Clock className="w-5 h-5 text-amber-500" />
       }
     ],
-    
+
     journeyHeading: 'The ERP Transformation Journey',
     journeySubtitle: 'A structured Fit-to-Standard methodology ensuring zero disruption and rapid business value.',
     journeySteps: [
@@ -414,7 +421,7 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80'
       }
     ],
-    
+
     benefitsHeading: 'Enterprise Business Value',
     benefitsSubtitle: 'Tangible operational and financial outcomes delivered by ERP Transformation.',
     benefitsCards: [
@@ -431,43 +438,43 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
       {
         title: 'Autonomous Financial Close',
         description: 'Automate bank reconciliations, accruals, and intercompany settlements with embedded intelligent agents.',
-        icon: <Database className="w-5 h-5 text-[#00A3E0]" />
+        icon: <BarChart3 className="w-5 h-5 text-[#00A3E0]" />
       },
       {
         title: 'Live Operational Telemetry',
         description: 'Achieve end-to-end transparency across supply chains, sales channels, and cost commitments.',
-        icon: <Maximize2 className="w-5 h-5 text-[#00A3E0]" />
+        icon: <Activity className="w-5 h-5 text-[#00A3E0]" />
       },
       {
         title: 'Predictable Cloud Economics',
         description: 'Transform heavy capital expenditures into flexible, SLA-backed operational subscription models.',
-        icon: <Target className="w-5 h-5 text-[#00A3E0]" />
+        icon: <Cloud className="w-5 h-5 text-[#00A3E0]" />
       }
     ],
-    
+
     ctaBannerHeading: 'Ready for Your ERP Transformation?',
     ctaBannerSubtext: "Schedule an architecture evaluation to determine the optimal modernization roadmap for your enterprise.",
     ctaBannerButton: 'Request ERP Transformation Audit'
   },
-  
+
   'digital': {
     id: 'digital',
     tabLabel: 'Digital Transformation',
     categoryTag: 'ENTERPRISE DIGITAL TRANSFORMATION • BTP & AUTONOMOUS AI ECOSYSTEM',
     heroTitle: 'Enterprise Digital Transformation',
-    heroSubtitle: 'Reimagine enterprise operations with autonomous AI agents, cloud-native SAP BTP architectures, and connected edge portals — transforming fragmented workflows into an agile, predictive digital enterprise.',
-    heroImage: '/images/digital_transformation_connect.jpg',
+    heroSubtitle: 'Reimagine enterprise operations with autonomous AI agents, cloud-native SAP BTP architectures, and connected edge portals, transforming fragmented workflows into an agile, predictive digital enterprise.',
+    heroImage: '/images/digital_transformation_connect_clean.jpg',
     ctaText: 'Talk to a Digital Expert',
-    
+
     overviewHeading: 'Power the Intelligent Enterprise',
-    overviewParagraph1: 'Digital transformation is not merely about adopting technology — it requires reimagining customer experiences, empowering workforce productivity through automation, and building predictive business models.',
+    overviewParagraph1: 'Digital transformation is not merely about adopting technology; it requires reimagining customer experiences, empowering workforce productivity through automation, and building predictive business models.',
     overviewParagraph2: 'Knooviq combines deep SAP enterprise expertise with artificial intelligence, cloud integration, and process intelligence to elevate your business into an autonomous, proactive digital leader in your industry.',
     overviewPills: [
       { label: 'Autonomous Intelligence', icon: <Sparkles className="w-4 h-4 text-[#00A3E0]" /> },
       { label: 'Connected Ecosystem', icon: <Cpu className="w-4 h-4 text-emerald-500" /> },
       { label: 'Agile Innovation', icon: <TrendingUp className="w-4 h-4 text-amber-500" /> },
     ],
-    
+
     approachHeading: 'Our Digital Transformation Approach',
     approachCards: [
       {
@@ -476,7 +483,7 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         bullets: ['Value Stream Identification', 'Friction Point Eradication', 'Capability Prioritization', 'Digital Roadmapping'],
         iconColor: 'text-blue-500',
         iconBg: 'bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20',
-        icon: <Search className="w-5 h-5 text-blue-500" />
+        icon: <Compass className="w-5 h-5 text-blue-500" />
       },
       {
         title: 'Ecosystem Connectivity',
@@ -484,7 +491,7 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         bullets: ['Real-Time Event Mesh', 'API Orchestration', 'Partner Portal Integration', 'Data Pipeline Unification'],
         iconColor: 'text-purple-500',
         iconBg: 'bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/20',
-        icon: <Settings className="w-5 h-5 text-purple-500" />
+        icon: <Network className="w-5 h-5 text-purple-500" />
       },
       {
         title: 'Intelligent Automation',
@@ -492,7 +499,7 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         bullets: ['Cognitive Document Processing', 'Autonomous Reconciliation', 'Predictive Supply Signals', 'Conversational AI'],
         iconColor: 'text-teal-500',
         iconBg: 'bg-teal-50 dark:bg-teal-500/10 border border-teal-200 dark:border-teal-500/20',
-        icon: <TrendingUp className="w-5 h-5 text-teal-500" />
+        icon: <Cpu className="w-5 h-5 text-teal-500" />
       },
       {
         title: 'Continuous Capability Scaling',
@@ -500,10 +507,10 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         bullets: ['Innovation Sandboxing', 'Rapid Prototyping', 'Change Leadership', 'Continuous Value Realization'],
         iconColor: 'text-amber-500',
         iconBg: 'bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20',
-        icon: <Lightbulb className="w-5 h-5 text-amber-500" />
+        icon: <Rocket className="w-5 h-5 text-amber-500" />
       }
     ],
-    
+
     journeyHeading: 'The Digital Transformation Journey',
     journeySubtitle: 'A structured approach to ensure a smooth and successful transition.',
     journeySteps: [
@@ -532,51 +539,51 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         highlight: 'Autonomous Growth'
       }
     ],
-    
+
     benefitsHeading: 'Key Benefits',
     benefitsSubtitle: 'Achieve more with Intelligent Digital Operations.',
     benefitsCards: [
       {
         title: 'Autonomous Workflows',
         description: 'Automate high-volume decision cycles with embedded enterprise AI.',
-        icon: <Zap className="w-5 h-5 text-[#00A3E0]" />
+        icon: <Bot className="w-5 h-5 text-[#00A3E0]" />
       },
       {
         title: 'Predictive Market Agility',
         description: 'Anticipate demand shifts through connected live data streams.',
-        icon: <Database className="w-5 h-5 text-[#00A3E0]" />
+        icon: <TrendingUp className="w-5 h-5 text-[#00A3E0]" />
       },
       {
         title: 'Frictionless Experience',
         description: 'Deliver modern, unified digital touchpoints for customers and vendors.',
-        icon: <Settings className="w-5 h-5 text-[#00A3E0]" />
+        icon: <Users className="w-5 h-5 text-[#00A3E0]" />
       },
       {
         title: 'Democratized Intelligence',
         description: 'Provide self-service analytics and actionable insights to every role.',
-        icon: <Maximize2 className="w-5 h-5 text-[#00A3E0]" />
+        icon: <BarChart3 className="w-5 h-5 text-[#00A3E0]" />
       },
       {
         title: 'Accelerated Time-to-Market',
         description: 'Launch digital capabilities and service offerings with rapid turnaround.',
-        icon: <Target className="w-5 h-5 text-[#00A3E0]" />
+        icon: <Rocket className="w-5 h-5 text-[#00A3E0]" />
       }
     ],
-    
+
     ctaBannerHeading: 'Ready to build your intelligent digital enterprise?',
     ctaBannerSubtext: "Let's innovate together with AI, connected data, and agile cloud platforms.",
     ctaBannerButton: 'Contact Us'
   },
-  
+
   'rise': {
     id: 'rise',
     tabLabel: 'RISE with SAP',
     categoryTag: 'SAP PLATINUM PARTNER ECOSYSTEM • BUSINESS TRANSFORMATION AS A SERVICE',
     heroTitle: 'RISE with SAP Transformation',
-    heroSubtitle: 'A comprehensive, single-contract journey to the intelligent cloud — combining SAP S/4HANA Cloud, enterprise hyperscaler infrastructure, business process intelligence, and 24/7 managed services under one unified SLA.',
+    heroSubtitle: 'A comprehensive, single-contract journey to the intelligent cloud, combining SAP S/4HANA Cloud, enterprise hyperscaler infrastructure, business process intelligence, and 24/7 managed services under one unified SLA.',
     heroImage: '/images/rise_with_sap_hero_clean.jpg',
     ctaText: 'Talk to a RISE Expert',
-    
+
     overviewHeading: 'Accelerate Cloud Agility with RISE',
     overviewParagraph1: 'RISE with SAP brings together everything your organization needs to transform business operations: cloud ERP software, hyperscaler infrastructure, business process intelligence, and technical managed services under one unified contract.',
     overviewParagraph2: 'Knooviq serves as your strategic transformation partner, orchestrating clean-core architectural advisory, database migration, side-by-side BTP extensions, and 24x7 enterprise governance to maximize your return on cloud investment.',
@@ -585,7 +592,7 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
       { label: 'Enterprise Cloud SLA', icon: <ShieldCheck className="w-4 h-4 text-emerald-500" /> },
       { label: 'Clean Core BTP', icon: <Layers className="w-4 h-4 text-amber-500" /> },
     ],
-    
+
     approachHeading: 'Our RISE with SAP Transformation Approach',
     approachCards: [
       {
@@ -602,7 +609,7 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         bullets: ['Database & System Cutover', 'Data Volume Management', 'Standard Best Practices', 'Secure Cloud Architecture'],
         iconColor: 'text-purple-500',
         iconBg: 'bg-purple-50 dark:bg-purple-500/10 border border-purple-200 dark:border-purple-500/20',
-        icon: <Settings className="w-5 h-5 text-purple-500" />
+        icon: <ShieldCheck className="w-5 h-5 text-purple-500" />
       },
       {
         title: 'BTP Side-by-Side Innovation',
@@ -610,7 +617,7 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         bullets: ['BTP Extension Deployment', 'Event-Mesh Integration', 'Custom Code Extraction', 'Continuous Compliance'],
         iconColor: 'text-teal-500',
         iconBg: 'bg-teal-50 dark:bg-teal-500/10 border border-teal-200 dark:border-teal-500/20',
-        icon: <TrendingUp className="w-5 h-5 text-teal-500" />
+        icon: <Boxes className="w-5 h-5 text-teal-500" />
       },
       {
         title: 'Continuous Cloud Value',
@@ -618,10 +625,10 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         bullets: ['Signavio Process Mining', 'Quarterly Update Governance', 'Continuous Optimization', '24x7 Enterprise Support'],
         iconColor: 'text-amber-500',
         iconBg: 'bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20',
-        icon: <Lightbulb className="w-5 h-5 text-amber-500" />
+        icon: <Cloud className="w-5 h-5 text-amber-500" />
       }
     ],
-    
+
     journeyHeading: 'The RISE Transformation Journey',
     journeySubtitle: 'A structured approach to ensure a smooth and successful transition.',
     journeySteps: [
@@ -650,37 +657,37 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
         highlight: 'Continuous Value'
       }
     ],
-    
+
     benefitsHeading: 'Key Benefits',
     benefitsSubtitle: 'Achieve more with RISE with SAP.',
     benefitsCards: [
       {
         title: 'Simplified Cloud Governance',
         description: 'Single contract covering software, hyperscaler, and support SLA.',
-        icon: <Zap className="w-5 h-5 text-[#00A3E0]" />
+        icon: <FileText className="w-5 h-5 text-[#00A3E0]" />
       },
       {
         title: 'Guaranteed Availability',
         description: 'Enterprise-grade uptime backed directly by SAP and cloud leaders.',
-        icon: <Database className="w-5 h-5 text-[#00A3E0]" />
+        icon: <ShieldCheck className="w-5 h-5 text-[#00A3E0]" />
       },
       {
         title: 'Process Intelligence',
         description: 'Identify operational bottlenecks in real time with SAP Signavio.',
-        icon: <Settings className="w-5 h-5 text-[#00A3E0]" />
+        icon: <Activity className="w-5 h-5 text-[#00A3E0]" />
       },
       {
         title: 'Pristine Clean Core',
         description: 'Eliminate technical debt and maintain continuous upgradeability.',
-        icon: <Maximize2 className="w-5 h-5 text-[#00A3E0]" />
+        icon: <Layers className="w-5 h-5 text-[#00A3E0]" />
       },
       {
         title: 'Predictable Cloud Economics',
         description: 'Transform high capital expenditures into scalable operational costs.',
-        icon: <Target className="w-5 h-5 text-[#00A3E0]" />
+        icon: <Cloud className="w-5 h-5 text-[#00A3E0]" />
       }
     ],
-    
+
     ctaBannerHeading: 'Ready to begin your RISE with SAP journey?',
     ctaBannerSubtext: "Let's architect your seamless transition to the cloud with Knooviq advisory.",
     ctaBannerButton: 'Contact Us'
@@ -688,12 +695,12 @@ const TRANSFORMATION_DATA: Record<TransformationDomainKey, TransformationContent
 };
 
 
-export const SapS4HanaPage: React.FC<SapS4HanaPageProps> = ({ 
-  onOpenContact, 
-  initialTab = 'sap-s4hana' 
+export const SapS4HanaPage: React.FC<SapS4HanaPageProps> = ({
+  onOpenContact,
+  initialTab = 'sap-s4hana'
 }) => {
   const [searchParams] = useSearchParams();
-  
+
   // Resolve active domain from searchParams, initialTab, or default to sap-s4hana
   const getInitialDomain = (): TransformationDomainKey => {
     const tabParam = searchParams.get('tab');
@@ -780,6 +787,21 @@ export const SapS4HanaPage: React.FC<SapS4HanaPageProps> = ({
     }
   };
 
+  // Dynamic mobile background focal point so the key subject is clearly visible behind mobile text
+  const getMobileHeroPosition = () => {
+    switch (activeDomain) {
+      case 'erp':
+        return 'object-[85%_center]';
+      case 'rise':
+        return 'object-[58%_center]';
+      case 'digital':
+        return 'object-[45%_center]';
+      case 'sap-s4hana':
+      default:
+        return 'object-[65%_center]';
+    }
+  };
+
   // Enterprise trust indicators matching SAP Fiori reference
   const domainTrustIndicators: Record<TransformationDomainKey, { icon: React.ReactNode; label: string; textClass: string }[]> = {
     'sap-s4hana': [
@@ -805,51 +827,86 @@ export const SapS4HanaPage: React.FC<SapS4HanaPageProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#070E1C] text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div className="transformation-typography font-sora min-h-screen bg-[#F8FAFC] dark:bg-[#070E1C] text-slate-900 dark:text-slate-100 transition-colors duration-300">
 
       {/* =========================================================================
-          SECTION 1: FULL-SCREEN BACKGROUND ENTERPRISE HERO (SAP FIORI STYLE)
+          SECTION 1: HERO (DESKTOP FULL-SCREEN BACKGROUND, MOBILE SHOWCASE CARD)
           ========================================================================= */}
       <section className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 overflow-hidden bg-black text-white">
-        
-        {/* Full-Bleed 16:9 Panoramic Image - Zero Cropping on Subject */}
-        <div className="absolute inset-0 z-0">
+
+        {/* Desktop-Only Full-Bleed 16:9 Background Image (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
           <img
             src={currentData.heroImage || '/images/sap_s4hana_transformation_hero.png'}
             alt={currentData.heroTitle}
-            className="w-full h-full object-cover object-right sm:object-[78%_center] lg:object-[center_25%] brightness-105 contrast-[1.02]"
+            className={`w-full h-full object-cover select-none brightness-105 contrast-[1.02] ${
+              activeDomain === 'rise' 
+                ? 'object-[right_top] lg:object-[right_top]' 
+                : 'object-right lg:object-[center_25%]'
+            }`}
           />
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
 
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-2xl lg:max-w-xl space-y-6 relative">
-            {/* Seamless Soft Contrast Aura — ensures text is 100% legible against the background image with Zero Box */}
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="space-y-4">
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-mono font-bold uppercase tracking-wider text-[#00A3E0] shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
                 <Sparkles className="w-3.5 h-3.5 text-[#00A3E0]" />
                 <span>{currentData.categoryTag}</span>
               </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
-                {renderHeroHeadline()}
-              </h1>
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl pt-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
-                {currentData.heroSubtitle}
-              </p>
             </motion.div>
 
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]"
+            >
+              {renderHeroHeadline()}
+            </motion.h1>
+
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl pt-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
+            >
+              {currentData.heroSubtitle}
+            </motion.p>
+
             {/* Enterprise Trust Indicators */}
-            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }} className="pt-1 flex flex-wrap items-center gap-3">
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="pt-1 flex flex-wrap items-center gap-3">
               {domainTrustIndicators[activeDomain].map((indicator, idx) => (
-                <div key={idx} className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-950/70 backdrop-blur-md border border-white/15 text-xs font-mono font-bold ${indicator.textClass} shadow-lg`}>
+                <div key={idx} className={`flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold ${indicator.textClass} shadow-lg`}>
                   {indicator.icon}
                   <span>{indicator.label}</span>
                 </div>
               ))}
             </motion.div>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                <img
+                  src={currentData.heroImage || '/images/sap_s4hana_transformation_hero.png'}
+                  alt={currentData.heroTitle}
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -858,7 +915,7 @@ export const SapS4HanaPage: React.FC<SapS4HanaPageProps> = ({
           3. FULL WIDTH MAIN CONTENT SECTIONS (Spacious & Clean, Zero Cramping)
           ========================================================================= */}
       <div id="transformation-content-body" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 space-y-20">
-        
+
         {activeDomain === 'erp' ? (
           /* =========================================================================
              SAVIC-ALIGNED ENTERPRISE FORMAT FOR ERP TRANSFORMATION
@@ -949,13 +1006,13 @@ export const SapS4HanaPage: React.FC<SapS4HanaPageProps> = ({
                     </h2>
                   </div>
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-md">
-                    From strategic cloud advisory to post-go-live managed services — aligning engineering rigor with measurable business ROI.
+                    From strategic cloud advisory to post-go-live managed services, aligning engineering rigor with measurable business ROI.
                   </p>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                
+
                 {/* Left Column: What We Deliver */}
                 <div className="bg-white dark:bg-[#0B1528] rounded-3xl border border-slate-200/80 dark:border-white/10 p-8 sm:p-10 shadow-sm flex flex-col justify-between">
                   <div>

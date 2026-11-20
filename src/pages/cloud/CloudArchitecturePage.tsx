@@ -425,16 +425,16 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
 
 
             {/* Key Architecture Badges */}
-            <div className="pt-4 border-t border-slate-700/60 grid grid-cols-3 gap-3 text-xs">
-              <div className="p-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-800/90 shadow-md">
+            <div className="pt-4 border-t border-slate-700/60 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+              <div className="p-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-800/90 shadow-md min-w-0">
                 <span className="font-mono text-[#00A3E0] font-bold block text-sm sm:text-base">Multi-Tier</span>
                 <span className="text-slate-400 mt-0.5 block">Isolated Layers</span>
               </div>
-              <div className="p-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-800/90 shadow-md">
+              <div className="p-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-800/90 shadow-md min-w-0">
                 <span className="font-mono text-[#00A3E0] font-bold block text-sm sm:text-base">Zero-Trust</span>
                 <span className="text-slate-400 mt-0.5 block">Security Baseline</span>
               </div>
-              <div className="p-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-800/90 shadow-md">
+              <div className="p-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-800/90 shadow-md min-w-0">
                 <span className="font-mono text-[#00A3E0] font-bold block text-sm sm:text-base">Line-Rate</span>
                 <span className="text-slate-400 mt-0.5 block">High Resilience</span>
               </div>

@@ -270,7 +270,7 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
       id: 'swarm',
       label: 'Multi-Agent Swarms',
       sublabel: 'Role-Based Coordination',
-      desc: 'Specialized autonomous agents collaborating concurrently—from procurement verification to credit release—with verified message passing.',
+      desc: 'Specialized autonomous agents collaborating concurrently, from procurement verification to credit release, with verified message passing.',
       tech: 'Actor Model Swarm Fabric',
       icon: Network,
       image: '/images/ai_agents_actor_model_swarm_fabric.jpg'
@@ -657,8 +657,8 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
           ========================================================================= */}
       <section className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 overflow-hidden bg-black text-white">
         
-        {/* Full-Bleed 16:9 Panoramic Image - Zero Cropping on Robot, Holograms or Laptop (100% Clear with Zero Dark Blue Shade) */}
-        <div className="absolute inset-0 z-0">
+        {/* Desktop-Only Full-Bleed 16:9 Panoramic Image (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
           <img
             src="/images/ai_agents_hero_widescreen.jpg"
             alt="Autonomous Enterprise AI Agents"
@@ -667,10 +667,15 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
 
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-2xl lg:max-w-xl space-y-6 relative">
-            {/* Seamless Soft Contrast Aura — ensures text is 100% legible with Zero Box and Zero dark blue shade */}
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="space-y-4">
               <div className="flex flex-wrap items-center gap-2.5">
@@ -708,6 +713,18 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
                 <span>Closed-Loop S/4HANA Action</span>
               </div>
             </motion.div>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                <img
+                  src="/images/ai_agents_hero_widescreen.jpg"
+                  alt="Autonomous Enterprise AI Agents"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -831,8 +848,8 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
                     >
                       <StepIcon className={`w-4 h-4 shrink-0 ${isSelected ? 'text-white' : 'text-[#0070C0]'}`} />
                       <div className="min-w-0">
-                        <div className="text-xs font-bold truncate">{step.label}</div>
-                        <div className={`text-[10px] font-mono truncate ${isSelected ? 'text-sky-100' : 'text-slate-500'}`}>
+                        <div className="text-xs font-bold break-words leading-tight">{step.label}</div>
+                        <div className={`text-[10px] font-mono break-words ${isSelected ? 'text-sky-100' : 'text-slate-500'}`}>
                           {step.sublabel}
                         </div>
                       </div>
@@ -1118,7 +1135,7 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
       {/* =========================================================================
           SECTION 5: STRATEGIC PARADIGM TRANSFORMATION (3 Columns)
           ========================================================================= */}
-      <section className="py-12 sm:py-16 bg-white border-b border-slate-200 relative">
+      <section className="transformation-section py-12 sm:py-16 bg-white border-b border-slate-200 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10 space-y-2.5">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-300 text-xs font-mono font-bold uppercase tracking-wider text-[#0070C0]">
@@ -1380,7 +1397,7 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
       {/* =========================================================================
           SECTION 8: VALUE ARCHITECTURE SCORECARD (ZERO numbers/percentages)
           ========================================================================= */}
-      <section className="py-12 sm:py-16 bg-white border-b border-slate-200 relative">
+      <section className="transformation-section py-12 sm:py-16 bg-white border-b border-slate-200 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-10 space-y-2.5">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-300 text-xs font-mono font-bold uppercase tracking-wider text-[#0070C0]">
@@ -1523,14 +1540,6 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
                 <div className="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md border border-cyan-400/50 text-[10px] font-mono font-bold text-cyan-300 flex items-center gap-1.5 z-10 shadow-sm">
                   <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
                   <span>{auditDocuments[activeDocTab].tabLabel} Execution Console</span>
-                </div>
-
-                {/* Full Screen Button indicator */}
-                <div className="absolute top-2.5 right-2.5 z-10">
-                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-black/70 hover:bg-[#0070C0] text-white border border-white/20 backdrop-blur-md text-[10px] font-mono font-bold transition-all shadow-md">
-                    <Maximize2 className="w-3 h-3 text-cyan-300" />
-                    <span>Full Screen</span>
-                  </span>
                 </div>
 
                 <div className="absolute bottom-2.5 left-2.5 right-2.5 p-2.5 rounded-lg bg-black/85 backdrop-blur-md border border-white/15 text-white text-left z-10 space-y-0.5">

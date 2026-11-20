@@ -23,7 +23,10 @@ import {
   Cpu,
   Search,
   TrendingUp,
-  Lightbulb
+  Lightbulb,
+  Bot,
+  Boxes,
+  Rocket
 } from 'lucide-react';
 
 interface SapS4HanaViewProps {
@@ -54,7 +57,7 @@ export const SapS4HanaView: React.FC<SapS4HanaViewProps> = ({ onOpenContact }) =
       badge: 'DIGITAL SUPPLY CHAIN',
       title: 'Integrated Supply Chain & Logistics',
       subtitle: 'Synchronize end-to-end operations from demand sensing to automated warehouse sortation.',
-      icon: <Cpu className="w-5 h-5 text-sky-400" />,
+      icon: <Boxes className="w-5 h-5 text-sky-400" />,
       highlights: [
         'Live Available-to-Promise (aATP) with real-time inventory validation across global networks',
         'Embedded Extended Warehouse Management (EWM) with robotic sortation and automated wave picking',
@@ -80,7 +83,7 @@ export const SapS4HanaView: React.FC<SapS4HanaViewProps> = ({ onOpenContact }) =
       badge: 'COGNITIVE ENTERPRISE',
       title: 'Embedded AI & In-Memory Analytics',
       subtitle: 'Empower business leaders and knowledge workers with sub-second insights and generative copilots.',
-      icon: <Sparkles className="w-5 h-5 text-purple-400" />,
+      icon: <Bot className="w-5 h-5 text-purple-400" />,
       highlights: [
         'Contextual SAP Joule copilot assisting natural-language inquiries across procurement, finance, and sales',
         'Sub-second transactional queries directly on live operational data with zero batch ETL pipeline latency',
@@ -118,7 +121,7 @@ export const SapS4HanaView: React.FC<SapS4HanaViewProps> = ({ onOpenContact }) =
         'Near-Zero Downtime Dual-Run Cutover',
         'Modern Fiori User Experience Activation'
       ],
-      icon: <Server className="w-5 h-5 text-cyan-400" />
+      icon: <RefreshCw className="w-5 h-5 text-cyan-400" />
     },
     {
       id: 'selective',
@@ -161,7 +164,7 @@ export const SapS4HanaView: React.FC<SapS4HanaViewProps> = ({ onOpenContact }) =
   ];
 
   return (
-    <div className="space-y-20">
+    <div className="transformation-typography font-sora space-y-20">
 
       {/* =========================================================================
           1. THE ENTERPRISE ADVANTAGE (4 Pillars)
@@ -211,7 +214,7 @@ export const SapS4HanaView: React.FC<SapS4HanaViewProps> = ({ onOpenContact }) =
 
           <div className="bg-white dark:bg-[#0B1528] rounded-2xl border border-slate-200/80 dark:border-white/10 p-7 shadow-sm hover:shadow-md transition-all">
             <div className="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-500/10 text-purple-500 flex items-center justify-center mb-5">
-              <Sparkles className="w-6 h-6" />
+              <Bot className="w-6 h-6" />
             </div>
             <h3 className="text-base font-extrabold text-[#0A1931] dark:text-white mb-2">
               Embedded Business AI & Joule
@@ -223,7 +226,7 @@ export const SapS4HanaView: React.FC<SapS4HanaViewProps> = ({ onOpenContact }) =
 
           <div className="bg-white dark:bg-[#0B1528] rounded-2xl border border-slate-200/80 dark:border-white/10 p-7 shadow-sm hover:shadow-md transition-all">
             <div className="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-500/10 text-amber-500 flex items-center justify-center mb-5">
-              <Globe className="w-6 h-6" />
+              <Rocket className="w-6 h-6" />
             </div>
             <h3 className="text-base font-extrabold text-[#0A1931] dark:text-white mb-2">
               One Piece Flow Delivery
@@ -342,7 +345,7 @@ export const SapS4HanaView: React.FC<SapS4HanaViewProps> = ({ onOpenContact }) =
       {/* =========================================================================
           3. S/4HANA FUNCTIONAL ARCHITECTURE ENABLERS (Interactive Tabs)
           ========================================================================= */}
-      <section className="bg-gradient-to-br from-[#061224] via-[#091D3A] to-[#040D1A] rounded-3xl border border-cyan-500/20 p-8 sm:p-12 shadow-2xl text-white space-y-8">
+      <section className="bg-gradient-to-br from-[#061224] via-[#091D3A] to-[#040D1A] rounded-2xl sm:rounded-3xl border border-cyan-500/20 p-5 sm:p-8 lg:p-12 shadow-2xl text-white space-y-8">
         <div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
@@ -351,7 +354,7 @@ export const SapS4HanaView: React.FC<SapS4HanaViewProps> = ({ onOpenContact }) =
                 <span>FUNCTIONAL ARCHITECTURE ENABLERS</span>
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
-                Core S/4HANA Enterprise Modules & Capabilities
+                Core S/4HANA Enterprise Modules &amp; Capabilities
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-slate-300 max-w-md">
@@ -360,22 +363,22 @@ export const SapS4HanaView: React.FC<SapS4HanaViewProps> = ({ onOpenContact }) =
           </div>
         </div>
 
-        {/* Tab Buttons */}
-        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 border-b border-white/10" role="tablist">
+        {/* Tab Buttons — Fully responsive on mobile (no cutoff), tablet 2-col, desktop row */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-wrap lg:items-center gap-2.5 pb-3 border-b border-white/10" role="tablist">
           {capabilityTabs.map((tab, idx) => (
             <button
               key={tab.id}
               onClick={() => setActiveCapabilityTab(idx)}
               role="tab"
               aria-selected={activeCapabilityTab === idx}
-              className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer flex items-center gap-2 ${
+              className={`w-full lg:w-auto px-4 py-3 sm:py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center justify-start lg:justify-center gap-2.5 min-w-0 ${
                 activeCapabilityTab === idx
-                  ? 'bg-[#00A3E0] text-white shadow-md shadow-[#00A3E0]/25'
-                  : 'bg-white/[0.04] text-slate-300 hover:bg-white/10 hover:text-white border border-white/5'
+                  ? 'bg-[#00A3E0] text-white shadow-md shadow-[#00A3E0]/25 ring-1 ring-cyan-300/40'
+                  : 'bg-white/[0.04] text-slate-300 hover:bg-white/10 hover:text-white border border-white/10'
               }`}
             >
-              {tab.icon}
-              <span>{tab.badge}</span>
+              <span className="shrink-0">{tab.icon}</span>
+              <span className="font-mono tracking-wider break-words">{tab.badge}</span>
             </button>
           ))}
         </div>

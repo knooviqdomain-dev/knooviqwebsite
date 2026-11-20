@@ -687,7 +687,7 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
                 <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
-                  &ldquo;Machine learning creates scalable enterprise value when algorithms run directly where transaction data lives—eliminating brittle ETL pipelines and latency overhead.&rdquo;
+                  &ldquo;Machine learning creates scalable enterprise value when algorithms run directly where transaction data lives, eliminating brittle ETL pipelines and latency overhead.&rdquo;
                 </p>
               </div>
 
@@ -770,8 +770,8 @@ export const MachineLearningPracticePage: React.FC<MachineLearningPracticePagePr
                     >
                       <StepIcon className={`w-4 h-4 shrink-0 ${isSelected ? 'text-white' : 'text-[#0070C0]'}`} />
                       <div className="min-w-0">
-                        <div className="text-xs font-bold truncate">{step.label}</div>
-                        <div className={`text-[10px] font-mono truncate ${isSelected ? 'text-sky-100' : 'text-slate-500'}`}>
+                        <div className="text-xs font-bold break-words leading-tight">{step.label}</div>
+                        <div className={`text-[10px] font-mono break-words ${isSelected ? 'text-sky-100' : 'text-slate-500'}`}>
                           {step.sublabel}
                         </div>
                       </div>

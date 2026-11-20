@@ -1051,7 +1051,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
 
                 {/* Products Mega Menu Dropdown */}
                 {activeMenu === 'products' && (
-                  <div className="fixed left-0 right-0 top-[68px] w-full transition-all animate-in fade-in slide-in-from-top-1 duration-150 z-50 px-4 whitespace-normal">
+                  <div className="products-nav-typography font-sora fixed left-0 right-0 top-[68px] w-full transition-all animate-in fade-in slide-in-from-top-1 duration-150 z-50 px-4 whitespace-normal">
                     <div data-lenis-prevent="true" className="max-w-7xl mx-auto rounded-2xl border-2 border-slate-200 dark:border-[#00A3E0]/30 bg-white dark:bg-[#070E1C] p-4 lg:p-5 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto custom-scrollbar overscroll-contain">
                       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-2.5 lg:gap-3">
                         {PRODUCTS_NAV_CATEGORIES.map((cat) => (
@@ -1061,19 +1061,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                           >
                             <div className="pb-1 mb-1.5 border-b border-slate-200/60 dark:border-white/10 flex items-center justify-between">
                               <h4
-                                className="font-[800] font-extrabold text-[13px] tracking-wide uppercase text-[#0A1931] dark:text-white select-none py-0.5 leading-snug"
-                                style={{ fontWeight: 800 }}
+                                className="font-sora font-medium text-[13px] tracking-wide uppercase text-[#102A43] dark:text-white select-none py-0.5 leading-snug"
                               >
                                 {cat.title}
                               </h4>
                             </div>
-                            <ul className="space-y-0.5">
+                            <ul className="space-y-0.5 font-sora">
                               {cat.items.map((item) => (
                                 <li key={item.name}>
                                   <Link
                                     to={item.path}
                                     onClick={() => setActiveMenu(null)}
-                                    className="industry-category-item px-2 py-0.5 rounded-lg block transition-colors text-slate-700 dark:text-slate-200 hover:text-[#00A3E0] dark:hover:text-cyan-300 hover:bg-white dark:hover:bg-white/10 text-[11px] font-medium leading-snug"
+                                    className="font-sora font-normal px-2 py-0.5 rounded-lg block transition-colors text-[#102A43] dark:text-slate-200 hover:text-[#00A3E0] dark:hover:text-cyan-300 hover:bg-white dark:hover:bg-white/10 text-[11.5px] leading-[1.6]"
                                   >
                                     <span>{item.name}</span>
                                   </Link>
@@ -1432,19 +1431,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
               </button>
 
               {openSubmenus['products'] && (
-                <div className="pt-2 pl-2 space-y-2 border-t border-slate-200 dark:border-white/5 mt-1.5 text-xs">
+                <div className="products-nav-typography font-sora pt-2 pl-2 space-y-3 border-t border-slate-200 dark:border-white/5 mt-1.5 text-xs">
                   {PRODUCTS_NAV_CATEGORIES.map((cat) => (
-                    <div key={cat.id} className="pt-1">
-                      <p className="font-bold text-[#00A3E0] pt-1">
+                    <div key={cat.id} className="pt-1.5">
+                      <p className="font-sora font-medium text-[15.5px] sm:text-[16px] text-[#102A43] dark:text-cyan-400 pt-1 leading-[1.6]">
                         {cat.title}
                       </p>
-                      <div className="space-y-1 pt-1 pl-2">
+                      <div className="space-y-1.5 pt-1 pl-1 font-sora">
                         {cat.items.map((item, idx) => (
                           <Link
                             key={idx}
                             to={item.path}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block py-1 px-2 rounded-lg text-slate-700 dark:text-slate-300 font-medium hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5"
+                            className="block py-1 px-1.5 rounded-lg text-[#102A43] dark:text-slate-200 font-sora font-normal text-[15px] sm:text-[15.5px] leading-[1.6] hover:text-[#00A3E0] hover:bg-slate-100 dark:hover:bg-white/5 tracking-normal text-left"
                           >
                             • {item.name}
                           </Link>

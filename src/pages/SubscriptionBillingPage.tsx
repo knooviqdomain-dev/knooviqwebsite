@@ -53,7 +53,6 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
   // STATE: Section 2 - 6-Stage Subscription Lifecycle Journey (1s Auto-Cycle, 5s Click-Pause)
   // =========================================================================
   const [activeJourneyIndex, setActiveJourneyIndex] = useState<number>(0);
-  const [activeHotspotId, setActiveHotspotId] = useState<string | null>(null);
   const [activeCapId, setActiveCapId] = useState<string>('pricing-models');
   const [pricingSandboxTab, setPricingSandboxTab] = useState<'flat' | 'tiered' | 'metered' | 'hybrid'>('flat');
   const journeyIntervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -63,7 +62,6 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
     if (journeyIntervalRef.current) clearInterval(journeyIntervalRef.current);
     journeyIntervalRef.current = setInterval(() => {
       setActiveJourneyIndex((prev) => (prev + 1) % 6);
-      setActiveHotspotId(null);
     }, 1000);
   }, []);
 
@@ -80,7 +78,6 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
 
   const handleJourneyStageClick = (index: number) => {
     setActiveJourneyIndex(index);
-    setActiveHotspotId(null);
     stopJourneyAutoCycle();
     journeyPauseTimerRef.current = setTimeout(() => {
       startJourneyAutoCycle();
@@ -154,7 +151,9 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
       title: 'Contract & Activation',
       label: 'TENANT & PLAN PROVISIONING',
       summary: 'Initiate commercial subscription contracts with localized pricing matrices, trial periods, and SAP SOM integration.',
-      image: '/images/billing_lifecycle_workflow.jpg',
+      image: '/images/billing_contract_activation.jpg',
+      aspectClass: 'aspect-[1376/768] sm:aspect-auto sm:h-[280px]',
+      imagePosition: 'object-[center_20%]',
       tcode: 'SAP SOM • Subscription Order Management / BP',
       statusChip: 'PROVISIONED',
       chipColor: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30',
@@ -209,7 +208,9 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
       title: 'Usage Rating & Mediation',
       label: 'REAL-TIME TELEMETRY RATING',
       summary: 'High-speed ingestion bus rating millions of daily consumption records, API calls, and compute hours with zero clock drift.',
-      image: '/images/billing_hero_visual.jpg',
+      image: '/images/billing_usage_rating_telemetry.jpg',
+      aspectClass: 'aspect-[1376/768] sm:aspect-auto sm:h-[280px]',
+      imagePosition: 'object-top',
       tcode: 'SAP CC • Convergent Charging / BTP Event Mesh',
       statusChip: 'RATING <180ms',
       chipColor: 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/30',
@@ -265,6 +266,8 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
       label: 'STATUTORY COMPLIANT E-BILLING',
       summary: 'Combine recurring subscription fees, hardware leases, and rated consumption meters into single tax-audited invoices.',
       image: '/images/billing_architecture_workflow.jpg',
+      aspectClass: 'aspect-[1376/768] sm:aspect-auto sm:h-[280px]',
+      imagePosition: 'object-top',
       tcode: 'SAP CI • Convergent Invoicing / Tax Engine',
       statusChip: 'IRN STAMPED',
       chipColor: 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/30',
@@ -320,7 +323,9 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
       title: 'Payment & Settlement',
       label: 'MULTI-GATEWAY RECONCILIATION',
       summary: 'Automated multi-currency card captures, direct debits, and smart dunning retry cascades with open AR settlement.',
-      image: '/images/billing_lifecycle_workflow.jpg',
+      image: '/images/billing_payment_settlement.jpg',
+      aspectClass: 'aspect-[4/3] sm:aspect-auto sm:h-[300px]',
+      imagePosition: 'object-center',
       tcode: 'SAP FI-CA • Contract Accounts Receivables / PSP Switch',
       statusChip: 'SEPA CLEARED',
       chipColor: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/30',
@@ -375,7 +380,9 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
       title: 'S/4HANA Accounting Sync',
       label: 'ASC 606 & IFRS 15 COMPLIANCE',
       summary: 'Post real-time journal entries into SAP ACDOCA, automating revenue recognition schedules and balance reconciliation.',
-      image: '/images/billing_transformation_impact.jpg',
+      image: '/images/billing_s4hana_accounting_sync.jpg',
+      aspectClass: 'aspect-[4/3] sm:aspect-auto sm:h-[300px]',
+      imagePosition: 'object-center',
       tcode: 'SAP FI-CO • ACDOCA Universal Journal / RAR',
       statusChip: 'ACDOCA POSTED',
       chipColor: 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/30',
@@ -432,6 +439,8 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
       label: 'LIFECYCLE EXPANSION & RETENTION',
       summary: 'Automate contract rollovers, co-terming additions, price indexation adjustments, and involuntary churn mitigation.',
       image: '/images/billing_closing_ecosystem.jpg',
+      aspectClass: 'aspect-[1376/768] sm:aspect-auto sm:h-[280px]',
+      imagePosition: 'object-top',
       tcode: 'Subscription Lifecycle • Evergreen Rollover & Retention',
       statusChip: 'ROLLOVER ACTIVE',
       chipColor: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/30',
@@ -646,16 +655,16 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
   };
 
   return (
-    <div className="bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-white min-h-screen selection:bg-blue-600 selection:text-white transition-colors duration-300">
-      
+    <div className="product-typography font-sora bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-white min-h-screen selection:bg-blue-600 selection:text-white transition-colors duration-300">
+
       {/* =====================================================================
           SECTION 1: HERO SECTION
           ===================================================================== */}
       <section className="relative pt-28 pb-20 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-blue-50/30 dark:from-[#030712] dark:via-[#070E1E] dark:to-[#0A1931] border-b border-slate-200/80 dark:border-white/10 transition-colors">
-        
+
         {/* Subtle Decorative Grid Backdrop */}
         <div className="absolute inset-0 pointer-events-none">
-          <div 
+          <div
             className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
             style={{
               backgroundImage: `linear-gradient(to right, #00A3E0 1px, transparent 1px), linear-gradient(to bottom, #00A3E0 1px, transparent 1px)`,
@@ -665,12 +674,25 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[450px] bg-gradient-to-tr from-blue-500/10 dark:from-[#00A3E0]/15 via-indigo-500/10 dark:via-[#0052CC]/10 to-transparent blur-[140px] rounded-full" />
         </div>
 
+        {/* Full-Screen Desktop Visual — Zero Cropping from Any Side */}
+        <div className="hidden lg:block absolute inset-0 z-[2] pointer-events-none overflow-hidden">
+          <div className="absolute inset-y-0 right-0 w-[58%] xl:w-[54%] 2xl:w-[50%] h-full flex items-center justify-end">
+            <img
+              src="/images/billing_hero_visual_hd.jpg"
+              alt="Enterprise Subscription Billing and Automated Revenue Analytics"
+              className="w-full h-full object-contain object-right select-none"
+            />
+            {/* Seamless Left Edge Blend Gradient into White/Light Surface */}
+            <div className="absolute inset-y-0 left-0 w-44 bg-gradient-to-r from-white via-white/80 to-transparent dark:from-[#030712] dark:via-[#030712]/80 pointer-events-none" />
+          </div>
+        </div>
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Column: Heading, Value Proposition & Actions */}
-            <div className="lg:col-span-6 space-y-6">
-              
+            <div className="lg:col-span-6 space-y-6 relative z-10">
+
               {/* Badge */}
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
@@ -683,7 +705,7 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
               </motion.div>
 
               {/* Exact Headline */}
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -696,7 +718,7 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
               </motion.h1>
 
               {/* Supporting Text */}
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -724,47 +746,19 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
 
             </div>
 
-            {/* Right Column: Hero Visual - Clean High-Res Enterprise Image */}
-            <motion.div 
+            {/* Mobile-Only Frame (Preserves exact phone layout with zero desktop boxing) */}
+            <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="lg:col-span-6 relative flex items-center justify-center"
+              className="lg:hidden relative flex items-center justify-center mt-6"
             >
-              <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 dark:border-white/10 bg-white dark:bg-[#070E1E] group">
-                <img 
-                  src="/images/billing_hero_visual.jpg" 
-                  alt="KNOOVIQ Subscription Billing Platform Interface" 
-                  className="w-full h-[480px] sm:h-[540px] lg:h-[620px] object-cover object-top transform group-hover:scale-[1.02] transition-transform duration-700"
+              <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-slate-200/80 dark:border-white/10 bg-white dark:bg-slate-900 group aspect-[16/9]">
+                <img
+                  src="/images/billing_hero_visual.jpg"
+                  alt="Enterprise Subscription Billing and Automated Revenue Analytics"
+                  className="w-full h-full object-cover object-center transform group-hover:scale-[1.02] transition-transform duration-700 select-none"
                 />
-
-                {/* Floating Operational Telemetry Badge */}
-                <div className="absolute top-4 right-4 bg-white/95 dark:bg-[#070E1E]/95 backdrop-blur-md px-3.5 py-2 rounded-xl border border-blue-200 dark:border-cyan-500/30 shadow-lg flex items-center gap-2.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <div>
-                    <span className="text-[10px] font-mono font-bold uppercase text-slate-500 dark:text-slate-400 block leading-none">
-                      Operational Uptime
-                    </span>
-                    <span className="text-xs font-bold text-slate-900 dark:text-white">
-                      99.99% Live Rating
-                    </span>
-                  </div>
-                </div>
-
-                {/* Floating Revenue Pulse Badge */}
-                <div className="absolute bottom-4 left-4 bg-white/95 dark:bg-[#070E1E]/95 backdrop-blur-md px-4 py-2.5 rounded-xl border border-blue-200 dark:border-cyan-500/30 shadow-lg flex items-center gap-3">
-                  <div className="h-9 w-9 rounded-lg bg-blue-50 dark:bg-cyan-500/15 border border-blue-200 dark:border-cyan-400/30 flex items-center justify-center text-blue-600 dark:text-cyan-300">
-                    <TrendingUp className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-mono text-blue-600 dark:text-cyan-400 font-bold uppercase block">
-                      Automated Settlement
-                    </span>
-                    <span className="text-xs font-bold text-slate-900 dark:text-white">
-                      99.4% Multi-Currency Cleared
-                    </span>
-                  </div>
-                </div>
               </div>
             </motion.div>
 
@@ -783,7 +777,7 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
         <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px] opacity-15 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           {/* Header */}
           <div className="max-w-3xl mb-8 space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-cyan-500/10 border border-blue-200 dark:border-cyan-400/25 text-xs font-mono text-blue-700 dark:text-cyan-300">
@@ -799,7 +793,7 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
             </h2>
 
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-normal leading-relaxed">
-              Connect every stage of the subscription lifecycle through a streamlined, automated billing workflow—from initial contract activation to automated renewal.
+              Connect every stage of the subscription lifecycle through a streamlined, automated billing workflow from initial contract activation to automated renewal.
             </p>
           </div>
 
@@ -836,13 +830,12 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
                     >
                       {/* Circle Indicator */}
                       <div
-                        className={`h-9 w-9 rounded-full flex items-center justify-center font-mono font-bold text-xs transition-all duration-300 relative ${
-                          isActive
-                            ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 ring-4 ring-blue-400/30 scale-110'
-                            : isCompleted
+                        className={`h-9 w-9 rounded-full flex items-center justify-center font-mono font-bold text-xs transition-all duration-300 relative ${isActive
+                          ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 ring-4 ring-blue-400/30 scale-110'
+                          : isCompleted
                             ? 'bg-emerald-600 text-white shadow-sm'
                             : 'bg-white dark:bg-[#0B1528] border border-slate-300 dark:border-white/20 text-slate-500 group-hover:border-blue-400 group-hover:text-blue-600'
-                        }`}
+                          }`}
                       >
                         {isCompleted ? <Check className="h-3.5 w-3.5" /> : stage.step}
                         {isActive && (
@@ -851,12 +844,11 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
                       </div>
 
                       {/* Title & Status */}
-                      <div className="mt-2 max-w-[110px] space-y-0.5">
-                        <p className={`text-xs font-semibold leading-tight truncate ${
-                          isActive
-                            ? 'text-blue-900 dark:text-white font-bold'
-                            : 'text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200'
-                        }`}>
+                      <div className="mt-2 max-w-[125px] space-y-0.5">
+                        <p className={`text-xs font-semibold leading-tight break-words ${isActive
+                          ? 'text-blue-900 dark:text-white font-bold'
+                          : 'text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200'
+                          }`}>
                           {stage.title}
                         </p>
                         <span className={`inline-block font-mono text-[8px] font-bold px-1.5 py-0.2 rounded border ${stage.chipColor}`}>
@@ -879,11 +871,10 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
                   <button
                     key={stage.step}
                     onClick={() => handleJourneyStageClick(idx)}
-                    className={`p-2.5 rounded-xl text-left border transition-all cursor-pointer ${
-                      isActive
-                        ? 'bg-blue-50 dark:bg-cyan-500/15 border-blue-500 dark:border-cyan-400 text-blue-900 dark:text-white shadow-sm'
-                        : 'bg-slate-50 dark:bg-[#070E1E] border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400'
-                    }`}
+                    className={`p-2.5 rounded-xl text-left border transition-all cursor-pointer ${isActive
+                      ? 'bg-blue-50 dark:bg-cyan-500/15 border-blue-500 dark:border-cyan-400 text-blue-900 dark:text-white shadow-sm'
+                      : 'bg-slate-50 dark:bg-[#070E1E] border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400'
+                      }`}
                   >
                     <div className="flex items-center justify-between mb-0.5">
                       <span className="font-mono text-[10px] font-bold text-blue-600 dark:text-cyan-400">
@@ -895,7 +886,7 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
                         <span className="h-1.5 w-1.5 rounded-full bg-blue-600 dark:bg-cyan-400 animate-pulse" />
                       ) : null}
                     </div>
-                    <p className="font-bold text-xs text-slate-900 dark:text-white truncate">
+                    <p className="font-bold text-xs text-slate-900 dark:text-white break-words leading-tight">
                       {stage.title}
                     </p>
                   </button>
@@ -917,10 +908,10 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
                 transition={{ duration: 0.25 }}
                 className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
               >
-                
+
                 {/* Left Column: Stage Details, SAP Badge & Checkpoints */}
                 <div className="lg:col-span-7 space-y-4">
-                  
+
                   {/* Stage Classification Header */}
                   <div className="space-y-1.5">
                     <div className="flex flex-wrap items-center gap-2">
@@ -946,14 +937,14 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
 
                   {/* Clean Integrated SAP Architecture & Telemetry Strip */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-[#0B1528] border border-blue-200 dark:border-cyan-500/30 text-xs font-mono text-slate-700 dark:text-slate-300">
-                      <Building2 className="h-4 w-4 text-blue-600 dark:text-cyan-400 shrink-0" />
-                      <span className="truncate">SAP Architecture: <strong>{journeyStages[activeJourneyIndex].tcode.split('•')[0].trim()}</strong></span>
+                    <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-[#0B1528] border border-blue-200 dark:border-cyan-500/30 text-xs font-mono text-slate-700 dark:text-slate-300 min-w-0">
+                      <Layers className="h-4 w-4 text-blue-600 dark:text-cyan-400 shrink-0" />
+                      <span className="break-words leading-tight">SAP Architecture: <strong>{journeyStages[activeJourneyIndex].tcode.split('•')[0].trim()}</strong></span>
                     </div>
 
-                    <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-[#0B1528] border border-slate-200 dark:border-white/10 text-xs font-mono text-slate-600 dark:text-slate-300">
+                    <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white dark:bg-[#0B1528] border border-slate-200 dark:border-white/10 text-xs font-mono text-slate-600 dark:text-slate-300 min-w-0">
                       <Radio className="h-3.5 w-3.5 text-emerald-500 animate-pulse shrink-0" />
-                      <span className="truncate font-semibold text-slate-800 dark:text-slate-200">{journeyStages[activeJourneyIndex].simulatedEvent.eventType}</span>
+                      <span className="break-words leading-tight font-semibold text-slate-800 dark:text-slate-200">{journeyStages[activeJourneyIndex].simulatedEvent.eventType}</span>
                     </div>
                   </div>
 
@@ -979,90 +970,22 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
 
                 </div>
 
-                {/* Right Column: Workflow Stage Visual Image + Hotspot Radar */}
+                {/* Right Column: Workflow Stage Visual Image */}
                 <div className="lg:col-span-5 relative">
                   <div className="rounded-xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-md bg-white dark:bg-[#0B1528] relative group">
-                    <img 
-                      src={journeyStages[activeJourneyIndex].image} 
-                      alt={journeyStages[activeJourneyIndex].title} 
-                      className="w-full h-[260px] sm:h-[280px] object-cover object-top"
+                    <img
+                      src={journeyStages[activeJourneyIndex].image}
+                      alt={journeyStages[activeJourneyIndex].title}
+                      className={`w-full h-auto object-cover select-none ${journeyStages[activeJourneyIndex].aspectClass || 'aspect-[1376/768] sm:aspect-auto sm:h-[280px]'
+                        } ${journeyStages[activeJourneyIndex].imagePosition || 'object-top'
+                        }`}
                     />
-
-                    {/* Interactive Hotspot Radar Pins */}
-                    {journeyStages[activeJourneyIndex].hotspots.map((hotspot, hIdx) => {
-                      const isPinSelected = activeHotspotId === hotspot.id;
-
-                      return (
-                        <div
-                          key={hotspot.id}
-                          className="absolute z-20"
-                          style={{ top: `${hotspot.y}%`, left: `${hotspot.x}%` }}
-                        >
-                          <button
-                            onClick={() => setActiveHotspotId(isPinSelected ? null : hotspot.id)}
-                            className="relative flex items-center justify-center p-1 cursor-pointer focus:outline-none group/pin"
-                            title={hotspot.title}
-                            aria-label={hotspot.title}
-                          >
-                            <span className="absolute h-6 w-6 rounded-full bg-blue-500/40 animate-ping" />
-                            <span className={`relative h-5 w-5 rounded-full flex items-center justify-center font-mono text-[9px] font-bold border-2 transition-transform duration-200 ${
-                              isPinSelected
-                                ? 'bg-amber-500 text-slate-950 border-white scale-110 shadow-md'
-                                : 'bg-blue-600 text-white border-white shadow-sm group-hover/pin:scale-110'
-                            }`}>
-                              {hIdx + 1}
-                            </span>
-                          </button>
-                        </div>
-                      );
-                    })}
-
-                    {/* Active Hotspot Slide-in Drawer */}
-                    <AnimatePresence>
-                      {activeHotspotId && (() => {
-                        const selectedHotspot = journeyStages[activeJourneyIndex].hotspots.find(
-                          (h) => h.id === activeHotspotId
-                        );
-                        if (!selectedHotspot) return null;
-
-                        return (
-                          <motion.div
-                            initial={{ opacity: 0, y: 15 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: 15 }}
-                            transition={{ duration: 0.2 }}
-                            className="absolute inset-x-2.5 bottom-2.5 z-30 p-3 rounded-lg bg-slate-950/95 backdrop-blur-md border border-cyan-500/40 text-white shadow-xl space-y-1"
-                          >
-                            <div className="flex items-start justify-between gap-2">
-                              <div>
-                                <span className="font-mono text-[9px] uppercase font-bold text-cyan-400 block">
-                                  {selectedHotspot.sapContext}
-                                </span>
-                                <h5 className="font-bold text-[11px] text-white">
-                                  {selectedHotspot.title}
-                                </h5>
-                              </div>
-                              <button
-                                onClick={() => setActiveHotspotId(null)}
-                                className="p-0.5 rounded hover:bg-white/10 text-slate-400 hover:text-white cursor-pointer"
-                                aria-label="Close hotspot detail"
-                              >
-                                <X className="h-3 w-3" />
-                              </button>
-                            </div>
-                            <p className="text-[10px] text-slate-300 leading-snug font-normal">
-                              {selectedHotspot.desc}
-                            </p>
-                          </motion.div>
-                        );
-                      })()}
-                    </AnimatePresence>
 
                     {/* Status Footer Ribbon */}
                     <div className="p-3 bg-white/95 dark:bg-[#070E1E]/95 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-[11px] font-mono">
                       <span className="text-slate-500 dark:text-slate-400 flex items-center gap-1">
                         <Sparkles className="h-3 w-3 text-blue-500" />
-                        <span>Interactive Pins (1-3)</span>
+                        <span>SAP S/4HANA Cloud Architecture</span>
                       </span>
                       <span className="text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1">
                         <Check className="h-3 w-3" /> ACDOCA Linked
@@ -1084,7 +1007,7 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
           ===================================================================== */}
       <section className="py-16 sm:py-20 bg-slate-50 dark:bg-[#050B17] border-b border-slate-200/80 dark:border-white/10 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          
+
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-cyan-500/10 border border-blue-200 dark:border-cyan-400/25 text-xs font-mono text-blue-700 dark:text-cyan-300">
@@ -1113,35 +1036,31 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
                 <button
                   key={cap.id}
                   onClick={() => setActiveCapId(cap.id)}
-                  className={`p-3 rounded-xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
-                    isSelected
-                      ? 'bg-white dark:bg-[#0B1528] border-blue-600 dark:border-cyan-400 shadow-md ring-2 ring-blue-500/20'
-                      : 'bg-white/60 dark:bg-[#070E1E]/60 border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20'
-                  }`}
+                  className={`p-3 sm:p-3.5 rounded-xl border text-left transition-all cursor-pointer flex flex-col justify-between min-h-[114px] sm:min-h-[120px] ${isSelected
+                    ? 'bg-white dark:bg-[#0B1528] border-blue-600 dark:border-cyan-400 shadow-md ring-2 ring-blue-500/20'
+                    : 'bg-white/60 dark:bg-[#070E1E]/60 border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20'
+                    }`}
                 >
-                  <div className="flex items-center justify-between mb-2">
-                    <div className={`p-1.5 rounded-lg ${
-                      isSelected
-                        ? 'bg-blue-600 text-white shadow-sm'
-                        : 'bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300'
-                    }`}>
+                  <div className="flex items-center justify-between mb-2 gap-1.5 min-w-0">
+                    <div className={`p-1.5 rounded-lg shrink-0 ${isSelected
+                      ? 'bg-blue-600 text-white shadow-sm'
+                      : 'bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300'
+                      }`}>
                       <Icon className="h-4 w-4" />
                     </div>
-                    <span className={`text-[9px] font-mono font-bold px-1.5 py-0.5 rounded ${
-                      isSelected
-                        ? 'bg-blue-100 dark:bg-cyan-500/20 text-blue-700 dark:text-cyan-300'
-                        : 'bg-slate-100 dark:bg-white/5 text-slate-500'
-                    }`}>
+                    <span className={`text-[9px] font-mono font-bold px-1.5 py-0.5 rounded shrink-0 ${isSelected
+                      ? 'bg-blue-100 dark:bg-cyan-500/20 text-blue-700 dark:text-cyan-300'
+                      : 'bg-slate-100 dark:bg-white/5 text-slate-500'
+                      }`}>
                       {cap.stat}
                     </span>
                   </div>
-                  <div>
-                    <span className="text-[10px] font-mono text-slate-400 dark:text-slate-400 block truncate">
+                  <div className="min-w-0 mt-1 space-y-0.5">
+                    <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 block break-words leading-tight">
                       {cap.subtitle}
                     </span>
-                    <p className={`text-xs font-bold truncate ${
-                      isSelected ? 'text-blue-900 dark:text-white' : 'text-slate-700 dark:text-slate-300'
-                    }`}>
+                    <p className={`text-xs font-bold break-words leading-snug mt-1 ${isSelected ? 'text-blue-900 dark:text-white' : 'text-slate-700 dark:text-slate-300'
+                      }`}>
                       {cap.title}
                     </p>
                   </div>
@@ -1168,10 +1087,10 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
                   className="rounded-3xl bg-white dark:bg-[#070E1E] border border-slate-200/90 dark:border-cyan-500/30 p-6 sm:p-10 shadow-xl overflow-hidden"
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-                    
+
                     {/* Left Column (7 cols): Detailed Architectural Capability Specs */}
                     <div className="lg:col-span-7 space-y-5">
-                      
+
                       <div className="space-y-2">
                         <div className="flex flex-wrap items-center gap-2">
                           <span className="font-mono text-xs font-bold px-2.5 py-1 rounded-full bg-blue-100 dark:bg-cyan-500/20 text-blue-700 dark:text-cyan-300 flex items-center gap-1.5">
@@ -1214,7 +1133,7 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
                       {/* Architecture Integration Tag Footer */}
                       <div className="pt-4 border-t border-slate-100 dark:border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-slate-500">
                         <div className="flex items-center gap-2">
-                          <Building2 className="h-4 w-4 text-blue-600 dark:text-cyan-400" />
+                          <Layers className="h-4 w-4 text-blue-600 dark:text-cyan-400" />
                           <span>SAP Integration: <strong>{selectedCap.id === 'pricing-models' ? 'SAP SOM & Convergent Charging' : selectedCap.id === 'event-mediation' ? 'SAP BTP Event Mesh & Kafka' : selectedCap.id === 'e-invoicing' ? 'SAP CI & Tax Framework' : selectedCap.id === 'payment-dunning' ? 'SAP FI-CA Contract Accounts' : selectedCap.id === 'sap-brim' ? 'SAP S/4HANA & ECC 6.0 Core' : 'SAP RAR & Universal Journal (ACDOCA)'}</strong></span>
                         </div>
                         <span className="px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold border border-emerald-200 dark:border-emerald-500/30">
@@ -1227,7 +1146,7 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
                     {/* Right Column (5 cols): Live Dynamic Capability Simulator Widget */}
                     <div className="lg:col-span-5">
                       <div className="rounded-2xl bg-slate-900 text-white p-5 sm:p-6 border border-slate-700/80 shadow-2xl space-y-4">
-                        
+
                         {/* Console Header */}
                         <div className="flex items-center justify-between border-b border-slate-800 pb-3">
                           <div className="flex items-center gap-2">
@@ -1249,11 +1168,10 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
                                 <button
                                   key={tab}
                                   onClick={() => setPricingSandboxTab(tab)}
-                                  className={`flex-1 py-1.5 rounded-lg capitalize font-bold transition-all cursor-pointer ${
-                                    pricingSandboxTab === tab
-                                      ? 'bg-blue-600 text-white shadow-sm'
-                                      : 'text-slate-400 hover:text-white'
-                                  }`}
+                                  className={`flex-1 py-1.5 rounded-lg capitalize font-bold transition-all cursor-pointer ${pricingSandboxTab === tab
+                                    ? 'bg-blue-600 text-white shadow-sm'
+                                    : 'text-slate-400 hover:text-white'
+                                    }`}
                                 >
                                   {tab}
                                 </button>
@@ -1347,11 +1265,11 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
                             </div>
 
                             <div className="p-3 rounded-xl bg-slate-950 border border-slate-800 space-y-1.5 text-[10px] text-slate-300">
-                              <div className="text-cyan-400 font-bold">Kafka Topic: enterprise.billing.events.v1</div>
-                              <div className="text-slate-400 truncate">&gt; [16:04:12.012] RECV: tenant_4091 API_CALL bytes=1048576 [RATED]</div>
-                              <div className="text-slate-400 truncate">&gt; [16:04:12.045] RECV: tenant_8820 COMPUTE_HR delta=0.5 [RATED]</div>
-                              <div className="text-emerald-400 truncate">&gt; [16:04:12.091] DEDUP: hash=8f1c32 duplicate suppressed [CLEAN]</div>
-                              <div className="text-slate-400 truncate">&gt; [16:04:12.120] ACCRUE: unbilled consumption committed to ledger</div>
+                              <div className="text-cyan-400 font-bold break-words">Kafka Topic: enterprise.billing.events.v1</div>
+                              <div className="text-slate-400 break-all leading-tight">&gt; [16:04:12.012] RECV: tenant_4091 API_CALL bytes=1048576 [RATED]</div>
+                              <div className="text-slate-400 break-all leading-tight">&gt; [16:04:12.045] RECV: tenant_8820 COMPUTE_HR delta=0.5 [RATED]</div>
+                              <div className="text-emerald-400 break-all leading-tight">&gt; [16:04:12.091] DEDUP: hash=8f1c32 duplicate suppressed [CLEAN]</div>
+                              <div className="text-slate-400 break-all leading-tight">&gt; [16:04:12.120] ACCRUE: unbilled consumption committed to ledger</div>
                             </div>
 
                             <div className="text-center p-2 rounded-lg bg-cyan-950/40 border border-cyan-500/30 text-[11px] text-cyan-300">
@@ -1379,9 +1297,9 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
                                   <span>Tax Breakdown:</span>
                                   <span className="text-white">19% VAT (Place of Supply Verified)</span>
                                 </div>
-                                <div className="flex justify-between">
-                                  <span>Cryptographic Hash:</span>
-                                  <span className="text-cyan-400 truncate max-w-[140px]">7f9b8c2a4e...e109d</span>
+                                <div className="flex justify-between items-center gap-2">
+                                  <span className="shrink-0">Cryptographic Hash:</span>
+                                  <span className="text-cyan-400 break-all text-right">7f9b8c2a4e...e109d</span>
                                 </div>
                               </div>
                             </div>
@@ -1503,7 +1421,7 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
           ===================================================================== */}
       <section className="py-14 sm:py-16 bg-white dark:bg-[#030712] border-b border-slate-200/80 dark:border-white/10 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          
+
           {/* Header */}
           <div className="max-w-3xl space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-cyan-500/10 border border-blue-200 dark:border-cyan-400/25 text-xs font-mono text-blue-700 dark:text-cyan-300">
@@ -1574,16 +1492,14 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
                 <button
                   key={layerKey}
                   onClick={() => handleArchLayerClick(layerKey)}
-                  className={`p-3 rounded-xl border text-left transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between ${
-                    isActive
-                      ? `${colorSchemes.activeBorder} ${colorSchemes.activeBg} shadow-md ring-2 ${colorSchemes.ring}`
-                      : 'bg-slate-50 dark:bg-[#070E1E] border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20'
-                  }`}
+                  className={`p-3 rounded-xl border text-left transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between ${isActive
+                    ? `${colorSchemes.activeBorder} ${colorSchemes.activeBg} shadow-md ring-2 ${colorSchemes.ring}`
+                    : 'bg-slate-50 dark:bg-[#070E1E] border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20'
+                    }`}
                 >
                   <div className="flex items-center justify-between mb-1.5">
-                    <span className={`h-5 w-5 rounded-full flex items-center justify-center font-mono text-[10px] font-bold ${
-                      isActive ? colorSchemes.badge : 'bg-slate-200 dark:bg-white/10 text-slate-700 dark:text-slate-300'
-                    }`}>
+                    <span className={`h-5 w-5 rounded-full flex items-center justify-center font-mono text-[10px] font-bold ${isActive ? colorSchemes.badge : 'bg-slate-200 dark:bg-white/10 text-slate-700 dark:text-slate-300'
+                      }`}>
                       0{idx + 1}
                     </span>
                     {isActive ? (
@@ -1596,15 +1512,13 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
                     )}
                   </div>
 
-                  <div>
-                    <h4 className={`text-xs font-bold leading-snug truncate ${
-                      isActive ? 'text-slate-900 dark:text-white' : 'text-slate-700 dark:text-slate-300'
-                    }`}>
+                  <div className="min-w-0 mt-2 space-y-0.5">
+                    <h4 className={`text-xs font-bold leading-snug break-words ${isActive ? 'text-slate-900 dark:text-white' : 'text-slate-700 dark:text-slate-300'
+                      }`}>
                       {layer.name.split('. ')[1]}
                     </h4>
-                    <p className={`text-[10px] font-mono mt-0.5 truncate ${
-                      isActive ? colorSchemes.text : 'text-slate-500'
-                    }`}>
+                    <p className={`text-[10px] font-mono mt-0.5 break-words leading-tight ${isActive ? colorSchemes.text : 'text-slate-500'
+                      }`}>
                       {layer.focus}
                     </p>
                   </div>
@@ -1617,11 +1531,11 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
               BOTTOM: ARCHITECTURE DUAL-COCKPIT COMMAND CENTER
               ================================================================= */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 items-stretch">
-            
+
             {/* Left Column (7 cols): Architecture Visual Blueprint Frame */}
             <div className="lg:col-span-7 flex flex-col justify-between">
               <div className="rounded-2xl overflow-hidden border border-slate-200/90 dark:border-cyan-500/30 shadow-xl bg-white dark:bg-[#070E1E] group relative h-full flex flex-col justify-between">
-                
+
                 {/* Visual Header Ribbon */}
                 <div className="px-4 py-2.5 bg-slate-900 text-white border-b border-slate-800 flex items-center justify-between text-xs font-mono">
                   <div className="flex items-center gap-2">
@@ -1637,29 +1551,29 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
 
                 {/* High-Res Architecture Workflow Image */}
                 <div className="relative overflow-hidden flex-1 flex items-center bg-slate-950">
-                  <img 
-                    src="/images/billing_architecture_workflow.jpg" 
-                    alt="Subscription Billing Enterprise Cloud Architecture" 
-                    className="w-full h-full object-cover transform group-hover:scale-[1.015] transition-transform duration-700 max-h-[380px]"
+                  <img
+                    src="/images/billing_architecture_workflow.jpg"
+                    alt="Subscription Billing Enterprise Cloud Architecture"
+                    className="w-full h-auto aspect-[16/9] sm:aspect-auto sm:h-full object-cover transform group-hover:scale-[1.015] transition-transform duration-700 max-h-[380px]"
                   />
-                  
+
                   {/* Subtle Colored Scanner Glow Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
                 </div>
 
                 {/* Technology Capability Footprint Strip */}
-                <div className="p-3 bg-slate-50 dark:bg-[#0B1528] border-t border-slate-200 dark:border-white/10 grid grid-cols-3 gap-2 text-center text-[10px] font-mono">
-                  <div className="p-1.5 rounded-lg bg-white dark:bg-[#070E1E] border border-slate-200 dark:border-white/5">
-                    <span className="text-slate-400 block text-[8px] uppercase">Integration</span>
-                    <strong className="text-slate-800 dark:text-slate-200 truncate block">SAP BTP Event Mesh</strong>
+                <div className="p-3 bg-slate-50 dark:bg-[#0B1528] border-t border-slate-200 dark:border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-2 text-center text-[10px] font-mono">
+                  <div className="p-2 sm:p-1.5 rounded-lg bg-white dark:bg-[#070E1E] border border-slate-200 dark:border-white/5 min-w-0">
+                    <span className="text-slate-400 block text-[9px] sm:text-[8px] uppercase">Integration</span>
+                    <strong className="text-slate-800 dark:text-slate-200 block text-[11px] sm:text-[10px] break-words">SAP BTP Event Mesh</strong>
                   </div>
-                  <div className="p-1.5 rounded-lg bg-white dark:bg-[#070E1E] border border-slate-200 dark:border-white/5">
-                    <span className="text-slate-400 block text-[8px] uppercase">Ledger Sync</span>
-                    <strong className="text-emerald-600 dark:text-emerald-400 truncate block">ACDOCA Real-Time</strong>
+                  <div className="p-2 sm:p-1.5 rounded-lg bg-white dark:bg-[#070E1E] border border-slate-200 dark:border-white/5 min-w-0">
+                    <span className="text-slate-400 block text-[9px] sm:text-[8px] uppercase">Ledger Sync</span>
+                    <strong className="text-emerald-600 dark:text-emerald-400 block text-[11px] sm:text-[10px] break-words">ACDOCA Real-Time</strong>
                   </div>
-                  <div className="p-1.5 rounded-lg bg-white dark:bg-[#070E1E] border border-slate-200 dark:border-white/5">
-                    <span className="text-slate-400 block text-[8px] uppercase">Clean Core</span>
-                    <strong className="text-blue-600 dark:text-cyan-400 truncate block">0 Custom Z-Tables</strong>
+                  <div className="p-2 sm:p-1.5 rounded-lg bg-white dark:bg-[#070E1E] border border-slate-200 dark:border-white/5 min-w-0">
+                    <span className="text-slate-400 block text-[9px] sm:text-[8px] uppercase">Clean Core</span>
+                    <strong className="text-blue-600 dark:text-cyan-400 block text-[11px] sm:text-[10px] break-words">0 Custom Z-Tables</strong>
                   </div>
                 </div>
 
@@ -1748,9 +1662,9 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
       {/* =====================================================================
           SECTION 5: BUSINESS IMPACT — BEFORE VS. AFTER TRANSFORMATION
           ===================================================================== */}
-      <section className="py-12 sm:py-16 bg-slate-50 dark:bg-[#050B17] border-b border-slate-200/80 dark:border-white/10 transition-colors">
+      <section className="transformation-section py-12 sm:py-16 bg-slate-50 dark:bg-[#050B17] border-b border-slate-200/80 dark:border-white/10 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          
+
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-cyan-500/10 border border-blue-200 dark:border-cyan-400/25 text-xs font-mono text-blue-700 dark:text-cyan-300">
@@ -1775,21 +1689,19 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
             <div className="inline-flex p-1 rounded-xl bg-white dark:bg-[#070E1E] border border-slate-200 dark:border-white/10 shadow-sm">
               <button
                 onClick={() => setImpactView('after')}
-                className={`px-5 py-2 rounded-lg font-display text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                  impactView === 'after'
-                    ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                }`}
+                className={`px-5 py-2 rounded-lg font-display text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${impactView === 'after'
+                  ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  }`}
               >
                 With KNOOVIQ Solution (After)
               </button>
               <button
                 onClick={() => setImpactView('before')}
-                className={`px-5 py-2 rounded-lg font-display text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                  impactView === 'before'
-                    ? 'bg-rose-600 text-white shadow-md shadow-rose-500/25'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                }`}
+                className={`px-5 py-2 rounded-lg font-display text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${impactView === 'before'
+                  ? 'bg-rose-600 text-white shadow-md shadow-rose-500/25'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  }`}
               >
                 Traditional Billing (Before)
               </button>
@@ -1798,21 +1710,21 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
 
           {/* Transformation Infographic Display + Hard KPI Metrics */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center pt-2">
-            
-            {/* Left: High-Res Infographic Image */}
+
+            {/* Left: High-Res Visual Image */}
             <div className="lg:col-span-7">
-              <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-white dark:bg-[#070E1E] group">
-                <img 
-                  src="/images/billing_transformation_impact.jpg" 
-                  alt="Digital Transformation of Subscription Billing Infographic" 
-                  className="w-full h-auto max-h-[420px] object-cover transform group-hover:scale-[1.01] transition-transform duration-500"
+              <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-[#060D1B] group flex items-center justify-center">
+                <img
+                  src="/images/billing_chaos_to_clarity.jpg"
+                  alt="Subscription Billing Value - Chaos to Clarity"
+                  className="w-full h-auto object-contain block mx-auto transform group-hover:scale-[1.01] transition-transform duration-500"
                 />
               </div>
             </div>
 
             {/* Right: Operational Metric Highlights */}
             <div className="lg:col-span-5 space-y-4">
-              
+
               <div className="space-y-1.5">
                 <span className="text-xs font-mono text-blue-600 dark:text-cyan-400 font-bold uppercase tracking-wider">
                   ENTERPRISE OUTCOMES
@@ -1884,7 +1796,7 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
           ===================================================================== */}
       <section className="py-16 sm:py-20 bg-white dark:bg-[#030712] border-b border-slate-200/80 dark:border-white/10 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          
+
           {/* Header & Architectural Capabilities Badges */}
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
             <div className="max-w-3xl space-y-3">
@@ -1920,11 +1832,11 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
 
           {/* 4 Informative Commercial Archetype Cards (No Prices or Amounts) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            
+
             {/* CARD 1: Recurring Commitments (Electric Blue) */}
             <div className="rounded-2xl bg-gradient-to-b from-blue-50/50 via-white to-white dark:from-blue-950/20 dark:via-[#070E1E] dark:to-[#070E1E] border border-blue-200 dark:border-blue-500/30 p-5 space-y-4 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
               <div className="space-y-3.5">
-                
+
                 {/* Header Badge */}
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-[10px] font-bold px-2.5 py-1 rounded-full bg-blue-100 dark:bg-blue-500/20 text-blue-700 dark:text-blue-300">
@@ -1943,18 +1855,18 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
                 </div>
 
                 {/* Technical Architecture Box */}
-                <div className="p-3 rounded-xl bg-white dark:bg-[#0B1528] border border-blue-100 dark:border-white/5 space-y-1.5 font-mono text-[11px]">
-                  <div className="flex justify-between text-slate-600 dark:text-slate-300">
+                <div className="p-3 rounded-xl bg-white dark:bg-[#0B1528] border border-blue-100 dark:border-white/5 space-y-1.5 font-mono text-[11px] overflow-hidden">
+                  <div className="flex flex-wrap items-center justify-between gap-1 text-slate-600 dark:text-slate-300">
                     <span className="text-slate-400">Cadence:</span>
-                    <strong className="text-slate-800 dark:text-slate-200">Monthly / Annual / Multi-Year</strong>
+                    <strong className="text-slate-800 dark:text-slate-200 break-words">Monthly / Annual / Multi-Year</strong>
                   </div>
-                  <div className="flex justify-between text-slate-600 dark:text-slate-300">
+                  <div className="flex flex-wrap items-center justify-between gap-1 text-slate-600 dark:text-slate-300">
                     <span className="text-slate-400">Proration:</span>
-                    <strong className="text-blue-600 dark:text-cyan-400">Automated Day-Level Calc</strong>
+                    <strong className="text-blue-600 dark:text-cyan-400 break-words">Automated Day-Level Calc</strong>
                   </div>
-                  <div className="flex justify-between text-slate-600 dark:text-slate-300">
+                  <div className="flex flex-wrap items-center justify-between gap-1 text-slate-600 dark:text-slate-300">
                     <span className="text-slate-400">Alignment:</span>
-                    <strong className="text-emerald-600 dark:text-emerald-400">Co-Term Anniversary Sync</strong>
+                    <strong className="text-emerald-600 dark:text-emerald-400 break-words">Co-Term Anniversary Sync</strong>
                   </div>
                 </div>
 
@@ -1976,7 +1888,7 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
 
               </div>
 
-              <div className="mt-2 pt-2.5 border-t border-blue-100 dark:border-white/5 text-[10px] font-mono text-blue-600 dark:text-cyan-400 font-bold truncate">
+              <div className="mt-2 pt-2.5 border-t border-blue-100 dark:border-white/5 text-[10px] font-mono text-blue-600 dark:text-cyan-400 font-bold break-words leading-tight">
                 SAP Target: SAP SOM Master Agreement (BTP-SOM)
               </div>
             </div>
@@ -1984,7 +1896,7 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
             {/* CARD 2: Tiered Volume Brackets (Radiant Cyan) */}
             <div className="rounded-2xl bg-gradient-to-b from-cyan-50/50 via-white to-white dark:from-cyan-950/20 dark:via-[#070E1E] dark:to-[#070E1E] border border-cyan-200 dark:border-cyan-500/30 p-5 space-y-4 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
               <div className="space-y-3.5">
-                
+
                 {/* Header Badge */}
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-[10px] font-bold px-2.5 py-1 rounded-full bg-cyan-100 dark:bg-cyan-500/20 text-cyan-700 dark:text-cyan-300">
@@ -2003,18 +1915,18 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
                 </div>
 
                 {/* Technical Architecture Box */}
-                <div className="p-3 rounded-xl bg-white dark:bg-[#0B1528] border border-cyan-100 dark:border-white/5 space-y-1.5 font-mono text-[11px]">
-                  <div className="flex justify-between text-slate-600 dark:text-slate-300">
+                <div className="p-3 rounded-xl bg-white dark:bg-[#0B1528] border border-cyan-100 dark:border-white/5 space-y-1.5 font-mono text-[11px] overflow-hidden">
+                  <div className="flex flex-wrap items-center justify-between gap-1 text-slate-600 dark:text-slate-300">
                     <span className="text-slate-400">Scale Model:</span>
-                    <strong className="text-slate-800 dark:text-slate-200">Graduated Marginal &amp; Flat</strong>
+                    <strong className="text-slate-800 dark:text-slate-200 break-words">Graduated Marginal &amp; Flat</strong>
                   </div>
-                  <div className="flex justify-between text-slate-600 dark:text-slate-300">
+                  <div className="flex flex-wrap items-center justify-between gap-1 text-slate-600 dark:text-slate-300">
                     <span className="text-slate-400">Transitions:</span>
-                    <strong className="text-cyan-600 dark:text-cyan-400">Automated Threshold Shift</strong>
+                    <strong className="text-cyan-600 dark:text-cyan-400 break-words">Automated Threshold Shift</strong>
                   </div>
-                  <div className="flex justify-between text-slate-600 dark:text-slate-300">
+                  <div className="flex flex-wrap items-center justify-between gap-1 text-slate-600 dark:text-slate-300">
                     <span className="text-slate-400">Protection:</span>
-                    <strong className="text-emerald-600 dark:text-emerald-400">Retroactive Recalculation</strong>
+                    <strong className="text-emerald-600 dark:text-emerald-400 break-words">Retroactive Recalculation</strong>
                   </div>
                 </div>
 
@@ -2036,7 +1948,7 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
 
               </div>
 
-              <div className="mt-2 pt-2.5 border-t border-cyan-100 dark:border-white/5 text-[10px] font-mono text-cyan-600 dark:text-cyan-400 font-bold truncate">
+              <div className="mt-2 pt-2.5 border-t border-cyan-100 dark:border-white/5 text-[10px] font-mono text-cyan-600 dark:text-cyan-400 font-bold break-words leading-tight">
                 SAP Target: SAP CC Condition Technique (KONP)
               </div>
             </div>
@@ -2044,7 +1956,7 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
             {/* CARD 3: Consumption & Metering (Deep Violet) */}
             <div className="rounded-2xl bg-gradient-to-b from-purple-50/50 via-white to-white dark:from-purple-950/20 dark:via-[#070E1E] dark:to-[#070E1E] border border-purple-200 dark:border-purple-500/30 p-5 space-y-4 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
               <div className="space-y-3.5">
-                
+
                 {/* Header Badge */}
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-[10px] font-bold px-2.5 py-1 rounded-full bg-purple-100 dark:bg-purple-500/20 text-purple-700 dark:text-purple-300">
@@ -2063,18 +1975,18 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
                 </div>
 
                 {/* Technical Architecture Box */}
-                <div className="p-3 rounded-xl bg-white dark:bg-[#0B1528] border border-purple-100 dark:border-white/5 space-y-1.5 font-mono text-[11px]">
-                  <div className="flex justify-between text-slate-600 dark:text-slate-300">
+                <div className="p-3 rounded-xl bg-white dark:bg-[#0B1528] border border-purple-100 dark:border-white/5 space-y-1.5 font-mono text-[11px] overflow-hidden">
+                  <div className="flex flex-wrap items-center justify-between gap-1 text-slate-600 dark:text-slate-300">
                     <span className="text-slate-400">Ingestion:</span>
-                    <strong className="text-slate-800 dark:text-slate-200">Kafka Stream &amp; Webhooks</strong>
+                    <strong className="text-slate-800 dark:text-slate-200 break-words">Kafka Stream &amp; Webhooks</strong>
                   </div>
-                  <div className="flex justify-between text-slate-600 dark:text-slate-300">
+                  <div className="flex flex-wrap items-center justify-between gap-1 text-slate-600 dark:text-slate-300">
                     <span className="text-slate-400">Rating Speed:</span>
-                    <strong className="text-purple-600 dark:text-purple-400">Sub-Second Event Mediation</strong>
+                    <strong className="text-purple-600 dark:text-purple-400 break-words">Sub-Second Event Mediation</strong>
                   </div>
-                  <div className="flex justify-between text-slate-600 dark:text-slate-300">
+                  <div className="flex flex-wrap items-center justify-between gap-1 text-slate-600 dark:text-slate-300">
                     <span className="text-slate-400">Liquidity:</span>
-                    <strong className="text-emerald-600 dark:text-emerald-400">Prepaid Wallet Drawdowns</strong>
+                    <strong className="text-emerald-600 dark:text-emerald-400 break-words">Prepaid Wallet Drawdowns</strong>
                   </div>
                 </div>
 
@@ -2096,7 +2008,7 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
 
               </div>
 
-              <div className="mt-2 pt-2.5 border-t border-purple-100 dark:border-white/5 text-[10px] font-mono text-purple-600 dark:text-purple-400 font-bold truncate">
+              <div className="mt-2 pt-2.5 border-t border-purple-100 dark:border-white/5 text-[10px] font-mono text-purple-600 dark:text-purple-400 font-bold break-words leading-tight">
                 SAP Target: SAP CI Billable Items (BIT) &amp; CI
               </div>
             </div>
@@ -2104,7 +2016,7 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
             {/* CARD 4: Hybrid Enterprise Bundles (Warm Amber) */}
             <div className="rounded-2xl bg-gradient-to-b from-amber-50/50 via-white to-white dark:from-amber-950/20 dark:via-[#070E1E] dark:to-[#070E1E] border border-amber-200 dark:border-amber-500/30 p-5 space-y-4 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
               <div className="space-y-3.5">
-                
+
                 {/* Header Badge */}
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-[10px] font-bold px-2.5 py-1 rounded-full bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-300">
@@ -2123,18 +2035,18 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
                 </div>
 
                 {/* Technical Architecture Box */}
-                <div className="p-3 rounded-xl bg-white dark:bg-[#0B1528] border border-amber-100 dark:border-white/5 space-y-1.5 font-mono text-[11px]">
-                  <div className="flex justify-between text-slate-600 dark:text-slate-300">
+                <div className="p-3 rounded-xl bg-white dark:bg-[#0B1528] border border-amber-100 dark:border-white/5 space-y-1.5 font-mono text-[11px] overflow-hidden">
+                  <div className="flex flex-wrap items-center justify-between gap-1 text-slate-600 dark:text-slate-300">
                     <span className="text-slate-400">Structure:</span>
-                    <strong className="text-slate-800 dark:text-slate-200">Commitment + Metered Quota</strong>
+                    <strong className="text-slate-800 dark:text-slate-200 break-words">Commitment + Metered Quota</strong>
                   </div>
-                  <div className="flex justify-between text-slate-600 dark:text-slate-300">
+                  <div className="flex flex-wrap items-center justify-between gap-1 text-slate-600 dark:text-slate-300">
                     <span className="text-slate-400">Accounting:</span>
-                    <strong className="text-amber-600 dark:text-amber-400">ASC 606 / IFRS 15 Multi-Split</strong>
+                    <strong className="text-amber-600 dark:text-amber-400 break-words">ASC 606 / IFRS 15 Multi-Split</strong>
                   </div>
-                  <div className="flex justify-between text-slate-600 dark:text-slate-300">
+                  <div className="flex flex-wrap items-center justify-between gap-1 text-slate-600 dark:text-slate-300">
                     <span className="text-slate-400">Overage:</span>
-                    <strong className="text-emerald-600 dark:text-emerald-400">Dynamic Multiplier Rating</strong>
+                    <strong className="text-emerald-600 dark:text-emerald-400 break-words">Dynamic Multiplier Rating</strong>
                   </div>
                 </div>
 
@@ -2156,7 +2068,7 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
 
               </div>
 
-              <div className="mt-2 pt-2.5 border-t border-amber-100 dark:border-white/5 text-[10px] font-mono text-amber-600 dark:text-amber-400 font-bold truncate">
+              <div className="mt-2 pt-2.5 border-t border-amber-100 dark:border-white/5 text-[10px] font-mono text-amber-600 dark:text-amber-400 font-bold break-words leading-tight">
                 SAP Target: SAP RAR &amp; ACDOCA Universal Journal
               </div>
             </div>
@@ -2171,14 +2083,14 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
           ===================================================================== */}
       <section className="py-24 bg-gradient-to-b from-slate-50 via-blue-50/20 to-white dark:from-[#070E1E] dark:via-[#0A1931] dark:to-[#030712] transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="relative rounded-3xl bg-white dark:bg-[#070E1E] border border-slate-200 dark:border-cyan-500/30 p-8 sm:p-14 shadow-2xl overflow-hidden">
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              
+
               {/* Left Column: Narrative & Action Buttons */}
               <div className="lg:col-span-7 space-y-6">
-                
+
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase bg-blue-50 dark:bg-cyan-950/50 text-blue-700 dark:text-cyan-300 border border-blue-200 dark:border-cyan-500/30 shadow-sm">
                   <Sparkles className="h-3.5 w-3.5 text-blue-600 dark:text-cyan-400" />
                   <span>ENTERPRISE REVENUE OPERATIONS</span>
@@ -2231,10 +2143,10 @@ export const SubscriptionBillingPage: React.FC<SubscriptionBillingPageProps> = (
               {/* Right Column: Executive Boardroom Scaling Visual */}
               <div className="lg:col-span-5 relative">
                 <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-white dark:bg-[#070E1E] group">
-                  <img 
-                    src="/images/billing_closing_ecosystem.jpg" 
-                    alt="Global Enterprise Executive Boardroom Recurring Revenue Operations" 
-                    className="w-full h-[320px] object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  <img
+                    src="/images/billing_closing_ecosystem.jpg"
+                    alt="Global Enterprise Executive Boardroom Recurring Revenue Operations"
+                    className="w-full aspect-[16/9] sm:aspect-auto sm:h-[320px] object-cover transform group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="p-4 bg-white/95 dark:bg-[#070E1E]/95 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-mono">
                     <span className="text-slate-500 dark:text-slate-400">Global ARR Compounding</span>

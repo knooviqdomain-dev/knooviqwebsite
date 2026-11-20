@@ -21,7 +21,11 @@ import {
   Server,
   Cloud,
   FileCheck2,
-  Globe
+  Globe,
+  Compass,
+  Network,
+  GraduationCap,
+  BookOpen
 } from 'lucide-react';
 
 interface GreenfieldPageProps {
@@ -83,63 +87,91 @@ export const GreenfieldPage: React.FC<GreenfieldPageProps> = ({ onOpenContact })
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300">
+    <div className="transformation-typography font-sora min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300">
       
       {/* =========================================================================
-          SECTION 1: HERO — GREENFIELD IMPLEMENTATION (SAP FIORI STYLE)
+          SECTION 1: HERO — GREENFIELD IMPLEMENTATION (DESKTOP FULL-SCREEN BACKGROUND, MOBILE SHOWCASE CARD)
           ========================================================================= */}
-      <section className="relative w-full min-h-[620px] sm:min-h-[660px] lg:min-h-[720px] flex items-center pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 overflow-hidden bg-black">
-        
-        {/* Full-Bleed Background Visual — 100% Clear with Zero Dark Blue Shade */}
-        <div className="absolute inset-0 z-0">
+      <section className="relative w-full min-h-[620px] sm:min-h-[660px] lg:min-h-[720px] flex items-center pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 overflow-hidden bg-black text-white">
+
+        {/* Desktop-Only Full-Bleed 16:9 Background Image (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
           <img
             src="/images/greenfield_clean_slate.jpg"
             alt="Building a completely new S/4HANA environment from scratch"
             className="w-full h-full object-cover object-top lg:object-[80%_top] brightness-105 contrast-105 select-none"
           />
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
-        {/* Top Hairline Accent */}
-        <div className="absolute top-0 left-0 right-0 z-10 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-emerald-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-3xl space-y-4 relative">
-            {/* Seamless Soft Contrast Aura — ensures text is 100% legible with zero dark blue filter */}
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="space-y-3">
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#00A3E0] text-xs font-mono font-bold tracking-wider uppercase shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
                 <Sparkles className="w-3.5 h-3.5 text-[#00A3E0]" />
                 <span>CLEAN SLATE CLOUD ERP • 100% BEST PRACTICES</span>
               </div>
-
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
-                SAP S/4HANA <br />
-                <span className="text-[#00A3E0]">
-                  Greenfield Implementation
-                </span>
-              </h1>
-
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl pt-1">
-                Build a modern S/4HANA environment from scratch. Start completely clean with 100% SAP Best Practices, purge decades of obsolete legacy customizations, and adopt a cloud-native Clean Core architecture.
-              </p>
             </motion.div>
 
-            {/* Enterprise Trust Indicators (Ultra-Clean, Matching SAP Fiori Reference) */}
-            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }} className="pt-2 flex flex-wrap items-center gap-3">
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-emerald-200">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]"
+            >
+              SAP S/4HANA <br />
+              <span className="text-[#00A3E0]">
+                Greenfield Implementation
+              </span>
+            </motion.h1>
+
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-xl pt-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
+            >
+              Build a modern S/4HANA environment from scratch. Start completely clean with 100% SAP Best Practices, purge decades of obsolete legacy customizations, and adopt a cloud-native Clean Core architecture.
+            </motion.p>
+
+            {/* Enterprise Trust Indicators */}
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="pt-1 flex flex-wrap items-center gap-3">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-emerald-200 shadow-md">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>Zero Technical Debt</span>
               </div>
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-teal-200">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-teal-200 shadow-md">
                 <Sparkles className="w-4 h-4 text-teal-400 shrink-0" />
                 <span>100% SAP Best Practices</span>
               </div>
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-sky-200">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-sky-200 shadow-md">
                 <Cloud className="w-4 h-4 text-sky-400 shrink-0" />
                 <span>Clean Core Architecture</span>
               </div>
             </motion.div>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                <img
+                  src="/images/greenfield_clean_slate.jpg"
+                  alt="Building a completely new S/4HANA environment from scratch"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -208,7 +240,7 @@ export const GreenfieldPage: React.FC<GreenfieldPageProps> = ({ onOpenContact })
                     <img
                       src="/images/sap_greenfield_enterprise_choice.png"
                       alt="What is Greenfield & Why High-Growth Enterprises Choose It - Strategic Enterprise Architecture"
-                      className="w-full h-80 sm:h-96 lg:h-[400px] object-contain transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-auto aspect-[16/10] sm:aspect-auto sm:h-96 lg:h-[400px] object-contain transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
 
@@ -253,7 +285,7 @@ export const GreenfieldPage: React.FC<GreenfieldPageProps> = ({ onOpenContact })
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                icon: AlertTriangle,
+                icon: Compass,
                 color: 'text-amber-500 bg-amber-500/10 border-amber-500/20',
                 title: '1. Organizational Inertia & Process Re-engineering',
                 desc: 'Business stakeholders often push to replicate legacy ECC customizations. Adhering to standard SAP Best Practices requires strong executive sponsorship.'
@@ -271,19 +303,19 @@ export const GreenfieldPage: React.FC<GreenfieldPageProps> = ({ onOpenContact })
                 desc: 'Greenfield projects typically require 9 to 18 months of intensive scoping, sprint configuration, and cross-functional user acceptance testing.'
               },
               {
-                icon: Workflow,
+                icon: Network,
                 color: 'text-cyan-500 bg-cyan-500/10 border-cyan-500/20',
                 title: '4. Non-SAP Satellite System Integration',
                 desc: 'Third-party CRM, warehouse management, and specialized MES platforms must be re-architected to integrate with modern SAP APIs.'
               },
               {
-                icon: ShieldCheck,
+                icon: GraduationCap,
                 color: 'text-purple-500 bg-purple-500/10 border-purple-500/20',
                 title: '5. End-User Retraining & Adoption Dip',
                 desc: 'Completely redesigned business workflows and modern SAP Fiori Launchpad interfaces require comprehensive change enablement to maintain productivity.'
               },
               {
-                icon: Server,
+                icon: ShieldCheck,
                 color: 'text-emerald-500 bg-emerald-500/10 border-emerald-500/20',
                 title: '6. Scope Creep & Customization Discipline',
                 desc: 'Without rigorous Clean Core governance, project teams risk rebuilding unneeded Z-code, recreating the very technical debt Greenfield aims to solve.'
@@ -327,12 +359,12 @@ export const GreenfieldPage: React.FC<GreenfieldPageProps> = ({ onOpenContact })
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                icon: Sparkles,
+                icon: BookOpen,
                 title: 'SAP Best Practices Library',
                 desc: 'Immediate access to 500+ pre-configured industry scenarios for manufacturing, consumer goods, trading, and services.'
               },
               {
-                icon: Cloud,
+                icon: Layers,
                 title: 'Clean Core BTP Extensibility',
                 desc: 'Building necessary business customizations side-by-side on SAP BTP using RAP and CAP frameworks without touching the core.'
               },
@@ -342,7 +374,7 @@ export const GreenfieldPage: React.FC<GreenfieldPageProps> = ({ onOpenContact })
                 desc: 'Deploying staging tables and pre-built XML migration templates to extract, transform, and load clean legacy master data.'
               },
               {
-                icon: Globe,
+                icon: Cloud,
                 title: 'RISE & GROW Cloud Delivery',
                 desc: 'Architecting for S/4HANA Cloud Public Edition or Private Edition with verified security, hyperscaler IaaS, and SLA guarantees.'
               }
@@ -479,7 +511,7 @@ export const GreenfieldPage: React.FC<GreenfieldPageProps> = ({ onOpenContact })
                   <img
                     src="/images/rise_sap_architecture.png"
                     alt="SAP Greenfield Cloud ERP Architecture"
-                    className="w-full h-80 object-contain rounded-2xl border border-slate-800 bg-slate-950"
+                    className="w-full h-auto aspect-[16/10] sm:aspect-auto sm:h-80 object-contain rounded-2xl border border-slate-800 bg-slate-950"
                   />
                 </div>
 

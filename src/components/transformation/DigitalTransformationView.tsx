@@ -123,7 +123,7 @@ export const DigitalTransformationView: React.FC<DigitalTransformationViewProps>
       layer: 'Layer 02',
       name: 'Autonomous AI & Cognitive Agent Layer',
       focus: 'Context-aware intelligence embedded in every transaction',
-      icon: <Sparkles className="w-5 h-5 text-cyan-400" />,
+      icon: <Bot className="w-5 h-5 text-cyan-400" />,
       components: [
         { name: 'SAP Joule Copilot Integration', detail: 'Natural language business assistant across Finance, HR, and Supply Chain.' },
         { name: 'Autonomous Accounts Payable Agents', detail: 'Cognitive document parsing, PO line-item matching, and fraud telemetry.' },
@@ -170,7 +170,7 @@ export const DigitalTransformationView: React.FC<DigitalTransformationViewProps>
   ];
 
   return (
-    <div className="space-y-20">
+    <div className="transformation-typography font-sora space-y-20">
 
       {/* =========================================================================
           1. THE ENTERPRISE ADVANTAGE (4 Strategic Pillars of Digital Transformation)
@@ -188,7 +188,7 @@ export const DigitalTransformationView: React.FC<DigitalTransformationViewProps>
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-md">
-              Bridging legacy constraints with cloud-native acceleration — empowering modern enterprises to out-innovate, automate, and scale.
+              Bridging legacy constraints with cloud-native acceleration, empowering modern enterprises to out-innovate, automate, and scale.
             </p>
           </div>
         </div>
@@ -260,7 +260,7 @@ export const DigitalTransformationView: React.FC<DigitalTransformationViewProps>
               </h2>
             </div>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-md">
-              From enterprise roadmapping and SAP BTP engineering to autonomous AI agents — aligning technology investments with verifiable business ROI.
+              From enterprise roadmapping and SAP BTP engineering to autonomous AI agents, aligning technology investments with verifiable business ROI.
             </p>
           </div>
         </div>
@@ -895,7 +895,7 @@ export const DigitalTransformationView: React.FC<DigitalTransformationViewProps>
           {[
             {
               q: 'How does Digital Transformation differ from an ERP implementation?',
-              a: 'An ERP implementation focuses on standardizing core transactions (general ledger, inventory posting, procurement). Digital Transformation expands beyond the core — introducing autonomous AI agents, real-time B2B portals for vendors and dealers, IoT factory connections, and SAP BTP event streaming to orchestrate agile workflows across every customer and supplier touchpoint.'
+              a: 'An ERP implementation focuses on standardizing core transactions (general ledger, inventory posting, procurement). Digital Transformation expands beyond the core, introducing autonomous AI agents, real-time B2B portals for vendors and dealers, IoT factory connections, and SAP BTP event streaming to orchestrate agile workflows across every customer and supplier touchpoint.'
             },
             {
               q: 'How does SAP Business Technology Platform (BTP) prevent breaking future ERP upgrades?',

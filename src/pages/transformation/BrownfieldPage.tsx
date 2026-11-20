@@ -20,7 +20,10 @@ import {
   Server,
   Lock,
   Boxes,
-  Sparkles
+  Sparkles,
+  FileCode2,
+  Users,
+  Scale
 } from 'lucide-react';
 
 interface BrownfieldPageProps {
@@ -80,63 +83,91 @@ export const BrownfieldPage: React.FC<BrownfieldPageProps> = ({ onOpenContact })
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300">
-      
+    <div className="transformation-typography font-sora min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300">
+
       {/* =========================================================================
-          SECTION 1: HERO — BROWNFIELD MIGRATION (SAP FIORI STYLE)
+          SECTION 1: HERO — BROWNFIELD MIGRATION (DESKTOP FULL-SCREEN BACKGROUND, MOBILE SHOWCASE CARD)
           ========================================================================= */}
-      <section className="relative w-full min-h-[620px] sm:min-h-[660px] lg:min-h-[720px] flex items-center pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 overflow-hidden bg-black">
-        
-        {/* Full-Bleed Background Visual — 100% Clear with Zero Dark Blue Shade */}
-        <div className="absolute inset-0 z-0">
+      <section className="relative w-full min-h-[620px] sm:min-h-[660px] lg:min-h-[720px] flex items-center pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 overflow-hidden bg-black text-white">
+
+        {/* Desktop-Only Full-Bleed 16:9 Background Image (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
           <img
             src="/images/brownfield_data_migration_2026.jpg"
             alt="SAP S/4HANA Brownfield Data Migration Architecture"
-            className="w-full h-full object-cover object-top lg:object-[82%_top] brightness-105 contrast-105 select-none"
+            className="w-full h-full object-cover object-center select-none"
           />
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
-        {/* Top Hairline Accent */}
-        <div className="absolute top-0 left-0 right-0 z-10 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-3xl space-y-4 relative">
-            {/* Seamless Soft Contrast Aura — ensures text is 100% legible with zero dark blue filter */}
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="space-y-3">
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#00A3E0] text-xs font-mono font-bold tracking-wider uppercase shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
                 <Sparkles className="w-3.5 h-3.5 text-[#00A3E0]" />
                 <span>IN-PLACE MIGRATION • 100% INVESTMENT PRESERVATION</span>
               </div>
-
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
-                SAP S/4HANA <br />
-                <span className="text-[#00A3E0]">
-                  Brownfield Migration
-                </span>
-              </h1>
-
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl pt-1">
-                Modernize your existing SAP ECC 6.0 in-place while preserving your investments. Retain 100% of historical transactions, customizations, and configurations with zero operational disruption and &lt; 12 hours cutover downtime.
-              </p>
             </motion.div>
 
-            {/* Enterprise Trust Indicators (Ultra-Clean, Matching SAP Fiori Reference) */}
-            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }} className="pt-2 flex flex-wrap items-center gap-3">
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-emerald-200">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]"
+            >
+              SAP S/4HANA <br />
+              <span className="text-[#00A3E0]">
+                Brownfield Migration
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-xl pt-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
+            >
+              Modernize your existing SAP ECC 6.0 in-place while preserving your investments. Retain 100% of historical transactions, customizations, and configurations with zero operational disruption and &lt; 12 hours cutover downtime.
+            </motion.p>
+
+            {/* Enterprise Trust Indicators */}
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="pt-1 flex flex-wrap items-center gap-3">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-emerald-200 shadow-md">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>100% Data Preserved</span>
               </div>
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-sky-200">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-sky-200 shadow-md">
                 <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
                 <span>&lt; 12 Hours Downtime</span>
               </div>
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-blue-200">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-blue-200 shadow-md">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
                 <span>1-Step SUM DMO Upgrade</span>
               </div>
             </motion.div>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                <img
+                  src="/images/brownfield_data_migration_2026.jpg"
+                  alt="SAP S/4HANA Brownfield Data Migration Architecture"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -146,9 +177,9 @@ export const BrownfieldPage: React.FC<BrownfieldPageProps> = ({ onOpenContact })
           ========================================================================= */}
       <section id="overview" className="py-20 lg:py-28 relative bg-white dark:bg-[#070F1E] border-b border-slate-200 dark:border-slate-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             <div className="lg:col-span-6 space-y-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-white/10 border border-blue-200 dark:border-white/20 text-[#00A3E0] text-xs font-mono font-bold uppercase tracking-wider shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
@@ -197,7 +228,7 @@ export const BrownfieldPage: React.FC<BrownfieldPageProps> = ({ onOpenContact })
                   <img
                     src="/images/selective_data_transition.jpg"
                     alt="Brownfield and Selective Modernization Architecture"
-                    className="w-full h-80 sm:h-96 lg:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-auto aspect-[16/10] sm:aspect-auto sm:h-96 lg:h-[440px] object-contain sm:object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent pointer-events-none" />
                   <div className="absolute bottom-6 left-6 right-6">
@@ -223,7 +254,7 @@ export const BrownfieldPage: React.FC<BrownfieldPageProps> = ({ onOpenContact })
           ========================================================================= */}
       <section className="py-20 lg:py-28 relative bg-slate-50 dark:bg-[#050B17] border-b border-slate-200 dark:border-slate-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          
+
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-800 text-amber-600 dark:text-amber-400 text-xs font-bold uppercase tracking-wider">
               <AlertTriangle className="w-3.5 h-3.5" />
@@ -240,7 +271,7 @@ export const BrownfieldPage: React.FC<BrownfieldPageProps> = ({ onOpenContact })
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                icon: Cpu,
+                icon: FileCode2,
                 color: 'text-amber-500 bg-amber-500/10 border-amber-500/20',
                 title: '1. Custom Code (Z-Objects) Remediation',
                 desc: 'Carrying forward legacy ABAP code requires remediating syntax errors caused by eliminated database tables and non-Unicode statements.'
@@ -252,7 +283,7 @@ export const BrownfieldPage: React.FC<BrownfieldPageProps> = ({ onOpenContact })
                 desc: 'Large historical databases require extensive memory sizing and table archiving prior to conversion to avoid prohibitive HANA RAM costs.'
               },
               {
-                icon: Workflow,
+                icon: Users,
                 color: 'text-cyan-500 bg-cyan-500/10 border-cyan-500/20',
                 title: '3. Customer Vendor Integration (CVI) Pre-Sync',
                 desc: 'Every customer and supplier must be cleanly mapped to SAP Business Partner (BP) before technical conversion can proceed.'
@@ -264,13 +295,13 @@ export const BrownfieldPage: React.FC<BrownfieldPageProps> = ({ onOpenContact })
                 desc: 'Without Near-Zero Downtime (NZDT) technology, converting massive tables can stretch into Monday morning trading hours.'
               },
               {
-                icon: Server,
+                icon: Boxes,
                 color: 'text-purple-500 bg-purple-500/10 border-purple-500/20',
                 title: '5. Mandatory Material Ledger Setup',
                 desc: 'Activating actual costing and setting up currency valuation structures for existing materials requires precise pre-configuration.'
               },
               {
-                icon: ShieldCheck,
+                icon: Scale,
                 color: 'text-emerald-500 bg-emerald-500/10 border-emerald-500/20',
                 title: '6. Year-End Asset Accounting Reconciliation',
                 desc: 'All unposted depreciation, open asset postings, and clearing items must be resolved in ECC before ACDOCA ledger migration.'
@@ -297,7 +328,7 @@ export const BrownfieldPage: React.FC<BrownfieldPageProps> = ({ onOpenContact })
           ========================================================================= */}
       <section className="py-20 lg:py-28 relative bg-white dark:bg-[#070F1E] border-b border-slate-200 dark:border-slate-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          
+
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
               <Zap className="w-3.5 h-3.5" />
@@ -314,12 +345,12 @@ export const BrownfieldPage: React.FC<BrownfieldPageProps> = ({ onOpenContact })
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                icon: Server,
+                icon: Zap,
                 title: '1-Step SUM DMO Migration',
                 desc: 'Concurrent OS/DB migration and S/4HANA application upgrade streaming tables directly into HANA memory.'
               },
               {
-                icon: Cpu,
+                icon: FileCode2,
                 title: 'Automated Code Modernization',
                 desc: 'Automated quick-fixes resolving 70%+ of ABAP syntax warnings with Clean Core decoupling to SAP BTP.'
               },
@@ -352,7 +383,7 @@ export const BrownfieldPage: React.FC<BrownfieldPageProps> = ({ onOpenContact })
           ========================================================================= */}
       <section className="py-20 lg:py-28 relative bg-slate-50 dark:bg-[#050B17] border-b border-slate-200 dark:border-slate-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          
+
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
               <Workflow className="w-3.5 h-3.5" />
@@ -373,11 +404,10 @@ export const BrownfieldPage: React.FC<BrownfieldPageProps> = ({ onOpenContact })
                 <button
                   key={idx}
                   onClick={() => setActivePhase(idx)}
-                  className={`p-4 rounded-2xl text-left border transition-all cursor-pointer ${
-                    isSelected
-                      ? 'bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-500/25 ring-2 ring-blue-400/40 font-bold'
-                      : 'bg-white dark:bg-[#070F1E] text-slate-800 dark:text-slate-200 border-slate-200 dark:border-slate-800 hover:border-blue-300'
-                  }`}
+                  className={`p-4 rounded-2xl text-left border transition-all cursor-pointer ${isSelected
+                    ? 'bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-500/25 ring-2 ring-blue-400/40 font-bold'
+                    : 'bg-white dark:bg-[#070F1E] text-slate-800 dark:text-slate-200 border-slate-200 dark:border-slate-800 hover:border-blue-300'
+                    }`}
                 >
                   <div className={`text-xs font-mono font-bold mb-1 ${isSelected ? 'text-blue-200' : 'text-blue-500'}`}>
                     PHASE {phase.num}
@@ -436,7 +466,7 @@ export const BrownfieldPage: React.FC<BrownfieldPageProps> = ({ onOpenContact })
           ========================================================================= */}
       <section className="py-20 lg:py-28 relative bg-white dark:bg-[#070F1E] border-b border-slate-200 dark:border-slate-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          
+
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
               <Server className="w-3.5 h-3.5" />
@@ -451,7 +481,7 @@ export const BrownfieldPage: React.FC<BrownfieldPageProps> = ({ onOpenContact })
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            
+
             <div className="lg:col-span-6">
               <div className="rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl bg-[#060D1A] group">
                 <div className="px-5 py-3.5 bg-[#0A1628] border-b border-slate-800 flex items-center justify-between text-xs font-mono">
@@ -466,7 +496,7 @@ export const BrownfieldPage: React.FC<BrownfieldPageProps> = ({ onOpenContact })
                   <img
                     src="/images/sap_app_finance_3d.jpg"
                     alt="SAP S/4HANA Finance and Core In-Place Modernization"
-                    className="w-full h-80 object-cover rounded-2xl border border-slate-800 bg-slate-950"
+                    className="w-full h-auto aspect-[16/10] sm:aspect-auto sm:h-80 object-contain sm:object-cover rounded-2xl border border-slate-800 bg-slate-950"
                   />
                 </div>
 
@@ -520,7 +550,7 @@ export const BrownfieldPage: React.FC<BrownfieldPageProps> = ({ onOpenContact })
           ========================================================================= */}
       <section className="py-20 lg:py-28 relative bg-slate-50 dark:bg-[#050B17] transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          
+
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider">
               <BarChart3 className="w-3.5 h-3.5" />

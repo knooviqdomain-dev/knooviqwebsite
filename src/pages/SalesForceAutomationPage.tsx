@@ -364,7 +364,7 @@ export const SalesForceAutomationPage: React.FC<SalesForceAutomationPageProps> =
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#00A3E0] selection:text-white">
+    <div className="product-typography font-sora min-h-screen bg-white text-slate-900 selection:bg-[#00A3E0] selection:text-white">
       
       {/* =====================================================================
           SECTION 1: HERO — ROUTE-TO-MARKET TELEMATICS RADAR (LIGHT THEME)
@@ -407,7 +407,7 @@ export const SalesForceAutomationPage: React.FC<SalesForceAutomationPageProps> =
 
 
               {/* Real-time Field Telemetry Status Cards (Professional, Refined Typography) */}
-              <div className="grid grid-cols-3 gap-3.5 pt-4 border-t border-slate-200/80">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-3.5 pt-4 border-t border-slate-200/80">
                 <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs hover:shadow-md hover:border-[#00A3E0]/40 transition-all duration-300 group flex flex-col justify-between">
                   <div>
                     <div className="flex items-center gap-2 mb-2">
@@ -461,7 +461,7 @@ export const SalesForceAutomationPage: React.FC<SalesForceAutomationPageProps> =
 
             {/* Right Column: Clean Pure Hero Visual (No content above, inside, or below, with increased height) */}
             <div className="lg:col-span-6 relative">
-              <div className="relative h-[380px] sm:h-[460px] lg:h-[520px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-100 group">
+              <div className="relative aspect-[16/9] sm:aspect-auto sm:h-[460px] lg:h-[520px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-100 group">
                 <img
                   src="/images/fsm_smart_dispatch_map.jpg"
                   alt="Sales Force Automation Route Telematics Map"
@@ -553,11 +553,11 @@ export const SalesForceAutomationPage: React.FC<SalesForceAutomationPageProps> =
                     }`} />
                   </div>
 
-                  <div className="font-semibold text-xs truncate text-slate-900">
+                  <div className="font-semibold text-xs break-words leading-tight text-slate-900">
                     {stage.shortLabel}
                   </div>
 
-                  <div className={`text-[11px] truncate mt-1 ${
+                  <div className={`text-[11px] break-words leading-tight mt-1 ${
                     isActive
                       ? 'text-[#0077B6] font-semibold'
                       : isPast
@@ -602,7 +602,7 @@ export const SalesForceAutomationPage: React.FC<SalesForceAutomationPageProps> =
               
               <div 
                 onClick={() => handleRouteNav('next')}
-                className="lg:col-span-7 relative h-72 sm:h-96 lg:h-[430px] rounded-3xl overflow-hidden border border-slate-200/90 shadow-xl group cursor-pointer bg-slate-950 select-none"
+                className="lg:col-span-7 relative aspect-[16/9] sm:aspect-auto sm:h-96 lg:h-[430px] rounded-3xl overflow-hidden border border-slate-200/90 shadow-xl group cursor-pointer bg-slate-950 select-none"
                 title="Click image to advance to next stage (pauses 5s)"
               >
                 <AnimatePresence mode="wait">
@@ -856,7 +856,7 @@ export const SalesForceAutomationPage: React.FC<SalesForceAutomationPageProps> =
                   </div>
 
                   {/* Volume Batch Quick-Select Preset Tiles */}
-                  <div className="grid grid-cols-4 gap-2">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                     {[
                       { cases: 15, label: 'Retail', sub: 'Min Order' },
                       { cases: 45, label: 'Standard', sub: 'Beat Avg' },
@@ -1279,7 +1279,7 @@ export const SalesForceAutomationPage: React.FC<SalesForceAutomationPageProps> =
                   </div>
 
                   {/* Operational Image Visual */}
-                  <div className="relative h-40 sm:h-44 rounded-2xl overflow-hidden border border-slate-200/80 shadow-md group bg-slate-950 select-none">
+                  <div className="relative aspect-[16/9] sm:aspect-auto sm:h-44 rounded-2xl overflow-hidden border border-slate-200/80 shadow-md group bg-slate-950 select-none">
                     <img
                       src={impactDimensions[activeImpactTab].image}
                       alt={impactDimensions[activeImpactTab].title}

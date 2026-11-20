@@ -555,7 +555,7 @@ export const ForecastingAndPlanningPage: React.FC<ForecastingAndPlanningPageProp
           {activeTab === 'comparison' && (
             <div className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
               <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
+                <table className="w-full min-w-[640px] text-left border-collapse">
                   <thead>
                     <tr className="border-b border-slate-200 bg-slate-50 text-[11px] font-extrabold uppercase tracking-wider text-slate-600">
                       <th className="py-4 px-6">Architectural Dimension</th>

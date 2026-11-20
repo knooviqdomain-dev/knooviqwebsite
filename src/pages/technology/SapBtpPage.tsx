@@ -116,11 +116,12 @@ export const SapBtpPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) => 
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Cinematic Blue & White Enterprise Architecture)
+          (DESKTOP FULL-SCREEN BACKGROUND, MOBILE SHOWCASE CARD)
           ========================================================================= */}
       <section className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 overflow-hidden bg-black text-white">
         
-        {/* Full-Bleed 16:9 Panoramic Image - Zero Cropping on Subject */}
-        <div className="absolute inset-0 z-0">
+        {/* Desktop-Only Full-Bleed 16:9 Background Image (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
           <img
             src="/images/sap_btp_hero_team_handshake.png"
             alt="Enterprise Agility via SAP Business Technology Platform"
@@ -129,9 +130,15 @@ export const SapBtpPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) => 
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
 
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-2xl lg:max-w-xl space-y-6 relative">
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -170,6 +177,18 @@ export const SapBtpPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) => 
                 <span>Event-Driven Fabric</span>
               </div>
             </motion.div>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                <img
+                  src="/images/sap_btp_hero_team_handshake.png"
+                  alt="Enterprise Agility via SAP Business Technology Platform"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -355,11 +374,11 @@ export const SapBtpPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) => 
                 className="rounded-2xl bg-white border border-blue-100 shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col justify-between"
               >
                 <div>
-                  <div className="h-44 w-full relative overflow-hidden">
+                  <div className="aspect-[16/9] w-full relative overflow-hidden bg-slate-900">
                     <img
                       src={srv.image}
                       alt={srv.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover object-center select-none"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
                     <span className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-white/90 backdrop-blur-md border border-blue-200 text-[10px] font-mono text-blue-800 font-bold uppercase">

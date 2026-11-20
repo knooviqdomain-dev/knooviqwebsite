@@ -476,16 +476,16 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
 
 
             {/* Key Architecture Badges */}
-            <div className="pt-6 border-t border-white/15 grid grid-cols-3 gap-4 text-xs max-w-xl backdrop-blur-[2px]">
-              <div>
+            <div className="pt-6 border-t border-white/15 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-xs max-w-xl backdrop-blur-[2px]">
+              <div className="min-w-0">
                 <span className="font-mono text-[#00A3E0] font-bold block text-sm sm:text-base">Single-Tenant</span>
                 <span className="text-slate-300 mt-0.5 block">Zero Contention</span>
               </div>
-              <div>
+              <div className="min-w-0">
                 <span className="font-mono text-[#00A3E0] font-bold block text-sm sm:text-base">Sovereign</span>
                 <span className="text-slate-300 mt-0.5 block">Data Residency</span>
               </div>
-              <div>
+              <div className="min-w-0">
                 <span className="font-mono text-[#00A3E0] font-bold block text-sm sm:text-base">Line-Rate</span>
                 <span className="text-slate-300 mt-0.5 block">Sub-ms Latency</span>
               </div>
@@ -751,7 +751,7 @@ export const PrivateCloudPage: React.FC<PrivateCloudPageProps> = ({ onOpenContac
           </div>
 
           <div className="overflow-x-auto rounded-2xl border border-slate-200 dark:border-white/10 shadow-sm bg-white dark:bg-[#091528]">
-            <table className="w-full text-left text-xs sm:text-sm">
+            <table className="w-full min-w-[640px] text-left text-xs sm:text-sm">
               <thead className="bg-slate-50 dark:bg-[#0B1528] text-slate-700 dark:text-slate-300 font-mono text-[11px] uppercase tracking-wider border-b border-slate-200 dark:border-white/10">
                 <tr>
                   <th className="py-4 px-5">Workload Category</th>

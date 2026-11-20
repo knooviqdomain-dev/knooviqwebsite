@@ -183,7 +183,7 @@ export const AutomationStudioPage: React.FC<AutomationStudioPageProps> = ({ onOp
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div className="product-typography font-sora min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (With New High-Res Image & Professional Animation)
@@ -608,26 +608,28 @@ export const AutomationStudioPage: React.FC<AutomationStudioPageProps> = ({ onOp
                             </div>
 
                             {/* Interactive Mapping Table */}
-                            <div className="relative p-4 rounded-xl bg-white/5 border border-purple-500/30 overflow-hidden space-y-2.5">
-                              <div className="grid grid-cols-3 gap-2 text-[10px] font-mono text-slate-400 border-b border-slate-800 pb-2 font-bold">
-                                <div>EXCEL COLUMN</div>
-                                <div>MAPPING DIRECTION</div>
-                                <div>SAP FIELD (SCREEN)</div>
-                              </div>
-                              <div className="grid grid-cols-3 gap-2 text-[11px] font-mono text-slate-200 py-1 items-center">
-                                <div className="text-emerald-400 font-bold">Column A: DOC_DATE</div>
-                                <div className="text-purple-400 text-xs">--------&gt;</div>
-                                <div className="text-cyan-300">BKPF-BLDAT (Header)</div>
-                              </div>
-                              <div className="grid grid-cols-3 gap-2 text-[11px] font-mono text-slate-200 py-1 items-center">
-                                <div className="text-emerald-400 font-bold">Column B: COMP_CODE</div>
-                                <div className="text-purple-400 text-xs">--------&gt;</div>
-                                <div className="text-cyan-300">BKPF-BUKRS (Header)</div>
-                              </div>
-                              <div className="grid grid-cols-3 gap-2 text-[11px] font-mono text-slate-200 py-1 items-center">
-                                <div className="text-emerald-400 font-bold">Column C: GL_ACCT</div>
-                                <div className="text-purple-400 text-xs">--------&gt;</div>
-                                <div className="text-cyan-300">BSEG-HKONT (Item Loop)</div>
+                            <div className="relative p-4 rounded-xl bg-white/5 border border-purple-500/30 overflow-x-auto space-y-2.5">
+                              <div className="min-w-[420px] space-y-2.5">
+                                <div className="grid grid-cols-3 gap-2 text-[10px] font-mono text-slate-400 border-b border-slate-800 pb-2 font-bold">
+                                  <div>EXCEL COLUMN</div>
+                                  <div>MAPPING DIRECTION</div>
+                                  <div>SAP FIELD (SCREEN)</div>
+                                </div>
+                                <div className="grid grid-cols-3 gap-2 text-[11px] font-mono text-slate-200 py-1 items-center">
+                                  <div className="text-emerald-400 font-bold">Column A: DOC_DATE</div>
+                                  <div className="text-purple-400 text-xs">--------&gt;</div>
+                                  <div className="text-cyan-300">BKPF-BLDAT (Header)</div>
+                                </div>
+                                <div className="grid grid-cols-3 gap-2 text-[11px] font-mono text-slate-200 py-1 items-center">
+                                  <div className="text-emerald-400 font-bold">Column B: COMP_CODE</div>
+                                  <div className="text-purple-400 text-xs">--------&gt;</div>
+                                  <div className="text-cyan-300">BKPF-BUKRS (Header)</div>
+                                </div>
+                                <div className="grid grid-cols-3 gap-2 text-[11px] font-mono text-slate-200 py-1 items-center">
+                                  <div className="text-emerald-400 font-bold">Column C: GL_ACCT</div>
+                                  <div className="text-purple-400 text-xs">--------&gt;</div>
+                                  <div className="text-cyan-300">BSEG-HKONT (Item Loop)</div>
+                                </div>
                               </div>
                             </div>
                           </motion.div>

@@ -12,13 +12,15 @@ import {
   Layers,
   Clock,
   HardDrive,
+  Database,
   DollarSign,
   Calendar,
   Check,
   Building2,
   Boxes,
   Sparkles,
-  FileCheck
+  FileCheck,
+  Wallet
 } from 'lucide-react';
 
 interface TechnologyPageProps {
@@ -28,70 +30,94 @@ interface TechnologyPageProps {
 export const CloudTransformationPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) => {
 
   return (
-    <div className="min-h-screen bg-white text-slate-800 selection:bg-blue-600 selection:text-white font-sans antialiased">
+    <div className="transformation-typography font-sora min-h-screen bg-white text-slate-800 selection:bg-blue-600 selection:text-white antialiased">
 
       {/* =========================================================================
-          SECTION 1: MULTI-HYPERSCALER ORBITAL HERO (SAP FIORI STYLE)
+          SECTION 1: HERO (DESKTOP FULL-SCREEN BACKGROUND, MOBILE SHOWCASE CARD)
           ========================================================================= */}
-      <section className="relative w-full min-h-[620px] sm:min-h-[660px] lg:min-h-[720px] flex items-center pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 overflow-hidden bg-black">
+      <section className="relative w-full min-h-[620px] sm:min-h-[660px] lg:min-h-[720px] flex items-center pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 overflow-hidden bg-black text-white">
 
-        {/* Full-Box Background Image — 100% Clear with Zero Dark Blue Shade */}
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {/* Desktop-Only Full-Bleed Background Image (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
-            src="/images/cloud_modernization_sovereign_hyperscalers_hero.jpg"
+            src="/images/cloud_modernization_sovereign_hyperscalers_hero_clean.jpg"
             alt="Navigate Enterprise Cloud with Sovereign Hyperscalers & RISE with SAP"
-            className="w-full h-full object-cover select-none"
-            style={{ objectPosition: 'center 35px' }}
+            className="w-full h-full object-cover object-center select-none"
           />
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
 
-        {/* Top Hairline Accent */}
-        <div className="absolute top-0 left-0 right-0 z-10 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="max-w-2xl space-y-4 relative">
-            {/* Seamless Soft Contrast Aura — ensures text is 100% legible against the bright cloud glow with Zero Box and Zero dark blue shade */}
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+          <div className="max-w-2xl space-y-6 relative">
+
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55 }}
-              className="space-y-3"
+              transition={{ duration: 0.5 }}
             >
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-xs font-mono font-bold uppercase tracking-wider text-[#00A3E0] shadow-md">
                 <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
                 <Cloud className="w-3.5 h-3.5 text-[#00A3E0]" />
                 <span>HYPERSCALER CLOUD ADVISORY &bull; RISE WITH SAP</span>
               </div>
-
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
-                Navigate Enterprise Cloud with <br />
-                <span className="text-[#00A3E0] drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-                  Sovereign Hyperscalers &amp; RISE
-                </span>
-              </h1>
-
-              <p className="text-base sm:text-lg text-slate-100 font-medium leading-relaxed max-w-xl pt-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
-                Modernize legacy on-premise SAP workloads onto certified Microsoft Azure, AWS, or Google Cloud environments. Minimize cutover downtime, optimize cloud FinOps spend, and implement resilient multi-region architectures.
-              </p>
             </motion.div>
 
-            {/* Enterprise Trust Indicators (Ultra-Clean, Matching SAP Fiori Reference) */}
-            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }} className="pt-2 flex flex-wrap items-center gap-3">
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-white/20 text-xs font-mono font-bold text-blue-200 shadow-md">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12]"
+            >
+              Navigate Enterprise Cloud with <br />
+              <span className="text-[#00A3E0]">
+                Sovereign Hyperscalers &amp; RISE
+              </span>
+            </motion.h1>
+
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed max-w-xl"
+            >
+              Modernize legacy on-premise SAP workloads onto certified Microsoft Azure, AWS, or Google Cloud environments. Minimize cutover downtime, optimize cloud FinOps spend, and implement resilient multi-region architectures.
+            </motion.p>
+
+            {/* Enterprise Trust Indicators */}
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="pt-1 flex flex-wrap items-center gap-3">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-blue-200 shadow-md">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
                 <span>Sub-4h Near-Zero Downtime</span>
               </div>
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-white/20 text-xs font-mono font-bold text-emerald-200 shadow-md">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-emerald-200 shadow-md">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>99.99% Multi-Zone SLA</span>
               </div>
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-black/60 backdrop-blur-md border border-white/20 text-xs font-mono font-bold text-sky-200 shadow-md">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-sky-200 shadow-md">
                 <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
                 <span>40% Less FinOps Cloud TCO</span>
               </div>
             </motion.div>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                <img
+                  src="/images/cloud_modernization_sovereign_hyperscalers_hero_clean.jpg"
+                  alt="Navigate Enterprise Cloud with Sovereign Hyperscalers & RISE with SAP"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
+              </div>
+            </div>
 
           </div>
         </div>
@@ -119,11 +145,11 @@ export const CloudTransformationPage: React.FC<TechnologyPageProps> = ({ onOpenC
             </div>
 
             <div className="lg:col-span-5">
-              <div className="rounded-2xl overflow-hidden border border-blue-200 shadow-xl relative h-64 sm:h-72 bg-slate-950 group">
+              <div className="rounded-2xl overflow-hidden border border-blue-200 shadow-xl relative h-auto aspect-[16/10] sm:aspect-auto sm:h-72 bg-slate-950 group">
                 <img
                   src="/images/sap_cloud_rise_vs_grow_vs_iaas.png"
                   alt="RISE with SAP vs. GROW with SAP vs. Customer-Managed IaaS Governance"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain sm:object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-950/85 via-transparent to-transparent flex items-end p-5">
                   <span className="text-xs font-mono text-white bg-blue-950/90 px-3 py-1 rounded border border-blue-400/40 shadow-sm">
@@ -134,14 +160,15 @@ export const CloudTransformationPage: React.FC<TechnologyPageProps> = ({ onOpenC
             </div>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-blue-200 bg-white shadow-md">
-            <table className="w-full text-left border-collapse text-xs sm:text-sm">
+          {/* Desktop Table (100% Untouched on Desktop) */}
+          <div className="hidden md:block overflow-x-auto rounded-2xl border border-blue-200 bg-white shadow-md">
+            <table className="w-full min-w-[640px] text-left border-collapse text-xs sm:text-sm">
               <thead>
                 <tr className="border-b border-blue-200 bg-blue-950 text-white font-mono text-xs">
-                  <th className="p-4 sm:p-5 font-bold uppercase">Commercial Dimension</th>
-                  <th className="p-4 sm:p-5 font-bold uppercase text-blue-300">RISE with SAP (Private Cloud)</th>
-                  <th className="p-4 sm:p-5 font-bold uppercase text-white">GROW with SAP (Public Cloud)</th>
-                  <th className="p-4 sm:p-5 font-bold uppercase text-slate-300">Customer IaaS (BYOL)</th>
+                  <th className="p-4 sm:p-5 font-bold uppercase min-w-[140px] break-words">Commercial Dimension</th>
+                  <th className="p-4 sm:p-5 font-bold uppercase text-blue-300 min-w-[170px] break-words">RISE with SAP (Private Cloud)</th>
+                  <th className="p-4 sm:p-5 font-bold uppercase text-white min-w-[170px] break-words">GROW with SAP (Public Cloud)</th>
+                  <th className="p-4 sm:p-5 font-bold uppercase text-slate-300 min-w-[160px] break-words">Customer IaaS (BYOL)</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-blue-100 text-slate-700">
@@ -187,6 +214,148 @@ export const CloudTransformationPage: React.FC<TechnologyPageProps> = ({ onOpenC
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          {/* Mobile-Only Responsive Comparison Cards (100% Content Visible with Zero Cut-Off) */}
+          <div className="md:hidden space-y-4">
+            <div className="rounded-2xl border border-blue-200 bg-white p-4 shadow-sm space-y-3">
+              <div className="flex items-center gap-2 pb-2 border-b border-blue-100">
+                <div className="w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0" />
+                <h4 className="font-bold text-sm text-blue-950 uppercase font-mono">Target Enterprise</h4>
+              </div>
+              <div className="space-y-2 text-xs">
+                <div className="p-3 rounded-xl bg-blue-50/80 border border-blue-100">
+                  <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-700 mb-1">
+                    RISE with SAP (Private Cloud)
+                  </div>
+                  <div className="text-blue-950 font-medium">Large enterprises with existing complex ERP customizations</div>
+                </div>
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                  <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-700 mb-1">
+                    GROW with SAP (Public Cloud)
+                  </div>
+                  <div className="text-slate-700">Mid-market or new subsidiaries adopting standard processes</div>
+                </div>
+                <div className="p-3 rounded-xl bg-slate-50/60 border border-slate-200">
+                  <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 mb-1">
+                    Customer IaaS (BYOL)
+                  </div>
+                  <div className="text-slate-600">Legacy organizations retaining perpetual license rights</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-blue-200 bg-white p-4 shadow-sm space-y-3">
+              <div className="flex items-center gap-2 pb-2 border-b border-blue-100">
+                <div className="w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0" />
+                <h4 className="font-bold text-sm text-blue-950 uppercase font-mono">Custom Code Freedom</h4>
+              </div>
+              <div className="space-y-2 text-xs">
+                <div className="p-3 rounded-xl bg-blue-50/80 border border-blue-100">
+                  <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-700 mb-1">
+                    RISE with SAP (Private Cloud)
+                  </div>
+                  <div className="text-blue-700 font-semibold font-mono">
+                    High &bull; Supports Developer Extensibility (RAP) + Side-by-Side BTP
+                  </div>
+                </div>
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                  <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-700 mb-1">
+                    GROW with SAP (Public Cloud)
+                  </div>
+                  <div className="text-blue-700 font-semibold font-mono">
+                    Strict Clean Core &bull; Only Key User & Side-by-Side BTP
+                  </div>
+                </div>
+                <div className="p-3 rounded-xl bg-slate-50/60 border border-slate-200">
+                  <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 mb-1">
+                    Customer IaaS (BYOL)
+                  </div>
+                  <div className="text-slate-600">Unrestricted classic ABAP modifications (High Technical Debt)</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-blue-200 bg-white p-4 shadow-sm space-y-3">
+              <div className="flex items-center gap-2 pb-2 border-b border-blue-100">
+                <div className="w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0" />
+                <h4 className="font-bold text-sm text-blue-950 uppercase font-mono">Upgrade Governance</h4>
+              </div>
+              <div className="space-y-2 text-xs">
+                <div className="p-3 rounded-xl bg-blue-50/80 border border-blue-100">
+                  <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-700 mb-1">
+                    RISE with SAP (Private Cloud)
+                  </div>
+                  <div className="text-slate-700">Customer-scheduled within 5-year support release window</div>
+                </div>
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                  <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-700 mb-1">
+                    GROW with SAP (Public Cloud)
+                  </div>
+                  <div className="text-blue-700 font-semibold font-mono">Continuous automatic bi-annual upgrades by SAP</div>
+                </div>
+                <div className="p-3 rounded-xl bg-slate-50/60 border border-slate-200">
+                  <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 mb-1">
+                    Customer IaaS (BYOL)
+                  </div>
+                  <div className="text-amber-700">100% Customer responsibility &bull; High upgrade project costs</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-blue-200 bg-white p-4 shadow-sm space-y-3">
+              <div className="flex items-center gap-2 pb-2 border-b border-blue-100">
+                <div className="w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0" />
+                <h4 className="font-bold text-sm text-blue-950 uppercase font-mono">Contract &amp; SLA Single Point</h4>
+              </div>
+              <div className="space-y-2 text-xs">
+                <div className="p-3 rounded-xl bg-blue-50/80 border border-blue-100">
+                  <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-700 mb-1">
+                    RISE with SAP (Private Cloud)
+                  </div>
+                  <div className="text-blue-700 font-semibold font-mono">One Contract: SAP manages hyperscaler infrastructure</div>
+                </div>
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                  <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-700 mb-1">
+                    GROW with SAP (Public Cloud)
+                  </div>
+                  <div className="text-blue-700 font-semibold font-mono">Pure SaaS subscription with guaranteed 99.9% SLA</div>
+                </div>
+                <div className="p-3 rounded-xl bg-slate-50/60 border border-slate-200">
+                  <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 mb-1">
+                    Customer IaaS (BYOL)
+                  </div>
+                  <div className="text-slate-600">Separate contracts: SAP software + Hyperscaler cloud bill</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-blue-200 bg-white p-4 shadow-sm space-y-3">
+              <div className="flex items-center gap-2 pb-2 border-b border-blue-100">
+                <div className="w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0" />
+                <h4 className="font-bold text-sm text-blue-950 uppercase font-mono">Bundled BTP Credits (CPEA)</h4>
+              </div>
+              <div className="space-y-2 text-xs">
+                <div className="p-3 rounded-xl bg-blue-50/80 border border-blue-100">
+                  <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-700 mb-1">
+                    RISE with SAP (Private Cloud)
+                  </div>
+                  <div className="text-blue-700 font-semibold font-mono">Included Cloud Platform Enterprise Agreement credits</div>
+                </div>
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                  <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-700 mb-1">
+                    GROW with SAP (Public Cloud)
+                  </div>
+                  <div className="text-blue-700 font-semibold font-mono">Included SAP Build &amp; Integration Suite allowances</div>
+                </div>
+                <div className="p-3 rounded-xl bg-slate-50/60 border border-slate-200">
+                  <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500 mb-1">
+                    Customer IaaS (BYOL)
+                  </div>
+                  <div className="text-slate-600">Must be procured separately</div>
+                </div>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -337,13 +506,13 @@ export const CloudTransformationPage: React.FC<TechnologyPageProps> = ({ onOpenC
             </div>
 
             <div className="lg:col-span-5">
-              <div className="rounded-2xl overflow-hidden border border-blue-200 shadow-xl relative h-64 sm:h-72 bg-slate-950 group">
+              <div className="rounded-2xl overflow-hidden border border-blue-200 shadow-xl relative h-auto aspect-[16/10] sm:aspect-auto sm:h-72 bg-slate-950 group">
                 <img
                   src="/images/sap_cloud_cutover_downtime_benchmarks.png"
                   alt="Enterprise Cutover Downtime Benchmark Matrix & Datacenter Execution"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-950/85 via-transparent to-transparent flex items-end p-5">
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-950/70 via-transparent to-transparent flex items-end p-5 pointer-events-none">
                   <span className="text-xs font-mono text-white bg-blue-950/90 px-3 py-1 rounded border border-blue-400/40 shadow-sm">
                     Sub-4h Near-Zero Downtime Execution
                   </span>
@@ -352,15 +521,15 @@ export const CloudTransformationPage: React.FC<TechnologyPageProps> = ({ onOpenC
             </div>
           </div>
 
-          {/* Benchmark Table */}
-          <div className="overflow-x-auto rounded-2xl border border-blue-200 bg-white shadow-md mb-8">
-            <table className="w-full text-left border-collapse text-xs sm:text-sm">
+          {/* Benchmark Table - Desktop (100% Untouched on Desktop) */}
+          <div className="hidden md:block overflow-x-auto rounded-2xl border border-blue-200 bg-white shadow-md mb-8">
+            <table className="w-full min-w-[640px] text-left border-collapse text-xs sm:text-sm">
               <thead>
                 <tr className="border-b border-blue-200 bg-blue-950 text-white font-mono text-xs">
-                  <th className="p-4 sm:p-5 font-bold uppercase">Database Size Tier</th>
-                  <th className="p-4 sm:p-5 font-bold uppercase text-blue-300">SAP NZDT (Near-Zero Downtime)</th>
-                  <th className="p-4 sm:p-5 font-bold uppercase text-white">DMO with Preread</th>
-                  <th className="p-4 sm:p-5 font-bold uppercase text-slate-300">Classic DMO Move</th>
+                  <th className="p-4 sm:p-5 font-bold uppercase min-w-[140px] break-words">Database Size Tier</th>
+                  <th className="p-4 sm:p-5 font-bold uppercase text-blue-300 min-w-[170px] break-words">SAP NZDT (Near-Zero Downtime)</th>
+                  <th className="p-4 sm:p-5 font-bold uppercase text-white min-w-[160px] break-words">DMO with Preread</th>
+                  <th className="p-4 sm:p-5 font-bold uppercase text-slate-300 min-w-[160px] break-words">Classic DMO Move</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-blue-100 text-slate-700">
@@ -393,6 +562,93 @@ export const CloudTransformationPage: React.FC<TechnologyPageProps> = ({ onOpenC
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          {/* Benchmark Cards - Mobile (100% Content Visible with Zero Cut-Off) */}
+          <div className="md:hidden space-y-4 mb-8">
+            <div className="rounded-2xl border border-blue-200 bg-white p-4 shadow-sm space-y-3">
+              <div className="flex items-center gap-2 pb-2 border-b border-blue-100">
+                <Database className="w-4 h-4 text-blue-600 shrink-0" />
+                <h4 className="font-bold text-sm text-blue-950 font-mono">Small (1 &ndash; 2 TB)</h4>
+              </div>
+              <div className="space-y-2 text-xs">
+                <div className="p-3 rounded-xl bg-blue-50/80 border border-blue-100 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-700">SAP NZDT:</span>
+                  <span className="text-blue-700 font-semibold font-mono">Sub-2 Hours Cutover</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-600">DMO with Preread:</span>
+                  <span className="text-slate-700 font-mono">4 &ndash; 6 Hours Window</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-slate-50/60 border border-slate-200 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500">Classic DMO Move:</span>
+                  <span className="text-slate-600 font-mono">10 &ndash; 14 Hours Window</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-blue-200 bg-white p-4 shadow-sm space-y-3">
+              <div className="flex items-center gap-2 pb-2 border-b border-blue-100">
+                <Database className="w-4 h-4 text-blue-600 shrink-0" />
+                <h4 className="font-bold text-sm text-blue-950 font-mono">Medium (4 &ndash; 8 TB)</h4>
+              </div>
+              <div className="space-y-2 text-xs">
+                <div className="p-3 rounded-xl bg-blue-50/80 border border-blue-100 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-700">SAP NZDT:</span>
+                  <span className="text-blue-700 font-semibold font-mono">Sub-4 Hours Cutover</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-600">DMO with Preread:</span>
+                  <span className="text-slate-700 font-mono">8 &ndash; 12 Hours Window</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-slate-50/60 border border-slate-200 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500">Classic DMO Move:</span>
+                  <span className="text-slate-600 font-mono">18 &ndash; 24 Hours Window</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-blue-200 bg-white p-4 shadow-sm space-y-3">
+              <div className="flex items-center gap-2 pb-2 border-b border-blue-100">
+                <Database className="w-4 h-4 text-blue-600 shrink-0" />
+                <h4 className="font-bold text-sm text-blue-950 font-mono">Large (10 &ndash; 20 TB)</h4>
+              </div>
+              <div className="space-y-2 text-xs">
+                <div className="p-3 rounded-xl bg-blue-50/80 border border-blue-100 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-700">SAP NZDT:</span>
+                  <span className="text-blue-700 font-semibold font-mono">Sub-6 Hours Cutover</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-600">DMO with Preread:</span>
+                  <span className="text-slate-700 font-mono">14 &ndash; 18 Hours Window</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-slate-50/60 border border-slate-200 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500">Classic DMO Move:</span>
+                  <span className="text-amber-700 font-mono">28 &ndash; 36 Hours Window</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-blue-200 bg-white p-4 shadow-sm space-y-3">
+              <div className="flex items-center gap-2 pb-2 border-b border-blue-100">
+                <Database className="w-4 h-4 text-blue-600 shrink-0" />
+                <h4 className="font-bold text-sm text-blue-950 font-mono">Ultra-VLDB (50+ TB)</h4>
+              </div>
+              <div className="space-y-2 text-xs">
+                <div className="p-3 rounded-xl bg-blue-50/80 border border-blue-100 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-700">SAP NZDT:</span>
+                  <span className="text-blue-700 font-semibold font-mono">Sub-8 Hours (CDC)</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-600">DMO with Preread:</span>
+                  <span className="text-slate-700 font-mono">24 &ndash; 30 Hours Window</span>
+                </div>
+                <div className="p-2.5 rounded-xl bg-slate-50/60 border border-slate-200 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-500">Classic DMO Move:</span>
+                  <span className="text-rose-700 font-mono text-[11px]">Exceeds window</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Pre-Cutover Go/No-Go Gates (Pure Information) */}
@@ -590,7 +846,7 @@ export const CloudTransformationPage: React.FC<TechnologyPageProps> = ({ onOpenC
 
             <div className="p-6 rounded-2xl bg-white border border-blue-100 shadow-sm hover:border-blue-300 hover:shadow-md transition-all space-y-3">
               <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-700">
-                <ShieldCheck className="w-5 h-5" />
+                <Wallet className="w-5 h-5" />
               </div>
               <h3 className="text-base font-bold text-blue-950">Reserved Instances & Savings Plans</h3>
               <p className="text-xs text-slate-600 leading-relaxed">

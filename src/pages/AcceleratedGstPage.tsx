@@ -371,7 +371,7 @@ export const AcceleratedGstPage: React.FC<AcceleratedGstPageProps> = ({ onOpenCo
   const currentArchLayer = sapArchLayers.find(l => l.id === activeArchLayer) || sapArchLayers[2];
 
   return (
-    <div className="bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden font-sans">
+    <div className="product-typography font-sora bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
 
       {/* =========================================================================
           SECTION 1 — HERO: Intelligent Accelerated GST Solution
@@ -423,7 +423,7 @@ export const AcceleratedGstPage: React.FC<AcceleratedGstPageProps> = ({ onOpenCo
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed font-sans mb-8 max-w-xl"
               >
-                Accelerated GST Solution brings invoice data, validation, reconciliation and return preparation into a connected digital workflow—helping businesses improve operational visibility and manage GST processes with greater consistency.
+                Accelerated GST Solution brings invoice data, validation, reconciliation and return preparation into a connected digital workflow, helping businesses improve operational visibility and manage GST processes with greater consistency.
               </motion.p>
 
 
@@ -455,7 +455,7 @@ export const AcceleratedGstPage: React.FC<AcceleratedGstPageProps> = ({ onOpenCo
               {/* Backdrop Glow */}
               <div className="absolute -inset-2 bg-gradient-to-r from-blue-600/20 via-cyan-500/20 to-indigo-600/20 rounded-3xl blur-2xl opacity-50 pointer-events-none" />
 
-              <div className="relative w-full max-w-[620px] h-[440px] sm:h-[480px] lg:h-[530px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 dark:border-cyan-500/30 bg-[#020817] group">
+              <div className="relative w-full max-w-[620px] aspect-[16/9] sm:aspect-auto sm:h-[480px] lg:h-[530px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 dark:border-cyan-500/30 bg-[#020817] group">
                 <img
                   src="/images/gst_hero_visual.jpg"
                   alt="Intelligent SAP GST Solution & Compliance"
@@ -534,7 +534,7 @@ export const AcceleratedGstPage: React.FC<AcceleratedGstPageProps> = ({ onOpenCo
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               
               {/* Left Column: Stage Photo (5 Cols) */}
-              <div className="lg:col-span-5 relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 h-72 sm:h-80 shadow-lg bg-slate-900 group">
+              <div className="lg:col-span-5 relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 aspect-[16/9] sm:aspect-auto sm:h-80 shadow-lg bg-slate-900 group">
                 <img
                   src={journeyStages[activeJourneyIndex].image}
                   alt={journeyStages[activeJourneyIndex].title}
@@ -645,7 +645,7 @@ export const AcceleratedGstPage: React.FC<AcceleratedGstPageProps> = ({ onOpenCo
                       {cap.details.map((d, dIdx) => (
                         <div key={dIdx} className="flex items-center gap-2 text-xs font-mono text-slate-700 dark:text-slate-300">
                           <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
-                          <span className="truncate">{d}</span>
+                          <span className="break-words leading-tight">{d}</span>
                         </div>
                       ))}
                     </div>

@@ -169,7 +169,7 @@ export const AccountsPayableIntelligencePage: React.FC<AccountsPayableIntelligen
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div className="product-typography font-sora min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
       
       {/* =========================================================================
           1. HERO SECTION (With Single Main Widescreen Visual + Executive Layout)
@@ -652,21 +652,21 @@ export const AccountsPayableIntelligencePage: React.FC<AccountsPayableIntelligen
                           </div>
 
                           {/* 3-Way Match Verification Triad */}
-                          <div className="grid grid-cols-3 gap-2 text-center">
-                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1">
+                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-2 text-center">
+                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1 min-w-0">
                               <div className="text-[10px] font-mono text-emerald-400 font-bold uppercase">Record A</div>
-                              <div className="text-xs font-bold text-white font-display">Purchase Order</div>
-                              <div className="text-[9px] text-slate-400 font-sans">Authorized terms</div>
+                              <div className="text-xs sm:text-sm font-bold text-white font-display break-words">Purchase Order</div>
+                              <div className="text-[10px] sm:text-[9px] text-slate-400 font-sans">Authorized terms</div>
                             </div>
-                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1">
+                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1 min-w-0">
                               <div className="text-[10px] font-mono text-emerald-400 font-bold uppercase">Record B</div>
-                              <div className="text-xs font-bold text-white font-display">Goods Receipt</div>
-                              <div className="text-[9px] text-slate-400 font-sans">Warehouse verified</div>
+                              <div className="text-xs sm:text-sm font-bold text-white font-display break-words">Goods Receipt</div>
+                              <div className="text-[10px] sm:text-[9px] text-slate-400 font-sans">Warehouse verified</div>
                             </div>
-                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1">
+                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1 min-w-0">
                               <div className="text-[10px] font-mono text-emerald-400 font-bold uppercase">Record C</div>
-                              <div className="text-xs font-bold text-white font-display">Vendor Invoice</div>
-                              <div className="text-[9px] text-slate-400 font-sans">Billed amounts</div>
+                              <div className="text-xs sm:text-sm font-bold text-white font-display break-words">Vendor Invoice</div>
+                              <div className="text-[10px] sm:text-[9px] text-slate-400 font-sans">Billed amounts</div>
                             </div>
                           </div>
 

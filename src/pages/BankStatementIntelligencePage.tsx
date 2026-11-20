@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Building2, 
+  Landmark,
+  FileText, 
   CheckCircle2, 
   ArrowRight, 
   Sparkles, 
@@ -23,7 +25,6 @@ import {
   Database,
   Server,
   ScanLine,
-  FileText,
   ChevronLeft,
   ChevronRight
 } from 'lucide-react';
@@ -86,7 +87,7 @@ export const BankStatementIntelligencePage: React.FC<BankStatementIntelligencePa
       name: 'Bank Statement',
       subtitle: 'Raw Document Intake',
       desc: 'Ingest multi-page PDF statements, scanned images, and password-protected e-statements across global financial institutions.',
-      icon: Building2,
+      icon: Landmark,
       badge: 'Omnichannel Ingestion'
     },
     {
@@ -208,7 +209,7 @@ export const BankStatementIntelligencePage: React.FC<BankStatementIntelligencePa
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div className="product-typography font-sora min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
       
       {/* =========================================================================
           1. HERO SECTION (With Long Widescreen Visual & Executive Typography)
@@ -570,7 +571,7 @@ export const BankStatementIntelligencePage: React.FC<BankStatementIntelligencePa
                           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                             <div className="p-3.5 rounded-xl bg-white/5 border border-cyan-500/30 space-y-2">
                               <div className="flex items-center justify-between">
-                                <Building2 className="h-4 w-4 text-cyan-400" />
+                                <FileText className="h-4 w-4 text-cyan-400" />
                                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
                               </div>
                               <div className="text-xs font-bold text-white font-display">Global PDF Statements</div>
@@ -691,21 +692,21 @@ export const BankStatementIntelligencePage: React.FC<BankStatementIntelligencePa
                           </div>
 
                           {/* 3-Way Match Verification Triad */}
-                          <div className="grid grid-cols-3 gap-2 text-center">
-                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1">
+                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-2 text-center">
+                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1 min-w-0">
                               <div className="text-[10px] font-mono text-emerald-400 font-bold uppercase">Balance A</div>
-                              <div className="text-xs font-bold text-white font-display">Opening Ledger</div>
-                              <div className="text-[9px] text-slate-400 font-sans">Prior close verified</div>
+                              <div className="text-xs sm:text-sm font-bold text-white font-display break-words">Opening Ledger</div>
+                              <div className="text-[10px] sm:text-[9px] text-slate-400 font-sans">Prior close verified</div>
                             </div>
-                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1">
+                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1 min-w-0">
                               <div className="text-[10px] font-mono text-emerald-400 font-bold uppercase">Net Activity</div>
-                              <div className="text-xs font-bold text-white font-display">Credits - Debits</div>
-                              <div className="text-[9px] text-slate-400 font-sans">Line arithmetic check</div>
+                              <div className="text-xs sm:text-sm font-bold text-white font-display break-words">Credits - Debits</div>
+                              <div className="text-[10px] sm:text-[9px] text-slate-400 font-sans">Line arithmetic check</div>
                             </div>
-                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1">
+                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1 min-w-0">
                               <div className="text-[10px] font-mono text-emerald-400 font-bold uppercase">Balance B</div>
-                              <div className="text-xs font-bold text-white font-display">Closing Statement</div>
-                              <div className="text-[9px] text-slate-400 font-sans">Perfect zero drift</div>
+                              <div className="text-xs sm:text-sm font-bold text-white font-display break-words">Closing Statement</div>
+                              <div className="text-[10px] sm:text-[9px] text-slate-400 font-sans">Perfect zero drift</div>
                             </div>
                           </div>
 

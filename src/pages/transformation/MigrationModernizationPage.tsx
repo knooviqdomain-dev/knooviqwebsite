@@ -23,7 +23,12 @@ import {
   ChevronDown,
   Globe,
   Sliders,
-  Sparkles
+  Sparkles,
+  FileCode2,
+  Users,
+  Boxes,
+  UserCheck,
+  Compass
 } from 'lucide-react';
 
 interface MigrationModernizationPageProps {
@@ -90,64 +95,91 @@ export const MigrationModernizationPage: React.FC<MigrationModernizationPageProp
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300">
+    <div className="transformation-typography font-sora min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300">
       
       {/* =========================================================================
-      {/* =========================================================================
-          SECTION 1: HERO — ECC → S/4HANA TRANSFORMATION (SAP FIORI STYLE)
+          SECTION 1: HERO — ECC → S/4HANA TRANSFORMATION (DESKTOP FULL-SCREEN BACKGROUND, MOBILE SHOWCASE CARD)
           ========================================================================= */}
-      <section className="relative w-full min-h-[620px] sm:min-h-[660px] lg:min-h-[720px] flex items-center pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 overflow-hidden bg-black">
-        
-        {/* Full-Bleed Background Visual — 100% Clear with Zero Dark Blue Shade */}
-        <div className="absolute inset-0 z-0">
+      <section className="relative w-full min-h-[620px] sm:min-h-[660px] lg:min-h-[720px] flex items-center pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 overflow-hidden bg-black text-white">
+
+        {/* Desktop-Only Full-Bleed 16:9 Background Image (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
           <img
             src="/images/migration_hero_clean.jpg"
             alt="Legacy SAP ECC transforming into modern S/4HANA architecture"
             className="w-full h-full object-cover object-top lg:object-[80%_top] brightness-105 contrast-105 select-none"
           />
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
-        {/* Top Hairline Accent */}
-        <div className="absolute top-0 left-0 right-0 z-10 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-3xl space-y-4 relative">
-            {/* Seamless Soft Contrast Aura — ensures text is 100% legible with zero dark blue filter */}
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="space-y-3">
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#00A3E0] text-xs font-mono font-bold tracking-wider uppercase shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
                 <Sparkles className="w-3.5 h-3.5 text-[#00A3E0]" />
                 <span>SAP PLATINUM PARTNER • ENTERPRISE CORE TRANSFORMATION</span>
               </div>
-
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
-                SAP ECC to <br />
-                <span className="text-[#00A3E0]">
-                  S/4HANA Transformation
-                </span>
-              </h1>
-
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl pt-1">
-                Transform your legacy SAP ECC 6.0 system into a modern, intelligent S/4HANA digital core. Eliminate legacy technical debt, unlock real-time columnar analytics, and future-proof your business before the 2027 deadline.
-              </p>
             </motion.div>
 
-            {/* Enterprise Trust Indicators (Ultra-Clean, Matching SAP Fiori Reference) */}
-            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }} className="pt-2 flex flex-wrap items-center gap-3">
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-emerald-200">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]"
+            >
+              SAP ECC to <br />
+              <span className="text-[#00A3E0]">
+                S/4HANA Transformation
+              </span>
+            </motion.h1>
+
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-xl pt-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
+            >
+              Transform your legacy SAP ECC 6.0 system into a modern, intelligent S/4HANA digital core. Eliminate legacy technical debt, unlock real-time columnar analytics, and future-proof your business before the 2027 deadline.
+            </motion.p>
+
+            {/* Enterprise Trust Indicators */}
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="pt-1 flex flex-wrap items-center gap-3">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-emerald-200 shadow-md">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>100% ECC 2027 Compliant</span>
               </div>
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-sky-200">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-sky-200 shadow-md">
                 <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
                 <span>&lt; 12 Hours Downtime</span>
               </div>
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-blue-200">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-blue-200 shadow-md">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
                 <span>Clean Core ABAP Migration</span>
               </div>
             </motion.div>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                <img
+                  src="/images/migration_hero_clean.jpg"
+                  alt="Legacy SAP ECC transforming into modern S/4HANA architecture"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -208,7 +240,7 @@ export const MigrationModernizationPage: React.FC<MigrationModernizationPageProp
                   <img
                     src="/images/migration_pathways_clean.jpg"
                     alt="ECC to S/4HANA Modernization Blueprint Overview"
-                    className="w-full h-80 sm:h-96 lg:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-auto aspect-[16/10] sm:aspect-auto sm:h-96 lg:h-[440px] object-contain sm:object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent pointer-events-none" />
                   <div className="absolute bottom-6 left-6 right-6">
@@ -257,13 +289,13 @@ export const MigrationModernizationPage: React.FC<MigrationModernizationPageProp
                 desc: 'Mainstream support ends December 31, 2027. Delaying projects leads to talent scarcity, emergency contractor rates, and up to a 2% annual extended support surcharge.'
               },
               {
-                icon: Cpu,
+                icon: FileCode2,
                 color: 'text-rose-500 bg-rose-500/10 border-rose-500/20',
                 title: '2. Custom Code (Z-Object) Technical Debt',
                 desc: 'Decades of unoptimized ABAP code, obsolete SELECT * database queries, and direct updates to deprecated tables trigger catastrophic syntax crashes in S/4HANA.'
               },
               {
-                icon: Database,
+                icon: Users,
                 color: 'text-blue-500 bg-blue-500/10 border-blue-500/20',
                 title: '3. Customer Vendor Integration (CVI) Roadblocks',
                 desc: 'In S/4HANA, separate Customer and Vendor records are replaced by unified Business Partners (BP). Unreconciled duplicate master keys halt conversion during pre-checks.'
@@ -275,13 +307,13 @@ export const MigrationModernizationPage: React.FC<MigrationModernizationPageProp
                 desc: 'Unoptimized multi-terabyte database conversions can take 72+ hours, forcing facility shutdowns, lost sales orders, and missed customer shipping deadlines.'
               },
               {
-                icon: Server,
+                icon: Boxes,
                 color: 'text-purple-500 bg-purple-500/10 border-purple-500/20',
                 title: '5. Incompatible Third-Party ISV Add-ons',
                 desc: 'Custom banking plugins, tax engines (e.g. Vertex, Avalara), and shipping integrations must be validated for S/4HANA kernel compatibility before production switchover.'
               },
               {
-                icon: ShieldCheck,
+                icon: UserCheck,
                 color: 'text-emerald-500 bg-emerald-500/10 border-emerald-500/20',
                 title: '6. User Adoption & Process Resistance',
                 desc: 'Shifting from legacy SAP GUI transactions to modern SAP Fiori Launchpad requires structured change management and automated role mapping to prevent productivity dips.'
@@ -325,7 +357,7 @@ export const MigrationModernizationPage: React.FC<MigrationModernizationPageProp
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                icon: Workflow,
+                icon: Compass,
                 title: 'Strategic Pathway Selection',
                 desc: 'Objective evaluation of Greenfield vs Brownfield vs Selective Data Transition based on custom code debt, business restructuring needs, and budget.'
               },
@@ -335,12 +367,12 @@ export const MigrationModernizationPage: React.FC<MigrationModernizationPageProp
                 desc: 'Single-step database migration directly from Oracle, MS SQL, or DB2 to SAP HANA in-memory architecture via SUM DMO.'
               },
               {
-                icon: Cpu,
+                icon: FileCode2,
                 title: 'Automated Code Remediation',
                 desc: 'Scanning entire codebases with ABAP Test Cockpit (ATC) and applying automated quick-fixes to remediate syntax issues in bulk.'
               },
               {
-                icon: ShieldCheck,
+                icon: Clock,
                 title: 'Near-Zero Downtime (NZDT)',
                 desc: 'Shadow system processing and delta replay technology to compress production cutover downtime to under 12 hours.'
               }
@@ -364,7 +396,7 @@ export const MigrationModernizationPage: React.FC<MigrationModernizationPageProp
                 </span>
                 <h3 className="text-2xl font-black text-white">Full-Scope SAP Readiness Check 2.0 Audit</h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                  Before executing any technical steps, we deploy SAP Readiness Check 2.0 to scan your ECC system. We analyze financial data consistency, sizing requirements, Simplification Items, and Business Partner readiness—generating an executive transformation roadmap in under 14 days.
+                  Before executing any technical steps, we deploy SAP Readiness Check 2.0 to scan your ECC system. We analyze financial data consistency, sizing requirements, Simplification Items, and Business Partner readiness, generating an executive transformation roadmap in under 14 days.
                 </p>
                 <div className="flex flex-wrap gap-2 pt-2">
                   {['CVI Pre-Checks', 'HANA DB Sizing', 'Custom Code ATC', 'Add-on Compatibility'].map((tag, t) => (
@@ -378,7 +410,7 @@ export const MigrationModernizationPage: React.FC<MigrationModernizationPageProp
                 <img
                   src="/images/sap_s4hana_transformation_hero.jpg"
                   alt="Knooviq SAP S/4HANA Transformation Capability"
-                  className="rounded-2xl border border-slate-700/60 object-cover w-full h-56"
+                  className="rounded-2xl border border-slate-700/60 object-contain sm:object-cover w-full h-auto aspect-[16/10] sm:aspect-auto sm:h-56"
                 />
               </div>
             </div>
@@ -508,7 +540,7 @@ export const MigrationModernizationPage: React.FC<MigrationModernizationPageProp
                   <img
                     src="/images/migration_pathways_diagram.jpg"
                     alt="SAP Technologies and Tooling Architecture Diagram"
-                    className="w-full h-80 object-contain rounded-2xl border border-slate-800 bg-slate-950"
+                    className="w-full h-auto aspect-[16/10] sm:aspect-auto sm:h-80 object-contain rounded-2xl border border-slate-800 bg-slate-950"
                   />
                 </div>
 
@@ -572,7 +604,7 @@ export const MigrationModernizationPage: React.FC<MigrationModernizationPageProp
               Tangible Business Outcomes
             </h2>
             <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
-              Transitioning to SAP S/4HANA is not merely an IT upgrade—it drives fundamental improvements across financial performance, supply chain agility, and operating costs.
+              Transitioning to SAP S/4HANA is not merely an IT upgrade; it drives fundamental improvements across financial performance, supply chain agility, and operating costs.
             </p>
           </div>
 

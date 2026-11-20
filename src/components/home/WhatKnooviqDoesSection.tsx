@@ -58,7 +58,7 @@ export const WhatKnooviqDoesSection: React.FC<WhatKnooviqDoesSectionProps> = ({ 
             </div>
 
             {/* Narrative Subtext (Original Content) */}
-            <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl font-normal">
+            <p className="text-[#102A43] sm:text-slate-600 dark:text-slate-200 text-[15.5px] sm:text-lg leading-[1.6] max-w-xl font-sora font-normal text-left [word-spacing:normal] tracking-normal">
               We empower modern enterprises to streamline operations, eliminate technical debt, and build agile digital backbones through proven clean core methodologies, agentic AI, and sovereign cloud engineering.
             </p>
 

@@ -91,7 +91,7 @@ export const AutomationSuitePage: React.FC<AutomationSuitePageProps> = ({ onOpen
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div className="product-typography font-sora min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
       
       {/* =========================================================================
           1. HERO SECTION

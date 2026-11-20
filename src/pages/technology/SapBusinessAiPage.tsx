@@ -475,8 +475,8 @@ export const SapBusinessAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact
           ========================================================================= */}
       <section className="relative w-full min-h-screen flex flex-col justify-between pt-28 sm:pt-32 pb-0 overflow-hidden bg-black text-white border-b border-white/10">
         
-        {/* Full-Screen Edge-to-Edge Hero Image Background (100% Clear with Zero Dark Blue Shade) */}
-        <div className="absolute inset-0 z-0">
+        {/* Desktop-Only Full-Screen Edge-to-Edge Hero Image Background (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
           <img
             src="/images/sap_business_ai_hero_bright.jpg"
             alt="Modern SAP Business AI Enterprise Operations Center"
@@ -485,14 +485,19 @@ export const SapBusinessAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
 
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
+
         {/* Hero Content: Left Column for Text, Right Column Open for Full-Screen Operations Visual */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 my-auto w-full py-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             
             {/* Left Column: Heading, Proposition, Chips (7 cols) */}
             <div className="lg:col-span-7 space-y-6 relative">
-              {/* Seamless Soft Contrast Aura — ensures text is 100% legible with Zero Box and Zero dark blue shade */}
-              <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+              {/* Seamless Soft Contrast Aura — ensures text is 100% legible on Desktop */}
+              <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
               
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-mono font-bold uppercase tracking-wider text-[#00A3E0] shadow-md">
                 <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
@@ -512,7 +517,7 @@ export const SapBusinessAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact
               </p>
 
               {/* Telemetry Chips */}
-              <div className="grid grid-cols-3 gap-3 pt-1">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
                 <div className="p-3 rounded-xl bg-[#050D1C]/80 border border-white/10 backdrop-blur-md shadow-sm">
                   <div className="text-xs font-mono text-[#00A3E0] font-bold">COPILOT</div>
                   <div className="text-sm font-bold text-white mt-0.5">Joule AI</div>
@@ -527,6 +532,18 @@ export const SapBusinessAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact
                   <div className="text-xs font-mono text-cyan-300 font-bold">CLEAN CORE</div>
                   <div className="text-sm font-bold text-white mt-0.5">Direct BTP</div>
                   <div className="text-[11px] text-slate-400">Universal Ledger Aware</div>
+                </div>
+              </div>
+
+              {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+              <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+                <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                  <img
+                    src="/images/sap_business_ai_hero_bright.jpg"
+                    alt="Modern SAP Business AI Enterprise Operations Center"
+                    className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                    loading="eager"
+                  />
                 </div>
               </div>
 
@@ -586,20 +603,22 @@ export const SapBusinessAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact
           </div>
 
           {/* Centered Sleek Joule Copilot Console */}
-          <div className="rounded-2xl border-2 border-[#00A3E0]/50 bg-[#08152B]/95 shadow-2xl overflow-hidden backdrop-blur-xl">
+          <div className="rounded-2xl border-2 border-[#00A3E0]/50 bg-[#08152B]/95 shadow-2xl overflow-hidden backdrop-blur-xl w-full max-w-full">
             
             {/* Console Header Bar */}
-            <div className="px-5 py-3.5 bg-[#050D1C] border-b border-white/10 flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-rose-500/80" />
-                <div className="w-3 h-3 rounded-full bg-amber-500/80" />
-                <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                <span className="ml-2 font-mono text-xs text-slate-300 flex items-center gap-1.5">
-                  <Bot className="w-3.5 h-3.5 text-[#00A3E0]" />
-                  <span>SAP Joule Copilot &bull; Production Tenant Console</span>
+            <div className="px-3.5 sm:px-5 py-3 sm:py-3.5 bg-[#050D1C] border-b border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+              <div className="flex items-center gap-2 min-w-0 flex-1">
+                <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80 shrink-0" />
+                <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80 shrink-0" />
+                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 shrink-0" />
+                <span className="ml-1 sm:ml-2 font-mono text-xs text-slate-300 flex items-center gap-1.5 break-words min-w-0">
+                  <Bot className="w-3.5 h-3.5 text-[#00A3E0] shrink-0" />
+                  <span className="break-words whitespace-normal leading-tight font-medium">
+                    SAP Joule Copilot &bull; Production Tenant Console
+                  </span>
                 </span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 shrink-0 self-start sm:self-auto">
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-[11px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   LIVE CDS GROUNDING
@@ -607,37 +626,37 @@ export const SapBusinessAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact
               </div>
             </div>
 
-            {/* Scenario Selector Tabs */}
-            <div className="px-4 pt-3.5 pb-2.5 border-b border-white/5 flex gap-2 overflow-x-auto custom-scrollbar">
+            {/* Scenario Selector Tabs — 2x2 Grid on Mobile, Flex Row on Desktop */}
+            <div className="px-3 sm:px-4 pt-3 pb-3 border-b border-white/10 grid grid-cols-2 sm:flex sm:flex-wrap gap-2 w-full">
               {JOULE_SCENARIOS.map((sc) => (
                 <button
                   key={sc.id}
                   onClick={() => setActiveScenarioId(sc.id)}
-                  className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
+                  className={`px-3 sm:px-4 py-2.5 rounded-xl text-xs font-semibold text-center transition-all flex items-center justify-center break-words ${
                     activeScenarioId === sc.id
-                      ? 'bg-[#00A3E0] text-white shadow-md font-bold'
-                      : 'bg-white/5 text-slate-300 hover:text-white hover:bg-white/10'
+                      ? 'bg-[#00A3E0] text-white shadow-md shadow-[#00A3E0]/30 font-bold border border-cyan-400/40 ring-1 ring-cyan-400/50'
+                      : 'bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 border border-white/5'
                   }`}
                 >
-                  {sc.tabLabel}
+                  <span className="leading-tight">{sc.tabLabel}</span>
                 </button>
               ))}
             </div>
 
             {/* Simulated Conversation Body */}
-            <div className="p-6 space-y-5 min-h-[380px] flex flex-col justify-between">
+            <div className="p-3.5 sm:p-6 space-y-4 sm:space-y-5 min-h-[360px] flex flex-col justify-between w-full max-w-full overflow-hidden">
               
-              <div className="space-y-4">
+              <div className="space-y-4 w-full max-w-full overflow-hidden">
                 {/* User Prompt Bubble */}
-                <div className="flex items-start gap-3 justify-end">
-                  <div className="max-w-xl bg-[#0F2244] border border-[#00A3E0]/30 rounded-2xl rounded-tr-sm p-4 text-xs text-slate-100 shadow-md">
-                    <div className="text-[10px] font-mono text-cyan-300 font-bold mb-1.5 flex items-center gap-1.5">
-                      <Users2 className="w-3.5 h-3.5" />
-                      <span>{currentScenario.role} ({currentScenario.module})</span>
+                <div className="flex items-start gap-2.5 sm:gap-3 justify-end w-full">
+                  <div className="w-full max-w-full sm:max-w-xl bg-[#0F2244] border border-[#00A3E0]/30 rounded-2xl rounded-tr-sm p-3.5 sm:p-4 text-xs text-slate-100 shadow-md break-words min-w-0 flex-1">
+                    <div className="text-[10px] font-mono text-cyan-300 font-bold mb-1.5 flex items-center gap-1.5 flex-wrap">
+                      <Users2 className="w-3.5 h-3.5 shrink-0" />
+                      <span className="break-words">{currentScenario.role} ({currentScenario.module})</span>
                     </div>
-                    <p className="font-medium text-slate-200 text-sm">{currentScenario.prompt}</p>
+                    <p className="font-medium text-slate-200 text-xs sm:text-sm leading-relaxed break-words">{currentScenario.prompt}</p>
                   </div>
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-xs font-bold shrink-0 shadow">
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-xs font-bold shrink-0 shadow mt-0.5">
                     U
                   </div>
                 </div>
@@ -650,43 +669,45 @@ export const SapBusinessAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.25 }}
-                    className="flex items-start gap-3"
+                    className="flex items-start gap-2.5 sm:gap-3 w-full min-w-0 overflow-hidden"
                   >
-                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#00A3E0] to-blue-700 flex items-center justify-center text-white shrink-0 shadow-lg shadow-[#00A3E0]/30">
-                      <Sparkles className="w-4 h-4" />
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-br from-[#00A3E0] to-blue-700 flex items-center justify-center text-white shrink-0 shadow-lg shadow-[#00A3E0]/30 mt-0.5">
+                      <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
                     
-                    <div className="flex-1 bg-white/5 border border-white/10 rounded-2xl rounded-tl-sm p-5 space-y-3.5">
-                      <div className="flex items-center justify-between gap-2 border-b border-white/10 pb-2.5">
-                        <span className="text-sm font-bold text-[#00A3E0] flex items-center gap-1.5">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                          <span>{currentScenario.responseHeadline}</span>
+                    <div className="flex-1 min-w-0 bg-white/5 border border-white/10 rounded-2xl rounded-tl-sm p-3.5 sm:p-5 space-y-3.5 overflow-hidden break-words">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 border-b border-white/10 pb-2.5">
+                        <span className="text-xs sm:text-sm font-bold text-[#00A3E0] flex items-center gap-1.5 break-words min-w-0">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                          <span className="break-words">{currentScenario.responseHeadline}</span>
                         </span>
-                        <span className="text-[10px] font-mono font-bold text-emerald-300 bg-emerald-950/60 px-2.5 py-0.5 rounded border border-emerald-500/30">
+                        <span className="text-[10px] font-mono font-bold text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30 w-fit shrink-0 self-start sm:self-auto">
                           {currentScenario.confidence} MATCH
                         </span>
                       </div>
 
-                      <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
+                      <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal break-words">
                         {currentScenario.responseBody}
                       </p>
 
-                      <div className="p-3 rounded-lg bg-black/40 border border-white/10 text-xs font-mono text-slate-300 flex items-center gap-2">
+                      <div className="p-2.5 sm:p-3 rounded-lg bg-black/40 border border-white/10 text-[11px] sm:text-xs font-mono text-slate-300 flex items-center gap-2 overflow-hidden">
                         <Database className="w-4 h-4 text-cyan-400 shrink-0" />
-                        <span className="truncate">{currentScenario.erpCitation}</span>
+                        <span className="break-all min-w-0 flex-1">{currentScenario.erpCitation}</span>
                       </div>
 
-                      {/* Recommended Autonomous Actions */}
-                      <div className="pt-1">
-                        <div className="text-[11px] font-mono uppercase font-bold text-slate-400 mb-2 flex items-center gap-1.5">
-                          <CornerDownRight className="w-3.5 h-3.5 text-[#00A3E0]" />
-                          <span>Automated Action Payload:</span>
+                      {/* Recommended Autonomous Actions / Steps */}
+                      <div className="pt-2 overflow-hidden space-y-2">
+                        <div className="text-[11px] font-mono uppercase font-bold text-cyan-300 flex items-center gap-1.5">
+                          <CornerDownRight className="w-3.5 h-3.5 text-[#00A3E0] shrink-0" />
+                          <span>Automated Execution Steps ({currentScenario.actionTitle}):</span>
                         </div>
-                        <div className="space-y-1.5">
+                        <div className="space-y-2">
                           {currentScenario.actionDetails.map((action, idx) => (
-                            <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-slate-200">
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#00A3E0]" />
-                              <span>{action}</span>
+                            <div key={idx} className="flex items-start gap-2.5 p-2.5 rounded-xl bg-black/40 border border-white/10 text-xs sm:text-sm text-slate-200 break-words shadow-sm">
+                              <span className="px-1.5 py-0.5 rounded-md bg-[#00A3E0]/20 border border-[#00A3E0]/40 text-[10px] font-mono font-bold text-cyan-300 shrink-0 mt-0.5">
+                                Step {idx + 1}
+                              </span>
+                              <span className="break-words flex-1 min-w-0 leading-relaxed">{action}</span>
                             </div>
                           ))}
                         </div>
@@ -699,14 +720,14 @@ export const SapBusinessAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact
 
               {/* Simulator Bottom Input Mock */}
               <div className="pt-3">
-                <div className="p-3 rounded-xl bg-black/50 border border-white/10 flex items-center justify-between text-xs text-slate-400">
-                  <span className="flex items-center gap-2 italic">
-                    <Terminal className="w-4 h-4 text-[#00A3E0]" />
-                    <span>Prompt Joule in natural language or execute automated flow...</span>
+                <div className="p-2.5 sm:p-3 rounded-xl bg-black/50 border border-white/10 flex items-center justify-between text-xs text-slate-400 gap-2">
+                  <span className="flex items-center gap-2 italic min-w-0 truncate">
+                    <Terminal className="w-4 h-4 text-[#00A3E0] shrink-0" />
+                    <span className="truncate text-[11px] sm:text-xs">Prompt Joule in natural language or execute automated flow...</span>
                   </span>
                   <button 
                     onClick={() => onOpenContact('Joule Copilot Trial')}
-                    className="p-2 rounded-lg bg-[#00A3E0] text-white hover:bg-cyan-500 transition-colors shadow"
+                    className="p-2 rounded-lg bg-[#00A3E0] text-white hover:bg-cyan-500 transition-colors shadow shrink-0"
                     title="Simulate prompt"
                   >
                     <Send className="w-4 h-4" />
@@ -740,8 +761,8 @@ export const SapBusinessAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact
             </p>
           </div>
 
-          {/* Domain Filter Tabs */}
-          <div className="flex justify-center gap-2 mb-10 overflow-x-auto pb-2">
+          {/* Domain Filter Tabs — Responsive 2-Col Grid on Mobile, Flex Row on Desktop */}
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-center gap-2 mb-10 w-full">
             {[
               { key: 'all', label: 'All Scenarios', icon: <Boxes className="w-4 h-4" /> },
               { key: 'finance', label: 'Finance & Treasury', icon: <CreditCard className="w-4 h-4" /> },
@@ -755,14 +776,14 @@ export const SapBusinessAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact
               <button
                 key={tab.key}
                 onClick={() => setActiveCatalogDomain(tab.key as any)}
-                className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                className={`flex items-center justify-center sm:justify-start gap-2 px-3 sm:px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all text-center sm:text-left ${
                   activeCatalogDomain === tab.key
                     ? 'bg-[#00A3E0] text-white shadow-md shadow-[#00A3E0]/25'
                     : 'bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-white/10'
                 }`}
               >
                 {tab.icon}
-                <span>{tab.label}</span>
+                <span className="leading-tight">{tab.label}</span>
               </button>
             ))}
           </div>
@@ -851,8 +872,8 @@ export const SapBusinessAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact
             </p>
           </div>
 
-          {/* Department Tabs */}
-          <div className="flex justify-center gap-2 mb-8 overflow-x-auto pb-2">
+          {/* Department Tabs — Responsive 2x2 Grid on Mobile, Flex Row on Desktop */}
+          <div className="grid grid-cols-2 sm:flex sm:justify-center gap-2 mb-8 w-full">
             {[
               { key: 'finance', label: 'Finance & Treasury', icon: <CreditCard className="w-4 h-4" /> },
               { key: 'supply-chain', label: 'Supply Chain & Logistics', icon: <ShoppingBag className="w-4 h-4" /> },
@@ -862,14 +883,14 @@ export const SapBusinessAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact
               <button
                 key={tab.key}
                 onClick={() => setActiveLobTab(tab.key as any)}
-                className={`flex items-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all ${
+                className={`flex items-center justify-center sm:justify-start gap-2 px-3 sm:px-5 py-3 rounded-xl text-xs sm:text-sm font-bold transition-all text-center sm:text-left ${
                   activeLobTab === tab.key
                     ? 'bg-[#00A3E0] text-white shadow-lg shadow-[#00A3E0]/25'
                     : 'bg-white dark:bg-white/5 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10'
                 }`}
               >
                 {tab.icon}
-                <span>{tab.label}</span>
+                <span className="leading-tight">{tab.label}</span>
               </button>
             ))}
           </div>
@@ -901,7 +922,7 @@ export const SapBusinessAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             
             {/* Left Card: Traditional Legacy Bottleneck */}
-            <div className="p-8 rounded-2xl border-2 border-rose-200 dark:border-rose-900/30 bg-rose-50/40 dark:bg-rose-950/10 flex flex-col justify-between">
+            <div className="p-5 sm:p-8 rounded-2xl border-2 border-rose-200 dark:border-rose-900/30 bg-rose-50/40 dark:bg-rose-950/10 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800">
@@ -933,7 +954,7 @@ export const SapBusinessAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact
             </div>
 
             {/* Right Card: SAP Business AI Autonomous Flow */}
-            <div className="p-8 rounded-2xl border-2 border-[#00A3E0]/40 bg-gradient-to-br from-sky-50/70 via-white to-sky-50/30 dark:from-[#091B33] dark:via-[#071324] dark:to-[#071324] flex flex-col justify-between shadow-xl">
+            <div className="p-5 sm:p-8 rounded-2xl border-2 border-[#00A3E0]/40 bg-gradient-to-br from-sky-50/70 via-white to-sky-50/30 dark:from-[#091B33] dark:via-[#071324] dark:to-[#071324] flex flex-col justify-between shadow-xl">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#00A3E0] text-white shadow-sm">
@@ -953,7 +974,7 @@ export const SapBusinessAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact
               </div>
 
               {/* Quantified Value KPI Strip */}
-              <div className="grid grid-cols-3 gap-2 pt-4 border-t border-sky-200 dark:border-white/10">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-4 border-t border-sky-200 dark:border-white/10">
                 {currentLob.kpis.map((kpi, idx) => (
                   <div key={idx} className="p-2.5 rounded-xl bg-white dark:bg-white/5 border border-sky-200/60 dark:border-white/10 text-center">
                     <CheckCircle2 className="w-4 h-4 text-emerald-500 mx-auto mb-1" />
@@ -1156,16 +1177,16 @@ export const SapBusinessAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact
                     <span className="text-[10px] bg-cyan-950 text-cyan-200 px-2 py-0.5 rounded border border-cyan-800">Prompt Shield & Reranker</span>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-2 text-center text-xs">
-                    <div className="p-2 rounded bg-black/40 border border-white/5">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center text-xs">
+                    <div className="p-2.5 rounded bg-black/40 border border-white/5 min-w-0">
                       <span className="text-slate-300 block font-semibold">Guardrails</span>
                       <span className="text-[10px] text-slate-500">Harm & PII Filter</span>
                     </div>
-                    <div className="p-2 rounded bg-black/40 border border-white/5">
+                    <div className="p-2.5 rounded bg-black/40 border border-white/5 min-w-0">
                       <span className="text-slate-300 block font-semibold">Context Augment</span>
                       <span className="text-[10px] text-slate-500">HANA Vector DB</span>
                     </div>
-                    <div className="p-2 rounded bg-black/40 border border-white/5">
+                    <div className="p-2.5 rounded bg-black/40 border border-white/5 min-w-0">
                       <span className="text-slate-300 block font-semibold">Telemetry & Metering</span>
                       <span className="text-[10px] text-slate-500">AI Unit Token Tracking</span>
                     </div>
@@ -1176,7 +1197,7 @@ export const SapBusinessAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact
                   &darr; Zero-Data-Retention Sovereign Inference &darr;
                 </div>
 
-                <div className="p-4 rounded-xl bg-black/40 border border-white/10 grid grid-cols-4 gap-2 text-center text-xs font-bold text-slate-200">
+                <div className="p-4 rounded-xl bg-black/40 border border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs font-bold text-slate-200">
                   <div className="p-2 rounded bg-white/5 border border-white/5">OpenAI GPT-4o</div>
                   <div className="p-2 rounded bg-white/5 border border-white/5">Claude 3.5 Sonnet</div>
                   <div className="p-2 rounded bg-white/5 border border-white/5">Mistral Large</div>

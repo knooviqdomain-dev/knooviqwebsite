@@ -690,8 +690,8 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                         <StepIcon className="w-4 h-4" />
                       </div>
                       <div className="min-w-0">
-                        <div className="text-xs font-black truncate">{step.label}</div>
-                        <div className={`text-[10px] font-semibold truncate ${isSelected ? 'text-sky-100' : 'text-slate-500'}`}>{step.sublabel}</div>
+                        <div className="text-xs font-black break-words leading-tight">{step.label}</div>
+                        <div className={`text-[10px] font-semibold break-words leading-tight ${isSelected ? 'text-sky-100' : 'text-slate-500'}`}>{step.sublabel}</div>
                       </div>
                     </button>
                   );

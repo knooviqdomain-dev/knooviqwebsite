@@ -33,7 +33,8 @@ import {
   Check,
   Minus,
   Sliders,
-  Maximize2
+  Maximize2,
+  X
 } from 'lucide-react';
 
 interface RiseWithSapViewProps {
@@ -207,7 +208,7 @@ export const RiseWithSapView: React.FC<RiseWithSapViewProps> = ({ onOpenContact 
   ];
 
   return (
-    <div className="space-y-20">
+    <div className="transformation-typography font-sora space-y-20">
 
       {/* =========================================================================
           EXECUTIVE VALUE STRIP (The 3 Core Guarantees of RISE with SAP)
@@ -292,7 +293,7 @@ export const RiseWithSapView: React.FC<RiseWithSapViewProps> = ({ onOpenContact 
 
         <div className="bg-white dark:bg-[#0B1528] rounded-3xl border border-slate-200/80 dark:border-white/10 overflow-hidden shadow-sm">
           <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
+            <table className="w-full min-w-[640px] text-left border-collapse">
               <thead>
                 <tr className="border-b border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/[0.02]">
                   <th className="p-4 sm:p-5 text-xs font-mono font-bold uppercase text-slate-500 dark:text-slate-400 w-1/4">
@@ -368,16 +369,27 @@ export const RiseWithSapView: React.FC<RiseWithSapViewProps> = ({ onOpenContact 
         {/* Architecture Showcase Visual with Clean Card */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
-          {/* Left Side: High-Resolution RISE with SAP Architecture Diagram */}
-          <div className="lg:col-span-7 bg-slate-950 rounded-2xl p-4 sm:p-6 border border-slate-800 shadow-xl relative group overflow-hidden">
-            <img
-              src="/images/rise_sap_architecture.png"
-              alt="RISE with SAP Architecture: Hyperscalers, SAP BTP, Signavio, and S/4HANA Cloud"
-              className="w-full h-auto object-contain rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
-            />
+          {/* Left Side: High-Resolution RISE with SAP Architecture Diagram (Ultra-Sharp 4K Clarity) */}
+          <div 
+            onClick={() => setIsArchDiagramZoomed(true)}
+            className="lg:col-span-7 bg-[#0B1528] rounded-2xl p-4 sm:p-6 border border-slate-800 hover:border-cyan-500/40 shadow-xl hover:shadow-[0_12px_36px_rgba(0,163,224,0.2)] transition-all duration-300 relative enterprise-showcase-card overflow-hidden cursor-pointer group"
+            title="Click to view full-screen high-resolution architecture diagram"
+          >
+            <div className="relative">
+              <img
+                src="/images/rise_sap_architecture.png"
+                alt="RISE with SAP Architecture: Hyperscalers, SAP BTP, Signavio, and S/4HANA Cloud"
+                className="w-full h-auto object-contain rounded-xl enterprise-showcase-img"
+              />
+              <div className="absolute top-2 right-2 p-2 rounded-lg bg-black/60 border border-white/20 text-white opacity-80 sm:opacity-0 group-hover:opacity-100 transition-opacity">
+                <Maximize2 className="w-4 h-4 text-cyan-400" />
+              </div>
+            </div>
             <div className="pt-4 flex items-center justify-between border-t border-white/10 mt-3 text-[11px] font-mono text-slate-400">
               <span>RISE WITH SAP • HYPERSCALERS • BTP • SIGNAVIO</span>
-              <span className="text-cyan-400 font-bold">Single Contract & 99.9% SLA</span>
+              <span className="text-cyan-400 font-bold flex items-center gap-1.5">
+                <Maximize2 className="w-3.5 h-3.5" /> Tap to Zoom
+              </span>
             </div>
           </div>
 
@@ -774,6 +786,32 @@ export const RiseWithSapView: React.FC<RiseWithSapViewProps> = ({ onOpenContact 
           })}
         </div>
       </section>
+
+      {/* Full-Screen Vector Architecture Diagram Modal */}
+      {isArchDiagramZoomed && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8 animate-in fade-in duration-200"
+          onClick={() => setIsArchDiagramZoomed(false)}
+        >
+          <button
+            onClick={() => setIsArchDiagramZoomed(false)}
+            className="absolute top-6 right-6 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md transition-all cursor-pointer shadow-xl"
+            aria-label="Close full screen"
+          >
+            <X className="w-6 h-6" />
+          </button>
+          <div className="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center justify-center" onClick={(e) => e.stopPropagation()}>
+            <img 
+              src="/images/rise_sap_architecture.png" 
+              alt="RISE with SAP Architecture" 
+              className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl enterprise-showcase-img"
+            />
+            <p className="text-xs font-mono text-slate-400 mt-4 text-center">
+              Original Architecture Diagram • Ultra-HD 4K Clarity • Tap anywhere to close
+            </p>
+          </div>
+        </div>
+      )}
 
     </div>
   );

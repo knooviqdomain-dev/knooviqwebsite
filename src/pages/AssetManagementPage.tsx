@@ -257,7 +257,7 @@ export const AssetManagementPage: React.FC<AssetManagementPageProps> = ({ onOpen
   );
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#00A3E0] selection:text-white overflow-hidden">
+    <div className="product-typography font-sora min-h-screen bg-white text-slate-900 selection:bg-[#00A3E0] selection:text-white overflow-hidden">
       
       {/* =========================================================================
           SECTION 1 — HERO: INDUSTRIAL CYBER-PHYSICAL TELEMETRY COMMAND CENTER (LIGHT)
@@ -332,9 +332,9 @@ export const AssetManagementPage: React.FC<AssetManagementPageProps> = ({ onOpen
 
             </div>
 
-            {/* Right Column: Clean Pure Hero Visual (No content above, inside, or below, with increased height) */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative h-[380px] sm:h-[460px] lg:h-[520px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-100 group">
+            {/* Right Column: Clean Pure Hero Visual (No content above, inside, or below, with responsive 3:2 aspect ratio) */}
+            <div className="lg:col-span-5 relative flex items-center justify-center">
+              <div className="relative w-full aspect-[3/2] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-950 group">
                 <img
                   src="/images/asset_management_hero.png"
                   alt="Enterprise Asset Management Intelligent Operations and Predictive Telemetry"
@@ -485,7 +485,7 @@ export const AssetManagementPage: React.FC<AssetManagementPageProps> = ({ onOpen
                           <span className="text-xs text-slate-400 font-medium">Stage {stage.stepNum}</span>
                         </div>
 
-                        <h3 className={`text-sm font-semibold mt-1.5 truncate ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>
+                        <h3 className={`text-sm font-semibold mt-1.5 break-words leading-tight ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>
                           {stage.title}
                         </h3>
 
@@ -508,7 +508,7 @@ export const AssetManagementPage: React.FC<AssetManagementPageProps> = ({ onOpen
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -12 }}
                   transition={{ duration: 0.3 }}
-                  className="rounded-2xl bg-white border border-slate-200 p-6 sm:p-7 shadow-lg space-y-6"
+                  className="rounded-2xl bg-white border border-slate-200 p-4 sm:p-7 shadow-lg space-y-6"
                 >
                   {/* Top Bar */}
                   <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100">
@@ -532,7 +532,7 @@ export const AssetManagementPage: React.FC<AssetManagementPageProps> = ({ onOpen
                   </div>
 
                   {/* Visual Showcase — The Knooviq Story aesthetic with frosted badges */}
-                  <div className="relative h-64 sm:h-72 rounded-2xl overflow-hidden border border-slate-200/90 shadow-xl group bg-slate-950 select-none">
+                  <div className="relative aspect-[16/9] sm:aspect-auto sm:h-72 rounded-2xl overflow-hidden border border-slate-200/90 shadow-xl group bg-slate-950 select-none">
                     <img
                       src={activeStage.image}
                       alt={activeStage.title}
@@ -592,12 +592,12 @@ export const AssetManagementPage: React.FC<AssetManagementPageProps> = ({ onOpen
                   </div>
 
                   {/* Verification Metric Cards */}
-                  <div className="grid grid-cols-3 gap-3 pt-2 border-t border-slate-200">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-2 border-t border-slate-200">
                     {activeStage.metrics.map((metric, mIdx) => (
-                      <div key={mIdx} className="text-center p-2.5 rounded-lg bg-white border border-slate-200 shadow-xs">
-                        <p className="text-xs text-slate-500 font-normal">{metric.label}</p>
-                        <p className="text-sm font-bold text-slate-900 mt-1 font-display">{metric.value}</p>
-                        <p className="text-xs text-[#0077B6] font-medium mt-0.5">{metric.note}</p>
+                      <div key={mIdx} className="p-3 sm:p-2.5 rounded-xl sm:rounded-lg bg-white border border-slate-200 shadow-xs text-left sm:text-center min-w-0 space-y-1 sm:space-y-0.5">
+                        <p className="text-xs text-slate-500 font-normal leading-snug break-words">{metric.label}</p>
+                        <p className="text-sm font-bold text-slate-900 font-display break-words leading-tight">{metric.value}</p>
+                        <p className="text-xs text-[#0077B6] font-medium leading-snug break-words">{metric.note}</p>
                       </div>
                     ))}
                   </div>

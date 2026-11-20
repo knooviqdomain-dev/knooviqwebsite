@@ -142,7 +142,7 @@ export const DistributionManagementPage: React.FC<DistributionManagementPageProp
   const activeStage = ECOSYSTEM_STAGES[activeStageIndex];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#00A3E0] selection:text-white overflow-hidden">
+    <div className="product-typography font-sora min-h-screen bg-white text-slate-900 selection:bg-[#00A3E0] selection:text-white overflow-hidden">
 
       {/* =========================================================================
           SECTION 1 — HERO: INTELLIGENT DISTRIBUTION (LIGHT TO NAVY ACCENT)
@@ -189,29 +189,37 @@ export const DistributionManagementPage: React.FC<DistributionManagementPageProp
 
 
               {/* Real-Time Operational KPI Grid (Zero %, Zero Currency) */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-slate-200">
-                <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
-                  <p className="text-xs text-slate-500 font-normal">Network Sync Latency</p>
-                  <p className="text-2xl font-bold text-slate-900 mt-1 font-display">Sub-Second</p>
-                  <p className="text-xs text-[#0077B6] font-medium mt-1">Real-Time Telemetry</p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 pt-6 border-t border-slate-200">
+                <div className="bg-white p-3 sm:p-3.5 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-2 min-w-0">
+                  <div className="min-w-0">
+                    <p className="text-[11px] sm:text-xs text-slate-500 font-normal leading-snug break-words">Network Sync Latency</p>
+                    <p className="text-base sm:text-xl lg:text-2xl font-bold text-slate-900 mt-1 font-display leading-tight break-words">Sub-Second</p>
+                  </div>
+                  <p className="text-[11px] sm:text-xs text-[#0077B6] font-medium leading-snug break-words">Real-Time Telemetry</p>
                 </div>
 
-                <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
-                  <p className="text-xs text-slate-500 font-normal">Fulfillment Velocity</p>
-                  <p className="text-2xl font-bold text-slate-900 mt-1 font-display">Autonomous</p>
-                  <p className="text-xs text-emerald-600 font-medium mt-1">Multi-Node Routing</p>
+                <div className="bg-white p-3 sm:p-3.5 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-2 min-w-0">
+                  <div className="min-w-0">
+                    <p className="text-[11px] sm:text-xs text-slate-500 font-normal leading-snug break-words">Fulfillment Velocity</p>
+                    <p className="text-base sm:text-xl lg:text-2xl font-bold text-slate-900 mt-1 font-display leading-tight break-words">Autonomous</p>
+                  </div>
+                  <p className="text-[11px] sm:text-xs text-emerald-600 font-medium leading-snug break-words">Multi-Node Routing</p>
                 </div>
 
-                <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
-                  <p className="text-xs text-slate-500 font-normal">Inventory Accuracy</p>
-                  <p className="text-2xl font-bold text-slate-900 mt-1 font-display">Zero Drift</p>
-                  <p className="text-xs text-[#0077B6] font-medium mt-1">Continuous Reconciliation</p>
+                <div className="bg-white p-3 sm:p-3.5 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-2 min-w-0">
+                  <div className="min-w-0">
+                    <p className="text-[11px] sm:text-xs text-slate-500 font-normal leading-snug break-words">Inventory Accuracy</p>
+                    <p className="text-base sm:text-xl lg:text-2xl font-bold text-slate-900 mt-1 font-display leading-tight break-words">Zero Drift</p>
+                  </div>
+                  <p className="text-[11px] sm:text-xs text-[#0077B6] font-medium leading-snug break-words">Continuous Reconciliation</p>
                 </div>
 
-                <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
-                  <p className="text-xs text-slate-500 font-normal">Enterprise Backbone</p>
-                  <p className="text-2xl font-bold text-slate-900 mt-1 font-display">SAP Clean-Core</p>
-                  <p className="text-xs text-emerald-600 font-medium mt-1">End-to-End Orchestrated</p>
+                <div className="bg-white p-3 sm:p-3.5 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-2 min-w-0">
+                  <div className="min-w-0">
+                    <p className="text-[11px] sm:text-xs text-slate-500 font-normal leading-snug break-words">Enterprise Backbone</p>
+                    <p className="text-base sm:text-xl lg:text-2xl font-bold text-slate-900 mt-1 font-display leading-tight break-words">SAP Clean-Core</p>
+                  </div>
+                  <p className="text-[11px] sm:text-xs text-emerald-600 font-medium leading-snug break-words">End-to-End Orchestrated</p>
                 </div>
               </div>
 
@@ -219,7 +227,7 @@ export const DistributionManagementPage: React.FC<DistributionManagementPageProp
 
             {/* Right Column: Clean 3D Digital Distribution Network Visual */}
             <div className="lg:col-span-5 relative">
-              <div className="relative h-[380px] sm:h-[460px] lg:h-[520px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-950 group">
+              <div className="relative aspect-[16/9] sm:aspect-auto sm:h-[460px] lg:h-[520px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-950 group">
                 <img
                   src="/images/distribution_management_hero.jpg"
                   alt="3D Digital Distribution Network with Autonomous Warehouses and Fleet Connectivity"
@@ -392,7 +400,7 @@ export const DistributionManagementPage: React.FC<DistributionManagementPageProp
                       setIsPaused(true);
                       setTimeout(() => setIsPaused(false), 8000);
                     }}
-                    className={`p-3 rounded-xl text-left transition-all relative overflow-hidden border ${
+                    className={`p-3 sm:p-3.5 rounded-xl text-left transition-all relative overflow-hidden border flex flex-col justify-between min-h-[108px] sm:min-h-[114px] ${
                       isActive
                         ? 'bg-slate-900 text-white border-slate-900 shadow-md ring-2 ring-[#00A3E0]/40'
                         : 'bg-slate-50 hover:bg-white text-slate-700 border-slate-200/80 hover:border-slate-300'
@@ -407,20 +415,26 @@ export const DistributionManagementPage: React.FC<DistributionManagementPageProp
                       />
                     )}
 
-                    <div className="flex items-center justify-between">
-                      <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${
-                        isActive ? 'bg-[#00A3E0] text-slate-900' : 'bg-slate-200 text-slate-700'
+                    <div>
+                      <div className="flex items-center justify-between gap-1.5 min-w-0">
+                        <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0 ${
+                          isActive ? 'bg-[#00A3E0] text-slate-900' : 'bg-slate-200 text-slate-700'
+                        }`}>
+                          Stage {stage.stepNum}
+                        </span>
+                        <IconComponent className={`w-4 h-4 shrink-0 ${isActive ? 'text-[#00A3E0]' : 'text-slate-400'}`} />
+                      </div>
+
+                      <div className={`text-sm sm:text-base font-bold mt-2 font-display leading-tight ${
+                        isActive ? 'text-white' : 'text-slate-900'
                       }`}>
-                        Stage {stage.stepNum}
-                      </span>
-                      <IconComponent className={`w-4 h-4 ${isActive ? 'text-[#00A3E0]' : 'text-slate-400'}`} />
+                        {stage.name}
+                      </div>
                     </div>
 
-                    <p className="text-sm font-bold mt-2 font-display truncate">
-                      {stage.name}
-                    </p>
-
-                    <p className={`text-[11px] truncate mt-0.5 ${isActive ? 'text-slate-300' : 'text-slate-500'}`}>
+                    <p className={`text-[10.5px] sm:text-[11px] leading-snug mt-1.5 break-words font-normal ${
+                      isActive ? 'text-slate-200' : 'text-slate-600'
+                    }`}>
                       {stage.metricValue}
                     </p>
                   </button>
@@ -555,7 +569,7 @@ export const DistributionManagementPage: React.FC<DistributionManagementPageProp
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             
             {/* Bento Card 1 (Spans 7 cols): Order Management */}
-            <div className="md:col-span-7 rounded-3xl p-7 bg-gradient-to-br from-slate-50 via-white to-sky-50/30 border border-slate-200 shadow-sm hover:shadow-md transition-all group relative overflow-hidden flex flex-col justify-between space-y-6">
+            <div className="md:col-span-7 rounded-3xl p-5 sm:p-7 bg-gradient-to-br from-slate-50 via-white to-sky-50/30 border border-slate-200 shadow-sm hover:shadow-md transition-all group relative overflow-hidden flex flex-col justify-between space-y-6">
               <div className="space-y-3">
                 <div className="w-12 h-12 rounded-2xl bg-sky-100 text-[#0077B6] flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
                   <Workflow className="w-6 h-6" />
@@ -571,24 +585,24 @@ export const DistributionManagementPage: React.FC<DistributionManagementPageProp
                 </p>
               </div>
 
-              <div className="grid grid-cols-3 gap-3 pt-4 border-t border-slate-200/80 text-xs">
-                <div className="bg-white p-2.5 rounded-xl border border-slate-200 shadow-2xs text-center">
-                  <p className="text-slate-500 font-normal">Validation Lag</p>
-                  <p className="text-sm font-bold text-slate-900 mt-0.5 font-display">Instantaneous</p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-4 border-t border-slate-200/80 text-xs">
+                <div className="bg-white px-3.5 py-2.5 sm:p-2.5 rounded-xl border border-slate-200 shadow-2xs flex sm:flex-col items-center justify-between sm:justify-center text-left sm:text-center min-w-0">
+                  <p className="text-slate-500 font-normal text-xs sm:text-[11px] shrink-0">Validation Lag</p>
+                  <p className="text-xs sm:text-sm font-bold text-slate-900 font-display sm:mt-0.5">Instantaneous</p>
                 </div>
-                <div className="bg-white p-2.5 rounded-xl border border-slate-200 shadow-2xs text-center">
-                  <p className="text-slate-500 font-normal">Split Orders</p>
-                  <p className="text-sm font-bold text-slate-900 mt-0.5 font-display">Minimized</p>
+                <div className="bg-white px-3.5 py-2.5 sm:p-2.5 rounded-xl border border-slate-200 shadow-2xs flex sm:flex-col items-center justify-between sm:justify-center text-left sm:text-center min-w-0">
+                  <p className="text-slate-500 font-normal text-xs sm:text-[11px] shrink-0">Split Orders</p>
+                  <p className="text-xs sm:text-sm font-bold text-slate-900 font-display sm:mt-0.5">Minimized</p>
                 </div>
-                <div className="bg-white p-2.5 rounded-xl border border-slate-200 shadow-2xs text-center">
-                  <p className="text-slate-500 font-normal">SLA Integrity</p>
-                  <p className="text-sm font-bold text-slate-900 mt-0.5 font-display">Deterministic</p>
+                <div className="bg-white px-3.5 py-2.5 sm:p-2.5 rounded-xl border border-slate-200 shadow-2xs flex sm:flex-col items-center justify-between sm:justify-center text-left sm:text-center min-w-0">
+                  <p className="text-slate-500 font-normal text-xs sm:text-[11px] shrink-0">SLA Integrity</p>
+                  <p className="text-xs sm:text-sm font-bold text-slate-900 font-display sm:mt-0.5">Deterministic</p>
                 </div>
               </div>
             </div>
 
             {/* Bento Card 2 (Spans 5 cols): Inventory Management */}
-            <div className="md:col-span-5 rounded-3xl p-7 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 border border-slate-200 shadow-sm hover:shadow-md transition-all group relative overflow-hidden flex flex-col justify-between space-y-6">
+            <div className="md:col-span-5 rounded-3xl p-5 sm:p-7 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 border border-slate-200 shadow-sm hover:shadow-md transition-all group relative overflow-hidden flex flex-col justify-between space-y-6">
               <div className="space-y-3">
                 <div className="w-12 h-12 rounded-2xl bg-blue-100 text-[#0077B6] flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
                   <Boxes className="w-6 h-6" />
@@ -604,12 +618,12 @@ export const DistributionManagementPage: React.FC<DistributionManagementPageProp
               </div>
 
               <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-1.5 text-xs">
-                <div className="flex justify-between text-slate-600">
-                  <span>Cross-Depot Pooling:</span>
+                <div className="flex flex-col sm:flex-row sm:justify-between text-slate-600 gap-0.5 sm:gap-2">
+                  <span className="shrink-0">Cross-Depot Pooling:</span>
                   <strong className="text-slate-900 font-semibold">Active &amp; Balanced</strong>
                 </div>
-                <div className="flex justify-between text-slate-600">
-                  <span>Reorder Point Calculation:</span>
+                <div className="flex flex-col sm:flex-row sm:justify-between text-slate-600 gap-0.5 sm:gap-2">
+                  <span className="shrink-0">Reorder Point Calculation:</span>
                   <strong className="text-[#0077B6] font-semibold">Dynamic Machine Learning</strong>
                 </div>
               </div>

@@ -31,7 +31,11 @@ import {
   FileCheck2,
   Activity,
   Users2,
-  Home
+  Home,
+  UserCheck,
+  Receipt,
+  Award,
+  Workflow
 } from 'lucide-react';
 
 interface RealEstateManagementPageProps {
@@ -338,7 +342,7 @@ export const RealEstateManagementPage: React.FC<RealEstateManagementPageProps> =
       : LEASE_RECORDS.filter((item) => item.assetClass === selectedLeaseClass);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#00A3E0] selection:text-white overflow-hidden">
+    <div className="product-typography font-sora min-h-screen bg-white text-slate-900 selection:bg-[#00A3E0] selection:text-white overflow-hidden">
 
       {/* =========================================================================
           SECTION 1 — HERO: ENTERPRISE REAL ESTATE PORTFOLIO COMMAND CENTER (LIGHT)
@@ -415,7 +419,7 @@ export const RealEstateManagementPage: React.FC<RealEstateManagementPageProps> =
 
             {/* Right Column: Clean Pure Hero Visual (Unobstructed, increased height, zero content inside, above, or below) */}
             <div className="lg:col-span-5 relative">
-              <div className="relative h-[380px] sm:h-[460px] lg:h-[520px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-100 group">
+              <div className="relative aspect-[16/9] sm:aspect-auto sm:h-[460px] lg:h-[520px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-100 group">
                 <img
                   src="/images/real_estate_smart_city_hero.jpg"
                   alt="Enterprise Real Estate Architecture & Commercial Smart City Portfolio"
@@ -508,7 +512,7 @@ export const RealEstateManagementPage: React.FC<RealEstateManagementPageProps> =
                           <span className="text-xs text-slate-400 font-medium">Stage {stage.stepNum}</span>
                         </div>
 
-                        <h3 className={`text-sm font-semibold mt-1.5 truncate ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>
+                        <h3 className={`text-sm font-semibold mt-1.5 break-words leading-tight ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>
                           {stage.title}
                         </h3>
 
@@ -531,7 +535,7 @@ export const RealEstateManagementPage: React.FC<RealEstateManagementPageProps> =
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -12 }}
                   transition={{ duration: 0.3 }}
-                  className="rounded-2xl bg-white border border-slate-200 p-6 sm:p-7 shadow-lg space-y-6"
+                  className="rounded-2xl bg-white border border-slate-200 p-4 sm:p-7 shadow-lg space-y-6"
                 >
                   {/* Top Bar */}
                   <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100">
@@ -555,7 +559,7 @@ export const RealEstateManagementPage: React.FC<RealEstateManagementPageProps> =
                   </div>
 
                   {/* Visual Showcase — The Knooviq Story aesthetic with frosted badges */}
-                  <div className="relative h-64 sm:h-72 rounded-2xl overflow-hidden border border-slate-200/90 shadow-xl group bg-slate-950 select-none">
+                  <div className="relative aspect-[16/9] sm:aspect-auto sm:h-72 rounded-2xl overflow-hidden border border-slate-200/90 shadow-xl group bg-slate-950 select-none">
                     <img
                       src={activeStage.image}
                       alt={activeStage.title}
@@ -616,12 +620,12 @@ export const RealEstateManagementPage: React.FC<RealEstateManagementPageProps> =
                   </div>
 
                   {/* Verification Metric Cards */}
-                  <div className="grid grid-cols-3 gap-3 pt-2 border-t border-slate-200">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-2 border-t border-slate-200">
                     {activeStage.metrics.map((metric, mIdx) => (
-                      <div key={mIdx} className="text-center p-2.5 rounded-lg bg-white border border-slate-200 shadow-xs">
-                        <p className="text-xs text-slate-500 font-normal">{metric.label}</p>
-                        <p className="text-sm font-bold text-slate-900 mt-1 font-display">{metric.value}</p>
-                        <p className="text-xs text-[#0077B6] font-medium mt-0.5">{metric.note}</p>
+                      <div key={mIdx} className="p-3 sm:p-2.5 rounded-xl sm:rounded-lg bg-white border border-slate-200 shadow-xs text-left sm:text-center min-w-0 space-y-1 sm:space-y-0.5">
+                        <p className="text-xs text-slate-500 font-normal leading-snug break-words">{metric.label}</p>
+                        <p className="text-sm font-bold text-slate-900 font-display break-words leading-tight">{metric.value}</p>
+                        <p className="text-xs text-[#0077B6] font-medium leading-snug break-words">{metric.note}</p>
                       </div>
                     ))}
                   </div>
@@ -1044,7 +1048,7 @@ export const RealEstateManagementPage: React.FC<RealEstateManagementPageProps> =
 
             <div className="rounded-2xl p-6 bg-slate-50 border border-slate-200 shadow-sm space-y-4">
               <div className="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center">
-                <ShieldCheck className="w-5 h-5" />
+                <Award className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-bold text-slate-900 font-display">GRESB &amp; LEED Certification</h3>
               <p className="text-xs text-slate-600 leading-relaxed font-normal">
@@ -1124,7 +1128,7 @@ export const RealEstateManagementPage: React.FC<RealEstateManagementPageProps> =
 
             <div className="rounded-2xl p-6 bg-white border border-slate-200 shadow-sm space-y-4">
               <div className="w-10 h-10 rounded-xl bg-sky-50 text-[#0077B6] flex items-center justify-center">
-                <Boxes className="w-5 h-5" />
+                <Workflow className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-bold text-slate-900 font-display">SAP BTP Event-Driven Services</h3>
               <p className="text-xs text-slate-600 leading-relaxed font-normal">
@@ -1191,7 +1195,7 @@ export const RealEstateManagementPage: React.FC<RealEstateManagementPageProps> =
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-2 shadow-xs hover:shadow-md transition-shadow">
               <div className="w-10 h-10 mx-auto rounded-xl bg-cyan-50 border border-cyan-100 flex items-center justify-center text-[#00A3E0]">
-                <Building2 className="w-5 h-5" />
+                <UserCheck className="w-5 h-5" />
               </div>
               <p className="text-2xl sm:text-3xl font-bold text-slate-900 font-display">
                 Near-Full
@@ -1202,7 +1206,7 @@ export const RealEstateManagementPage: React.FC<RealEstateManagementPageProps> =
 
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-2 shadow-xs hover:shadow-md transition-shadow">
               <div className="w-10 h-10 mx-auto rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#0077B6]">
-                <Calculator className="w-5 h-5" />
+                <Receipt className="w-5 h-5" />
               </div>
               <p className="text-2xl sm:text-3xl font-bold text-slate-900 font-display">
                 Fully Reconciled

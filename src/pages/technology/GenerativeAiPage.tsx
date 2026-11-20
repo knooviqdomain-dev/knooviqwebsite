@@ -262,8 +262,8 @@ export const GenerativeAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact 
           HERO: Ultra-Clean Full-Screen Enterprise GenAI Command Center (Dark Theme)
           ========================================================================= */}
       <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-24 min-h-[580px] lg:h-[660px] lg:min-h-[660px] flex items-center overflow-hidden bg-black text-white">
-        {/* Full-Screen Panoramic Widescreen Hero Image (100% Clear with Zero Dark Blue Shade) */}
-        <div className="absolute inset-0 z-0">
+        {/* Desktop-Only Panoramic Widescreen Hero Image (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
           <img
             src="/images/generative_ai_hero.jpg"
             alt="Knooviq Enterprise Generative AI Command Center"
@@ -273,10 +273,15 @@ export const GenerativeAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact 
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
 
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           <div className="max-w-xl lg:max-w-2xl space-y-4 relative">
-            {/* Seamless Soft Contrast Aura — ensures text is 100% legible with Zero Box and Zero dark blue shade */}
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="space-y-3">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-mono font-bold uppercase tracking-wider text-[#00A3E0] shadow-sm">
@@ -288,7 +293,7 @@ export const GenerativeAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact 
                 Grounded Enterprise <br />
                 <span className="text-[#00A3E0]">GenAI With Sovereign Privacy</span>
               </h1>
-              <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal max-w-2xl pt-1 drop-shadow-md">
+              <p className="text-base sm:text-lg text-white leading-relaxed font-normal max-w-2xl pt-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
                 Harness the world's most capable foundation models anchored directly to your internal enterprise documents, SAP ERP databases, and proprietary business knowledge with guaranteed zero data leakage.
               </p>
             </motion.div>
@@ -308,6 +313,18 @@ export const GenerativeAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact 
                 <span>SAP HANA Vector Grounding</span>
               </div>
             </motion.div>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                <img
+                  src="/images/generative_ai_hero.jpg"
+                  alt="Knooviq Enterprise Generative AI Command Center"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -438,7 +455,7 @@ export const GenerativeAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact 
                     <span className={`font-mono text-xs font-black ${isActive ? 'text-[#0070C0]' : 'text-slate-500'}`}>STAGE {stage.step}</span>
                     <span className={isActive ? 'text-[#0070C0]' : 'text-slate-400'}>{stage.icon}</span>
                   </div>
-                  <div className={`text-xs sm:text-sm font-bold truncate ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>{stage.title}</div>
+                  <div className={`text-xs sm:text-sm font-bold leading-tight break-words ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>{stage.title}</div>
                 </button>
               );
             })}
@@ -670,10 +687,10 @@ export const GenerativeAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact 
                 </p>
               </div>
 
-              <div className="grid grid-cols-3 gap-2.5 text-center text-xs font-medium">
-                <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-700 font-semibold">SharePoint + Jira</div>
-                <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-700 font-semibold">SAP DMS + S/4</div>
-                <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-700 font-semibold">ServiceNow + Confluence</div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-center text-xs font-medium">
+                <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-700 font-semibold min-w-0">SharePoint + Jira</div>
+                <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-700 font-semibold min-w-0">SAP DMS + S/4</div>
+                <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-slate-700 font-semibold min-w-0">ServiceNow + Confluence</div>
               </div>
             </div>
 

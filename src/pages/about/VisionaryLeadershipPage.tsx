@@ -113,77 +113,108 @@ const FUTURE_FOCUS_AREAS = [
 
 export const VisionaryLeadershipPage: React.FC<{ onOpenContact: (topic?: string) => void }> = ({ onOpenContact }) => {
   return (
-    <div className="relative w-full max-w-full pb-0 bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden overflow-x-clip">
+    <div className="about-typography font-sora relative w-full max-w-full pb-0 bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden overflow-x-clip">
       
       {/* Background Aurora Blobs */}
       <div className="aurora-sphere-1 top-20 left-1/4 bg-[#00A3E0]/15 dark:bg-[#00F0FF]/15 pointer-events-none" />
       <div className="aurora-sphere-2 top-96 right-10 bg-[#6366F1]/15 dark:bg-[#8B5CF6]/20 pointer-events-none" />
 
       {/* =========================================================================
-          HERO HEADER (UNCHANGED)
+          HERO HEADER
+          Clean, modern presentation with natural lighting and zero dark-blue shadows or borders.
           ========================================================================= */}
-      <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-20 min-h-[540px] lg:h-[580px] lg:min-h-[580px] flex items-center overflow-hidden">
-        {/* Clean Background Image with Mild Left Contrast Scrim */}
-        <div className="absolute inset-0 z-0">
+      <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-20 min-h-[560px] lg:min-h-[620px] flex items-center overflow-hidden bg-gradient-to-b from-slate-950 via-[#0B132B] to-slate-950 text-white">
+        {/* Full-Screen Ambient Image Glow & Soft Neutral Scrim */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img 
-            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop" 
-            alt="Visionary Leadership Boardroom"
-            className="w-full h-full object-cover object-center"
+            src="/images/visionary_leadership_hero.jpg" 
+            alt="Visionary Leadership Ambient Backdrop"
+            className="w-full h-full object-cover blur-3xl opacity-15 scale-110"
           />
-          {/* Mild Contrast Scrim: Clear boardroom photo with soft text shading */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/60 via-slate-950/35 to-transparent pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-transparent" />
+        </div>
+
+        {/* Full-Screen Desktop Visual — Zero Cropping, No Artificial Dark-Blue Shadow */}
+        <div className="hidden lg:block absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+          <div className="absolute inset-y-0 right-0 w-[55%] xl:w-[50%] h-full flex items-center justify-end">
+            <img 
+              src="/images/visionary_leadership_hero_hd.jpg" 
+              alt="Visionary Leadership - Executive Collaborative Strategy & Modern Governance"
+              className="w-full h-full object-contain object-right select-none"
+            />
+          </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="max-w-3xl lg:max-w-4xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            
+            {/* Left Column: Executive Typography & Governance Mandates */}
+            <div className="lg:col-span-6 space-y-6 relative z-10">
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide bg-slate-900/90 border border-indigo-400/30 text-indigo-300 backdrop-blur-md"
+              >
+                <span className="h-2 w-2 rounded-full bg-indigo-400 animate-pulse" />
+                <span className="font-mono uppercase text-xs tracking-wider font-bold">Governance &amp; Enterprise Steering</span>
+              </motion.div>
+
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="font-display text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-black tracking-tight text-white leading-[1.15]"
+              >
+                Visionary <span className="hero-gradient-cyan font-black">Leadership</span>
+              </motion.h1>
+
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-base sm:text-lg text-slate-200 font-medium leading-relaxed font-sans max-w-2xl"
+              >
+                Decades of combined Fortune-500 SAP leadership, uniting technical clean-core discipline with boardroom strategic clarity. Steering complex cross-border programs with uncompromising accountability and transparent execution.
+              </motion.p>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-2"
+              >
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/90 border border-white/15 backdrop-blur-md text-xs font-bold text-white">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span>Board-Level Governance</span>
+                </div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/90 border border-white/15 backdrop-blur-md text-xs font-bold text-white">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span>Clean-Core Fit-to-Standard Mandate</span>
+                </div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/90 border border-white/15 backdrop-blur-md text-xs font-bold text-white">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-400 shrink-0" />
+                  <span>Uncompromising Client Accountability</span>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Mobile-Only Frame (Clean presentation with zero artificial shadows or borders) */}
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide bg-slate-900/90 border border-indigo-400/40 text-indigo-300 mb-5 backdrop-blur-md shadow-2xl"
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
+              className="lg:hidden relative flex justify-center items-center mt-6"
             >
-              <span className="h-2 w-2 rounded-full bg-indigo-400 animate-pulse shadow-[0_0_8px_#818CF8]" />
-              <span className="font-mono uppercase text-xs tracking-wider font-bold">Governance & Enterprise Steering</span>
-            </motion.div>
-
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)] leading-[1.15] mb-6"
-            >
-              Visionary <span className="hero-gradient-cyan font-black">Leadership</span>
-            </motion.h1>
-
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg lg:text-xl text-white font-medium drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] leading-relaxed font-sans mb-8 max-w-3xl"
-            >
-              Decades of combined Fortune-500 SAP leadership, uniting technical clean-core discipline with boardroom strategic clarity. Steering complex cross-border programs with uncompromising accountability and transparent execution.
-            </motion.p>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap items-center gap-2.5 sm:gap-3"
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/90 border border-white/20 shadow-xl backdrop-blur-md text-xs font-bold text-white">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-                <span>Board-Level Governance</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/90 border border-white/20 shadow-xl backdrop-blur-md text-xs font-bold text-white">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-                <span>Clean-Core Fit-to-Standard Mandate</span>
-              </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/90 border border-white/20 shadow-xl backdrop-blur-md text-xs font-bold text-white">
-                <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-                <span>Uncompromising Client Accountability</span>
+              <div className="relative w-full max-w-lg aspect-square sm:aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden border border-white/15 bg-slate-900/60">
+                <img 
+                  src="/images/visionary_leadership_hero.jpg" 
+                  alt="Visionary Leadership - Executive Collaborative Strategy & Modern Governance"
+                  className="w-full h-full object-cover object-center select-none"
+                />
               </div>
             </motion.div>
+
           </div>
         </div>
       </section>

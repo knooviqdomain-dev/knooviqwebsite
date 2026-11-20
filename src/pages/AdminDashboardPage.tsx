@@ -941,7 +941,7 @@ export const AdminDashboardPage: React.FC = () => {
         {systemView === 'submissions' ? (
           <div className="bg-white rounded-2xl border border-slate-200/90 shadow-xs overflow-hidden">
             <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
+              <table className="w-full min-w-[640px] text-left border-collapse">
                 
                 {/* Table Header Row */}
                 <thead>

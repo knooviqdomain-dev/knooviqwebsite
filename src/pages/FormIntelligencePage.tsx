@@ -172,7 +172,7 @@ export const FormIntelligencePage: React.FC<FormIntelligencePageProps> = ({ onOp
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div className="product-typography font-sora min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
       
       {/* =========================================================================
           1. HERO SECTION (With Single Main Widescreen Visual + Executive Layout)
@@ -655,21 +655,21 @@ export const FormIntelligencePage: React.FC<FormIntelligencePageProps> = ({ onOp
                           </div>
 
                           {/* 3-Way Match Verification Triad */}
-                          <div className="grid grid-cols-3 gap-2 text-center">
-                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1">
+                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-2 text-center">
+                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1 min-w-0">
                               <div className="text-[10px] font-mono text-emerald-400 font-bold uppercase">Rule 01</div>
-                              <div className="text-xs font-bold text-white font-display">Regex Check</div>
-                              <div className="text-[9px] text-slate-400 font-sans">ID, phone &amp; postal</div>
+                              <div className="text-xs sm:text-sm font-bold text-white font-display break-words">Regex Check</div>
+                              <div className="text-[10px] sm:text-[9px] text-slate-400 font-sans">ID, phone &amp; postal</div>
                             </div>
-                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1">
+                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1 min-w-0">
                               <div className="text-[10px] font-mono text-emerald-400 font-bold uppercase">Rule 02</div>
-                              <div className="text-xs font-bold text-white font-display">Logic Matrix</div>
-                              <div className="text-[9px] text-slate-400 font-sans">Cross-field values</div>
+                              <div className="text-xs sm:text-sm font-bold text-white font-display break-words">Logic Matrix</div>
+                              <div className="text-[10px] sm:text-[9px] text-slate-400 font-sans">Cross-field values</div>
                             </div>
-                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1">
+                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1 min-w-0">
                               <div className="text-[10px] font-mono text-emerald-400 font-bold uppercase">Rule 03</div>
-                              <div className="text-xs font-bold text-white font-display">Mandatory Scan</div>
-                              <div className="text-[9px] text-slate-400 font-sans">Zero missed fields</div>
+                              <div className="text-xs sm:text-sm font-bold text-white font-display break-words">Mandatory Scan</div>
+                              <div className="text-[10px] sm:text-[9px] text-slate-400 font-sans">Zero missed fields</div>
                             </div>
                           </div>
 

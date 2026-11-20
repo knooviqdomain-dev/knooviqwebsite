@@ -1,30 +1,30 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
-  Globe2, 
-  Ship, 
-  Plane, 
-  Truck, 
-  ArrowRight, 
-  CheckCircle2, 
-  ShieldCheck, 
-  FileText, 
-  Layers, 
-  Cpu, 
-  Database, 
-  Boxes, 
-  TrendingUp, 
-  Clock, 
-  Sparkles, 
-  Anchor, 
-  FileCheck, 
-  CreditCard, 
-  Coins, 
-  Scale, 
-  DollarSign, 
-  PackageCheck, 
-  Building2, 
+import {
+  Globe2,
+  Ship,
+  Plane,
+  Truck,
+  ArrowRight,
+  CheckCircle2,
+  ShieldCheck,
+  FileText,
+  Layers,
+  Cpu,
+  Database,
+  Boxes,
+  TrendingUp,
+  Clock,
+  Sparkles,
+  Anchor,
+  FileCheck,
+  CreditCard,
+  Coins,
+  Scale,
+  DollarSign,
+  PackageCheck,
+  Building2,
   ExternalLink,
   ChevronRight,
   RefreshCw,
@@ -84,7 +84,7 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
 
   // State for Section 4 Process Interactive Step
   const [activeProcessStep, setActiveProcessStep] = useState(0);
-  
+
   // State for Section 5 SAP Nexus Active Node with Auto-Rotation (3s) & 5s Click Pause
   const [activeSapNode, setActiveSapNode] = useState<'business-data' | 'logistics' | 'finance' | 'sales' | 'materials' | 'compliance'>('logistics');
   const [isSapPaused, setIsSapPaused] = useState<boolean>(false);
@@ -361,7 +361,7 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
       badge: 'SALES & DISTRIBUTION (SD)',
       desc: 'Connects foreign sales orders directly to export packing slips, commercial invoices, customer export quotas, and billing document creation.',
       metric: 'Direct Order-to-Invoice Flow',
-      icon: Building2,
+      icon: TrendingUp,
       color: 'indigo'
     },
     {
@@ -447,7 +447,7 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
   const activeSapData = sapNodes.find(n => n.id === activeSapNode) || sapNodes[0];
 
   return (
-    <div className="bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
+    <div className="product-typography font-sora bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
 
       {/* =========================================================================
           SECTION 1 — HERO
@@ -457,17 +457,17 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
           Visual: Premium 3D global trade visual (Globe, cargo shipping containers, trade corridors, animated connections)
           ========================================================================= */}
       <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-24 min-h-[580px] lg:min-h-[620px] flex items-center overflow-hidden bg-gradient-to-b from-white via-sky-50/40 to-[#F0F7FF] dark:from-[#030712] dark:via-[#071324] dark:to-[#0A1A30] border-b border-slate-200/80 dark:border-white/10">
-        
+
         {/* Soft Ambient Colorful Radiant Glow */}
         <div className="absolute top-20 left-1/4 w-[500px] h-[350px] bg-cyan-500/10 dark:bg-cyan-400/15 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 dark:bg-blue-500/15 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            
+
             {/* Left Column: Hero Copy & CTA (6 Cols) */}
             <div className="lg:col-span-6 text-left">
-              
+
               {/* Badge */}
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
@@ -480,7 +480,7 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
               </motion.div>
 
               {/* Exact Heading */}
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -490,7 +490,7 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
               </motion.h1>
 
               {/* Exact Text */}
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -520,40 +520,37 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
 
             {/* Right Column: Real Global Trade Photographic Image Showcase (6 Cols) */}
             <div className="lg:col-span-6 relative flex items-center justify-center">
-              
+
               <div className="relative w-full max-w-[540px] rounded-3xl bg-white dark:bg-[#0B1528] border border-slate-200 dark:border-cyan-500/30 shadow-2xl p-4 sm:p-5 overflow-hidden group">
-                
+
                 {/* Mode Selector Tabs (Ocean, Air, Inland) */}
                 <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-slate-100 dark:bg-[#07101E] border border-slate-200/80 dark:border-white/5 mb-3.5">
                   <button
                     onClick={() => handleHeroModeClick('ocean')}
-                    className={`flex-1 py-1.5 px-3 rounded-xl font-mono text-[11px] font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
-                      activeHeroMode === 'ocean'
-                        ? 'bg-blue-600 text-white shadow-md'
-                        : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                    }`}
+                    className={`flex-1 py-1.5 px-3 rounded-xl font-mono text-[11px] font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer ${activeHeroMode === 'ocean'
+                      ? 'bg-blue-600 text-white shadow-md'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                      }`}
                   >
                     <Ship className="h-3.5 w-3.5" />
                     <span>Ocean Freight</span>
                   </button>
                   <button
                     onClick={() => handleHeroModeClick('air')}
-                    className={`flex-1 py-1.5 px-3 rounded-xl font-mono text-[11px] font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
-                      activeHeroMode === 'air'
-                        ? 'bg-blue-600 text-white shadow-md'
-                        : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                    }`}
+                    className={`flex-1 py-1.5 px-3 rounded-xl font-mono text-[11px] font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer ${activeHeroMode === 'air'
+                      ? 'bg-blue-600 text-white shadow-md'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                      }`}
                   >
                     <Plane className="h-3.5 w-3.5" />
                     <span>Air Cargo</span>
                   </button>
                   <button
                     onClick={() => handleHeroModeClick('inland')}
-                    className={`flex-1 py-1.5 px-3 rounded-xl font-mono text-[11px] font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
-                      activeHeroMode === 'inland'
-                        ? 'bg-blue-600 text-white shadow-md'
-                        : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                    }`}
+                    className={`flex-1 py-1.5 px-3 rounded-xl font-mono text-[11px] font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer ${activeHeroMode === 'inland'
+                      ? 'bg-blue-600 text-white shadow-md'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                      }`}
                   >
                     <Truck className="h-3.5 w-3.5" />
                     <span>Inland ICD</span>
@@ -579,7 +576,7 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/25 to-transparent pointer-events-none" />
 
                   {/* Top Floating Badge 1: ICEGATE Status */}
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="absolute top-3 left-3 px-3 py-1.5 rounded-xl bg-slate-950/80 backdrop-blur-md border border-emerald-500/40 text-white flex items-center gap-2 shadow-lg"
@@ -612,15 +609,15 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
 
                 {/* Bottom Real-Time Telemetry Bar */}
                 <div className="mt-3 grid grid-cols-2 gap-2 text-left">
-                  <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#07101E] border border-slate-200/80 dark:border-white/5">
+                  <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#07101E] border border-slate-200/80 dark:border-white/5 min-w-0">
                     <span className="text-[9px] font-mono font-bold text-slate-400 uppercase block">Manifest Status</span>
-                    <span className="text-[11px] font-display font-bold text-slate-800 dark:text-slate-200 truncate block">
+                    <span className="text-[11px] font-display font-bold text-slate-800 dark:text-slate-200 break-words leading-tight block">
                       {heroModeData[activeHeroMode].manifest}
                     </span>
                   </div>
-                  <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#07101E] border border-slate-200/80 dark:border-white/5">
+                  <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#07101E] border border-slate-200/80 dark:border-white/5 min-w-0">
                     <span className="text-[9px] font-mono font-bold text-slate-400 uppercase block">Customs Assessment</span>
-                    <span className="text-[11px] font-display font-bold text-emerald-600 dark:text-emerald-400 truncate block flex items-center gap-1">
+                    <span className="text-[11px] font-display font-bold text-emerald-600 dark:text-emerald-400 break-words leading-tight block flex items-center gap-1">
                       <CheckCircle2 className="h-3 w-3 inline shrink-0" />
                       {heroModeData[activeHeroMode].customs}
                     </span>
@@ -644,7 +641,7 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
           ========================================================================= */}
       <section className="py-14 sm:py-18 relative bg-white dark:bg-[#070E1C] border-b border-slate-200/80 dark:border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase bg-cyan-50 dark:bg-cyan-950/40 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-500/30 shadow-sm mb-3">
@@ -657,13 +654,13 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
             </h2>
             {/* Short Concise Explanation */}
             <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 font-sans leading-relaxed">
-              EXIM provides complete automated governance over international commerce—unifying statutory export/import documentation, customs compliance (ICEGATE), Letters of Credit, and multi-modal freight operations inside your SAP ERP.
+              EXIM provides complete automated governance over international commerce, unifying statutory export/import documentation, customs compliance (ICEGATE), Letters of Credit, and multi-modal freight operations inside your SAP ERP.
             </p>
           </div>
 
           {/* Animated Export -> Trade -> Import Flow Visual */}
           <div className="relative max-w-5xl mx-auto">
-            
+
             {/* Desktop Connecting Laser Rail with Traveling Pulse */}
             <div className="hidden md:block absolute top-1/2 left-[12%] right-[12%] -translate-y-1/2 h-[2px] bg-slate-200 dark:bg-slate-700 z-0 rounded-full overflow-hidden">
               <motion.div
@@ -674,9 +671,9 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
-              
+
               {/* STAGE 1: EXPORT */}
-              <motion.div 
+              <motion.div
                 whileHover={{ y: -4 }}
                 className="p-6 rounded-3xl bg-slate-50 dark:bg-[#0B1528] border border-slate-200 dark:border-white/10 shadow-lg text-left flex flex-col justify-between"
               >
@@ -709,7 +706,7 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
               </motion.div>
 
               {/* STAGE 2: GLOBAL TRADE */}
-              <motion.div 
+              <motion.div
                 whileHover={{ y: -4 }}
                 className="p-6 rounded-3xl bg-gradient-to-b from-blue-50/50 to-indigo-50/30 dark:from-[#0C1A30] dark:to-[#081220] border-2 border-blue-400/50 dark:border-cyan-400/50 shadow-xl text-left flex flex-col justify-between"
               >
@@ -742,7 +739,7 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
               </motion.div>
 
               {/* STAGE 3: IMPORT */}
-              <motion.div 
+              <motion.div
                 whileHover={{ y: -4 }}
                 className="p-6 rounded-3xl bg-slate-50 dark:bg-[#0B1528] border border-slate-200 dark:border-white/10 shadow-lg text-left flex flex-col justify-between"
               >
@@ -795,7 +792,7 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
           ========================================================================= */}
       <section id="features" className="py-16 sm:py-20 relative bg-[#F8FAFC] dark:bg-[#030712] border-b border-slate-200/80 dark:border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-cyan-300 border border-blue-200 dark:border-blue-500/30 shadow-sm mb-3">
@@ -869,7 +866,7 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
           ========================================================================= */}
       <section className="py-16 sm:py-20 relative bg-white dark:bg-[#070E1C] border-b border-slate-200/80 dark:border-white/10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-500/30 shadow-sm mb-3">
@@ -886,7 +883,7 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
 
           {/* Desktop Horizontal Connecting Circuit Rail */}
           <div className="relative mb-8">
-            
+
             {/* Animated Laser Rail with Moving Particles */}
             <div className="hidden lg:block absolute top-[45px] left-[6%] right-[6%] h-[2px] bg-slate-200 dark:bg-slate-700 z-0 rounded-full overflow-hidden">
               <motion.div
@@ -908,18 +905,16 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
                     onMouseEnter={() => setActiveProcessStep(idx)}
                     onClick={() => setActiveProcessStep(idx)}
                     whileHover={{ y: -4 }}
-                    className={`rounded-2xl p-4 border cursor-pointer transition-all duration-300 flex flex-col justify-between ${
-                      isSelected
-                        ? 'bg-blue-50/70 dark:bg-[#0C1A30] border-2 border-blue-600 dark:border-cyan-400 shadow-xl scale-102'
-                        : 'bg-white dark:bg-[#0B1528] border-slate-200 dark:border-white/10 hover:border-blue-400/40 shadow-sm'
-                    }`}
+                    className={`rounded-2xl p-4 border cursor-pointer transition-all duration-300 flex flex-col justify-between ${isSelected
+                      ? 'bg-blue-50/70 dark:bg-[#0C1A30] border-2 border-blue-600 dark:border-cyan-400 shadow-xl scale-102'
+                      : 'bg-white dark:bg-[#0B1528] border-slate-200 dark:border-white/10 hover:border-blue-400/40 shadow-sm'
+                      }`}
                   >
                     <div>
                       {/* Step Number & Icon */}
                       <div className="flex items-center justify-between mb-3">
-                        <div className={`w-9 h-9 rounded-xl flex items-center justify-center font-mono text-xs font-black shadow-sm ${
-                          isSelected ? 'bg-blue-600 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
-                        }`}>
+                        <div className={`w-9 h-9 rounded-xl flex items-center justify-center font-mono text-xs font-black shadow-sm ${isSelected ? 'bg-blue-600 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300'
+                          }`}>
                           <StepIcon className="h-4 w-4" />
                         </div>
                         <span className="font-mono text-[10px] font-bold text-slate-400">
@@ -992,12 +987,12 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
           Futuristic 3D network/data-flow design.
           ========================================================================= */}
       <section className="py-16 sm:py-20 relative bg-[#F8FAFC] dark:bg-[#030712] border-b border-slate-200/80 dark:border-white/10 overflow-hidden">
-        
+
         {/* Soft background glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-indigo-500/10 dark:bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase bg-blue-50 dark:bg-cyan-950/40 text-blue-700 dark:text-cyan-300 border border-blue-200 dark:border-cyan-500/30 shadow-sm mb-3">
@@ -1009,17 +1004,17 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
               Connected EXIM. <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500">Powered by SAP.</span>
             </h2>
             <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 font-sans leading-relaxed">
-              How SAP integrates as the central digital heartbeat—orchestrating business data, freight logistics, finance, sales, materials, and statutory compliance.
+              How SAP integrates as the central digital heartbeat, orchestrating business data, freight logistics, finance, sales, materials, and statutory compliance.
             </p>
           </div>
 
           {/* Futuristic 3D Network Arena */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-            
+
             {/* Left: Interactive Constellation Graph (7 Cols) */}
             <div className="lg:col-span-7">
               <div className="relative rounded-3xl p-6 bg-white dark:bg-[#0B1528] border border-slate-200 dark:border-cyan-500/20 shadow-xl h-[400px] sm:h-[450px] flex items-center justify-center overflow-hidden">
-                
+
                 {/* SVG Connecting Vectors */}
                 <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
                   <defs>
@@ -1076,11 +1071,10 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
                 {/* 1. Business Data (Top) */}
                 <button
                   onClick={() => handleSapNodeClick('business-data')}
-                  className={`absolute top-[14%] left-[50%] -translate-x-1/2 -translate-y-1/2 px-3 py-1.5 rounded-xl font-mono text-xs font-bold transition-all duration-300 z-20 flex items-center gap-1.5 cursor-pointer ${
-                    activeSapNode === 'business-data' 
-                      ? 'bg-blue-600 text-white shadow-[0_0_20px_rgba(37,99,235,0.6)] scale-110 ring-2 ring-blue-400' 
-                      : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/20 text-slate-700 dark:text-slate-300 hover:border-blue-500'
-                  }`}
+                  className={`absolute top-[14%] left-[50%] -translate-x-1/2 -translate-y-1/2 px-3 py-1.5 rounded-xl font-mono text-xs font-bold transition-all duration-300 z-20 flex items-center gap-1.5 cursor-pointer ${activeSapNode === 'business-data'
+                    ? 'bg-blue-600 text-white shadow-[0_0_20px_rgba(37,99,235,0.6)] scale-110 ring-2 ring-blue-400'
+                    : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/20 text-slate-700 dark:text-slate-300 hover:border-blue-500'
+                    }`}
                 >
                   <Database className="h-3.5 w-3.5" />
                   <span>Business Data</span>
@@ -1089,11 +1083,10 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
                 {/* 2. Logistics (Top-Left) */}
                 <button
                   onClick={() => handleSapNodeClick('logistics')}
-                  className={`absolute top-[32%] left-[14%] -translate-x-1/2 -translate-y-1/2 px-3 py-1.5 rounded-xl font-mono text-xs font-bold transition-all duration-300 z-20 flex items-center gap-1.5 cursor-pointer ${
-                    activeSapNode === 'logistics' 
-                      ? 'bg-cyan-500 text-slate-950 shadow-[0_0_20px_rgba(6,182,212,0.6)] scale-110 font-extrabold ring-2 ring-cyan-300' 
-                      : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/20 text-slate-700 dark:text-slate-300 hover:border-cyan-400'
-                  }`}
+                  className={`absolute top-[32%] left-[14%] -translate-x-1/2 -translate-y-1/2 px-3 py-1.5 rounded-xl font-mono text-xs font-bold transition-all duration-300 z-20 flex items-center gap-1.5 cursor-pointer ${activeSapNode === 'logistics'
+                    ? 'bg-cyan-500 text-slate-950 shadow-[0_0_20px_rgba(6,182,212,0.6)] scale-110 font-extrabold ring-2 ring-cyan-300'
+                    : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/20 text-slate-700 dark:text-slate-300 hover:border-cyan-400'
+                    }`}
                 >
                   <Truck className="h-3.5 w-3.5" />
                   <span>Logistics</span>
@@ -1102,11 +1095,10 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
                 {/* 3. Finance (Top-Right) */}
                 <button
                   onClick={() => handleSapNodeClick('finance')}
-                  className={`absolute top-[32%] left-[86%] -translate-x-1/2 -translate-y-1/2 px-3 py-1.5 rounded-xl font-mono text-xs font-bold transition-all duration-300 z-20 flex items-center gap-1.5 cursor-pointer ${
-                    activeSapNode === 'finance' 
-                      ? 'bg-emerald-600 text-white shadow-[0_0_20px_rgba(16,185,129,0.6)] scale-110 ring-2 ring-emerald-400' 
-                      : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/20 text-slate-700 dark:text-slate-300 hover:border-emerald-500'
-                  }`}
+                  className={`absolute top-[32%] left-[86%] -translate-x-1/2 -translate-y-1/2 px-3 py-1.5 rounded-xl font-mono text-xs font-bold transition-all duration-300 z-20 flex items-center gap-1.5 cursor-pointer ${activeSapNode === 'finance'
+                    ? 'bg-emerald-600 text-white shadow-[0_0_20px_rgba(16,185,129,0.6)] scale-110 ring-2 ring-emerald-400'
+                    : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/20 text-slate-700 dark:text-slate-300 hover:border-emerald-500'
+                    }`}
                 >
                   <DollarSign className="h-3.5 w-3.5" />
                   <span>Finance</span>
@@ -1115,24 +1107,22 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
                 {/* 4. Sales (Bottom-Right) */}
                 <button
                   onClick={() => handleSapNodeClick('sales')}
-                  className={`absolute top-[68%] left-[86%] -translate-x-1/2 -translate-y-1/2 px-3 py-1.5 rounded-xl font-mono text-xs font-bold transition-all duration-300 z-20 flex items-center gap-1.5 cursor-pointer ${
-                    activeSapNode === 'sales' 
-                      ? 'bg-indigo-600 text-white shadow-[0_0_20px_rgba(99,102,241,0.6)] scale-110 ring-2 ring-indigo-400' 
-                      : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/20 text-slate-700 dark:text-slate-300 hover:border-indigo-500'
-                  }`}
+                  className={`absolute top-[68%] left-[86%] -translate-x-1/2 -translate-y-1/2 px-3 py-1.5 rounded-xl font-mono text-xs font-bold transition-all duration-300 z-20 flex items-center gap-1.5 cursor-pointer ${activeSapNode === 'sales'
+                    ? 'bg-indigo-600 text-white shadow-[0_0_20px_rgba(99,102,241,0.6)] scale-110 ring-2 ring-indigo-400'
+                    : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/20 text-slate-700 dark:text-slate-300 hover:border-indigo-500'
+                    }`}
                 >
-                  <Building2 className="h-3.5 w-3.5" />
+                  <TrendingUp className="h-3.5 w-3.5" />
                   <span>Sales</span>
                 </button>
 
                 {/* 5. Materials (Bottom-Left) */}
                 <button
                   onClick={() => handleSapNodeClick('materials')}
-                  className={`absolute top-[68%] left-[14%] -translate-x-1/2 -translate-y-1/2 px-3 py-1.5 rounded-xl font-mono text-xs font-bold transition-all duration-300 z-20 flex items-center gap-1.5 cursor-pointer ${
-                    activeSapNode === 'materials' 
-                      ? 'bg-purple-600 text-white shadow-[0_0_20px_rgba(147,51,234,0.6)] scale-110 ring-2 ring-purple-400' 
-                      : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/20 text-slate-700 dark:text-slate-300 hover:border-purple-500'
-                  }`}
+                  className={`absolute top-[68%] left-[14%] -translate-x-1/2 -translate-y-1/2 px-3 py-1.5 rounded-xl font-mono text-xs font-bold transition-all duration-300 z-20 flex items-center gap-1.5 cursor-pointer ${activeSapNode === 'materials'
+                    ? 'bg-purple-600 text-white shadow-[0_0_20px_rgba(147,51,234,0.6)] scale-110 ring-2 ring-purple-400'
+                    : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/20 text-slate-700 dark:text-slate-300 hover:border-purple-500'
+                    }`}
                 >
                   <Boxes className="h-3.5 w-3.5" />
                   <span>Materials</span>
@@ -1141,11 +1131,10 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
                 {/* 6. Compliance (Bottom) */}
                 <button
                   onClick={() => handleSapNodeClick('compliance')}
-                  className={`absolute top-[86%] left-[50%] -translate-x-1/2 -translate-y-1/2 px-3 py-1.5 rounded-xl font-mono text-xs font-bold transition-all duration-300 z-20 flex items-center gap-1.5 cursor-pointer ${
-                    activeSapNode === 'compliance' 
-                      ? 'bg-rose-600 text-white shadow-[0_0_20px_rgba(225,29,72,0.6)] scale-110 ring-2 ring-rose-400' 
-                      : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/20 text-slate-700 dark:text-slate-300 hover:border-rose-500'
-                  }`}
+                  className={`absolute top-[86%] left-[50%] -translate-x-1/2 -translate-y-1/2 px-3 py-1.5 rounded-xl font-mono text-xs font-bold transition-all duration-300 z-20 flex items-center gap-1.5 cursor-pointer ${activeSapNode === 'compliance'
+                    ? 'bg-rose-600 text-white shadow-[0_0_20px_rgba(225,29,72,0.6)] scale-110 ring-2 ring-rose-400'
+                    : 'bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/20 text-slate-700 dark:text-slate-300 hover:border-rose-500'
+                    }`}
                 >
                   <ShieldCheck className="h-3.5 w-3.5" />
                   <span>Compliance</span>
@@ -1178,7 +1167,7 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
                     <h3 className="font-display text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mb-2">
                       EXIM ➔ {activeSapData.label}
                     </h3>
-                    
+
                     <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/10 mb-4">
                       <span className="font-mono text-[10px] text-slate-400 uppercase block mb-1">Architecture Integration Metric</span>
                       <span className="font-display text-base font-bold text-blue-600 dark:text-cyan-300">{activeSapData.metric}</span>
@@ -1214,7 +1203,7 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
           ========================================================================= */}
       <section className="py-16 sm:py-20 relative bg-white dark:bg-[#070E1C] border-b border-slate-200/80 dark:border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-12">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-500/30 shadow-sm mb-3">
@@ -1287,20 +1276,20 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
           Subtle animated 3D globe/global trade background.
           ========================================================================= */}
       <section className="py-16 sm:py-24 relative overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-[#EEF5FC] to-[#E0EDFB] dark:from-[#030712] dark:via-[#071324] dark:to-[#0A1B33] border-t border-slate-200/80 dark:border-white/10">
-        
+
         {/* Soft Ambient Colorful Radiant Glow */}
         <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[600px] h-[350px] bg-cyan-400/15 dark:bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[300px] bg-blue-600/15 dark:bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           <div className="rounded-3xl bg-white dark:bg-[#0B1528] border border-slate-200 dark:border-cyan-500/30 shadow-2xl p-8 sm:p-12 lg:p-14 overflow-hidden relative">
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-              
+
               {/* Left Column: Heading, Subtitle & Action CTAs (7 Cols) */}
               <div className="lg:col-span-7 text-left space-y-6">
-                
+
                 {/* Badge */}
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase bg-blue-50 dark:bg-cyan-950/50 text-blue-700 dark:text-cyan-300 border border-blue-200 dark:border-cyan-500/30 shadow-sm">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
@@ -1359,17 +1348,17 @@ export const EximPage: React.FC<EximPageProps> = ({ onOpenContact }) => {
               {/* Right Column: EXIM Operations Command Showcase Card (5 Cols) */}
               <div className="lg:col-span-5">
                 <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-cyan-500/30 shadow-2xl bg-white dark:bg-slate-900 transition-all">
-                  
+
                   {/* High-Clarity Visual Frame with Elegant Dark Border Shading */}
                   <div className="p-3.5 sm:p-4 bg-slate-100/60 dark:bg-slate-950/60 border-b border-slate-200/80 dark:border-white/10">
                     <div className="relative bg-white rounded-2xl p-3 sm:p-4 flex items-center justify-center overflow-hidden border border-slate-300/90 dark:border-slate-700/80 shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
-                      
+
                       <img
                         src="/images/exim-simplify-operations.jpg"
                         alt="Intelligent Connected EXIM Global Trade, Logistics & Supply Chain Ecosystem"
                         className="w-full h-auto max-h-[290px] sm:max-h-[320px] object-contain hover:scale-[1.02] transition-transform duration-500"
                       />
-                      
+
                       {/* Dark Border Shading (Inner Vignette along all 4 edges) */}
                       <div className="pointer-events-none absolute inset-0 rounded-2xl shadow-[inset_0_0_32px_rgba(15,23,42,0.25),inset_0_0_12px_rgba(15,23,42,0.18)] border border-slate-400/40" />
                     </div>

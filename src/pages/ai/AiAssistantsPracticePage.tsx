@@ -729,8 +729,8 @@ export const AiAssistantsPracticePage: React.FC<AiAssistantsPracticePageProps> =
                     >
                       <StepIcon className={`w-4 h-4 shrink-0 ${isSelected ? 'text-white' : 'text-[#0070C0]'}`} />
                       <div className="min-w-0">
-                        <div className="text-xs font-bold truncate">{step.label}</div>
-                        <div className={`text-[10px] font-mono truncate ${isSelected ? 'text-sky-100' : 'text-slate-500'}`}>
+                        <div className="text-xs font-bold break-words leading-tight">{step.label}</div>
+                        <div className={`text-[10px] font-mono break-words ${isSelected ? 'text-sky-100' : 'text-slate-500'}`}>
                           {step.sublabel}
                         </div>
                       </div>

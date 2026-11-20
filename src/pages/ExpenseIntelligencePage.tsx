@@ -19,6 +19,7 @@ import {
   DollarSign,
   Tag,
   Building2,
+  Users,
   FileCheck2,
   Layers,
   Database,
@@ -173,7 +174,7 @@ export const ExpenseIntelligencePage: React.FC<ExpenseIntelligencePageProps> = (
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div className="product-typography font-sora min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
       
       {/* =========================================================================
           1. HERO SECTION (With Single Main Widescreen Visual + Executive Layout)
@@ -252,48 +253,22 @@ export const ExpenseIntelligencePage: React.FC<ExpenseIntelligencePageProps> = (
               </div>
             </motion.div>
 
-            {/* Right Column: Long Widescreen Visual Frame with High-Resolution Image */}
+            {/* Right Column: Visual Frame with High-Resolution Image */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
-              className="lg:col-span-6 relative flex justify-center"
+              className="lg:col-span-6 relative flex justify-center items-center"
             >
-              <div className="relative w-full rounded-2xl p-1 bg-gradient-to-b from-[#00A3E0]/30 via-cyan-500/15 to-blue-600/10 dark:from-[#00A3E0]/40 dark:via-white/10 dark:to-transparent shadow-2xl group">
+              <div className="relative w-full max-w-lg lg:max-w-none rounded-2xl p-1 bg-gradient-to-b from-[#00A3E0]/30 via-cyan-500/15 to-blue-600/10 dark:from-[#00A3E0]/40 dark:via-white/10 dark:to-transparent shadow-2xl group">
                 
-                {/* Long Image Container with Dedicated Height and Darker Border */}
-                <div className="relative rounded-[14px] bg-[#070E1C] border-2 border-slate-300/40 dark:border-slate-700/80 overflow-hidden shadow-2xl h-[380px] sm:h-[460px] lg:h-[500px] xl:h-[540px]">
+                {/* 1:1 Aspect Ratio Image Container matching the 736x736 visual perfectly */}
+                <div className="relative rounded-[14px] bg-white dark:bg-[#070E1C] border-2 border-slate-300 dark:border-slate-700 overflow-hidden shadow-2xl aspect-square w-full">
                   <img 
                     src="/images/expense_intelligence_hero.jpg" 
-                    alt="Expense Intelligence - Automated Corporate Spend Auditing" 
-                    className="w-full h-full object-cover object-center select-none group-hover:scale-105 transition-transform duration-700"
+                    alt="Expense Intelligence - Continuous Corporate Spend Auditing and Mobile Reimbursement" 
+                    className="w-full h-full object-cover object-center select-none group-hover:scale-[1.02] transition-transform duration-700"
                   />
-                  
-                  {/* Subtle Gradient Vignette */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#070E1C]/85 via-transparent to-transparent pointer-events-none" />
-
-                  {/* Top Floating Badge */}
-                  <div className="absolute top-4 left-4 flex items-center gap-2">
-                    <span className="px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-[#070E1C]/90 backdrop-blur-md text-cyan-300 border-2 border-cyan-500/40 shadow-lg flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                      CONTINUOUS SPEND AUDIT ACTIVE
-                    </span>
-                  </div>
-
-                  {/* Bottom Floating Telemetry Strip (No Numbers / Pure Assurance) */}
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-2 p-3 rounded-xl bg-[#070E1C]/95 backdrop-blur-md border-2 border-slate-700 shadow-xl text-xs">
-                    <div className="flex items-center gap-2.5">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-400 flex-shrink-0" />
-                      <div>
-                        <div className="font-bold text-white text-[11px] font-sans">Policy Adherence Verified</div>
-                        <div className="text-[9px] text-slate-400 font-mono">Autonomous Corporate Spend Verification Active</div>
-                      </div>
-                    </div>
-                    <span className="px-2.5 py-1 rounded text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
-                      APPROVED FOR PAYOUT
-                    </span>
-                  </div>
-
                 </div>
               </div>
             </motion.div>
@@ -656,21 +631,21 @@ export const ExpenseIntelligencePage: React.FC<ExpenseIntelligencePageProps> = (
                           </div>
 
                           {/* 3-Way Match Verification Triad */}
-                          <div className="grid grid-cols-3 gap-2 text-center">
-                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1">
+                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-2 text-center">
+                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1 min-w-0">
                               <div className="text-[10px] font-mono text-emerald-400 font-bold uppercase">Policy 01</div>
-                              <div className="text-xs font-bold text-white font-display">Per-Diem Cap</div>
-                              <div className="text-[9px] text-slate-400 font-sans">Within limits</div>
+                              <div className="text-xs sm:text-sm font-bold text-white font-display break-words">Per-Diem Cap</div>
+                              <div className="text-[10px] sm:text-[9px] text-slate-400 font-sans">Within limits</div>
                             </div>
-                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1">
+                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1 min-w-0">
                               <div className="text-[10px] font-mono text-emerald-400 font-bold uppercase">Policy 02</div>
-                              <div className="text-xs font-bold text-white font-display">Receipt Match</div>
-                              <div className="text-[9px] text-slate-400 font-sans">Card line reconciled</div>
+                              <div className="text-xs sm:text-sm font-bold text-white font-display break-words">Receipt Match</div>
+                              <div className="text-[10px] sm:text-[9px] text-slate-400 font-sans">Card line reconciled</div>
                             </div>
-                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1">
+                            <div className="p-3 rounded-xl bg-white/5 border-2 border-emerald-500/40 space-y-1 min-w-0">
                               <div className="text-[10px] font-mono text-emerald-400 font-bold uppercase">Policy 03</div>
-                              <div className="text-xs font-bold text-white font-display">Fraud Scan</div>
-                              <div className="text-[9px] text-slate-400 font-sans">Unique submission</div>
+                              <div className="text-xs sm:text-sm font-bold text-white font-display break-words">Fraud Scan</div>
+                              <div className="text-[10px] sm:text-[9px] text-slate-400 font-sans">Unique submission</div>
                             </div>
                           </div>
 
@@ -734,7 +709,7 @@ export const ExpenseIntelligencePage: React.FC<ExpenseIntelligencePageProps> = (
 
                             <div className="p-3.5 rounded-xl bg-white/5 border border-blue-500/30 text-center space-y-1.5">
                               <div className="w-8 h-8 mx-auto rounded-lg bg-blue-500/20 text-blue-300 flex items-center justify-center">
-                                <Building2 className="h-4 w-4" />
+                                <Users className="h-4 w-4" />
                               </div>
                               <div className="text-xs font-bold text-white font-display">Workday &amp; HRIS</div>
                               <span className="inline-block text-[9px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">

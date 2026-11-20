@@ -29,7 +29,7 @@ import { COMPANY_INFO } from '../../data/knooviqData';
 
 export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => void }> = ({ onOpenContact }) => {
   return (
-    <div className="relative w-full max-w-full pb-20 bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden overflow-x-clip">
+    <div className="about-typography relative w-full max-w-full pb-20 bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden overflow-x-clip font-sora">
       
       {/* Dynamic Background Aurora Blobs */}
       <div className="aurora-sphere-1 top-20 left-1/4 bg-[#00A3E0]/15 dark:bg-[#00F0FF]/15 pointer-events-none" />
@@ -74,7 +74,7 @@ export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg lg:text-xl text-white font-medium drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] leading-relaxed font-sans mb-8 max-w-3xl"
+              className="text-base sm:text-lg lg:text-xl text-white font-medium drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] leading-relaxed font-sora mb-8 max-w-3xl"
             >
               Born from a conviction that enterprise software must deliver enduring business agility rather than technical debt. How an uncompromising dedication to clean-core principles and domain mastery transformed our consultancy into an international SAP transformation powerhouse.
             </motion.p>
@@ -112,21 +112,21 @@ export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => 
             
             <div className="lg:col-span-7 space-y-6">
               {/* Transparent background for WHO WE ARE • ESTABLISHED 2006 */}
-              <div className="inline-flex items-center gap-2 text-xs font-bold text-[#0A2540] font-mono uppercase tracking-wider bg-transparent">
+              <div className="inline-flex items-center gap-2 text-[14px] font-bold text-[#0A2540] font-mono uppercase tracking-wider bg-transparent">
                 <Sparkles className="h-3.5 w-3.5 text-[#0052CC]" />
                 <span>WHO WE ARE • ESTABLISHED 2006</span>
               </div>
 
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-[1.15]">
+              <h2 className="font-sora text-[18px] font-bold text-slate-900 dark:text-white tracking-tight leading-[1.2]">
                 Empowering Success: <br />
-                <span className="text-gradient-cyan">Knooviq's Journey and Vision</span>
+                <span className="text-gradient-cyan text-[16px] font-medium font-sora block mt-1">Knooviq's Journey and Vision</span>
               </h2>
 
-              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+              <p className="text-[15.5px] sm:text-[14px] text-[#102A43] sm:text-slate-600 dark:text-slate-200 leading-[1.6] font-sora font-normal text-left [word-spacing:normal] tracking-normal">
                 At Knooviq, we’ve been your trusted partner in SAP Consulting and Solutions since our establishment in 2006. With a firm foundation in strong technical skills and unmatched domain expertise, we have consistently delivered excellence in project management, project support, customized application development, manpower outsourcing, and augmentation. Our project implementation exposure across diverse industries, including Retail, Metals & Mining, Oil & Gas, Manufacturing, and more, has solidified our reputation in the market.
               </p>
 
-              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+              <p className="text-[15.5px] sm:text-[14px] text-[#102A43] sm:text-slate-600 dark:text-slate-200 leading-[1.6] font-sora font-normal text-left [word-spacing:normal] tracking-normal">
                 We take pride in our recognized quality of services, on-time delivery, and our expertise in turnkey business solutions. Knooviq is committed to providing strategic guidance to key sectors like Automotive, Manufacturing & Trading, Distribution, Design, and beyond. We are more than just a company; we are your partner in success, ready to empower your organization with innovative strategies and SAP excellence.
               </p>
 
@@ -142,7 +142,7 @@ export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => 
                 ].map((badge, idx) => {
                   const BIcon = badge.icon;
                   return (
-                    <div key={idx} className="bg-white border border-slate-200/90 shadow-sm rounded-xl p-3 flex items-center gap-2.5 text-xs font-semibold text-slate-800 hover:border-[#0A2540]/30 transition-colors">
+                    <div key={idx} className="bg-white border border-slate-200/90 shadow-sm rounded-xl p-3 flex items-center gap-2.5 text-[14px] font-semibold text-slate-800 hover:border-[#0A2540]/30 transition-colors">
                       <BIcon className="h-4 w-4 text-[#0052CC] flex-shrink-0" />
                       <span>{badge.label}</span>
                     </div>
@@ -163,7 +163,7 @@ export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => 
                 
                 {/* Top Badge on Image with Transparent Glass Background */}
                 <div className="absolute top-4 left-4 z-20">
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-950/30 backdrop-blur-md border border-white/20 text-white text-[11px] font-mono font-bold uppercase tracking-wider">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-950/30 backdrop-blur-md border border-white/20 text-white text-[14px] font-mono font-bold uppercase tracking-wider">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     <span>WHO WE ARE • ESTABLISHED 2006</span>
                   </div>
@@ -172,13 +172,13 @@ export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => 
                 {/* Floating Brand Motto Card with Clean Transparent Glass */}
                 <div className="absolute bottom-6 left-6 right-6 z-20">
                   <div className="rounded-2xl p-4 bg-slate-950/40 border border-white/20 backdrop-blur-md text-white shadow-2xl">
-                    <span className="text-[10px] font-mono uppercase font-bold text-slate-300 block mb-0.5 tracking-wider">
+                    <span className="text-[14px] font-mono uppercase font-bold text-slate-300 block mb-0.5 tracking-wider">
                       Brand Motto
                     </span>
-                    <h4 className="font-display text-base font-bold text-white tracking-tight">
+                    <h4 className="font-sora text-[18px] font-medium text-white tracking-tight">
                       "Building Success, Innovating Futures"
                     </h4>
-                    <p className="text-xs text-slate-200 mt-1 font-sans leading-relaxed">
+                    <p className="text-[14px] text-slate-200 mt-1 font-sora font-normal leading-[1.6]">
                       Pairing deep functional discipline with zero-disruption SAP technical cutovers since 2006.
                     </p>
                   </div>
@@ -195,14 +195,14 @@ export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold uppercase bg-[#00A3E0]/10 dark:bg-cyan-500/10 text-[#0077B6] dark:text-cyan-300 border border-[#00A3E0]/20 mb-3">
-              <Layers className="h-3 w-3" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[14px] font-mono font-bold uppercase bg-[#00A3E0]/10 dark:bg-cyan-500/10 text-[#0077B6] dark:text-cyan-300 border border-[#00A3E0]/20 mb-3">
+              <Layers className="h-3.5 w-3.5" />
               <span>Execution Discipline</span>
             </div>
-            <h3 className="font-display text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
+            <h3 className="font-sora text-[18px] font-bold text-slate-900 dark:text-white tracking-tight">
               Four Pillars of Our Enduring Reputation
             </h3>
-            <p className="mt-3 text-sm text-slate-600 dark:text-slate-300 font-sans">
+            <p className="mt-3 text-[16px] text-[#102A43] sm:text-slate-600 dark:text-slate-300 font-sora font-normal leading-[1.6]">
               Why leading industrial enterprises trust KNOOVIQ to steer their most critical enterprise platforms.
             </p>
           </div>
@@ -246,10 +246,10 @@ export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => 
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#00A3E0]/10 dark:bg-cyan-500/15 border border-[#00A3E0]/20 dark:border-cyan-400/30 mb-5">
                       <PIcon className="h-6 w-6 text-[#00A3E0] dark:text-cyan-300" />
                     </div>
-                    <h4 className="font-display text-lg font-bold text-slate-900 dark:text-white mb-2">
+                    <h4 className="font-sora text-[18px] font-medium text-slate-900 dark:text-white mb-2 leading-snug">
                       {pillar.title}
                     </h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+                    <p className="text-[14px] text-[#102A43] sm:text-slate-600 dark:text-slate-300 leading-[1.6] font-sora font-normal">
                       {pillar.desc}
                     </p>
                   </div>
@@ -266,13 +266,13 @@ export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-2xl mb-14">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#0A2540]">
+            <span className="text-[14px] font-mono font-bold uppercase tracking-wider text-[#0A2540]">
               Multi-Sector Domain Expertise
             </span>
-            <h3 className="font-display text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mt-2">
+            <h3 className="font-sora text-[18px] font-bold text-slate-900 tracking-tight mt-2">
               Proven Exposure Across Diverse Global Industries
             </h3>
-            <p className="mt-3 text-sm text-slate-600 font-sans">
+            <p className="mt-3 text-[16px] text-[#102A43] sm:text-slate-600 font-sora font-normal leading-[1.6]">
               Turnkey SAP implementations engineered to tackle specific regulatory, supply chain, and asset lifecycle challenges.
             </p>
           </div>
@@ -320,23 +320,23 @@ export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => 
                 key={idx}
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.2 }}
-                className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 group h-80 flex flex-col justify-end p-6"
+                className="relative rounded-3xl overflow-hidden shadow-lg border border-slate-200 group h-[370px] flex flex-col justify-end p-6"
               >
                 <img 
                   src={ind.image} 
                   alt={ind.sector}
-                  className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                  className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/50 to-transparent/10" />
                 
                 <div className="relative z-10 space-y-2">
-                  <span className="inline-block px-2.5 py-0.5 rounded-lg bg-[#0A2540]/80 border border-white/20 text-[10px] font-mono font-bold text-white uppercase">
+                  <span className="inline-block px-2.5 py-0.5 rounded-lg bg-[#0A2540]/80 border border-white/20 text-[12px] font-mono font-bold text-white uppercase">
                     {ind.tag}
                   </span>
-                  <h4 className="font-display text-lg font-bold text-white leading-snug">
+                  <h4 className="font-sora text-[18px] font-medium text-white leading-snug">
                     {ind.sector}
                   </h4>
-                  <p className="text-xs text-slate-300 font-sans leading-relaxed line-clamp-2">
+                  <p className="text-[14px] text-slate-300 font-sora font-normal leading-[1.6]">
                     {ind.desc}
                   </p>
                 </div>
@@ -373,11 +373,11 @@ export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => 
 
             {/* Right Column: Why Choose Us Content & Capability Progress Bars */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="font-display text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
+              <h3 className="font-sora text-[18px] font-bold text-slate-900 dark:text-white tracking-tight">
                 Why Choose Us?
               </h3>
 
-              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+              <p className="text-[15.5px] sm:text-[14px] text-[#102A43] sm:text-slate-600 dark:text-slate-200 leading-[1.6] font-sora font-normal text-left [word-spacing:normal] tracking-normal">
                 Knooviq Industries is a Business Consulting & Outsourcing company, promoted by a team of dedicated, highly experienced professionals with the aim of providing cost effective and high quality technical & professional solutions to its customers. As your single stop for comprehensive Solutions, Software Support and Consulting, Knooviq offers you high quality, objective oriented services to suit your IT budget and needs.
               </p>
 
@@ -390,9 +390,9 @@ export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => 
                   { label: 'Staffing & Support Excellence', percentage: 95 }
                 ].map((bar, idx) => (
                   <div key={idx} className="space-y-1.5">
-                    <div className="flex justify-between items-center text-xs font-bold text-slate-800 font-display">
+                    <div className="flex justify-between items-center text-[14px] font-bold text-slate-800 font-display">
                       <span>{bar.label}</span>
-                      <span className="text-[#0A2540] font-mono font-bold">{bar.percentage}%</span>
+                      <span className="text-[#0A2540] font-mono font-bold text-[14px]">{bar.percentage}%</span>
                     </div>
                     <div className="h-2 w-full bg-slate-200 rounded-full overflow-hidden p-[1px]">
                       <motion.div
@@ -409,7 +409,7 @@ export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => 
 
               <div className="pt-2 flex flex-wrap gap-2">
                 {['Turnkey Solutions', '24/7 SLA Guarantee', 'Cost-Effective Delivery', 'Established 2006'].map((pill, i) => (
-                  <span key={i} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-800">
+                  <span key={i} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-100 border border-slate-200 text-[14px] font-semibold text-slate-800">
                     <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
                     <span>{pill}</span>
                   </span>
@@ -427,10 +427,10 @@ export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => 
       <section className="py-20 border-t border-slate-200 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold tracking-widest uppercase text-[#0A2540] font-mono">
+            <span className="text-[14px] font-bold tracking-widest uppercase text-[#0A2540] font-mono">
               The Journey So Far
             </span>
-            <h2 className="mt-2 font-display text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+            <h2 className="mt-2 font-sora text-[18px] font-bold text-slate-900 tracking-tight">
               Milestones of Growth & Innovation
             </h2>
           </div>
@@ -438,45 +438,45 @@ export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="glass-panel glass-panel-hover rounded-3xl p-8 relative overflow-hidden flex flex-col justify-between">
               <div>
-                <span className="text-xs font-mono font-bold text-[#0A2540] uppercase">Phase 01 • 2006</span>
-                <h3 className="font-display text-xl font-bold text-slate-900 mt-2 mb-3">
+                <span className="text-[16px] font-mono font-bold text-[#0A2540] uppercase">Phase 01 • 2006</span>
+                <h3 className="font-sora text-[18px] font-medium text-slate-900 mt-2 mb-3">
                   Genesis & Core ERP Advisory
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed font-sans mb-6">
+                <p className="text-[15.5px] sm:text-[14px] text-[#102A43] sm:text-slate-600 dark:text-slate-200 leading-[1.6] font-sora font-normal text-left [word-spacing:normal] tracking-normal mb-6">
                   Founded with strong technical skills and unmatched domain expertise, delivering excellence in project management, SAP ECC support, and talent augmentation for regional enterprises.
                 </p>
               </div>
-              <div className="pt-4 border-t border-slate-200 text-[11px] font-mono font-semibold text-slate-500">
+              <div className="pt-4 border-t border-slate-200 text-[14px] font-mono font-semibold text-slate-500">
                 Strategic Foundation Established
               </div>
             </div>
 
             <div className="glass-panel glass-panel-hover rounded-3xl p-8 relative overflow-hidden flex flex-col justify-between border-slate-200/90">
               <div>
-                <span className="text-xs font-mono font-bold text-[#0052CC] uppercase">Phase 02 • Expansion</span>
-                <h3 className="font-display text-xl font-bold text-slate-900 mt-2 mb-3">
+                <span className="text-[16px] font-mono font-bold text-[#0052CC] uppercase">Phase 02 • Expansion</span>
+                <h3 className="font-sora text-[18px] font-medium text-slate-900 mt-2 mb-3">
                   S/4HANA & Clean Core Pioneer
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed font-sans mb-6">
+                <p className="text-[15.5px] sm:text-[14px] text-[#102A43] sm:text-slate-600 dark:text-slate-200 leading-[1.6] font-sora font-normal text-left [word-spacing:normal] tracking-normal mb-6">
                   Expanded across Metals & Mining, Oil & Gas, Retail, and Automotive. Pioneered automated ABAP code remediation and SAP BTP side-by-side cloud extensibility.
                 </p>
               </div>
-              <div className="pt-4 border-t border-slate-200 text-[11px] font-mono font-semibold text-[#0052CC]">
+              <div className="pt-4 border-t border-slate-200 text-[14px] font-mono font-semibold text-[#0052CC]">
                 100% Clean Core Compliance
               </div>
             </div>
 
             <div className="glass-panel glass-panel-hover rounded-3xl p-8 relative overflow-hidden flex flex-col justify-between">
               <div>
-                <span className="text-xs font-mono font-bold text-emerald-600 uppercase">Phase 03 • Global Scale</span>
-                <h3 className="font-display text-xl font-bold text-slate-900 mt-2 mb-3">
+                <span className="text-[16px] font-mono font-bold text-emerald-600 uppercase">Phase 03 • Global Scale</span>
+                <h3 className="font-sora text-[18px] font-medium text-slate-900 mt-2 mb-3">
                   24/7 Global Delivery & AI
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed font-sans mb-6">
+                <p className="text-[15.5px] sm:text-[14px] text-[#102A43] sm:text-slate-600 dark:text-slate-200 leading-[1.6] font-sora font-normal text-left [word-spacing:normal] tracking-normal mb-6">
                   Delivering 24/7 SLA-governed AMS and turnkey digital transformations globally, integrating SAP Joule Copilot and predictive supply chain intelligence.
                 </p>
               </div>
-              <div className="pt-4 border-t border-slate-200 text-[11px] font-mono font-semibold text-emerald-600">
+              <div className="pt-4 border-t border-slate-200 text-[14px] font-mono font-semibold text-emerald-600">
                 Global Follow-the-Sun Network
               </div>
             </div>
@@ -507,7 +507,7 @@ export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => 
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]"
+            className="font-sora text-[18px] font-bold text-white tracking-tight leading-[1.2]"
           >
             Ready to Build Your Transformation Journey?
           </motion.h2>
@@ -517,7 +517,7 @@ export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => 
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-4 text-sm sm:text-base text-slate-300 font-sans leading-relaxed max-w-2xl mx-auto mb-8"
+            className="mt-4 text-[16px] text-slate-300 font-sora font-normal leading-[1.6] max-w-2xl mx-auto mb-8"
           >
             Discover how Knooviq’s deep functional expertise and proven delivery excellence can empower your organization to innovate, scale, and thrive.
           </motion.p>
@@ -531,7 +531,7 @@ export const TheKnooviqStoryPage: React.FC<{ onOpenContact: (topic?: string) => 
           >
             <button
               onClick={() => onOpenContact('The Knooviq Story: Enterprise Consultation')}
-              className="w-full sm:w-auto btn-primary-gradient shimmer-sweep px-8 py-3.5 rounded-xl text-white font-display text-xs font-bold uppercase tracking-wider shadow-xl flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full sm:w-auto btn-primary-gradient shimmer-sweep px-8 py-3.5 rounded-xl text-white font-sora text-[14px] font-medium uppercase tracking-wider shadow-xl flex items-center justify-center gap-2 cursor-pointer"
             >
               <span>Contact Us</span>
               <ArrowRight className="h-4 w-4" />

@@ -88,7 +88,7 @@ export const SapIntegrationSuitePage: React.FC<TechnologyPageProps> = ({ onOpenC
       description: 'Auto-sync equipment breakdown tickets, maintenance work orders, and spare parts inventory requisition status.',
       protocol: 'REST / OData v2',
       certified: 'SAP Certified Package',
-      image: '/images/sap_integration_suite_servicenow_itsm_sap.png'
+      image: '/images/sap_integration_suite_servicenow_itsm_sap.jpg'
     },
     {
       id: 'acc-6',
@@ -106,11 +106,12 @@ export const SapIntegrationSuitePage: React.FC<TechnologyPageProps> = ({ onOpenC
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Global Interconnected API Plexus)
+          (DESKTOP FULL-SCREEN BACKGROUND, MOBILE SHOWCASE CARD)
           ========================================================================= */}
       <section className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 overflow-hidden bg-black text-white">
         
-        {/* Full-Bleed 16:9 Panoramic Image - Zero Cropping on Subject */}
-        <div className="absolute inset-0 z-0">
+        {/* Desktop-Only Full-Bleed 16:9 Background Image (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
           <img
             src="/images/sap_integration_suite_ipaas_event_mesh.png"
             alt="SAP Integration Suite Global Interconnected Enterprise iPaaS & Event Mesh"
@@ -119,9 +120,15 @@ export const SapIntegrationSuitePage: React.FC<TechnologyPageProps> = ({ onOpenC
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
 
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-2xl lg:max-w-xl space-y-6 relative">
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -158,6 +165,18 @@ export const SapIntegrationSuitePage: React.FC<TechnologyPageProps> = ({ onOpenC
                 <span>Sub-Millisecond Event Mesh</span>
               </div>
             </motion.div>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                <img
+                  src="/images/sap_integration_suite_ipaas_event_mesh.png"
+                  alt="SAP Integration Suite Global Interconnected Enterprise iPaaS & Event Mesh"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -429,11 +448,11 @@ export const SapIntegrationSuitePage: React.FC<TechnologyPageProps> = ({ onOpenC
                 className="rounded-2xl bg-white border border-blue-100 shadow-sm hover:border-blue-300 hover:shadow-md transition-all overflow-hidden flex flex-col justify-between group"
               >
                 <div>
-                  <div className="h-44 w-full relative overflow-hidden">
+                  <div className="h-44 w-full relative overflow-hidden bg-slate-950">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent to-transparent" />
                     <span className="absolute top-3 left-3 text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-blue-950/90 text-white font-bold border border-blue-400/30">
@@ -580,8 +599,9 @@ export const SapIntegrationSuitePage: React.FC<TechnologyPageProps> = ({ onOpenC
             </div>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-blue-200 bg-white shadow-md mb-8">
-            <table className="w-full text-left border-collapse text-xs sm:text-sm">
+          {/* Desktop Table (100% Untouched on Desktop) */}
+          <div className="hidden md:block overflow-x-auto rounded-2xl border border-blue-200 bg-white shadow-md mb-8">
+            <table className="w-full min-w-[640px] text-left border-collapse text-xs sm:text-sm">
               <thead>
                 <tr className="border-b border-blue-200 bg-blue-950 text-white font-mono text-xs">
                   <th className="p-4 sm:p-5 font-bold uppercase">Capability / Feature</th>
@@ -615,6 +635,55 @@ export const SapIntegrationSuitePage: React.FC<TechnologyPageProps> = ({ onOpenC
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          {/* Mobile-Only Responsive Comparison Cards (100% Content Visible with Zero Cut-Off) */}
+          <div className="md:hidden space-y-4 mb-8">
+            {[
+              {
+                feature: 'Infrastructure & Patching',
+                legacy: 'High operational overhead • Manual Java OS patches',
+                suite: '100% Fully Managed SaaS • Zero Patching Downtime'
+              },
+              {
+                feature: 'Migration Automation',
+                legacy: 'Manual ICO extraction and recreation',
+                suite: 'Integrated Migration Assessment tool • 70% Auto-Conversion'
+              },
+              {
+                feature: 'Automated Regression Testing',
+                legacy: 'Complex manual mock testing',
+                suite: 'Bit-by-bit payload comparison with Int4 Suite / Figaf'
+              },
+              {
+                feature: 'Event-Driven Architecture',
+                legacy: 'Rigid synchronous RFC/IDoc polling',
+                suite: 'Native Event Mesh • Kafka, MQTT, WebSockets'
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="rounded-2xl border border-blue-200 bg-white p-4 shadow-sm space-y-3">
+                <div className="flex items-center gap-2 pb-2 border-b border-blue-100">
+                  <div className="w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0" />
+                  <h4 className="font-bold text-sm text-blue-950 font-mono uppercase break-words">{item.feature}</h4>
+                </div>
+                <div className="space-y-2 text-xs">
+                  <div className="p-3 rounded-xl bg-amber-50/80 border border-amber-200/70">
+                    <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-800 mb-1 flex items-center justify-between">
+                      <span>Legacy SAP PI/PO (7.5 On-Prem)</span>
+                      <span className="text-amber-600 font-normal">Legacy</span>
+                    </div>
+                    <div className="text-amber-950 font-medium leading-relaxed break-words">{item.legacy}</div>
+                  </div>
+                  <div className="p-3 rounded-xl bg-blue-50/80 border border-blue-200">
+                    <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-700 mb-1 flex items-center justify-between">
+                      <span>SAP Integration Suite (Cloud iPaaS)</span>
+                      <span className="text-blue-600 font-bold">Cloud SaaS</span>
+                    </div>
+                    <div className="text-blue-950 font-semibold leading-relaxed break-words">{item.suite}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
 
         </div>

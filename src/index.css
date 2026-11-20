@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,22 +34,30 @@
     min-height: 100dvh;
     -webkit-overflow-scrolling: touch;
     font-family: 'Plus Jakarta Sans', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    font-size: 1rem; /* 16px base */
+    font-size: 1rem;
+    /* 16px base */
     line-height: 1.68;
     letter-spacing: -0.01em;
     background-color: #F8FAFC;
-    color: #1E293B; /* Crisp, accessible slate-800 */
+    color: #1E293B;
+    /* Crisp, accessible slate-800 */
     overflow-x: hidden;
     overflow-x: clip;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   /* Prevent iOS Safari 300ms tap delay & unintentional zooming */
-  button, a, input, select, textarea, [role="button"] {
+  button,
+  a,
+  input,
+  select,
+  textarea,
+  [role="button"] {
     touch-action: manipulation;
   }
 
-  img, video {
+  img,
+  video {
     max-width: 100%;
     height: auto;
   }
@@ -68,7 +77,13 @@
   }
 
   /* Restrained, Executive Human Typography Hierarchy */
-  h1, h2, h3, h4, h5, h6, .font-display {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-display {
     font-family: 'Plus Jakarta Sans', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     text-wrap: balance;
     color: inherit;
@@ -92,24 +107,208 @@
     line-height: 1.32;
   }
 
-  h4, h5, h6 {
+  h4,
+  h5,
+  h6 {
     font-weight: 600;
     letter-spacing: -0.008em;
     line-height: 1.4;
   }
 
   p {
-    line-height: 1.7;
-    letter-spacing: -0.006em;
+    font-family: 'Sora', 'Plus Jakarta Sans', Inter, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: normal;
     text-wrap: pretty;
   }
 
-  button, input, optgroup, select, textarea {
+  /* Mobile View (<640px): High-contrast Deep Navy Blue (#102A43) for paragraph text on white & light-blue surfaces */
+  @media screen and (max-width: 639.98px) {
+    p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-red"]):not([class*="text-sky"]):not([class*="text-blue"]):not([class*="text-indigo"]) {
+      color: #102A43 !important;
+    }
+  }
+
+  /* About Sections & Pages Typography Standards (Sora Family Integration) */
+  .about-typography {
+    font-family: 'Sora', 'Plus Jakarta Sans', Inter, sans-serif;
+  }
+
+  .about-typography p,
+  #about p {
+    font-family: 'Sora', 'Plus Jakarta Sans', Inter, sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+  }
+
+  .about-typography h3,
+  .about-typography h4,
+  #about h3,
+  #about h4 {
+    font-family: 'Sora', 'Plus Jakarta Sans', Inter, sans-serif;
+    font-weight: 500;
+  }
+
+  @media screen and (max-width: 639.98px) {
+
+    .about-typography p:not([class*="text-xs"]):not([class*="text-["]):not([class*="text-sm"]):not([class*="font-mono"]),
+    #about p:not([class*="text-xs"]):not([class*="text-["]):not([class*="text-sm"]):not([class*="font-mono"]) {
+      font-size: 15.5px !important;
+      line-height: 1.6 !important;
+      text-align: left !important;
+      word-spacing: normal !important;
+      letter-spacing: normal !important;
+    }
+
+    .about-typography p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]),
+    #about p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]) {
+      color: #102A43 !important;
+    }
+  }
+
+  /* Product Sections & Pages Typography Standards (Sora Family Integration) */
+  .product-typography,
+  .products-nav-typography,
+  #products,
+  [data-section="products"] {
+    font-family: 'Sora', 'Plus Jakarta Sans', Inter, sans-serif;
+  }
+
+  .product-typography p,
+  .products-nav-typography p,
+  .products-nav-typography a,
+  .products-nav-typography li,
+  #products p,
+  [data-section="products"] p {
+    font-family: 'Sora', 'Plus Jakarta Sans', Inter, sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+  }
+
+  .product-typography h3,
+  .product-typography h4,
+  .products-nav-typography h4,
+  .products-nav-typography .category-title,
+  #products h3,
+  #products h4,
+  [data-section="products"] h3,
+  [data-section="products"] h4 {
+    font-family: 'Sora', 'Plus Jakarta Sans', Inter, sans-serif;
+    font-weight: 500;
+  }
+
+  @media screen and (max-width: 639.98px) {
+
+    .product-typography p:not([class*="text-xs"]):not([class*="text-["]):not([class*="text-sm"]):not([class*="font-mono"]),
+    #products p:not([class*="text-xs"]):not([class*="text-["]):not([class*="text-sm"]):not([class*="font-mono"]),
+    [data-section="products"] p:not([class*="text-xs"]):not([class*="text-["]):not([class*="text-sm"]):not([class*="font-mono"]) {
+      font-size: 15.5px !important;
+      line-height: 1.6 !important;
+      text-align: left !important;
+      word-spacing: normal !important;
+      letter-spacing: normal !important;
+    }
+
+    .products-nav-typography a,
+    .products-nav-typography li,
+    .products-nav-typography p {
+      font-size: 15px !important;
+      line-height: 1.6 !important;
+      text-align: left !important;
+      word-spacing: normal !important;
+      letter-spacing: normal !important;
+    }
+
+    .product-typography p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]),
+    .products-nav-typography a:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]),
+    .products-nav-typography p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]),
+    #products p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]),
+    [data-section="products"] p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]) {
+      color: #102A43 !important;
+    }
+  }
+
+  /* Transformation Sections & Pages Typography Standards (Sora Family Integration) */
+  .transformation-typography,
+  .transformation-section,
+  #transformation,
+  [data-section="transformation"] {
+    font-family: 'Sora', 'Plus Jakarta Sans', Inter, sans-serif;
+  }
+
+  .transformation-typography p,
+  .transformation-section p,
+  #transformation p,
+  [data-section="transformation"] p {
+    font-family: 'Sora', 'Plus Jakarta Sans', Inter, sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+  }
+
+  /* Deep Navy (#102A43) for paragraphs on light surfaces across desktop and mobile */
+  .transformation-typography p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-rose"]):not([class*="font-mono"]),
+  .transformation-section p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-rose"]):not([class*="font-mono"]),
+  #transformation p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-rose"]):not([class*="font-mono"]),
+  [data-section="transformation"] p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-rose"]):not([class*="font-mono"]) {
+    color: #102A43;
+  }
+
+  /* Subheadings use Sora Medium (500) */
+  .transformation-typography h3,
+  .transformation-typography h4,
+  .transformation-typography h5,
+  .transformation-section h3,
+  .transformation-section h4,
+  .transformation-section h5,
+  #transformation h3,
+  #transformation h4,
+  #transformation h5,
+  [data-section="transformation"] h3,
+  [data-section="transformation"] h4,
+  [data-section="transformation"] h5 {
+    font-family: 'Sora', 'Plus Jakarta Sans', Inter, sans-serif;
+    font-weight: 500;
+  }
+
+  @media screen and (max-width: 639.98px) {
+
+    .transformation-typography p:not([class*="text-xs"]):not([class*="text-["]):not([class*="text-sm"]):not([class*="font-mono"]),
+    .transformation-section p:not([class*="text-xs"]):not([class*="text-["]):not([class*="text-sm"]):not([class*="font-mono"]),
+    #transformation p:not([class*="text-xs"]):not([class*="text-["]):not([class*="text-sm"]):not([class*="font-mono"]),
+    [data-section="transformation"] p:not([class*="text-xs"]):not([class*="text-["]):not([class*="text-sm"]):not([class*="font-mono"]) {
+      font-size: 15.5px !important;
+      line-height: 1.6 !important;
+      text-align: left !important;
+      word-spacing: normal !important;
+      letter-spacing: normal !important;
+    }
+
+    .transformation-typography p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-rose"]),
+    .transformation-section p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-rose"]),
+    #transformation p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-rose"]),
+    [data-section="transformation"] p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-rose"]) {
+      color: #102A43 !important;
+    }
+  }
+
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
     font-family: inherit;
   }
 
   /* iOS Safari: Prevent automatic viewport zoom on input focus on mobile devices (<768px) */
   @media screen and (max-width: 768px) {
+
     input:not([type="checkbox"]):not([type="radio"]),
     select,
     textarea {
@@ -160,16 +359,20 @@
   width: 3px;
   height: 3px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: rgba(148, 163, 184, 0.4);
   border-radius: 9999px;
 }
+
 .dark .custom-scrollbar::-webkit-scrollbar-thumb {
   background: rgba(0, 163, 224, 0.35);
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #00A3E0;
 }
@@ -208,6 +411,29 @@
   border-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
   transform: translateY(-4px);
+}
+
+/* =========================================================================
+   ENTERPRISE SHOWCASE IMAGE & CARD RENDERING STANDARDS
+   Eliminates Chrome/Edge backdrop-filter & subpixel rasterization blur,
+   ensuring diagrams, typography, and visuals remain 100% crystal-clear
+   both at rest and on cursor hover/unhover.
+   ========================================================================= */
+.enterprise-showcase-card {
+  isolation: isolate;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.enterprise-showcase-img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* Text Gradients (Day Theme Executive Navy & Deep Sapphire) */
@@ -296,12 +522,10 @@
   bottom: 0;
   left: 0;
   transform: translateX(-100%);
-  background-image: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0,
-    rgba(255, 255, 255, 0.25) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background-image: linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0,
+      rgba(255, 255, 255, 0.25) 50%,
+      rgba(255, 255, 255, 0) 100%);
   animation: shimmerSweep 3.5s infinite;
 }
 
@@ -357,6 +581,7 @@
 }
 
 @media (max-width: 768px) {
+
   .aurora-sphere-1,
   .aurora-sphere-2 {
     max-width: 70vw;
@@ -381,6 +606,7 @@
   0% {
     transform: translateX(-50%);
   }
+
   100% {
     transform: translateX(0%);
   }
@@ -422,6 +648,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .animate-rotate-ltr,
   .animate-rotate-ltr-slow,
   .animate-rotate-ltr-slower,
@@ -436,9 +663,11 @@
   0% {
     transform: translateX(-35px);
   }
+
   50% {
     transform: translateX(35px);
   }
+
   100% {
     transform: translateX(-35px);
   }
@@ -458,6 +687,7 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -468,15 +698,20 @@
    =================================================== */
 
 @keyframes waterBob {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) rotate(0deg);
   }
+
   25% {
     transform: translateY(-8px) rotate(1deg);
   }
+
   50% {
     transform: translateY(-3px) rotate(-0.5deg);
   }
+
   75% {
     transform: translateY(-10px) rotate(-1deg);
   }
@@ -487,6 +722,7 @@
     transform: scale(0.85);
     opacity: 0.9;
   }
+
   100% {
     transform: scale(1.9);
     opacity: 0;
@@ -497,6 +733,7 @@
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -506,6 +743,7 @@
   0% {
     transform: translateX(-50%);
   }
+
   100% {
     transform: translateX(0);
   }
@@ -515,6 +753,7 @@
   from {
     stroke-dashoffset: 48;
   }
+
   to {
     stroke-dashoffset: 0;
   }
@@ -523,12 +762,15 @@
 .animate-water-bob-1 {
   animation: waterBob 4s ease-in-out infinite 0s;
 }
+
 .animate-water-bob-2 {
   animation: waterBob 4s ease-in-out infinite 1s;
 }
+
 .animate-water-bob-3 {
   animation: waterBob 4s ease-in-out infinite 2s;
 }
+
 .animate-water-bob-4 {
   animation: waterBob 4s ease-in-out infinite 3s;
 }
@@ -566,13 +808,17 @@
     transform: translateX(-160%) skewX(-25deg);
     opacity: 0;
   }
+
   15% {
     opacity: 0.6;
   }
+
   35% {
     opacity: 0.6;
   }
-  50%, 100% {
+
+  50%,
+  100% {
     transform: translateX(260%) skewX(-25deg);
     opacity: 0;
   }
@@ -584,26 +830,66 @@
 
 /* Linear Telemetry Equalizer Bars */
 @keyframes barPulse1 {
-  0%, 100% { height: 5px; }
-  50% { height: 18px; }
-}
-@keyframes barPulse2 {
-  0%, 100% { height: 16px; }
-  50% { height: 6px; }
-}
-@keyframes barPulse3 {
-  0%, 100% { height: 9px; }
-  50% { height: 20px; }
+
+  0%,
+  100% {
+    height: 5px;
+  }
+
+  50% {
+    height: 18px;
+  }
 }
 
-.animate-bar-1 { animation: barPulse1 1.2s ease-in-out infinite; }
-.animate-bar-2 { animation: barPulse2 1.4s ease-in-out infinite 0.2s; }
-.animate-bar-3 { animation: barPulse3 1.1s ease-in-out infinite 0.4s; }
+@keyframes barPulse2 {
+
+  0%,
+  100% {
+    height: 16px;
+  }
+
+  50% {
+    height: 6px;
+  }
+}
+
+@keyframes barPulse3 {
+
+  0%,
+  100% {
+    height: 9px;
+  }
+
+  50% {
+    height: 20px;
+  }
+}
+
+.animate-bar-1 {
+  animation: barPulse1 1.2s ease-in-out infinite;
+}
+
+.animate-bar-2 {
+  animation: barPulse2 1.4s ease-in-out infinite 0.2s;
+}
+
+.animate-bar-3 {
+  animation: barPulse3 1.1s ease-in-out infinite 0.4s;
+}
 
 /* Linear Cyber Edge Glint */
 @keyframes edgeGlint {
-  0%, 100% { opacity: 0.3; transform: scaleX(0.9); }
-  50% { opacity: 1; transform: scaleX(1); }
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleX(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }
 
 .animate-edge-glint {
@@ -612,9 +898,12 @@
 
 /* Smooth Console Floating Animation (Subtle, Organic Enterprise Levitation) */
 @keyframes consoleFloat {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-8px);
   }
@@ -632,7 +921,8 @@
 /* Main Industry Category Heading (e.g., CONSUMER & COMMERCE, INDUSTRIAL & MANUFACTURING) */
 .industry-category-title {
   font-family: 'Plus Jakarta Sans', Inter, -apple-system, sans-serif;
-  font-size: 0.8125rem; /* 13px */
+  font-size: 0.8125rem;
+  /* 13px */
   line-height: 1.4;
   font-weight: 650;
   letter-spacing: 0.04em;
@@ -641,7 +931,8 @@
 
 @media (min-width: 640px) {
   .industry-category-title {
-    font-size: 0.9375rem; /* 15px */
+    font-size: 0.9375rem;
+    /* 15px */
     line-height: 1.35;
   }
 }
@@ -649,7 +940,8 @@
 /* Sub-Category Typography (e.g., Retail & E-Commerce, Consumer Goods, Food & Beverage, etc.) */
 .industry-category-item {
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  font-size: 0.84375rem; /* 13.5px */
+  font-size: 0.84375rem;
+  /* 13.5px */
   line-height: 1.45;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -660,7 +952,8 @@
 
 @media (min-width: 640px) {
   .industry-category-item {
-    font-size: 0.875rem; /* 14px */
+    font-size: 0.875rem;
+    /* 14px */
     line-height: 1.5;
   }
 }
@@ -668,7 +961,8 @@
 /* Reusable Category Switcher Tabs across Industry Pages */
 .industry-category-tab {
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  font-size: 0.8125rem; /* 13px */
+  font-size: 0.8125rem;
+  /* 13px */
   line-height: 1.35;
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -676,7 +970,8 @@
 
 @media (min-width: 640px) {
   .industry-category-tab {
-    font-size: 0.875rem; /* 14px */
+    font-size: 0.875rem;
+    /* 14px */
     line-height: 1.4;
   }
 }
@@ -698,7 +993,7 @@ iframe[id*=":1.container"],
 iframe[id*=":2.container"],
 div[id*=":1.container"],
 div[id*=":2.container"],
-body > .skiptranslate:not(#google_translate_element) {
+body>.skiptranslate:not(#google_translate_element) {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;

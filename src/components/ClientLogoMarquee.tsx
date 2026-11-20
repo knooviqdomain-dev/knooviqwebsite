@@ -331,14 +331,14 @@ export const ClientLogoMarquee: React.FC<{
         aria-hidden={isDuplicate ? true : undefined}
         onClick={(e) => handleLogoClick(e, client)}
         onKeyDown={(e) => handleLogoKeyDown(e, client)}
-        className="bg-white border border-slate-200/90 hover:border-sky-400 rounded-2xl px-5 py-3.5 sm:px-6 sm:py-4 flex flex-col items-center justify-between min-w-[260px] sm:min-w-[280px] h-[132px] sm:h-[136px] flex-shrink-0 transition-all duration-200 shadow-[0_4px_18px_-2px_rgba(0,0,0,0.18)] hover:shadow-xl hover:scale-[1.01] group/card relative cursor-pointer select-none outline-none focus:outline-none focus:ring-0 focus-visible:outline-none ring-0"
+        className="bg-white border border-slate-200/90 hover:border-sky-400 rounded-2xl px-3.5 py-2.5 sm:px-5 sm:py-3 flex flex-col items-center justify-between min-w-[260px] sm:min-w-[280px] h-[132px] sm:h-[136px] flex-shrink-0 transition-all duration-200 shadow-[0_4px_18px_-2px_rgba(0,0,0,0.18)] hover:shadow-xl hover:scale-[1.01] group/card relative cursor-pointer select-none outline-none focus:outline-none focus:ring-0 focus-visible:outline-none ring-0"
       >
-        {/* Exact Authentic Logo Image - Sized & Centered with Generous Breathing Room so No Image is Ever Cut */}
-        <div className="h-[72px] sm:h-[76px] flex items-center justify-center w-full px-2 pointer-events-none">
+        {/* Exact Authentic Logo Image - Sized & Centered to Maximize Box Usage Without Ever Overflowing */}
+        <div className="h-[82px] sm:h-[86px] flex items-center justify-center w-full px-2 pointer-events-none">
           <img
             src={client.logoSrc}
             alt={client.name}
-            className="max-h-[52px] sm:max-h-[58px] max-w-[175px] sm:max-w-[195px] w-auto h-auto object-contain select-none"
+            className="max-h-[74px] sm:max-h-[76px] max-w-[225px] sm:max-w-[240px] w-auto h-auto object-contain select-none"
             style={{ imageRendering: '-webkit-optimize-contrast' }}
             loading="lazy"
             decoding="async"
@@ -346,8 +346,8 @@ export const ClientLogoMarquee: React.FC<{
         </div>
 
         {/* Crisp, Highly Readable Category Label Across Mobile, Tablet & Desktop */}
-        <div className="flex items-center justify-center w-full pt-1.5 pointer-events-none">
-          <span className="text-[12px] sm:text-[13px] font-bold text-slate-800 dark:text-slate-900 tracking-tight text-center leading-snug line-clamp-1 px-1">
+        <div className="flex items-center justify-center w-full pt-1 pointer-events-none">
+          <span className="text-[11.5px] sm:text-[12.5px] font-bold text-slate-800 dark:text-slate-900 tracking-tight text-center leading-snug line-clamp-1 px-1">
             {client.category}
           </span>
         </div>

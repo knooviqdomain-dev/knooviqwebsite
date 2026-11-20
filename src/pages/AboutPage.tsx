@@ -90,7 +90,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
   };
 
   return (
-    <div className="relative w-full max-w-full pb-20 bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden overflow-x-clip">
+    <div className="about-typography font-sora relative w-full max-w-full pb-20 bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden overflow-x-clip">
       
       {/* Ambient Aurora Glows */}
       <div className="aurora-sphere-1 top-20 left-1/4 bg-[#00A3E0]/15 dark:bg-[#00F0FF]/15 pointer-events-none" />
@@ -135,7 +135,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg lg:text-xl text-white font-medium drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] leading-relaxed font-sans mb-8 max-w-3xl"
+              className="text-base sm:text-lg lg:text-xl text-white font-medium drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)] leading-relaxed font-sora mb-8 max-w-3xl"
             >
               From our headquarters in Mumbai to enterprise landscapes worldwide, KNOOVIQ unifies clean-core engineering, 24/7 SLA-governed support, and deep SAP functional governance to build resilient, future-ready business ecosystems.
             </motion.p>
@@ -226,21 +226,21 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
             
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 text-xs font-bold text-[#0A2540] font-mono uppercase tracking-wider bg-transparent">
+              <div className="inline-flex items-center gap-2 text-[14px] font-bold text-[#0A2540] font-mono uppercase tracking-wider bg-transparent">
                 <Sparkles className="h-3.5 w-3.5 text-[#0052CC]" />
                 <span>WHO WE ARE • ESTABLISHED 2006</span>
               </div>
               
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.15]">
+              <h2 className="font-sora text-[18px] font-bold text-slate-900 tracking-tight leading-[1.2]">
                 Empowering Success: <br />
-                <span className="text-gradient-cyan">Knooviq's Journey and Vision</span>
+                <span className="text-gradient-cyan text-[16px] font-medium font-sora block mt-1">Knooviq's Journey and Vision</span>
               </h2>
 
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-sans font-medium">
+              <p className="text-[15.5px] sm:text-[14px] text-[#102A43] sm:text-slate-700 dark:text-slate-200 leading-[1.6] font-sora font-normal text-left [word-spacing:normal] tracking-normal">
                 At Knooviq, we’ve been your trusted partner in SAP Consulting and Solutions since our establishment in 2006. With a firm foundation in strong technical skills and unmatched domain expertise, we have consistently delivered excellence in project management, project support, customized application development, manpower outsourcing, and augmentation. Our project implementation exposure across diverse industries, including Retail, Metals & Mining, Oil & Gas, Manufacturing, and more, has solidified our reputation in the market.
               </p>
 
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-sans">
+              <p className="text-[15.5px] sm:text-[14px] text-[#102A43] sm:text-slate-600 dark:text-slate-200 leading-[1.6] font-sora font-normal text-left [word-spacing:normal] tracking-normal">
                 We take pride in our recognized quality of services, on-time delivery, and our expertise in turnkey business solutions. Knooviq is committed to providing strategic guidance to key sectors like Automotive, Manufacturing & Trading, Distribution, Design, and beyond. We are more than just a company; we are your partner in success, ready to empower your organization with innovative strategies and SAP excellence.
               </p>
 
@@ -253,7 +253,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
                   'On-Time Delivery SLA',
                   'Talent Augmentation'
                 ].map((item, idx) => (
-                  <div key={idx} className="bg-white border border-slate-200/90 shadow-sm rounded-xl p-3 flex items-center gap-2 text-xs font-semibold text-slate-800 hover:border-[#0A2540]/30 transition-colors">
+                  <div key={idx} className="bg-white border border-slate-200/90 shadow-sm rounded-xl p-3 flex items-center gap-2 text-[14px] font-semibold text-slate-800 hover:border-[#0A2540]/30 transition-colors">
                     <CheckCircle2 className="h-3.5 w-3.5 text-[#0052CC] flex-shrink-0" />
                     <span>{item}</span>
                   </div>
@@ -264,7 +264,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
             {/* Timeline Evolution Card Since 2006 */}
             <div className="lg:col-span-5">
               <div className="glass-panel rounded-3xl p-8 sm:p-10 shadow-2xl relative overflow-hidden">
-                <h3 className="font-display text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
+                <h3 className="font-display text-[18px] font-bold text-slate-900 mb-6 flex items-center gap-2">
                   <Compass className="h-5 w-5 text-[#0A2540]" />
                   <span>Evolutionary Milestones</span>
                 </h3>
@@ -272,23 +272,23 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
                 <div className="space-y-6 relative border-l-2 border-slate-200 pl-6 ml-2">
                   <div className="relative">
                     <span className="absolute -left-[31px] top-0 h-4 w-4 rounded-full bg-[#0A2540] ring-4 ring-white" />
-                    <span className="text-[11px] font-mono font-bold text-[#0A2540] uppercase">2006 • Establishment</span>
-                    <h4 className="font-display text-sm font-bold text-slate-900 mt-0.5">Foundational Genesis & Domain Leadership</h4>
-                    <p className="text-xs text-slate-600 mt-1 font-sans">Established with strong technical skills, delivering excellence in project management, SAP ECC support, and manpower augmentation.</p>
+                    <span className="text-[14px] font-mono font-bold text-[#0A2540] uppercase">2006 • Establishment</span>
+                    <h4 className="font-sora text-[16px] font-medium text-slate-900 mt-0.5">Foundational Genesis & Domain Leadership</h4>
+                    <p className="text-[15.5px] sm:text-[14px] text-[#102A43] sm:text-slate-600 dark:text-slate-200 mt-1 font-sora leading-[1.6] font-normal text-left [word-spacing:normal] tracking-normal">Established with strong technical skills, delivering excellence in project management, SAP ECC support, and manpower augmentation.</p>
                   </div>
 
                   <div className="relative">
                     <span className="absolute -left-[31px] top-0 h-4 w-4 rounded-full bg-[#0052CC] ring-4 ring-white" />
-                    <span className="text-[11px] font-mono font-bold text-[#0052CC] uppercase">Industry Exposure</span>
-                    <h4 className="font-display text-sm font-bold text-slate-900 mt-0.5">Diverse Multi-Sector Expansion</h4>
-                    <p className="text-xs text-slate-600 mt-1 font-sans">Delivered turnkey implementations across Metals & Mining, Oil & Gas, Retail, Automotive, Manufacturing & Trading, and Distribution.</p>
+                    <span className="text-[14px] font-mono font-bold text-[#0052CC] uppercase">Industry Exposure</span>
+                    <h4 className="font-sora text-[16px] font-medium text-slate-900 mt-0.5">Diverse Multi-Sector Expansion</h4>
+                    <p className="text-[15.5px] sm:text-[14px] text-[#102A43] sm:text-slate-600 dark:text-slate-200 mt-1 font-sora leading-[1.6] font-normal text-left [word-spacing:normal] tracking-normal">Delivered turnkey implementations across Metals & Mining, Oil & Gas, Retail, Automotive, Manufacturing & Trading, and Distribution.</p>
                   </div>
 
                   <div className="relative">
                     <span className="absolute -left-[31px] top-0 h-4 w-4 rounded-full bg-emerald-600 ring-4 ring-white" />
-                    <span className="text-[11px] font-mono font-bold text-emerald-600 uppercase">Modern Era</span>
-                    <h4 className="font-display text-sm font-bold text-slate-900 mt-0.5">Clean-Core S/4HANA & Turnkey Innovation</h4>
-                    <p className="text-xs text-slate-600 mt-1 font-sans">International technology partner powering zero-disruption SAP migrations, customized development, and 24/7 strategic advisory.</p>
+                    <span className="text-[14px] font-mono font-bold text-emerald-600 uppercase">Modern Era</span>
+                    <h4 className="font-sora text-[16px] font-medium text-slate-900 mt-0.5">Clean-Core S/4HANA & Turnkey Innovation</h4>
+                    <p className="text-[15.5px] sm:text-[14px] text-[#102A43] sm:text-slate-600 dark:text-slate-200 mt-1 font-sora leading-[1.6] font-normal text-left [word-spacing:normal] tracking-normal">International technology partner powering zero-disruption SAP migrations, customized development, and 24/7 strategic advisory.</p>
                   </div>
                 </div>
               </div>
@@ -476,7 +476,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
                   </div>
                 </div>
 
-                <p className="text-sm text-slate-700 leading-relaxed font-sans font-medium">
+                <p className="text-[15.5px] sm:text-sm text-[#102A43] sm:text-slate-700 dark:text-slate-200 leading-[1.6] font-sora font-normal text-left [word-spacing:normal] tracking-normal">
                   Knooviq Industries is a Business Consulting & Outsourcing company, promoted by team of dedicated, highly experienced professionals with the aim of providing cost effective and high quality technical & professional solutions to its customers. As your single stop for comprehensive Solutions, Software Support and Consulting, Knooviq offers you a high quality, objective oriented services to suit your IT budget and needs.
                 </p>
 

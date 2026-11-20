@@ -168,7 +168,7 @@ export const KnooviqAIConsultantPage: React.FC<KnooviqAIConsultantPageProps> = (
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-slate-100 font-sans selection:bg-[#00A3E0] selection:text-white transition-colors duration-300 overflow-hidden">
+    <div className="product-typography font-sora min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-slate-100 selection:bg-[#00A3E0] selection:text-white transition-colors duration-300 overflow-hidden">
       
       {/* =========================================================================
           SECTION 1 — HERO: MEET YOUR INTELLIGENT AI CONSULTANT
@@ -203,7 +203,7 @@ export const KnooviqAIConsultantPage: React.FC<KnooviqAIConsultantPageProps> = (
 
               {/* Subheading */}
               <p className="text-base sm:text-lg text-slate-700 dark:text-slate-200 leading-relaxed max-w-2xl font-normal">
-                Knooviq AI Consultant brings intelligent assistance into everyday business work — helping people 
+                Knooviq AI Consultant brings intelligent assistance into everyday business work, helping people 
                 find information, understand context, create content, and move work forward through natural conversation.
               </p>
 
@@ -240,59 +240,59 @@ export const KnooviqAIConsultantPage: React.FC<KnooviqAIConsultantPageProps> = (
                 <img
                   src="/images/ai_consultant_hero.jpg"
                   alt="3D abstract intelligence core sculpture with crystalline glass facets and luminous orbital rings"
-                  className="w-full h-[450px] sm:h-[510px] object-cover object-center select-none group-hover:scale-103 transition-transform duration-700"
+                  className="w-full aspect-[16/9] sm:aspect-auto sm:h-[510px] object-cover object-center select-none group-hover:scale-103 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent pointer-events-none" />
 
-                {/* Floating Prompt 1: Top Left */}
+                {/* Floating Prompt 1: Top Left (Hidden on mobile to keep 3D core visible, active on desktop) */}
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: [0, -5, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                  className="absolute top-6 left-5 z-20 pointer-events-none max-w-[230px]"
+                  className="hidden sm:block absolute top-6 left-5 z-20 pointer-events-none max-w-[230px]"
                 >
                   <div className="px-4 py-2.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-cyan-400/50 text-white text-xs font-semibold shadow-2xl flex items-center gap-2.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse shrink-0" />
-                    <span className="truncate">“Summarize this document”</span>
+                    <span className="break-words leading-tight">“Summarize this document”</span>
                   </div>
                 </motion.div>
 
-                {/* Floating Prompt 2: Top Right */}
+                {/* Floating Prompt 2: Top Right (Hidden on mobile to keep 3D core visible, active on desktop) */}
                 <motion.div
                   initial={{ opacity: 0, x: 10 }}
                   animate={{ opacity: 1, y: [0, 6, 0] }}
                   transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-                  className="absolute top-20 right-5 z-20 pointer-events-none max-w-[230px]"
+                  className="hidden sm:block absolute top-20 right-5 z-20 pointer-events-none max-w-[230px]"
                 >
                   <div className="px-4 py-2.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-[#00A3E0]/50 text-white text-xs font-semibold shadow-2xl flex items-center gap-2.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-[#00A3E0] shrink-0" />
-                    <span className="truncate">“Find the latest proposal”</span>
+                    <span className="break-words leading-tight">“Find the latest proposal”</span>
                   </div>
                 </motion.div>
 
-                {/* Floating Prompt 3: Middle Left */}
+                {/* Floating Prompt 3: Middle Left (Hidden on mobile to keep 3D core visible, active on desktop) */}
                 <motion.div
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, y: [0, -6, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                  className="absolute bottom-28 left-5 z-20 pointer-events-none max-w-[230px]"
+                  className="hidden sm:block absolute bottom-28 left-5 z-20 pointer-events-none max-w-[230px]"
                 >
                   <div className="px-4 py-2.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-emerald-400/50 text-white text-xs font-semibold shadow-2xl flex items-center gap-2.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 shrink-0" />
-                    <span className="truncate">“Draft a response”</span>
+                    <span className="break-words leading-tight">“Draft a response”</span>
                   </div>
                 </motion.div>
 
-                {/* Floating Prompt 4: Bottom Right */}
+                {/* Floating Prompt 4: Bottom Right (Hidden on mobile to keep 3D core visible, active on desktop) */}
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: [0, 5, 0] }}
                   transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
-                  className="absolute bottom-8 right-5 z-20 pointer-events-none max-w-[250px]"
+                  className="hidden sm:block absolute bottom-8 right-5 z-20 pointer-events-none max-w-[250px]"
                 >
                   <div className="px-4 py-2.5 rounded-xl bg-slate-950/90 backdrop-blur-md border border-indigo-400/50 text-white text-xs font-semibold shadow-2xl flex items-center gap-2.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-indigo-400 shrink-0" />
-                    <span className="truncate">“Help me prepare for this meeting”</span>
+                    <span className="break-words leading-tight">“Help me prepare for this meeting”</span>
                   </div>
                 </motion.div>
 
@@ -337,7 +337,7 @@ export const KnooviqAIConsultantPage: React.FC<KnooviqAIConsultantPageProps> = (
                 <span className="text-xs font-extrabold text-[#0077B6] dark:text-cyan-300 uppercase tracking-wider block">
                   Natural User Inquiry
                 </span>
-                <p className="text-base sm:text-lg font-bold text-slate-900 dark:text-white truncate">
+                <p className="text-base sm:text-lg font-bold text-slate-900 dark:text-white break-words leading-snug">
                   “Find the latest vendor proposal and summarize the key points.”
                 </p>
               </div>
@@ -368,7 +368,7 @@ export const KnooviqAIConsultantPage: React.FC<KnooviqAIConsultantPageProps> = (
                       <span className={`text-xs font-extrabold ${step.color}`}>{step.stage}</span>
                       <IconComponent className={`w-4 h-4 ${isSelected ? 'text-[#00A3E0] dark:text-cyan-300' : 'text-slate-400'}`} />
                     </div>
-                    <p className="text-xs font-bold text-slate-900 dark:text-white mt-2 truncate">
+                    <p className="text-xs font-bold text-slate-900 dark:text-white mt-2 break-words leading-tight">
                       {step.label}
                     </p>
                     <span className="text-[11px] font-bold text-slate-500 dark:text-slate-400 block mt-0.5">
@@ -495,7 +495,7 @@ export const KnooviqAIConsultantPage: React.FC<KnooviqAIConsultantPageProps> = (
 
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between">
-                        <h3 className="text-sm font-bold text-slate-900 dark:text-white truncate">
+                        <h3 className="text-sm font-bold text-slate-900 dark:text-white break-words leading-tight">
                           {cap.title}
                         </h3>
                         <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-sky-100 dark:bg-cyan-950 text-[#0077B6] dark:text-cyan-300 border border-sky-200 dark:border-cyan-500/30">
@@ -612,7 +612,7 @@ export const KnooviqAIConsultantPage: React.FC<KnooviqAIConsultantPageProps> = (
             </h2>
 
             <p className="text-slate-700 dark:text-slate-200 text-base leading-relaxed font-normal">
-              Instead of generic public models, Knooviq AI Consultant operates directly within your enterprise perimeter — 
+              Instead of generic public models, Knooviq AI Consultant operates directly within your enterprise perimeter, 
               connecting your people, operational systems, and historical data into one unified conversational experience.
             </p>
           </div>
@@ -885,7 +885,7 @@ export const KnooviqAIConsultantPage: React.FC<KnooviqAIConsultantPageProps> = (
           </h2>
 
           <p className="text-base sm:text-lg text-slate-700 dark:text-slate-200 leading-relaxed max-w-2xl mx-auto font-normal">
-            Knooviq AI Consultant brings intelligent assistance into the flow of everyday business — helping teams spend 
+            Knooviq AI Consultant brings intelligent assistance into the flow of everyday business, helping teams spend 
             less time searching, switching, and repeating, and more time moving work forward.
           </p>
 

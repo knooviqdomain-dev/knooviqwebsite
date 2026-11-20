@@ -188,7 +188,7 @@ export const AutomationEvolvePage: React.FC<AutomationEvolvePageProps> = ({ onOp
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div className="product-typography font-sora min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (With High-Resolution Image & Professional Look)
@@ -284,39 +284,17 @@ export const AutomationEvolvePage: React.FC<AutomationEvolvePageProps> = ({ onOp
               <motion.div
                 animate={{ y: [-5, 5, -5] }}
                 transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-                className="w-full max-w-lg relative rounded-2xl p-1 bg-gradient-to-b from-purple-500/30 via-slate-300/40 to-blue-500/20 dark:from-purple-500/40 dark:via-cyan-500/20 dark:to-transparent shadow-2xl group"
+                className="w-full max-w-lg lg:max-w-xl relative rounded-2xl p-1 bg-gradient-to-b from-purple-500/30 via-slate-300/40 to-blue-500/20 dark:from-purple-500/40 dark:via-cyan-500/20 dark:to-transparent shadow-2xl group"
               >
-                {/* Visual Frame with Dark Defined Borders */}
-                <div className="relative rounded-[14px] bg-[#070E1C] border-2 border-slate-300 dark:border-slate-700 overflow-hidden shadow-2xl h-[460px] sm:h-[520px] lg:h-[580px]">
+                {/* Visual Frame with Dark Defined Borders - Exact 16:9 Aspect Ratio to prevent image cutoffs */}
+                <div className="relative rounded-[14px] bg-slate-900 border-2 border-slate-300 dark:border-slate-700 overflow-hidden shadow-2xl aspect-[16/9] w-full">
                   
-                  {/* User-Provided Interactive Workflow Image */}
+                  {/* User-Provided SAP Dynamic Forms & AI Workflow Image */}
                   <img
                     src="/images/automation_evolve_workflow.png"
-                    alt="Knooviq Automation Evolve - Interactive Workflow Architecture & Master Data Governance"
-                    className="w-full h-full object-cover object-top select-none group-hover:scale-[1.02] transition-transform duration-700"
+                    alt="Digitize Complex SAP Workflows with Dynamic Forms & Governance"
+                    className="w-full h-full object-cover object-center select-none group-hover:scale-[1.02] transition-transform duration-700"
                   />
-
-                  {/* Top Floating Live Badge */}
-                  <div className="absolute top-4 left-4 flex items-center gap-2 z-30">
-                    <span className="px-3 py-1.5 rounded-full text-[10px] font-mono font-bold bg-[#070E1C]/90 backdrop-blur-md text-cyan-300 border-2 border-cyan-500/40 shadow-lg flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                      PROCESS ORCHESTRATION ACTIVE
-                    </span>
-                  </div>
-
-                  {/* Bottom Floating Telemetry Strip */}
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-2 p-3 rounded-xl bg-[#070E1C]/90 backdrop-blur-md border-2 border-slate-700 shadow-xl text-xs z-30">
-                    <div className="flex items-center gap-2.5">
-                      <CheckCircle2 className="h-4 w-4 text-emerald-400 flex-shrink-0" />
-                      <div>
-                        <div className="font-bold text-white text-[11px] font-sans">Master Data Governance Verified</div>
-                        <div className="text-[9px] text-slate-400 font-mono">Multi-Tier Approvals &amp; SAP Clean Core Commit</div>
-                      </div>
-                    </div>
-                    <span className="px-2.5 py-1 rounded text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
-                      GOVERNED
-                    </span>
-                  </div>
 
                 </div>
               </motion.div>
@@ -567,26 +545,28 @@ export const AutomationEvolvePage: React.FC<AutomationEvolvePageProps> = ({ onOp
                             </span>
                           </div>
 
-                          <div className="p-4 rounded-xl bg-white/5 border border-blue-500/30 space-y-3">
-                            <div className="grid grid-cols-3 gap-2 text-[10px] font-mono text-slate-400 border-b border-slate-800 pb-2 font-bold">
-                              <div>STATION</div>
-                              <div>ASSIGNED STEWARD</div>
-                              <div>STATUS</div>
-                            </div>
-                            <div className="grid grid-cols-3 gap-2 text-[11px] font-mono text-slate-200 py-1 items-center">
-                              <div className="text-purple-300 font-bold">Station Alpha</div>
-                              <div className="text-slate-300">Supply Chain Lead</div>
-                              <div className="text-emerald-400 font-bold">APPROVED</div>
-                            </div>
-                            <div className="grid grid-cols-3 gap-2 text-[11px] font-mono text-slate-200 py-1 items-center">
-                              <div className="text-purple-300 font-bold">Station Beta</div>
-                              <div className="text-slate-300">Cost Accounting Manager</div>
-                              <div className="text-blue-400 font-bold">IN REVIEW</div>
-                            </div>
-                            <div className="grid grid-cols-3 gap-2 text-[11px] font-mono text-slate-200 py-1 items-center">
-                              <div className="text-purple-300 font-bold">Station Gamma</div>
-                              <div className="text-slate-300">Tax &amp; Compliance Officer</div>
-                              <div className="text-slate-500">PENDING</div>
+                          <div className="p-4 rounded-xl bg-white/5 border border-blue-500/30 overflow-x-auto space-y-3">
+                            <div className="min-w-[420px] space-y-3">
+                              <div className="grid grid-cols-3 gap-2 text-[10px] font-mono text-slate-400 border-b border-slate-800 pb-2 font-bold">
+                                <div>STATION</div>
+                                <div>ASSIGNED STEWARD</div>
+                                <div>STATUS</div>
+                              </div>
+                              <div className="grid grid-cols-3 gap-2 text-[11px] font-mono text-slate-200 py-1 items-center">
+                                <div className="text-purple-300 font-bold">Station Alpha</div>
+                                <div className="text-slate-300">Supply Chain Lead</div>
+                                <div className="text-emerald-400 font-bold">APPROVED</div>
+                              </div>
+                              <div className="grid grid-cols-3 gap-2 text-[11px] font-mono text-slate-200 py-1 items-center">
+                                <div className="text-purple-300 font-bold">Station Beta</div>
+                                <div className="text-slate-300">Cost Accounting Manager</div>
+                                <div className="text-blue-400 font-bold">IN REVIEW</div>
+                              </div>
+                              <div className="grid grid-cols-3 gap-2 text-[11px] font-mono text-slate-200 py-1 items-center">
+                                <div className="text-purple-300 font-bold">Station Gamma</div>
+                                <div className="text-slate-300">Tax &amp; Compliance Officer</div>
+                                <div className="text-slate-500">PENDING</div>
+                              </div>
                             </div>
                           </div>
                         </motion.div>

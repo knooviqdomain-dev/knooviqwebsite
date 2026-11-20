@@ -693,7 +693,7 @@ export const FieldServiceManagementPage: React.FC<FieldServiceManagementPageProp
   const [activeEcosystemQuadrant, setActiveEcosystemQuadrant] = useState<'fleet' | 'enterprise'>('fleet');
 
   return (
-    <div className="bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white min-h-screen selection:bg-blue-600 selection:text-white transition-colors duration-300">
+    <div className="product-typography font-sora bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white min-h-screen selection:bg-blue-600 selection:text-white transition-colors duration-300">
       
       {/* =====================================================================
           SECTION 1: HERO — "THE SERVICE MISSION" (TACTICAL DISPATCH RADAR)
@@ -745,16 +745,16 @@ export const FieldServiceManagementPage: React.FC<FieldServiceManagementPageProp
 
 
               {/* Live Tactical Fleet Meter Tape */}
-              <div className="pt-2 border-t border-slate-200 dark:border-white/10 grid grid-cols-3 gap-2 text-center text-xs font-mono">
-                <div className="p-2.5 rounded-xl bg-white dark:bg-[#070E1E] border border-slate-200 dark:border-white/10">
+              <div className="pt-2 border-t border-slate-200 dark:border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-2 text-center text-xs font-mono">
+                <div className="p-2.5 rounded-xl bg-white dark:bg-[#070E1E] border border-slate-200 dark:border-white/10 min-w-0">
                   <span className="text-lg font-bold text-blue-600 dark:text-cyan-400 block font-display">65%</span>
                   <span className="text-[10px] text-slate-500 dark:text-slate-400">Faster Dispatch</span>
                 </div>
-                <div className="p-2.5 rounded-xl bg-white dark:bg-[#070E1E] border border-slate-200 dark:border-white/10">
+                <div className="p-2.5 rounded-xl bg-white dark:bg-[#070E1E] border border-slate-200 dark:border-white/10 min-w-0">
                   <span className="text-lg font-bold text-emerald-600 dark:text-emerald-400 block font-display">92.8%</span>
                   <span className="text-[10px] text-slate-500 dark:text-slate-400">First-Time Fix</span>
                 </div>
-                <div className="p-2.5 rounded-xl bg-white dark:bg-[#070E1E] border border-slate-200 dark:border-white/10">
+                <div className="p-2.5 rounded-xl bg-white dark:bg-[#070E1E] border border-slate-200 dark:border-white/10 min-w-0">
                   <span className="text-lg font-bold text-indigo-600 dark:text-indigo-400 block font-display">98.6%</span>
                   <span className="text-[10px] text-slate-500 dark:text-slate-400">Customer CSAT</span>
                 </div>
@@ -784,7 +784,7 @@ export const FieldServiceManagementPage: React.FC<FieldServiceManagementPageProp
                   <img 
                     src="/images/fsm_hero_mission.jpg" 
                     alt="Field Service Mission: Field technician, service vehicle, customer industrial plant, route"
-                    className="w-full h-[360px] sm:h-[400px] object-cover object-center transform group-hover:scale-[1.015] transition-transform duration-700"
+                    className="w-full aspect-[16/9] sm:aspect-auto sm:h-[400px] object-cover object-center transform group-hover:scale-[1.015] transition-transform duration-700"
                   />
 
                   {/* SVG Animated Route connecting Dispatch -> Travel -> Customer */}
@@ -983,11 +983,11 @@ export const FieldServiceManagementPage: React.FC<FieldServiceManagementPageProp
                     }`} />
                   </div>
 
-                  <div className="font-bold text-xs truncate">
+                  <div className="font-bold text-xs break-words leading-tight">
                     {stage.title}
                   </div>
 
-                  <div className={`text-[10px] font-mono truncate mt-0.5 ${
+                  <div className={`text-[10px] font-mono break-words leading-tight mt-0.5 ${
                     isActive
                       ? 'text-blue-100'
                       : isPast
@@ -1037,7 +1037,7 @@ export const FieldServiceManagementPage: React.FC<FieldServiceManagementPageProp
               {/* LEFT: Distinct, Dedicated Image for this Stage */}
               <div 
                 onClick={() => handleJourneyStepNav('next')}
-                className="lg:col-span-7 relative h-72 sm:h-96 lg:h-[420px] rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-inner group cursor-pointer bg-slate-100 dark:bg-slate-900"
+                className="lg:col-span-7 relative aspect-[16/9] sm:aspect-auto sm:h-96 lg:h-[420px] rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-inner group cursor-pointer bg-slate-100 dark:bg-slate-900"
                 title="Click image to advance to next stage (pauses 5s)"
               >
                 <AnimatePresence mode="wait">
@@ -1283,10 +1283,10 @@ export const FieldServiceManagementPage: React.FC<FieldServiceManagementPageProp
                       0{idx + 1}
                     </span>
                     <div className="min-w-0">
-                      <h4 className="text-xs font-bold text-slate-900 dark:text-white truncate">
+                      <h4 className="text-xs font-bold text-slate-900 dark:text-white break-words leading-tight">
                         {ticket.issue}
                       </h4>
-                      <p className="text-[11px] text-slate-500 dark:text-slate-400 truncate">
+                      <p className="text-[11px] text-slate-500 dark:text-slate-400 break-words leading-snug">
                         {ticket.client}
                       </p>
                     </div>
@@ -1478,9 +1478,9 @@ export const FieldServiceManagementPage: React.FC<FieldServiceManagementPageProp
                     <span className="text-slate-500 dark:text-slate-400">Live Proximity:</span>
                     <strong className="text-emerald-700 dark:text-emerald-400">{currentTicket.optimalTech.distance}</strong>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-500 dark:text-slate-400">Van Inventory:</span>
-                    <strong className="text-slate-900 dark:text-white truncate max-w-[150px]">{currentTicket.candidates[0].truckParts}</strong>
+                  <div className="flex justify-between items-baseline gap-2">
+                    <span className="text-slate-500 dark:text-slate-400 shrink-0">Van Inventory:</span>
+                    <strong className="text-slate-900 dark:text-white break-words leading-tight text-right">{currentTicket.candidates[0].truckParts}</strong>
                   </div>
                 </div>
               </div>
@@ -1742,7 +1742,7 @@ export const FieldServiceManagementPage: React.FC<FieldServiceManagementPageProp
                           <span className="text-[9px] font-mono text-cyan-300 block font-bold uppercase tracking-wider">
                             STAGE {toolkitParts[activeToolkitIndex].stepNum} • {toolkitParts[activeToolkitIndex].shortLabel}
                           </span>
-                          <h4 className="text-xs sm:text-sm font-bold text-white leading-tight truncate">
+                          <h4 className="text-xs sm:text-sm font-bold text-white leading-tight break-words">
                             {toolkitParts[activeToolkitIndex].headline}
                           </h4>
                         </div>
@@ -1967,8 +1967,8 @@ export const FieldServiceManagementPage: React.FC<FieldServiceManagementPageProp
                   <span className="font-mono text-[9px] font-bold opacity-80">STEP {st.step}</span>
                   <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
                 </div>
-                <h4 className="text-xs font-bold truncate">{st.title}</h4>
-                <p className="text-[10px] opacity-75 truncate">{st.desc}</p>
+                <h4 className="text-xs font-bold break-words leading-tight">{st.title}</h4>
+                <p className="text-[10px] opacity-75 break-words leading-snug mt-0.5">{st.desc}</p>
               </button>
             ))}
           </div>

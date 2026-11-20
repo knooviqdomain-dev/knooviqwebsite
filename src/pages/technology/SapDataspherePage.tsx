@@ -117,8 +117,8 @@ export const SapDataspherePage: React.FC<TechnologyPageProps> = ({ onOpenContact
           ========================================================================= */}
       <section className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 overflow-hidden bg-black text-white">
         
-        {/* Full-Bleed 16:9 Panoramic Image - Zero Cropping on Subject */}
-        <div className="absolute inset-0 z-0">
+        {/* Desktop-Only Full-Bleed 16:9 Panoramic Image (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
           <img
             src="/images/sap_datasphere_boardroom_analytics.png"
             alt="SAP Datasphere - Unify Enterprise Data Without Moving A Single Physical Byte"
@@ -127,9 +127,15 @@ export const SapDataspherePage: React.FC<TechnologyPageProps> = ({ onOpenContact
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
 
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-2xl lg:max-w-xl space-y-6 relative">
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -164,6 +170,18 @@ export const SapDataspherePage: React.FC<TechnologyPageProps> = ({ onOpenContact
                 <span>Native Business Semantics</span>
               </div>
             </motion.div>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                <img
+                  src="/images/sap_datasphere_boardroom_analytics.png"
+                  alt="SAP Datasphere - Unify Enterprise Data Without Moving A Single Physical Byte"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -310,9 +328,9 @@ export const SapDataspherePage: React.FC<TechnologyPageProps> = ({ onOpenContact
             </p>
           </div>
 
-          {/* Benchmark Comparison Table */}
-          <div className="overflow-x-auto rounded-2xl border-2 border-slate-200 shadow-xl shadow-slate-200/50">
-            <table className="w-full text-left text-xs sm:text-sm">
+          {/* Benchmark Comparison Table (Desktop: 100% Untouched) */}
+          <div className="hidden md:block overflow-x-auto rounded-2xl border-2 border-slate-200 shadow-xl shadow-slate-200/50">
+            <table className="w-full min-w-[640px] text-left text-xs sm:text-sm">
               <thead className="bg-slate-50 border-b border-slate-200 text-xs font-mono uppercase text-slate-700">
                 <tr>
                   <th className="p-4 sm:p-5">Architectural Dimension</th>
@@ -348,6 +366,60 @@ export const SapDataspherePage: React.FC<TechnologyPageProps> = ({ onOpenContact
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          {/* Mobile-Only Responsive Comparison Cards (100% Content Visible with Zero Cut-Off) */}
+          <div className="md:hidden space-y-4">
+            {[
+              {
+                dimension: 'Data Freshness & Latency',
+                legacy: 'Batch-dependent (6 to 24-hour lag behind ERP transactions)',
+                datasphere: 'Instantaneous Sub-Second Pushdown Querying'
+              },
+              {
+                dimension: 'Business Context & Semantics',
+                legacy: 'Context stripped; requires thousands of hours to remodel hierarchies',
+                datasphere: '100% Preserved (Hierarchies, Multi-Currency, Language Keys)'
+              },
+              {
+                dimension: 'Storage Footprint & Duplication',
+                legacy: '3x to 5x physical copies across raw, staging, and presentation lakes',
+                datasphere: 'Zero Unnecessary Copies (Logical Semantic Layer)'
+              },
+              {
+                dimension: 'Security & Authorization',
+                legacy: 'Fragmented; manual recreation of complex SAP authorization profiles',
+                datasphere: 'Inherited natively from SAP S/4HANA & Cloud Identity'
+              },
+              {
+                dimension: 'Clean Core Governance',
+                legacy: 'High violation risk due to direct database schema scraping',
+                datasphere: 'Certified Clean Core Compliant via Released CDS Views'
+              }
+            ].map((row, idx) => (
+              <div key={idx} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm space-y-3">
+                <div className="flex items-center gap-2 pb-2 border-b border-slate-100">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#0070C0] shrink-0" />
+                  <h4 className="font-bold text-sm text-slate-900 font-mono uppercase break-words">{row.dimension}</h4>
+                </div>
+                <div className="space-y-2 text-xs">
+                  <div className="p-3 rounded-xl bg-rose-50/60 border border-rose-100">
+                    <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-rose-700 mb-1 flex items-center justify-between">
+                      <span>Traditional Legacy ETL Pipelines</span>
+                      <span className="text-rose-500 font-normal">Legacy</span>
+                    </div>
+                    <div className="text-rose-900/90 font-medium leading-relaxed break-words">{row.legacy}</div>
+                  </div>
+                  <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-100">
+                    <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#0070C0] mb-1 flex items-center justify-between">
+                      <span>SAP Datasphere Business Fabric</span>
+                      <span className="text-emerald-600 font-bold">Optimized</span>
+                    </div>
+                    <div className="text-emerald-800 font-semibold leading-relaxed break-words">{row.datasphere}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
 
         </div>

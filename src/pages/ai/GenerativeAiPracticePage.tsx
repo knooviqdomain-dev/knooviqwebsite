@@ -495,7 +495,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
           levelColor: 'bg-rose-500/20 text-rose-300 border-rose-500/40',
           borderColor: 'border-rose-500/40 hover:border-rose-400',
           title: 'IP Infringement Liability Exposure',
-          desc: 'Uncapped indemnification exposure detected — supplier deviates from standard corporate liability caps.',
+          desc: 'Uncapped indemnification exposure detected: supplier deviates from standard corporate liability caps.',
           citation: 'Clause: IP Indemnification'
         },
         {
@@ -511,7 +511,7 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
           levelColor: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
           borderColor: 'border-amber-500/40 hover:border-amber-400',
           title: 'FX Hedging & Currency Fluctuation Floor',
-          desc: 'Payer absorbs currency fluctuations exceeding standard corridor — triggers automated treasury hedging protocol.',
+          desc: 'Payer absorbs currency fluctuations exceeding standard corridor, triggering automated treasury hedging protocol.',
           citation: 'Clause: Treasury & Multi-Currency'
         }
       ]
@@ -812,8 +812,8 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                         <StepIcon className="w-4 h-4" />
                       </div>
                       <div className="min-w-0">
-                        <div className="text-xs font-black truncate">{step.label}</div>
-                        <div className={`text-[10px] font-semibold truncate ${isSelected ? 'text-sky-100' : 'text-slate-500'}`}>{step.sublabel}</div>
+                        <div className="text-xs font-black break-words leading-tight">{step.label}</div>
+                        <div className={`text-[10px] font-semibold break-words leading-tight ${isSelected ? 'text-sky-100' : 'text-slate-500'}`}>{step.sublabel}</div>
                       </div>
                     </button>
                   );
@@ -1581,16 +1581,16 @@ export const GenerativeAiPracticePage: React.FC<GenerativeAiPracticePageProps> =
                 </div>
 
                 {/* Performance & Security Benchmarks Ribbon */}
-                <div className="pt-4 border-t border-white/10 grid grid-cols-3 gap-3 text-left">
-                  <div className="space-y-0.5">
+                <div className="pt-4 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
+                  <div className="space-y-0.5 min-w-0">
                     <div className="text-base sm:text-lg font-black text-cyan-400 font-mono tracking-tight">&lt;15ms</div>
                     <div className="text-[10px] sm:text-[11px] text-slate-400 font-medium leading-tight">Vector Search Latency</div>
                   </div>
-                  <div className="space-y-0.5">
+                  <div className="space-y-0.5 min-w-0">
                     <div className="text-base sm:text-lg font-black text-emerald-400 font-mono tracking-tight">0%</div>
                     <div className="text-[10px] sm:text-[11px] text-slate-400 font-medium leading-tight">Model Data Retention</div>
                   </div>
-                  <div className="space-y-0.5">
+                  <div className="space-y-0.5 min-w-0">
                     <div className="text-base sm:text-lg font-black text-sky-400 font-mono tracking-tight">68%</div>
                     <div className="text-[10px] sm:text-[11px] text-slate-400 font-medium leading-tight">Token Cache Efficiency</div>
                   </div>

@@ -20,7 +20,11 @@ import {
   FileText,
   Boxes,
   Lock,
-  Sparkles
+  Sparkles,
+  Users,
+  GitCommit,
+  Scale,
+  Key
 } from 'lucide-react';
 
 interface DataMigrationPageProps {
@@ -80,63 +84,91 @@ export const DataMigrationPage: React.FC<DataMigrationPageProps> = ({ onOpenCont
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300">
+    <div className="transformation-typography font-sora min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300">
       
       {/* =========================================================================
-          SECTION 1: HERO — DATA MIGRATION (SAP FIORI STYLE)
+          SECTION 1: HERO — DATA MIGRATION (DESKTOP FULL-SCREEN BACKGROUND, MOBILE SHOWCASE CARD)
           ========================================================================= */}
-      <section className="relative w-full min-h-[620px] sm:min-h-[660px] lg:min-h-[720px] flex items-center pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 overflow-hidden bg-black">
-        
-        {/* Full-Bleed Background Visual — 100% Clear with Zero Dark Blue Shade */}
-        <div className="absolute inset-0 z-0">
+      <section className="relative w-full min-h-[620px] sm:min-h-[660px] lg:min-h-[720px] flex items-center pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 overflow-hidden bg-black text-white">
+
+        {/* Desktop-Only Full-Bleed 16:9 Background Image (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
           <img
             src="/images/migration_data_clean.jpg"
             alt="Secure enterprise data flowing seamlessly from legacy systems into a modern SAP environment"
             className="w-full h-full object-cover object-top lg:object-[80%_top] brightness-105 contrast-105 select-none"
           />
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
-        {/* Top Hairline Accent */}
-        <div className="absolute top-0 left-0 right-0 z-10 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-3xl space-y-4 relative">
-            {/* Seamless Soft Contrast Aura — ensures text is 100% legible with zero dark blue filter */}
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="space-y-3">
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#00A3E0] text-xs font-mono font-bold tracking-wider uppercase shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
                 <Sparkles className="w-3.5 h-3.5 text-[#00A3E0]" />
                 <span>SECURE DATA TRANSFER • 100% INTEGRITY GUARANTEE</span>
               </div>
-
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
-                SAP S/4HANA <br />
-                <span className="text-[#00A3E0]">
-                  Data Migration
-                </span>
-              </h1>
-
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl pt-1">
-                Secure enterprise data flowing seamlessly from legacy systems into a modern SAP environment. Transform, cleanse, and reconcile master and transactional data with 100% data validation and zero variance.
-              </p>
             </motion.div>
 
-            {/* Enterprise Trust Indicators (Ultra-Clean, Matching SAP Fiori Reference) */}
-            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }} className="pt-2 flex flex-wrap items-center gap-3">
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-emerald-200">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]"
+            >
+              SAP S/4HANA <br />
+              <span className="text-[#00A3E0]">
+                Data Migration
+              </span>
+            </motion.h1>
+
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-xl pt-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
+            >
+              Secure enterprise data flowing seamlessly from legacy systems into a modern SAP environment. Transform, cleanse, and reconcile master and transactional data with 100% data validation and zero variance.
+            </motion.p>
+
+            {/* Enterprise Trust Indicators */}
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="pt-1 flex flex-wrap items-center gap-3">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-emerald-200 shadow-md">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>100% Data Validated</span>
               </div>
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-sky-200">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-sky-200 shadow-md">
                 <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
                 <span>99.8% First-Pass Rate</span>
               </div>
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-blue-200">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-blue-200 shadow-md">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
                 <span>Zero Reconciliation Variance</span>
               </div>
             </motion.div>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                <img
+                  src="/images/migration_data_clean.jpg"
+                  alt="Secure enterprise data flowing seamlessly from legacy systems into a modern SAP environment"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -197,7 +229,7 @@ export const DataMigrationPage: React.FC<DataMigrationPageProps> = ({ onOpenCont
                   <img
                     src="/images/data_migration_cockpit.jpg"
                     alt="SAP S/4HANA Data Migration Cockpit Console"
-                    className="w-full h-80 sm:h-96 lg:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-auto aspect-[16/10] sm:aspect-auto sm:h-96 lg:h-[440px] object-contain sm:object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent pointer-events-none" />
                   <div className="absolute bottom-6 left-6 right-6">
@@ -246,7 +278,7 @@ export const DataMigrationPage: React.FC<DataMigrationPageProps> = ({ onOpenCont
                 desc: 'Decades of free-form entry in legacy systems leave thousands of duplicate vendor tax IDs, unformatted phone numbers, and invalid postal codes.'
               },
               {
-                icon: Workflow,
+                icon: Users,
                 color: 'text-blue-500 bg-blue-500/10 border-blue-500/20',
                 title: '2. Complex Business Partner (CVI) Unification',
                 desc: 'In S/4HANA, Customers and Vendors become Business Partners. Mapping intersecting number ranges and resolving tax ID conflicts halts data loads.'
@@ -258,19 +290,19 @@ export const DataMigrationPage: React.FC<DataMigrationPageProps> = ({ onOpenCont
                 desc: 'Extracting millions of open sales orders and inventory balance lines during cutover weekend can blow past the agreed production downtime window.'
               },
               {
-                icon: Database,
+                icon: GitCommit,
                 color: 'text-cyan-500 bg-cyan-500/10 border-cyan-500/20',
                 title: '4. Open Transactional Dependency Chains',
                 desc: 'Open purchase orders with partial goods receipts and pending invoice verification require complex status clearing before migration.'
               },
               {
-                icon: ShieldCheck,
+                icon: Scale,
                 color: 'text-purple-500 bg-purple-500/10 border-purple-500/20',
                 title: '5. Financial Ledger Variance at Cutover',
                 desc: 'Minor variances between legacy General Ledger balances and newly created Universal Journal (ACDOCA) lines block accounting sign-off.'
               },
               {
-                icon: Server,
+                icon: Key,
                 color: 'text-emerald-500 bg-emerald-500/10 border-emerald-500/20',
                 title: '6. Cross-System Key Harmonization',
                 desc: 'Consolidating multiple ERPs requires re-mapping incompatible material numbers, unit of measure codes, and payment terms into a unified standard.'
@@ -324,7 +356,7 @@ export const DataMigrationPage: React.FC<DataMigrationPageProps> = ({ onOpenCont
                 desc: 'Rule-based address standardization, tax ID validation, deduplication, and inactive record purging.'
               },
               {
-                icon: Workflow,
+                icon: Users,
                 title: 'CVI Transformation Engine',
                 desc: 'Specialized scripts and tools resolving legacy customer and vendor duplicate keys into unified Business Partners.'
               },
@@ -466,7 +498,7 @@ export const DataMigrationPage: React.FC<DataMigrationPageProps> = ({ onOpenCont
                   <img
                     src="/images/sap_data_migration_pipeline.jpg"
                     alt="SAP Data Migration Pipeline and Cleansing Staging Architecture"
-                    className="w-full h-80 object-cover rounded-2xl border border-slate-800 bg-slate-950"
+                    className="w-full h-auto aspect-[16/10] sm:aspect-auto sm:h-80 object-contain sm:object-cover rounded-2xl border border-slate-800 bg-slate-950"
                   />
                 </div>
 

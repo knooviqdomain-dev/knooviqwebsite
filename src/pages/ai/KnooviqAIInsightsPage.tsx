@@ -224,23 +224,23 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-slate-100 font-sans selection:bg-[#00A3E0] selection:text-white transition-colors duration-300 overflow-hidden">
-      
+    <div className="product-typography font-sora min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-slate-100 selection:bg-[#00A3E0] selection:text-white transition-colors duration-300 overflow-hidden">
+
       {/* =========================================================================
           SECTION 1 — HERO: SEE THE BIGGER PICTURE BEHIND YOUR BUSINESS DATA
           ========================================================================= */}
       <section className="relative pt-24 pb-20 sm:pt-32 sm:pb-28 bg-gradient-to-b from-slate-50 via-white to-slate-50/70 dark:from-[#081226] dark:via-[#050B17] dark:to-[#081226] border-b border-slate-300/80 dark:border-cyan-500/20 overflow-hidden">
-        
+
         {/* Subtle Ambient Aurora Light Spheres */}
         <div className="aurora-sphere-1 top-24 left-1/5 bg-[#00A3E0]/20 dark:bg-[#00A3E0]/25 pointer-events-none" />
         <div className="aurora-sphere-2 top-80 right-10 bg-[#6366F1]/15 dark:bg-[#6366F1]/22 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Column: Headline & Value Proposition */}
             <div className="lg:col-span-7 space-y-6">
-              
+
               {/* Strategic Pill Tag */}
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-100/80 dark:bg-cyan-950/80 border border-cyan-300 dark:border-cyan-400/40 text-[#0077B6] dark:text-cyan-300 text-xs font-bold tracking-wide shadow-sm">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#00A3E0] animate-ping" />
@@ -259,7 +259,7 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
 
               {/* Subheading */}
               <p className="text-base sm:text-lg text-slate-700 dark:text-slate-200 leading-relaxed max-w-2xl font-normal">
-                Knooviq AI Insights helps teams explore business information through natural language, connect knowledge 
+                Knooviq AI Insights helps teams explore business information through natural language, connect knowledge
                 across systems, and uncover the context behind important questions.
               </p>
 
@@ -292,51 +292,51 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
                 <img
                   src="/images/ai_insights_hero.png"
                   alt="Advanced humanoid AI assistant projecting holographic contextual intelligence brain and digital data network"
-                  className="w-full h-[520px] sm:h-[580px] lg:h-[620px] object-cover object-top select-none group-hover:scale-103 transition-transform duration-700"
+                  className="w-full h-[400px] sm:h-[580px] lg:h-[620px] object-cover object-top select-none group-hover:scale-103 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
 
-                {/* Floating Information Node 1: Unstructured Document */}
+                {/* Floating Information Node 1: Unstructured Document (Hidden on mobile to keep robot face visible, displayed on desktop) */}
                 <motion.div
                   initial={{ opacity: 0, y: -12 }}
                   animate={{ opacity: 1, y: [0, -6, 0] }}
                   transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut' }}
-                  className="absolute top-6 left-5 z-20 pointer-events-none max-w-[230px]"
+                  className="hidden sm:block absolute top-6 left-5 z-20 pointer-events-none max-w-[230px]"
                 >
                   <div className="px-4 py-2.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-cyan-400/50 text-white text-xs font-semibold shadow-2xl flex items-center gap-2.5">
                     <FileText className="w-4 h-4 text-cyan-400 shrink-0" />
-                    <span className="truncate">Q3 Operational Summary</span>
+                    <span className="break-words leading-tight">Q3 Operational Summary</span>
                   </div>
                 </motion.div>
 
-                {/* Floating Information Node 2: Business Records */}
+                {/* Floating Information Node 2: Business Records (Hidden on mobile to keep robot face visible, displayed on desktop) */}
                 <motion.div
                   initial={{ opacity: 0, x: 12 }}
                   animate={{ opacity: 1, y: [0, 6, 0] }}
                   transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
-                  className="absolute top-20 right-5 z-20 pointer-events-none max-w-[230px]"
+                  className="hidden sm:block absolute top-20 right-5 z-20 pointer-events-none max-w-[230px]"
                 >
                   <div className="px-4 py-2.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-indigo-400/50 text-white text-xs font-semibold shadow-2xl flex items-center gap-2.5">
                     <Database className="w-4 h-4 text-indigo-400 shrink-0" />
-                    <span className="truncate">SAP Master Ledger Sync</span>
+                    <span className="break-words leading-tight">SAP Master Ledger Sync</span>
                   </div>
                 </motion.div>
 
-                {/* Floating Information Node 3: Policy & Compliance */}
+                {/* Floating Information Node 3: Policy & Compliance (Hidden on mobile to keep robot face visible, displayed on desktop) */}
                 <motion.div
                   initial={{ opacity: 0, x: -12 }}
                   animate={{ opacity: 1, y: [0, -5, 0] }}
                   transition={{ duration: 5.2, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}
-                  className="absolute bottom-28 left-6 z-20 pointer-events-none max-w-[250px]"
+                  className="hidden sm:block absolute bottom-28 left-6 z-20 pointer-events-none max-w-[250px]"
                 >
                   <div className="px-4 py-2.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-emerald-400/50 text-white text-xs font-semibold shadow-2xl flex items-center gap-2.5">
                     <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span className="truncate">Global Policy & Compliance</span>
+                    <span className="break-words leading-tight">Global Policy & Compliance</span>
                   </div>
                 </motion.div>
 
-                {/* Central Connected Knowledge Synthesis Badge */}
-                <div className="absolute bottom-6 inset-x-6 z-20">
+                {/* Central Connected Knowledge Synthesis Badge - Desktop Floating Overlay */}
+                <div className="hidden sm:block absolute bottom-6 inset-x-6 z-20">
                   <div className="p-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border-2 border-cyan-400/40 text-white shadow-2xl space-y-1.5">
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-extrabold text-cyan-300 uppercase tracking-wider flex items-center gap-1.5">
@@ -354,6 +354,25 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
                 </div>
 
               </div>
+
+              {/* Mobile-Only Synthesis Badge: Positioned cleanly below the image so the robot is 100% visible without text overlay */}
+              <div className="block sm:hidden mt-3">
+                <div className="p-3.5 rounded-2xl bg-slate-900/95 border-2 border-cyan-400/40 text-white shadow-xl space-y-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-extrabold text-cyan-300 uppercase tracking-wider flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+                      Connected Contextual Intelligence
+                    </span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-400/30">
+                      Active Synthesis
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                    Scattered reports, ERP ledgers, and operational logs unified into clear, coherent answers.
+                  </p>
+                </div>
+              </div>
+
             </div>
 
           </div>
@@ -363,9 +382,9 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
       {/* =========================================================================
           SECTION 2 — INFORMATION TO UNDERSTANDING (TRANSFORMATION)
           ========================================================================= */}
-      <section id="information-to-understanding" className="py-20 sm:py-28 bg-white dark:bg-[#050B17] border-b border-slate-300/80 dark:border-cyan-500/20 relative">
+      <section id="information-to-understanding" className="transformation-section py-20 sm:py-28 bg-white dark:bg-[#050B17] border-b border-slate-300/80 dark:border-cyan-500/20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-300 dark:border-white/20 text-slate-800 dark:text-slate-200 text-xs font-bold">
@@ -393,18 +412,16 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
                   key={stage.stage}
                   onClick={() => setActiveTransformationStage(idx)}
                   whileHover={{ y: -3 }}
-                  className={`p-6 rounded-2xl text-left transition-all duration-300 border-2 relative cursor-pointer ${
-                    isActive
+                  className={`p-6 rounded-2xl text-left transition-all duration-300 border-2 relative cursor-pointer ${isActive
                       ? 'bg-gradient-to-br from-cyan-50 to-sky-50 dark:from-cyan-950/60 dark:to-slate-900 border-[#0077B6] dark:border-cyan-400 shadow-xl ring-2 ring-[#0077B6]/20'
                       : 'bg-slate-50 dark:bg-slate-900/80 border-slate-300 dark:border-white/15 hover:border-slate-400 dark:hover:border-cyan-400/40'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center justify-between mb-4">
-                    <span className={`text-xs font-bold tracking-wider px-3 py-1 rounded-md border ${
-                      isActive
+                    <span className={`text-xs font-bold tracking-wider px-3 py-1 rounded-md border ${isActive
                         ? 'bg-[#0077B6] text-white border-[#0077B6]'
                         : 'bg-slate-200 dark:bg-white/10 text-slate-800 dark:text-slate-200 border-slate-300 dark:border-white/10'
-                    }`}>
+                      }`}>
                       {stage.stepNum} {stage.stage}
                     </span>
                     <Icon className={`w-5 h-5 ${isActive ? 'text-[#0077B6] dark:text-cyan-300' : 'text-slate-400'}`} />
@@ -423,7 +440,7 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
           {/* Dynamic Transformation Visualization Container */}
           <div className="p-8 sm:p-10 rounded-3xl bg-slate-900 text-white border-2 border-slate-700 dark:border-cyan-500/40 shadow-2xl relative overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              
+
               {/* Left Column: Fragmented Source Inputs */}
               <div className="lg:col-span-5 space-y-3.5">
                 <div className="flex items-center justify-between mb-2">
@@ -447,14 +464,14 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
                       key={i}
                       className="p-3.5 rounded-xl bg-slate-800/90 border-2 border-slate-700 dark:border-white/15 flex items-center justify-between hover:border-cyan-400/50 transition-colors"
                     >
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <p className="text-xs font-bold text-white">{item.label}</p>
-                          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-400/30">
+                      <div className="min-w-0 flex-1">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <p className="text-xs font-bold text-white break-words">{item.label}</p>
+                          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-400/30 shrink-0">
                             {item.badge}
                           </span>
                         </div>
-                        <p className="text-xs text-slate-300 font-medium mt-0.5">{item.note}</p>
+                        <p className="text-xs text-slate-300 font-medium mt-0.5 break-words">{item.note}</p>
                       </div>
                       <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse shrink-0 ml-2" />
                     </div>
@@ -518,7 +535,7 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
           ========================================================================= */}
       <section className="py-20 sm:py-28 bg-slate-50/70 dark:bg-[#081226] border-b border-slate-300/80 dark:border-cyan-500/20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white dark:bg-white/10 border border-slate-300 dark:border-white/20 text-slate-800 dark:text-slate-200 text-xs font-bold">
@@ -545,11 +562,10 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
                   key={item.id}
                   onClick={() => setActiveInquiry(item)}
                   whileHover={{ y: -3 }}
-                  className={`p-5 rounded-2xl text-left transition-all duration-300 border-2 cursor-pointer ${
-                    isSelected
+                  className={`p-5 rounded-2xl text-left transition-all duration-300 border-2 cursor-pointer ${isSelected
                       ? 'bg-white dark:bg-slate-800 border-[#0077B6] dark:border-cyan-400 shadow-xl ring-2 ring-[#0077B6]/25'
                       : 'bg-white dark:bg-slate-900/80 border-slate-300 dark:border-white/15 hover:border-slate-400 dark:hover:border-cyan-400/40'
-                  }`}
+                    }`}
                 >
                   <span className={`text-[10px] uppercase tracking-wider font-extrabold px-2.5 py-0.5 rounded-md border inline-block mb-2 ${item.badgeColor}`}>
                     {item.category}
@@ -563,22 +579,30 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
           </div>
 
           {/* Premium Conversational Interactive Interface */}
-          <div className="p-6 sm:p-10 rounded-3xl bg-white dark:bg-[#050B17] border-2 border-slate-300 dark:border-cyan-500/40 shadow-2xl">
+          <div className="p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-white dark:bg-[#050B17] border-2 border-slate-300 dark:border-cyan-500/40 shadow-2xl">
             <div className="space-y-6">
-              
+
               {/* Step Flow Banner: ASK -> EXPLORE -> CONNECT -> UNDERSTAND */}
-              <div className="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-slate-300 dark:border-white/15">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 pb-5 sm:pb-6 border-b border-slate-300 dark:border-white/15">
                 <span className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
                   Synthesis Pipeline:
                 </span>
-                <div className="flex items-center gap-2 text-xs font-bold">
-                  <span className="px-3 py-1 rounded-md bg-[#0077B6] text-white">ASK</span>
-                  <span className="text-slate-400 font-bold text-sm">&rarr;</span>
-                  <span className="px-3 py-1 rounded-md bg-cyan-600 text-white">EXPLORE</span>
-                  <span className="text-slate-400 font-bold text-sm">&rarr;</span>
-                  <span className="px-3 py-1 rounded-md bg-indigo-600 text-white">CONNECT</span>
-                  <span className="text-slate-400 font-bold text-sm">&rarr;</span>
-                  <span className="px-3 py-1 rounded-md bg-emerald-600 text-white">UNDERSTAND</span>
+                <div className="grid grid-cols-2 sm:grid-cols-4 md:flex md:items-center gap-2 text-xs font-bold">
+                  <span className="px-3 py-1.5 rounded-lg bg-[#0077B6] text-white text-center shadow-xs">
+                    1. ASK
+                  </span>
+                  <span className="hidden md:inline text-slate-400 font-bold text-sm">&rarr;</span>
+                  <span className="px-3 py-1.5 rounded-lg bg-cyan-600 text-white text-center shadow-xs">
+                    2. EXPLORE
+                  </span>
+                  <span className="hidden md:inline text-slate-400 font-bold text-sm">&rarr;</span>
+                  <span className="px-3 py-1.5 rounded-lg bg-indigo-600 text-white text-center shadow-xs">
+                    3. CONNECT
+                  </span>
+                  <span className="hidden md:inline text-slate-400 font-bold text-sm">&rarr;</span>
+                  <span className="px-3 py-1.5 rounded-lg bg-emerald-600 text-white text-center shadow-xs">
+                    4. UNDERSTAND
+                  </span>
                 </div>
               </div>
 
@@ -601,8 +625,8 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
                 </div>
                 <div className="space-y-4 flex-1">
                   <div className="p-6 sm:p-7 rounded-2xl rounded-tl-none bg-gradient-to-br from-cyan-50/70 via-white to-sky-50/40 dark:from-cyan-950/50 dark:via-[#0B1528] dark:to-slate-900 border-2 border-cyan-300 dark:border-cyan-500/40 text-slate-900 dark:text-slate-100 shadow-md space-y-4">
-                    
-                    <div className="flex items-center justify-between border-b border-cyan-200 dark:border-white/15 pb-3">
+
+                    <div className="flex flex-wrap items-center justify-between gap-2 border-b border-cyan-200 dark:border-white/15 pb-3">
                       <span className="text-xs font-extrabold uppercase tracking-wider text-[#0077B6] dark:text-cyan-300 flex items-center gap-1.5">
                         <Cpu className="w-4 h-4 text-[#00A3E0]" />
                         Knooviq AI Insight Synthesis
@@ -652,7 +676,7 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
                   </div>
 
                   {/* Highlight Callout */}
-                  <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-900 border-2 border-slate-300 dark:border-white/15 flex items-center justify-between text-xs text-slate-700 dark:text-slate-200">
+                  <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-900 border-2 border-slate-300 dark:border-white/15 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-slate-700 dark:text-slate-200">
                     <span className="font-extrabold text-slate-900 dark:text-white uppercase tracking-wider">Core Takeaway:</span>
                     <span className="font-semibold text-sm italic text-[#0077B6] dark:text-cyan-300">{activeInquiry.keyTakeaway}</span>
                   </div>
@@ -670,7 +694,7 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
           ========================================================================= */}
       <section className="py-20 sm:py-28 bg-white dark:bg-[#050B17] border-b border-slate-300/80 dark:border-cyan-500/20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-300 dark:border-white/20 text-slate-800 dark:text-slate-200 text-xs font-bold">
@@ -758,22 +782,25 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
                     key={domain.id}
                     onClick={() => setActiveDomain(domain)}
                     whileHover={{ scale: 1.02 }}
-                    className={`p-4 rounded-xl text-left transition-all border-2 cursor-pointer ${
-                      isSelected
+                    className={`p-3 sm:p-4 rounded-xl text-left transition-all border-2 cursor-pointer flex flex-col justify-between overflow-hidden relative ${isSelected
                         ? 'bg-cyan-950 border-cyan-400 text-white shadow-xl ring-2 ring-cyan-400/50'
                         : 'bg-slate-800/80 border-slate-700 text-slate-200 hover:border-cyan-400/50 hover:text-white'
-                    }`}
+                      }`}
                   >
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <Icon className={`w-4 h-4 ${isSelected ? 'text-cyan-300' : 'text-slate-300'}`} />
-                        <span className="text-xs font-bold">{domain.name}</span>
+                    <div className="space-y-1.5 w-full min-w-0">
+                      <div className="flex items-start gap-1.5 min-w-0">
+                        <Icon className={`w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 mt-0.5 ${isSelected ? 'text-cyan-300' : 'text-slate-300'}`} />
+                        <span className="text-[11px] sm:text-xs font-bold break-words leading-tight flex-1">{domain.name}</span>
                       </div>
-                      <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/10 text-cyan-300 font-bold">
-                        {domain.badge}
-                      </span>
+                      <div className="min-w-0">
+                        <span className="inline-block text-[9px] sm:text-[10px] px-1.5 py-0.5 rounded bg-cyan-950/80 text-cyan-300 font-mono font-bold border border-cyan-400/40 break-words max-w-full">
+                          {domain.badge}
+                        </span>
+                      </div>
                     </div>
-                    <p className="text-xs text-slate-300 truncate font-medium">{domain.role}</p>
+                    <p className="text-[10px] sm:text-xs text-slate-300/90 leading-snug font-medium mt-2 break-words">
+                      {domain.role}
+                    </p>
                   </motion.button>
                 );
               })}
@@ -783,10 +810,12 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
             <div className="p-7 rounded-2xl bg-slate-800/90 border-2 border-cyan-400/40 backdrop-blur-md space-y-4">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
                 <div className="lg:col-span-7 space-y-3">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-500/20 text-cyan-300 text-xs font-bold border border-cyan-400/30">
+                  <div className="inline-flex flex-wrap items-center gap-2 px-3 py-1.5 rounded-md bg-cyan-500/20 text-cyan-300 text-xs font-bold border border-cyan-400/30 max-w-full break-words">
                     <span>Domain: {activeDomain.name}</span>
                     <span>&bull;</span>
-                    <span>{activeDomain.role}</span>
+                    <span className="break-words">{activeDomain.role}</span>
+                    <span>&bull;</span>
+                    <span className="px-1.5 py-0.5 rounded bg-cyan-400/20 text-cyan-200 text-[11px] font-mono break-words">{activeDomain.badge}</span>
                   </div>
                   <h4 className="text-xl font-bold text-white">
                     Contextual Contribution to AI Insights
@@ -836,7 +865,7 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
           ========================================================================= */}
       <section className="py-12 sm:py-16 bg-slate-100/70 dark:bg-[#060D1D] border-t-2 border-slate-300 dark:border-cyan-500/25 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-8 space-y-2.5">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border-2 border-slate-300 dark:border-cyan-500/35 bg-white dark:bg-[#070E1C] shadow-xs">
@@ -860,7 +889,7 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
 
           {/* Comparison Grid (Side-by-Side) */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-stretch">
-            
+
             {/* Card 1: BEFORE — Traditional Reporting & Siloed BI */}
             <div className="rounded-2xl p-5 sm:p-6 bg-white dark:bg-[#070E1C] border-2 border-rose-300 dark:border-rose-900/50 shadow-md flex flex-col justify-between space-y-4">
               <div className="space-y-4">
@@ -990,12 +1019,12 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
           SECTION 5 — FINAL CTA: TURN INFORMATION INTO CONFIDENCE
           ========================================================================= */}
       <section className="py-20 sm:py-28 bg-gradient-to-b from-white via-slate-50 to-sky-50/60 dark:from-[#050B17] dark:via-[#081226] dark:to-[#050B17] relative overflow-hidden">
-        
+
         {/* Ambient Glow */}
         <div className="aurora-sphere-1 -bottom-20 left-1/3 bg-[#00A3E0]/20 dark:bg-[#00A3E0]/25 pointer-events-none" />
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8">
-          
+
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-100 dark:bg-cyan-950/80 border border-cyan-300 dark:border-cyan-400/40 text-[#0077B6] dark:text-cyan-300 text-xs font-bold tracking-wide shadow-sm">
             <Sparkles className="w-4 h-4 text-[#00A3E0]" />
             <span>Turn Information into Confidence</span>
@@ -1006,7 +1035,7 @@ export const KnooviqAIInsightsPage: React.FC<KnooviqAIInsightsPageProps> = ({ on
           </h2>
 
           <p className="text-base sm:text-lg text-slate-700 dark:text-slate-200 leading-relaxed max-w-2xl mx-auto font-normal">
-            Knooviq AI Insights helps teams move beyond searching for information — giving them the context 
+            Knooviq AI Insights helps teams move beyond searching for information, giving them the context
             and clarity they need to understand what matters.
           </p>
 

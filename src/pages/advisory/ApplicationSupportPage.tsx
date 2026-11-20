@@ -240,8 +240,8 @@ export const ApplicationSupportPage: React.FC<ApplicationSupportPageProps> = ({ 
         {/* Decorative Top Hairline */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#00A3E0]/40 to-transparent pointer-events-none" />
 
-        {/* Full-Bleed Background Visual — 100% Clear with Zero Dark Shade */}
-        <div className="absolute inset-0 z-0">
+        {/* Desktop-Only Full-Bleed Background Visual (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
           <img
             src="/images/application-support/application_support_hero_widescreen.jpg"
             alt="SAP Enterprise Application Support and Functional Helpdesk"
@@ -249,11 +249,16 @@ export const ApplicationSupportPage: React.FC<ApplicationSupportPageProps> = ({ 
           />
         </div>
 
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
 
           <div className="max-w-3xl space-y-5 text-left relative">
-            {/* Seamless Soft Contrast Aura — ensures text is 100% legible with zero dark shade on image */}
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#00A3E0] text-xs font-mono font-bold tracking-wider uppercase shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
@@ -292,6 +297,18 @@ export const ApplicationSupportPage: React.FC<ApplicationSupportPageProps> = ({ 
                 <ShieldCheck className="w-4 h-4 text-blue-400 mb-1" />
                 <div className="text-sm font-black text-white">99.9% Uptime</div>
                 <div className="text-[11px] text-slate-400 uppercase font-mono">Business Continuity</div>
+              </div>
+            </div>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                <img
+                  src="/images/application-support/application_support_hero_widescreen.jpg"
+                  alt="SAP Enterprise Application Support and Functional Helpdesk"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
               </div>
             </div>
           </div>

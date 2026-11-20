@@ -290,15 +290,15 @@ export const SapAmsPage: React.FC<SapAmsPageProps> = ({ onOpenContact }) => {
     <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-500 selection:text-white">
 
       {/* =========================================================================
-          SECTION 1: HERO — SAP AMS (FULL-BLEED WIDESCREEN HERO)
+          SECTION 1: HERO — SAP AMS (DESKTOP FULL-SCREEN BACKGROUND, MOBILE SHOWCASE CARD)
           ========================================================================= */}
       <section className="relative w-full min-h-[600px] lg:min-h-[660px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 overflow-hidden bg-black text-white border-b border-[#00A3E0]/20">
         
         {/* Decorative Top Hairline */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#00A3E0]/40 to-transparent pointer-events-none" />
 
-        {/* Full-Bleed Background Visual — 100% Clear with Zero Dark Shade */}
-        <div className="absolute inset-0 z-0">
+        {/* Desktop-Only Full-Bleed Background Visual (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
           <img
             src="/images/ams/sap-ams-hero.jpg"
             alt="Knooviq 24/7 Global SAP Application Management Operations Command Center"
@@ -306,11 +306,16 @@ export const SapAmsPage: React.FC<SapAmsPageProps> = ({ onOpenContact }) => {
           />
         </div>
 
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
 
           <div className="max-w-3xl space-y-5 text-left relative">
-            {/* Seamless Soft Contrast Aura — ensures text is 100% legible with zero dark shade on image */}
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#00A3E0] text-xs font-mono font-bold tracking-wider uppercase shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
@@ -332,6 +337,18 @@ export const SapAmsPage: React.FC<SapAmsPageProps> = ({ onOpenContact }) => {
             <p className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed max-w-2xl">
               Transform your SAP operations from reactive firefighting into a proactive, high-velocity engine. We provide 24/7 dedicated application management focused on uptime, rigorous SLA guarantees, performance tuning, and continuous value creation.
             </p>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                <img
+                  src="/images/ams/sap-ams-hero.jpg"
+                  alt="Knooviq 24/7 Global SAP Application Management Operations Command Center"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
+              </div>
+            </div>
           </div>
 
         </div>
@@ -364,9 +381,9 @@ export const SapAmsPage: React.FC<SapAmsPageProps> = ({ onOpenContact }) => {
             {/* Left 8 Cols: Interactive Multi-Step Escalation Flowchart */}
             <div className="lg:col-span-8 p-6 sm:p-7 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between space-y-6">
               <div>
-                <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-100 mb-4 gap-2">
                   <div className="flex items-center gap-2">
-                    <Workflow className="w-4 h-4 text-blue-600" />
+                    <Workflow className="w-4 h-4 text-blue-600 shrink-0" />
                     <span className="text-xs font-mono font-bold text-blue-700 uppercase">
                       ITIL Incident Triage &amp; Escalation Flowchart
                     </span>
@@ -433,9 +450,12 @@ export const SapAmsPage: React.FC<SapAmsPageProps> = ({ onOpenContact }) => {
                     {escalationSteps[activeEscalationStep].desc}
                   </p>
 
-                  <div className="pt-2 text-xs font-mono flex items-center gap-2 text-slate-700">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span><strong>Stage Output:</strong> {escalationSteps[activeEscalationStep].deliverable}</span>
+                  <div className="pt-2 text-xs font-mono flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-2 text-slate-700">
+                    <div className="flex items-center gap-2 shrink-0">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                      <span><strong>Stage Output:</strong></span>
+                    </div>
+                    <span className="break-words min-w-0">{escalationSteps[activeEscalationStep].deliverable}</span>
                   </div>
                 </motion.div>
               </AnimatePresence>
@@ -577,9 +597,9 @@ export const SapAmsPage: React.FC<SapAmsPageProps> = ({ onOpenContact }) => {
                 ))}
               </div>
 
-              <div className="p-3.5 rounded-xl bg-white border border-slate-200 text-xs text-slate-600 flex items-center justify-between">
+              <div className="p-3.5 rounded-xl bg-white border border-slate-200 text-xs text-slate-600 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <span>Mean Time To Detect (MTTD): <strong>&lt; 45 Seconds</strong></span>
-                <span className="text-blue-700 font-bold font-mono">Over 84% Incidents Resolved Proactively</span>
+                <span className="text-blue-700 font-bold font-mono shrink-0">Over 84% Incidents Resolved Proactively</span>
               </div>
             </div>
 
@@ -589,7 +609,7 @@ export const SapAmsPage: React.FC<SapAmsPageProps> = ({ onOpenContact }) => {
                 <img
                   src="/images/ams/sap-ams-proactive-monitoring.jpg"
                   alt="Live SAP Operations Cockpit with Real-Time Application Telemetry"
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
                 <div className="absolute bottom-3 left-3 right-3 text-white">
@@ -755,28 +775,31 @@ export const SapAmsPage: React.FC<SapAmsPageProps> = ({ onOpenContact }) => {
             </p>
           </div>
 
-          <div className="p-7 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm space-y-4">
+          <div className="p-4 sm:p-7 md:p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm space-y-4 overflow-hidden">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-200 gap-2">
-              <span className="text-xs font-mono font-bold text-blue-700 uppercase">
+              <span className="text-xs font-mono font-bold text-blue-700 uppercase break-words">
                 PRODUCTION CASE STUDY // MONTH-END BILLING ENGINE LOCK CONTENTION
               </span>
-              <span className="text-xs font-mono text-emerald-700 font-bold bg-emerald-50 px-2.5 py-0.5 rounded border border-emerald-200">
+              <span className="text-xs font-mono text-emerald-700 font-bold bg-emerald-50 px-2.5 py-0.5 rounded border border-emerald-200 w-fit shrink-0">
                 100% Permanently Remediated
               </span>
             </div>
 
             <div className="space-y-3 pt-2">
               {rcaSteps.map((step, idx) => (
-                <div key={idx} className="p-4 rounded-2xl bg-white border border-slate-200 flex flex-col sm:flex-row sm:items-start justify-between gap-3">
-                  <div className="flex items-start gap-3">
-                    <span className="px-2.5 py-1 rounded-xl bg-blue-50 border border-blue-200 text-blue-700 font-mono text-xs font-bold shrink-0">
+                <div 
+                  key={idx} 
+                  className="p-3.5 sm:p-4 rounded-2xl bg-white border border-slate-200 flex flex-col md:flex-row md:items-start justify-between gap-2.5 sm:gap-3 w-full max-w-full overflow-hidden"
+                >
+                  <div className="flex flex-col md:flex-row md:items-start gap-2 md:gap-3 flex-1 min-w-0 w-full">
+                    <span className="inline-block px-2.5 py-1 rounded-xl bg-blue-50 border border-blue-200 text-blue-700 font-mono text-xs font-bold shrink-0 self-start max-w-full whitespace-normal">
                       {step.why}
                     </span>
-                    <span className="text-xs sm:text-sm text-slate-700 font-sans mt-0.5">
+                    <span className="text-xs sm:text-sm text-slate-700 font-sans md:mt-0.5 break-words min-w-0 flex-1 leading-relaxed">
                       {step.finding}
                     </span>
                   </div>
-                  <span className="text-xs font-mono text-emerald-700 font-bold shrink-0 hidden sm:inline-block">
+                  <span className="text-xs font-mono text-emerald-700 font-bold shrink-0 hidden md:inline-block">
                     Verified
                   </span>
                 </div>
@@ -811,11 +834,11 @@ export const SapAmsPage: React.FC<SapAmsPageProps> = ({ onOpenContact }) => {
             {/* Left 8 Cols: Interactive Release Flowchart */}
             <div className="lg:col-span-8 p-6 sm:p-7 rounded-3xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between space-y-6">
               <div>
-                <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-100 mb-4 gap-2">
                   <span className="text-xs font-mono font-bold text-blue-700 uppercase">
                     Interactive Transport Release Pathways
                   </span>
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-2">
                     {releaseTracks.map((rel, i) => (
                       <button
                         key={i}
@@ -832,11 +855,11 @@ export const SapAmsPage: React.FC<SapAmsPageProps> = ({ onOpenContact }) => {
                 </div>
 
                 <div className="mb-4">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <h3 className="text-base font-bold text-slate-900">
                       {releaseTracks[activeReleaseTrack].track}
                     </h3>
-                    <span className="text-xs font-mono font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded border border-emerald-200">
+                    <span className="text-xs font-mono font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded border border-emerald-200 w-fit shrink-0">
                       Lead Time: {releaseTracks[activeReleaseTrack].leadTime}
                     </span>
                   </div>
@@ -860,9 +883,9 @@ export const SapAmsPage: React.FC<SapAmsPageProps> = ({ onOpenContact }) => {
                 </div>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-blue-50/60 border border-blue-200 text-xs text-slate-700 flex items-center justify-between">
-                <span><strong>Governance Check:</strong> {releaseTracks[activeReleaseTrack].governance}</span>
-                <span className="text-blue-700 font-bold font-mono">Zero Transport Regressions</span>
+              <div className="p-3.5 rounded-xl bg-blue-50/60 border border-blue-200 text-xs text-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <span className="break-words min-w-0"><strong>Governance Check:</strong> {releaseTracks[activeReleaseTrack].governance}</span>
+                <span className="text-blue-700 font-bold font-mono shrink-0">Zero Transport Regressions</span>
               </div>
             </div>
 
@@ -1007,8 +1030,8 @@ export const SapAmsPage: React.FC<SapAmsPageProps> = ({ onOpenContact }) => {
                   alt="Continuous Business Value Creation and SAP Performance Optimization"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-                <div className="absolute bottom-3 left-3 right-3 text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 left-3 right-3 text-white pointer-events-none">
                   <span className="text-[10px] font-mono text-blue-300 font-bold uppercase block">
                     CONTINUOUS VALUE
                   </span>
@@ -1038,7 +1061,7 @@ export const SapAmsPage: React.FC<SapAmsPageProps> = ({ onOpenContact }) => {
                   <div className="space-y-2 font-mono text-xs">
                     <div className="p-2.5 rounded-xl bg-white border border-slate-200 flex items-center justify-between">
                       <span className="text-slate-400">BASELINE:</span>
-                      <span className="text-slate-700 line-through">{bm.before}</span>
+                      <span className="text-slate-700 lg:line-through">{bm.before}</span>
                     </div>
                     <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 flex items-center justify-between">
                       <span className="text-emerald-700 font-bold">OPTIMIZED:</span>

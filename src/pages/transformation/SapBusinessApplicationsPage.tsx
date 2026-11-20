@@ -422,7 +422,7 @@ const BUSINESS_APPS_DATA: Record<BusinessAppKey, BusinessAppContent> = {
     overviewTag: 'INTELLIGENT TREASURY & RECORD-TO-REPORT',
     overviewHeading: 'Elevating Finance from Bookkeeping to Strategic Value Engine',
     overviewNarrative1: 'SAP S/4HANA Finance fundamentally reimagines the office of the CFO. By consolidating general ledger, profitability analysis, accounts payable, accounts receivable, and fixed assets into the Universal Journal (ACDOCA), financial leaders gain instant visibility into company-wide cash positions and margin contributions without waiting for month-end batch runs.',
-    overviewNarrative2: 'For complex multi-ERP conglomerates, Central Finance serves as an agile consolidation bridge — replicating transactional details from disparate source ERPs into a central S/4HANA instance in real time, delivering standardized financial reporting without tearing down legacy branch installations.',
+    overviewNarrative2: 'For complex multi-ERP conglomerates, Central Finance serves as an agile consolidation bridge, replicating transactional details from disparate source ERPs into a central S/4HANA instance in real time, delivering standardized financial reporting without tearing down legacy branch installations.',
     cleanCorePillars: [
       {
         title: 'Continuous Touchless Accounting',
@@ -1207,7 +1207,7 @@ const BUSINESS_APPS_DATA: Record<BusinessAppKey, BusinessAppContent> = {
     // S2
     overviewTag: 'COMMERCE CLOUD TO INTELLIGENT SERVICE',
     overviewHeading: 'Bridging Front-Office Promises with Back-Office Execution',
-    overviewNarrative1: 'Traditional CRM tools frequently isolate customer touchpoints from supply chain and inventory reality, leading to broken promises and frustrated buyers. SAP Customer Experience (CX) bridges the front office with the digital core — ensuring that customer interactions, bespoke price books, and real-time inventory promises are backed by live operational data.',
+    overviewNarrative1: 'Traditional CRM tools frequently isolate customer touchpoints from supply chain and inventory reality, leading to broken promises and frustrated buyers. SAP Customer Experience (CX) bridges the front office with the digital core, ensuring that customer interactions, bespoke price books, and real-time inventory promises are backed by live operational data.',
     overviewNarrative2: 'From enterprise B2B complex configure-price-quote (CPQ) orders to frictionless direct-to-consumer digital storefronts, the SAP CX suite harmonizes commerce, customer data, marketing automation, and field service into a unified customer journey that builds enduring loyalty.',
     cleanCorePillars: [
       {
@@ -1843,7 +1843,7 @@ export const SapBusinessApplicationsPage: React.FC<SapBusinessApplicationsPagePr
   }).join(' ');
 
   return (
-    <div className="min-h-screen pt-16 sm:pt-20 bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300">
+    <div className="transformation-typography font-sora min-h-screen pt-16 sm:pt-20 bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300">
       
 
 
@@ -1861,60 +1861,84 @@ export const SapBusinessApplicationsPage: React.FC<SapBusinessApplicationsPagePr
       ) : (
         <>
           {/* =========================================================================
-              2. FULL-SCREEN HERO SECTION (Full Bleed Background with Deep Enterprise Atmosphere)
+              2. HERO SECTION (DESKTOP FULL-SCREEN BACKGROUND, MOBILE SHOWCASE CARD)
               ========================================================================= */}
           <section className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 overflow-hidden bg-black text-white">
-        
-        {/* Full-Bleed 16:9 Panoramic Image - Zero Cropping on Subject */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={heroVisual.image} 
-            alt={currentData.heroHeadline} 
-            className="w-full h-full object-cover object-right sm:object-[78%_center] lg:object-[center_25%] brightness-105 contrast-[1.02]"
-          />
-          <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${APP_HERO_THEMES[activeApp].topLine}`} />
-        </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-6 sm:py-10">
-          <div className="max-w-2xl lg:max-w-xl space-y-6 relative">
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
-            
-            {/* Category Dash & Tag */}
-            <div className="flex flex-wrap items-center gap-2">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[11px] font-mono font-bold uppercase tracking-widest text-cyan-300 shadow-md">
-                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-                <span>{currentData.categoryTag}</span>
-              </div>
-              <span className="text-slate-400 text-xs font-mono">/</span>
-              <span className="text-[11px] font-mono font-bold text-slate-200 uppercase tracking-wider bg-black/50 px-2.5 py-1 rounded-full border border-white/20 backdrop-blur-md shadow-md">
-                {currentData.heroBadge}
-              </span>
+            {/* Desktop-Only Full-Bleed 16:9 Background Image (Zero changes to desktop) */}
+            <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
+              <img 
+                src={heroVisual.image} 
+                alt={currentData.heroHeadline} 
+                className="w-full h-full object-cover object-right sm:object-[78%_center] lg:object-[center_25%] brightness-105 contrast-[1.02]"
+              />
+              <div className={`absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${APP_HERO_THEMES[activeApp].topLine}`} />
             </div>
 
-            {/* Large Hero Title */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.14] drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
-              {currentData.heroHeadline}
-            </h1>
+            {/* Ambient Glow for Mobile */}
+            <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+            <div className={`lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r ${APP_HERO_THEMES[activeApp].topLine}`} />
 
-            {/* Subtitle / Strategic Narrative */}
-            <p className="text-sm sm:text-base lg:text-lg font-medium text-slate-200 leading-relaxed max-w-2xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
-              {currentData.heroSubheadline}
-            </p>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-6 sm:py-10">
+              <div className="max-w-2xl lg:max-w-xl space-y-6 relative">
 
-            {/* Architectural Feature Checkpoints */}
-            <div className="flex flex-wrap items-center gap-2 pt-1 font-mono">
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-950/70 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-cyan-200 shadow-lg">
-                <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0" />
-                <span>Clean Core Certified</span>
-              </div>
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-950/70 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-amber-200 shadow-lg">
-                <Zap className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>Sub-Second Telemetry</span>
+                {/* Desktop Seamless Soft Contrast Aura */}
+                <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+
+                {/* Category Dash & Tag */}
+                <div className="flex flex-wrap items-center gap-2">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[11px] font-mono font-bold uppercase tracking-widest text-cyan-300 shadow-md">
+                    <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                    <span>{currentData.categoryTag}</span>
+                  </div>
+                  <span className="text-slate-400 text-xs font-mono">/</span>
+                  <span className="text-[11px] font-mono font-bold text-slate-200 uppercase tracking-wider bg-black/50 px-2.5 py-1 rounded-full border border-white/20 backdrop-blur-md shadow-md">
+                    {currentData.heroBadge}
+                  </span>
+                </div>
+
+                {/* Large Hero Title */}
+                <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.14] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+                  {currentData.heroHeadline}
+                </h1>
+
+                {/* Subtitle / Strategic Narrative */}
+                <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-xl pt-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+                  {currentData.heroSubheadline}
+                </p>
+
+                {/* Architectural Feature Checkpoints */}
+                <div className="flex flex-wrap items-center gap-2 pt-1 font-mono">
+                  <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-cyan-200 shadow-lg">
+                    <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0" />
+                    <span>Clean Core Certified</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-amber-200 shadow-lg">
+                    <Zap className="w-4 h-4 text-amber-400 shrink-0" />
+                    <span>Sub-Second Telemetry</span>
+                  </div>
+                </div>
+
+                {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+                <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+                  <div 
+                    className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card cursor-pointer"
+                    onClick={() => setIsFullscreenImageOpen(true)}
+                    title="Click to view full screen"
+                  >
+                    <img 
+                      src={heroVisual.image} 
+                      alt={currentData.heroHeadline} 
+                      className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                      loading="eager"
+                    />
+                  </div>
+                </div>
+
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
       {/* Full-Screen Lightbox Modal */}
       {isFullscreenImageOpen && (
@@ -2003,8 +2027,56 @@ export const SapBusinessApplicationsPage: React.FC<SapBusinessApplicationsPagePr
             {currentData.cleanCorePillars.map((pillar, idx) => {
               const theme = CARD_COLOR_THEMES[idx % CARD_COLOR_THEMES.length];
               
-              // Dynamic distinct icon per pillar
-              const renderPillarHeaderIcon = (pillarIdx: number) => {
+              // Dynamic distinct icon per pillar based on its specific topic/content
+              const renderPillarHeaderIcon = (pillarItem: typeof pillar, pillarIdx: number) => {
+                const text = `${pillarItem.title || ''} ${pillarItem.tag || ''}`.toLowerCase();
+                
+                if (text.includes('treasury') || text.includes('cash') || text.includes('payroll') || text.includes('wallet')) {
+                  return <Wallet className="w-3.5 h-3.5" />;
+                }
+                if (text.includes('warehouse') || text.includes('ewm') || text.includes('inventory') || text.includes('fulfillment')) {
+                  return <Boxes className="w-3.5 h-3.5" />;
+                }
+                if (text.includes('transport') || text.includes('freight') || text.includes('transit') || text.includes('routing')) {
+                  return <Truck className="w-3.5 h-3.5" />;
+                }
+                if (text.includes('commerce') || text.includes('store') || text.includes('shopping') || text.includes('pos')) {
+                  return <Store className="w-3.5 h-3.5" />;
+                }
+                if (text.includes('employee') || text.includes('hxm') || text.includes('talent') || text.includes('workforce') || text.includes('customer data') || text.includes('cdp')) {
+                  return <Users className="w-3.5 h-3.5" />;
+                }
+                if (text.includes('service cloud') || text.includes('listening') || text.includes('sentiment') || text.includes('customer journey')) {
+                  return <HeartHandshake className="w-3.5 h-3.5" />;
+                }
+                if (text.includes('machine reasoning') || text.includes('ai') || text.includes('joule') || text.includes('cognitive') || text.includes('autonomous')) {
+                  return <Bot className="w-3.5 h-3.5" />;
+                }
+                if (text.includes('planning') || text.includes('ibp') || text.includes('s&op') || text.includes('analytics') || text.includes('profitability')) {
+                  return <BarChart3 className="w-3.5 h-3.5" />;
+                }
+                if (text.includes('network') || text.includes('mesh') || text.includes('integration') || text.includes('lbn')) {
+                  return <Network className="w-3.5 h-3.5" />;
+                }
+                if (text.includes('cloud') || text.includes('hybrid')) {
+                  return <Cloud className="w-3.5 h-3.5" />;
+                }
+                if (text.includes('extensibility') || text.includes('decoupled') || text.includes('clean core') || text.includes('central finance')) {
+                  return <Layers className="w-3.5 h-3.5" />;
+                }
+                if (text.includes('journal') || text.includes('acdoca') || text.includes('database') || text.includes('record')) {
+                  return <Database className="w-3.5 h-3.5" />;
+                }
+                if (text.includes('compliance') || text.includes('multi-gaap') || text.includes('governance') || text.includes('security')) {
+                  return <ShieldCheck className="w-3.5 h-3.5" />;
+                }
+                if (text.includes('marketing') || text.includes('precision') || text.includes('campaign')) {
+                  return <Target className="w-3.5 h-3.5" />;
+                }
+                if (text.includes('accounting') || text.includes('touchless')) {
+                  return <Activity className="w-3.5 h-3.5" />;
+                }
+                
                 switch (pillarIdx % 4) {
                   case 0: return <Database className="w-3.5 h-3.5" />;
                   case 1: return <Zap className="w-3.5 h-3.5" />;
@@ -2069,7 +2141,7 @@ export const SapBusinessApplicationsPage: React.FC<SapBusinessApplicationsPagePr
                       </span>
                       
                       <div className="p-1 rounded-md bg-slate-950/85 border border-white/20 text-cyan-300 backdrop-blur-md shadow-md">
-                        {renderPillarHeaderIcon(idx)}
+                        {renderPillarHeaderIcon(pillar, idx)}
                       </div>
                     </div>
                   </div>

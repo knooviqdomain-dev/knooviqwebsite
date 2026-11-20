@@ -140,7 +140,7 @@ export const DigitalRetailSolutionPage: React.FC<DigitalRetailSolutionPageProps>
   const activeStage = JOURNEY_STAGES[activeStageIndex];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#00A3E0] selection:text-white overflow-hidden">
+    <div className="product-typography font-sora min-h-screen bg-white text-slate-900 selection:bg-[#00A3E0] selection:text-white overflow-hidden">
 
       {/* =========================================================================
           SECTION 1 — HERO: REINVENT DIGITAL RETAIL (LIGHT GRADIENT WITH 3D ACCENTS)
@@ -215,7 +215,7 @@ export const DigitalRetailSolutionPage: React.FC<DigitalRetailSolutionPageProps>
 
             {/* Right Column: High-Quality Futuristic Retail Visual with Floating Product Cards */}
             <div className="lg:col-span-5 relative">
-              <div className="relative h-[380px] sm:h-[460px] lg:h-[520px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-950 group">
+              <div className="relative aspect-[16/9] sm:aspect-auto sm:h-[460px] lg:h-[520px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-950 group">
                 <img
                   src="/images/retail_hero_future.jpg"
                   alt="Futuristic luxury retail flagship with customer smartphone shopping and ambient digital connectivity"
@@ -321,7 +321,7 @@ export const DigitalRetailSolutionPage: React.FC<DigitalRetailSolutionPageProps>
                       setIsPaused(true);
                       setTimeout(() => setIsPaused(false), 8000);
                     }}
-                    className={`p-3 rounded-xl text-left transition-all relative overflow-hidden border ${
+                    className={`p-3 sm:p-3.5 rounded-xl text-left transition-all relative overflow-hidden border flex flex-col justify-between min-h-[108px] sm:min-h-[114px] ${
                       isActive
                         ? 'bg-slate-900 text-white border-slate-900 shadow-md ring-2 ring-[#00A3E0]/40'
                         : 'bg-white hover:bg-slate-100 text-slate-700 border-slate-200'
@@ -336,22 +336,30 @@ export const DigitalRetailSolutionPage: React.FC<DigitalRetailSolutionPageProps>
                       />
                     )}
 
-                    <div className="flex items-center justify-between">
-                      <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${
-                        isActive ? 'bg-[#00A3E0] text-slate-900' : 'bg-slate-100 text-slate-600'
+                    <div>
+                      <div className="flex items-center justify-between gap-1.5 min-w-0">
+                        <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0 ${
+                          isActive ? 'bg-[#00A3E0] text-slate-900' : 'bg-slate-100 text-slate-600'
+                        }`}>
+                          0{idx + 1}
+                        </span>
+                        <span className={`text-[9.5px] sm:text-[10px] font-semibold text-right leading-tight break-words ${
+                          isActive ? 'text-cyan-300' : 'text-slate-400'
+                        }`}>
+                          {stage.kpiValue}
+                        </span>
+                      </div>
+
+                      <div className={`text-sm sm:text-base font-bold mt-2 font-display leading-tight ${
+                        isActive ? 'text-white' : 'text-slate-900'
                       }`}>
-                        0{idx + 1}
-                      </span>
-                      <span className={`text-[10px] font-semibold ${isActive ? 'text-cyan-300' : 'text-slate-400'}`}>
-                        {stage.kpiValue}
-                      </span>
+                        {stage.name}
+                      </div>
                     </div>
 
-                    <p className="text-sm font-bold mt-2 font-display truncate">
-                      {stage.name}
-                    </p>
-
-                    <p className={`text-[11px] truncate mt-0.5 ${isActive ? 'text-slate-300' : 'text-slate-500'}`}>
+                    <p className={`text-[10.5px] sm:text-[11px] leading-snug mt-1.5 break-words font-normal ${
+                      isActive ? 'text-slate-200' : 'text-slate-600'
+                    }`}>
                       {stage.channel}
                     </p>
                   </button>
@@ -363,29 +371,29 @@ export const DigitalRetailSolutionPage: React.FC<DigitalRetailSolutionPageProps>
           {/* Dual Column: 3D Omnichannel Illustration + Live Contextual Drawer */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
-            {/* Left Column (7 cols): Isometric 3D Omnichannel Visualization */}
+            {/* Left Column (7 cols): Customer Experience & Omnichannel Visualization */}
             <div className="lg:col-span-7">
               <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-950 group">
                 <img
                   src="/images/retail_omnichannel.jpg"
-                  alt="Omnichannel retail ecosystem showing customer at center connecting boutique store, tablet, mobile app, marketplace, and social commerce"
-                  className="w-full h-full object-cover object-center select-none group-hover:scale-102 transition-transform duration-700"
+                  alt="Unified digital customer experience and omnichannel retail connection"
+                  className="w-full h-auto object-cover object-center select-none group-hover:scale-102 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
 
                 {/* Top Badge */}
-                <div className="absolute top-4 left-4 z-20 pointer-events-none">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-950/60 backdrop-blur-md border border-white/20 text-white text-xs font-semibold tracking-wide shadow-lg">
+                <div className="absolute top-3 sm:top-4 left-3 sm:left-4 z-20 pointer-events-none">
+                  <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-slate-950/70 backdrop-blur-md border border-white/20 text-white text-[11px] sm:text-xs font-semibold tracking-wide shadow-lg">
                     <span className="w-2 h-2 rounded-full bg-[#00A3E0] animate-pulse" />
                     <span>Active Touchpoint: {activeStage.channel}</span>
                   </div>
                 </div>
 
                 {/* Bottom Ribbon */}
-                <div className="absolute bottom-4 left-0 z-20 pointer-events-none">
-                  <div className="bg-[#0A2540]/90 backdrop-blur-md text-white px-5 py-2 rounded-r-xl font-display font-semibold tracking-wide text-xs uppercase shadow-xl border-r border-t border-b border-[#00A3E0]/40 flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                    <span>{activeStage.name} • {activeStage.kpiLabel}: {activeStage.kpiValue}</span>
+                <div className="absolute bottom-3 sm:bottom-4 left-0 z-20 pointer-events-none max-w-[92%]">
+                  <div className="bg-[#0A2540]/90 backdrop-blur-md text-white px-3 sm:px-5 py-1.5 sm:py-2 rounded-r-xl font-display font-semibold tracking-wide text-[10px] sm:text-xs uppercase shadow-xl border-r border-t border-b border-[#00A3E0]/40 flex items-center gap-1.5 sm:gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
+                    <span className="break-words leading-tight">{activeStage.name} • {activeStage.kpiLabel}: {activeStage.kpiValue}</span>
                   </div>
                 </div>
               </div>
@@ -483,7 +491,7 @@ export const DigitalRetailSolutionPage: React.FC<DigitalRetailSolutionPageProps>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             
             {/* Bento Card 1 (Spans 7 cols): AI-Powered Personalization */}
-            <div className="md:col-span-7 rounded-3xl p-7 bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all group relative overflow-hidden flex flex-col justify-between space-y-6">
+            <div className="md:col-span-7 rounded-3xl p-5 sm:p-7 bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all group relative overflow-hidden flex flex-col justify-between space-y-6">
               <div className="space-y-3">
                 <div className="w-12 h-12 rounded-2xl bg-cyan-100 text-[#0077B6] flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
                   <Sparkles className="w-6 h-6 text-[#00A3E0]" />
@@ -498,18 +506,18 @@ export const DigitalRetailSolutionPage: React.FC<DigitalRetailSolutionPageProps>
                 </p>
               </div>
 
-              <div className="grid grid-cols-3 gap-3 pt-4 border-t border-slate-100 text-xs">
-                <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-center">
-                  <p className="text-slate-500 font-normal">Recommendation</p>
-                  <p className="text-sm font-bold text-slate-900 mt-0.5 font-display">Contextual</p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-4 border-t border-slate-100 text-xs">
+                <div className="bg-slate-50 px-3.5 py-2.5 sm:p-2.5 rounded-xl border border-slate-200 shadow-2xs flex sm:flex-col items-center justify-between sm:justify-center text-left sm:text-center min-w-0">
+                  <p className="text-slate-500 font-normal text-xs sm:text-[11px] shrink-0">Recommendation</p>
+                  <p className="text-xs sm:text-sm font-bold text-slate-900 font-display sm:mt-0.5">Contextual</p>
                 </div>
-                <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-center">
-                  <p className="text-slate-500 font-normal">Affinity Match</p>
-                  <p className="text-sm font-bold text-slate-900 mt-0.5 font-display">Deep Learning</p>
+                <div className="bg-slate-50 px-3.5 py-2.5 sm:p-2.5 rounded-xl border border-slate-200 shadow-2xs flex sm:flex-col items-center justify-between sm:justify-center text-left sm:text-center min-w-0">
+                  <p className="text-slate-500 font-normal text-xs sm:text-[11px] shrink-0">Affinity Match</p>
+                  <p className="text-xs sm:text-sm font-bold text-slate-900 font-display sm:mt-0.5">Deep Learning</p>
                 </div>
-                <div className="bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-center">
-                  <p className="text-slate-500 font-normal">Cart Expansion</p>
-                  <p className="text-sm font-bold text-slate-900 mt-0.5 font-display">Optimized</p>
+                <div className="bg-slate-50 px-3.5 py-2.5 sm:p-2.5 rounded-xl border border-slate-200 shadow-2xs flex sm:flex-col items-center justify-between sm:justify-center text-left sm:text-center min-w-0">
+                  <p className="text-slate-500 font-normal text-xs sm:text-[11px] shrink-0">Cart Expansion</p>
+                  <p className="text-xs sm:text-sm font-bold text-slate-900 font-display sm:mt-0.5">Optimized</p>
                 </div>
               </div>
             </div>

@@ -63,13 +63,13 @@ export const CaseStudiesSection: React.FC<{ onOpenContact: () => void }> = () =>
                 </div>
 
                 {/* Measurable Results */}
-                <div className="grid grid-cols-3 gap-2 mb-6 pt-4 border-t border-slate-200 dark:border-white/10">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-6 pt-4 border-t border-slate-200 dark:border-white/10">
                   {study.outcomes.map((out, oIdx) => (
-                    <div key={oIdx} className="text-center p-2.5 rounded-2xl bg-white/60 dark:bg-[#030712]/70 border border-slate-200 dark:border-sky-500/20 shadow-sm">
-                      <div className="font-display text-lg font-extrabold text-[#00A3E0] dark:text-cyan-300">
+                    <div key={oIdx} className="text-center p-2.5 rounded-2xl bg-white/60 dark:bg-[#030712]/70 border border-slate-200 dark:border-sky-500/20 shadow-sm min-w-0">
+                      <div className="font-display text-lg font-extrabold text-[#00A3E0] dark:text-cyan-300 break-words">
                         {out.metric}
                       </div>
-                      <div className="text-[10px] text-slate-500 dark:text-slate-400 font-semibold leading-tight mt-0.5 font-display">
+                      <div className="text-[10px] text-slate-500 dark:text-slate-400 font-semibold leading-tight mt-0.5 font-display break-words">
                         {out.label}
                       </div>
                     </div>

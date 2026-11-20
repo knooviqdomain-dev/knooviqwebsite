@@ -191,7 +191,7 @@ export const AutomationManagerPage: React.FC<AutomationManagerPageProps> = ({ on
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div className="product-typography font-sora min-h-screen bg-[#F8FAFC] dark:bg-[#050B17] text-slate-900 dark:text-slate-100 transition-colors duration-300">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (With High-Resolution Image & Professional Look)
@@ -570,26 +570,28 @@ export const AutomationManagerPage: React.FC<AutomationManagerPageProps> = ({ on
                             </span>
                           </div>
 
-                          <div className="p-4 rounded-xl bg-white/5 border border-purple-500/30 space-y-3">
-                            <div className="grid grid-cols-3 gap-2 text-[10px] font-mono text-slate-400 border-b border-slate-800 pb-2 font-bold">
-                              <div>ORGANIZATIONAL ROLE</div>
-                              <div>SAP SYSTEM TARGET</div>
-                              <div>EXECUTION PERMISSION</div>
-                            </div>
-                            <div className="grid grid-cols-3 gap-2 text-[11px] font-mono text-slate-200 py-1 items-center">
-                              <div className="text-purple-300 font-bold">Supply Chain Specialist</div>
-                              <div className="text-slate-300">S4_PRD_CLUSTER</div>
-                              <div className="text-emerald-400 font-bold">AUTHORIZED</div>
-                            </div>
-                            <div className="grid grid-cols-3 gap-2 text-[11px] font-mono text-slate-200 py-1 items-center">
-                              <div className="text-purple-300 font-bold">Junior Data Clerk</div>
-                              <div className="text-slate-300">S4_QAS_INSTANCE</div>
-                              <div className="text-blue-400 font-bold">RESTRICTED</div>
-                            </div>
-                            <div className="grid grid-cols-3 gap-2 text-[11px] font-mono text-slate-200 py-1 items-center">
-                              <div className="text-purple-300 font-bold">External Auditor</div>
-                              <div className="text-slate-300">GLOBAL_CATALOG</div>
-                              <div className="text-cyan-300">READ-ONLY AUDIT</div>
+                          <div className="p-4 rounded-xl bg-white/5 border border-purple-500/30 overflow-x-auto space-y-3">
+                            <div className="min-w-[450px] space-y-3">
+                              <div className="grid grid-cols-3 gap-2 text-[10px] font-mono text-slate-400 border-b border-slate-800 pb-2 font-bold">
+                                <div>ORGANIZATIONAL ROLE</div>
+                                <div>SAP SYSTEM TARGET</div>
+                                <div>EXECUTION PERMISSION</div>
+                              </div>
+                              <div className="grid grid-cols-3 gap-2 text-[11px] font-mono text-slate-200 py-1 items-center">
+                                <div className="text-purple-300 font-bold">Supply Chain Specialist</div>
+                                <div className="text-slate-300">S4_PRD_CLUSTER</div>
+                                <div className="text-emerald-400 font-bold">AUTHORIZED</div>
+                              </div>
+                              <div className="grid grid-cols-3 gap-2 text-[11px] font-mono text-slate-200 py-1 items-center">
+                                <div className="text-purple-300 font-bold">Junior Data Clerk</div>
+                                <div className="text-slate-300">S4_QAS_INSTANCE</div>
+                                <div className="text-blue-400 font-bold">RESTRICTED</div>
+                              </div>
+                              <div className="grid grid-cols-3 gap-2 text-[11px] font-mono text-slate-200 py-1 items-center">
+                                <div className="text-purple-300 font-bold">External Auditor</div>
+                                <div className="text-slate-300">GLOBAL_CATALOG</div>
+                                <div className="text-cyan-300">READ-ONLY AUDIT</div>
+                              </div>
                             </div>
                           </div>
                         </motion.div>

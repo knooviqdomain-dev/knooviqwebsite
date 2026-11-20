@@ -35,25 +35,28 @@ export const SapHanaPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) =>
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Widescreen In-Memory Analytics)
           ========================================================================= */}
-      <section className="relative w-full min-h-[540px] lg:min-h-[600px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 overflow-hidden bg-black">
+      <section className="relative w-full min-h-[540px] lg:min-h-[600px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 overflow-hidden bg-black text-white">
 
-        {/* Full-Box Background Image — 100% Clear with Zero Dark Blue Shade */}
-        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {/* Desktop-Only Full-Bleed 16:9 Background Image (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 overflow-hidden pointer-events-none">
           <img
             src="/images/sap_hana_in_memory_analytics_hero.jpg"
             alt="SAP HANA Silicon In-Memory Analytics Platform"
-            className="w-full h-full object-cover select-none"
-            style={{ objectPosition: 'center 40px' }}
+            className="w-full h-full object-cover object-center select-none"
           />
         </div>
 
         {/* Top Hairline Accent */}
         <div className="absolute top-0 left-0 right-0 z-10 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
 
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-2xl space-y-5 relative">
-            {/* Seamless Soft Contrast Aura — ensures text is 100% legible against the background image with Zero Box and Zero dark blue shade */}
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -72,7 +75,7 @@ export const SapHanaPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) =>
                 <span className="text-[#00A3E0] drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">SAP HANA &amp; In-Memory Analytics</span>
               </h1>
 
-              <p className="text-lg sm:text-xl font-semibold text-slate-100 leading-snug drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+              <p className="text-lg sm:text-xl font-bold text-white leading-snug drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
                 Hybrid Transactional &amp; Analytical Processing (HTAP) at Scale.
               </p>
             </motion.div>
@@ -102,6 +105,18 @@ export const SapHanaPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) =>
                 </span>
               </div>
             </motion.div>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                <img
+                  src="/images/sap_hana_in_memory_analytics_hero.jpg"
+                  alt="SAP HANA Silicon In-Memory Analytics Platform"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
+              </div>
+            </div>
 
           </div>
         </div>
@@ -331,11 +346,11 @@ export const SapHanaPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) =>
             {/* Card 4: PAL Machine Learning */}
             <div className="rounded-2xl bg-white border border-blue-100 shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col justify-between">
               <div>
-                <div className="h-44 w-full relative overflow-hidden">
+                <div className="h-44 w-full relative overflow-hidden bg-slate-950">
                   <img
-                    src="/images/sap_hana_predictive_analysis_pal.png"
+                    src="/images/sap_hana_predictive_analysis_pal.jpg"
                     alt="Predictive Analysis Library PAL"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center"
                   />
                   <span className="absolute top-3 left-3 px-2 py-0.5 rounded bg-blue-900 text-[10px] font-mono text-white font-bold uppercase">
                     IN-DATABASE ML
@@ -387,18 +402,18 @@ export const SapHanaPage: React.FC<TechnologyPageProps> = ({ onOpenContact }) =>
             </div>
 
             <div className="lg:col-span-5">
-              <div className="rounded-2xl overflow-hidden border border-blue-100 shadow-md h-64">
+              <div className="rounded-2xl overflow-hidden border border-blue-100 shadow-md aspect-[16/9] w-full bg-slate-900">
                 <img
                   src="/images/sap_hana_memory_sizing_s4hana_workload.png"
-                  alt="Enterprise Cloud Datacenter Compute Racks"
-                  className="w-full h-full object-cover"
+                  alt="SAP HANA Certified Memory Sizing & S/4HANA Workload Benchmarks"
+                  className="w-full h-full object-cover object-center select-none"
                 />
               </div>
             </div>
           </div>
 
           <div className="overflow-x-auto rounded-2xl border border-blue-200 bg-white shadow-sm">
-            <table className="w-full text-left border-collapse text-xs sm:text-sm">
+            <table className="w-full min-w-[640px] text-left border-collapse text-xs sm:text-sm">
               <thead>
                 <tr className="border-b border-blue-200 bg-blue-50 text-blue-900 font-mono text-xs">
                   <th className="p-4 sm:p-5 font-bold uppercase">Enterprise Tier</th>

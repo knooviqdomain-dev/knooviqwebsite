@@ -251,15 +251,15 @@ export const SapSupplyChainSolutionView: React.FC<SapSupplyChainSolutionViewProp
   const currentAi = aiSupplyChainAgents[activeAiTab];
 
   return (
-    <div className="w-full pb-20">
+    <div className="transformation-typography font-sora w-full pb-20">
 
       {/* =========================================================================
-          1. FULL-SCREEN CINEMATIC HERO SECTION (Full-Bleed 3D Visual & Enterprise Content Overlay)
+          1. HERO SECTION (DESKTOP FULL-SCREEN BACKGROUND, MOBILE SHOWCASE CARD)
           ========================================================================= */}
       <section className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 overflow-hidden bg-black text-white">
-        
-        {/* Full-Bleed 16:9 Panoramic Image - Zero Cropping on Subject */}
-        <div className="absolute inset-0 z-0">
+
+        {/* Desktop-Only Full-Bleed 16:9 Background Image (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
           <img 
             src="/images/sap_app_supplychain_3d_clean.jpg" 
             alt="SAP Autonomous Digital Supply Chain Control Tower" 
@@ -268,10 +268,17 @@ export const SapSupplyChainSolutionView: React.FC<SapSupplyChainSolutionViewProp
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
         </div>
 
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-6 sm:py-10">
           <div className="max-w-2xl lg:max-w-xl space-y-6 relative">
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
-            
+
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+
             {/* Badges */}
             <div className="flex flex-wrap items-center gap-2">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[11px] font-mono font-bold uppercase tracking-widest text-cyan-300 shadow-md">
@@ -286,26 +293,43 @@ export const SapSupplyChainSolutionView: React.FC<SapSupplyChainSolutionViewProp
             </div>
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight text-white leading-[1.12] drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
+            <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white leading-[1.12] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
               Autonomous Digital Supply Chain, Smart Warehousing &amp; Real-Time Logistics
             </h1>
 
             {/* Narrative */}
-            <p className="text-sm sm:text-base lg:text-lg font-medium text-slate-200 leading-relaxed max-w-2xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-xl pt-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
               Synchronize demand sensing, automated warehouse robotics, dynamic transportation routing, and digital manufacturing into a resilient, touchless logistics network powered by SAP S/4HANA &amp; SAP IBP.
             </p>
 
             {/* Architectural Feature Checkpoints */}
             <div className="flex flex-wrap items-center gap-2 pt-1 font-mono">
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-950/70 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-cyan-200 shadow-lg">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-cyan-200 shadow-lg">
                 <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
                 <span>SAP IBP Demand Sensing</span>
               </div>
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-950/70 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-emerald-200 shadow-lg">
-                <Cpu className="w-4 h-4 text-emerald-400 shrink-0" />
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-emerald-200 shadow-lg">
+                <Boxes className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>EWM Robotics Orchestration</span>
               </div>
             </div>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div 
+                className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card cursor-pointer"
+                onClick={() => setIsFullscreenImageOpen(true)}
+                title="Click to view full screen"
+              >
+                <img 
+                  src="/images/sap_app_supplychain_3d_clean.jpg" 
+                  alt="SAP Autonomous Digital Supply Chain Control Tower" 
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -485,11 +509,11 @@ export const SapSupplyChainSolutionView: React.FC<SapSupplyChainSolutionViewProp
           </div>
 
           {/* Autonomous Logistics Mesh Visual Banner */}
-          <div className="rounded-2xl overflow-hidden relative border border-cyan-500/30 shadow-xl group h-56 sm:h-72 lg:h-80">
+          <div className="rounded-2xl overflow-hidden relative border border-cyan-500/30 shadow-xl group h-auto aspect-[16/9] sm:aspect-auto sm:h-72 lg:h-80 bg-slate-950">
             <img
               src="/images/autonomous_cross_dock_logistics_swarm.png"
               alt="Autonomous Cross-Dock Logistics Swarm & Disruption Mitigation"
-              className="w-full h-full object-cover object-center filter brightness-105 contrast-105 group-hover:scale-102 transition-transform duration-700"
+              className="w-full h-full object-contain sm:object-cover object-center filter brightness-105 contrast-105 group-hover:scale-102 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#061224]/90 via-transparent to-transparent pointer-events-none" />
             <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-md border border-cyan-400/40 text-xs font-mono font-bold text-cyan-300">

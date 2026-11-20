@@ -21,7 +21,10 @@ import {
   Terminal,
   Boxes,
   Sparkles,
-  Lock
+  Lock,
+  Trash2,
+  FileCode2,
+  Cloud
 } from 'lucide-react';
 
 interface CustomCodeMigrationPageProps {
@@ -51,7 +54,7 @@ export const CustomCodeMigrationPage: React.FC<CustomCodeMigrationPageProps> = (
       phase: 'Decommission',
       title: 'Dead Code Purging & Scope Reduction',
       timeline: 'Weeks 4 – 6',
-      desc: 'Formally archiving and decommissioning obsolete Z-reports, inactive user exits, and test programs—routinely slashing active custom code remediation scope by 50% to 60%.',
+      desc: 'Formally archiving and decommissioning obsolete Z-reports, inactive user exits, and test programs, routinely slashing active custom code remediation scope by 50% to 60%.',
       deliverables: ['Decommissioning Audit Trail', 'Archived Code Repository Backup', 'Reduced Remediation Workload Baseline']
     },
     {
@@ -81,63 +84,91 @@ export const CustomCodeMigrationPage: React.FC<CustomCodeMigrationPageProps> = (
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300">
+    <div className="transformation-typography font-sora min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300">
       
       {/* =========================================================================
-          SECTION 1: HERO — CUSTOM CODE MIGRATION (SAP FIORI STYLE)
+          SECTION 1: HERO — CUSTOM CODE MIGRATION (DESKTOP FULL-SCREEN BACKGROUND, MOBILE SHOWCASE CARD)
           ========================================================================= */}
-      <section className="relative w-full min-h-[620px] sm:min-h-[660px] lg:min-h-[720px] flex items-center pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 overflow-hidden bg-black">
-        
-        {/* Full-Bleed Background Visual — 100% Clear with Zero Dark Blue Shade */}
-        <div className="absolute inset-0 z-0">
+      <section className="relative w-full min-h-[620px] sm:min-h-[660px] lg:min-h-[720px] flex items-center pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 overflow-hidden bg-black text-white">
+
+        {/* Desktop-Only Full-Bleed 16:9 Background Image (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
           <img
-            src="/images/custom_code_migration_chip.png"
+            src="/images/custom_code_migration_hero.jpg"
             alt="SAP S/4HANA Custom Code Migration Architecture"
-            className="w-full h-full object-cover object-top lg:object-[80%_top] brightness-105 contrast-105 select-none"
+            className="w-full h-full object-cover object-center lg:object-[80%_center] brightness-105 contrast-105 select-none"
           />
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
-        {/* Top Hairline Accent */}
-        <div className="absolute top-0 left-0 right-0 z-10 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-3xl space-y-4 relative">
-            {/* Seamless Soft Contrast Aura — ensures text is 100% legible with zero dark blue filter */}
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="space-y-3">
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[#00A3E0] text-xs font-mono font-bold tracking-wider uppercase shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
                 <Sparkles className="w-3.5 h-3.5 text-[#00A3E0]" />
                 <span>CLEAN CORE ABAP MODERNIZATION • AUTOMATED REMEDIATION</span>
               </div>
-
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
-                SAP S/4HANA <br />
-                <span className="text-[#00A3E0]">
-                  Custom Code Migration
-                </span>
-              </h1>
-
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl pt-1">
-                Analyze, remediate, simplify, and migrate legacy custom ABAP code to SAP S/4HANA. Purge dead code, apply 70%+ automated quick-fixes via ATC, and transition to a future-proof Clean Core architecture.
-              </p>
             </motion.div>
 
-            {/* Enterprise Trust Indicators (Ultra-Clean, Matching SAP Fiori Reference) */}
-            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }} className="pt-2 flex flex-wrap items-center gap-3">
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-amber-200">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]"
+            >
+              SAP S/4HANA <br />
+              <span className="text-[#00A3E0]">
+                Custom Code Migration
+              </span>
+            </motion.h1>
+
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-xl pt-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
+            >
+              Analyze, remediate, simplify, and migrate legacy custom ABAP code to SAP S/4HANA. Purge dead code, apply 70%+ automated quick-fixes via ATC, and transition to a future-proof Clean Core architecture.
+            </motion.p>
+
+            {/* Enterprise Trust Indicators */}
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="pt-1 flex flex-wrap items-center gap-3">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-amber-200 shadow-lg">
                 <Zap className="w-4 h-4 text-amber-400 shrink-0" />
                 <span>70%+ Automated ATC Quick Fixes</span>
               </div>
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-emerald-200">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-emerald-200 shadow-lg">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>Up to 60% Dead Code Purged</span>
               </div>
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-sky-200">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-sky-200 shadow-lg">
                 <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
                 <span>Clean Core ABAP Standard</span>
               </div>
             </motion.div>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                <img
+                  src="/images/custom_code_migration_hero.jpg"
+                  alt="SAP S/4HANA Custom Code Migration Architecture"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -163,7 +194,7 @@ export const CustomCodeMigrationPage: React.FC<CustomCodeMigrationPageProps> = (
               </h2>
 
               <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
-                Over decades, enterprise SAP ECC instances accumulate thousands of custom Z-programs, user exits, and proprietary database modifications. In SAP S/4HANA, the underlying data model is completely simplified—traditional tables like <strong>BSEG, BSIS, and COEP</strong> are replaced by the Universal Journal (ACDOCA), and aggregate tables like <strong>GLT0</strong> are eliminated. Unadjusted legacy ABAP triggers instant runtime dumps.
+                Over decades, enterprise SAP ECC instances accumulate thousands of custom Z-programs, user exits, and proprietary database modifications. In SAP S/4HANA, the underlying data model is completely simplified: traditional tables like <strong>BSEG, BSIS, and COEP</strong> are replaced by the Universal Journal (ACDOCA), and aggregate tables like <strong>GLT0</strong> are eliminated. Unadjusted legacy ABAP triggers instant runtime dumps.
               </p>
 
               <div className="space-y-4 pt-2">
@@ -198,7 +229,7 @@ export const CustomCodeMigrationPage: React.FC<CustomCodeMigrationPageProps> = (
                   <img
                     src="/images/clean_core_remediation.jpg"
                     alt="SAP Clean Core ABAP Modernization and Code Remediation"
-                    className="w-full h-80 sm:h-96 lg:h-[440px] object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-auto aspect-[16/10] sm:aspect-auto sm:h-96 lg:h-[440px] object-contain sm:object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent pointer-events-none" />
                   <div className="absolute bottom-6 left-6 right-6">
@@ -241,31 +272,31 @@ export const CustomCodeMigrationPage: React.FC<CustomCodeMigrationPageProps> = (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                icon: AlertTriangle,
+                icon: Database,
                 color: 'text-rose-500 bg-rose-500/10 border-rose-500/20',
                 title: '1. Eliminated Database Tables (e.g. GLT0, KNC1)',
                 desc: 'Legacy programs selecting directly from eliminated aggregate tables fail instantly in S/4HANA without redirect CDS views or query refactoring.'
               },
               {
-                icon: Database,
+                icon: FileCode2,
                 color: 'text-amber-500 bg-amber-500/10 border-amber-500/20',
                 title: '2. Obsolete SELECT * Queries on BSEG/BKPF',
                 desc: 'Unindexed full table scans on multi-gigabyte financial tables severely degrade in-memory HANA performance without field-specific projection.'
               },
               {
-                icon: Clock,
+                icon: Trash2,
                 color: 'text-blue-500 bg-blue-500/10 border-blue-500/20',
                 title: '3. Enormous Dead Code Volume',
                 desc: 'Manually testing thousands of obsolete custom objects inflates project consulting costs and stretches timelines by months.'
               },
               {
-                icon: Cpu,
+                icon: Lock,
                 color: 'text-cyan-500 bg-cyan-500/10 border-cyan-500/20',
                 title: '4. Non-Whitelisted Core Modifications',
                 desc: 'Direct modifications to standard SAP standard include programs block automated annual S/4HANA release upgrades.'
               },
               {
-                icon: Workflow,
+                icon: Terminal,
                 color: 'text-purple-500 bg-purple-500/10 border-purple-500/20',
                 title: '5. Deprecated Native SQL Statements',
                 desc: 'Database-specific hints (e.g. Oracle EXEC SQL) and non-standard native queries cause syntax errors during compile time on SAP HANA.'
@@ -320,17 +351,17 @@ export const CustomCodeMigrationPage: React.FC<CustomCodeMigrationPageProps> = (
                 desc: 'Mass automated resolution of 70%+ of ABAP syntax warnings using Eclipse ADT quick-fix engines.'
               },
               {
-                icon: ShieldCheck,
+                icon: Trash2,
                 title: 'Dead Code Decommissioning',
                 desc: 'Profiling active usage with SCMON and UPL to safely archive and retire up to 60% of unused legacy Z-code.'
               },
               {
-                icon: Cpu,
+                icon: Cloud,
                 title: 'Clean Core ABAP Cloud',
                 desc: 'Refactoring remaining business logic to strict ABAP Cloud standards using whitelisted SAP APIs.'
               },
               {
-                icon: Server,
+                icon: Layers,
                 title: 'BTP Side-by-Side Decoupling',
                 desc: 'Migrating bespoke workflows and portal applications to SAP BTP with RAP and CAP frameworks.'
               }
@@ -467,7 +498,7 @@ export const CustomCodeMigrationPage: React.FC<CustomCodeMigrationPageProps> = (
                   <img
                     src="/images/sap_btp_architecture_3d.jpg"
                     alt="SAP BTP Architecture for Clean Core Custom Extensions"
-                    className="w-full h-80 object-cover rounded-2xl border border-slate-800 bg-slate-950"
+                    className="w-full h-auto aspect-[16/10] sm:aspect-auto sm:h-80 object-contain sm:object-cover rounded-2xl border border-slate-800 bg-slate-950"
                   />
                 </div>
 

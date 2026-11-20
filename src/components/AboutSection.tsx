@@ -59,11 +59,11 @@ export const AboutSection: React.FC<{ onOpenContact: () => void }> = ({ onOpenCo
                 <span className="text-gradient-cyan">Resilient SAP Architectures</span>
               </h2>
 
-              <p className="mt-5 text-slate-600 dark:text-slate-300 text-base leading-relaxed">
-                Headquartered in Mumbai, India, <strong className="text-slate-900 dark:text-white font-bold font-display">KNOOVIQ Industries Private Limited</strong> is a specialized enterprise technology partner. We bridge the gap between strategic business ambitions and complex ERP execution.
+              <p className="mt-5 text-[#102A43] sm:text-slate-600 dark:text-slate-200 text-[15.5px] sm:text-base leading-[1.6] font-sora font-normal text-left [word-spacing:normal] tracking-normal">
+                Headquartered in Mumbai, India, <strong className="text-slate-900 dark:text-white font-bold font-sora">KNOOVIQ Industries Private Limited</strong> is a specialized enterprise technology partner. We bridge the gap between strategic business ambitions and complex ERP execution.
               </p>
 
-              <p className="mt-3 text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+              <p className="mt-3 text-[#102A43] sm:text-slate-500 dark:text-slate-300 text-[15.5px] sm:text-sm leading-[1.6] font-sora font-normal text-left [word-spacing:normal] tracking-normal">
                 From Greenfield S/4HANA implementations and legacy ECC conversions to round-the-clock Application Managed Services (AMS) and corporate workforce enablement, KNOOVIQ delivers measurable business impact with zero disruption to daily operations.
               </p>
 
@@ -96,10 +96,10 @@ export const AboutSection: React.FC<{ onOpenContact: () => void }> = ({ onOpenCo
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#00A3E0]/10 dark:bg-[#070E1E] border border-[#00A3E0]/25 dark:border-cyan-400/30 shadow-inner mb-4 group-hover:scale-110 transition-transform">
                   {item.icon}
                 </div>
-                <h3 className="font-display text-base font-bold text-slate-900 dark:text-white mb-2">
+                <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="text-[15.5px] sm:text-xs text-[#102A43] sm:text-slate-600 dark:text-slate-300 leading-[1.6] font-sora font-normal text-left [word-spacing:normal] tracking-normal">
                   {item.desc}
                 </p>
               </motion.div>

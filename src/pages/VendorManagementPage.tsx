@@ -378,7 +378,7 @@ export const VendorManagementPage: React.FC<VendorManagementPageProps> = ({ onOp
   const currentArchLayer = sapArchLayers.find(l => l.id === activeArchLayer) || sapArchLayers[2];
 
   return (
-    <div className="bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden font-sans">
+    <div className="product-typography font-sora bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
 
       {/* =========================================================================
           SECTION 1 — HERO: Intelligent Vendor Management Accelerator
@@ -430,7 +430,7 @@ export const VendorManagementPage: React.FC<VendorManagementPageProps> = ({ onOp
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 font-medium leading-relaxed font-sans mb-8 max-w-xl"
               >
-                Accelerated Vendor Management brings supplier intake, statutory tax verification, automated 3-way compliance, and procurement collaboration into an integrated digital workflow—helping businesses eliminate supplier onboarding friction and manage vendor lifecycle processes with greater consistency.
+                Accelerated Vendor Management brings supplier intake, statutory tax verification, automated 3-way compliance, and procurement collaboration into an integrated digital workflow, helping businesses eliminate supplier onboarding friction and manage vendor lifecycle processes with greater consistency.
               </motion.p>
 
 
@@ -462,7 +462,7 @@ export const VendorManagementPage: React.FC<VendorManagementPageProps> = ({ onOp
               {/* Backdrop Glow */}
               <div className="absolute -inset-2 bg-gradient-to-r from-blue-600/20 via-cyan-500/20 to-indigo-600/20 rounded-3xl blur-2xl opacity-50 pointer-events-none" />
 
-              <div className="relative w-full max-w-[620px] h-[440px] sm:h-[480px] lg:h-[530px] rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-200/80 dark:border-cyan-500/40 bg-white flex items-center justify-center p-6 sm:p-10 group">
+              <div className="relative w-full max-w-[620px] aspect-[16/9] sm:aspect-auto sm:h-[480px] lg:h-[530px] rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-200/80 dark:border-cyan-500/40 bg-white flex items-center justify-center p-3 sm:p-10 group">
                 <img
                   src="/images/vendor_lifecycle_diagram.png"
                   alt="Vendor Lifecycle Management Diagram"
@@ -541,7 +541,7 @@ export const VendorManagementPage: React.FC<VendorManagementPageProps> = ({ onOp
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               
               {/* Left Column: Stage Photo (5 Cols) */}
-              <div className="lg:col-span-5 relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 h-72 sm:h-80 shadow-lg bg-slate-900 group">
+              <div className="lg:col-span-5 relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 aspect-[16/9] sm:aspect-auto sm:h-80 shadow-lg bg-slate-900 group">
                 <img
                   src={journeyStages[activeJourneyIndex].image}
                   alt={journeyStages[activeJourneyIndex].title}
@@ -652,7 +652,7 @@ export const VendorManagementPage: React.FC<VendorManagementPageProps> = ({ onOp
                       {cap.details.map((d, dIdx) => (
                         <div key={dIdx} className="flex items-center gap-2 text-xs font-mono text-slate-700 dark:text-slate-300">
                           <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0" />
-                          <span className="truncate">{d}</span>
+                          <span className="break-words leading-tight">{d}</span>
                         </div>
                       ))}
                     </div>

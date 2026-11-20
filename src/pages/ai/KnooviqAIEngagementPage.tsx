@@ -151,7 +151,7 @@ export const KnooviqAIEngagementPage: React.FC<KnooviqAIEngagementPageProps> = (
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-slate-100 font-sans selection:bg-[#00A3E0] selection:text-white transition-colors duration-300 overflow-hidden">
+    <div className="product-typography font-sora min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-slate-100 selection:bg-[#00A3E0] selection:text-white transition-colors duration-300 overflow-hidden">
       
       {/* =========================================================================
           SECTION 1 — HERO: CREATE MORE MEANINGFUL BUSINESS ENGAGEMENT
@@ -219,51 +219,51 @@ export const KnooviqAIEngagementPage: React.FC<KnooviqAIEngagementPageProps> = (
                 <img
                   src="/images/ai_engagement_hero.jpg"
                   alt="Enterprise AI Engagement in executive boardroom with conversational AI persona and interactive touchpoint holograms"
-                  className="w-full h-[520px] sm:h-[580px] lg:h-[620px] object-cover object-top select-none group-hover:scale-103 transition-transform duration-700"
+                  className="w-full h-[400px] sm:h-[580px] lg:h-[620px] object-cover object-top select-none group-hover:scale-103 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
 
-                {/* Floating Touchpoint Fragment 1: Website */}
+                {/* Floating Touchpoint Fragment 1: Website (Hidden on mobile to preserve visual clarity, active on desktop) */}
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: [0, -5, 0] }}
                   transition={{ duration: 4.2, repeat: Infinity, ease: 'easeInOut' }}
-                  className="absolute top-6 left-5 z-20 pointer-events-none max-w-[250px]"
+                  className="hidden sm:block absolute top-6 left-5 z-20 pointer-events-none max-w-[250px]"
                 >
                   <div className="px-4 py-2.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-cyan-400/50 text-white text-xs font-semibold shadow-2xl flex items-center gap-2.5">
                     <Globe className="w-4 h-4 text-cyan-400 shrink-0" />
-                    <span className="truncate">“Can you help me find the right service?”</span>
+                    <span className="break-words leading-tight">“Can you help me find the right service?”</span>
                   </div>
                 </motion.div>
 
-                {/* Floating Touchpoint Fragment 2: Customer Support */}
+                {/* Floating Touchpoint Fragment 2: Customer Support (Hidden on mobile to preserve visual clarity, active on desktop) */}
                 <motion.div
                   initial={{ opacity: 0, x: 10 }}
                   animate={{ opacity: 1, y: [0, 6, 0] }}
                   transition={{ duration: 4.6, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-                  className="absolute top-24 right-5 z-20 pointer-events-none max-w-[230px]"
+                  className="hidden sm:block absolute top-24 right-5 z-20 pointer-events-none max-w-[230px]"
                 >
                   <div className="px-4 py-2.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-[#00A3E0]/50 text-white text-xs font-semibold shadow-2xl flex items-center gap-2.5">
                     <Headphones className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                    <span className="truncate">“I need an update on my request.”</span>
+                    <span className="break-words leading-tight">“I need an update on my request.”</span>
                   </div>
                 </motion.div>
 
-                {/* Floating Touchpoint Fragment 3: Email Conversation */}
+                {/* Floating Touchpoint Fragment 3: Email Conversation (Hidden on mobile to preserve visual clarity, active on desktop) */}
                 <motion.div
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, y: [0, -6, 0] }}
                   transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                  className="absolute bottom-28 left-6 z-20 pointer-events-none max-w-[250px]"
+                  className="hidden sm:block absolute bottom-28 left-6 z-20 pointer-events-none max-w-[250px]"
                 >
                   <div className="px-4 py-2.5 rounded-xl bg-slate-950/85 backdrop-blur-md border border-indigo-400/50 text-white text-xs font-semibold shadow-2xl flex items-center gap-2.5">
                     <Mail className="w-4 h-4 text-indigo-400 shrink-0" />
-                    <span className="truncate">“Following up on vendor review”</span>
+                    <span className="break-words leading-tight">“Following up on vendor review”</span>
                   </div>
                 </motion.div>
 
-                {/* Central Engagement Synthesis Indicator */}
-                <div className="absolute bottom-6 inset-x-6 z-20">
+                {/* Central Engagement Synthesis Indicator - Desktop Floating Overlay */}
+                <div className="hidden sm:block absolute bottom-6 inset-x-6 z-20">
                   <div className="p-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border-2 border-cyan-400/40 text-white shadow-2xl space-y-1.5">
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-extrabold text-cyan-300 uppercase tracking-wider flex items-center gap-1.5">
@@ -281,6 +281,25 @@ export const KnooviqAIEngagementPage: React.FC<KnooviqAIEngagementPageProps> = (
                 </div>
 
               </div>
+
+              {/* Mobile-Only Engagement Synthesis: Positioned cleanly below the image so the visual is 100% unobstructed on mobile */}
+              <div className="block sm:hidden mt-3">
+                <div className="p-3.5 rounded-2xl bg-slate-900/95 border-2 border-cyan-400/40 text-white shadow-xl space-y-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-extrabold text-cyan-300 uppercase tracking-wider flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+                      Connected Multi-Touchpoint Intelligence
+                    </span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 font-bold border border-cyan-400/30">
+                      Active Dialogue
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                    Harmonizing customer and employee conversations across touchpoints with persistent memory.
+                  </p>
+                </div>
+              </div>
+
             </div>
 
           </div>
@@ -290,7 +309,7 @@ export const KnooviqAIEngagementPage: React.FC<KnooviqAIEngagementPageProps> = (
       {/* =========================================================================
           SECTION 2 — FROM INTERACTION TO ENGAGEMENT (TRANSFORMATION)
           ========================================================================= */}
-      <section id="interaction-to-engagement" className="py-20 sm:py-28 bg-white dark:bg-[#050B17] border-b border-slate-300/80 dark:border-cyan-500/20 relative">
+      <section id="interaction-to-engagement" className="transformation-section py-20 sm:py-28 bg-white dark:bg-[#050B17] border-b border-slate-300/80 dark:border-cyan-500/20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           {/* Section Header */}
@@ -431,7 +450,7 @@ export const KnooviqAIEngagementPage: React.FC<KnooviqAIEngagementPageProps> = (
               </span>
             </h2>
             <p className="text-base sm:text-lg text-slate-700 dark:text-slate-200 leading-relaxed font-normal">
-              Place Knooviq AI Engagement at the core of all human interactions — from websites to executive memos.
+              Place Knooviq AI Engagement at the core of all human interactions, from websites to executive memos.
             </p>
           </div>
 
@@ -458,7 +477,7 @@ export const KnooviqAIEngagementPage: React.FC<KnooviqAIEngagementPageProps> = (
                   }`}>
                     <Icon className="w-4 h-4" />
                   </div>
-                  <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white truncate">
+                  <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white break-words leading-tight">
                     {channel.name}
                   </h4>
                   <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-sky-100 dark:bg-cyan-950 text-[#0077B6] dark:text-cyan-300 border border-sky-200 dark:border-cyan-500/30 inline-block mt-1">

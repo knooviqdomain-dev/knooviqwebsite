@@ -555,10 +555,10 @@ export const WhyKnooviqTypographySection: React.FC = () => {
 
                     {/* Brand Identifier */}
                     <div className="my-auto">
-                      <h4 className="font-serif text-base font-bold text-[#0A1931] group-hover:text-[#0070C0] transition-colors leading-tight">
+                      <h4 className="font-display text-base font-extrabold text-[#0A1931] group-hover:text-[#00A3E0] transition-colors leading-tight tracking-tight">
                         KNOOVIQ
                       </h4>
-                      <p className="text-[9px] font-bold text-sky-700 uppercase tracking-wider mt-0.5 whitespace-nowrap">
+                      <p className="text-[9px] font-extrabold text-[#00A3E0] uppercase tracking-wider mt-0.5 whitespace-nowrap">
                         Industries Pvt Ltd
                       </p>
                     </div>
@@ -750,7 +750,7 @@ export const WhyKnooviqTypographySection: React.FC = () => {
                       <h3 className="font-serif text-lg font-bold text-[#0A1931] mb-1">
                         {item.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      <p className="text-[15.5px] sm:text-sm text-[#102A43] sm:text-slate-600 leading-[1.6] font-sora font-normal text-left [word-spacing:normal] tracking-normal">
                         {item.desc}
                       </p>
                     </div>
@@ -760,37 +760,27 @@ export const WhyKnooviqTypographySection: React.FC = () => {
             </div>
 
             {/* Mobile Terminal Arrow pointing to KNOOVIQ Logo */}
-            <div className="relative mt-8 flex items-center justify-between p-4 rounded-2xl bg-white/95 border border-sky-200/90 shadow-[0_6px_25px_rgba(10,25,49,0.06)]">
-              <div className="flex items-center gap-3">
+            <div className="relative mt-8 flex items-center justify-between p-3.5 sm:p-4 rounded-2xl bg-white/95 border border-sky-200/90 shadow-[0_6px_25px_rgba(10,25,49,0.06)]">
+              <div className="flex items-center gap-2.5 sm:gap-3">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-[#00A3E0] to-[#0070C0] text-white flex items-center justify-center shadow-md shadow-sky-500/30 animate-pulse flex-shrink-0">
                   <ArrowRight className="w-5 h-5" />
                 </div>
                 <div className="text-left">
-                  <span className="text-[10px] font-black uppercase tracking-wider text-[#0070C0] block">
+                  <span className="text-[8.5px] sm:text-[9px] font-bold text-[#00A3E0] uppercase tracking-wider block whitespace-nowrap font-display">
                     Destination
                   </span>
-                  <span className="text-xs font-black uppercase tracking-wider text-[#0A1931] block">
+                  <span className="text-xs sm:text-sm font-extrabold text-[#0A1931] block leading-tight uppercase font-display tracking-tight">
                     Enterprise Velocity
                   </span>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2.5 pl-3">
-                <div className="w-12 h-12 flex items-center justify-center p-0.5">
-                  <img
-                    src="/images/knooviq-emblem-transparent.png"
-                    alt="KNOOVIQ Logo"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <div>
-                  <span className="font-serif text-sm font-bold text-[#0A1931] block leading-tight">
-                    KNOOVIQ
-                  </span>
-                  <span className="text-[8.5px] font-bold text-sky-700 uppercase tracking-wider block whitespace-nowrap">
-                    Industries Pvt Ltd
-                  </span>
-                </div>
+              <div className="flex items-center pl-2 sm:pl-3 flex-shrink-0">
+                <img
+                  src="/knooviq-header-logo.png"
+                  alt="KNOOVIQ INDUSTRIES PVT LTD"
+                  className="h-9 sm:h-10.5 w-auto object-contain block"
+                />
               </div>
             </div>
           </div>

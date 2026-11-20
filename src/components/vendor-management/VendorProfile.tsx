@@ -333,20 +333,20 @@ export const VendorProfile: React.FC = () => {
                     <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
                       Quarterly Score Trend (Last 4 Quarters)
                     </h4>
-                    <div className="grid grid-cols-4 gap-3 text-center text-xs pt-1">
-                      <div className="p-2 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 text-center text-xs pt-1">
+                      <div className="p-2 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 min-w-0">
                         <span className="text-slate-400">Q2 2025</span>
                         <div className="font-bold text-slate-800 dark:text-slate-200 text-sm">91%</div>
                       </div>
-                      <div className="p-2 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                      <div className="p-2 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 min-w-0">
                         <span className="text-slate-400">Q3 2025</span>
                         <div className="font-bold text-slate-800 dark:text-slate-200 text-sm">92%</div>
                       </div>
-                      <div className="p-2 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                      <div className="p-2 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 min-w-0">
                         <span className="text-slate-400">Q4 2025</span>
                         <div className="font-bold text-slate-800 dark:text-slate-200 text-sm">93.5%</div>
                       </div>
-                      <div className="p-2 rounded bg-blue-50 dark:bg-blue-950/80 border border-blue-200 dark:border-blue-800 text-[#0052CC] dark:text-[#00A3E0]">
+                      <div className="p-2 rounded bg-blue-50 dark:bg-blue-950/80 border border-blue-200 dark:border-blue-800 text-[#0052CC] dark:text-[#00A3E0] min-w-0">
                         <span className="font-bold">Q1 2026</span>
                         <div className="font-black text-sm">94.0%</div>
                       </div>

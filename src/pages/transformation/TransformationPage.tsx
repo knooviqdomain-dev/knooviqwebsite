@@ -1234,67 +1234,97 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
 
   const filteredFaqs = TRANSFORMATION_FAQS.filter((faq) => {
     const matchesCategory = selectedQaCategory === 'all' || faq.category === selectedQaCategory;
-    const matchesSearch = qaSearch.trim() === '' || 
-      faq.q.toLowerCase().includes(qaSearch.toLowerCase()) || 
+    const matchesSearch = qaSearch.trim() === '' ||
+      faq.q.toLowerCase().includes(qaSearch.toLowerCase()) ||
       faq.a.toLowerCase().includes(qaSearch.toLowerCase()) ||
       faq.aiTakeaway.toLowerCase().includes(qaSearch.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] dark:bg-[#070E1C] text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div className="transformation-typography font-sora min-h-screen bg-[#F8FAFC] dark:bg-[#070E1C] text-slate-900 dark:text-slate-100 transition-colors duration-300">
 
       {/* =========================================================================
-          SECTION 1: RESPONSIVE MULTI-DEVICE ENTERPRISE HERO (SAP FIORI STYLE)
+          SECTION 1: HERO (DESKTOP FULL-SCREEN BACKGROUND, MOBILE SHOWCASE CARD)
           ========================================================================= */}
-      <section className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 overflow-hidden bg-black">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/sap_s4hana_transformation_hero.png" 
-            alt="Enterprise SAP Transformation Practices" 
+      <section className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 overflow-hidden bg-black text-white">
+
+        {/* Desktop-Only Full-Bleed 16:9 Background Image (Zero changes to desktop) */}
+        <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
+          <img
+            src="/images/sap_s4hana_transformation_hero.png"
+            alt="Enterprise SAP Transformation Practices"
             className="w-full h-full object-cover object-right sm:object-[78%_center] lg:object-center select-none brightness-105 contrast-[1.02]"
           />
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
 
+        {/* Ambient Glow for Mobile */}
+        <div className="lg:hidden absolute top-20 left-1/4 w-[550px] h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-36 right-1/4 w-[500px] h-[350px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="lg:hidden absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
 
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+          <div className="max-w-2xl lg:max-w-xl space-y-6 relative">
 
+            {/* Desktop Seamless Soft Contrast Aura */}
+            <div className="hidden lg:block absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
 
-        {/* Top Hairline Accent */}
-        <div className="absolute top-0 left-0 right-0 z-10 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
-          <div className="max-w-2xl lg:max-w-xl space-y-4 relative">
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="space-y-3">
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-mono font-bold uppercase tracking-wider text-[#00A3E0] shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
                 <Sparkles className="w-3.5 h-3.5 text-[#00A3E0]" />
                 <span>ENTERPRISE SAP TRANSFORMATION • 10 STRATEGIC PRACTICES</span>
               </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
-                Enterprise-Grade <br />
-                <span className="text-[#00A3E0]">SAP Transformation Practices</span>
-              </h1>
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl pt-1">
-                Explore Knooviq's specialized transformation practices across cloud ERP, architecture, automation, clean-core migrations, and enterprise modernization.
-              </p>
             </motion.div>
 
-            {/* Enterprise Trust Indicators (Ultra-Clean, Matching SAP Fiori Reference) */}
-            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.15 }} className="pt-2 flex flex-wrap items-center gap-3">
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-blue-200">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]"
+            >
+              Enterprise-Grade <br />
+              <span className="text-[#00A3E0]">SAP Transformation Practices</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-xl pt-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
+            >
+              Explore Knooviq's specialized transformation practices across cloud ERP, architecture, automation, clean-core migrations, and enterprise modernization.
+            </motion.p>
+
+            {/* Enterprise Trust Indicators */}
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="pt-1 flex flex-wrap items-center gap-3">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-blue-200 shadow-md">
                 <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
                 <span>10 Strategic Practices</span>
               </div>
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-emerald-200">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-emerald-200 shadow-md">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>100% Clean Core Architecture</span>
               </div>
-              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-sky-200">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-sky-200 shadow-md">
                 <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0" />
                 <span>Rapid Fit-to-Standard Delivery</span>
               </div>
             </motion.div>
+
+            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
+            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
+                <img
+                  src="/images/sap_s4hana_transformation_hero.png"
+                  alt="Enterprise SAP Transformation Practices"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
+                />
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -1305,7 +1335,7 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
           ========================================================================= */}
       <section id="ai-navigator" className="py-16 bg-[#040A17] border-y border-white/10 text-white relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-xs font-mono font-bold uppercase text-cyan-300 mb-3">
               <Bot className="w-3.5 h-3.5 text-cyan-400" />
@@ -1320,7 +1350,7 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
           </div>
 
           <div className="p-6 sm:p-8 rounded-2xl bg-[#08152B] border-2 border-[#00A3E0]/40 shadow-2xl space-y-6">
-            
+
             {/* Step 1: Select ERP Baseline */}
             <div className="space-y-2">
               <span className="text-xs font-mono text-cyan-400 uppercase font-bold block">
@@ -1336,11 +1366,10 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
                   <button
                     key={item.id}
                     onClick={() => setSelectedErp(item.id)}
-                    className={`p-3 rounded-xl text-left border transition-all ${
-                      selectedErp === item.id
+                    className={`p-3 rounded-xl text-left border transition-all ${selectedErp === item.id
                         ? 'bg-[#00A3E0]/20 border-[#00A3E0] shadow-sm'
                         : 'bg-black/30 border-white/5 hover:border-white/20 text-slate-400'
-                    }`}
+                      }`}
                   >
                     <span className="text-xs font-bold text-white block">{item.label}</span>
                     <span className="text-[10px] text-slate-400 block mt-0.5">{item.sub}</span>
@@ -1364,11 +1393,10 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
                   <button
                     key={item.id}
                     onClick={() => setSelectedGoal(item.id)}
-                    className={`p-3 rounded-xl text-left border transition-all ${
-                      selectedGoal === item.id
+                    className={`p-3 rounded-xl text-left border transition-all ${selectedGoal === item.id
                         ? 'bg-purple-600/20 border-purple-400 shadow-sm'
                         : 'bg-black/30 border-white/5 hover:border-white/20 text-slate-400'
-                    }`}
+                      }`}
                   >
                     <span className="text-xs font-bold text-white block">{item.label}</span>
                     <span className="text-[10px] text-slate-400 block mt-0.5">{item.sub}</span>
@@ -1396,9 +1424,9 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
                   <span className="text-[10px] font-mono uppercase text-slate-400 font-bold block">Recommended Architecture</span>
                   <div className="text-sm font-bold text-white">
                     {selectedErp === 'ecc-custom' ? 'Selective Data Transition + Clean Core' :
-                     selectedErp === 'ecc-hana' ? 'RISE with SAP S/4HANA Private Cloud' :
-                     selectedErp === 's4-onprem' ? 'Cloud Upgrade & BTP Side-by-Side Decoupling' :
-                     'Greenfield S/4HANA Public Cloud Fit-to-Standard'}
+                      selectedErp === 'ecc-hana' ? 'RISE with SAP S/4HANA Private Cloud' :
+                        selectedErp === 's4-onprem' ? 'Cloud Upgrade & BTP Side-by-Side Decoupling' :
+                          'Greenfield S/4HANA Public Cloud Fit-to-Standard'}
                   </div>
                   <span className="text-[11px] text-slate-400 block">Universal Journal (ACDOCA) single source of truth</span>
                 </div>
@@ -1407,9 +1435,9 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
                   <span className="text-[10px] font-mono uppercase text-slate-400 font-bold block">Autonomous AI Injections</span>
                   <div className="text-sm font-bold text-cyan-300">
                     {selectedGoal === 'ai-agents' ? 'Multi-Agent Autonomous Swarms + Joule' :
-                     selectedGoal === 'clean-core' ? 'Automated ABAP RAP Transpiler + DOX' :
-                     selectedGoal === 'rise-cloud' ? 'Joule Copilot + BTP Event Mesh' :
-                     'SAP IBP Machine Learning Demand Sensing'}
+                      selectedGoal === 'clean-core' ? 'Automated ABAP RAP Transpiler + DOX' :
+                        selectedGoal === 'rise-cloud' ? 'Joule Copilot + BTP Event Mesh' :
+                          'SAP IBP Machine Learning Demand Sensing'}
                   </div>
                   <span className="text-[11px] text-slate-400 block">Native embedding with zero customer data training</span>
                 </div>
@@ -1462,8 +1490,8 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
                     scrollToSection(practice.id);
                   }}
                   className={`flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg whitespace-nowrap transition-colors ${isActive
-                      ? 'text-[#00A3E0] dark:text-cyan-400 bg-blue-50 dark:bg-white/10 font-semibold shadow-xs'
-                      : 'text-gray-600 dark:text-slate-300 hover:text-[#00A3E0] hover:bg-blue-50 dark:hover:bg-white/5'
+                    ? 'text-[#00A3E0] dark:text-cyan-400 bg-blue-50 dark:bg-white/10 font-semibold shadow-xs'
+                    : 'text-gray-600 dark:text-slate-300 hover:text-[#00A3E0] hover:bg-blue-50 dark:hover:bg-white/5'
                     }`}
                 >
                   {React.cloneElement(practice.icon as React.ReactElement, {
@@ -1534,8 +1562,8 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
                         </h3>
                         <div className="space-y-2.5">
                           {practice.items.map((item) => (
-                            <Link 
-                              key={item.name} 
+                            <Link
+                              key={item.name}
                               to={item.route || '/solutions/sap-s4hana'}
                               className="flex items-start gap-2.5 group hover:text-[#00A3E0] transition-colors"
                             >
@@ -1608,9 +1636,9 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
                   {/* Right Column (2 of 5 cols = 40%) */}
                   <div className="lg:col-span-2">
                     {/* Practice Image Card with Floating Badges */}
-                    <div className="relative rounded-2xl overflow-hidden mb-4 border border-slate-200 dark:border-white/10 shadow-lg h-44 sm:h-48 group">
-                      <img 
-                        src={practice.image || PRACTICE_IMAGES[practice.id]} 
+                    <div className="relative rounded-2xl overflow-hidden mb-4 border border-slate-200 dark:border-white/10 shadow-lg h-auto aspect-[16/10] sm:aspect-auto sm:h-48 group">
+                      <img
+                        src={practice.image || PRACTICE_IMAGES[practice.id]}
                         alt={practice.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
@@ -1694,7 +1722,7 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
           ========================================================================= */}
       <section id="faq" className="py-20 bg-white dark:bg-[#070E1C] border-b border-gray-100 dark:border-white/10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-50 dark:bg-white/5 border border-blue-200 dark:border-white/10 text-xs font-mono font-bold text-[#00A3E0] uppercase tracking-wider mb-3">
               <MessageSquare className="w-3.5 h-3.5" />
@@ -1733,11 +1761,10 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
                 <button
                   key={cat.id}
                   onClick={() => setSelectedQaCategory(cat.id)}
-                  className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${
-                    selectedQaCategory === cat.id
+                  className={`px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all ${selectedQaCategory === cat.id
                       ? 'bg-[#00A3E0] text-white shadow-sm'
                       : 'bg-slate-100 dark:bg-white/5 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                  }`}
+                    }`}
                 >
                   {cat.label}
                 </button>
@@ -1757,11 +1784,10 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
                 return (
                   <div
                     key={idx}
-                    className={`rounded-2xl border transition-all duration-200 overflow-hidden ${
-                      isOpen
+                    className={`rounded-2xl border transition-all duration-200 overflow-hidden ${isOpen
                         ? 'border-[#00A3E0]/40 bg-sky-50/30 dark:bg-[#09152B] shadow-md'
                         : 'border-slate-200 dark:border-white/10 bg-slate-50/70 dark:bg-[#0B1528] hover:border-slate-300 dark:hover:border-white/20'
-                    }`}
+                      }`}
                   >
                     <button
                       onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
@@ -1775,18 +1801,17 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
                           {faq.q}
                         </h3>
                       </div>
-                      <span className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold transition-transform duration-200 ${
-                        isOpen 
-                          ? 'bg-[#00A3E0] text-white rotate-45' 
+                      <span className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold transition-transform duration-200 ${isOpen
+                          ? 'bg-[#00A3E0] text-white rotate-45'
                           : 'bg-slate-200 dark:bg-white/10 text-slate-700 dark:text-slate-300'
-                      }`}>
+                        }`}>
                         +
                       </span>
                     </button>
 
                     {isOpen && (
                       <div className="px-5 pb-6 sm:px-6 space-y-4 pt-1 border-t border-slate-100 dark:border-white/5">
-                        
+
                         {/* AI Executive Takeaway Callout */}
                         <div className="p-3.5 rounded-xl bg-blue-500/10 border border-[#00A3E0]/30 text-xs">
                           <div className="flex items-center gap-1.5 font-mono font-bold text-[#00A3E0] uppercase text-[10px] mb-1">

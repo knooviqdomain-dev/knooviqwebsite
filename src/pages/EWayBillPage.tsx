@@ -637,7 +637,7 @@ export const EWayBillPage: React.FC<EWayBillPageProps> = ({ onOpenContact }) => 
   ];
 
   return (
-    <div className="bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden font-sans">
+    <div className="product-typography font-sora bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
 
       {/* =========================================================================
           SECTION 1 — HERO: “Every Shipment Has a Story”
@@ -778,7 +778,7 @@ export const EWayBillPage: React.FC<EWayBillPageProps> = ({ onOpenContact }) => 
                         </span>
                       </div>
                       
-                      <div className="text-xs font-display font-bold text-white truncate">
+                      <div className="text-xs font-display font-bold text-white break-words leading-tight">
                         Bhiwandi (MH) ➔ Gurugram (HR) • 1,385 km
                       </div>
                       
@@ -830,7 +830,7 @@ export const EWayBillPage: React.FC<EWayBillPageProps> = ({ onOpenContact }) => 
               </span>
             </h2>
             <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 font-sans leading-relaxed">
-              Experience the end-to-end voyage of enterprise goods — from the initial billing document to physical highway transit and final consignee gate delivery.
+              Experience the end-to-end voyage of enterprise goods, from the initial billing document to physical highway transit and final consignee gate delivery.
             </p>
           </div>
 
@@ -1074,7 +1074,7 @@ export const EWayBillPage: React.FC<EWayBillPageProps> = ({ onOpenContact }) => 
                     }`}>
                       <Icon className="h-4 w-4" />
                     </div>
-                    <span className="font-display text-[11px] sm:text-xs font-bold truncate max-w-full">
+                    <span className="font-display text-[11px] sm:text-xs font-bold break-words text-center leading-tight max-w-full">
                       {stage.title}
                     </span>
                   </button>
@@ -1093,7 +1093,7 @@ export const EWayBillPage: React.FC<EWayBillPageProps> = ({ onOpenContact }) => 
                 <img
                   src={journeyStages[activeJourneyStep].image}
                   alt={journeyStages[activeJourneyStep].title}
-                  className="w-full h-56 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full aspect-[16/9] sm:aspect-auto sm:h-72 object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute top-3 left-3 px-3 py-1 rounded-lg bg-slate-950/80 backdrop-blur-md border border-cyan-400/40 text-[10px] font-mono font-bold text-cyan-300">
@@ -1127,27 +1127,27 @@ export const EWayBillPage: React.FC<EWayBillPageProps> = ({ onOpenContact }) => 
 
                 {/* Technical Telemetry Grid */}
                 <div className="p-4 rounded-2xl bg-white dark:bg-[#07101E] border border-slate-200 dark:border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
-                  <div>
+                  <div className="min-w-0">
                     <span className="text-[9px] font-mono text-slate-400 uppercase block">SAP Integration</span>
-                    <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 block truncate">
+                    <span className="text-xs font-mono font-bold text-slate-800 dark:text-slate-200 block break-words leading-tight">
                       {journeyStages[activeJourneyStep].telemetry.tcode}
                     </span>
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <span className="text-[9px] font-mono text-slate-400 uppercase block">Movement Status</span>
-                    <span className="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 block truncate">
+                    <span className="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400 block break-words leading-tight">
                       {journeyStages[activeJourneyStep].telemetry.status}
                     </span>
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <span className="text-[9px] font-mono text-slate-400 uppercase block">Consignment Spec</span>
-                    <span className="text-xs font-mono font-bold text-blue-600 dark:text-cyan-400 block truncate">
+                    <span className="text-xs font-mono font-bold text-blue-600 dark:text-cyan-400 block break-words leading-tight">
                       {journeyStages[activeJourneyStep].telemetry.hsn || journeyStages[activeJourneyStep].telemetry.weight || journeyStages[activeJourneyStep].telemetry.validity || journeyStages[activeJourneyStep].telemetry.eta || journeyStages[activeJourneyStep].telemetry.closedAt}
                     </span>
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <span className="text-[9px] font-mono text-slate-400 uppercase block">Compliance Lock</span>
-                    <span className="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 block truncate">
+                    <span className="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 block break-words leading-tight">
                       {journeyStages[activeJourneyStep].telemetry.taxValue || journeyStages[activeJourneyStep].telemetry.bay || journeyStages[activeJourneyStep].telemetry.qrCode || journeyStages[activeJourneyStep].telemetry.toll || journeyStages[activeJourneyStep].telemetry.audit}
                     </span>
                   </div>
@@ -1773,7 +1773,7 @@ export const EWayBillPage: React.FC<EWayBillPageProps> = ({ onOpenContact }) => 
                           : 'bg-white/5 text-slate-300 hover:text-white hover:bg-white/10 border border-transparent'
                       }`}
                     >
-                      <span className="truncate">{r.flags} {r.region}</span>
+                      <span className="break-words leading-tight">{r.flags} {r.region}</span>
                       <span className="text-[9px] opacity-75 shrink-0">{r.distance}</span>
                     </button>
                   ))}
@@ -1805,27 +1805,27 @@ export const EWayBillPage: React.FC<EWayBillPageProps> = ({ onOpenContact }) => 
                   </div>
 
                   <div className="grid grid-cols-2 gap-2 text-xs font-mono">
-                    <div className="p-2 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5">
+                    <div className="p-2 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5 min-w-0">
                       <span className="text-slate-400 block text-[9px] uppercase">Trade Corridor</span>
-                      <span className="font-bold text-slate-800 dark:text-slate-200 truncate block">{currentRoute.corridor}</span>
+                      <span className="font-bold text-slate-800 dark:text-slate-200 break-words leading-tight block">{currentRoute.corridor}</span>
                     </div>
-                    <div className="p-2 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5">
+                    <div className="p-2 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5 min-w-0">
                       <span className="text-slate-400 block text-[9px] uppercase">Route Distance</span>
                       <span className="font-bold text-cyan-600 dark:text-cyan-400 block">{currentRoute.distance}</span>
                     </div>
-                    <div className="p-2 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5">
+                    <div className="p-2 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5 min-w-0">
                       <span className="text-slate-400 block text-[9px] uppercase">Transit ETA</span>
                       <span className="text-slate-700 dark:text-slate-300 block">{currentRoute.avgEta}</span>
                     </div>
-                    <div className="p-2 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5">
+                    <div className="p-2 rounded-xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5 min-w-0">
                       <span className="text-slate-400 block text-[9px] uppercase">Active Fleet</span>
                       <span className="font-bold text-emerald-600 dark:text-emerald-400 block">{currentRoute.trucks} Active Transits</span>
                     </div>
                   </div>
 
-                  <div className="p-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-xs font-mono text-cyan-300 flex items-center gap-2">
+                  <div className="p-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-xs font-mono text-cyan-300 flex items-center gap-2 min-w-0">
                     <ShieldCheck className="h-3.5 w-3.5 text-cyan-400 shrink-0" />
-                    <span className="text-[11px] font-semibold truncate">Statutory: {currentRoute.compliance}</span>
+                    <span className="text-[11px] font-semibold break-words leading-tight">Statutory: {currentRoute.compliance}</span>
                   </div>
                 </div>
 
@@ -1843,9 +1843,9 @@ export const EWayBillPage: React.FC<EWayBillPageProps> = ({ onOpenContact }) => 
                       <span className="text-slate-500">Carrier / Fleet / Vessel:</span>
                       <span className="text-blue-600 dark:text-cyan-400 font-bold">{currentRoute.vehicle}</span>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-slate-500">Cargo Declaration:</span>
-                      <span className="text-slate-700 dark:text-slate-300 truncate max-w-[210px]">{currentRoute.cargo}</span>
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-slate-500 shrink-0">Cargo Declaration:</span>
+                      <span className="text-slate-700 dark:text-slate-300 break-words leading-tight text-right">{currentRoute.cargo}</span>
                     </div>
                   </div>
                 </div>
@@ -2022,7 +2022,7 @@ export const EWayBillPage: React.FC<EWayBillPageProps> = ({ onOpenContact }) => 
                 <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-slate-950 text-white text-left group">
                   
                   {/* Cinematic Logistics Image: Commercial truck moving toward destination */}
-                  <div className="relative h-60 sm:h-72 w-full overflow-hidden">
+                  <div className="relative aspect-[16/9] sm:aspect-auto sm:h-72 w-full overflow-hidden">
                     <img
                       src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=1200&auto=format&fit=crop"
                       alt="Commercial logistics carrier on highway moving toward destination horizon"

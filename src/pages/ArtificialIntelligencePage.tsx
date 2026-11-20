@@ -451,7 +451,7 @@ export const ArtificialIntelligencePage: React.FC<ArtificialIntelligencePageProp
       badge: 'REALIZED IMPACT',
       title: 'Continuous Autonomous Intelligence',
       subtitle: 'Enterprise Velocity',
-      description: 'Attaining end-to-end cognitive operational autonomy—proactive forecasting, sub-second inquiry handling, touchless document posting, and protected margins.',
+      description: 'Attaining end-to-end cognitive operational autonomy: proactive forecasting, sub-second inquiry handling, touchless document posting, and protected margins.',
       accent: 'emerald',
       borderBase: 'border-emerald-500/30 hover:border-emerald-400',
       activeBorder: 'border-emerald-400 ring-2 ring-emerald-500/30 bg-emerald-950/20 shadow-[0_0_25px_rgba(52,211,153,0.2)]',
@@ -644,8 +644,8 @@ export const ArtificialIntelligencePage: React.FC<ArtificialIntelligencePageProp
                         <StepIcon className="w-3.5 h-3.5" />
                       </div>
                       <div className="min-w-0">
-                        <div className="text-xs font-bold truncate">{step.label}</div>
-                        <div className={`text-[10px] truncate ${isSelected ? 'text-sky-100' : 'text-slate-500'}`}>
+                        <div className="text-xs font-bold break-words leading-tight">{step.label}</div>
+                        <div className={`text-[10px] break-words ${isSelected ? 'text-sky-100' : 'text-slate-500'}`}>
                           {step.sublabel}
                         </div>
                       </div>

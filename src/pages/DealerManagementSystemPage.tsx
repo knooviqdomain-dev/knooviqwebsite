@@ -294,7 +294,7 @@ export const DealerManagementSystemPage: React.FC<DealerManagementSystemPageProp
   const activeStep = CHANNEL_STEPS[activeStepIndex];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#00A3E0] selection:text-white overflow-hidden">
+    <div className="product-typography font-sora min-h-screen bg-white text-slate-900 selection:bg-[#00A3E0] selection:text-white overflow-hidden">
       
       {/* =========================================================================
           SECTION 1 — HERO: MULTI-TIER CHANNEL COMMAND RADAR (LIGHT THEME)
@@ -371,7 +371,7 @@ export const DealerManagementSystemPage: React.FC<DealerManagementSystemPageProp
 
             {/* Right Column: Clean Pure Hero Visual (No content above, inside, or below, with increased height) */}
             <div className="lg:col-span-5 relative">
-              <div className="relative h-[380px] sm:h-[460px] lg:h-[520px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-100 group">
+              <div className="relative aspect-[16/9] sm:aspect-auto sm:h-[460px] lg:h-[520px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-100 group">
                 <img
                   src="/images/dms_automotive_manufacturing_hero.png"
                   alt="Automotive Manufacturing, Robotics Assembly and Dealer Supply Chain Operations"
@@ -503,7 +503,7 @@ export const DealerManagementSystemPage: React.FC<DealerManagementSystemPageProp
                           <span className="text-xs text-slate-400 font-medium">Stage {step.stepNum}</span>
                         </div>
 
-                        <h3 className={`text-sm font-semibold mt-1.5 truncate ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>
+                        <h3 className={`text-sm font-semibold mt-1.5 break-words leading-tight ${isActive ? 'text-slate-900' : 'text-slate-700'}`}>
                           {step.title}
                         </h3>
 
@@ -526,7 +526,7 @@ export const DealerManagementSystemPage: React.FC<DealerManagementSystemPageProp
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -12 }}
                   transition={{ duration: 0.3 }}
-                  className="rounded-2xl bg-white border border-slate-200 p-6 sm:p-7 shadow-lg space-y-6"
+                  className="rounded-2xl bg-white border border-slate-200 p-4 sm:p-7 shadow-lg space-y-6"
                 >
                   {/* Top Bar */}
                   <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100">
@@ -550,7 +550,7 @@ export const DealerManagementSystemPage: React.FC<DealerManagementSystemPageProp
                   </div>
 
                   {/* Visual Image Showcase (The Knooviq Story Style) */}
-                  <div className="relative h-64 sm:h-72 rounded-2xl overflow-hidden border border-slate-200/90 shadow-xl group bg-slate-950 select-none">
+                  <div className="relative aspect-[16/9] sm:aspect-auto sm:h-72 rounded-2xl overflow-hidden border border-slate-200/90 shadow-xl group bg-slate-950 select-none">
                     <img
                       src={activeStep.image}
                       alt={activeStep.title}
@@ -616,12 +616,12 @@ export const DealerManagementSystemPage: React.FC<DealerManagementSystemPageProp
                       </span>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-3 pt-2 border-t border-slate-200">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-2 border-t border-slate-200">
                       {activeStep.metrics.map((metric, mIdx) => (
-                        <div key={mIdx} className="text-center p-2.5 rounded-lg bg-white border border-slate-200 shadow-xs">
-                          <p className="text-xs text-slate-500 font-normal">{metric.label}</p>
-                          <p className="text-sm font-bold text-slate-900 mt-1">{metric.value}</p>
-                          <p className="text-xs text-[#0077B6] font-medium mt-0.5">{metric.trend}</p>
+                        <div key={mIdx} className="p-3 sm:p-2.5 rounded-xl sm:rounded-lg bg-white border border-slate-200 shadow-xs text-left sm:text-center min-w-0 space-y-1 sm:space-y-0.5">
+                          <p className="text-xs text-slate-500 font-normal leading-snug break-words">{metric.label}</p>
+                          <p className="text-sm font-bold text-slate-900 font-display break-words leading-tight">{metric.value}</p>
+                          <p className="text-xs text-[#0077B6] font-medium leading-snug break-words">{metric.trend}</p>
                         </div>
                       ))}
                     </div>

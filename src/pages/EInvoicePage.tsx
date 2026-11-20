@@ -379,7 +379,7 @@ export const EInvoicePage: React.FC<EInvoicePageProps> = ({ onOpenContact }) => 
   const currentArchLayer = sapArchLayers.find(l => l.id === activeArchLayer) || sapArchLayers[1];
 
   return (
-    <div className="bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
+    <div className="product-typography font-sora bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden">
 
       {/* =========================================================================
           SECTION 1 — HERO: Intelligent E-Invoicing with SAP
@@ -453,19 +453,20 @@ export const EInvoicePage: React.FC<EInvoicePageProps> = ({ onOpenContact }) => 
 
             {/* Right Column: Hero Image (6 Cols) */}
             <motion.div 
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="lg:col-span-6 relative flex items-center justify-center"
+              className="lg:col-span-6 relative flex items-center justify-center mt-8 lg:mt-0 w-full"
             >
               {/* Subtle ambient backdrop glow */}
-              <div className="absolute -inset-2 bg-gradient-to-r from-blue-600/20 via-cyan-500/20 to-indigo-600/20 rounded-3xl blur-2xl opacity-50 pointer-events-none" />
+              <div className="absolute -inset-2 sm:-inset-3 bg-gradient-to-r from-blue-500/15 via-cyan-400/20 to-indigo-500/15 rounded-3xl blur-2xl opacity-70 pointer-events-none z-0" />
 
-              <div className="relative w-full max-w-[560px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 dark:border-cyan-500/30 bg-[#020817] group">
+              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] lg:max-w-[560px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.14)] dark:shadow-[0_16px_45px_rgba(0,0,0,0.65)] border border-slate-200/90 dark:border-cyan-500/30 bg-white/95 dark:bg-[#071324] hover:border-cyan-400/50 hover:shadow-[0_16px_48px_rgba(0,163,224,0.3)] transition-all duration-300 enterprise-showcase-card">
                 <img
                   src="/images/einvoice-hero.png"
-                  alt="Intelligent SAP E-Invoicing & Compliance"
-                  className="w-full h-auto object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700"
+                  alt="Smarter Invoicing, Seamless Compliance - Intelligent SAP E-Invoicing & Compliance"
+                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
+                  loading="eager"
                 />
               </div>
             </motion.div>
@@ -540,7 +541,7 @@ export const EInvoicePage: React.FC<EInvoicePageProps> = ({ onOpenContact }) => 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               
               {/* Left Column: Stage Photo (5 Cols) */}
-              <div className="lg:col-span-5 relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 h-72 sm:h-80 shadow-lg bg-slate-900 group">
+              <div className="lg:col-span-5 relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 aspect-[16/9] sm:aspect-auto sm:h-80 shadow-lg bg-slate-900 group">
                 <img
                   src={journeyStages[activeJourneyIndex].image}
                   alt={journeyStages[activeJourneyIndex].title}
