@@ -666,11 +666,11 @@ export const FacilitiesAssetsIndustryPage: React.FC<IndustryPageProps> = ({ onOp
             <div className="lg:col-span-6 space-y-4">
               
               <div className="rounded-2xl border-2 border-slate-200 bg-white p-5 shadow-lg relative overflow-hidden">
-                <div className="relative h-64 sm:h-80 rounded-xl overflow-hidden mb-4 bg-slate-950">
+                <div className="relative aspect-[16/10] sm:aspect-auto sm:h-80 w-full min-h-0 rounded-xl overflow-hidden mb-4 bg-slate-950 flex items-center justify-center">
                   <img 
                     src={journeySteps[activeJourneyStep].image} 
                     alt={journeySteps[activeJourneyStep].label} 
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-full object-contain sm:object-cover object-center"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
                   

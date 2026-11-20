@@ -241,7 +241,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
       sublabel: 'Predictive Monitoring',
       tech: 'SAP Asset Central IoT',
       desc: 'Streaming continuous bridge strain gauge, vibration, and foundation telemetry to schedule predictive civil maintenance work orders.',
-      image: '/images/infra_structural_integrity.png',
+      image: '/images/infra_shm_hub.jpg',
       icon: Gauge
     }
   ];
@@ -369,7 +369,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
       tag: 'IOT DIGITAL TWIN',
       title: 'Structural Health Monitoring (SHM) Hub',
       description: 'Continuous ingestion of strain, tilt, and temperature sensor streams from bridges, tunnels, and dams to trigger predictive maintenance.',
-      image: '/images/infra_commercial_ops_cod.jpg',
+      image: '/images/infra_shm_hub.jpg',
       icon: Gauge,
       highlights: ['Real-time strain & vibration feeds', 'Automated civil safety alerts', 'Digital twin deflection modeling']
     },
