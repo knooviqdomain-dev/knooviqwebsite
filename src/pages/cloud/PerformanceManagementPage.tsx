@@ -317,7 +317,7 @@ export const PerformanceManagementPage: React.FC<ChildPageProps> = ({ onOpenCont
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white cloud-sora-scope">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Immersive Canvas with 16:9 Uncropped HD Visual)
@@ -331,6 +331,8 @@ export const PerformanceManagementPage: React.FC<ChildPageProps> = ({ onOpenCont
             alt="Application Performance Management Platform"
             className="w-full h-full object-cover object-right lg:object-center brightness-[1.05] contrast-[1.05]"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
           {/* Subtle directional dark gradient on the left ensures pristine text readability without dimming the visual on the right */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/90 via-45% to-transparent w-full lg:w-[65%]" />
           {/* Bottom subtle edge blend */}
@@ -357,13 +359,22 @@ export const PerformanceManagementPage: React.FC<ChildPageProps> = ({ onOpenCont
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12]">
                 Performance Management
               </h1>
-              <p className="text-lg sm:text-xl font-bold text-cyan-300 tracking-tight">
+              <p className="font-sora text-lg sm:text-xl font-medium text-cyan-300 tracking-tight">
                 Optimize Performance. Maximize Value.
               </p>
             </div>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/perf_mgmt_hero.png"
+                alt="Performance Management - Application Performance Management Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
             {/* Description */}
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal max-w-2xl">
               Knooviq helps organizations assess, analyze, and optimize application performance across the technology stack. We help teams investigate response-time issues, identify resource constraints, improve application efficiency, and prepare systems to handle changing workloads.
             </p>
 
@@ -425,7 +436,7 @@ export const PerformanceManagementPage: React.FC<ChildPageProps> = ({ onOpenCont
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Performance Issues Impact More Than Just Speed.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Enterprise applications depend on multiple interconnected components, including application services, databases, integrations, networks, and infrastructure. Performance problems can emerge at any layer, making it important to understand the underlying cause before making changes.
             </p>
           </div>
@@ -455,15 +466,15 @@ export const PerformanceManagementPage: React.FC<ChildPageProps> = ({ onOpenCont
                     </div>
 
                     <div className="space-y-1.5">
-                      <h3 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight">
+                      <h3 className="font-sora text-lg font-medium text-slate-900 dark:text-white tracking-tight">
                         {item.title}
                       </h3>
-                      <p className="text-xs font-semibold text-[#00A3E0] dark:text-cyan-400 leading-normal">
+                      <p className="font-sora text-xs font-medium text-[#00A3E0] dark:text-cyan-400 leading-normal">
                         {item.tagline}
                       </p>
                     </div>
 
-                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {item.description}
                     </p>
                   </div>
@@ -498,7 +509,7 @@ export const PerformanceManagementPage: React.FC<ChildPageProps> = ({ onOpenCont
               </h2>
             </div>
             <div className="lg:col-span-7 lg:pt-6">
-              <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 We examine application behavior, resource utilization, system dependencies, and workload patterns to help teams identify performance constraints and implement practical improvements.
               </p>
             </div>
@@ -524,15 +535,15 @@ export const PerformanceManagementPage: React.FC<ChildPageProps> = ({ onOpenCont
                       </div>
 
                       <div className="space-y-1.5">
-                        <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
+                        <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white tracking-tight">
                           {cap.title}
                         </h3>
-                        <p className="text-sm font-semibold text-[#00A3E0] dark:text-cyan-400">
+                        <p className="font-sora text-sm font-medium text-[#00A3E0] dark:text-cyan-400">
                           {cap.tagline}
                         </p>
                       </div>
 
-                      <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                      <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                         {cap.description}
                       </p>
 
@@ -593,7 +604,7 @@ export const PerformanceManagementPage: React.FC<ChildPageProps> = ({ onOpenCont
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               From Insight to Improved Performance
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               We follow a structured process to understand existing application behavior, identify constraints, and introduce targeted improvements.
             </p>
           </div>
@@ -626,15 +637,15 @@ export const PerformanceManagementPage: React.FC<ChildPageProps> = ({ onOpenCont
                     </div>
 
                     <div className="space-y-1.5">
-                      <h3 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight">
+                      <h3 className="font-sora text-lg font-medium text-slate-900 dark:text-white tracking-tight">
                         {stg.title}
                       </h3>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 leading-normal">
+                      <p className="font-sora text-xs text-slate-500 dark:text-slate-400 leading-normal font-normal">
                         {stg.tagline}
                       </p>
                     </div>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {stg.description}
                     </p>
                   </div>
@@ -656,7 +667,7 @@ export const PerformanceManagementPage: React.FC<ChildPageProps> = ({ onOpenCont
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0] dark:text-cyan-400">
                   STAGE 0{activeApproachStage + 1} DELIVERABLES &amp; ENGINEERING ACTIVITIES
                 </span>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
+                <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white tracking-tight">
                   {approachStages[activeApproachStage].num} — {approachStages[activeApproachStage].title}
                 </h3>
               </div>
@@ -699,7 +710,7 @@ export const PerformanceManagementPage: React.FC<ChildPageProps> = ({ onOpenCont
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Performance Across Your Environment
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Performance management must account for how applications, data services, integrations, and infrastructure interact. Knooviq helps organizations examine these relationships to support consistent application behavior across their technology landscape.
             </p>
           </div>
@@ -741,11 +752,11 @@ export const PerformanceManagementPage: React.FC<ChildPageProps> = ({ onOpenCont
                   <span className="text-xs text-slate-400 font-semibold">0{idx + 1}</span>
                 </div>
 
-                <h3 className="text-base font-bold text-slate-900 dark:text-white tracking-tight">
+                <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white tracking-tight">
                   {env.name}
                 </h3>
 
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   {env.description}
                 </p>
 
@@ -775,7 +786,7 @@ export const PerformanceManagementPage: React.FC<ChildPageProps> = ({ onOpenCont
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Better Performance. Greater Operational Efficiency.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Practical application performance engineering delivers clear operational advantages across development, database, and infrastructure teams.
             </p>
           </div>
@@ -792,10 +803,10 @@ export const PerformanceManagementPage: React.FC<ChildPageProps> = ({ onOpenCont
                   <div className="p-2.5 w-fit rounded-xl bg-cyan-500/10 border border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white tracking-tight">
+                  <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white tracking-tight">
                     {benefit.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {benefit.description}
                   </p>
                 </div>
@@ -831,7 +842,7 @@ export const PerformanceManagementPage: React.FC<ChildPageProps> = ({ onOpenCont
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
                 Build Applications Ready for What's Next.
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                 Identify performance constraints, improve resource efficiency, and develop a practical approach to application performance with Knooviq.
               </p>
             </div>

@@ -474,17 +474,17 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
 
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Fashion Hero - Zero Shading on Image)
           ========================================================================= */}
-      <section className="relative w-full min-h-[620px] lg:min-h-[680px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-16 overflow-hidden bg-slate-900">
+      <section className="relative w-full min-h-[620px] lg:min-h-[680px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-16 overflow-hidden bg-slate-900 text-white">
         
         {/* Full-bleed High Resolution Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=2000&q=90" 
+            src="/images/fashion_lifestyle_hero.jpg" 
             alt="Fashion Enterprise Logistics & Merchandising"
             className="w-full h-full object-cover object-center"
           />
@@ -492,6 +492,10 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
 
         {/* Seamless Cinematic Left Scrim */}
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-slate-950/95 via-slate-950/80 sm:via-slate-950/60 to-transparent pointer-events-none" />
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           <div className="max-w-3xl space-y-4">
@@ -515,10 +519,19 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Style-Color-Size Matrix Master, Omnichannel Allocation & Dynamic Markdown Control.
               </p>
             </motion.div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/fashion_lifestyle_hero.jpg"
+                alt="Intelligent ERP for Fashion & Lifestyle - Architecture Blueprint"
+                className="w-full h-auto block select-none"
+              />
+            </div>
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -527,7 +540,7 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering apparel brands, footwear labels, and luxury retailers with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA Fashion & Vertical Business</strong>, automated{' '}
                 <strong className="text-cyan-300 font-semibold">pre-pack allocation</strong>, and sub-second inventory visibility across stores and e-commerce.
@@ -625,12 +638,12 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
 
               {/* Executive Thesis Quote */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Fashion leadership is defined by cycle velocity: harmonizing trend forecasting, style-color-size matrix management, flexible factory CMT sourcing, and omnichannel store allocation into one fluid operating core.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers a synchronized enterprise architecture on SAP S/4HANA Clean Core. By bridging multi-dimensional article matrices, pre-pack replenishment algorithms, and reverse logistics hubs directly to enterprise ledgers, fashion brands eliminate size-break stockouts, protect gross margins, and accelerate time-to-rack.
               </p>
 
@@ -641,8 +654,8 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
                     <Shirt className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Style-Color-Size Matrix Governance</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Style-Color-Size Matrix Governance</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Managing complex multidimensional garment hierarchies with unified barcode variants and zero size-break stockouts across stores.
                     </p>
                   </div>
@@ -653,8 +666,8 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
                     <PackageCheck className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Omnichannel Pre-Pack Allocation</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Omnichannel Pre-Pack Allocation</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Algorithmic distribution logic balancing size ratios between urban flagships, department concessions, and e-commerce fulfillment hubs.
                     </p>
                   </div>
@@ -665,8 +678,8 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
                     <Sliders className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Dynamic Markdown Elasticity</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Dynamic Markdown Elasticity</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       AI-driven markdown phasing that maximizes full-price sell-through and minimizes margin dilution before end-of-season clearance drops.
                     </p>
                   </div>
@@ -729,7 +742,7 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
                     {journeySteps[activeJourneyStep].tech}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -761,7 +774,7 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating the Complexity of Fashion & Lifestyle
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Volatile seasonal trends, complex style-color-size variants, and high e-commerce returns challenge profitability. Knooviq solves the six critical friction points modern fashion brands face.
             </p>
           </motion.div>
@@ -788,10 +801,10 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -833,7 +846,7 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Fashion & Lifestyle
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting concept PLM, ethical factory CMT sourcing, pre-pack ratio distribution, store clienteling, and cognitive markdown AI into one continuous loop.
             </p>
           </motion.div>
@@ -870,10 +883,10 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-medium">
                           {item.desc}
                         </p>
                       </div>
@@ -1034,10 +1047,10 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
                         }}
                       />
                       <div className="space-y-1 text-left flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-medium">
                           {item.desc}
                         </p>
                       </div>
@@ -1068,7 +1081,7 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for Intelligent Fashion
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               We engineer clean-core SAP technology suites layered with multi-dimensional variant engines, hanging garment automation, and autonomous markdown AI.
             </p>
           </div>
@@ -1082,10 +1095,10 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CORE ERP SUITE</span>
                 <Cpu className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP S/4HANA Fashion & Vertical Business
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Integrated core managing manufacturing, wholesale distribution, and retail storefronts in a single in-memory database with native article matrix support.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1100,10 +1113,10 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">STORE COMMERCE</span>
                 <ShoppingBag className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Customer Checkout & Clienteling
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Resilient POS checkout and associate tablets enabling VIP customer profile lookups, endless aisle ordering, and instant omnichannel returns.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1118,10 +1131,10 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">INTEGRATION & EXTENSIONS</span>
                 <Cloud className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Business Technology Platform
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Event-driven API mesh connecting e-commerce platforms, marketplace integrations, and overseas CMT vendor portals without modifying the ERP core.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1136,10 +1149,10 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">FASHION WAREHOUSE</span>
                 <PackageCheck className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Extended Warehouse Management
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Specialized warehouse engine controlling hanging garment trolley systems, ratio pre-pack picking waves, and rapid return triage sorting bays.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1154,10 +1167,10 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">ROLE-BASED UX</span>
                 <Scan className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Fiori Role-Based Apps
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Modern responsive interfaces designed specifically for range merchandisers, fabric buyers, store managers, and DC return inspectors.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1172,10 +1185,10 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">COGNITIVE ENGINES</span>
                 <Sparkles className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 Markdown & Trend AI
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Algorithmic price elasticity predicting sell-through velocity, optimizing clearance timing, and protecting seasonal full-price margins.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1203,7 +1216,7 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every Stage of Fashion & Lifestyle
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize fashion execution across design tech packs, factory sourcing, pre-pack distribution, and flagship retail clienteling.
             </p>
           </div>
@@ -1276,12 +1289,12 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1324,7 +1337,7 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Operational Advantages of Connected Fashion
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When style variant matrices, pre-pack allocation, markdown timing, and returns operate in unison, fashion brands protect full-price equity and expand operating margins.
             </p>
           </div>
@@ -1337,10 +1350,10 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Shirt className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Eliminated Size Breaks
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Dynamic pre-pack allocation matches regional door size curves, ending the frustration of out-of-stock core sizes in flagship boutiques.
               </p>
             </div>
@@ -1350,10 +1363,10 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Sliders className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Preserved Gross Margins
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Predictive elasticity models schedule staged price markdowns, avoiding drastic end-of-season clearance fire-sales and safeguarding brand prestige.
               </p>
             </div>
@@ -1363,10 +1376,10 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <RefreshCw className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Sub-Hour Return Restock
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Streamline e-commerce returns with automated grading, steam refurbishing, and instant online inventory re-listing to recapture full resale value.
               </p>
             </div>
@@ -1376,10 +1389,10 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Clock className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Accelerated Time-to-Rack
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Digital tech pack approvals and collaborative CMT supplier schedules reduce fashion concept-to-store rack cycles from months to weeks.
               </p>
             </div>
@@ -1389,10 +1402,10 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Boxes className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Single Stock Pool Certainty
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Unify physical boutique racks, wholesale concessions, and online fulfillment centers into one flexible inventory pool with zero phantom stock.
               </p>
             </div>
@@ -1402,10 +1415,10 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Globe2 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Global Multi-Brand Scalability
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Support rapid international brand acquisitions, concession rollouts, and multi-currency global storefronts on a single clean-core ERP foundation.
               </p>
             </div>
@@ -1438,7 +1451,7 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Fashion Matrix & Omnichannel Allocation Architecture
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How an international fashion label transformed from siloed spreadsheets and heavy clearance write-downs into an agile clean-core operating model.
             </p>
           </div>
@@ -1490,23 +1503,23 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
-                      <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
+                      <div className="text-[10px] font-mono text-slate-300 uppercase tracking-wide">
                         {stage.subtitle}
                       </div>
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
 
                   {/* Bottom Deliverable Pillar */}
                   <div className="pt-2.5 mt-3 border-t border-white/10 flex items-center justify-between">
-                    <span className="text-[9.5px] font-mono font-medium text-slate-400">
+                    <span className="text-[9.5px] font-mono font-medium text-slate-300">
                       {stage.tag}
                     </span>
                     <span className={`text-[9.5px] font-mono font-bold uppercase tracking-wider ${stage.textColor} group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-0.5`}>
@@ -1602,7 +1615,7 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
             Ready to Build a Fast-Moving Fashion Enterprise?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your design tech packs, factory CMT production, omnichannel pre-pack allocation, and flagship retail clienteling with Knooviq.
           </p>
 
@@ -1624,7 +1637,7 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
             </Link>
           </div>
 
-          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-200">
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-100">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-300" />
               <span>SAP Certified Clean Core</span>

@@ -465,7 +465,7 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise High-Tech Hero)
@@ -483,6 +483,9 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
 
         {/* Seamless Cinematic Left Scrim */}
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-slate-950/95 via-slate-950/80 sm:via-slate-950/60 to-transparent pointer-events-none" />
+
+                {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           
@@ -507,10 +510,19 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Precision Wafer Traceability, Foundry Sync & Zero-Defect Silicon Manufacturing.
               </p>
             </motion.div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/high_tech_semiconductors_erp_hero.jpg"
+                alt="Intelligent ERP for High-Tech & Semiconductors"
+                className="w-full h-auto block select-none"
+              />
+            </div>
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -519,7 +531,7 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering fabless innovators, wafer foundries, cleanrooms, and OSAT packaging networks with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, automated{' '}
                 <strong className="text-cyan-300 font-semibold">SECS/GEM Machine Telemetry</strong>, wafer sort defect mapping, and unbroken die genealogy.
@@ -619,12 +631,12 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
 
               {/* Executive Thesis Quote */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-[1.6] italic">
                   &ldquo;Semiconductor leadership demands flawless execution across microscopic tolerances: bridging fabless chip tapeouts, cleanroom photolithography, and global OSAT packaging into one unified operational core.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers an integrated enterprise ecosystem on SAP S/4HANA Clean Core. By harmonizing data across foundries, cleanrooms, and testing facilities, semiconductor leaders achieve complete die visibility, automated yield tracking, and high-velocity operations.
               </p>
 
@@ -635,8 +647,8 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
                     <Cpu className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Fabless-to-Foundry Digital Backbone</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Fabless-to-Foundry Digital Backbone</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Single-pane-of-glass coordination syncing GDSII tapeouts, mask revisions, and foundry WIP status without latency.
                     </p>
                   </div>
@@ -647,8 +659,8 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
                     <Split className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Die-Level Lot & Wafer Map Lineage</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Die-Level Lot & Wafer Map Lineage</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Trace every individual die from crystal ingot growth through photolithography, probe sort, and BGA packaging.
                     </p>
                   </div>
@@ -659,8 +671,8 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Closed-Loop Yield & Quality Governance</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Closed-Loop Yield & Quality Governance</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Continuous parametric drift detection, Class 1 cleanroom interlocks, and automated automotive AEC-Q100 compliance.
                     </p>
                   </div>
@@ -723,7 +735,7 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
                     {journeySteps[activeJourneyStep].tech}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -755,7 +767,7 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating the Complexity of Advanced Silicon Manufacturing
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Disjointed fabless portals, uncalibrated cleanrooms, and siloed test data constrain yield. Knooviq addresses the six systemic challenges high-tech leaders face.
             </p>
           </motion.div>
@@ -782,10 +794,10 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -827,7 +839,7 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for High-Tech & Semiconductors
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting chip design, wafer foundry execution, cleanrooms, packaging networks, and parametric yield AI into one continuous loop.
             </p>
           </motion.div>
@@ -864,10 +876,10 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1028,10 +1040,10 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
                         }}
                       />
                       <div className="space-y-1 text-left flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1060,7 +1072,7 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for High-Tech Silicon
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               We engineer clean-core SAP technology suites layered with modern cloud extensions, SECS/GEM edge interfaces, and machine learning yield analytics.
             </p>
           </div>
@@ -1074,10 +1086,10 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CORE ERP SUITE</span>
                 <Cpu className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP S/4HANA Discrete
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Single-source financial ledgers, lot splitting/merging accounting, and discrete manufacturing orders managing multi-level semiconductor bill-of-materials.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1092,10 +1104,10 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">DOMAIN SOLUTION</span>
                 <Factory className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Digital Manufacturing
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Connect photolithography steppers, automated guided vehicles (AGVs), and wafer cassette carrier pods (FOUPs) with SECS/GEM standards.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1110,10 +1122,10 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">INTEGRATION & EXTENSIONS</span>
                 <Cloud className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Business Technology Platform
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Decoupled extension microservices ingesting multi-gigabyte wafer sort files and providing RosettaNet B2B connections to world foundries.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1128,10 +1140,10 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">BUSINESS INTELLIGENCE</span>
                 <BarChart3 className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Analytics Cloud
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Real-time visibility into parametric probe binning, spatial wafer defect density, OSAT yield rates, and fab scrap sensitivity analysis.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1146,10 +1158,10 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">ROLE-BASED UX</span>
                 <Scan className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Fiori Cleanroom Apps
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Touch-optimized cleanroom tablet interfaces for equipment calibration sign-off, cassette lot dispatch, and digital DHR review.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1164,10 +1176,10 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">COGNITIVE ENGINES</span>
                 <Sparkles className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 AI Yield Predictive Engines
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Algorithmic yield anomaly detection flagging ion implantation drift and etching variations before lots progress to back-end dicing.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1195,7 +1207,7 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every Stage of Silicon Manufacturing
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize semiconductor execution across chip tapeouts, wafer fab, and packaging networks.
             </p>
           </div>
@@ -1267,12 +1279,12 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
                         </div>
 
                         {/* Title - Bold & Compact */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description - Snug & Concise */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1314,7 +1326,7 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Turning Silicon Complexity into Business Advantage
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When design specifications, cleanrooms, wafer test telemetry, and packaging ledgers operate in unison, semiconductor organizations achieve sustainable commercial performance.
             </p>
           </div>
@@ -1327,10 +1339,10 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Split className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Die-Level Traceability
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Know the exact ingot, wafer cassette, probe bin, and OSAT lot origin of every deployed silicon device. Eradicate untraceable quality escapes.
               </p>
             </div>
@@ -1340,10 +1352,10 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Radio className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Cleanroom Risk Containment
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automate tool interlocks and cleanroom atmosphere monitoring. Prevent particle breach excursions before full wafer cassettes suffer catastrophic damage.
               </p>
             </div>
@@ -1353,10 +1365,10 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Cpu className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Faster Time-to-Market
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Harmonize design tapeouts with foundry PDK versions. Eliminate engineering change confusion and speed up initial silicon samples to customers.
               </p>
             </div>
@@ -1366,10 +1378,10 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Factory className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 OSAT Partner Synchronization
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Gain real-time consignment stock visibility and WIP stage-gate tracking across outsourced assembly and test facilities worldwide.
               </p>
             </div>
@@ -1379,10 +1391,10 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <BarChart3 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Parametric Yield Optimization
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Transform multi-gigabyte wafer sort telemetry into actionable machine learning alerts. Isolate etching drifts before scrap rates increase.
               </p>
             </div>
@@ -1392,10 +1404,10 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Mission-Critical Compliance
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Compile immutable digital Device History Records automatically for aerospace, defense, medical, and automotive AEC-Q100 certifications.
               </p>
             </div>
@@ -1428,7 +1440,7 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Intelligent High-Tech & Semiconductor Architecture
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How semiconductor enterprises advance from fragmented foundry communication to an integrated clean-core event ecosystem.
             </p>
           </div>
@@ -1480,7 +1492,7 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
@@ -1489,7 +1501,7 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1590,7 +1602,7 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
             Ready to Build a Smarter Semiconductor Business?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your silicon design, wafer foundries, cleanrooms, and OSAT partners with Knooviq.
           </p>
 
@@ -1612,7 +1624,7 @@ export const HighTechIndustryPage: React.FC<HighTechIndustryPageProps> = ({
             </Link>
           </div>
 
-          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-200">
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-100">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-300" />
               <span>SAP Certified Clean Core</span>

@@ -259,7 +259,7 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300 font-sans">
+    <div className="min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300 font-sans cloud-sora-scope">
 
       {/* =========================================================================
           SECTION 01: HERO SECTION (Full-Screen Immersive Canvas with 16:9 Uncropped HD Visual)
@@ -273,6 +273,8 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
             alt="Enterprise Application Operations Full Screen Architecture"
             className="w-full h-full object-cover object-right lg:object-center brightness-[1.05] contrast-[1.05]"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
           {/* Subtle directional dark gradient on the left ensures pristine text readability without dimming the engineer visual on the right */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/90 via-45% to-transparent w-full lg:w-[65%]" />
           {/* Bottom subtle edge blend */}
@@ -304,8 +306,17 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
               </h1>
             </div>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/app_ops_hero.png"
+                alt="Keep Enterprise Applications Reliable, Responsive, and Ready for Business. - Application Operations Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
             {/* Description */}
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal max-w-2xl">
               Knooviq helps organizations maintain stable, responsive, and dependable applications through proactive monitoring, performance analysis, operational management, and service reliability practices. We help teams identify issues earlier, improve application visibility, and support consistent digital operations across enterprise environments.
             </p>
 
@@ -351,7 +362,7 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
               Navigating the Realities of Distributed Application Complexity
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               As enterprise software environments evolve across microservices, hybrid clouds, and integrated third-party platforms, traditional support approaches struggle to maintain stability and operational clarity.
             </p>
           </div>
@@ -364,10 +375,10 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
               <span className="text-xs font-bold text-[#00A3E0] uppercase tracking-wider block">
                 EXECUTIVE PERSPECTIVE
               </span>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white leading-snug">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white leading-snug">
                 The Operational Visibility Deficit in Modern Enterprises
               </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 When applications are fragmented across diverse hosting models and complex integration layers, failure points multiply. Without holistic operational discipline, teams operate in reactive silos, addressing symptoms while the core technical causes remain unaddressed.
               </p>
               <div className="pt-4 border-t border-slate-200 dark:border-white/10 space-y-2 text-xs text-slate-500 dark:text-slate-400">
@@ -375,7 +386,7 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                   <AlertTriangle className="w-4 h-4 text-amber-500 shrink-0" />
                   <span>Key Friction Points Addressed:</span>
                 </div>
-                <p className="font-normal">Telemetry blind spots, hidden latency bottlenecks, cascading outages, and uncoordinated change releases.</p>
+                <p className="font-sora font-normal leading-[1.6]">Telemetry blind spots, hidden latency bottlenecks, cascading outages, and uncoordinated change releases.</p>
               </div>
             </div>
 
@@ -390,12 +401,12 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                     <span className="text-xs font-bold text-[#00A3E0] dark:text-cyan-400 uppercase tracking-wider">
                       CHALLENGE {challenge.num}
                     </span>
-                    <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white group-hover:text-[#00A3E0] dark:group-hover:text-cyan-300 transition-colors">
+                    <h3 className="font-sora text-base sm:text-lg font-medium text-slate-900 dark:text-white group-hover:text-[#00A3E0] dark:group-hover:text-cyan-300 transition-colors">
                       {challenge.title}
                     </h3>
                   </div>
 
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {challenge.description}
                   </p>
 
@@ -431,7 +442,7 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
               Application Operations Capabilities
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               We provide comprehensive operational capabilities across support governance, full-stack observability, performance tuning, and service reliability to keep your business applications dependable.
             </p>
           </div>
@@ -448,10 +459,10 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                   <Workflow className="w-3.5 h-3.5 text-[#00A3E0]" />
                   <span>CAPABILITY A &bull; OPERATIONAL GOVERNANCE</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
+                <h3 className="font-sora text-2xl sm:text-3xl font-medium text-slate-900 dark:text-white tracking-tight">
                   Application Operations Management
                 </h3>
-                <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Establish structured application support processes, operational health reviews, incident coordination, release support, and day-to-day application stability. We ensure production application environments receive the rigorous operational oversight required for uninterrupted business execution.
                 </p>
 
@@ -481,8 +492,8 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                     <div key={idx} className="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-[#070E1E] border border-slate-200/70 dark:border-white/5">
                       <CheckCircle2 className="w-4 h-4 text-[#00A3E0] shrink-0 mt-0.5" />
                       <div>
-                        <h4 className="text-sm font-bold text-slate-900 dark:text-white">{item.title}</h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5 leading-relaxed font-normal">{item.detail}</p>
+                        <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">{item.title}</h4>
+                        <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-0.5 leading-[1.6] font-normal">{item.detail}</p>
                       </div>
                     </div>
                   ))}
@@ -491,11 +502,11 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
 
               {/* Right Column: Architectural Image Showcase */}
               <div className="lg:col-span-5 space-y-4">
-                <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-slate-900 aspect-[16/10] sm:aspect-video lg:aspect-[4/3] group">
+                <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-slate-900 aspect-[735/828] group">
                   <img
                     src="/images/cloud/app_ops_mgmt.jpg"
                     alt="Application operations management architectural visual showing runtime systems, health review coordination, and release stability pipelines"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050B17]/90 via-transparent to-transparent pointer-events-none" />
@@ -540,38 +551,38 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                   <Eye className="w-3.5 h-3.5 text-[#00A3E0]" />
                   <span>CAPABILITY B &bull; TELEMETRY &amp; TRACING</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
+                <h3 className="font-sora text-2xl sm:text-3xl font-medium text-slate-900 dark:text-white tracking-tight">
                   Monitoring &amp; Observability
                 </h3>
-                <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Establish deep visibility across application telemetry, logs, metrics, distributed tracing, service dependencies, alert management, and root-cause investigation. We turn fragmented application signals into actionable operational clarity.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
                   <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#070E1E] border border-slate-200/70 dark:border-white/5 space-y-1.5">
                     <div className="text-xs font-bold text-[#00A3E0] uppercase tracking-wider">Application Telemetry</div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       Structured log pipelines, standardized trace propagation, and high-resolution metrics tracking application behavior across runtime environments.
                     </p>
                   </div>
 
                   <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#070E1E] border border-slate-200/70 dark:border-white/5 space-y-1.5">
                     <div className="text-xs font-bold text-[#00A3E0] uppercase tracking-wider">Distributed Tracing</div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       Tracking individual transactions across distributed microservices, message queues, and databases to pinpoint exactly where latency occurs.
                     </p>
                   </div>
 
                   <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#070E1E] border border-slate-200/70 dark:border-white/5 space-y-1.5">
                     <div className="text-xs font-bold text-[#00A3E0] uppercase tracking-wider">Service Dependencies</div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       Real-time dependency topology mapping showing how upstream client requests map to downstream microservices, caches, and third-party APIs.
                     </p>
                   </div>
 
                   <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#070E1E] border border-slate-200/70 dark:border-white/5 space-y-1.5">
                     <div className="text-xs font-bold text-[#00A3E0] uppercase tracking-wider">Alert Management &amp; Triage</div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       Disciplined alert thresholds, alert deduplication, and context-rich notifications that reduce on-call fatigue and accelerate root-cause isolation.
                     </p>
                   </div>
@@ -597,10 +608,10 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                 <Cpu className="w-3.5 h-3.5 text-[#00A3E0]" />
                 <span>CAPABILITY C &bull; RUNTIME &amp; RESOURCE TUNING</span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
+              <h3 className="font-sora text-2xl sm:text-3xl font-medium text-slate-900 dark:text-white tracking-tight">
                 Performance Management
               </h3>
-              <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Conduct response-time analysis, resource utilization audits, bottleneck identification, capacity planning, and targeted performance tuning. We ensure applications deliver consistent throughput and low latency under real-world enterprise workloads.
               </p>
             </div>
@@ -633,8 +644,8 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                     <Clock className="w-4 h-4" />
                     <span>Response-Time Analysis</span>
                   </div>
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white">Latency Profiling</h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">Latency Profiling</h4>
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Granular decomposition of request latency across front-end rendering, network hops, application logic, and database query executions to locate lag sources.
                   </p>
                 </div>
@@ -644,8 +655,8 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                     <Sliders className="w-4 h-4" />
                     <span>Resource Utilization</span>
                   </div>
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white">Compute &amp; Memory Balance</h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">Compute &amp; Memory Balance</h4>
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Continuous monitoring of CPU saturation, memory allocation footprints, garbage collection pauses, and disk I/O to avoid compute starvation.
                   </p>
                 </div>
@@ -655,8 +666,8 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                     <Search className="w-4 h-4" />
                     <span>Bottleneck Identification</span>
                   </div>
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white">Query &amp; Code Tuning</h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">Query &amp; Code Tuning</h4>
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Systematic identification of unindexed SQL queries, excessive synchronous API round-trips, thread contention, and connection pool exhaustion.
                   </p>
                 </div>
@@ -666,8 +677,8 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                     <BarChart2 className="w-4 h-4" />
                     <span>Capacity Planning</span>
                   </div>
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white">Workload Growth Modeling</h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">Workload Growth Modeling</h4>
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Forecasting infrastructure resource needs based on historical workload trends, transaction volumes, seasonal peaks, and planned business expansion.
                   </p>
                 </div>
@@ -691,50 +702,50 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                   <Shield className="w-3.5 h-3.5 text-[#00A3E0]" />
                   <span>CAPABILITY D &bull; SERVICE RESILIENCE &amp; SRE</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
+                <h3 className="font-sora text-2xl sm:text-3xl font-medium text-slate-900 dark:text-white tracking-tight">
                   Availability &amp; Reliability
                 </h3>
-                <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Implement service health monitoring, resilience planning, dependency assessment, recovery procedures, and continuous reliability improvement practices. We build predictable stability into the core operational lifecycle.
                 </p>
 
                 <div className="space-y-3 pt-2">
                   <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#070E1E] border border-slate-200/70 dark:border-white/5">
-                    <h4 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-[#00A3E0]" />
                       Continuous Service Health Monitoring
                     </h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 pl-4 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-1 pl-4 leading-[1.6] font-normal">
                       Synthetic end-user probing, multi-region endpoint validation, and golden signal tracking to identify service degradation before customers are impacted.
                     </p>
                   </div>
 
                   <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#070E1E] border border-slate-200/70 dark:border-white/5">
-                    <h4 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-[#00A3E0]" />
                       Resilience Planning &amp; Fault Isolation
                     </h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 pl-4 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-1 pl-4 leading-[1.6] font-normal">
                       Architecting circuit breakers, bulkheads, exponential retries, and graceful degradation fallback modes to ensure partial failures do not cause catastrophic systemic outages.
                     </p>
                   </div>
 
                   <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#070E1E] border border-slate-200/70 dark:border-white/5">
-                    <h4 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-[#00A3E0]" />
                       Dependency Assessment &amp; Blast Radius Control
                     </h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 pl-4 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-1 pl-4 leading-[1.6] font-normal">
                       Continuous evaluation of upstream and downstream coupling, ensuring that failure in an external third-party service or storage node does not compromise core transactional journeys.
                     </p>
                   </div>
 
                   <div className="p-4 rounded-xl bg-slate-50 dark:bg-[#070E1E] border border-slate-200/70 dark:border-white/5">
-                    <h4 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-[#00A3E0]" />
                       Validated Recovery Procedures &amp; Runbooks
                     </h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 pl-4 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-1 pl-4 leading-[1.6] font-normal">
                       Well-documented, regularly rehearsed failover procedures, automated self-healing scripts, and disaster recovery playbooks tested under simulated stress.
                     </p>
                   </div>
@@ -744,7 +755,7 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
 
               {/* Right Column: High-Availability Visual */}
               <div className="lg:col-span-5 space-y-4">
-                <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-slate-900 aspect-[16/10] sm:aspect-video lg:aspect-[4/3] group">
+                <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-slate-900 aspect-square group">
                   <img
                     src="/images/cloud/app_ops_reliability.jpg"
                     alt="Service availability and reliability visual showing multi-zone redundancy, failover routing, and mirrored database clusters"
@@ -780,7 +791,7 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
               Our Operational Approach
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               A disciplined four-stage operational workflow designed to establish clear application visibility, systematically address vulnerabilities, and sustain dependable performance.
             </p>
           </div>
@@ -812,10 +823,10 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight">
+                <h3 className="font-sora text-lg font-medium text-slate-900 dark:text-white tracking-tight">
                   {stage.name}
                 </h3>
-                <p className="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed font-normal">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-[1.6] font-normal">
                   {stage.tagline}
                 </p>
               </button>
@@ -829,7 +840,7 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                 <span className="text-xs font-bold text-[#00A3E0] dark:text-cyan-400 uppercase tracking-wider">
                   STAGE {operationalApproachStages[activeWorkflowStage].step} &bull; {operationalApproachStages[activeWorkflowStage].name.toUpperCase()}
                 </span>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white">
                   {operationalApproachStages[activeWorkflowStage].name} &mdash; {operationalApproachStages[activeWorkflowStage].tagline}
                 </h3>
               </div>
@@ -840,7 +851,7 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="space-y-3">
-                <h4 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">
+                <h4 className="font-sora text-xs font-medium text-slate-900 dark:text-white uppercase tracking-wider">
                   PRIMARY OPERATIONAL ACTIVITIES:
                 </h4>
                 <ul className="space-y-2.5">
@@ -859,7 +870,7 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                     <Sparkles className="w-4 h-4" />
                     <span>OPERATIONAL DELIVERABLE &amp; OUTCOME</span>
                   </div>
-                  <p className="text-sm font-semibold text-slate-800 dark:text-slate-100 leading-relaxed">
+                  <p className="font-sora text-sm font-medium text-slate-800 dark:text-slate-100 leading-relaxed">
                     {operationalApproachStages[activeWorkflowStage].outcome}
                   </p>
                 </div>
@@ -882,7 +893,7 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                     <span className="w-8 h-8 rounded-xl bg-[#00A3E0] text-white text-xs font-bold flex items-center justify-center">
                       {stage.step}
                     </span>
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-lg font-medium text-slate-900 dark:text-white">
                       {stage.name}
                     </h3>
                   </div>
@@ -891,7 +902,7 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                   </span>
                 </div>
 
-                <p className="text-xs font-medium text-slate-700 dark:text-slate-200 leading-relaxed">
+                <p className="font-sora text-xs font-medium text-slate-700 dark:text-slate-200 leading-[1.6]">
                   {stage.tagline}
                 </p>
 
@@ -935,7 +946,7 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
               Application Operations Across Environments
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Modern digital enterprises rarely run in a single homogeneous environment. Our operational practices support business systems, cloud-native platforms, integration middleware, and hybrid hosting landscapes simultaneously.
             </p>
           </div>
@@ -957,7 +968,7 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                   <Layers className="w-4 h-4 text-[#00A3E0]" />
                   <span>UNIFIED ENTERPRISE OPERATIONS PLANE</span>
                 </div>
-                <p className="text-slate-300 text-[11px] sm:text-xs font-normal">
+                <p className="font-sora text-slate-300 text-[11px] sm:text-xs font-normal leading-[1.6]">
                   Synchronized monitoring, health checks, and incident workflows uniting legacy ERPs, containers, APIs, and hybrid clouds.
                 </p>
               </div>
@@ -975,10 +986,10 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                   <span className="text-[10px] font-bold text-[#00A3E0] dark:text-cyan-400 uppercase tracking-wider block">
                     {env.tag}
                   </span>
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white leading-snug">
+                  <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white leading-snug">
                     {env.title}
                   </h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {env.summary}
                   </p>
                 </div>
@@ -1017,7 +1028,7 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
               Predictable Business &amp; Operational Outcomes
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Our application operations engagements focus on grounded, repeatable improvements that bring operational clarity to development, infrastructure, and leadership teams.
             </p>
           </div>
@@ -1039,11 +1050,11 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white leading-snug">
+                  <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white leading-snug">
                     {val.title}
                   </h3>
 
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {val.description}
                   </p>
                 </div>
@@ -1081,7 +1092,7 @@ export const ApplicationOperationsPage: React.FC<ChildPageProps> = ({ onOpenCont
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
               Make Application Operations More Predictable.
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 max-w-2xl mx-auto leading-[1.6] font-normal">
               Build a clearer view of application health, strengthen operational processes, and support reliable enterprise services with Knooviq.
             </p>
           </div>

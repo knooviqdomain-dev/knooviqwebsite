@@ -244,6 +244,8 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
             alt="Disaster Recovery and Automated Multi-Region Failover Architecture"
             className="w-full h-full object-cover object-[68%_center] filter brightness-[1.06] contrast-[1.05]"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
           {/* Subtle directional gradient on left for razor-sharp typography readability; right 55%+ visual is 100% untouched */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/80 sm:via-[#030712]/60 via-35% to-transparent w-full lg:w-[52%] pointer-events-none" />
           <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-[#030712] via-[#030712]/50 to-transparent pointer-events-none" />
@@ -269,13 +271,22 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12] drop-shadow-lg">
                 Disaster Recovery
               </h1>
-              <p className="text-lg sm:text-xl font-bold text-cyan-300 tracking-tight drop-shadow-md">
+              <p className="font-sora text-lg sm:text-xl font-medium text-cyan-300 tracking-tight drop-shadow-md">
                 Restore. Rebuild. Get Back to Business.
               </p>
             </div>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/avail_disaster_recovery_wide.jpg"
+                alt="Disaster Recovery and Automated Multi-Region Failover Architecture - Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
             {/* Description */}
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl drop-shadow">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl drop-shadow">
               Minimize disruption and recover with confidence. Knooviq helps organizations plan, prepare, and restore critical systems, applications, data, and infrastructure after unexpected outages or disruptive events.
             </p>
 
@@ -331,7 +342,7 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Be Ready for What’s Next
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Technology disruptions can result from infrastructure failures, accidental changes, cyber incidents, software issues, or environmental events. A well-prepared disaster recovery strategy helps organizations define restoration priorities, protect recoverable data, and bring essential technology services back online through controlled procedures.
             </p>
           </div>
@@ -353,11 +364,11 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
                       <span className="text-xs font-mono font-bold text-slate-400">0{idx + 1}</span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-lg font-medium text-slate-900 dark:text-white">
                       {benefit.title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {benefit.description}
                     </p>
                   </div>
@@ -388,7 +399,7 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               End-to-End Recovery Support
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               From preparation to restoration, Knooviq helps organizations establish the plans, technology practices, and operational procedures needed to recover critical IT services after disruption.
             </p>
           </div>
@@ -402,10 +413,10 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
                 <div className="flex items-center gap-4">
                   <span className="text-2xl sm:text-3xl font-black text-[#00A3E0] font-mono">01</span>
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white">
                       Recovery Planning &amp; Strategy
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-500 dark:text-slate-400 font-normal leading-[1.6]">
                       Understand critical systems, recovery dependencies, and establish structured restoration goals.
                     </p>
                   </div>
@@ -417,10 +428,10 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-7 space-y-4">
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Effective disaster recovery starts with clear visibility into how technology systems support business operations. Knooviq helps IT teams evaluate server estates, cloud environments, and application interdependencies to define realistic Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO). We design recovery strategies tailored to organizational tolerances—from active-active multi-region deployments to warm standby and rapid automated rebuilds.
                   </p>
-                  <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-500 dark:text-slate-400 leading-[1.6] font-normal">
                     By documenting recovery procedures, decision trees, and operational prerequisites before disruptions happen, teams gain predictable, auditable guidelines that eliminate guesswork during stressful outages.
                   </p>
                 </div>
@@ -458,10 +469,10 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
                   <span className="text-2xl font-black text-[#00A3E0] font-mono">02</span>
                   <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0]">DATA PRESERVATION &amp; SYNCHRONIZATION</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Backup &amp; Replication
                 </h3>
-                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Data cannot be recovered if it was never captured or if replication failed unnoticed. Knooviq designs robust backup architectures and streaming replication pipelines that ensure current, intact copies of databases, file shares, and system state are readily accessible during restoration.
                 </p>
                 <div className="space-y-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
@@ -523,10 +534,10 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
                   <span className="text-2xl font-black text-[#00A3E0] font-mono">03</span>
                   <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0]">COMPUTE, STORAGE &amp; NETWORK FABRIC</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Infrastructure Recovery
                 </h3>
-                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Applications require underlying compute, hypervisors, network routes, and storage arrays to function. Knooviq establishes standardized recovery workflows that reconstruct supporting infrastructure across on-premises data centers, private cloud clusters, hyperscaler public clouds, and hybrid configurations.
                 </p>
                 <div className="space-y-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
@@ -553,10 +564,10 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
                   <span className="text-2xl font-black text-[#00A3E0] font-mono">04</span>
                   <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0]">ORDERLY SERVICE RESTORATION</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Application Recovery
                 </h3>
-                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Restoring servers in random order causes database deadlocks and service connection errors. Knooviq helps organizations document and execute the correct sequencing of enterprise applications, accounting for database mounts, credential services, message queues, and upstream third-party APIs.
                 </p>
                 <div className="space-y-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
@@ -618,10 +629,10 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
                   <span className="text-2xl font-black text-[#00A3E0] font-mono">05</span>
                   <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0]">VERIFICATION &amp; AUDITING</span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Testing &amp; Validation
                 </h3>
-                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Untested recovery procedures routinely fail when real disruptions strike. Knooviq designs structured recovery simulations and sandbox restoration drills that prove procedures work as documented, give technical teams practical operational familiarity, and reveal gaps without impacting live production traffic.
                 </p>
                 <div className="space-y-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
@@ -647,10 +658,10 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
                 <div className="flex items-center gap-4">
                   <span className="text-2xl sm:text-3xl font-black text-[#00A3E0] font-mono">06</span>
                   <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white">
                       Ongoing Support &amp; Improvement
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-500 dark:text-slate-400 font-normal leading-[1.6]">
                       Keep recovery plans synchronized with ongoing infrastructure and application evolution.
                     </p>
                   </div>
@@ -662,10 +673,10 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 <div className="lg:col-span-7 space-y-4">
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Enterprise IT environments change constantly—new microservices launch, databases expand, cloud configurations adapt, and third-party SaaS integrations are introduced. A static recovery plan becomes obsolete quickly. Knooviq implements an ongoing governance rhythm that guarantees disaster recovery plans, runbooks, and automation scripts remain synchronized with technology changes.
                   </p>
-                  <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-500 dark:text-slate-400 leading-[1.6] font-normal">
                     Through recurring architecture audits, periodic procedure reviews, and tracking of post-drill corrective actions, we help organizations maintain long-term technical resilience without operational decay.
                   </p>
                 </div>
@@ -714,7 +725,7 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               A Structured Path to Recovery
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               A disciplined, engineering-backed five-step lifecycle ensuring technology systems and data can be restored accurately, securely, and without delay.
             </p>
           </div>
@@ -757,16 +768,16 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
 
                       {/* Title & Tagline */}
                       <div className="space-y-1">
-                        <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                        <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                           {step.title}
                         </h3>
-                        <p className="text-xs font-medium text-[#00A3E0]">
+                        <p className="font-sora text-xs font-medium text-[#00A3E0]">
                           {step.tagline}
                         </p>
                       </div>
 
                       {/* Description */}
-                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                      <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                         {step.description}
                       </p>
                     </div>
@@ -817,7 +828,7 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
                 Stronger Recovery. Greater Confidence.
               </h2>
 
-              <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 A well-maintained disaster recovery approach gives teams a clear framework for responding to technology disruptions, restoring systems in a controlled sequence, and validating that recovered services are ready for use.
               </p>
 
@@ -879,7 +890,7 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Disaster Recovery Deliverables
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Actionable engineering assets and operational documentation formulated during a Knooviq disaster recovery engagement.
             </p>
           </div>
@@ -910,15 +921,15 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                      <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                         {item.title}
                       </h3>
-                      <p className="text-xs text-[#00A3E0] font-medium">
+                      <p className="font-sora text-xs text-[#00A3E0] font-medium leading-[1.6]">
                         {item.subtitle}
                       </p>
                     </div>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {item.description}
                     </p>
 
@@ -962,7 +973,7 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Disaster Recovery and Business Continuity
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Understanding how technology restoration connects to wider organizational resilience.
             </p>
           </div>
@@ -977,11 +988,11 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
                 </span>
               </div>
 
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white">
                 Disaster Recovery (DR)
               </h3>
 
-              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 <strong>Disaster Recovery</strong> focuses on restoring IT systems, infrastructure, applications, and data after a disruptive event.
               </p>
 
@@ -1006,11 +1017,11 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
                 </span>
               </div>
 
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white">
                 Business Continuity (BC)
               </h3>
 
-              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 <strong>Business Continuity</strong> focuses on maintaining or resuming essential business functions, coordinating people and processes, and keeping operations moving during disruption.
               </p>
 
@@ -1056,7 +1067,7 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
                 Ready to Strengthen Your Recovery Strategy?
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                 Let's build a disaster recovery approach that fits your business, technology environment, critical systems, and recovery requirements.
               </p>
             </div>

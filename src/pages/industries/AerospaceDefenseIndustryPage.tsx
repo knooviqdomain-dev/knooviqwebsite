@@ -472,7 +472,7 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Aerospace Hero)
@@ -490,6 +490,9 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
 
         {/* Seamless Cinematic Left Scrim */}
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-slate-950/95 via-slate-950/80 sm:via-slate-950/60 to-transparent pointer-events-none" />
+
+                {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           
@@ -514,10 +517,19 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Airworthiness Compliance, Rotable Lifecycle & Defense Program Management.
               </p>
             </motion.div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/aerospace_defense_mro_hero.png"
+                alt="Aerospace Hangar and Defense Aviation Facility Atmosphere"
+                className="w-full h-auto block select-none"
+              />
+            </div>
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -526,7 +538,7 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering aerospace OEMs, defense contractors, and commercial airline MRO facilities with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, automated{' '}
                 <strong className="text-cyan-300 font-semibold">FAA 8130-3 / EASA Release Certificates</strong>, ITAR export vaults, and unbroken rotable part genealogy.
@@ -626,12 +638,12 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
 
               {/* Executive Thesis Quote */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-[1.6] italic">
                   &ldquo;Aerospace and defense leadership hinges on absolute airworthiness: ensuring every rotable turbine, avionics module, and structural fastener meets rigorous regulatory lineage before returning to service.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers an integrated enterprise ecosystem on SAP S/4HANA Clean Core. By harmonizing data across maintenance hangars, technical records, and defense program accounting, aerospace leaders achieve rapid turnaround times, flawless audit compliance, and maximum fleet readiness.
               </p>
 
@@ -642,8 +654,8 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
                     <RefreshCw className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Airworthiness & Rotable Asset Governance</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Airworthiness & Rotable Asset Governance</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Continuous calculation of cumulative flight hours and flight cycles with automated Life-Limited Parts (LLP) hard limits.
                     </p>
                   </div>
@@ -654,8 +666,8 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">ITAR / EAR Defense Security Firewalls</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">ITAR / EAR Defense Security Firewalls</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Zero-trust data isolation restricting CAD files, overhaul work cards, and defense contracts by nationality and clearance.
                     </p>
                   </div>
@@ -666,8 +678,8 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
                     <FileCheck2 className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Closed-Loop AS9100 & FAA Release Workflows</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Closed-Loop AS9100 & FAA Release Workflows</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Automated generation and cryptographic technician sign-offs for FAA 8130-3 and EASA Form 1 airworthiness documents.
                     </p>
                   </div>
@@ -730,7 +742,7 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
                     {journeySteps[activeJourneyStep].tech}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -762,7 +774,7 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating the Complexity of Modern Aerospace & Defense
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Paper maintenance logs, export control restrictions, and stringent defense contracting create operational friction. Knooviq addresses the six systemic challenges aerospace leaders face.
             </p>
           </motion.div>
@@ -789,10 +801,10 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -834,7 +846,7 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Aerospace, Defense & MRO
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting rotable engines, ITAR security vaults, FAA release certificates, EVM project accounting, and fleet analytics into one continuous loop.
             </p>
           </motion.div>
@@ -871,10 +883,10 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1035,10 +1047,10 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
                         }}
                       />
                       <div className="space-y-1 text-left flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1067,7 +1079,7 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for Aerospace & Defense
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               We engineer clean-core SAP technology suites layered with modern cloud extensions, ITAR defense vaults, and digital airworthiness releases.
             </p>
           </div>
@@ -1081,10 +1093,10 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CORE ERP SUITE</span>
                 <Plane className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP S/4HANA Aerospace
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Integrated Earned Value Management, complex engineering bills-of-materials, configuration baselines, and defense contract accounting ledgers.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1099,10 +1111,10 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">DOMAIN SOLUTION</span>
                 <RefreshCw className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Complex Maintenance (MRO)
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Component overhaul workshop execution, task card sign-offs, rotable swap tracking, and automated FAA 8130-3 airworthiness certificate creation.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1117,10 +1129,10 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">INTEGRATION & EXTENSIONS</span>
                 <Cloud className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Business Technology Platform
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 ITAR-compliant zero-trust defense vaults protecting CAD files, maintenance manuals, and subcontractor delivery feeds off the core ERP.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1135,10 +1147,10 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">BUSINESS INTELLIGENCE</span>
                 <BarChart3 className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Analytics Cloud
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Real-time visibility into rotable inventory pool sizing, shop turnaround time (TAT) scorecards, and defense contract margin health.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1153,10 +1165,10 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">ROLE-BASED UX</span>
                 <Scan className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Fiori Aviation Mobile UX
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Ruggedized tablet applications for flight line technicians, digital work card completion, and Illustrated Parts Catalog (IPC) lookups.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1171,10 +1183,10 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">COGNITIVE ENGINES</span>
                 <Sparkles className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 AI Fleet Predictive Maintenance
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Algorithmic failure prediction analyzing jet engine telemetry, hydraulic sensor wear, and flight stress anomalies to eliminate in-flight faults.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1202,7 +1214,7 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every Stage of Aerospace & Defense
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize aerospace execution across MRO overhaul hangars, export control vaults, and defense program offices.
             </p>
           </div>
@@ -1274,12 +1286,12 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
                         </div>
 
                         {/* Title - Bold & Compact */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description - Snug & Concise */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1321,7 +1333,7 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Turning Aerospace Complexity into Mission Advantage
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When maintenance workshops, technical records, export vaults, and program ledgers operate in unison, aerospace organizations achieve sustainable operational excellence.
             </p>
           </div>
@@ -1334,10 +1346,10 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Plane className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Accelerated Return-to-Service
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Compress hangar turnaround time and reduce AOG grounding duration through proactive parts kitting, automated task sign-offs, and instant rotable availability.
               </p>
             </div>
@@ -1347,10 +1359,10 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Zero ITAR Export Escapes
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Enforce nationality-based digital access controls across all engineering repositories. Eliminate costly export compliance violations and audit penalties.
               </p>
             </div>
@@ -1360,10 +1372,10 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Clock className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 100% LLP Airworthiness Safety
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automated continuous calculation of flight hours and cycles guarantees zero components exceed FAA mandatory discard limits, protecting passenger safety.
               </p>
             </div>
@@ -1373,10 +1385,10 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <FileCheck2 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Digital FAA/EASA Release
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Generate and cryptographically sign FAA 8130-3 and EASA Form 1 certificates straight from completed work orders, eliminating paperwork delays.
               </p>
             </div>
@@ -1386,10 +1398,10 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <BarChart3 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Accurate Defense Program Margins
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Meet ANSI/EIA-748 Earned Value Management criteria with live cost-schedule variance analytics, preventing contract overrun write-downs.
               </p>
             </div>
@@ -1399,10 +1411,10 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <RefreshCw className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Optimized Rotable Pool Sizing
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Free up tens of millions in tied-up capital by deploying machine learning to right-size spare engine, APU, and avionics rotable inventory buffers.
               </p>
             </div>
@@ -1435,7 +1447,7 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Intelligent Aerospace, Defense & MRO Architecture
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How aerospace enterprises advance from disconnected paper logbooks to an integrated clean-core event ecosystem.
             </p>
           </div>
@@ -1487,7 +1499,7 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
@@ -1496,7 +1508,7 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1597,7 +1609,7 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
             Ready to Build a Smarter Aerospace & Defense Business?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your MRO hangars, defense programs, and airworthiness systems with Knooviq.
           </p>
 
@@ -1619,7 +1631,7 @@ export const AerospaceDefenseIndustryPage: React.FC<AerospaceDefenseIndustryPage
             </Link>
           </div>
 
-          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-200">
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-100">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-300" />
               <span>SAP Certified Clean Core</span>

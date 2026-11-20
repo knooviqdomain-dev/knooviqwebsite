@@ -485,7 +485,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300 selection:bg-[#FF9900]/20 selection:text-[#FF9900]">
+    <div className="min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300 selection:bg-[#FF9900]/20 selection:text-[#FF9900] cloud-sora-scope">
 
       {/* ============================================================ */}
       {/* 1. HERO SECTION: Full-Screen Panoramic Hero with Full-Bleed AWS Image & Text Overlay */}
@@ -499,6 +499,8 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
             alt="Amazon Web Services Enterprise Practice"
             className="w-full h-full object-cover object-center lg:object-[65%_center] filter brightness-105 contrast-105"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#050B17]/95 via-[#050B17]/90 to-[#050B17] pointer-events-none" />
           {/* Directional scrim: smoothly protects text readability on the left while keeping center & right visuals 100% bright */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#050B17] via-[#050B17]/85 sm:via-[#050B17]/70 md:via-[#050B17]/50 to-transparent w-full lg:w-3/5" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050B17] via-transparent to-[#050B17]/50" />
@@ -526,15 +528,26 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
           </div>
 
           {/* Text Content Block */}
-          <div className="max-w-2xl lg:max-w-3xl space-y-6">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12] drop-shadow-md">
-              Build, Modernize and Scale on{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-[#FF9900]">
-                Amazon Web Services
-              </span>
-            </h1>
+          <div className="max-w-2xl lg:max-w-3xl space-y-5 sm:space-y-6">
+            <div className="space-y-2 sm:space-y-3">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12] drop-shadow-md">
+                Build, Modernize and Scale on{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-[#FF9900]">
+                  Amazon Web Services
+                </span>
+              </h1>
+            </div>
 
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl drop-shadow-sm">
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/aws/aws_datacenter_hero.jpg"
+                alt="Amazon Web Services Enterprise Practice - AWS Cloud Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl drop-shadow-sm">
               Help enterprises design secure, resilient, and scalable AWS environments through cloud strategy,
               infrastructure architecture, migration, application modernization, security, and managed operations.
             </p>
@@ -600,7 +613,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               AWS Cloud Architecture &amp; Platform Tiers
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Our architecture practice structures enterprise AWS environments into five modular, resilient technical layers.
               From hybrid Direct Connect transit routing to serverless runtimes and automated SRE runbooks, each tier is
               governed by strict Well-Architected reliability standards.
@@ -661,21 +674,21 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                   <div className="text-xs font-mono font-bold text-[#FF9900] uppercase tracking-wider">
                     {awsArchitectureTiers[activeArchTier].tierNumber} &bull; COMPONENT SPECIFICATION
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white">
                     {awsArchitectureTiers[activeArchTier].name}
                   </h3>
-                  <p className="text-xs sm:text-sm text-cyan-600 dark:text-cyan-400 font-medium">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-cyan-600 dark:text-cyan-400 font-medium leading-[1.6]">
                     {awsArchitectureTiers[activeArchTier].tagline}
                   </p>
                 </div>
 
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   {awsArchitectureTiers[activeArchTier].description}
                 </p>
 
                 {/* Services Grid */}
                 <div className="space-y-3 pt-2 border-t border-slate-200 dark:border-slate-800">
-                  <h4 className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider">
+                  <h4 className="font-sora text-xs font-mono font-medium text-slate-500 uppercase tracking-wider">
                     CORE AWS SERVICES IN THIS TIER:
                   </h4>
                   <div className="space-y-2">
@@ -720,10 +733,10 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                 <span className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold tracking-wider">
                   WELL-ARCHITECTED BLUEPRINT
                 </span>
-                <h4 className="text-xl font-bold text-slate-900 dark:text-white">
+                <h4 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                   Multi-Account AWS Landing Zone &amp; High-Availability Architecture
                 </h4>
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Our target state blueprint leverages AWS Control Tower for automated landing zones, Transit Gateway for hub-and-spoke
                   connectivity, and multi-AZ database clustering to ensure 99.99% operational continuity.
                 </p>
@@ -766,7 +779,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                 Accelerated AWS Migration &amp; Workload Modernization
               </h2>
-              <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Migrating enterprise estates to AWS demands more than a simple lift-and-shift. KNOOVIQ deploys a structured
                 migration factory methodology backed by AWS Migration Acceleration Program (MAP) tooling, automated block-level
                 continuous replication, and database modernization pipelines that eliminate business disruption.
@@ -792,7 +805,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                       <CheckCircle2 className="w-4 h-4 text-[#FF9900]" />
                       <span>{item.title}</span>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-6">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-6 font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -815,7 +828,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                   <div className="text-sm font-semibold mt-0.5">
                     Legacy On-Premises to Modern AWS Cloud Infrastructure
                   </div>
-                  <p className="text-xs text-slate-300 mt-0.5">
+                  <p className="font-sora text-xs text-slate-300 mt-0.5 font-normal leading-[1.6]">
                     Structured discovery, automated wave sequencing, and post-cutover validation.
                   </p>
                 </div>
@@ -839,10 +852,10 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                     {stage.badge}
                   </span>
                 </div>
-                <h4 className="text-sm font-bold text-slate-900 dark:text-white leading-snug">
+                <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white leading-snug">
                   {stage.title}
                 </h4>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   {stage.description}
                 </p>
                 <div className="pt-2 border-t border-slate-200 dark:border-slate-800 text-[11px] font-mono text-slate-500 dark:text-slate-400">
@@ -870,7 +883,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Enterprise AWS Security, Governance &amp; Compliance
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               We design defense-in-depth security architectures that align with the AWS Well-Architected Security Pillar.
               From short-lived credential federation to multi-region KMS encryption and immutable log vaults, your data
               remains protected against emerging threats and sovereign regulatory audits.
@@ -927,7 +940,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                             &bull; {pillar.badge}
                           </span>
                         </div>
-                        <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mt-0.5">
+                        <h4 className="font-sora text-base sm:text-lg font-medium text-slate-900 dark:text-white mt-0.5">
                           {pillar.title}
                         </h4>
                       </div>
@@ -940,7 +953,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
 
                     {isActive && (
                       <div className="px-5 pb-5 pt-1 space-y-3 border-t border-slate-100 dark:border-slate-800/80 text-xs sm:text-sm">
-                        <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                           {pillar.description}
                         </p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1 font-mono text-xs">
@@ -982,7 +995,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                 Modern Application &amp; Platform Engineering on AWS
               </h2>
-              <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Empower your development teams with cloud-native architectures. We design automated container platforms on
                 Amazon EKS, event-driven serverless backends on AWS Lambda, and declarative Terraform GitOps pipelines that
                 accelerate release cycles without sacrificing stability.
@@ -1014,7 +1027,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                   </div>
 
                   <div className="space-y-1">
-                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-lg font-medium text-slate-900 dark:text-white">
                       {card.title}
                     </h3>
                     <div className="text-xs text-cyan-600 dark:text-cyan-400 font-medium">
@@ -1022,7 +1035,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                     </div>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {card.description}
                   </p>
 
@@ -1068,7 +1081,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                   <div className="text-sm font-semibold mt-0.5">
                     Petabyte Analytics with Amazon Redshift &amp; SageMaker
                   </div>
-                  <p className="text-xs text-slate-300 mt-0.5">
+                  <p className="font-sora text-xs text-slate-300 mt-0.5 font-normal leading-[1.6]">
                     Unified data pipelines from raw S3 objects to real-time generative AI inference.
                   </p>
                 </div>
@@ -1083,7 +1096,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                 Enterprise Data Lakes, Analytics &amp; Machine Learning on AWS
               </h2>
-              <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Unlock the full value of your enterprise data. We architect unified data lake foundations on Amazon S3,
                 automated ETL pipelines with AWS Glue, petabyte data warehouses on Amazon Redshift, and secure AI/ML workflows
                 powered by Amazon SageMaker and Bedrock foundation models.
@@ -1105,7 +1118,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                         {svc.category}
                       </span>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-6">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-6 font-normal">
                       {svc.description}
                     </p>
                     <div className="text-[11px] font-mono text-cyan-700 dark:text-cyan-300 pl-6 pt-1">
@@ -1136,7 +1149,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               AWS Reliability, Operations &amp; FinOps Cost Optimization
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Operating at cloud scale requires continuous operational excellence and financial discipline. Our AWS Certified
               SRE and FinOps engineers guarantee 99.99% multi-AZ availability while continuously optimizing compute and storage
               commitments to maximize your return on investment.
@@ -1154,7 +1167,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                   <div className="w-10 h-10 rounded-xl bg-[#FF9900]/10 flex items-center justify-center text-[#FF9900]">
                     <AreaIcon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 dark:text-white">
                     {area.title}
                   </h3>
                   <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-300">
@@ -1176,10 +1189,10 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
               <span className="text-xs font-mono font-bold text-[#FF9900] uppercase tracking-wider">
                 COMPUTE SAVINGS PLANS &amp; GRAVITON MIGRATION
               </span>
-              <h3 className="text-xl sm:text-2xl font-bold">
+              <h3 className="font-sora text-xl sm:text-2xl font-medium">
                 Reduce Your Monthly AWS Compute Bill by Up to 40%
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                 Our FinOps specialists conduct automated rightsizing, eliminate unattached EBS volumes, and structure 1-year/3-year
                 Savings Plans without locking you into obsolete instance families.
               </p>
@@ -1204,7 +1217,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               AWS Engagement &amp; Delivery Approach
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">
               A structured five-phase delivery model designed to take your enterprise from initial workload discovery to continuous 24/7 cloud operations.
             </p>
           </div>
@@ -1235,7 +1248,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                     </div>
 
                     <div>
-                      <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                         {step.name}
                       </h4>
                       <div className="text-xs text-[#00A3E0] dark:text-cyan-400 font-medium">
@@ -1243,7 +1256,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                       </div>
                     </div>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {step.description}
                     </p>
 
@@ -1327,7 +1340,7 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
             Plan Your Next Step with AWS
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 max-w-2xl mx-auto leading-[1.6] font-normal">
             Whether you are planning a cloud migration, modernizing existing applications, or improving an established
             AWS environment, Knooviq can help you define a practical technical roadmap.
           </p>
@@ -1389,10 +1402,10 @@ export const AwsCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
           >
             <div className="flex items-center justify-between pb-3 border-b border-slate-800">
               <div>
-                <h3 className="text-lg font-bold text-white">
+                <h3 className="font-sora text-lg font-medium text-white">
                   {lightboxImage.title}
                 </h3>
-                <p className="text-xs text-slate-400 mt-0.5">
+                <p className="font-sora text-xs text-slate-400 mt-0.5 font-normal leading-[1.6]">
                   {lightboxImage.subtitle}
                 </p>
               </div>

@@ -174,7 +174,7 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
       tagline: 'Systemic risk assessment, structured incident triage, root-cause analysis, and operational learning.',
       description:
         'Reliability engineering relies on structured risk assessment and disciplined learning from operational incidents. We help organizations establish clear incident response workflows, conduct blameless failure analysis, and turn operational findings into preventative engineering safeguards.',
-      image: '/images/cloud/avail_incident_management_wide.jpg?v=2',
+      image: '/images/cloud/avail_incident_management_wide.jpg?v=3',
       points: [
         'Reliability risk assessment identifying architectural vulnerabilities and operational exposures',
         'Structured incident response protocols with defined commander roles and escalation workflows',
@@ -321,7 +321,7 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white cloud-sora-scope">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Immersive Canvas with 16:9 Uncropped HD Visual)
@@ -335,6 +335,8 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
             alt="Availability &amp; Reliability Infrastructure Visual"
             className="w-full h-full object-cover object-right lg:object-center brightness-[1.05] contrast-[1.05]"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
           {/* Subtle directional dark gradient on the left ensures pristine text readability without dimming the robot on the right */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/90 via-45% to-transparent w-full lg:w-[65%]" />
           {/* Bottom subtle edge blend */}
@@ -361,13 +363,22 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12]">
                 Availability &amp; Reliability
               </h1>
-              <p className="text-lg sm:text-xl font-bold text-cyan-300 tracking-tight">
+              <p className="font-sora text-lg sm:text-xl font-medium text-cyan-300 tracking-tight">
                 Stay Resilient. Minimize Downtime. Ensure Continuity.
               </p>
             </div>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/avail_reliability_hero.png"
+                alt="Availability & Reliability - Enterprise Infrastructure Resilience Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
             {/* Description */}
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal max-w-2xl">
               Knooviq helps organizations strengthen application availability and operational resilience through service health assessment, failure prevention, recovery planning, and reliability engineering. We help teams understand operational risks, prepare for disruptions, and build dependable application environments that support business continuity.
             </p>
 
@@ -429,7 +440,7 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Downtime Impacts More Than Systems.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Enterprise applications rely on connected services, infrastructure, data platforms, and external integrations. Failures in one component can affect dependent services, disrupt business processes, and complicate recovery. A structured reliability approach helps organizations understand these risks and prepare appropriate responses.
             </p>
           </div>
@@ -454,15 +465,15 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-[#00A3E0] dark:group-hover:text-cyan-300 transition-colors">
+                      <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white group-hover:text-[#00A3E0] dark:group-hover:text-cyan-300 transition-colors">
                         {challenge.title}
                       </h3>
-                      <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                      <p className="font-sora text-xs font-medium text-slate-500 dark:text-slate-400">
                         {challenge.tagline}
                       </p>
                     </div>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {challenge.description}
                     </p>
                   </div>
@@ -494,7 +505,7 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Building Reliable and Resilient Applications
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Knooviq helps organizations strengthen service continuity by assessing availability risks, improving recovery readiness, and applying practical reliability engineering principles.
             </p>
           </div>
@@ -513,15 +524,15 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[0].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[0].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[0].description}
                   </p>
 
@@ -593,15 +604,15 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[1].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[1].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[1].description}
                   </p>
 
@@ -631,15 +642,15 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[2].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[2].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[2].description}
                   </p>
 
@@ -711,15 +722,15 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[3].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[3].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[3].description}
                   </p>
 
@@ -758,7 +769,7 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               From Risk Assessment to Operational Resilience
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               We follow a structured approach to understand service dependencies, identify failure risks, prepare recovery mechanisms, and continuously improve reliability practices.
             </p>
           </div>
@@ -786,10 +797,10 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
                   </span>
                   <div className={`w-3 h-3 rounded-full ${activeApproachStage === idx ? 'bg-[#00A3E0]' : 'bg-slate-300 dark:bg-slate-700'}`} />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-lg font-medium text-slate-900 dark:text-white">
                   {stage.title}
                 </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 line-clamp-2 leading-relaxed">
+                <p className="font-sora text-xs text-slate-500 dark:text-slate-400 mt-2 line-clamp-2 leading-[1.6] font-normal">
                   {stage.tagline}
                 </p>
               </button>
@@ -803,7 +814,7 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0] block">
                   STAGE {approachStages[activeApproachStage].num} &bull; DETAILED METHODOLOGY
                 </span>
-                <h3 className="text-2xl font-extrabold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-2xl font-extrabold text-slate-900 dark:text-white">
                   {approachStages[activeApproachStage].title}
                 </h3>
               </div>
@@ -812,12 +823,12 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
               </span>
             </div>
 
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               {approachStages[activeApproachStage].description}
             </p>
 
             <div className="space-y-3 pt-2">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+              <h4 className="font-sora text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 Key Engineering &amp; Operational Activities:
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -877,25 +888,25 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Availability &amp; Reliability Across Your Environment
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Reliability depends on how applications, infrastructure, databases, integrations, and recovery mechanisms work together. Knooviq helps organizations evaluate these relationships and develop appropriate continuity practices across their technology landscape.
             </p>
           </div>
 
           {/* Wide Technical Illustration */}
-          <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-2xl bg-slate-900 aspect-[21/9] sm:aspect-[16/7] group">
+          <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-2xl bg-slate-900 aspect-square sm:aspect-[16/7] lg:aspect-[21/9] group">
             <img
               src="/images/cloud/avail_across_environments.jpg"
               alt="Multi-tier enterprise availability architecture showing relationships between applications, load balancing, compute, storage, recovery, and business users"
               className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050B17]/95 via-[#050B17]/40 to-transparent pointer-events-none" />
-            <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-[#070E1E]/90 backdrop-blur-md border border-white/15 flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs text-slate-300">
+            <div className="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#070E1E]/90 backdrop-blur-md border border-white/15 flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4 text-xs text-slate-300">
               <div className="space-y-0.5">
-                <span className="font-bold text-white text-sm">Unified Enterprise Continuity Fabric</span>
-                <p className="text-slate-300 text-xs">Applications &bull; Load Distribution &bull; Compute Nodes &bull; Persistent Storage &bull; Recovery Systems</p>
+                <span className="font-bold text-white text-xs sm:text-sm block">Unified Enterprise Continuity Fabric</span>
+                <p className="font-sora text-slate-300 text-[11px] sm:text-xs font-normal leading-[1.6]">Applications &bull; Load Distribution &bull; Compute Nodes &bull; Persistent Storage &bull; Recovery Systems</p>
               </div>
-              <span className="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-400/20 text-cyan-300 font-bold shrink-0">
+              <span className="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-400/20 text-cyan-300 font-bold shrink-0 text-center text-xs">
                 End-to-End Resilience Topology
               </span>
             </div>
@@ -916,10 +927,10 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
                 </div>
 
                 <div className="space-y-2">
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     {env.name}
                   </h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {env.description}
                   </p>
                 </div>
@@ -928,7 +939,7 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
                   <span className="text-[11px] font-bold text-slate-500 dark:text-slate-400 block">
                     Continuity &amp; Recovery Focus:
                   </span>
-                  <p className="text-xs text-slate-700 dark:text-slate-200 font-medium">
+                  <p className="font-sora text-xs text-slate-700 dark:text-slate-200 font-medium leading-[1.6]">
                     {env.focus}
                   </p>
                 </div>
@@ -954,7 +965,7 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Stronger Reliability. Greater Confidence.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Availability and reliability practices deliver predictable operational stability and confidence across engineering, IT operations, and executive leadership.
             </p>
           </div>
@@ -974,11 +985,11 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
                     <Icon className="w-5 h-5" />
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     {outcome.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {outcome.description}
                   </p>
 
@@ -1018,7 +1029,7 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
                 Build Resilient Applications for What's Next.
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                 Strengthen service continuity, improve recovery readiness, and develop a practical reliability strategy aligned with your application landscape.
               </p>
             </div>

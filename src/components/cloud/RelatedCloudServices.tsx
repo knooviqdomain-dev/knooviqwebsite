@@ -134,13 +134,13 @@ export const RelatedCloudServices: React.FC<RelatedCloudServicesProps> = ({ curr
   }).slice(0, limit);
 
   return (
-    <section className="py-16 bg-slate-50 dark:bg-[#070E1E] border-b border-slate-200 dark:border-white/10 transition-colors">
+    <section className="py-12 sm:py-16 bg-slate-50 dark:bg-[#070E1E] border-b border-slate-200 dark:border-white/10 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div>
           <span className="text-xs font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
             COMPLEMENTARY CAPABILITIES
           </span>
-          <h3 className="text-2xl font-black text-slate-900 dark:text-white tracking-tight mt-1">
+          <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white tracking-tight mt-1">
             Related Cloud &amp; Operations Practices
           </h3>
         </div>
@@ -162,10 +162,10 @@ export const RelatedCloudServices: React.FC<RelatedCloudServicesProps> = ({ curr
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
-                  <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     {s.title}
                   </h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-sm text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {s.description}
                   </p>
                 </div>

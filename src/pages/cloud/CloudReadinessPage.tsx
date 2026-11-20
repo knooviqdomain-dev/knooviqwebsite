@@ -18,7 +18,6 @@ import {
   Network,
   Cpu,
   Workflow,
-  Sparkles,
   ChevronDown,
   ChevronUp,
   AlertCircle,
@@ -480,96 +479,67 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
   ];
 
   return (
-    <div className="bg-white dark:bg-[#070E1C] text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div className="relative w-full max-w-full overflow-x-clip min-h-screen bg-white dark:bg-[#070E1C] text-slate-900 dark:text-slate-100 transition-colors duration-300 cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 2: HERO SECTION (Cinematic Architectural Hero - Unified Knooviq Suite Format)
          ========================================================================= */}
-      <section className="relative w-full min-h-[540px] sm:min-h-[560px] lg:min-h-[580px] flex items-center overflow-hidden bg-[#040B17] text-white border-b border-slate-200/20 dark:border-white/10 shadow-2xl py-10 sm:py-12 lg:py-14">
+      <section className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 overflow-hidden bg-black text-white">
         
-        {/* Full-Bleed Enterprise Background Image */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Full-Bleed 16:9 Panoramic Image - Zero Cropping on Subject */}
+        <div className="absolute inset-0 z-0">
           <img 
             src="/images/cloud/cloud_readiness_hero.jpg" 
-            alt="Knooviq Cloud Readiness Consulting and Architecture Assessment" 
-            className="w-full h-full object-cover object-right"
+            alt="Assess. Plan. Prepare. Accelerate." 
+            className="w-full h-full object-cover object-right sm:object-[78%_center] lg:object-center brightness-105 contrast-[1.02]"
           />
-          {/* Subtle smooth gradient on the left edge for text legibility while keeping the cloud graphic 100% luminous and crystal clear */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#040B17]/85 via-[#040B17]/35 to-transparent pointer-events-none" />
-          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#040B17] to-transparent pointer-events-none" />
-
-          {/* Top Hairline Accent */}
-          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0] to-transparent" />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#040B17]/95 via-[#040B17]/90 to-[#040B17] pointer-events-none" />
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="max-w-3xl space-y-2.5 sm:space-y-3">
-            
-            {/* Category Dash & Tag */}
-            <div className="flex flex-wrap items-center gap-2">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-cyan-400/30 text-[11px] font-mono font-bold uppercase tracking-wider text-cyan-300 shadow-xl">
-                <Sparkles className="w-3.5 h-3.5 text-[#00A3E0]" />
-                <span>CLOUD STRATEGY &amp; ADVISORY</span>
-              </div>
-              <span className="text-slate-400 text-xs font-mono">/</span>
-              <span className="text-[11px] font-mono font-bold text-slate-300 uppercase tracking-wider bg-black/30 px-2.5 py-0.5 rounded-full border border-white/10 backdrop-blur-sm shadow-md">
-                CLOUD READINESS ASSESSMENT
-              </span>
+          <div className="max-w-2xl lg:max-w-xl space-y-5 sm:space-y-6 relative">
+            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none hidden sm:block" />
+
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/25 text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider backdrop-blur-md">
+              <Compass className="w-3.5 h-3.5 text-[#00A3E0]" />
+              <span>CLOUD STRATEGY &amp; ADVISORY</span>
             </div>
 
-            {/* Hero Title */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-white leading-[1.18]">
-              Assess. Plan. Prepare. Accelerate.
-            </h1>
+            <div className="space-y-2 sm:space-y-3">
+              <span className="block text-xs sm:text-sm font-mono font-semibold uppercase tracking-wider text-[#00A3E0]">
+                Cloud Readiness Assessment
+              </span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
+                Assess. Plan. Prepare. Accelerate.
+              </h1>
+            </div>
 
-            {/* Subtitle / Strategic Narrative */}
-            <p className="text-base sm:text-lg font-normal text-slate-200 leading-relaxed max-w-2xl mt-3">
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img 
+                src="/images/cloud/cloud_readiness_hero.jpg" 
+                alt="Assess. Plan. Prepare. Accelerate. - Cloud Readiness Architecture Blueprint" 
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl pt-1">
               Knooviq systematically evaluates existing enterprise IT infrastructure, applications, data stores, security perimeters, operating workflows, and organizational skills before cloud adoption. We uncover hidden technical debt, quantify migration risks, and design a validated roadmap to ensure seamless, predictable modernization with zero core business disruption.
             </p>
 
-            {/* Architectural Feature Checkpoints */}
-            <div className="flex flex-wrap items-center gap-2 pt-0.5">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/35 backdrop-blur-md border border-white/15 text-[11px] font-medium text-slate-200 shadow-lg">
-                <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
+            {/* Badges */}
+            <div className="flex flex-wrap items-center gap-3 pt-1">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-950/70 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-cyan-200 shadow-lg">
+                <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
                 <span>Agentless IT Discovery</span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/35 backdrop-blur-md border border-white/15 text-[11px] font-medium text-slate-200 shadow-lg">
-                <Zap className="w-3.5 h-3.5 text-amber-400" />
-                <span>Objective 7 R’s Framework</span>
-              </span>
-              <span className="inline-flex items-center gap-2.5 px-2.5 py-1 rounded-full bg-black/35 backdrop-blur-md border border-white/15 text-[11px] font-medium text-slate-200 shadow-lg">
-                <Database className="w-3.5 h-3.5 text-[#00A3E0]" />
-                <span>Zero Disruption Assurance</span>
-              </span>
-            </div>
-
-            {/* Strategic Content Blocks (Pure Information - Zero Clutter) */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-0.5">
-              <div className="px-3 py-2 rounded-xl bg-black/35 backdrop-blur-md border border-white/15 shadow-md">
-                <div className="flex items-center gap-1.5 mb-0.5">
-                  <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
-                  <span className="text-[10.5px] font-mono font-bold uppercase text-white">
-                    AGENTLESS IT DISCOVERY
-                  </span>
-                </div>
-                <p className="text-[11px] text-slate-300 leading-snug font-normal">
-                  Single Source of Full-Stack Telemetry &amp; Workload Dependencies
-                </p>
               </div>
-
-              <div className="px-3 py-2 rounded-xl bg-black/35 backdrop-blur-md border border-white/15 shadow-md">
-                <div className="flex items-center gap-1.5 mb-0.5">
-                  <Activity className="w-3.5 h-3.5 text-amber-400" />
-                  <span className="text-[10.5px] font-mono font-bold uppercase text-white">
-                    FINOPS &amp; 7 R’S ROADMAP
-                  </span>
-                </div>
-                <p className="text-[11px] text-slate-300 leading-snug font-normal">
-                  Deterministic 3-Year TCO Modeling &amp; Migration Economics
-                </p>
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-950/70 backdrop-blur-md border border-white/15 text-xs font-mono font-bold text-emerald-200 shadow-lg">
+                <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span>Deterministic 7-Rs Framework</span>
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -614,24 +584,24 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
           {/* Discovery & Readiness Telemetry Bar */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 p-5 rounded-2xl bg-white dark:bg-[#0B1528] border border-slate-200 dark:border-white/10 shadow-sm font-mono text-xs">
             <div className="space-y-1 border-r border-slate-100 dark:border-white/5 pr-4 last:border-0">
-              <span className="text-slate-500 dark:text-slate-400 uppercase text-[10px] block font-bold">Discovery Scope</span>
+              <span className="text-slate-700 dark:text-slate-300 uppercase text-[10px] block font-bold">Discovery Scope</span>
               <span className="text-slate-900 dark:text-white font-black text-sm sm:text-base block">100% IT Assets</span>
-              <span className="text-slate-500 dark:text-slate-400 text-[11px] block font-sans">Full Stack &amp; Dependencies</span>
+              <span className="text-slate-800 dark:text-slate-200 text-[11px] block font-sans font-medium">Full Stack &amp; Dependencies</span>
             </div>
             <div className="space-y-1 border-r border-slate-100 dark:border-white/5 pr-4 last:border-0">
-              <span className="text-slate-500 dark:text-slate-400 uppercase text-[10px] block font-bold">Workload Decision</span>
-              <span className="text-[#00A3E0] font-black text-sm sm:text-base block">7 R’s Framework</span>
-              <span className="text-slate-500 dark:text-slate-400 text-[11px] block font-sans">Deterministic Classification</span>
+              <span className="text-slate-700 dark:text-slate-300 uppercase text-[10px] block font-bold">Workload Decision</span>
+              <span className="text-[#0070C0] dark:text-cyan-400 font-black text-sm sm:text-base block">7 R’s Framework</span>
+              <span className="text-slate-800 dark:text-slate-200 text-[11px] block font-sans font-medium">Deterministic Classification</span>
             </div>
             <div className="space-y-1 border-r border-slate-100 dark:border-white/5 pr-4 last:border-0">
-              <span className="text-slate-500 dark:text-slate-400 uppercase text-[10px] block font-bold">Business Case</span>
+              <span className="text-slate-700 dark:text-slate-300 uppercase text-[10px] block font-bold">Business Case</span>
               <span className="text-slate-900 dark:text-white font-black text-sm sm:text-base block">3-Year TCO Model</span>
-              <span className="text-slate-500 dark:text-slate-400 text-[11px] block font-sans">CapEx vs OpEx Projection</span>
+              <span className="text-slate-800 dark:text-slate-200 text-[11px] block font-sans font-medium">CapEx vs OpEx Projection</span>
             </div>
             <div className="space-y-1">
-              <span className="text-slate-500 dark:text-slate-400 uppercase text-[10px] block font-bold">Production Impact</span>
-              <span className="text-emerald-500 font-black text-sm sm:text-base block">Zero Disruption</span>
-              <span className="text-slate-500 dark:text-slate-400 text-[11px] block font-sans">Agentless Telemetry Probes</span>
+              <span className="text-slate-700 dark:text-slate-300 uppercase text-[10px] block font-bold">Production Impact</span>
+              <span className="text-emerald-600 dark:text-emerald-400 font-black text-sm sm:text-base block">Zero Disruption</span>
+              <span className="text-slate-800 dark:text-slate-200 text-[11px] block font-sans font-medium">Agentless Telemetry Probes</span>
             </div>
           </div>
 
@@ -643,7 +613,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Build a Strong Foundation for Your Cloud Journey
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
               Moving workloads to the cloud without an objective readiness assessment leads to unexpected cost blowouts, stalled migration waves, compliance violations, and post-cutover performance degradation. Knooviq establishes certainty before a single server is migrated.
             </p>
           </div>
@@ -662,22 +632,22 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                       <div className="w-10 h-10 rounded-xl bg-[#00A3E0]/10 dark:bg-cyan-500/10 flex items-center justify-center text-[#00A3E0] group-hover:scale-110 transition-transform">
                         <Icon className="w-5 h-5" />
                       </div>
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-100 dark:bg-white/5 text-slate-700 dark:text-slate-300">
                         {cap.tag}
                       </span>
                     </div>
 
                     <div className="space-y-2">
-                      <h3 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-[#00A3E0] transition-colors">
+                      <h3 className="font-sora text-lg font-medium text-slate-900 dark:text-white group-hover:text-[#00A3E0] transition-colors">
                         {cap.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
                         {cap.description}
                       </p>
                     </div>
                   </div>
 
-                  <div className="pt-4 mt-4 border-t border-slate-100 dark:border-white/5 flex items-center justify-between text-xs font-mono text-slate-400">
+                  <div className="pt-4 mt-4 border-t border-slate-100 dark:border-white/5 flex items-center justify-between text-xs font-mono text-slate-700 dark:text-slate-300 font-semibold">
                     <span>CAPABILITY 0{idx + 1}</span>
                     <Check className="w-4 h-4 text-[#00A3E0]" />
                   </div>
@@ -692,10 +662,10 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
               <span className="text-xs font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                 ENTERPRISE READINESS INSIGHT
               </span>
-              <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+              <h4 className="font-sora text-base sm:text-lg font-medium text-slate-900 dark:text-white">
                 Eliminate Cloud Migration Surprises Before Deployment
               </h4>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
                 Organizations that conduct structured technical and organizational assessments experience up to 45% lower post-migration operating expenses and complete cutovers without rollback cycles.
               </p>
             </div>
@@ -737,7 +707,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
                 Cloud Readiness Assessment Areas
               </h2>
-              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
                 Knooviq examines your enterprise landscape across six interdependent dimensions. Our structured framework evaluates technical feasibility, operational maturity, and governance readiness to form a complete architectural picture.
               </p>
             </div>
@@ -786,23 +756,23 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between">
                         <span className={`text-[10px] font-mono font-bold uppercase tracking-wider ${
-                          isActive ? 'text-[#00A3E0]' : 'text-slate-400'
+                          isActive ? 'text-[#0070C0] dark:text-cyan-400' : 'text-slate-600 dark:text-slate-400'
                         }`}>
                           DIMENSION {area.number}
                         </span>
                         {isActive && (
-                          <span className="text-[10px] font-bold text-[#00A3E0] bg-[#00A3E0]/10 px-2 py-0.5 rounded-full flex items-center gap-1">
+                          <span className="text-[10px] font-bold text-[#0070C0] dark:text-cyan-300 bg-[#00A3E0]/15 px-2 py-0.5 rounded-full flex items-center gap-1">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#00A3E0] animate-ping" />
                             Active
                           </span>
                         )}
                       </div>
                       <h3 className={`text-sm sm:text-base font-bold mt-0.5 transition-colors ${
-                        isActive ? 'text-slate-900 dark:text-white' : 'text-slate-700 dark:text-slate-300'
+                        isActive ? 'text-slate-900 dark:text-white' : 'text-slate-900 dark:text-slate-100'
                       }`}>
                         {area.title}
                       </h3>
-                      <p className="text-xs text-slate-500 dark:text-slate-400 truncate mt-1">
+                      <p className="font-sora text-xs text-slate-700 dark:text-slate-300 truncate mt-1 font-medium leading-[1.6]">
                         {area.scope}
                       </p>
                     </div>
@@ -817,7 +787,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                 const selected = assessmentAreas[activeAssessmentArea];
                 const Icon = selected.icon;
                 return (
-                  <div key={selected.id} className="p-6 sm:p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1528] border border-slate-200 dark:border-white/10 space-y-6 animate-in fade-in duration-300">
+                  <div key={selected.id} className="p-6 sm:p-8 rounded-3xl bg-slate-50 dark:bg-[#0B1528] border border-slate-300/80 dark:border-white/10 space-y-6 animate-in fade-in duration-300 shadow-sm">
                     
                     {/* Diagnostic Card Header */}
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200 dark:border-white/10">
@@ -826,39 +796,39 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                           <Icon className="w-6 h-6" />
                         </div>
                         <div>
-                          <span className="text-xs font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
+                          <span className="text-xs font-mono font-bold text-[#0070C0] dark:text-cyan-400 uppercase tracking-wider block">
                             ASSESSMENT DOMAIN {selected.number}
                           </span>
-                          <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+                          <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white">
                             {selected.title}
                           </h3>
                         </div>
                       </div>
 
-                      <div className="text-right sm:block">
-                        <span className="text-[11px] font-mono text-slate-400 block uppercase">Scope Focus</span>
-                        <span className="text-xs font-bold text-slate-700 dark:text-slate-300">{selected.scope}</span>
+                      <div className="text-left sm:text-right sm:block">
+                        <span className="text-[11px] font-mono text-slate-700 dark:text-slate-300 font-bold block uppercase">Scope Focus</span>
+                        <span className="text-xs font-bold text-slate-900 dark:text-slate-100">{selected.scope}</span>
                       </div>
                     </div>
 
                     {/* Overview Description */}
-                    <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] dark:text-slate-200 font-normal leading-[1.6]">
                       {selected.overview}
                     </p>
 
                     {/* Key Technical Evaluations */}
                     <div className="space-y-3 pt-2">
-                      <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-xs font-mono font-medium uppercase tracking-wider text-slate-900 dark:text-white">
                         CORE EVALUATION CHECKPOINTS
                       </h4>
                       <div className="space-y-2.5">
                         {selected.keyEvaluations.map((item, idx) => (
                           <div
                             key={idx}
-                            className="p-3.5 rounded-xl bg-white dark:bg-[#070E1E] border border-slate-200/80 dark:border-white/5 flex items-start gap-3"
+                            className="p-3.5 rounded-xl bg-white dark:bg-[#070E1E] border border-slate-300 dark:border-white/10 shadow-sm flex items-start gap-3"
                           >
-                            <CheckCircle2 className="w-4 h-4 text-[#00A3E0] shrink-0 mt-0.5" />
-                            <span className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                            <CheckCircle2 className="w-4 h-4 text-[#0070C0] dark:text-cyan-400 shrink-0 mt-0.5" />
+                            <span className="text-xs sm:text-sm text-slate-900 dark:text-slate-100 font-medium leading-[1.6]">
                               {item}
                             </span>
                           </div>
@@ -868,20 +838,20 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
 
                     {/* Methodology & Deliverable Outcome */}
                     <div className="pt-4 border-t border-slate-200 dark:border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-                      <div className="p-4 rounded-xl bg-white dark:bg-[#070E1E] border border-slate-200/70 dark:border-white/5 space-y-1">
-                        <span className="font-mono font-bold text-slate-400 uppercase tracking-wider block text-[10px]">
+                      <div className="p-4 rounded-xl bg-white dark:bg-[#070E1E] border border-slate-300 dark:border-white/10 shadow-sm space-y-1">
+                        <span className="font-mono font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider block text-[11px]">
                           EVALUATION METHODOLOGY
                         </span>
-                        <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <p className="font-sora text-[#102A43] dark:text-slate-200 leading-[1.6] font-medium">
                           {selected.methodology}
                         </p>
                       </div>
 
-                      <div className="p-4 rounded-xl bg-white dark:bg-[#070E1E] border border-slate-200/70 dark:border-white/5 space-y-1">
-                        <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block text-[10px]">
+                      <div className="p-4 rounded-xl bg-white dark:bg-[#070E1E] border border-slate-300 dark:border-white/10 shadow-sm space-y-1">
+                        <span className="font-mono font-bold text-[#0070C0] dark:text-cyan-400 uppercase tracking-wider block text-[11px]">
                           DIAGNOSTIC ARTIFACT
                         </span>
-                        <p className="font-bold text-slate-900 dark:text-white">
+                        <p className="font-sora font-bold text-slate-900 dark:text-white leading-[1.6]">
                           {selected.outcomeMetric}
                         </p>
                       </div>
@@ -911,7 +881,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               A Structured Path to Cloud Confidence
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
               Knooviq executes a five-stage readiness assessment framework engineered for enterprise rigor. We turn ambiguous IT landscapes into deterministic migration programs backed by empirical data.
             </p>
           </div>
@@ -950,7 +920,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                         }`}>
                           {step.title}
                         </h3>
-                        <p className="text-xs text-slate-500 line-clamp-2">
+                        <p className="font-sora text-xs text-slate-700 dark:text-slate-300 line-clamp-2 font-medium leading-[1.6]">
                           {step.lead}
                         </p>
                       </div>
@@ -971,7 +941,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                 className={`px-4 py-2 rounded-xl text-xs font-bold font-mono shrink-0 transition-colors ${
                   activeApproachStep === idx
                     ? 'bg-[#00A3E0] text-white'
-                    : 'bg-white dark:bg-[#0B1528] text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-white/10'
+                    : 'bg-white dark:bg-[#0B1528] text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-white/10'
                 }`}
               >
                 {step.step} — {step.title}
@@ -990,7 +960,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                     <span className="text-xs font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                       STAGE {current.step} EXECUTION DETAIL
                     </span>
-                    <h3 className="text-2xl font-black text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white">
                       Step {current.step} — {current.title}: {current.lead}
                     </h3>
                   </div>
@@ -999,25 +969,25 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                   </span>
                 </div>
 
-                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
                   {current.description}
                 </p>
 
                 {/* Key Activities */}
                 <div className="space-y-3">
-                  <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 dark:text-white">
+                  <h4 className="font-sora text-xs font-mono font-medium uppercase tracking-wider text-slate-900 dark:text-white">
                     CORE ACTIVITIES &amp; WORKSTREAMS
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {current.activities.map((act, idx) => (
                       <div
                         key={idx}
-                        className="p-4 rounded-2xl bg-slate-50 dark:bg-[#070E1E] border border-slate-200/80 dark:border-white/5 flex items-start gap-3"
+                        className="p-4 rounded-2xl bg-slate-50 dark:bg-[#070E1E] border border-slate-300 dark:border-white/10 shadow-sm flex items-start gap-3"
                       >
                         <div className="w-5 h-5 rounded-full bg-[#00A3E0]/10 text-[#00A3E0] flex items-center justify-center font-mono text-[10px] font-bold shrink-0 mt-0.5">
                           {idx + 1}
                         </div>
-                        <span className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                        <span className="text-xs sm:text-sm text-slate-900 dark:text-slate-100 font-medium leading-[1.5]">
                           {act}
                         </span>
                       </div>
@@ -1030,7 +1000,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                   <CheckCircle2 className="w-5 h-5 text-[#00A3E0] shrink-0" />
                   <div className="text-xs sm:text-sm">
                     <span className="font-bold text-slate-900 dark:text-white">Target Milestone: </span>
-                    <span className="text-slate-600 dark:text-slate-300">{current.milestone}</span>
+                    <span className="text-slate-900 dark:text-slate-100 font-medium">{current.milestone}</span>
                   </div>
                 </div>
 
@@ -1080,7 +1050,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight">
                 What Your Readiness Assessment Delivers
               </h2>
-              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
                 Our assessment concludes with comprehensive, board-ready architectural documentation and technical workbooks that serve as the single source of truth for your cloud transformation.
               </p>
             </div>
@@ -1118,7 +1088,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                         0{idx + 1}
                       </div>
                       <span className={`text-xs sm:text-sm font-semibold truncate transition-colors ${
-                        isActive ? 'text-slate-900 dark:text-white' : 'text-slate-700 dark:text-slate-300'
+                        isActive ? 'text-slate-900 dark:text-white' : 'text-slate-900 dark:text-slate-100'
                       }`}>
                         {item.title}
                       </span>
@@ -1152,7 +1122,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                             DELIVERABLE 0{activeDeliverableTab + 1}
                           </span>
                         </div>
-                        <h3 className="text-xl sm:text-2xl font-semibold text-slate-900 dark:text-white">
+                        <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white">
                           {activeDoc.title}
                         </h3>
                       </div>
@@ -1163,23 +1133,23 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                     </div>
 
                     {/* Summary Narrative */}
-                    <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
                       {activeDoc.summary}
                     </p>
 
                     {/* Deliverable Inclusions */}
                     <div className="space-y-3 pt-2">
-                      <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-xs font-mono font-medium uppercase tracking-wider text-slate-900 dark:text-white">
                         TECHNICAL CONTENT INCLUDED IN THIS ARTIFACT
                       </h4>
                       <div className="space-y-2.5">
                         {activeDoc.highlights.map((point, idx) => (
                           <div
                             key={idx}
-                            className="p-3.5 rounded-xl bg-white dark:bg-[#070E1E] border border-slate-200/80 dark:border-white/5 flex items-start gap-3"
+                            className="p-3.5 rounded-xl bg-white dark:bg-[#070E1E] border border-slate-300 dark:border-white/10 shadow-sm flex items-start gap-3"
                           >
                             <CheckCircle2 className="w-4 h-4 text-[#00A3E0] shrink-0 mt-0.5" />
-                            <span className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                            <span className="text-xs sm:text-sm text-slate-900 dark:text-slate-100 font-medium leading-[1.5]">
                               {point}
                             </span>
                           </div>
@@ -1188,7 +1158,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                     </div>
 
                     {/* Standardized Governance Footer */}
-                    <div className="pt-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs text-slate-500 font-mono">
+                    <div className="pt-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs text-slate-700 dark:text-slate-300 font-mono font-medium">
                       <span>Standard Formats: PDF, XLSX, Draw.io / Visio</span>
                       <span className="text-[#00A3E0] font-bold">Executive Board Ready</span>
                     </div>
@@ -1225,7 +1195,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
             <div className="relative z-10 p-8 sm:p-12 lg:p-16 space-y-8 max-w-3xl">
               
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00A3E0]/15 border border-[#00A3E0]/30 text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5 text-[#00A3E0]" />
+                <Compass className="w-3.5 h-3.5 text-[#00A3E0]" />
                 <span>EXECUTIVE ADVISORY WORKSHOP</span>
               </div>
 
@@ -1233,7 +1203,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
                   Ready to Understand Your Cloud Readiness?
                 </h2>
-                <p className="text-sm sm:text-base lg:text-lg text-slate-300 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] lg:text-lg text-slate-300 leading-[1.6] font-normal">
                   Identify your cloud adoption priorities, address readiness gaps, and establish a clear path toward a secure and well-planned cloud environment.
                 </p>
               </div>
@@ -1316,16 +1286,16 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white dark:bg-white/5 text-slate-600 dark:text-slate-400">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white dark:bg-white/5 text-slate-700 dark:text-slate-300">
                       {service.badge}
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     {service.title}
                   </h3>
 
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] font-normal">
                     {service.description}
                   </p>
                 </div>
@@ -1342,14 +1312,14 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
       <section className="py-20 bg-slate-50 dark:bg-[#050B17] transition-colors">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           
-          <div className="text-center space-y-3">
+          <div className="text-left space-y-3">
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#00A3E0] block">
               READINESS CLARITY
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
               Frequently Asked Questions
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-800 dark:text-slate-200 leading-[1.6] max-w-xl font-normal">
               Answers to common executive and technical questions regarding Knooviq&apos;s Cloud Readiness Assessment engagement.
             </p>
           </div>
@@ -1376,7 +1346,7 @@ export const CloudReadinessPage: React.FC<CloudReadinessPageProps> = ({ onOpenCo
                   </button>
 
                   {isOpen && (
-                    <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-white/5">
+                    <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-900 dark:text-slate-100 font-normal leading-[1.6] border-t border-slate-100 dark:border-white/5">
                       {faq.a}
                     </div>
                   )}

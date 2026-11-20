@@ -532,7 +532,7 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] cloud-sora-scope selection:text-white font-sans antialiased overflow-x-hidden">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Panoramic Background - Aligned with AI Agents)
@@ -548,6 +548,10 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
             style={{ imageRendering: '-webkit-optimize-contrast' }}
           />
         </div>
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
 
         {/* Lighter Directional Scrim - Reduced Blue Shade for Maximum Image Clarity */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-r from-slate-950/75 via-slate-950/35 to-transparent pointer-events-none" />
@@ -571,8 +575,18 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                 </span>
               </h1>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/process_mining_execution_hero.jpg"
+                alt="Enterprise Process Mining & Automated Execution - Architecture Blueprint"
+                className="w-full h-full object-cover object-right"
+              />
+            </div>
+
+
               {/* Sub-headline */}
-              <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Transform enterprise transaction trails into actionable operational intelligence. Bridge SAP S/4HANA systems, uncover systemic friction points, and automate closed-loop process execution.
               </p>
             </motion.div>
@@ -612,11 +626,11 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                 Transitioning from Process Visibility to <span className="text-[#0070C0]">Autonomous Optimization</span>
               </h2>
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Process mining is no longer a diagnostic snapshot; it is an active operational nervous system that detects workflow anomalies and triggers real-time execution remediation.&rdquo;
                 </p>
               </div>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq elevates process mining from passive analysis to continuous operational action. By interlinking multi-object transactional data across ERP cores, supply chain systems, and digital customer channels, we empower teams to eliminate operational debt systematically.
               </p>
 
@@ -626,8 +640,8 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                     <Database className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Object-Centric Process Mining</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Object-Centric Process Mining</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Transcends traditional single-identifier limitations by modeling one-to-many and many-to-many relationships across business objects.
                     </p>
                   </div>
@@ -638,8 +652,8 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Automated Conformance Checking</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Automated Conformance Checking</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Compares real-world execution against authorized standard operating procedures to flag non-compliant steps and audit deviations.
                     </p>
                   </div>
@@ -650,8 +664,8 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                     <Zap className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Closed-Loop Action Execution</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Closed-Loop Action Execution</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Connects mining telemetry directly with SAP BTP, RPA agents, and API webhooks to trigger immediate resolution workflows.
                     </p>
                   </div>
@@ -678,7 +692,7 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                 </div>
                 <div className="absolute bottom-3 left-3 right-3 text-white space-y-1">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-medium line-clamp-2 leading-relaxed">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-medium line-clamp-2 leading-[1.6]">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -727,7 +741,7 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Operational Vulnerabilities Across Enterprise Flows
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Siloed departmental systems and unmonitored execution pathways compound operational waste and diminish profitability.
             </p>
           </div>
@@ -749,10 +763,10 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-950 leading-snug group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-950 leading-snug group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -801,7 +815,7 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
               Ecosystem for Continuous Process Mining
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto font-normal">
+            <p className="font-sora text-slate-400 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized radial platform uniting multi-object event log ingestion, digital twin synthesis, conformance checking, and automated closed-loop remediation.
             </p>
 
@@ -864,8 +878,7 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                             {item.badge}
                           </span>
                         </div>
-                        <h4 
-                          className="text-xs sm:text-[13px] font-bold tracking-tight text-white truncate transition-colors"
+                        <h4 className="font-sora text-xs sm:text-[13px] font-medium tracking-tight text-white truncate transition-colors"
                           style={{ color: isHovered ? item.color : undefined }}
                         >
                           {item.title}
@@ -977,7 +990,7 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                           <div className="text-xs font-black text-white leading-tight">
                             {wheelSegments[hoveredWheelIndex].title}
                           </div>
-                          <p className="text-[10px] text-slate-300 line-clamp-2 leading-tight">
+                          <p className="font-sora text-[10px] text-slate-300 line-clamp-2 leading-tight font-normal">
                             {wheelSegments[hoveredWheelIndex].desc}
                           </p>
                         </div>
@@ -1059,8 +1072,7 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                             {item.badge}
                           </span>
                         </div>
-                        <h4 
-                          className="text-xs sm:text-[13px] font-bold tracking-tight text-white truncate transition-colors"
+                        <h4 className="font-sora text-xs sm:text-[13px] font-medium tracking-tight text-white truncate transition-colors"
                           style={{ color: isHovered ? item.color : undefined }}
                         >
                           {item.title}
@@ -1097,8 +1109,8 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                     </span>
                     <ItemIcon className="w-4 h-4" style={{ color: item.color }} />
                   </div>
-                  <h4 className="text-sm font-bold text-white">{item.title}</h4>
-                  <p className="text-xs text-slate-400 leading-relaxed">{item.desc}</p>
+                  <h4 className="font-sora text-sm font-medium text-white">{item.title}</h4>
+                  <p className="font-sora text-xs text-slate-400 leading-[1.6] font-normal">{item.desc}</p>
                   <div className="text-[10px] font-mono text-cyan-300 pt-1 border-t border-white/5">
                     {item.metric}
                   </div>
@@ -1123,7 +1135,7 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Enterprise Process Mining Architecture
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Engineered for seamless interoperability with SAP S/4HANA, Salesforce, and multi-cloud data lakes without production overhead.
             </p>
           </div>
@@ -1179,13 +1191,13 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                   <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-[#0070C0] text-white text-[9.5px] font-mono font-bold uppercase tracking-wider">
                     ARCHITECTURAL LAYER
                   </div>
-                  <h3 className="text-sm font-bold text-slate-950 leading-snug">
+                  <h3 className="font-sora text-sm font-medium text-slate-950 leading-snug">
                     {layer.title}
                   </h3>
                   <div className="text-[11px] font-semibold text-[#0070C0]">
                     {layer.subtitle}
                   </div>
-                  <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                     {layer.desc}
                   </p>
                 </div>
@@ -1220,7 +1232,7 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Pre-Built Process Mining Accelerators
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Domain-specific process mining models pre-mapped to SAP S/4HANA transactional tables and standard enterprise value streams.
             </p>
           </div>
@@ -1271,12 +1283,12 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                         <div className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider mb-1">
                           {sol.categoryLabel}
                         </div>
-                        <h3 className="text-lg sm:text-xl font-black text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
                       </div>
 
-                      <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                      <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                         {sol.description}
                       </p>
                     </div>
@@ -1315,7 +1327,7 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Enterprise Value Delivered at Scale
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Architectural and governance outcomes realized across global manufacturing, logistics, and corporate shared services.
             </p>
           </div>
@@ -1330,7 +1342,7 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                   <div className="text-lg font-black text-slate-950">Accelerated Cycle Velocity</div>
                   <div className="text-xs font-semibold text-[#0070C0]">Continuous Lead-Time Compression</div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Eliminates procedural wait states, queues, and cross-functional friction across Order-to-Cash and Procure-to-Pay fulfillment pipelines.
                 </p>
               </div>
@@ -1348,7 +1360,7 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                   <div className="text-lg font-black text-slate-950">Deterministic Governance</div>
                   <div className="text-xs font-semibold text-emerald-600">Policy Conformance & SOX Assurance</div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Replaces unapproved spreadsheet bypasses and shadow workflows with fully audited, compliant standard execution paths.
                 </p>
               </div>
@@ -1366,7 +1378,7 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                   <div className="text-lg font-black text-slate-950">Working Capital Protection</div>
                   <div className="text-xs font-semibold text-cyan-600">Frictionless Invoicing & Cash Capture</div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Ensures timely capture of supplier payment terms discounts, prevents overpayments, and halts revenue leakage across invoicing.
                 </p>
               </div>
@@ -1384,7 +1396,7 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                   <div className="text-lg font-black text-slate-950">Targeted Automation Focus</div>
                   <div className="text-xs font-semibold text-indigo-600">Evidence-Based Transformation</div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Pinpoints high-yield workflow candidates for robotic and AI automation based on empirical execution evidence rather than assumptions.
                 </p>
               </div>
@@ -1410,7 +1422,7 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
             <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
               Interactive Value-Stream Diagnostic Telemetry
             </h2>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto font-normal">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-xl mx-auto font-normal">
               Simulating live enterprise event log ingestion across core transaction value streams to identify deviations and root causes.
             </p>
           </div>
@@ -1444,7 +1456,7 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                 </div>
 
                 <div className="pt-0.5 flex flex-wrap items-center gap-2">
-                  <h3 className="text-base sm:text-lg font-bold text-white">
+                  <h3 className="font-sora text-base sm:text-lg font-medium text-white">
                     {diagnosticProcesses[activeProcessTab].title}
                   </h3>
                   <span className="text-[11px] sm:text-xs text-slate-400">
@@ -1503,10 +1515,10 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
                         {f.source}
                       </span>
                     </div>
-                    <h4 className="text-sm font-bold text-white leading-tight">
+                    <h4 className="font-sora text-sm font-medium text-white leading-tight">
                       {f.title}
                     </h4>
-                    <p className="text-xs text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                       {f.desc}
                     </p>
                   </div>
@@ -1536,7 +1548,7 @@ export const ProcessMiningPage: React.FC<ProcessMiningPageProps> = ({
             Ready to Accelerate Operational Velocity with Enterprise Process Mining?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Partner with KNOOVIQ&rsquo;s Process Intelligence practice to perform a comprehensive event log diagnostic of your high-impact business value streams.
           </p>
 

@@ -495,7 +495,7 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-[#0070C0] selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans cloud-sora-scope selection:bg-[#0070C0] selection:text-white">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Panoramic Background - Aligned with AI Agents)
@@ -511,6 +511,10 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
             style={{ imageRendering: '-webkit-optimize-contrast' }}
           />
         </div>
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
 
         {/* Lighter Directional Scrim for Maximum Visual Clarity & Text Contrast */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-r from-slate-950/70 via-slate-950/30 to-transparent pointer-events-none" />
@@ -534,8 +538,18 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
                 </span>
               </h1>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/data-governance/enterprise_governance_policy_fabric.jpg"
+                alt="Enterprise Data Governance & Active Policy Fabric - Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+
               {/* Sub-headline */}
-              <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Active metadata catalogs, end-to-end cryptographic column lineage, declarative schema contracts, and dynamic attribute-based access controls across modern enterprise lakehouses.
               </p>
             </motion.div>
@@ -580,12 +594,12 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-5 py-3.5 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-2xl">
-                <p className="text-base sm:text-lg font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-base sm:text-lg font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Data governance must not be a post-hoc bureaucratic hurdle. In modern enterprise architectures, governance is an active, automated control plane embedded directly inside data pipelines, enforcing security, quality, and provenance continuously.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq shifts data governance from static documentation into executable architecture. We automate metadata ingestion, trace end-to-end column lineage across distributed lakehouses, and programmatically intercept breaking schema drift before data reaches downstream analytics and machine learning applications.
               </p>
 
@@ -596,8 +610,8 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
                     <Database className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Active Semantic Metadata Fabric</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Active Semantic Metadata Fabric</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Autonomous crawlers continuously index schemas, classify confidential fields, and link canonical business glossaries to operational stores.
                     </p>
                   </div>
@@ -608,8 +622,8 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
                     <GitBranch className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Cryptographic Column-Level Lineage</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Cryptographic Column-Level Lineage</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Automated SQL AST parsers construct directed acyclic graphs tracking data provenance from source transactions directly to executive dashboards.
                     </p>
                   </div>
@@ -620,8 +634,8 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Dynamic Policy Gates &amp; Runtime Masking</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Dynamic Policy Gates &amp; Runtime Masking</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Attribute-based access control (ABAC) applying real-time virtual masking and tokenization at query execution with zero storage duplication.
                     </p>
                   </div>
@@ -656,7 +670,7 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
               <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between gap-3">
                 <div>
                   <div className="text-xs font-mono font-bold text-[#0070C0] uppercase tracking-wider">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-700 font-normal leading-relaxed">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -680,7 +694,7 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
                         <StepIcon className="w-4 h-4" />
                       </div>
                       <div className="min-w-0">
-                        <div className="text-xs sm:text-sm font-bold break-words leading-tight">{step.label}</div>
+                        <div className="text-xs sm:text-sm font-bold truncate">{step.label}</div>
                         <div className={`text-xs truncate ${isSelected ? 'text-sky-100 font-medium' : 'text-slate-500'}`}>{step.sublabel}</div>
                       </div>
                     </button>
@@ -708,7 +722,7 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Strategic Hurdles in Legacy Data Governance
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Why passive documentation and manual auditing fail across distributed enterprise data architectures.
             </p>
           </div>
@@ -730,10 +744,10 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
                         <ChallengeIcon className="w-5 h-5" />
                       </div>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -762,7 +776,7 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
               The KNOOVIQ Active Governance Mesh
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Explore the eight mutually reinforcing pillars of our modern enterprise data governance foundation. Hover over any segment to inspect its architectural role.
             </p>
           </div>
@@ -790,7 +804,7 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -912,7 +926,7 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -939,7 +953,7 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Active Data Governance &amp; Policy Execution Matrix
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Examine the concrete architectural difference between passive regulatory compliance and KNOOVIQ active data governance fabrics.
             </p>
           </div>
@@ -986,8 +1000,50 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
               transition={{ duration: 0.3 }}
               className="rounded-3xl border border-slate-200 overflow-hidden shadow-sm"
             >
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[640px] text-left border-collapse">
+                            {/* Mobile Card-Based Comparison View (Zero Cutoff, 100% Fits Inside Screen) */}
+              <div className="sm:hidden space-y-3.5 p-3.5 bg-slate-50/50">
+                {architecturalComparison.map((row, rIdx) => (
+                  <div key={rIdx} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-3">
+                    <div className="flex items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
+                      <div className="font-bold text-slate-900 text-sm flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                        <span>{row.dimension}</span>
+                      </div>
+                      {row.statusBadge && (
+                        <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase bg-sky-100 text-[#0070C0] border border-sky-300 shrink-0">
+                          {row.statusBadge}
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Modern Approach */}
+                    <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                      <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                        <span>KNOOVIQ Active Governance Fabric</span>
+                      </div>
+                      <p className="text-xs text-slate-900 font-semibold leading-relaxed">
+                        {row.modernApproach}
+                      </p>
+                    </div>
+
+                    {/* Legacy Approach */}
+                    <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                      <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                        <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                        <span>Legacy Passive Governance</span>
+                      </div>
+                      <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                        {row.legacyApproach}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop Full-Bleed Comparison Table (100% Preserved) */}
+              <div className="hidden sm:block overflow-x-auto">
+                <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="bg-slate-100 border-b border-slate-200 text-xs sm:text-sm font-mono uppercase text-slate-700 tracking-wider">
                       <th className="py-4 px-6 font-bold w-1/4">Governance Dimension</th>
@@ -1063,8 +1119,8 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER ONE: HARVESTING
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Autonomous Metadata Crawlers</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Autonomous Metadata Crawlers</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Continuous ingestion of database schemas, object stores, and event streams with automated sensitive field tagging.
                     </p>
                   </div>
@@ -1073,8 +1129,8 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER TWO: PROVENANCE
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">AST Lineage Graph Compilation</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">AST Lineage Graph Compilation</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Automated SQL AST parsing tracing column-level dependencies from source databases through transforms to analytics.
                     </p>
                   </div>
@@ -1083,8 +1139,8 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER THREE: POLICY EXECUTION
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Dynamic ABAC &amp; Virtual Masking</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Dynamic ABAC &amp; Virtual Masking</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Real-time query rewrite engine applying cryptographic tokenization and access filtering without altering storage.
                     </p>
                   </div>
@@ -1093,8 +1149,8 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER FOUR: ASSURANCE
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Continuous Compliance Telemetry</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Continuous Compliance Telemetry</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Immutable, tamper-evident audit streams capturing all policy decisions for automated regulatory sovereignty verification.
                     </p>
                   </div>
@@ -1152,10 +1208,10 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
                   <span className="text-xs font-mono font-bold uppercase px-3 py-1 rounded-md bg-sky-100 text-[#0070C0]">
                     {protocolDetails[activeProtocolTab].badge}
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-black text-slate-950 mt-2">
+                  <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-950 mt-2">
                     {protocolDetails[activeProtocolTab].title}
                   </h3>
-                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal mt-1">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal mt-1">
                     {protocolDetails[activeProtocolTab].desc}
                   </p>
                 </div>
@@ -1182,9 +1238,9 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
                           <span className="w-5 h-5 rounded-full bg-sky-100 text-[#0070C0] text-xs font-bold flex items-center justify-center shrink-0">
                             <Check className="w-3.5 h-3.5" />
                           </span>
-                          <h4 className="text-sm font-bold text-slate-900 truncate">{st.name}</h4>
+                          <h4 className="font-sora text-sm font-medium text-slate-900 truncate">{st.name}</h4>
                         </div>
-                        <p className="text-xs text-slate-600 leading-relaxed font-normal">{st.detail}</p>
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">{st.detail}</p>
                       </div>
                     ))}
                   </div>
@@ -1209,7 +1265,7 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Phased Enterprise Governance Roadmap
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               A structured, risk-mitigated journey from static compliance checklists to an automated, active governance fabric.
             </p>
           </div>
@@ -1232,11 +1288,11 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
                       </div>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {phase.title}
                     </h3>
 
-                    <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {phase.focus}
                     </p>
                   </div>
@@ -1275,7 +1331,7 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
               Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#005A9C] via-[#0070C0] to-sky-500">Governance Questions</span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal max-w-2xl mx-auto">
               Addressing key strategic, architectural, and regulatory compliance considerations for enterprise technology leaders.
             </p>
           </div>
@@ -1350,7 +1406,7 @@ export const DataGovernancePage: React.FC<DataGovernancePageProps> = ({
             Ready to Transform Data Governance into an Active Control Fabric?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Collaborate with senior data architects and governance engineers to deploy automated column lineage, declarative schema contracts, and dynamic access security across your entire data landscape.
           </p>
 

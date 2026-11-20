@@ -21,7 +21,8 @@ import {
   GitBranch,
   CheckSquare,
   Maximize2,
-  X
+  X,
+  XCircle
 } from 'lucide-react';
 
 interface AiPoweredAutomationPageProps {
@@ -207,7 +208,7 @@ export const AiPoweredAutomationPage: React.FC<AiPoweredAutomationPageProps> = (
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#0070C0] selection:text-white antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 font-sans cloud-sora-scope selection:bg-[#0070C0] selection:text-white antialiased overflow-x-hidden">
 
       {/* ========================================================================= */}
       {/* SECTION 1: HERO SECTION (AI Agents Style Full Bleed Panoramic Background) */}
@@ -226,6 +227,10 @@ export const AiPoweredAutomationPage: React.FC<AiPoweredAutomationPageProps> = (
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/40 to-transparent pointer-events-none" />
           <div className="absolute inset-0 bg-sky-500/10 mix-blend-screen pointer-events-none" />
         </div>
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-2xl lg:max-w-xl space-y-6">
@@ -252,8 +257,18 @@ export const AiPoweredAutomationPage: React.FC<AiPoweredAutomationPageProps> = (
                 </span>
               </h1>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/digital-intelligence/ai_powered_automation_cognitive_orchestration.png"
+                alt="Enterprise AI-Powered Automation & Cognitive Orchestration - Architecture Blueprint"
+                className="w-full h-full object-cover object-right"
+              />
+            </div>
+
+
               {/* Subtitle with High Legibility */}
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal pt-1 drop-shadow-md">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal pt-1 drop-shadow-md">
                 Infuse cognitive intelligence into enterprise automation fabrics. Move beyond rigid deterministic bots by deploying self-learning foundation models, autonomous agents, and predictive decision networks that resolve ambiguous exceptions, adapt to shifting environments, and execute straight-through SAP workflows with contextual awareness.
               </p>
             </motion.div>
@@ -296,7 +311,7 @@ export const AiPoweredAutomationPage: React.FC<AiPoweredAutomationPageProps> = (
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Cognitive Intelligence Engineered for Complex Enterprises
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Deterministic automation falters when data is ambiguous. Our cognitive architecture understands intent, reasons through unstructured inputs, and autonomously resolves edge cases.
             </p>
           </div>
@@ -312,10 +327,10 @@ export const AiPoweredAutomationPage: React.FC<AiPoweredAutomationPageProps> = (
                   <div className="rounded-xl bg-sky-50 border border-sky-100 p-3 text-[#0070C0] w-fit mb-5">
                     <pillar.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 mb-2">
                     {pillar.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                     {pillar.desc}
                   </p>
                 </div>
@@ -344,7 +359,7 @@ export const AiPoweredAutomationPage: React.FC<AiPoweredAutomationPageProps> = (
                 Transition from Brittle Scripts to Cognitive Self-Directing Workflows
               </h2>
 
-              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+              <p className="font-sora text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
                 Traditional bots follow linear instructions; the moment an unexpected dialogue, altered form field, or novel vendor format appears, execution crashes. KNOOVIQ AI-Powered Automation leverages multimodal foundation models that understand operational objectives rather than rigid coordinates.
               </p>
 
@@ -352,24 +367,24 @@ export const AiPoweredAutomationPage: React.FC<AiPoweredAutomationPageProps> = (
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[#0070C0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Goal-Oriented Autonomous Agents</h4>
-                    <p className="text-xs sm:text-sm text-slate-600">Agents evaluate real-time system states and devise optimal execution sequences dynamically rather than following static scripts.</p>
+                    <h4 className="font-sora text-sm font-medium text-slate-900">Goal-Oriented Autonomous Agents</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">Agents evaluate real-time system states and devise optimal execution sequences dynamically rather than following static scripts.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[#0070C0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Deterministic Guardrails &amp; Bounded Actions</h4>
-                    <p className="text-xs sm:text-sm text-slate-600">Cognitive reasoning operates within strictly enforced parameter boundaries, preventing model hallucinations and unauthorized commits.</p>
+                    <h4 className="font-sora text-sm font-medium text-slate-900">Deterministic Guardrails &amp; Bounded Actions</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">Cognitive reasoning operates within strictly enforced parameter boundaries, preventing model hallucinations and unauthorized commits.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[#0070C0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Continuous Ledger Reconciliation</h4>
-                    <p className="text-xs sm:text-sm text-slate-600">High-confidence automated actions post directly into SAP S/4HANA via clean-core interfaces with verifiable audit trails.</p>
+                    <h4 className="font-sora text-sm font-medium text-slate-900">Continuous Ledger Reconciliation</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">High-confidence automated actions post directly into SAP S/4HANA via clean-core interfaces with verifiable audit trails.</p>
                   </div>
                 </div>
               </div>
@@ -404,7 +419,7 @@ export const AiPoweredAutomationPage: React.FC<AiPoweredAutomationPageProps> = (
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               A Continuous Cognitive Feedback Loop
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Observe how autonomous agents perceive environment cues, evaluate operational strategies, and execute validated enterprise actions.
             </p>
           </div>
@@ -425,10 +440,10 @@ export const AiPoweredAutomationPage: React.FC<AiPoweredAutomationPageProps> = (
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 mb-2">
                     {ws.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                     {ws.desc}
                   </p>
                 </div>
@@ -452,7 +467,7 @@ export const AiPoweredAutomationPage: React.FC<AiPoweredAutomationPageProps> = (
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Trained for Mission-Critical Corporate Environments
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Purpose-built AI models pre-tuned for complex corporate operations across supply networks, finance, customer relations, and talent management.
             </p>
           </div>
@@ -471,12 +486,12 @@ export const AiPoweredAutomationPage: React.FC<AiPoweredAutomationPageProps> = (
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-2">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 flex items-center gap-2.5 mb-2">
                     <domain.icon className="h-5 w-5 text-[#0070C0] shrink-0" />
                     <span>{domain.title}</span>
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mb-6 font-normal">
                     {domain.desc}
                   </p>
                 </div>
@@ -505,7 +520,7 @@ export const AiPoweredAutomationPage: React.FC<AiPoweredAutomationPageProps> = (
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Topological Architecture &amp; Comparative Analysis
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Contrast autonomous cognitive agents with legacy deterministic RPA, and inspect our full-stack enterprise cognitive automation framework.
             </p>
 
@@ -535,8 +550,43 @@ export const AiPoweredAutomationPage: React.FC<AiPoweredAutomationPageProps> = (
           {/* TAB 1: Comparison Matrix */}
           {activeTab === 'comparison' && (
             <div className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[640px] text-left border-collapse">
+                            {/* Mobile Card-Based Comparison View (Zero Cutoff, 100% Fits Inside Screen) */}
+              <div className="sm:hidden space-y-3.5 p-3.5 bg-slate-50/50">
+                {comparisonRows.map((row, i) => (
+                  <div key={i} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-2.5">
+                    <div className="font-bold text-slate-900 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
+                      <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                      <span>{row.feature}</span>
+                    </div>
+
+                    {/* KNOOVIQ Modern Approach */}
+                    <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                      <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                        <span>KNOOVIQ Cognitive AI Automation</span>
+                      </div>
+                      <p className="text-xs text-slate-800 font-semibold leading-relaxed">
+                        {row.knooviq}
+                      </p>
+                    </div>
+
+                    {/* Legacy Approach */}
+                    <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                      <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                        <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                        <span>Legacy Deterministic RPA</span>
+                      </div>
+                      <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                        {row.legacy}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop Full-Bleed Comparison Table (100% Preserved) */}
+              <div className="hidden sm:block overflow-x-auto">
+                <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="border-b border-slate-200 bg-slate-50 text-[11px] font-extrabold uppercase tracking-wider text-slate-600">
                       <th className="py-4 px-6">Architectural Dimension</th>
@@ -574,20 +624,20 @@ export const AiPoweredAutomationPage: React.FC<AiPoweredAutomationPageProps> = (
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="text-sm font-bold text-slate-900 mb-2">Multimodal Perception Layer</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Multimodal Perception Layer</h4>
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     Ingests streaming events, unstructured documents, desktop UI trees, and API payloads into standardized semantic embeddings with zero data degradation.
                   </p>
                 </div>
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="text-sm font-bold text-slate-900 mb-2">Agent Reasoning &amp; Guardrails</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Agent Reasoning &amp; Guardrails</h4>
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     High-speed cognitive orchestration executing goal planning, safety boundary validation, and multi-agent consensus protocols within enterprise policies.
                   </p>
                 </div>
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="text-sm font-bold text-slate-900 mb-2">Enterprise Actuation &amp; Ledger</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Enterprise Actuation &amp; Ledger</h4>
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     Deterministic execution connectors that securely commit transactions into SAP S/4HANA and enterprise fabrics with complete auditability.
                   </p>
                 </div>
@@ -611,7 +661,7 @@ export const AiPoweredAutomationPage: React.FC<AiPoweredAutomationPageProps> = (
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Executive FAQs: AI-Powered Automation
             </h2>
-            <p className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora mt-4 text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Essential answers addressing model safety, hallucinations, Clean Core stability, exception handling, and enterprise governance.
             </p>
           </div>
@@ -660,7 +710,7 @@ export const AiPoweredAutomationPage: React.FC<AiPoweredAutomationPageProps> = (
             Ready to Elevate Your Enterprise Beyond Rigid Scripts with AI Automation?
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sora mt-4 text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Partner with KNOOVIQ to benchmark your operational workflows, deploy self-healing autonomous agents, and achieve intelligent straight-through execution integrated with SAP S/4HANA.
           </p>
 

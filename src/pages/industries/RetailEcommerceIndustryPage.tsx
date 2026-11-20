@@ -470,12 +470,12 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Retail Hero - Zero Shading on Image)
           ========================================================================= */}
-      <section className="relative w-full min-h-[620px] lg:min-h-[680px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-16 overflow-hidden bg-slate-900">
+      <section className="relative w-full min-h-[620px] lg:min-h-[680px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-16 overflow-hidden bg-slate-900 text-white">
         
         {/* Full-Bleed Enterprise Retail Background Image with Seamless Cinematic Scrim */}
         <div className="absolute inset-0 z-0">
@@ -488,6 +488,10 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
 
         {/* Seamless Cinematic Left Scrim */}
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-slate-950/95 via-slate-950/80 sm:via-slate-950/60 to-transparent pointer-events-none" />
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           
@@ -512,10 +516,19 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Unified Omnichannel Commerce, Agile Inventory Routing & Storefront Control.
               </p>
             </motion.div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=2000&q=80"
+                alt="Intelligent ERP for Retail & E-Commerce - Architecture Blueprint"
+                className="w-full h-auto block select-none"
+              />
+            </div>
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -524,7 +537,7 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering retail brands, digital merchants, and omnichannel store networks with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, automated{' '}
                 <strong className="text-cyan-300 font-semibold">AI Demand Sensing</strong>, dynamic order orchestration, and real-time inventory visibility.
@@ -624,12 +637,12 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
 
               {/* Executive Thesis Quote */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Modern retail success is defined by channel synchronization: unifying physical customer touchpoints, digital commerce, and agile supply chains into one cohesive operational core.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers an integrated enterprise ecosystem on SAP S/4HANA Clean Core. By bridging data across retail touchpoints and distribution networks, retail leaders gain continuous visibility, automated order flow, and responsive operations.
               </p>
 
@@ -640,8 +653,8 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
                     <Store className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Unified Commerce & Storefront Backbone</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Unified Commerce & Storefront Backbone</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Single-pane-of-glass coordination across in-store POS, headless digital stores, and sales channels without latency.
                     </p>
                   </div>
@@ -652,8 +665,8 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
                     <Boxes className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Intelligent Stock Routing</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Intelligent Stock Routing</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Pool enterprise inventory across retail shelves, micro-hubs, and regional distribution centers for flexible fulfillment.
                     </p>
                   </div>
@@ -664,8 +677,8 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
                     <BarChart3 className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Operational Financial Governance</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Operational Financial Governance</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Continuous multi-channel reconciliations, promotional compliance, and unified financial ledger integration.
                     </p>
                   </div>
@@ -728,7 +741,7 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
                     {journeySteps[activeJourneyStep].tech}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -760,7 +773,7 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating the Complexity of Modern Retail
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Disjointed IT platforms and siloed business functions constrain agility. Knooviq addresses the six systemic challenges modern retail leaders face.
             </p>
           </motion.div>
@@ -787,10 +800,10 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -832,7 +845,7 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Modern Retail
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting touchpoints, intelligent inventory, agile logistics, clean ERP ledgers, and cognitive AI into one continuous loop.
             </p>
           </motion.div>
@@ -869,10 +882,10 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-medium">
                           {item.desc}
                         </p>
                       </div>
@@ -1033,10 +1046,10 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
                         }}
                       />
                       <div className="space-y-1 text-left flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-medium">
                           {item.desc}
                         </p>
                       </div>
@@ -1066,7 +1079,7 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for Intelligent Retail
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               We engineer clean-core SAP technology suites layered with modern cloud extensions, role-based interfaces, and autonomous business AI.
             </p>
           </div>
@@ -1080,10 +1093,10 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CORE ERP SUITE</span>
                 <Cpu className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP S/4HANA
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Integrated enterprise processes uniting financial ledgers, vendor procurement, stock valuation, and multi-channel fulfillment into a single in-memory database.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1098,10 +1111,10 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">DOMAIN SOLUTION</span>
                 <Store className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Retail
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Retail-specific capabilities purpose-built for merchandise category trees, store replenishment algorithms, seasonal promotions, and wholesale distribution.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1116,10 +1129,10 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">INTEGRATION & EXTENSIONS</span>
                 <Cloud className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Business Technology Platform
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Seamless side-by-side extensibility keeping the ERP core clean while connecting eCommerce APIs, payment gateways, and custom loyalty applications.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1134,10 +1147,10 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">BUSINESS INTELLIGENCE</span>
                 <BarChart3 className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Analytics Cloud
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Real-time visibility into sell-through velocity, SKU profitability, promotional return on spend, and enterprise merchandise financial planning (MFP).
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1152,10 +1165,10 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">ROLE-BASED UX</span>
                 <Scan className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Fiori
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Intuitive mobile and web apps designed specifically for store associates, DC inventory pickers, buyers, and regional merchandise directors.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1170,10 +1183,10 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">COGNITIVE ENGINES</span>
                 <Sparkles className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 AI & Automation
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Intelligent demand forecasting, automated re-order thresholds, dynamic bundle recommendations, and touchless invoice reconciliation.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1201,7 +1214,7 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every Stage of Retail
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize retail execution across physical stores, digital channels, and unified supply networks.
             </p>
           </div>
@@ -1273,12 +1286,12 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
                         </div>
 
                         {/* Title - Bold & Compact */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description - Snug & Concise */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1321,7 +1334,7 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Turning Retail Complexity into Business Advantage
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When commerce, stock, fulfillment, and financial ledgers operate in unison, retail organizations achieve sustainable commercial performance.
             </p>
           </div>
@@ -1334,10 +1347,10 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Boxes className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Better Inventory Visibility
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Know what is available, where it is, and when it is needed. Eradicate phantom stock and guarantee reliable available-to-promise commitments across channels.
               </p>
             </div>
@@ -1347,10 +1360,10 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Zap className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Faster Operations
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Automate repetitive processes and streamline workflows. Eliminate manual PO re-keying, accelerate cross-dock sortation, and speed up closing cycles.
               </p>
             </div>
@@ -1360,10 +1373,10 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Users className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Improved Customer Experience
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Deliver consistent experiences across physical and digital channels. Enable flexible buy-online-pickup-in-store (BOPIS) and hassle-free omnichannel returns.
               </p>
             </div>
@@ -1373,10 +1386,10 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <BarChart3 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Smarter Decisions
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Use connected data and analytics to make informed decisions. Predict regional markdown curves before excess inventory degrades commercial margins.
               </p>
             </div>
@@ -1386,10 +1399,10 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Truck className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Optimized Supply Chain
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Improve coordination from suppliers to warehouses to customers. Synchronize inbound container deliveries with automated store staging slots.
               </p>
             </div>
@@ -1399,10 +1412,10 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Globe2 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Scalable Growth
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Build a technology foundation that can support new channels, products, and markets. Rapidly onboard franchise partners and international storefronts.
               </p>
             </div>
@@ -1435,7 +1448,7 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Intelligent Omnichannel Retail Architecture
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How enterprise retailers advance from legacy channel fragmentation to an integrated clean-core event ecosystem.
             </p>
           </div>
@@ -1487,23 +1500,23 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
-                      <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
+                      <div className="text-[10px] font-mono text-slate-300 uppercase tracking-wide">
                         {stage.subtitle}
                       </div>
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
 
                   {/* Bottom Deliverable Pillar */}
                   <div className="pt-2.5 mt-3 border-t border-white/10 flex items-center justify-between">
-                    <span className="text-[9.5px] font-mono font-medium text-slate-400">
+                    <span className="text-[9.5px] font-mono font-medium text-slate-300">
                       {stage.tag}
                     </span>
                     <span className={`text-[9.5px] font-mono font-bold uppercase tracking-wider ${stage.textColor} group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-0.5`}>
@@ -1599,7 +1612,7 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
             Ready to Build a Smarter Retail Business?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your retail operations, technology, data, and customer experience with Knooviq.
           </p>
 
@@ -1621,7 +1634,7 @@ export const RetailEcommerceIndustryPage: React.FC<RetailEcommerceIndustryPagePr
             </Link>
           </div>
 
-          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-200">
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-100">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-300" />
               <span>SAP Certified Clean Core</span>

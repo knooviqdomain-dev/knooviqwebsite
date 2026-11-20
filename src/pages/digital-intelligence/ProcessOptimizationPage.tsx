@@ -527,7 +527,7 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] cloud-sora-scope selection:text-white font-sans antialiased overflow-x-hidden">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Panoramic Full-Bleed Showcase)
@@ -540,6 +540,10 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
             className="w-full h-full object-cover object-top select-none contrast-[1.02]"
           />
         </div>
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
 
         {/* Lighter Directional Scrim for Maximum Visual Clarity & Text Contrast */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-r from-slate-950/70 via-slate-950/30 to-transparent pointer-events-none" />
@@ -557,7 +561,17 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                   Process Optimization &amp; Flow Acceleration
                 </span>
               </h1>
-              <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal max-w-2xl pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/process_optimization_ai_innovation_hero.jpg"
+                alt="Autonomous Enterprise Process Optimization & Flow Acceleration - Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal max-w-2xl pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Eliminate operational friction, compress cycle times, and automate straight-through execution across mission-critical SAP S/4HANA value streams.
               </p>
             </motion.div>
@@ -602,11 +616,11 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                 Transitioning from Process Visibility to <span className="text-[#0070C0]">Frictionless Execution</span>
               </h2>
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Process intelligence is only as valuable as the friction it resolves. Real enterprise transformation requires re-engineering business rules, eliminating micro-dwells, and automating straight-through execution.&rdquo;
                 </p>
               </div>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq combines process mining insights with algorithmic what-if simulation to re-engineer core operations. We harmonize master data parameters, eliminate manual review bottlenecks, and deploy closed-loop actions directly into SAP S/4HANA via SAP BTP.
               </p>
 
@@ -616,8 +630,8 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                     <Activity className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Risk-Free What-If Simulation</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Risk-Free What-If Simulation</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Simulate policy adjustments, threshold changes, and automation injection on living digital process twins before rolling out changes to production ERP.
                     </p>
                   </div>
@@ -628,8 +642,8 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                     <GitBranch className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Intelligent Fast-Path Routing</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Intelligent Fast-Path Routing</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Re-engineer workflow trees to route compliant orders and purchase requests straight through, reserving human judgment strictly for high-risk exceptions.
                     </p>
                   </div>
@@ -640,8 +654,8 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                     <Zap className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Closed-Loop Friction Remediation</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Closed-Loop Friction Remediation</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Automated execution recipes remove delivery blocks, adjust payment scheduling, and reallocate stock via SAP BTP without core code modification.
                     </p>
                   </div>
@@ -668,7 +682,7 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                 </div>
                 <div className="absolute bottom-3 left-3 right-3 text-white space-y-1">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-medium line-clamp-2 leading-relaxed">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-medium line-clamp-2 leading-[1.6]">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -716,7 +730,7 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Root Causes of Transactional Latency & Margin Leakage
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Behind rigid ERP workflows lie obsolete business rules, manual rework loops, and bureaucratic stage-gates that slow corporate velocity.
             </p>
           </div>
@@ -738,10 +752,10 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-950 leading-snug group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-950 leading-snug group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -771,7 +785,7 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Closed-Loop Process Re-Engineering Ecosystem
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] max-w-2xl mx-auto font-normal">
               An interlocking operational framework engineered to simulate, streamline, and automate enterprise execution continuously.
             </p>
 
@@ -833,8 +847,7 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                             {item.badge}
                           </span>
                         </div>
-                        <h4
-                          className="text-xs sm:text-[13px] font-bold tracking-tight text-white truncate transition-colors"
+                        <h4 className="font-sora text-xs sm:text-[13px] font-medium tracking-tight text-white truncate transition-colors"
                           style={{ color: isHovered ? item.color : undefined }}
                         >
                           {item.title}
@@ -955,7 +968,7 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                           <div className="text-xs font-black text-white leading-tight">
                             {wheelSegments[hoveredWheelIndex].title}
                           </div>
-                          <p className="text-[10px] text-slate-300 line-clamp-2 leading-tight">
+                          <p className="font-sora text-[10px] text-slate-300 line-clamp-2 leading-tight font-normal">
                             {wheelSegments[hoveredWheelIndex].desc}
                           </p>
                         </div>
@@ -1035,8 +1048,7 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                             {item.badge}
                           </span>
                         </div>
-                        <h4
-                          className="text-xs sm:text-[13px] font-bold tracking-tight text-white truncate transition-colors"
+                        <h4 className="font-sora text-xs sm:text-[13px] font-medium tracking-tight text-white truncate transition-colors"
                           style={{ color: isHovered ? item.color : undefined }}
                         >
                           {item.title}
@@ -1069,8 +1081,8 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                     </span>
                     <ItemIcon className="w-4 h-4" style={{ color: item.color }} />
                   </div>
-                  <h4 className="text-sm font-bold text-white">{item.title}</h4>
-                  <p className="text-xs text-slate-400">{item.desc}</p>
+                  <h4 className="font-sora text-sm font-medium text-white">{item.title}</h4>
+                  <p className="font-sora text-xs text-slate-400 font-normal leading-[1.6]">{item.desc}</p>
                 </div>
               );
             })}
@@ -1092,7 +1104,7 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Enterprise Process Optimization Architecture
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Engineered for continuous workflow acceleration, what-if digital twin simulation, and closed-loop action execution via SAP BTP.
             </p>
           </div>
@@ -1139,13 +1151,13 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                   <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-[#0070C0] text-white text-[9.5px] font-mono font-bold uppercase tracking-wider">
                     ARCHITECTURAL LAYER
                   </div>
-                  <h3 className="text-sm font-bold text-slate-950 leading-snug">
+                  <h3 className="font-sora text-sm font-medium text-slate-950 leading-snug">
                     {layer.title}
                   </h3>
                   <div className="text-[11px] font-semibold text-[#0070C0]">
                     {layer.subtitle}
                   </div>
-                  <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                     {layer.desc}
                   </p>
                 </div>
@@ -1180,7 +1192,7 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Pre-Built Process Optimization Modules
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Domain-specific workflow re-engineering recipes pre-calibrated to eliminate friction across standard enterprise value streams.
             </p>
           </div>
@@ -1230,12 +1242,12 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                         <div className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider mb-1">
                           {sol.categoryLabel}
                         </div>
-                        <h3 className="text-lg sm:text-xl font-black text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
                       </div>
 
-                      <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                      <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                         {sol.description}
                       </p>
                     </div>
@@ -1274,7 +1286,7 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Operational Advantages of Systematic Process Optimization
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Empower your enterprise with autonomous straight-through execution, friction elimination, and persistent clean core agility.
             </p>
           </div>
@@ -1289,7 +1301,7 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                   <div className="text-lg font-black text-slate-950">Touchless Process Velocity</div>
                   <div className="text-xs font-semibold text-emerald-600">Cycle Time Compression</div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Eliminates unnecessary manual approval checkpoints for compliant transactions, accelerating order delivery and cash collection.
                 </p>
               </div>
@@ -1307,7 +1319,7 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                   <div className="text-lg font-black text-slate-950">Working Capital Liberation</div>
                   <div className="text-xs font-semibold text-[#0070C0]">Liquidity Preservation</div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Harmonizes invoice matching and procurement payment terms to optimize cash outflows and capture early-settlement supplier incentives.
                 </p>
               </div>
@@ -1325,7 +1337,7 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                   <div className="text-lg font-black text-slate-950">Clean Core Architectural Governance</div>
                   <div className="text-xs font-semibold text-cyan-600">Zero Custom Code Bloat</div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Executes modern process automations via cloud sidecars and SAP BTP action flows without modifying standard S/4HANA core logic.
                 </p>
               </div>
@@ -1343,7 +1355,7 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                   <div className="text-lg font-black text-slate-950">Empowered Human Capacity</div>
                   <div className="text-xs font-semibold text-purple-600">High-Value Strategic Focus</div>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Frees operational specialists from repetitive status inquiries and manual block clearances to focus on strategic customer partnerships.
                 </p>
               </div>
@@ -1369,7 +1381,7 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
             <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
               Interactive Flow Optimization & Fast-Path Simulator
             </h2>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto font-normal">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-xl mx-auto font-normal">
               Simulating algorithmic bypasses, automated block removals, and straight-through routing across enterprise value streams.
             </p>
           </div>
@@ -1402,7 +1414,7 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                 </div>
 
                 <div className="pt-0.5 flex flex-wrap items-center gap-2">
-                  <h3 className="text-base sm:text-lg font-bold text-white">
+                  <h3 className="font-sora text-base sm:text-lg font-medium text-white">
                     {diagnosticProcesses[activeProcessTab].title}
                   </h3>
                   <span className="text-[11px] sm:text-xs text-slate-400">
@@ -1440,7 +1452,7 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                   <span className="text-[10px] font-mono font-bold text-cyan-300 uppercase tracking-wider block">
                     Prescriptive Optimization Recipe
                   </span>
-                  <p className="text-xs text-slate-200 line-clamp-2">
+                  <p className="font-sora text-xs text-slate-200 line-clamp-2 font-normal leading-[1.6]">
                     {diagnosticProcesses[activeProcessTab].recommendation}
                   </p>
                 </div>
@@ -1467,10 +1479,10 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
                           {finding.source}
                         </span>
                       </div>
-                      <h4 className="text-xs sm:text-sm font-bold text-white">
+                      <h4 className="font-sora text-xs sm:text-sm font-medium text-white">
                         {finding.title}
                       </h4>
-                      <p className="text-xs text-slate-300 leading-relaxed">
+                      <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                         {finding.desc}
                       </p>
                     </div>
@@ -1501,7 +1513,7 @@ export const ProcessOptimizationPage: React.FC<ProcessOptimizationPageProps> = (
             Ready to Eliminate Execution Friction and Accelerate Flow?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Partner with KNOOVIQ&rsquo;s Process Intelligence practice to re-engineer core workflows, automate straight-through processing, and maximize ERP yield.
           </p>
 

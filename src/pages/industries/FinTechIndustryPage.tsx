@@ -455,7 +455,7 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Panoramic Background - Aligned with AI Agents Reference)
@@ -472,6 +472,9 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
           />
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
 
         {/* Hero Top Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12 relative z-10 w-full">
@@ -504,9 +507,18 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-sm sm:text-base text-slate-100 font-normal leading-relaxed drop-shadow-sm max-w-2xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm max-w-2xl">
               Scale sub-second payment settlement pipelines, orchestrate multi-tenant virtual account ledgers, automate interchange fee reconciliations, and protect high-throughput rails with AI fraud defense on clean-core SAP architecture.
             </p>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/fintech/fintech_hero_mobile.jpg"
+                alt="FinTech Digital Payments & High-Velocity Rails"
+                className="w-full h-auto block select-none"
+              />
+            </div>
 
             {/* Feature Highlight Pills */}
             <div className="flex flex-wrap items-center gap-2.5 pt-1">
@@ -597,12 +609,12 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
 
               {/* Executive Thesis Quote Card */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-xs sm:text-sm font-semibold text-slate-800 italic leading-relaxed">
+                <p className="font-sora text-sm font-medium text-slate-800 italic leading-[1.6]">
                   "FinTech platforms process thousands of payment authorizations per second, but scale without ledger integrity leads to fatal audit failures. The modern FinTech architecture pairs sub-millisecond cloud APIs with clean-core ERP ledger synchronization."
                 </p>
               </div>
 
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 As real-time payment schemes and embedded finance programs evolve, high-growth FinTechs can no longer operate on brittle custom database setups that drift from statutory general ledgers. Modern payment technology leaders require cloud-native event streaming meshes that process micro-transactions instantaneously while compressing records into audit-proof SAP accounting journals.
               </p>
 
@@ -614,8 +626,8 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
                     <Zap className="w-4 h-4" />
                   </div>
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-slate-900">Sub-Second Payment Settlement</h3>
-                    <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                    <h3 className="font-sora text-xs sm:text-sm font-medium text-slate-900">Sub-Second Payment Settlement</h3>
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       Orchestrate high-throughput payment rails across FedNow, RTP, and instant schemes with sub-20ms latency.
                     </p>
                   </div>
@@ -626,8 +638,8 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
                     <Layers className="w-4 h-4" />
                   </div>
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-slate-900">Virtual Account & Float Integrity</h3>
-                    <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                    <h3 className="font-sora text-xs sm:text-sm font-medium text-slate-900">Virtual Account & Float Integrity</h3>
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       Maintain multi-currency stored-value digital wallets with continuous balance audits and regulatory safeguarding compliance.
                     </p>
                   </div>
@@ -638,8 +650,8 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
                     <Database className="w-4 h-4" />
                   </div>
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-slate-900">Automated ERP Ledger Sync</h3>
-                    <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                    <h3 className="font-sora text-xs sm:text-sm font-medium text-slate-900">Automated ERP Ledger Sync</h3>
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       Batch millions of transactions into compressed, audit-ready summaries on the SAP Universal Journal without system stalls.
                     </p>
                   </div>
@@ -711,7 +723,7 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
                   <span className="font-bold text-[#0070C0] uppercase">Selected Milestone Detail</span>
                   <span>{journeySteps[activeJourneyStep].sublabel}</span>
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed font-medium">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -737,7 +749,7 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Operational Hurdles Restricting FinTech Scalability
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               From authorization queue delays to complex scheme fee leakage, FinTech platforms must resolve core technical vulnerabilities.
             </p>
           </div>
@@ -761,11 +773,11 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
                       </span>
                     </div>
 
-                    <h3 className="text-base font-bold text-slate-900 tracking-tight leading-snug">
+                    <h3 className="font-sora text-base font-medium text-slate-900 tracking-tight leading-snug">
                       {challenge.title}
                     </h3>
 
-                    <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {challenge.desc}
                     </p>
                   </div>
@@ -800,7 +812,7 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
             <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
               Composable Financial Technology Architecture
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               A synchronized enterprise payments matrix uniting real-time clearing rails, multi-tenant virtual ledgers, millisecond AI fraud defense, and clean-core ERP ledgers.
             </p>
           </div>
@@ -837,10 +849,10 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1007,10 +1019,10 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
                         }}
                       />
                       <div className="space-y-1 text-right">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1039,7 +1051,7 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for Scalable FinTech
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Cloud-native microservices and event streaming meshes seamlessly integrated into enterprise SAP financial ledgers for uninterrupted performance.
             </p>
           </div>
@@ -1053,10 +1065,10 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">PAYMENT ORCHESTRATION</span>
                 <Zap className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 Real-Time Multi-Rail Switch
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Distributed routing gateway ensuring sub-20ms transaction clearance across FedNow, RTP, SEPA Instant, and local card networks.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1071,10 +1083,10 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">VIRTUAL SUB-LEDGER</span>
                 <Layers className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Financial Products Subledger
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 High-volume transactional sub-ledger managing millions of multi-currency customer wallets, stored-value balances, and regulatory float pools.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1089,10 +1101,10 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CLEAN-CORE ERP POSTINGS</span>
                 <Database className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP S/4HANA Ledger Sync
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Asynchronous compression pipeline summarizing millions of daily payments into audit-proof vouchers on the Universal Journal.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1107,10 +1119,10 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">AI FRAUD DEFENSE</span>
                 <Lock className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 Sub-Second Behavioral ML Engine
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Machine learning model scoring live transaction patterns, IP velocity, and device signals in milliseconds to intercept account takeover.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1125,10 +1137,10 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">EVENT STREAMING</span>
                 <Workflow className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Event Mesh & Kafka Fabric
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Event-driven distributed messaging architecture publishing ISO 20022 events to billing, fraud, and risk systems with guaranteed order.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1143,10 +1155,10 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">EMBEDDED APIS</span>
                 <Globe2 className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP BTP BaaS API Mesh
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Secure API gateway facilitating rapid partner onboarding, granular permission scoping, developer sandboxes, and rate-limiting governance.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1174,7 +1186,7 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every FinTech Domain
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize FinTech operations across real-time payment rails, virtual sub-ledgers, and fraud defense.
             </p>
           </div>
@@ -1246,12 +1258,12 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
                         </div>
 
                         {/* Title - Bold & Compact */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description - Snug & Concise */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1293,7 +1305,7 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Scaling FinTech Velocity without Regulatory Compromise
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When high-speed payment switches, virtual account sub-ledgers, and enterprise ERP sync execute in real time, FinTechs capture hyper-scale growth safely.
             </p>
           </div>
@@ -1306,10 +1318,10 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Zap className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Sub-20ms Authorization SLA
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Process peak-cycle payment volumes with guaranteed sub-20ms authorization response times across global card and account-to-account rails.
               </p>
             </div>
@@ -1319,10 +1331,10 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Database className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Zero ERP Reconciliation Breaks
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automated continuous batching synchronizes high-frequency transactional data directly into the SAP Universal Journal with zero missing penny breaks.
               </p>
             </div>
@@ -1332,10 +1344,10 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Lock className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Millisecond Fraud Interception
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Autonomous machine learning behavioral analysis intercepts account takeovers and synthetic identity fraud before funds leave the platform.
               </p>
             </div>
@@ -1345,10 +1357,10 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <CreditCard className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Zero Scheme Fee Revenue Leakage
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Algorithmic scheme fee reconciliation automatically validates card network invoices down to individual basis points, preventing interchange overbilling.
               </p>
             </div>
@@ -1358,10 +1370,10 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Continuous Regulatory Float Auditing
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automated safeguarding reconciliation matches customer wallet balances against custodian bank reserves in real time for audit compliance.
               </p>
             </div>
@@ -1371,10 +1383,10 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Globe2 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Accelerated Global Corridor Expansion
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Composable ISO 20022 messaging pipelines allow FinTechs to expand into new international payment corridors in weeks without rewriting code.
               </p>
             </div>
@@ -1407,7 +1419,7 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Real-Time Settlement & Clean-Core ERP Progression
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How high-growth FinTech unicorns and digital neo-banks transition from brittle database scripts to an enterprise-grade payments engine.
             </p>
           </div>
@@ -1459,7 +1471,7 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
@@ -1468,7 +1480,7 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1570,7 +1582,7 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
             Ready to Scale Your High-Velocity FinTech Platform?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Orchestrate instant payment rails, automate interchange fee matching, and synchronize virtual accounts into clean-core SAP ledgers with Knooviq.
           </p>
 
@@ -1592,7 +1604,7 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
             </Link>
           </div>
 
-          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-200">
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-100">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-300" />
               <span>ISO 20022 Compliant Architecture</span>

@@ -562,7 +562,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white cloud-sora-scope">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Panoramic Full-Screen Cinematic Hero)
@@ -576,6 +576,8 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
             alt="Zero-Trust Identity and Access Management Architecture"
             className="w-full h-full object-cover object-[70%_center] filter brightness-[1.06] contrast-[1.05]"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
           {/* Subtle directional gradient on left for razor-sharp typography readability; right 55%+ visual is 100% untouched */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/80 sm:via-[#030712]/60 via-35% to-transparent w-full lg:w-[52%] pointer-events-none" />
           <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-[#030712] via-[#030712]/50 to-transparent pointer-events-none" />
@@ -601,13 +603,22 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12] drop-shadow-lg">
                 Identity &amp; Access Management
               </h1>
-              <p className="text-lg sm:text-xl font-bold text-cyan-300 tracking-tight drop-shadow-md">
+              <p className="font-sora text-lg sm:text-xl font-medium text-cyan-300 tracking-tight drop-shadow-md">
                 The Right Identity. The Right Access. At the Right Time.
               </p>
             </div>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/iam_hero_wide.jpg"
+                alt="Zero-Trust Identity and Access Management Architecture - Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
             {/* Description */}
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl drop-shadow">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl drop-shadow">
               Knooviq helps organizations structure how digital identities are created, authenticated, authorized, governed, and maintained throughout their lifecycle. Our IAM approach helps align access privileges with job responsibilities, strengthen authentication practices, simplify access experiences, and improve visibility into who can access enterprise systems and sensitive resources.
             </p>
 
@@ -673,7 +684,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Access Should Follow Identity, Responsibility, and Context.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Enterprise users, contractors, partners, administrators, and service accounts interact with a growing range of applications and technology platforms. Identity and Access Management provides the processes and controls used to establish identities, verify users or workloads, determine access permissions, and maintain appropriate access throughout the relationship.
             </p>
           </div>
@@ -699,7 +710,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
                   <Users className="w-4 h-4 text-[#00A3E0]" />
                   <span>Workforce &amp; External Identities</span>
                 </div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Employees, contingent contractors, business partners, guest accounts, and automated service principals requiring structured access credentials.
                 </p>
               </div>
@@ -709,7 +720,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
                   <Database className="w-4 h-4 text-[#00A3E0]" />
                   <span>Identity Directories &amp; Providers (IdPs)</span>
                 </div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Authoritative directory sources, LDAP fabrics, and modern cloud Identity Providers managing single sources of truth.
                 </p>
               </div>
@@ -719,7 +730,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
                   <Fingerprint className="w-4 h-4 text-[#00A3E0]" />
                   <span>Authentication Mechanisms</span>
                 </div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Enterprise Single Sign-On (SSO), adaptive Multi-Factor Authentication (MFA), FIDO2 WebAuthn keys, and SAML/OIDC federated token exchanges.
                 </p>
               </div>
@@ -729,7 +740,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
                   <Lock className="w-4 h-4 text-[#00A3E0]" />
                   <span>Authorization Policies &amp; Access Roles</span>
                 </div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Role-Based Access Control (RBAC) and contextual Attribute-Based Access Control (ABAC) ensuring least-privilege permission grants.
                 </p>
               </div>
@@ -739,7 +750,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
                   <Server className="w-4 h-4 text-[#00A3E0]" />
                   <span>Enterprise Applications &amp; Cloud Workloads</span>
                 </div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Downstream target systems including SAP ERP, core databases, custom APIs, hyperscaler consoles, and collaboration software.
                 </p>
               </div>
@@ -749,7 +760,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
                   <FileCheck2 className="w-4 h-4 text-[#00A3E0]" />
                   <span>Identity Governance &amp; Access Reviews</span>
                 </div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Periodic manager recertification campaigns, audit logging, and automated revocation reversing permission drift over time.
                 </p>
               </div>
@@ -773,7 +784,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Managing Access Across a Connected Enterprise.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">
               As technology estates expand, identity administration becomes complex. We help organizations solve five structural access hurdles.
             </p>
           </div>
@@ -795,15 +806,15 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
                   </div>
 
                   <div className="space-y-1.5">
-                    <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                       {challenge.title}
                     </h3>
-                    <p className="text-xs font-semibold text-[#00A3E0] dark:text-cyan-400">
+                    <p className="font-sora text-xs font-medium text-[#00A3E0] dark:text-cyan-400">
                       {challenge.tagline}
                     </p>
                   </div>
 
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {challenge.description}
                   </p>
                 </div>
@@ -827,7 +838,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Build a Structured Identity and Access Foundation.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Knooviq helps organizations establish identity and access practices that connect authentication, authorization, lifecycle management, governance, and privileged access controls.
             </p>
           </div>
@@ -859,15 +870,15 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
                       <div className="text-[11px] font-bold tracking-wider uppercase text-[#00A3E0] dark:text-cyan-400">
                         {cap.badge}
                       </div>
-                      <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+                      <h3 className="font-sora text-2xl sm:text-3xl font-medium text-slate-900 dark:text-white tracking-tight">
                         {cap.title}
                       </h3>
-                      <p className="text-sm font-semibold text-slate-600 dark:text-slate-300">
+                      <p className="font-sora text-sm font-medium text-slate-600 dark:text-slate-300">
                         {cap.tagline}
                       </p>
                     </div>
 
-                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {cap.description}
                     </p>
 
@@ -902,7 +913,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               From Identity Verification to Authorized Access.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">
               A structured technical progression from initial identity establishment to continuous access evaluation across corporate systems.
             </p>
           </div>
@@ -955,13 +966,13 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
                       </span>
                       {isActive && <span className="w-2 h-2 rounded-full bg-[#00A3E0]" />}
                     </div>
-                    <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                       {step.title}
                     </h3>
-                    <p className="text-[11px] font-semibold text-slate-500 dark:text-slate-400">
+                    <p className="font-sora text-[11px] font-medium text-slate-500 dark:text-slate-400">
                       {step.tagline}
                     </p>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-1">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pt-1 font-normal">
                       {step.description}
                     </p>
                   </div>
@@ -992,7 +1003,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
               <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
                 Verify Explicitly. Grant Only What Is Needed.
               </h2>
-              <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Zero Trust is an architectural and operational philosophy, not a standalone software product. Within an enterprise IAM program, Zero Trust mandates that no identity—whether human employee, external partner, or backend automated workload—is implicitly trusted, even when originating from inside a corporate network perimeter.
               </p>
 
@@ -1000,24 +1011,24 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
                 <div className="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
                   <ShieldCheck className="w-5 h-5 text-[#00A3E0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900 dark:text-white">Explicit Authentication &amp; Authorization</h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-300">Every single access request is verified against current user credentials, device health status, and active directory attributes before permission is issued.</p>
+                    <h4 className="font-sora text-xs font-medium text-slate-900 dark:text-white">Explicit Authentication &amp; Authorization</h4>
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">Every single access request is verified against current user credentials, device health status, and active directory attributes before permission is issued.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
                   <Sliders className="w-5 h-5 text-[#00A3E0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900 dark:text-white">Least-Privilege Entitlements</h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-300">Accounts receive only the minimum permissions necessary to complete immediate tasks, preventing attackers from pivoting laterally across unaffected systems.</p>
+                    <h4 className="font-sora text-xs font-medium text-slate-900 dark:text-white">Least-Privilege Entitlements</h4>
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">Accounts receive only the minimum permissions necessary to complete immediate tasks, preventing attackers from pivoting laterally across unaffected systems.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
                   <Activity className="w-5 h-5 text-[#00A3E0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900 dark:text-white">Continuous Session Inspection</h4>
-                    <p className="text-xs text-slate-600 dark:text-slate-300">Authorization is continually evaluated throughout active sessions; sudden changes in IP, geolocation, or device compliance trigger re-authentication or token revocation.</p>
+                    <h4 className="font-sora text-xs font-medium text-slate-900 dark:text-white">Continuous Session Inspection</h4>
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">Authorization is continually evaluated throughout active sessions; sudden changes in IP, geolocation, or device compliance trigger re-authentication or token revocation.</p>
                   </div>
                 </div>
               </div>
@@ -1053,7 +1064,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               One Identity Strategy Across Multiple Platforms.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Modern enterprises operate across hybrid environments, third-party portals, and automated workloads. Knooviq harmonizes identity governance across all tiers without creating operational friction.
             </p>
           </div>
@@ -1081,10 +1092,10 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
                   </span>
                   <Globe className="w-4 h-4 text-slate-400" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                   {env.title}
                 </h3>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   {env.description}
                 </p>
                 <div className="pt-2 border-t border-slate-100 dark:border-white/5 text-[11px] font-semibold text-slate-500 dark:text-slate-400">
@@ -1111,7 +1122,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Establish the Foundation. Improve Access Governance Over Time.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">
               A disciplined, phased methodology that balances immediate credential security with long-term identity lifecycle maturity.
             </p>
           </div>
@@ -1140,18 +1151,18 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
                 <span className="text-xs font-bold text-[#00A3E0] dark:text-cyan-400 uppercase tracking-widest">
                   {roadmapPhases[activeRoadmapPhase].phase} &bull; {roadmapPhases[activeRoadmapPhase].title}
                 </span>
-                <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-1">
+                <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white mt-1">
                   {roadmapPhases[activeRoadmapPhase].tagline}
                 </h3>
               </div>
             </div>
 
-            <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               {roadmapPhases[activeRoadmapPhase].description}
             </p>
 
             <div className="space-y-3 pt-2">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">
+              <h4 className="font-sora text-xs font-medium uppercase tracking-wider text-slate-400">
                 Key Activities &amp; Milestones:
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -1181,7 +1192,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Clear Ownership for Every Identity and Permission.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               A successful IAM program requires collaborative governance. Different organizational stakeholders hold distinct, complementary duties in maintaining access integrity.
             </p>
           </div>
@@ -1204,11 +1215,11 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
                       </span>
                     </div>
 
-                    <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                       {roleItem.role}
                     </h3>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {roleItem.responsibilities}
                     </p>
                   </div>
@@ -1238,7 +1249,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Better Access Control. Clearer Accountability.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">
               Pragmatic operational outcomes achieved through disciplined identity lifecycle governance and unified authentication.
             </p>
           </div>
@@ -1255,10 +1266,10 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
                   <div className="w-9 h-9 rounded-xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center text-[#00A3E0] dark:text-cyan-300">
                     <OutcomeIcon className="w-4 h-4" />
                   </div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                     {outcome.title}
                   </h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {outcome.description}
                   </p>
                 </div>
@@ -1282,7 +1293,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Turn Identity Requirements into an Actionable Plan.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Every IAM consulting engagement produces audit-ready deliverables structured to guide engineering implementation and satisfy regulatory oversight.
             </p>
           </div>
@@ -1298,10 +1309,10 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
                     <span className="font-bold text-[#00A3E0] dark:text-cyan-400">DELIVERABLE 0{idx + 1}</span>
                     <FileText className="w-4 h-4 text-slate-400" />
                   </div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                     {deliv.title}
                   </h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {deliv.desc}
                   </p>
                 </div>
@@ -1329,7 +1340,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Frequently Asked Questions on Enterprise IAM.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">
               Clear answers regarding identity lifecycle management, authentication, role design, and Zero Trust.
             </p>
           </div>
@@ -1383,7 +1394,7 @@ export const IdentityAccessManagementPage: React.FC<ChildPageProps> = ({ onOpenC
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
                 Make Every Digital Identity Count.
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                 Build a more consistent approach to identity lifecycle management, authentication, authorization, and access governance with Knooviq.
               </p>
             </div>

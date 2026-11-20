@@ -43,7 +43,7 @@ export const CloudConsultationCTA: React.FC<CloudConsultationCTAProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white tracking-tight leading-snug">
               {displayHeading}
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               {description}
             </p>
           </div>

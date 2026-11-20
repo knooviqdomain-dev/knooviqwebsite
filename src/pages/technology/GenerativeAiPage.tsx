@@ -293,7 +293,16 @@ export const GenerativeAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact 
                 Grounded Enterprise <br />
                 <span className="text-[#00A3E0]">GenAI With Sovereign Privacy</span>
               </h1>
-              <p className="text-base sm:text-lg text-white leading-relaxed font-normal max-w-2xl pt-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/generative_ai_hero.jpg"
+                alt="Knooviq Enterprise Generative AI Command Center - Architecture Blueprint"
+                className="w-full h-full object-cover object-right"
+              />
+            </div>
+
+            <p className="text-base sm:text-lg text-white leading-relaxed font-normal max-w-2xl pt-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
                 Harness the world's most capable foundation models anchored directly to your internal enterprise documents, SAP ERP databases, and proprietary business knowledge with guaranteed zero data leakage.
               </p>
             </motion.div>

@@ -193,7 +193,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
       tagline: 'Align data management with global privacy standards, data minimization, and statutory obligations.',
       description:
         'Regulatory frameworks such as the EU GDPR and India\'s Digital Personal Data Protection (DPDP) Act 2023 require disciplined personal data stewardship. Knooviq helps organizations embed privacy-by-design principles: documenting lawful business purposes, maintaining consent registers, establishing data minimization gates, and fulfilling Data Subject Access Requests (DSAR).',
-      image: '/images/cloud/data_privacy_governance.jpg?v=9',
+      image: '/images/cloud/data_privacy_governance.jpg?v=11',
       points: [
         'Personal data mapping documenting legal bases, cross-border flows, and processing purposes',
         'Data minimization gates restricting collection strictly to verified operational necessities',
@@ -603,7 +603,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white cloud-sora-scope">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Panoramic Full-Screen Cinematic Hero)
@@ -617,6 +617,8 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
             alt="Cryptographic Data Protection, KMS and DLP Controls"
             className="w-full h-full object-cover object-[70%_center] filter brightness-[1.06] contrast-[1.05]"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
           {/* Subtle directional gradient on left for razor-sharp typography readability; right 55%+ visual is 100% untouched */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/80 sm:via-[#030712]/60 via-35% to-transparent w-full lg:w-[52%] pointer-events-none" />
           <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-[#030712] via-[#030712]/50 to-transparent pointer-events-none" />
@@ -642,13 +644,22 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12] drop-shadow-lg">
                 Data Protection
               </h1>
-              <p className="text-lg sm:text-xl font-bold text-cyan-300 tracking-tight drop-shadow-md">
+              <p className="font-sora text-lg sm:text-xl font-medium text-cyan-300 tracking-tight drop-shadow-md">
                 Protect Sensitive Data. Preserve Trust. Maintain Control.
               </p>
             </div>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/data_hero_wide.jpg"
+                alt="Cryptographic Data Protection, KMS and DLP Controls - Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
             {/* Description */}
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl drop-shadow">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl drop-shadow">
               Knooviq helps organizations protect sensitive information throughout its lifecycle, from creation and collection to storage, sharing, archival, and secure disposal. Our approach combines data discovery, classification, access controls, encryption strategies, data loss prevention, privacy considerations, and governance practices to help businesses manage information responsibly across their technology environments.
             </p>
 
@@ -714,7 +725,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Protect Data Wherever Business Takes It.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Enterprise information moves across applications, databases, cloud services, collaboration platforms, endpoints, integrations, and external partners. Protecting that information requires an understanding of what data exists, how sensitive it is, who should access it, where it moves, and how it should be retained or disposed of.
             </p>
           </div>
@@ -740,7 +751,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
                   <Database className="w-4 h-4 text-[#00A3E0]" />
                   <span>1. Data Creation &amp; Collection</span>
                 </div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Ingestion from customer portals, IoT streams, enterprise ERP, and transactional databases with initial metadata capture.
                 </p>
               </div>
@@ -750,7 +761,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
                   <Search className="w-4 h-4 text-[#00A3E0]" />
                   <span>2. Discovery &amp; Classification</span>
                 </div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Automated scanning, PII/PCI detection, and application of standardized sensitivity labels (Public, Internal, Confidential, Restricted).
                 </p>
               </div>
@@ -760,7 +771,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
                   <Lock className="w-4 h-4 text-[#00A3E0]" />
                   <span>3. Storage &amp; Processing</span>
                 </div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Cryptographic protection via AES-256 volume encryption, Transparent Data Encryption (TDE), and secure memory enclaves.
                 </p>
               </div>
@@ -770,7 +781,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
                   <Share2 className="w-4 h-4 text-[#00A3E0]" />
                   <span>4. Authorized Access &amp; Sharing</span>
                 </div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Fine-grained query controls, dynamic data masking, export watermarks, and TLS 1.3 transport encryption.
                 </p>
               </div>
@@ -780,7 +791,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
                   <Activity className="w-4 h-4 text-[#00A3E0]" />
                   <span>5. Monitoring &amp; Protection</span>
                 </div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Real-time Data Loss Prevention (DLP) inspection across endpoints, email, and cloud gateways to block exfiltration.
                 </p>
               </div>
@@ -790,7 +801,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
                   <Trash2 className="w-4 h-4 text-[#00A3E0]" />
                   <span>6. Retention, Archival &amp; Disposal</span>
                 </div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Immutable WORM archival, statutory retention clocks, and certified cryptographic sanitization upon record expiry.
                 </p>
               </div>
@@ -814,7 +825,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Understanding Data Is the First Step to Protecting It.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">
               Fragmented architectures and decentralized cloud platforms create distinct information risks that demand disciplined governance.
             </p>
           </div>
@@ -836,15 +847,15 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
                   </div>
 
                   <div className="space-y-1.5">
-                    <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                       {challenge.title}
                     </h3>
-                    <p className="text-xs font-semibold text-[#00A3E0] dark:text-cyan-400">
+                    <p className="font-sora text-xs font-medium text-[#00A3E0] dark:text-cyan-400">
                       {challenge.tagline}
                     </p>
                   </div>
 
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {challenge.description}
                   </p>
                 </div>
@@ -868,7 +879,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Build Protection Around the Information That Matters.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Knooviq helps organizations establish practical data protection controls aligned with information sensitivity, business use, technology architecture, and applicable governance requirements.
             </p>
           </div>
@@ -900,15 +911,15 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
                       <div className="text-[11px] font-bold tracking-wider uppercase text-[#00A3E0] dark:text-cyan-400">
                         {cap.badge}
                       </div>
-                      <h3 className="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+                      <h3 className="font-sora text-2xl sm:text-3xl font-medium text-slate-900 dark:text-white tracking-tight">
                         {cap.title}
                       </h3>
-                      <p className="text-sm font-semibold text-slate-600 dark:text-slate-300">
+                      <p className="font-sora text-sm font-medium text-slate-600 dark:text-slate-300">
                         {cap.tagline}
                       </p>
                     </div>
 
-                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {cap.description}
                     </p>
 
@@ -943,7 +954,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Apply the Right Safeguards at Every Data Layer.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">
               A comprehensive data architecture combines complementary safeguards so that no single control failure exposes enterprise information.
             </p>
           </div>
@@ -974,10 +985,10 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
                       {l.tag}
                     </span>
                   </div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                     {l.title}
                   </h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {l.description}
                   </p>
                 </div>
@@ -1005,7 +1016,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Protect Information Across Its Different States.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">
               Different states introduce unique vulnerabilities. Comprehensive protection requires synchronized controls across stored, moving, and processed data.
             </p>
           </div>
@@ -1031,15 +1042,15 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
                       <span className="text-[10px] font-bold text-[#00A3E0] dark:text-cyan-400 uppercase tracking-widest">
                         STATE 0{sIdx + 1} &bull; {stateItem.state}
                       </span>
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                      <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                         {stateItem.title}
                       </h3>
-                      <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                      <p className="font-sora text-xs font-medium text-slate-500 dark:text-slate-400">
                         {stateItem.tagline}
                       </p>
                     </div>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {stateItem.description}
                     </p>
 
@@ -1077,17 +1088,17 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               One Data Protection Strategy Across Connected Systems.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Modern enterprises operate across hybrid environments, multi-cloud storage, collaboration suites, and remote endpoints. Knooviq harmonizes information safeguards across every tier.
             </p>
           </div>
 
           {/* Wide Architecture Graphic */}
-          <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-slate-900">
+          <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-slate-900 group">
             <img
-              src="/images/cloud/data_environments.jpg"
+              src="/images/cloud/data_environments.jpg?v=11"
               alt="Connected enterprise data environments including on-premises databases, multi-cloud storage, document hubs, endpoints, and APIs"
-              className="w-full h-[260px] sm:h-[340px] object-cover object-center"
+              className="w-full h-auto block group-hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />
           </div>
@@ -1103,10 +1114,10 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
                   <span className="text-[10px] font-bold tracking-wider text-[#00A3E0] dark:text-cyan-400 uppercase bg-cyan-500/10 px-2 py-0.5 rounded">
                     {env.tag}
                   </span>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white pt-1">
+                  <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white pt-1">
                     {env.title}
                   </h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {env.description}
                   </p>
                 </div>
@@ -1134,7 +1145,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Discover the Data. Define the Controls. Validate the Protection.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">
               A phased, disciplined implementation roadmap that turns data exposure into structured, audit-ready operational safeguards.
             </p>
           </div>
@@ -1163,18 +1174,18 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
                 <span className="text-xs font-bold text-[#00A3E0] dark:text-cyan-400 uppercase tracking-widest">
                   {roadmapPhases[activeRoadmapPhase].phase} &bull; {roadmapPhases[activeRoadmapPhase].title}
                 </span>
-                <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-1">
+                <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white mt-1">
                   {roadmapPhases[activeRoadmapPhase].tagline}
                 </h3>
               </div>
             </div>
 
-            <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               {roadmapPhases[activeRoadmapPhase].description}
             </p>
 
             <div className="space-y-3 pt-2">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">
+              <h4 className="font-sora text-xs font-medium uppercase tracking-wider text-slate-400">
                 Key Activities &amp; Milestones:
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -1204,7 +1215,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Make Data Protection a Shared Responsibility.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Effective information governance bridges business, security, legal, and engineering functions. Clear ownership prevents data hoarding and control decay.
             </p>
           </div>
@@ -1227,11 +1238,11 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
                       </span>
                     </div>
 
-                    <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                       {roleItem.role}
                     </h3>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {roleItem.responsibilities}
                     </p>
                   </div>
@@ -1261,7 +1272,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Better Visibility. More Responsible Data Handling.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">
               Tangible operational improvements achieved through discovery, classification, encryption, and disciplined retention.
             </p>
           </div>
@@ -1278,10 +1289,10 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
                   <div className="w-9 h-9 rounded-xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center text-[#00A3E0] dark:text-cyan-300">
                     <OutcomeIcon className="w-4 h-4" />
                   </div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                     {outcome.title}
                   </h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {outcome.description}
                   </p>
                 </div>
@@ -1305,7 +1316,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Turn Data Risks into a Practical Protection Plan.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Every data protection engagement produces concrete technical and governance deliverables tailored to your regulatory scope and architecture.
             </p>
           </div>
@@ -1321,10 +1332,10 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
                     <span className="font-bold text-[#00A3E0] dark:text-cyan-400">DELIVERABLE {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}</span>
                     <FileText className="w-4 h-4 text-slate-400" />
                   </div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                     {deliv.title}
                   </h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {deliv.desc}
                   </p>
                 </div>
@@ -1352,7 +1363,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Frequently Asked Questions on Enterprise Data Protection.
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 font-normal leading-[1.6]">
               Clear answers regarding discovery, classification, encryption, DLP, and statutory data retention.
             </p>
           </div>
@@ -1406,7 +1417,7 @@ export const DataProtectionPage: React.FC<ChildPageProps> = ({ onOpenContact }) 
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
                 Protect the Information That Powers Your Business.
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                 Build a structured data protection approach that improves visibility, strengthens information safeguards, and supports responsible data handling across your enterprise.
               </p>
             </div>

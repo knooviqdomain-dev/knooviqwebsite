@@ -516,7 +516,7 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-[#0070C0] selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans cloud-sora-scope selection:bg-[#0070C0] selection:text-white">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (AI Agents Style Full Bleed Panoramic Background)
@@ -532,6 +532,10 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
             style={{ imageRendering: '-webkit-optimize-contrast' }}
           />
         </div>
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
 
         {/* Lighter Directional Scrim for Maximum Visual Clarity & Text Contrast */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-r from-slate-950/70 via-slate-950/30 to-transparent pointer-events-none" />
@@ -561,8 +565,18 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
                 </span>
               </h1>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/real-time-analytics/enterprise_realtime_streaming_analytics_hero.jpg"
+                alt="Enterprise Real-Time Streaming Analytics & Telemetry - Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+
               {/* Subtitle with High Legibility */}
-              <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Sub-second stream processing, distributed event mesh backbones, in-memory continuous aggregations, and automated operational reflex actions for mission-critical enterprise environments.
               </p>
             </motion.div>
@@ -613,12 +627,12 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-5 py-3.5 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-2xl">
-                <p className="text-base sm:text-lg font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-base sm:text-lg font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;In modern global commerce, data loses up to 90% of its operational value within minutes. Real-time streaming analytics shifts enterprises from passive post-mortem batch reporting to instant, event-driven detection and automated corrective reflexes before customer churn or equipment failure occurs.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers enterprise event mesh architectures and sub-second streaming pipelines that unite high-volume telemetry with core business systems. We deploy Apache Kafka, Apache Flink, ClickHouse, and SAP Event Mesh to transform static batch architectures into self-orchestrating event-driven enterprises.
               </p>
 
@@ -629,8 +643,8 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
                     <RadioTower className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Distributed Event Backbones</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Distributed Event Backbones</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       High-throughput, fault-tolerant message streaming with exactly-once processing guarantees across hybrid multi-cloud environments.
                     </p>
                   </div>
@@ -641,8 +655,8 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
                     <Activity className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Complex Event Processing (CEP)</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Complex Event Processing (CEP)</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       In-memory temporal pattern matching, sliding anomaly detection windows, and real-time stateful stream transformations.
                     </p>
                   </div>
@@ -653,8 +667,8 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
                     <Zap className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Sub-Second Closed-Loop Reflexes</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Sub-Second Closed-Loop Reflexes</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Instant algorithmic write-backs into operational SAP S/4HANA, fraud prevention engines, and automated industrial trip-locks.
                     </p>
                   </div>
@@ -690,7 +704,7 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
 
                 <div className="absolute bottom-4 left-4 right-4 text-white space-y-1.5 p-3 rounded-xl bg-slate-900/85 backdrop-blur-md border border-slate-700/80 z-10 shadow-lg">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-normal leading-relaxed line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -714,7 +728,7 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
                         <StepIcon className="w-4 h-4" />
                       </div>
                       <div className="min-w-0">
-                        <div className="text-xs sm:text-sm font-bold break-words leading-tight">{step.label}</div>
+                        <div className="text-xs sm:text-sm font-bold truncate">{step.label}</div>
                         <div className={`text-xs truncate ${isSelected ? 'text-sky-100 font-medium' : 'text-slate-500'}`}>{step.sublabel}</div>
                       </div>
                     </button>
@@ -742,7 +756,7 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Critical Impediments in Legacy Batch Architectures
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Why 24-hour batch pipelines, memory exhaustion during peak traffic, and query collapse on event logs compromise operational competitiveness.
             </p>
           </div>
@@ -764,10 +778,10 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
                         <ChallengeIcon className="w-5 h-5" />
                       </div>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -796,7 +810,7 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
               The KNOOVIQ Real-Time Streaming Fabric
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Explore the eight mutually reinforcing layers of our production-grade streaming foundation. Hover over any segment to inspect its runtime mechanics.
             </p>
           </div>
@@ -824,7 +838,7 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -946,7 +960,7 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -973,7 +987,7 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Modern Event Streaming vs. Legacy Batch Architectures
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Examine the concrete architectural difference between slow 24-hour batch pipelines and KNOOVIQ sub-second event-driven streaming fabrics.
             </p>
           </div>
@@ -1020,8 +1034,50 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
               transition={{ duration: 0.3 }}
               className="rounded-3xl border border-slate-200 overflow-hidden shadow-sm"
             >
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[640px] text-left border-collapse">
+                            {/* Mobile Card-Based Comparison View (Zero Cutoff, 100% Fits Inside Screen) */}
+              <div className="sm:hidden space-y-3.5 p-3.5 bg-slate-50/50">
+                {architecturalComparison.map((row, rIdx) => (
+                  <div key={rIdx} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-3">
+                    <div className="flex items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
+                      <div className="font-bold text-slate-900 text-sm flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                        <span>{row.dimension}</span>
+                      </div>
+                      {row.statusBadge && (
+                        <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase bg-sky-100 text-[#0070C0] border border-sky-300 shrink-0">
+                          {row.statusBadge}
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Modern Approach */}
+                    <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                      <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                        <span>KNOOVIQ Event Streaming Fabric</span>
+                      </div>
+                      <p className="text-xs text-slate-900 font-semibold leading-relaxed">
+                        {row.modernApproach}
+                      </p>
+                    </div>
+
+                    {/* Legacy Approach */}
+                    <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                      <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                        <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                        <span>Legacy Batch Pipelines</span>
+                      </div>
+                      <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                        {row.legacyApproach}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop Full-Bleed Comparison Table (100% Preserved) */}
+              <div className="hidden sm:block overflow-x-auto">
+                <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="bg-slate-100 border-b border-slate-200 text-xs sm:text-sm font-mono uppercase text-slate-700 tracking-wider">
                       <th className="py-4 px-6 font-bold w-1/4">Streaming Dimension</th>
@@ -1088,7 +1144,7 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
                   <div className="text-sm sm:text-base font-mono font-bold text-cyan-300">
                     Distributed Streaming Ingestion, In-Memory Flink CEP &amp; Sub-Second OLAP
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-200 font-normal leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 font-normal leading-[1.6]">
                     Zero-data-loss event streaming architecture pairing Apache Kafka backbones with Apache Flink stateful transformations, ClickHouse columnar storage, and automated operational write-backs into SAP S/4HANA.
                   </p>
                 </div>
@@ -1101,8 +1157,8 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
                     <RadioTower className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-slate-900">Distributed Event Backbone</h4>
-                    <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                    <h4 className="font-sora text-base font-medium text-slate-900">Distributed Event Backbone</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] mt-1 leading-[1.6] font-normal">
                       Millions of events per second processed with multi-AZ broker replication and exactly-once delivery guarantees.
                     </p>
                   </div>
@@ -1113,8 +1169,8 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
                     <Activity className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-slate-900">Stateful Stream Processing</h4>
-                    <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                    <h4 className="font-sora text-base font-medium text-slate-900">Stateful Stream Processing</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] mt-1 leading-[1.6] font-normal">
                       Sliding and tumbling window operations executed in-memory with incremental RocksDB state checkpoints.
                     </p>
                   </div>
@@ -1125,8 +1181,8 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
                     <Database className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base font-bold text-slate-900">Sub-Second Vectorized OLAP</h4>
-                    <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                    <h4 className="font-sora text-base font-medium text-slate-900">Sub-Second Vectorized OLAP</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] mt-1 leading-[1.6] font-normal">
                       Direct micro-batch stream ingestion into ClickHouse powering complex analytical scans in tens of milliseconds.
                     </p>
                   </div>
@@ -1184,10 +1240,10 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
                     <span className="text-xs font-mono font-bold tracking-widest text-[#0070C0] uppercase px-3 py-1 rounded-lg bg-sky-50 border border-sky-200">
                       {protocolDetails[activeProtocolTab].badge}
                     </span>
-                    <h3 className="text-2xl font-black text-slate-950 mt-3 mb-2">
+                    <h3 className="font-sora text-2xl font-medium text-slate-950 mt-3 mb-2">
                       {protocolDetails[activeProtocolTab].title}
                     </h3>
-                    <p className="text-base text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {protocolDetails[activeProtocolTab].desc}
                     </p>
                   </div>
@@ -1249,7 +1305,7 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               4-Stage Phased Implementation Roadmap
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               A structured, risk-mitigated journey from delayed batch pipelines to an enterprise-wide event-driven streaming fabric.
             </p>
           </div>
@@ -1272,11 +1328,11 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
                       </div>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {phase.title}
                     </h3>
 
-                    <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {phase.focus}
                     </p>
                   </div>
@@ -1315,7 +1371,7 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
               Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#005A9C] via-[#0070C0] to-sky-500">Streaming Questions</span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal max-w-2xl mx-auto">
               Addressing key strategic, operational, and architectural considerations for enterprise technology leaders.
             </p>
           </div>
@@ -1390,7 +1446,7 @@ export const RealTimeAnalyticsPage: React.FC<RealTimeAnalyticsPageProps> = ({
             Ready to Transition to Real-Time Streaming Intelligence?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Collaborate with senior streaming architects to decouple monolithic systems, build resilient event meshes, and unlock sub-second operational reflexes across your enterprise.
           </p>
 

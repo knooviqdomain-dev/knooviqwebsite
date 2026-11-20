@@ -95,20 +95,8 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#060D1A] text-slate-900 dark:text-slate-100 transition-colors">
-      
-      {/* =========================================================================
-          HERO SECTION — CLOUD OPERATING MODEL
-          Eyebrow: CLOUD & OPERATIONS
-          Heading: Design a Cloud Operating Model Built for Enterprise Scale
-          Description: Establish the people, processes, governance, and technology
-          practices required to manage cloud services effectively. Knooviq helps
-          organizations define cloud responsibilities, structure cross-functional
-          teams, establish decision-making frameworks, and align cloud delivery
-          with enterprise priorities.
-          Primary CTA: Discuss Your Cloud Operating Model
-          Secondary CTA: Explore Our Capabilities
-          ========================================================================= */}
+    <div className="min-h-screen bg-white dark:bg-[#060D1A] text-slate-900 dark:text-slate-100 transition-colors cloud-sora-scope">
+
       {/* =========================================================================
           HERO SECTION — CLOUD OPERATING MODEL (Cinematic Full-Bleed Enterprise Hero)
           Eyebrow: CLOUD & OPERATIONS
@@ -122,7 +110,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           Secondary CTA: Explore Our Capabilities
           ========================================================================= */}
       <section className="relative w-full min-h-[560px] sm:min-h-[620px] lg:min-h-[660px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 overflow-hidden bg-black text-white">
-        
+
         {/* Full-Bleed 16:9 Panoramic Image - Zero Cropping on Subject */}
         <div className="absolute inset-0 z-0">
           <img
@@ -130,28 +118,39 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             alt="Design a Cloud Operating Model Built for Enterprise Scale"
             className="w-full h-full object-cover object-right sm:object-[78%_center] lg:object-[center_25%] brightness-105 contrast-[1.02]"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#040B17]/95 via-[#040B17]/90 to-[#040B17] pointer-events-none" />
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="max-w-2xl lg:max-w-xl space-y-6 relative">
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+          <div className="max-w-2xl lg:max-w-xl space-y-5 sm:space-y-6 relative">
+            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none hidden sm:block" />
 
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/25 text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider backdrop-blur-md">
               <Sparkles className="w-3.5 h-3.5 text-[#00A3E0]" />
               <span>CLOUD &amp; OPERATIONS</span>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
                 Design a Cloud Operating Model Built for Enterprise Scale
               </h1>
-              <p className="text-base sm:text-lg font-medium text-cyan-300 tracking-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] font-medium text-cyan-300 tracking-normal leading-[1.6]">
                 Align People, Governance, Platform Capabilities, and Commercial Outcomes
               </p>
             </div>
 
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl pt-1">
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/cloud_op_model_hero.png"
+                alt="Design a Cloud Operating Model Built for Enterprise Scale - Cloud Operating Model Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl pt-1">
               Establish the people, processes, governance, and technology practices required to manage cloud services effectively. Knooviq helps organizations define cloud responsibilities, structure cross-functional teams, establish decision-making frameworks, and align cloud delivery with enterprise priorities.
             </p>
 
@@ -176,7 +175,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
 
       {/* Full-Screen Lightbox Modal */}
       {lightboxImage && (
-        <div 
+        <div
           className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-8 animate-in fade-in duration-200"
           onClick={() => setLightboxImage(null)}
         >
@@ -187,12 +186,12 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           >
             <X className="w-6 h-6" />
           </button>
-          <div 
+          <div
             className="relative max-w-7xl w-full max-h-[92vh] flex flex-col items-center justify-center gap-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <img 
-              src={lightboxImage.src} 
+            <img
+              src={lightboxImage.src}
               alt={lightboxImage.caption}
               className="max-w-full max-h-[85vh] object-contain rounded-2xl border border-white/20 shadow-2xl"
             />
@@ -209,9 +208,9 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           Explaining the relationship between people, processes, governance,
           platforms, and business outcomes.
           ========================================================================= */}
-      <section id="operating-model-overview" className="py-20 bg-slate-50 dark:bg-[#07101E] border-b border-slate-200 dark:border-white/10 transition-colors">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
+      <section id="operating-model-overview" className="py-12 sm:py-16 lg:py-20 bg-slate-50 dark:bg-[#07101E] border-b border-slate-200 dark:border-white/10 transition-colors">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-12">
+
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>OPERATING ECOSYSTEM ARCHITECTURE</span>
@@ -219,7 +218,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               The Five Dimensions of a Mature Operating Model
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               A high-performing cloud organization does not happen by accident. It requires intentional design connecting people, decision rights, consumption models, platform engineering, and financial accountability into one cohesive delivery engine.
             </p>
           </div>
@@ -243,11 +242,11 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                       </span>
                     </div>
 
-                    <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                       {p.title}
                     </h3>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {p.desc}
                     </p>
                   </div>
@@ -276,9 +275,9 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           Image: Organizational architecture illustration showing interconnected
           teams (/images/cloud/cloud_op_model_teams.jpg)
           ========================================================================= */}
-      <section id="organization-teams" className="py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          
+      <section id="organization-teams" className="py-12 sm:py-16 lg:py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
+
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>ORGANIZATIONAL ARCHITECTURE &amp; TEAMS</span>
@@ -286,14 +285,14 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Build the Right Teams for Cloud Delivery
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Define the organizational structure required to deliver and manage cloud services consistently. Establish clear responsibilities across cloud platform teams, application owners, security specialists, infrastructure teams, and business stakeholders. Knooviq helps organizations determine team responsibilities, ownership boundaries, collaboration practices, and decision-making authority to support effective cloud delivery.
             </p>
           </div>
 
           {/* Main Grid: Left Image, Right Key Capabilities */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
+
             {/* Left Image Showcase */}
             <div className="lg:col-span-5 space-y-4">
               <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-900 shadow-xl group">
@@ -305,14 +304,14 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-                  
+
                   <div className="absolute bottom-4 left-4 right-4">
                     <div className="p-3.5 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 text-xs text-white space-y-1">
                       <div className="font-bold flex items-center gap-1.5 text-cyan-300">
                         <Users className="w-3.5 h-3.5" />
                         Team Topologies &amp; Interaction Modes
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Enabling autonomous stream-aligned delivery with platform enablement.
                       </p>
                     </div>
@@ -325,7 +324,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   Team Interaction Contracts
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   We define clear collaboration modes (X-as-a-Service, Facilitating, Collaboration) between platform engineering and line-of-business application teams to prevent communication bottlenecks.
                 </p>
               </div>
@@ -333,11 +332,11 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
 
             {/* Right Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Team Topology &amp; Ownership Capabilities
               </h3>
 
-              <div className="space-y-3.5">
+              <div className="space-y-4 lg:space-y-3.5">
                 {[
                   {
                     title: 'Cloud team structure and role definition',
@@ -362,15 +361,15 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 ].map((cap, idx) => (
                   <div
                     key={idx}
-                    className="p-4.5 rounded-2xl bg-slate-50 dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all"
+                    className="p-5 sm:p-6 lg:p-4.5 rounded-2xl bg-slate-50 dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-2.5 lg:space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all"
                   >
                     <div className="flex items-center gap-2.5">
                       <UserCheck className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-6.5">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-0 lg:pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -397,9 +396,9 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           Image: Governance framework illustration featuring policy layers and
           decision pathways (/images/cloud/cloud_op_model_governance.jpg)
           ========================================================================= */}
-      <section id="governance-decisions" className="py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          
+      <section id="governance-decisions" className="py-12 sm:py-16 lg:py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
+
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>DECISION RIGHTS &amp; GOVERNANCE</span>
@@ -407,21 +406,21 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Establish Clear Rules and Accountable Decisions
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Create a governance framework that defines how cloud decisions are made, who owns them, and how policies are maintained across the organization. Establish appropriate controls without creating unnecessary barriers to delivery. Knooviq supports governance structures that align platform standards, security requirements, architecture decisions, and business accountability.
             </p>
           </div>
 
           {/* Main Grid: Left Capabilities, Right Image Showcase */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
+
             {/* Left Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Accountable Decision Frameworks
               </h3>
 
-              <div className="space-y-3.5">
+              <div className="space-y-4 lg:space-y-3.5">
                 {[
                   {
                     title: 'Cloud governance framework design',
@@ -446,15 +445,15 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 ].map((cap, idx) => (
                   <div
                     key={idx}
-                    className="p-4.5 rounded-2xl bg-white dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all shadow-sm"
+                    className="p-5 sm:p-6 lg:p-4.5 rounded-2xl bg-white dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-2.5 lg:space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all shadow-sm"
                   >
                     <div className="flex items-center gap-2.5">
                       <Compass className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-6.5">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-0 lg:pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -474,14 +473,14 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                  
+
                   <div className="absolute bottom-4 left-4 right-4 select-text">
                     <div className="p-3.5 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 text-xs text-white space-y-1">
                       <div className="font-bold flex items-center gap-1.5 text-cyan-300">
                         <Compass className="w-3.5 h-3.5" />
                         Decision Rights &amp; Policy Layers
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Transparent architectural authority, exception management, and committee cadences.
                       </p>
                     </div>
@@ -494,7 +493,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   Frictionless Governance Principles
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Governance works when rules are automated as code rather than trapped in static PDF manuals. We translate compliance mandates into automated guardrails enforced directly in deployment pipelines.
                 </p>
               </div>
@@ -518,9 +517,9 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           Image: Enterprise service delivery illustration showing business teams
           accessing curated cloud services (/images/cloud/cloud_op_model_service_delivery.jpg)
           ========================================================================= */}
-      <section id="service-delivery" className="py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          
+      <section id="service-delivery" className="py-12 sm:py-16 lg:py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
+
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>SERVICE DELIVERY &amp; CONSUMPTION</span>
@@ -528,14 +527,14 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Make Cloud Services Easy to Consume
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Define how internal teams request, access, and consume cloud services. Establish clear engagement models between cloud platform teams and application or business teams, supported by standardized service offerings and transparent delivery processes. Knooviq helps organizations create service catalogs, request workflows, service ownership practices, and collaboration models that improve consistency across cloud delivery.
             </p>
           </div>
 
           {/* Main Grid: Left Image, Right Capabilities */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
+
             {/* Left Image Showcase */}
             <div className="lg:col-span-5 space-y-4">
               <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-900 shadow-xl group">
@@ -547,14 +546,14 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                  
+
                   <div className="absolute bottom-4 left-4 right-4 select-text">
                     <div className="p-3.5 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 text-xs text-white space-y-1">
                       <div className="font-bold flex items-center gap-1.5 text-cyan-300">
                         <Layers className="w-3.5 h-3.5" />
                         Curated Cloud Service Catalog
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Standardized, pre-approved patterns for databases, compute, and networking.
                       </p>
                     </div>
@@ -567,7 +566,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   Product Management for Platforms
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   We guide platform teams to treat developer squads as internal customers, tracking Net Promoter Scores (NPS), lead time to first deployment, and catalog adoption rates.
                 </p>
               </div>
@@ -575,11 +574,11 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
 
             {/* Right Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Service Engagement &amp; Delivery Framework
               </h3>
 
-              <div className="space-y-3.5">
+              <div className="space-y-4 lg:space-y-3.5">
                 {[
                   {
                     title: 'Cloud service catalog design',
@@ -604,15 +603,15 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 ].map((cap, idx) => (
                   <div
                     key={idx}
-                    className="p-4.5 rounded-2xl bg-slate-50 dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all"
+                    className="p-5 sm:p-6 lg:p-4.5 rounded-2xl bg-slate-50 dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-2.5 lg:space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all"
                   >
                     <div className="flex items-center gap-2.5">
                       <Layers className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-6.5">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-0 lg:pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -639,9 +638,9 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           Image: Detailed technical architecture showing shared platform, reusable
           modules, and pipelines (/images/cloud/cloud_op_model_platform_engineering.jpg)
           ========================================================================= */}
-      <section id="platform-engineering" className="py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          
+      <section id="platform-engineering" className="py-12 sm:py-16 lg:py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
+
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>PLATFORM ENGINEERING &amp; SELF-SERVICE</span>
@@ -649,21 +648,21 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Create Consistent Cloud Experiences for Delivery Teams
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Establish shared cloud platforms and reusable engineering capabilities that help application teams provision approved infrastructure and deploy workloads consistently. Define how automation, reusable templates, platform standards, and self-service capabilities are delivered and maintained. Knooviq supports platform engineering practices that balance developer autonomy with enterprise standards and operational controls.
             </p>
           </div>
 
           {/* Main Grid: Left Capabilities, Right Image Showcase */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
+
             {/* Left Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Internal Developer Platform (IDP) Capabilities
               </h3>
 
-              <div className="space-y-3.5">
+              <div className="space-y-4 lg:space-y-3.5">
                 {[
                   {
                     title: 'Internal developer platform planning',
@@ -688,15 +687,15 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 ].map((cap, idx) => (
                   <div
                     key={idx}
-                    className="p-4.5 rounded-2xl bg-white dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all shadow-sm"
+                    className="p-5 sm:p-6 lg:p-4.5 rounded-2xl bg-white dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-2.5 lg:space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all shadow-sm"
                   >
                     <div className="flex items-center gap-2.5">
                       <Cpu className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-6.5">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-0 lg:pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -716,14 +715,14 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                  
+
                   <div className="absolute bottom-4 left-4 right-4 select-text">
                     <div className="p-3.5 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 text-xs text-white space-y-1">
                       <div className="font-bold flex items-center gap-1.5 text-cyan-300">
                         <Cpu className="w-3.5 h-3.5" />
                         Platform-as-a-Product Architecture
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Reusable IaC modules, automated testing, and developer self-service.
                       </p>
                     </div>
@@ -736,7 +735,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   Paved Road Engineering
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   We build golden deployment pathways so appealing, safe, and fast that development teams choose to adopt enterprise standards organically rather than seeking shadow workarounds.
                 </p>
               </div>
@@ -761,9 +760,9 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           connected to finance, engineering, and business functions
           (/images/cloud/cloud_op_model_financial_mgmt.jpg)
           ========================================================================= */}
-      <section id="financial-management" className="py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          
+      <section id="financial-management" className="py-12 sm:py-16 lg:py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
+
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>FINANCIAL ACCOUNTABILITY &amp; FINOPS</span>
@@ -771,14 +770,14 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Connect Cloud Consumption with Business Ownership
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Define how cloud costs are allocated, reviewed, and managed across business units, products, and technology teams. Establish clear financial responsibilities and collaborative practices between engineering, finance, and business stakeholders. Knooviq helps organizations incorporate cost visibility, resource ownership, budgeting processes, and optimization responsibilities into their cloud operating model.
             </p>
           </div>
 
           {/* Main Grid: Left Image, Right Capabilities */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
+
             {/* Left Image Showcase */}
             <div className="lg:col-span-5 space-y-4">
               <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-900 shadow-xl group">
@@ -790,14 +789,14 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                  
+
                   <div className="absolute bottom-4 left-4 right-4 select-text">
                     <div className="p-3.5 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 text-xs text-white space-y-1">
                       <div className="font-bold flex items-center gap-1.5 text-cyan-300">
                         <BarChart3 className="w-3.5 h-3.5" />
                         FinOps Operating Cadence
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Connecting cloud resource usage directly to product unit economics.
                       </p>
                     </div>
@@ -810,7 +809,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   Showback Culture Transformation
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Engineers make better design decisions when cost is treated as a first-class architectural metric alongside latency, reliability, and security.
                 </p>
               </div>
@@ -818,11 +817,11 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
 
             {/* Right Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 FinOps Operating Model &amp; Cost Ownership
               </h3>
 
-              <div className="space-y-3.5">
+              <div className="space-y-4 lg:space-y-3.5">
                 {[
                   {
                     title: 'Cloud cost ownership and allocation',
@@ -847,15 +846,15 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 ].map((cap, idx) => (
                   <div
                     key={idx}
-                    className="p-4.5 rounded-2xl bg-slate-50 dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all"
+                    className="p-5 sm:p-6 lg:p-4.5 rounded-2xl bg-slate-50 dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-2.5 lg:space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all"
                   >
                     <div className="flex items-center gap-2.5">
                       <BarChart3 className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-6.5">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-0 lg:pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -883,9 +882,9 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           security responsibilities across platform, application, and governance
           (/images/cloud/cloud_op_model_security_risk.jpg)
           ========================================================================= */}
-      <section id="security-risk" className="py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          
+      <section id="security-risk" className="py-12 sm:py-16 lg:py-24 bg-slate-50 dark:bg-[#07101E] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
+
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>SHARED SECURITY RESPONSIBILITIES</span>
@@ -893,21 +892,21 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Embed Security into Every Cloud Responsibility
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Define how security, risk management, and compliance responsibilities are distributed across cloud teams. Establish clear ownership for access controls, security policies, risk assessment, evidence collection, and exception handling. Knooviq helps organizations integrate security responsibilities into everyday cloud decisions while maintaining clear accountability across technical and business functions.
             </p>
           </div>
 
           {/* Main Grid: Left Capabilities, Right Image Showcase */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
+
             {/* Left Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Distributed Security &amp; Compliance Ownership
               </h3>
 
-              <div className="space-y-3.5">
+              <div className="space-y-4 lg:space-y-3.5">
                 {[
                   {
                     title: 'Shared responsibility model definition',
@@ -932,15 +931,15 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 ].map((cap, idx) => (
                   <div
                     key={idx}
-                    className="p-4.5 rounded-2xl bg-white dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all shadow-sm"
+                    className="p-5 sm:p-6 lg:p-4.5 rounded-2xl bg-white dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-2.5 lg:space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all shadow-sm"
                   >
                     <div className="flex items-center gap-2.5">
                       <ShieldCheck className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-6.5">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-0 lg:pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -960,14 +959,14 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                  
+
                   <div className="absolute bottom-4 left-4 right-4 select-text">
                     <div className="p-3.5 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 text-xs text-white space-y-1">
                       <div className="font-bold flex items-center gap-1.5 text-cyan-300">
                         <Lock className="w-3.5 h-3.5" />
                         Integrated Security Accountability
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Clear boundaries between platform guardrails, app code, and governance.
                       </p>
                     </div>
@@ -980,7 +979,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   Security as an Enabler
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Instead of functioning as a gatekeeper at the end of the development lifecycle, security teams provide pre-approved, compliant golden modules that let developers ship faster with confidence.
                 </p>
               </div>
@@ -1004,9 +1003,9 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
           Image: Enterprise illustration showing connected teams, knowledge-sharing,
           and continuous improvement cycles (/images/cloud/cloud_op_model_continuous_improvement.jpg)
           ========================================================================= */}
-      <section id="skills-improvement" className="py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
-          
+      <section id="skills-improvement" className="py-12 sm:py-16 lg:py-24 bg-white dark:bg-[#060D1A] transition-colors border-b border-slate-100 dark:border-white/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10 lg:space-y-14">
+
           <div className="max-w-3xl space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-500/10 border border-cyan-200 dark:border-cyan-400/20 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>CAPABILITY EVOLUTION &amp; MATURITY</span>
@@ -1014,14 +1013,14 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-slate-900 dark:text-white tracking-tight leading-snug">
               Evolve Your Operating Model as Your Business Changes
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Create a sustainable approach to cloud skills development, service ownership, operating reviews, and organizational improvement. Define how teams develop expertise, review service delivery, learn from operational feedback, and adapt cloud practices as business and technology requirements evolve. Knooviq helps organizations establish improvement mechanisms that support a mature, accountable, and adaptable cloud operating model.
             </p>
           </div>
 
           {/* Main Grid: Left Image, Right Capabilities */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
+
             {/* Left Image Showcase */}
             <div className="lg:col-span-5 space-y-4">
               <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-900 shadow-xl group">
@@ -1033,14 +1032,14 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                     loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-                  
+
                   <div className="absolute bottom-4 left-4 right-4 select-text">
                     <div className="p-3.5 rounded-2xl bg-black/70 backdrop-blur-md border border-white/15 text-xs text-white space-y-1">
                       <div className="font-bold flex items-center gap-1.5 text-cyan-300">
                         <RefreshCw className="w-3.5 h-3.5" />
                         Continuous Organizational Evolution
                       </div>
-                      <p className="text-[11px] text-slate-300">
+                      <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                         Maturity assessment, role enablement, and learning feedback loops.
                       </p>
                     </div>
@@ -1053,7 +1052,7 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 <span className="font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                   Operating Model Maturity Cadence
                 </span>
-                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   We institute bi-annual Operating Model Maturity Assessments to evaluate how effectively teams consume cloud capabilities, identify emerging bottlenecks, and refine organizational topologies.
                 </p>
               </div>
@@ -1061,11 +1060,11 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
 
             {/* Right Capabilities Column */}
             <div className="lg:col-span-7 space-y-6">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                 Enablement, Performance &amp; Maturity Mechanisms
               </h3>
 
-              <div className="space-y-3.5">
+              <div className="space-y-4 lg:space-y-3.5">
                 {[
                   {
                     title: 'Cloud skills and competency planning',
@@ -1090,15 +1089,15 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
                 ].map((cap, idx) => (
                   <div
                     key={idx}
-                    className="p-4.5 rounded-2xl bg-slate-50 dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all"
+                    className="p-5 sm:p-6 lg:p-4.5 rounded-2xl bg-slate-50 dark:bg-[#0A162B] border border-slate-200 dark:border-white/10 space-y-2.5 lg:space-y-1.5 hover:border-[#00A3E0] dark:hover:border-cyan-400/40 transition-all"
                   >
                     <div className="flex items-center gap-2.5">
                       <BookOpen className="w-4 h-4 text-[#00A3E0] shrink-0" />
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-base lg:text-sm font-medium text-slate-900 dark:text-white">
                         {cap.title}
                       </h4>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pl-6.5">
+                    <p className="font-sora text-[15px] sm:text-[16px] lg:text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pl-0 lg:pl-6.5 font-normal">
                       {cap.desc}
                     </p>
                   </div>
@@ -1122,24 +1121,24 @@ export const CloudOperatingModelPage: React.FC<CloudOperatingModelPageProps> = (
       {/* =========================================================================
           CONSULTATION CTA SECTION
           ========================================================================= */}
-      <section className="py-20 bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-[#060D1A] dark:via-[#081224] dark:to-[#050A14] border-t border-slate-200 dark:border-white/10 transition-colors">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-[#060D1A] dark:via-[#081224] dark:to-[#050A14] border-t border-slate-200 dark:border-white/10 transition-colors">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="p-8 sm:p-14 rounded-3xl bg-gradient-to-br from-slate-900 via-[#0A1A33] to-[#050E1F] border border-cyan-500/30 text-white shadow-2xl relative overflow-hidden space-y-8">
-            
+
             {/* Ambient Cyan Accent Glow */}
             <div className="absolute -top-24 -right-24 w-80 h-80 bg-[#00A3E0]/20 rounded-full blur-3xl pointer-events-none" />
-            
+
             <div className="relative space-y-4 max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/30 text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5 text-[#00A3E0]" />
                 <span>EXECUTIVE ADVISORY &amp; ARCHITECTURE</span>
               </div>
-              
+
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
                 Design an Operating Model Built for Your Business
               </h2>
-              
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                 Partner with Knooviq enterprise advisors to structure your Cloud Center of Excellence, clarify cross-functional decision rights, and build self-service platform capabilities that scale.
               </p>
             </div>

@@ -276,7 +276,7 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
     : modularSolutions.filter(s => s.category === activeSolutionCategory);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* SECTION 1: HERO */}
       <section className="relative w-full min-h-[680px] lg:min-h-[760px] flex flex-col justify-center pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 overflow-hidden bg-slate-900">
@@ -292,6 +292,10 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/55 sm:via-slate-950/25 to-transparent pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-transparent to-slate-950/15 pointer-events-none" />
         </div>
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           
@@ -315,10 +319,19 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Orchestrating FDA UDI Traceability, EU MDR Compliance & Lifecycle Asset Servicing.
               </p>
             </motion.div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/medical-devices/medical_devices_hero.jpg"
+                alt="Intelligent ERP for Medical Devices - Architecture Blueprint"
+                className="w-full h-auto block select-none"
+              />
+            </div>
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -326,7 +339,7 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
               transition={{ duration: 0.6, delay: 0.1 }}
               className="space-y-3 max-w-2xl"
             >
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empower medical device manufacturers with integrated <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, <strong className="text-cyan-300 font-semibold">Device Master Record (DMR) governance</strong>, FDA Unique Device Identification (UDI), and predictive <strong className="text-white font-semibold">field service maintenance</strong>.
               </p>
               
@@ -390,7 +403,7 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight leading-tight">
                 Connecting Engineering Innovation with Strict Device Quality Regulations
               </h2>
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Medical technology OEMs must navigate increasingly rigid international standards without slowing design velocity. Knooviq connects CAD engineering to cleanroom assembly lines and hospital field service on a single unified digital thread.
               </p>
               
@@ -424,10 +437,10 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
                   <span className="text-xs font-mono uppercase tracking-widest text-cyan-300 font-bold mb-1">
                     {journeySteps[activeJourneyStep].tag}
                   </span>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-1.5">
+                  <h3 className="font-sora text-lg sm:text-xl font-medium text-white mb-1.5">
                     {journeySteps[activeJourneyStep].title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-200 leading-relaxed max-w-xl">
+                  <p className="font-sora text-xs sm:text-sm text-slate-200 leading-[1.6] max-w-xl font-normal">
                     {journeySteps[activeJourneyStep].description}
                   </p>
                 </div>
@@ -470,7 +483,7 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Critical Challenges in Medical Device Manufacturing
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Global regulatory fragmentation and paper-based device history records threaten margins and recall readiness.
             </p>
           </div>
@@ -487,10 +500,10 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
                     <span className="text-xs font-mono uppercase text-slate-500 font-bold block">
                       {challenge.tag}
                     </span>
-                    <h3 className="text-base font-bold text-slate-950 leading-snug">
+                    <h3 className="font-sora text-base font-medium text-slate-950 leading-snug">
                       {challenge.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    <p className="font-sora text-xs sm:text-sm text-[#102A43] leading-[1.6] font-normal">
                       {challenge.desc}
                     </p>
                   </div>
@@ -515,7 +528,7 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               SAP S/4HANA Clean Core for Medical Devices
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Standard core ERP foundation maintaining complete ISO 13485 and 21 CFR Part 820 qualification with modular cloud extensions.
             </p>
           </div>
@@ -542,8 +555,8 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
             <div className="lg:col-span-8 bg-slate-900 rounded-2xl p-6 text-white border border-slate-800">
               {activeArchTab === 'clean-core' && (
                 <div className="space-y-4">
-                  <h3 className="text-lg sm:text-xl font-bold text-cyan-300">Standard Clean Core Foundation</h3>
-                  <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
+                  <h3 className="font-sora text-lg sm:text-xl font-medium text-cyan-300">Standard Clean Core Foundation</h3>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal">
                     Standard SAP S/4HANA Discrete Manufacturing, Serial Number Management, and Quality Management maintained with zero modifications, ensuring ongoing vendor support and rapid upgrades.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -561,8 +574,8 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
 
               {activeArchTab === 'udi' && (
                 <div className="space-y-4">
-                  <h3 className="text-lg sm:text-xl font-bold text-cyan-300">Global UDI Syndication Engine</h3>
-                  <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
+                  <h3 className="font-sora text-lg sm:text-xl font-medium text-cyan-300">Global UDI Syndication Engine</h3>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal">
                     BTP-powered master data syndication mapping device catalog attributes directly to FDA GUDID and EU EUDAMED specifications with pre-submission validation gates.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -580,8 +593,8 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
 
               {activeArchTab === 'dmr' && (
                 <div className="space-y-4">
-                  <h3 className="text-lg sm:text-xl font-bold text-cyan-300">Digital eDHR & Cleanroom MES Suite</h3>
-                  <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
+                  <h3 className="font-sora text-lg sm:text-xl font-medium text-cyan-300">Digital eDHR & Cleanroom MES Suite</h3>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal">
                     Execute paperless Device History Records on SAP Digital Manufacturing Cloud (DMC), preventing assembly progression if tools are uncalibrated or components unverified.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -599,8 +612,8 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
 
               {activeArchTab === 'field-service' && (
                 <div className="space-y-4">
-                  <h3 className="text-lg sm:text-xl font-bold text-cyan-300">Connected Field Service & EAM</h3>
-                  <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
+                  <h3 className="font-sora text-lg sm:text-xl font-medium text-cyan-300">Connected Field Service & EAM</h3>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal">
                     Empower biomedical field service engineers with offline-capable mobile tools for hospital service orders, calibration documentation, and consignment trunk stock depletion.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
@@ -633,12 +646,12 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
               <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
                 Modular Medical Device Solutions
               </h2>
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Pre-configured SAP MedTech modules supporting compliant product design, cleanroom manufacturing, and aftermarket hospital servicing.
               </p>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap sm:flex-nowrap items-center gap-2">
               {(['ALL', 'COMPLIANCE', 'MANUFACTURING', 'SERVICE'] as const).map(cat => (
                 <button
                   key={cat}
@@ -684,11 +697,11 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
                     <div className="space-y-2.5">
                       <div className="flex items-center gap-2">
                         <IconComp className="w-4 h-4 text-[#0070C0] shrink-0" />
-                        <h3 className="text-base sm:text-lg font-bold text-slate-950 line-clamp-2 leading-snug group-hover:text-[#0070C0] transition-colors" title={sol.title}>
+                        <h3 className="font-sora text-base sm:text-lg font-medium text-slate-950 line-clamp-2 leading-snug group-hover:text-[#0070C0] transition-colors" title={sol.title}>
                           {sol.title}
                         </h3>
                       </div>
-                      <p className="text-xs sm:text-sm text-slate-600 line-clamp-2 leading-relaxed">
+                      <p className="font-sora text-xs sm:text-sm text-[#102A43] line-clamp-2 leading-[1.6] font-normal">
                         {sol.description}
                       </p>
                     </div>
@@ -721,7 +734,7 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Operational Transformation Matrix
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Comparing traditional manual medical device records with Knooviq SAP Clean Core orchestration.
             </p>
           </div>
@@ -730,7 +743,7 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
             {transformationImpacts.map((impact, idx) => (
               <div key={idx} className="bg-slate-50 p-5 sm:p-6 rounded-2xl border border-slate-200 hover:border-slate-300 transition-all space-y-3">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-base font-bold text-slate-950">{impact.area}</h3>
+                  <h3 className="font-sora text-base font-medium text-slate-950">{impact.area}</h3>
                   <span className="text-xs font-mono font-bold uppercase px-2.5 py-1 rounded-full bg-sky-100 text-[#0070C0]">
                     {impact.tag}
                   </span>
@@ -739,11 +752,11 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
                   <div className="p-3.5 rounded-xl bg-white border border-red-100 space-y-1.5">
                     <span className="text-xs font-mono uppercase text-red-600 font-bold block">Traditional Device Operations</span>
-                    <p className="text-slate-700 leading-relaxed">{impact.before}</p>
+                    <p className="font-sora text-xs sm:text-sm text-[#102A43] leading-[1.6] font-normal">{impact.before}</p>
                   </div>
                   <div className="p-3.5 rounded-xl bg-white border border-emerald-100 space-y-1.5">
                     <span className="text-xs font-mono uppercase text-emerald-700 font-bold block">Knooviq Clean Core Delivery</span>
-                    <p className="text-slate-900 font-medium leading-relaxed">{impact.after}</p>
+                    <p className="font-sora text-xs sm:text-sm text-slate-900 font-medium leading-[1.6]">{impact.after}</p>
                   </div>
                 </div>
               </div>
@@ -763,7 +776,7 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Medical Device Manufacturer Case Studies
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               How pioneering MedTech OEMs achieve global regulatory approval and cleanroom execution excellence.
             </p>
           </div>
@@ -779,23 +792,23 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
                     <span className="text-xs font-mono text-slate-500 font-semibold">{cs.tag}</span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-950 leading-snug">{cs.title}</h3>
+                  <h3 className="font-sora text-lg font-medium text-slate-950 leading-snug">{cs.title}</h3>
 
                   <div className="space-y-2.5 text-xs sm:text-sm">
                     <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
                       <span className="text-xs font-mono uppercase font-bold text-slate-600 block">The Challenge</span>
-                      <p className="text-slate-700 leading-relaxed">{cs.challenge}</p>
+                      <p className="font-sora text-xs sm:text-sm text-[#102A43] leading-[1.6] font-normal">{cs.challenge}</p>
                     </div>
                     <div className="p-3.5 rounded-xl bg-sky-50/60 border border-sky-100 space-y-1">
                       <span className="text-xs font-mono uppercase font-bold text-[#0070C0] block">The Solution</span>
-                      <p className="text-slate-800 font-medium leading-relaxed">{cs.solution}</p>
+                      <p className="font-sora text-xs sm:text-sm text-[#102A43] font-medium leading-[1.6]">{cs.solution}</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-4 pt-3 border-t border-slate-100">
                   <span className="text-xs font-mono uppercase font-bold text-emerald-700 block mb-1">Delivered Outcome</span>
-                  <p className="text-sm font-semibold text-slate-950 leading-relaxed">{cs.outcome}</p>
+                  <p className="font-sora text-sm font-semibold text-slate-950 leading-[1.6]">{cs.outcome}</p>
                 </div>
               </div>
             ))}
@@ -828,7 +841,7 @@ export const MedicalDevicesIndustryPage: React.FC<MedicalDevicesIndustryPageProp
             Ready to Streamline FDA UDI & Cleanroom Assembly with SAP S/4HANA?
           </h2>
 
-          <p className="text-sm sm:text-base text-slate-200 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-sm sm:text-base text-slate-200 max-w-2xl mx-auto leading-[1.6] font-normal">
             Schedule an architectural session with Knooviq’s medical device engineering and regulatory compliance specialists to review your digital thread roadmap.
           </p>
 

@@ -10,7 +10,8 @@ import {
   Gauge, 
   TrendingUp, 
   BarChart3, 
-  CheckCircle2, 
+  CheckCircle2,
+  XCircle, 
   ArrowRight, 
   ChevronRight, 
   ChevronDown, 
@@ -476,7 +477,7 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Construction & EPC Hero)
@@ -494,6 +495,10 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
 
         {/* Seamless Cinematic Left Scrim */}
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-slate-950/95 via-slate-950/85 sm:via-slate-950/65 to-transparent pointer-events-none" />
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           <div className="max-w-3xl space-y-4">
@@ -517,10 +522,19 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Progressive Milestone Billing, Earned Value Management (EVM) & Subcontractor Control.
               </p>
             </motion.div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/construction_epc_hero.jpg"
+                alt="Intelligent ERP for Construction & Mega-EPC Site Telemetry - Architecture Blueprint"
+                className="w-full h-auto block select-none"
+              />
+            </div>
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -529,7 +543,7 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering general contractors, mega-EPC developers, and civil engineering enterprises with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA Project Systems</strong>, automated{' '}
                 <strong className="text-cyan-300 font-semibold">AIA G702 / G703 Progressive Billing</strong>, and live site telemetry.
@@ -621,12 +635,12 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-[1.6] italic">
                   &ldquo;In mega-construction projects, cash flow is determined by the speed of progressive certification. When site measurements, subcontractor claims, and AIA billing are unified, budget overruns disappear.&rdquo;
                 </p>
               </div>
 
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Mega-EPC projects frequently bleed margin due to disconnected site field logs, contested subcontractor measurements, and multi-week billing compilation cycles. Knooviq orchestrates the physical job site directly with corporate financial ledgers, enabling real-time cost-to-complete visibility and rapid cash cycle turnaround.
               </p>
 
@@ -663,7 +677,7 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                       <span className="px-2.5 py-0.5 rounded-full bg-cyan-400 text-slate-950 font-mono text-[10px] font-bold uppercase tracking-wider">
                         {journeySteps[activeJourneyStep].tech}
                       </span>
-                      <h3 className="text-base sm:text-lg font-bold text-white mt-1">
+                      <h3 className="font-sora text-base sm:text-lg font-medium text-white mt-1">
                         {journeySteps[activeJourneyStep].label}
                       </h3>
                     </div>
@@ -673,7 +687,7 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                   </div>
                 </div>
 
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed min-h-[44px]">
+                <p className="font-sora text-xs sm:text-sm text-[#102A43] leading-[1.6] min-h-[44px] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -725,7 +739,7 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Operational Challenges Across Mega-EPC Delivery
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Construction firms risk severe liquidity shocks when site progress, subcontractor claims, and equipment rental rates remain disconnected from project accounting.
             </p>
           </div>
@@ -748,11 +762,11 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                       </div>
                     </div>
 
-                    <h3 className="text-base font-bold text-slate-900 leading-snug">
+                    <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                       {item.title}
                     </h3>
 
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -792,7 +806,7 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               KNOOVIQ Construction & Mega-EPC Architecture Core
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Hover over any segment in the interlocking wheel to explore how site execution, progressive AIA billing, and Earned Value Management operate in continuous synchronization.
             </p>
           </motion.div>
@@ -829,10 +843,10 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1002,10 +1016,10 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                         }}
                       />
                       <div className="space-y-1 text-right flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1034,7 +1048,7 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Enterprise Mega-EPC Technology Blueprint
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Decoupling rugged site mobility, telematics, and subcontractor portals on SAP BTP while preserving an untouched S/4HANA core.
             </p>
           </div>
@@ -1081,24 +1095,24 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                   <div className="flex items-center gap-3">
                     <Radio className="w-6 h-6 text-sky-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">Site Edge Devices, Telematics & Weighbridges</h3>
-                      <p className="text-xs text-slate-400 font-mono">CANbus Telematics • Barcode Scanners • Offline Tablets • Weighbridge APIs</p>
+                      <h3 className="font-sora text-lg font-medium text-white">Site Edge Devices, Telematics & Weighbridges</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">CANbus Telematics • Barcode Scanners • Offline Tablets • Weighbridge APIs</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-mono">Offline-First Sync</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-sky-300 uppercase font-mono mb-1">Rugged Site Muster</h4>
-                    <p className="text-xs text-slate-300">Biometric and QR badge scanners register daily subcontractor trade headcounts at site security gates.</p>
+                    <h4 className="font-sora text-xs font-medium text-sky-300 uppercase font-mono mb-1">Rugged Site Muster</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Biometric and QR badge scanners register daily subcontractor trade headcounts at site security gates.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-sky-300 uppercase font-mono mb-1">Equipment Telematics</h4>
-                    <p className="text-xs text-slate-300">GPS geofences and engine load data stream live operating hours directly to plant hire accounts.</p>
+                    <h4 className="font-sora text-xs font-medium text-sky-300 uppercase font-mono mb-1">Equipment Telematics</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">GPS geofences and engine load data stream live operating hours directly to plant hire accounts.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-sky-300 uppercase font-mono mb-1">Laydown RFID Ingestion</h4>
-                    <p className="text-xs text-slate-300">Materials gatepass scanning verifies steel and pipe spool shipments against delivery notes on arrival.</p>
+                    <h4 className="font-sora text-xs font-medium text-sky-300 uppercase font-mono mb-1">Laydown RFID Ingestion</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Materials gatepass scanning verifies steel and pipe spool shipments against delivery notes on arrival.</p>
                   </div>
                 </div>
               </div>
@@ -1110,24 +1124,24 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                   <div className="flex items-center gap-3">
                     <Server className="w-6 h-6 text-[#0070C0]" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">SAP S/4HANA Project Systems (PS) & Commercial Core</h3>
-                      <p className="text-xs text-slate-400 font-mono">Universal Journal ACDOCA • EVM Calculation • IFRS 15 Billing • Retention Escrow</p>
+                      <h3 className="font-sora text-lg font-medium text-white">SAP S/4HANA Project Systems (PS) & Commercial Core</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">Universal Journal ACDOCA • EVM Calculation • IFRS 15 Billing • Retention Escrow</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-mono">Clean Core Standard</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-cyan-300 uppercase font-mono mb-1">AIA G702 / G703 Engine</h4>
-                    <p className="text-xs text-slate-300">Generates statutory payment applications mapped directly to certified Schedule of Values line items.</p>
+                    <h4 className="font-sora text-xs font-medium text-cyan-300 uppercase font-mono mb-1">AIA G702 / G703 Engine</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Generates statutory payment applications mapped directly to certified Schedule of Values line items.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-cyan-300 uppercase font-mono mb-1">Real-Time EVM Ledgers</h4>
-                    <p className="text-xs text-slate-300">Universal Journal tracks CPI/SPI variance immediately upon labor and subcontractor cost postings.</p>
+                    <h4 className="font-sora text-xs font-medium text-cyan-300 uppercase font-mono mb-1">Real-Time EVM Ledgers</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Universal Journal tracks CPI/SPI variance immediately upon labor and subcontractor cost postings.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-cyan-300 uppercase font-mono mb-1">Retention Accounting</h4>
-                    <p className="text-xs text-slate-300">Automated ledger segregation of retention withholdings across defect liability warranty periods.</p>
+                    <h4 className="font-sora text-xs font-medium text-cyan-300 uppercase font-mono mb-1">Retention Accounting</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Automated ledger segregation of retention withholdings across defect liability warranty periods.</p>
                   </div>
                 </div>
               </div>
@@ -1139,24 +1153,24 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                   <div className="flex items-center gap-3">
                     <Zap className="w-6 h-6 text-amber-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">SAP BTP Subcontractor & Commercial Portal</h3>
-                      <p className="text-xs text-slate-400 font-mono">BTP Event Mesh • Subcontractor Collaboration • Digital Signature API</p>
+                      <h3 className="font-sora text-lg font-medium text-white">SAP BTP Subcontractor & Commercial Portal</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">BTP Event Mesh • Subcontractor Collaboration • Digital Signature API</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-mono">Zero Core Tampering</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-amber-300 uppercase font-mono mb-1">Subcontractor JMS Sign-Off</h4>
-                    <p className="text-xs text-slate-300">Trade contractors review and sign measured quantities digitally, avoiding billing friction.</p>
+                    <h4 className="font-sora text-xs font-medium text-amber-300 uppercase font-mono mb-1">Subcontractor JMS Sign-Off</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Trade contractors review and sign measured quantities digitally, avoiding billing friction.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-amber-300 uppercase font-mono mb-1">Site Safety Workflows</h4>
-                    <p className="text-xs text-slate-300">Permit-to-Work applications and safety incident audits processed with automated supervisor routing.</p>
+                    <h4 className="font-sora text-xs font-medium text-amber-300 uppercase font-mono mb-1">Site Safety Workflows</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Permit-to-Work applications and safety incident audits processed with automated supervisor routing.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-amber-300 uppercase font-mono mb-1">Predictive Cash Curves</h4>
-                    <p className="text-xs text-slate-300">Machine learning models forecast progressive billing collections and contractor disbursements.</p>
+                    <h4 className="font-sora text-xs font-medium text-amber-300 uppercase font-mono mb-1">Predictive Cash Curves</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Machine learning models forecast progressive billing collections and contractor disbursements.</p>
                   </div>
                 </div>
               </div>
@@ -1180,7 +1194,7 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Knooviq Construction & EPC Solution Suites
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Targeted capability packages engineered to solve contractor cashflow delays and site margin leakage without project interruption.
             </p>
           </div>
@@ -1234,10 +1248,10 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                       <span className="text-[10px] font-mono font-bold text-[#0070C0] uppercase tracking-wider bg-sky-50 px-2 py-0.5 rounded border border-sky-100">
                         {sol.categoryLabel}
                       </span>
-                      <h3 className="text-base sm:text-lg font-bold text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug line-clamp-2">
+                      <h3 className="font-sora text-base sm:text-lg font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug line-clamp-2">
                         {sol.title}
                       </h3>
-                      <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
+                      <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-3 font-normal">
                         {sol.description}
                       </p>
                     </div>
@@ -1273,13 +1287,218 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Legacy Project Spreadsheets vs Knooviq Clean Core
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Compare traditional disconnected construction practices against Knooviq&apos;s real-time SAP S/4HANA Clean Core architecture.
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
-            <table className="w-full text-left text-xs sm:text-sm border-collapse">
+          <div className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+            {/* Mobile Card-Based Comparison View (Zero Cutoff, 100% Fits Inside Screen) */}
+            <div className="sm:hidden space-y-3.5 p-3.5 bg-slate-50/50">
+              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-2.5">
+                <div className="font-bold text-slate-900 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                  <span>Progressive Client Billing</span>
+                </div>
+
+                {/* KNOOVIQ Clean Core */}
+                <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                    <span>Knooviq S/4HANA Clean Core</span>
+                  </div>
+                  <p className="text-xs text-slate-800 font-semibold leading-relaxed">
+                    Automated Schedule of Values (SOV) generation in SAP.
+                  </p>
+                </div>
+
+                {/* Legacy Approach */}
+                <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                    <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                    <span>Legacy / Fragmented Approach</span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                    Manual progressive spreadsheet compilation with prolonged preparation lag.
+                  </p>
+                </div>
+
+                {/* Measurable Value Impact */}
+                <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-emerald-700 tracking-wider flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Measurable Value Impact</span>
+                  </div>
+                  <p className="text-xs text-emerald-700 font-semibold leading-relaxed">
+                    Accelerated cash collection velocity; eliminated billing disputes.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-2.5">
+                <div className="font-bold text-slate-900 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                  <span>Earned Value (EVM)</span>
+                </div>
+
+                {/* KNOOVIQ Clean Core */}
+                <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                    <span>Knooviq S/4HANA Clean Core</span>
+                  </div>
+                  <p className="text-xs text-slate-800 font-semibold leading-relaxed">
+                    Real-time Cost & Schedule Performance Index (CPI/SPI).
+                  </p>
+                </div>
+
+                {/* Legacy Approach */}
+                <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                    <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                    <span>Legacy / Fragmented Approach</span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                    Retrospective quarterly cost-to-complete reviews after overrun.
+                  </p>
+                </div>
+
+                {/* Measurable Value Impact */}
+                <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-emerald-700 tracking-wider flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Measurable Value Impact</span>
+                  </div>
+                  <p className="text-xs text-emerald-700 font-semibold leading-relaxed">
+                    Systemic mitigation of project budget overruns.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-2.5">
+                <div className="font-bold text-slate-900 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                  <span>Subcontractor Claims</span>
+                </div>
+
+                {/* KNOOVIQ Clean Core */}
+                <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                    <span>Knooviq S/4HANA Clean Core</span>
+                  </div>
+                  <p className="text-xs text-slate-800 font-semibold leading-relaxed">
+                    Mobile Joint Measurement Sheet (JMS) with digital signatures.
+                  </p>
+                </div>
+
+                {/* Legacy Approach */}
+                <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                    <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                    <span>Legacy / Fragmented Approach</span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                    Disputed paper measurement sheets and delayed certifications.
+                  </p>
+                </div>
+
+                {/* Measurable Value Impact */}
+                <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-emerald-700 tracking-wider flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Measurable Value Impact</span>
+                  </div>
+                  <p className="text-xs text-emerald-700 font-semibold leading-relaxed">
+                    Eliminated trade claim disputes; clean audit trail.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-2.5">
+                <div className="font-bold text-slate-900 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                  <span>Equipment & Fleet</span>
+                </div>
+
+                {/* KNOOVIQ Clean Core */}
+                <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                    <span>Knooviq S/4HANA Clean Core</span>
+                  </div>
+                  <p className="text-xs text-slate-800 font-semibold leading-relaxed">
+                    Live CANbus telematics automated WBS chargeouts.
+                  </p>
+                </div>
+
+                {/* Legacy Approach */}
+                <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                    <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                    <span>Legacy / Fragmented Approach</span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                    Unmonitored plant hours and forgotten internal chargeouts.
+                  </p>
+                </div>
+
+                {/* Measurable Value Impact */}
+                <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-emerald-700 tracking-wider flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Measurable Value Impact</span>
+                  </div>
+                  <p className="text-xs text-emerald-700 font-semibold leading-relaxed">
+                    Total plant equipment cost recovery; reduced idle fuel burn.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-2.5">
+                <div className="font-bold text-slate-900 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                  <span>Retention Management</span>
+                </div>
+
+                {/* KNOOVIQ Clean Core */}
+                <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                    <span>Knooviq S/4HANA Clean Core</span>
+                  </div>
+                  <p className="text-xs text-slate-800 font-semibold leading-relaxed">
+                    Automated milestone escrow release notifications.
+                  </p>
+                </div>
+
+                {/* Legacy Approach */}
+                <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                    <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                    <span>Legacy / Fragmented Approach</span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                    Spreadsheet tracking leading to forgotten escrow claims.
+                  </p>
+                </div>
+
+                {/* Measurable Value Impact */}
+                <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-emerald-700 tracking-wider flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Measurable Value Impact</span>
+                  </div>
+                  <p className="text-xs text-emerald-700 font-semibold leading-relaxed">
+                    Accelerated release of withheld retention contract value.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop Full-Bleed Comparison Table (100% Preserved) */}
+            <div className="hidden sm:block overflow-x-auto">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse">
               <thead>
                 <tr className="bg-slate-900 text-white font-mono text-[11px] uppercase tracking-wider">
                   <th className="p-4 sm:p-5">Construction Dimension</th>
@@ -1321,6 +1540,7 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
 
         </div>
@@ -1340,7 +1560,7 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Phased Roadmap to Autonomous Mega-EPC Operations
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Inspect how legacy manual job site spreadsheets transform into a synchronized enterprise operational fabric across every stage of the SAP deployment.
             </p>
           </div>
@@ -1378,7 +1598,7 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                     </div>
 
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide mt-0.5">
@@ -1386,7 +1606,7 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                       </div>
                     </div>
 
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1415,7 +1635,7 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                     <span className={`text-[11px] font-mono font-bold uppercase tracking-wider ${currentStage.textColor}`}>
                       {currentStage.badge} ARCHITECTURAL DELTA
                     </span>
-                    <h3 className="text-lg font-bold text-white mt-0.5">
+                    <h3 className="font-sora text-lg font-medium text-white mt-0.5">
                       {currentStage.title} &mdash; {currentStage.subtitle}
                     </h3>
                   </div>
@@ -1427,11 +1647,11 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="p-4 rounded-xl bg-rose-950/30 border border-rose-500/30">
                     <div className="text-xs font-mono font-bold text-rose-400 uppercase tracking-wider mb-1">Legacy State</div>
-                    <p className="text-xs text-slate-200">{currentStage.before}</p>
+                    <p className="font-sora text-xs text-slate-200 leading-[1.6] font-normal">{currentStage.before}</p>
                   </div>
                   <div className="p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/30">
                     <div className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider mb-1">Modernized Clean Core</div>
-                    <p className="text-xs text-slate-200">{currentStage.after}</p>
+                    <p className="font-sora text-xs text-slate-200 leading-[1.6] font-normal">{currentStage.after}</p>
                   </div>
                 </div>
 
@@ -1465,7 +1685,7 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Strategic Value Drivers & Operational Safeguards
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Architectural outcomes delivered across general contractor and mega-EPC enterprise operations.
             </p>
           </div>
@@ -1476,10 +1696,10 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                 <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-[#0070C0]">
                   <FileCheck className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
+                <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                   Progressive Invoicing Velocity
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   Automated milestone and AIA payment applications eliminating billing compilation latency and accelerating contractor cash recovery.
                 </p>
               </div>
@@ -1494,10 +1714,10 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                 <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
                   <TrendingUp className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
+                <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                   Earned Value Budget Control
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   Real-time CPI and SPI performance tracking across active WBS cost elements, safeguarding estimated contractor profit margins.
                 </p>
               </div>
@@ -1512,10 +1732,10 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                 <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-[#0070C0]">
                   <Workflow className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
+                <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                   Subcontractor Claim Certainty
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   Collaborative digital Joint Measurement Sheets (JMS) preventing work certification disputes and eliminating trade litigation risk.
                 </p>
               </div>
@@ -1530,10 +1750,10 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
                 <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
                   <Truck className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
+                <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                   Plant & Fleet Cost Recovery
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   Automated internal plant hire chargeouts driven by live machinery telematics, eliminating equipment idling cost leakage.
                 </p>
               </div>
@@ -1561,7 +1781,7 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Construction & EPC Architecture Advisory
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Key considerations for general contractors and mega-EPC firms embarking on SAP S/4HANA implementation.
             </p>
           </div>
@@ -1628,7 +1848,7 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             Ready to Build a Smarter Mega-EPC Enterprise?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Synchronize your job sites, progressive milestone billing, and contract financials with Knooviq.
           </p>
 
@@ -1650,7 +1870,7 @@ export const ConstructionEpcIndustryPage: React.FC<IndustryPageProps> = ({ onOpe
             </Link>
           </div>
 
-          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-200">
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-100">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-300" />
               <span>SAP Certified Clean Core</span>

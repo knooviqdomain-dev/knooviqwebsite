@@ -631,7 +631,7 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
     : industrySolutions.filter(s => s.category === activeSolutionCategory);
 
   return (
-    <div className="w-full bg-white text-slate-900 font-sans selection:bg-[#0070C0] selection:text-white">
+    <div className="w-full bg-white text-slate-900 font-sans selection:bg-[#0070C0] cloud-sora-scope selection:text-white">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Image 1 of 4 - Ultra-Clean & Sleek 2-Column Showcase, NO Buttons)
@@ -650,6 +650,10 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
             style={{ imageRendering: '-webkit-optimize-contrast', objectPosition: '80% top' }}
           />
         </div>
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
 
         {/* Directional High-Contrast Scrim for 100% Crystal-Clear Text Readability */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-r from-slate-950/95 via-slate-950/80 sm:via-slate-950/65 to-transparent pointer-events-none" />
@@ -671,7 +675,17 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/predictive_ai_hero_widescreen.png"
+                alt="Enterprise Predictive AI & Neural Forecasting - Architecture Blueprint"
+                className="w-full h-full object-cover object-right scale-[1.25] origin-right"
+              />
+            </div>
+
+
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Transition your enterprise from reactive supply chain firefighting to deterministic foresight with neural time-series engines, dynamic safety buffer optimization, and closed-loop SAP execution.
               </p>
             </motion.div>
@@ -707,7 +721,7 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight leading-tight">
               Deterministic Forecasting & Prescriptive Supply Chain Autonomy
             </h2>
-            <p className="mt-3 text-slate-700 text-sm sm:text-base leading-relaxed font-medium">
+            <p className="font-sora mt-3 text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-medium">
               Traditional ERP planning relies on historical averages and static spreadsheets. Knooviq deploys neural probabilistic architectures that ingest real-time market signals, simulate risk curves, and dispatch execution orders into SAP automatically.
             </p>
           </div>
@@ -721,11 +735,11 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
                   <div className="w-9 h-9 rounded-lg bg-sky-50 text-[#0070C0] flex items-center justify-center border border-sky-100 shrink-0">
                     <TrendingUp className="w-4 h-4 text-[#0070C0]" />
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-slate-950">
+                  <h3 className="font-sora text-base sm:text-lg font-medium text-slate-950">
                     Probabilistic Multi-Horizon Demand Sensing
                   </h3>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                   Continuous generation of calibrated P10, P50, and P90 forecast bands, eliminating batch planning latency and adapting to volatile promotional spikes.
                 </p>
               </div>
@@ -735,11 +749,11 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
                   <div className="w-9 h-9 rounded-lg bg-sky-50 text-[#0070C0] flex items-center justify-center border border-sky-100 shrink-0">
                     <Gauge className="w-4 h-4 text-[#0070C0]" />
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-slate-950">
+                  <h3 className="font-sora text-base sm:text-lg font-medium text-slate-950">
                     Dynamic Safety Buffer Recalculation
                   </h3>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                   Replacing rigid static buffer days with real-time lead-time variance tracking, releasing trapped working capital across global distribution nodes.
                 </p>
               </div>
@@ -749,11 +763,11 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
                   <div className="w-9 h-9 rounded-lg bg-sky-50 text-[#0070C0] flex items-center justify-center border border-sky-100 shrink-0">
                     <Workflow className="w-4 h-4 text-[#0070C0]" />
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-slate-950">
+                  <h3 className="font-sora text-base sm:text-lg font-medium text-slate-950">
                     Closed-Loop SAP S/4HANA Order Dispatch
                   </h3>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                   Prescriptive optimization models directly generate Purchase Requisitions and stock transfer orders via clean core OData APIs without human transcription errors.
                 </p>
               </div>
@@ -763,10 +777,10 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
                 <div className="flex items-start gap-3">
                   <Eye className="w-4 h-4 text-[#0070C0] shrink-0 mt-0.5" />
                   <div className="space-y-1">
-                    <p className="text-xs sm:text-sm font-semibold text-slate-800 italic leading-snug">
+                    <p className="font-sora text-xs sm:text-sm font-medium text-slate-800 italic leading-snug">
                       "Predictive AI moves modern enterprises from retroactive hindsight to proactive foresight, optimizing capital and eliminating supply disruptions before they occur."
                     </p>
-                    <p className="text-[11px] font-mono text-slate-500 uppercase tracking-wider">
+                    <p className="font-sora text-[11px] font-mono text-slate-500 uppercase tracking-wider">
                       Knooviq Supply Chain & Predictive Intelligence Practice
                     </p>
                   </div>
@@ -789,7 +803,7 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
                 </div>
                 <div className="absolute bottom-3 left-3 right-3 text-white space-y-1">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-medium line-clamp-2 leading-relaxed">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-medium line-clamp-2 leading-[1.6]">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -832,7 +846,7 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight leading-tight">
               Enterprise Planning Bottlenecks & Algorithmic Remedies
             </h2>
-            <p className="mt-3 text-slate-700 text-sm sm:text-base leading-relaxed font-medium">
+            <p className="font-sora mt-3 text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-medium">
               Why traditional forecasting methods fail during market volatility and how modern Clean Core predictive engineering eliminates operational latency.
             </p>
           </div>
@@ -850,10 +864,10 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
                     </span>
                     <c.icon className="w-4 h-4 text-[#0070C0] group-hover:scale-110 transition-transform" />
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-slate-950 group-hover:text-[#0070C0] transition-colors">
+                  <h3 className="font-sora text-base sm:text-lg font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors">
                     {c.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                     {c.desc}
                   </p>
                 </div>
@@ -882,7 +896,7 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
               Knooviq Predictive & Prescriptive Architecture
             </h2>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               8 interlocking core engines powering real-time demand sensing, dynamic safety buffers, and closed-loop SAP execution.
             </p>
           </div>
@@ -1039,7 +1053,7 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight leading-tight">
               Clean Core Predictive Fabric & Time-Series Engine Architecture
             </h2>
-            <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-medium">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-medium">
               In-memory statistical execution, exogenous sensor integration, and zero-downtime SAP IBP reconciliation without core ERP modifications.
             </p>
           </div>
@@ -1064,10 +1078,10 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
                 <div className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest">
                   Clean Core Predictive Fabric
                 </div>
-                <h3 className="text-xl sm:text-2xl font-black tracking-tight text-white leading-snug">
+                <h3 className="font-sora text-xl sm:text-2xl font-medium tracking-tight text-white leading-snug">
                   SAP IBP Time-Series Ingestion & Prescriptive Action Mesh
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                   Knooviq integrates SAP Integrated Business Planning and S/4HANA CDS Views directly into distributed time-series feature stores, running in-memory HANA PAL algorithms without moving sensitive master data outside your sovereign boundary.
                 </p>
                 <div className="pt-2 grid grid-cols-2 gap-3 text-xs font-mono">
@@ -1098,10 +1112,10 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
                     </span>
                     <card.icon className="w-4 h-4 text-[#0070C0]" />
                   </div>
-                  <h4 className="text-base sm:text-lg font-bold text-slate-950">
+                  <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">
                     {card.title}
                   </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                     {card.desc}
                   </p>
                 </div>
@@ -1134,7 +1148,7 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight leading-tight">
                 Modular Enterprise Predictive AI Solutions
               </h2>
-              <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-medium mt-2">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-medium mt-2">
                 Standardized enterprise accelerators pre-configured for rapid deployment across supply chain, operations, and finance.
               </p>
             </div>
@@ -1174,11 +1188,11 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
                     </div>
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-bold text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
+                  <h3 className="font-sora text-base sm:text-lg font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
                     {sol.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                     {sol.description}
                   </p>
                 </div>
@@ -1218,7 +1232,7 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
               Predictive AI Strategic Impact Scorecard
             </h2>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-normal mt-2">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] font-normal mt-2">
               Transforming uncertain forward projections into deterministic operational execution, capital efficiency, and audit-ready explainability.
             </p>
           </div>
@@ -1240,11 +1254,11 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
                     </div>
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                  <h3 className="font-sora text-base sm:text-lg font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                     {pillar.title}
                   </h3>
 
-                  <p className="text-xs text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                     {pillar.desc}
                   </p>
                 </div>
@@ -1277,7 +1291,7 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
               Real-Time Predictive Forecasting & Demand Sensing Console
             </h2>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-normal mt-2">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] font-normal mt-2">
               Explore how Knooviq ingests continuous POS telemetry, calculates dynamic safety buffers, and generates automated SAP S/4HANA replenishment orders.
             </p>
           </div>
@@ -1329,7 +1343,7 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
               <div className="flex items-center gap-2">
                 <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
                 <div>
-                  <h3 className="text-base sm:text-lg font-bold text-white">
+                  <h3 className="font-sora text-base sm:text-lg font-medium text-white">
                     {auditDocuments[activeDocTab].title}
                   </h3>
                   <span className="text-[11px] sm:text-xs text-slate-400">
@@ -1398,7 +1412,7 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
                         </span>
                       </div>
                       
-                      <p className="text-[11px] text-slate-300 leading-snug font-normal line-clamp-2">
+                      <p className="font-sora text-[11px] text-slate-300 leading-snug font-normal line-clamp-2">
                         {finding.desc}
                       </p>
 
@@ -1416,7 +1430,7 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
                     <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
                     <span>EXECUTIVE ACTION RECOMMENDATION</span>
                   </div>
-                  <p className="text-xs text-white font-medium leading-relaxed">
+                  <p className="font-sora text-xs text-white font-medium leading-[1.6]">
                     {auditDocuments[activeDocTab].recommendation}
                   </p>
                 </div>
@@ -1443,7 +1457,7 @@ export const PredictiveAiPracticePage: React.FC<PredictiveAiPracticePageProps> =
             Ready to Operationalize Enterprise Predictive AI?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Schedule an architecture discovery session with our SAP IBP, predictive analytics, and Clean Core specialists to benchmark forecast accuracy and working capital optimization.
           </p>
 

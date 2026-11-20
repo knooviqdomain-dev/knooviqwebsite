@@ -650,7 +650,7 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
   }, [isAutoRotating, wheelSegments.length]);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Panoramic Background - Clear & Uncut)
@@ -692,8 +692,18 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
                   Enterprise AI Agents
                 </span>
               </h1>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/ai_agents_hero_widescreen.jpg"
+                alt="Autonomous Enterprise AI Agents - Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
               
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                 Multi-agent swarms, deterministic tool calling, and governed closed-loop workflow execution connected directly into SAP ERP with zero hallucination risk.
               </p>
             </motion.div>
@@ -749,12 +759,12 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;Modern enterprise AI is no longer about generating text. It is about autonomous agents orchestrating cross-system tasks, validating intermediate outcomes, and committing verified transactions safely into core ERP ledgers.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq equips global organizations with deterministic multi-agent swarms engineered to decompose complex enterprise goals, trigger schema-validated tool executions, and operate within strict sovereign governance guardrails.
               </p>
 
@@ -764,8 +774,8 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
                     <Cpu className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Deterministic Tool Calling Grounding</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Deterministic Tool Calling Grounding</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Type-safe JSON schema validation executing directly into SAP BAPIs and REST microservices with zero parameter hallucination.
                     </p>
                   </div>
@@ -776,8 +786,8 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Governed Human-in-the-Loop Gates</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Governed Human-in-the-Loop Gates</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Threshold-based approval routing escalating high-impact financial committals, stock transfers, and ledger mutations.
                     </p>
                   </div>
@@ -788,8 +798,8 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
                     <Workflow className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="text-sm sm:text-base font-black text-slate-950">Transactional State & Atomic Rollback</h4>
-                    <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-950">Transactional State & Atomic Rollback</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-medium leading-[1.6]">
                       Complete transactional checkpointing preserving ERP ledger consistency with instant rollback upon exception detection.
                     </p>
                   </div>
@@ -826,7 +836,7 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
 
                 <div className="absolute bottom-3 left-3 right-3 text-white space-y-1">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-medium line-clamp-2 leading-relaxed">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-medium line-clamp-2 leading-[1.6]">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -876,7 +886,7 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating Autonomous Multi-Agent Pitfalls
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Moving from toy agent demos to enterprise production requires resolving six fundamental execution vulnerabilities.
             </p>
           </motion.div>
@@ -903,10 +913,10 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-lg font-black text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                    <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                       {item.desc}
                     </p>
                   </div>
@@ -939,7 +949,7 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
             <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
               Cybernetic Autonomous Multi-Agent Engine
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto font-normal">
+            <p className="font-sora text-slate-400 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Continuous coordination loop balancing hierarchical planning, deterministic tool calling, and sovereign enterprise guardrails.
             </p>
           </div>
@@ -1145,7 +1155,7 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               The Autonomous Enterprise Evolution
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How enterprise automation shifts from brittle static scripts to self-healing, governed multi-agent swarms.
             </p>
           </div>
@@ -1157,10 +1167,10 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
                 <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 bg-slate-200/80 px-2.5 py-1 rounded-md">
                   LEGACY ERA
                 </span>
-                <h3 className="text-lg font-black text-slate-900">
+                <h3 className="font-sora text-lg font-medium text-slate-900">
                   Brittle RPA Scripts
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Fixed sequential steps breaking whenever UI elements change or unexpected data structures arrive.
                 </p>
                 <div className="space-y-2 pt-2 border-t border-slate-200 text-xs text-slate-600">
@@ -1186,10 +1196,10 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
                 <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#0070C0] bg-sky-100 px-2.5 py-1 rounded-md">
                   HYBRID ERA
                 </span>
-                <h3 className="text-lg font-black text-slate-900">
+                <h3 className="font-sora text-lg font-medium text-slate-900">
                   Passive Copilots
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Conversational chatbots generating text advice that still requires human operators to execute every system step.
                 </p>
                 <div className="space-y-2 pt-2 border-t border-sky-200 text-xs text-slate-600">
@@ -1215,10 +1225,10 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
                 <span className="text-xs font-mono font-bold uppercase tracking-wider text-white bg-[#0070C0] px-2.5 py-1 rounded-md">
                   AUTONOMOUS ERA
                 </span>
-                <h3 className="text-lg font-black text-[#0070C0]">
+                <h3 className="font-sora text-lg font-medium text-[#0070C0]">
                   Governed Multi-Agent Swarms
                 </h3>
-                <p className="text-sm text-slate-700 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                   Goal-oriented autonomous agents decomposing complex work, calling schema-validated BAPIs, and resolving exceptions.
                 </p>
                 <div className="space-y-2 pt-2 border-t border-sky-300 text-xs text-slate-800 font-medium">
@@ -1255,7 +1265,7 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Clean Core Autonomous Agent Fabric
             </h2>
-            <p className="text-slate-700 text-sm sm:text-base leading-relaxed font-medium">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-medium">
               A sovereign runtime decoupling cognitive reasoning from transactional committals, ensuring zero unexpected database mutations and complete traceability.
             </p>
           </div>
@@ -1280,10 +1290,10 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
                 <div className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest">
                   Clean Core Action Mesh
                 </div>
-                <h3 className="text-xl sm:text-2xl font-black tracking-tight text-white leading-snug">
+                <h3 className="font-sora text-xl sm:text-2xl font-medium tracking-tight text-white leading-snug">
                   Hierarchical Multi-Agent Swarm Orchestration
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                   Coordinating autonomous planning, type-checked tool calling, and human-in-the-loop approval gates. Directly committed into SAP S/4HANA BAPIs with atomic transactional rollback guarantees.
                 </p>
                 <div className="pt-2 flex flex-wrap gap-2 text-[11px] font-mono text-cyan-200">
@@ -1310,7 +1320,7 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Modular Enterprise AI Agent Blueprints
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Production-ready agent swarms engineered to decompose tasks, execute schema-validated tool calls, and post closed-loop ERP actions.
             </p>
           </div>
@@ -1359,11 +1369,11 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
                         </div>
                       </div>
 
-                      <h3 className="text-lg font-bold text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
+                      <h3 className="font-sora text-lg font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug">
                         {sol.title}
                       </h3>
 
-                      <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                      <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                         {sol.description}
                       </p>
 
@@ -1407,7 +1417,7 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Enterprise Value Architecture Scorecard
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Core architectural foundations achieved when autonomous agents are grounded in private enterprise context.
             </p>
           </div>
@@ -1434,11 +1444,11 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
                       {item.badge}
                     </span>
 
-                    <h3 className="text-lg font-black text-slate-900 leading-snug">
+                    <h3 className="font-sora text-lg font-medium text-slate-900 leading-snug">
                       {item.title}
                     </h3>
 
-                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                       {item.desc}
                     </p>
                   </div>
@@ -1468,7 +1478,7 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
             <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
               Autonomous Multi-Agent Action & Policy Enforcement
             </h2>
-            <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-xl mx-auto font-normal">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-xl mx-auto font-normal">
               Watch autonomous multi-agent swarms decompose exceptions, validate intermediate tool calls, and execute closed-loop ERP actions.
             </p>
           </div>
@@ -1503,7 +1513,7 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
                 </div>
 
                 <div className="pt-0.5 flex flex-wrap items-center gap-2">
-                  <h3 className="text-base sm:text-lg font-bold text-white">
+                  <h3 className="font-sora text-base sm:text-lg font-medium text-white">
                     {auditDocuments[activeDocTab].title}
                   </h3>
                   <span className="text-[11px] sm:text-xs text-slate-400">
@@ -1567,11 +1577,11 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
                           <span className={`px-1.5 py-0.5 rounded border text-[10px] font-mono font-bold uppercase ${finding.levelColor}`}>
                             {finding.level}
                           </span>
-                          <h4 className="text-xs sm:text-sm font-bold text-white">
+                          <h4 className="font-sora text-xs sm:text-sm font-medium text-white">
                             {finding.title}
                           </h4>
                         </div>
-                        <p className="text-[11px] sm:text-xs text-slate-300 line-clamp-2">
+                        <p className="font-sora text-[11px] sm:text-xs text-slate-300 line-clamp-2 font-normal leading-[1.6]">
                           {finding.desc}
                         </p>
                       </div>
@@ -1591,7 +1601,7 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
                     <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
                     <span>EXECUTIVE ACTION RECOMMENDATION</span>
                   </div>
-                  <p className="text-xs text-white font-medium leading-relaxed">
+                  <p className="font-sora text-xs text-white font-medium leading-[1.6]">
                     {auditDocuments[activeDocTab].recommendation}
                   </p>
                 </div>
@@ -1617,7 +1627,7 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Sovereign Operational Guardrails
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Four non-negotiable operational checkpoints ensuring autonomous agents remain strictly aligned with enterprise policies.
             </p>
           </div>
@@ -1627,8 +1637,8 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
               <div className="w-10 h-10 rounded-xl bg-sky-50 text-[#0070C0] flex items-center justify-center border border-sky-200">
                 <Lock className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">Zero-Trust Tool IAM</h3>
-              <p className="text-sm text-slate-700 leading-relaxed font-medium">
+              <h3 className="font-sora text-lg font-medium text-slate-900">Zero-Trust Tool IAM</h3>
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                 Agents execute under ephemeral, least-privilege tokens signed against corporate OAuth2 directory scopes.
               </p>
             </div>
@@ -1637,8 +1647,8 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
               <div className="w-10 h-10 rounded-xl bg-sky-50 text-[#0070C0] flex items-center justify-center border border-sky-200">
                 <CheckSquare className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">Schema Type Safety</h3>
-              <p className="text-sm text-slate-700 leading-relaxed font-medium">
+              <h3 className="font-sora text-lg font-medium text-slate-900">Schema Type Safety</h3>
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                 Payload parameters strictly conform to SAP CDS views and release contracts before outbound dispatch.
               </p>
             </div>
@@ -1647,8 +1657,8 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
               <div className="w-10 h-10 rounded-xl bg-sky-50 text-[#0070C0] flex items-center justify-center border border-sky-200">
                 <Eye className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">HITL Sign-Off Gates</h3>
-              <p className="text-sm text-slate-700 leading-relaxed font-medium">
+              <h3 className="font-sora text-lg font-medium text-slate-900">HITL Sign-Off Gates</h3>
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                 Automated escalation to finance and operational executives whenever expenditure thresholds are crossed.
               </p>
             </div>
@@ -1657,8 +1667,8 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
               <div className="w-10 h-10 rounded-xl bg-sky-50 text-[#0070C0] flex items-center justify-center border border-sky-200">
                 <FileCheck className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">Cryptographic Audit</h3>
-              <p className="text-sm text-slate-700 leading-relaxed font-medium">
+              <h3 className="font-sora text-lg font-medium text-slate-900">Cryptographic Audit</h3>
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-medium">
                 Step-by-step reasoning chains and tool invocations recorded in tamper-evident sovereign audit logs.
               </p>
             </div>
@@ -1680,7 +1690,7 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
             Ready to Deploy Autonomous Multi-Agent Swarms?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Empower your enterprise with deterministic tool calling, closed-loop ERP actions, and uncompromised sovereign governance.
           </p>
 
@@ -1721,10 +1731,10 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
             <div className="flex items-center gap-3">
               <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
               <div>
-                <h3 className="text-sm sm:text-base font-bold font-sans tracking-wide">
+                <h3 className="font-sora text-sm sm:text-base font-medium font-sans tracking-wide">
                   {fullScreenAgentStep.label} &bull; {fullScreenAgentStep.sublabel}
                 </h3>
-                <p className="text-xs text-cyan-300 font-mono">
+                <p className="font-sora text-xs text-cyan-300 font-mono">
                   {fullScreenAgentStep.tech}
                 </p>
               </div>
@@ -1781,10 +1791,10 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
             <div className="flex items-center gap-3">
               <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse" />
               <div>
-                <h3 className="text-sm sm:text-base font-bold font-sans tracking-wide">
+                <h3 className="font-sora text-sm sm:text-base font-medium font-sans tracking-wide">
                   {fullScreenAuditDoc.title}
                 </h3>
-                <p className="text-xs text-cyan-300 font-mono">
+                <p className="font-sora text-xs text-cyan-300 font-mono">
                   {fullScreenAuditDoc.tabLabel} &bull; {fullScreenAuditDoc.fileInfo}
                 </p>
               </div>

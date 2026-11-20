@@ -468,7 +468,7 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Services Hero)
@@ -486,6 +486,9 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
 
         {/* Seamless Cinematic Left Scrim */}
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-slate-950/95 via-slate-950/80 sm:via-slate-950/60 to-transparent pointer-events-none" />
+
+                {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           
@@ -510,10 +513,19 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Global Talent Bench Governance, Milestone Billing & Intercompany GCC Settlement.
               </p>
             </motion.div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/technology_services_erp_hero.jpg"
+                alt="Intelligent ERP for Technology Services & Staffing"
+                className="w-full h-auto block select-none"
+              />
+            </div>
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -522,7 +534,7 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering IT consultancies, global capability centers (GCCs), and professional staffing agencies with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, automated{' '}
                 <strong className="text-cyan-300 font-semibold">Dynamic Skill Matching</strong>, mobile time & expense tracking, and touchless intercompany settlement.
@@ -622,12 +634,12 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
 
               {/* Executive Thesis Quote */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-[1.6] italic">
                   &ldquo;Professional services profitability is defended at the utilization margin: matching certified global talent to client demand while eliminating unbilled work-in-progress and intercompany transfer pricing friction.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers an integrated enterprise ecosystem on SAP S/4HANA Clean Core. By harmonizing data across staffing requisitions, mobile timesheets, fixed-bid deliverable milestones, and cross-border GCC ledgers, technology services leaders maximize consultant realization and protect practice profitability.
               </p>
 
@@ -638,8 +650,8 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
                     <Users2 className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Global Talent Bench Allocation</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Global Talent Bench Allocation</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Real-time skill matching algorithms leveling bench capacity across global delivery centers to minimize idle time.
                     </p>
                   </div>
@@ -650,8 +662,8 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
                     <Clock className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Mobile Time & Milestone Billing</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Mobile Time & Milestone Billing</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Intuitive daily timesheet recording with strict WBS project limits and digital sign-off gates for milestone invoices.
                     </p>
                   </div>
@@ -662,8 +674,8 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
                     <RefreshCw className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Automated GCC Intercompany Ledgers</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Automated GCC Intercompany Ledgers</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Continuous multi-entity chargebacks between onshore business units and offshore capability centers without manual month-end delays.
                     </p>
                   </div>
@@ -676,11 +688,11 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
             <div className="lg:col-span-6 space-y-3.5">
               
               {/* Pure High-Resolution Photography Showcase with Defined Dark Border */}
-              <div className="relative h-60 sm:h-72 w-full rounded-2xl overflow-hidden border-2 border-slate-300 shadow-md bg-slate-100">
+              <div className="relative aspect-[16/10] sm:aspect-auto sm:h-72 w-full min-h-0 rounded-2xl overflow-hidden border-2 border-slate-300 shadow-md bg-slate-950 flex items-center justify-center">
                 <img 
                   src={journeySteps[activeJourneyStep].image} 
                   alt={journeySteps[activeJourneyStep].label} 
-                  className="w-full h-full object-cover object-center transition-all duration-500"
+                  className="w-full h-full object-contain sm:object-cover object-center transition-all duration-500"
                 />
               </div>
 
@@ -726,7 +738,7 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
                     {journeySteps[activeJourneyStep].tech}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -758,7 +770,7 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating the Complexity of Technology Services & Staffing
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Unassigned bench time, delayed timesheets, and manual intercompany reconciliations degrade margins. Knooviq addresses the six systemic challenges services leaders face.
             </p>
           </motion.div>
@@ -785,10 +797,10 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -830,7 +842,7 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Technology Services & Staffing
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting global bench staffing, mobile time recording, milestone stage-gate billing, contractor governance, and intercompany ledgers into one continuous loop.
             </p>
           </motion.div>
@@ -867,10 +879,10 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1031,10 +1043,10 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
                         }}
                       />
                       <div className="space-y-1 text-left flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1063,7 +1075,7 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for Technology Services & Staffing
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               We engineer clean-core SAP technology suites layered with modern cloud extensions, mobile timesheet interfaces, and automated intercompany billing.
             </p>
           </div>
@@ -1077,10 +1089,10 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CORE ERP SUITE</span>
                 <Briefcase className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP S/4HANA Cloud for Projects
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Integrated Project Systems (PS), hierarchical Work Breakdown Structure (WBS) budgeting, and revenue recognition compliant with ASC 606 / IFRS 15.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1095,10 +1107,10 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">DOMAIN SOLUTION</span>
                 <UserCheck className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Fieldglass VMS
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Contingent workforce and statement-of-work (SOW) management enforcing agreed rate cards, purchase order limits, and deliverable acceptance.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1113,10 +1125,10 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">INTEGRATION & EXTENSIONS</span>
                 <Cloud className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Business Technology Platform
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Decoupled extension microservices running specialized consultant skill matching algorithms and external applicant tracking system (ATS) sync.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1131,10 +1143,10 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">BUSINESS INTELLIGENCE</span>
                 <BarChart3 className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Analytics Cloud
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Real-time visibility into practice-level consultant utilization, billable realization, unbilled WIP aging curves, and engagement margin drift.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1149,10 +1161,10 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">ROLE-BASED UX</span>
                 <Scan className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Fiori Mobile Timesheet UX
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Intuitive mobile web and smartphone apps designed for consultants, practice managers, project leads, and GCC finance approvers.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1167,10 +1179,10 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">COGNITIVE ENGINES</span>
                 <Sparkles className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 AI Capacity & Demand Forecasting
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Machine learning models predicting consultant bench roll-offs, project staffing shortages, and client bill rate elasticities.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1198,7 +1210,7 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every Stage of Technology Services
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize technology staffing, project delivery, and cross-border GCC execution.
             </p>
           </div>
@@ -1270,12 +1282,12 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1317,7 +1329,7 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Turning Professional Services Complexity into Profit Advantage
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When consultant staffing, mobile timesheets, fixed-bid milestones, and GCC ledgers operate in unison, services organizations achieve sustainable profitability.
             </p>
           </div>
@@ -1330,10 +1342,10 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Users2 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Minimized Bench Idle Time
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Deploy global consultants rapidly using dynamic skill matching algorithms, reducing unbilled bench dwell time by weeks.
               </p>
             </div>
@@ -1343,10 +1355,10 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Clock className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Eliminated Unbilled WIP Slippage
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Mobile daily timesheet entry enforces project WBS boundaries, preventing lost hours and month-end invoice disputes.
               </p>
             </div>
@@ -1356,10 +1368,10 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Protected Fixed-Bid Margins
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Stage-gate deliverable sign-offs prevent unauthorized scope creep, ensuring fixed-price contracts deliver their intended profit margins.
               </p>
             </div>
@@ -1369,10 +1381,10 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <UserCheck className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Governed Subcontractor Spend
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Enforce negotiated rate cards and statement-of-work limits across third-party staffing agencies with automated PO matching.
               </p>
             </div>
@@ -1382,10 +1394,10 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <RefreshCw className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Automated GCC Transfer Pricing
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Generate intercompany chargebacks automatically between onshore client units and offshore capability centers without tax reconciliation backlogs.
               </p>
             </div>
@@ -1395,10 +1407,10 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <BarChart3 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Continuous Margin Transparency
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Deliver real-time insight into practice realization, consultant billability, and engagement margins across global business units.
               </p>
             </div>
@@ -1431,7 +1443,7 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Intelligent Technology Services Architecture
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How technology services firms advance from fragmented resourcing spreadsheets to an integrated clean-core event ecosystem.
             </p>
           </div>
@@ -1483,7 +1495,7 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
@@ -1492,7 +1504,7 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1593,7 +1605,7 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
             Ready to Build a Smarter Technology Services Business?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your talent resourcing, mobile timesheets, fixed-bid milestones, and GCC ledgers with Knooviq.
           </p>
 
@@ -1615,7 +1627,7 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
             </Link>
           </div>
 
-          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-200">
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-100">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-300" />
               <span>SAP Certified Clean Core</span>

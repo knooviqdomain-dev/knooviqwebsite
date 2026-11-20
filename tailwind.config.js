@@ -8,6 +8,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        deepNavy: '#102A43',
         navy: {
           950: '#030712',
           900: '#070E1E',

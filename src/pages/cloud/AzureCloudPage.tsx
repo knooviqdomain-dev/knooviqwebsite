@@ -436,7 +436,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300 selection:bg-[#0078D4]/20 selection:text-[#0078D4]">
+    <div className="min-h-screen bg-white dark:bg-[#050B17] text-slate-900 dark:text-white transition-colors duration-300 selection:bg-[#0078D4]/20 selection:text-[#0078D4] cloud-sora-scope">
 
       {/* ============================================================ */}
       {/* 1. HERO SECTION: Full-Screen Panoramic Hero with Full-Bleed Image & Text Overlay */}
@@ -450,6 +450,8 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
             alt="Microsoft Azure Enterprise Practice"
             className="w-full h-full object-cover object-center lg:object-[65%_center] filter brightness-105 contrast-105"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#050B17]/95 via-[#050B17]/90 to-[#050B17] pointer-events-none" />
           {/* Directional scrim: smoothly protects text readability on the left while keeping center & right visuals 100% bright */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#050B17] via-[#050B17]/85 sm:via-[#050B17]/70 md:via-[#050B17]/50 to-transparent w-full lg:w-3/5" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#050B17] via-transparent to-[#050B17]/50" />
@@ -477,15 +479,26 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
           </div>
 
           {/* Text Content Block (Sits over the left side of the full screen background) */}
-          <div className="max-w-2xl lg:max-w-3xl space-y-6">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12] drop-shadow-md">
-              Build Smarter. Innovate Faster with{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-[#0078D4]">
-                Microsoft Azure
-              </span>
-            </h1>
+          <div className="max-w-2xl lg:max-w-3xl space-y-5 sm:space-y-6">
+            <div className="space-y-2 sm:space-y-3">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12] drop-shadow-md">
+                Build Smarter. Innovate Faster with{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-[#0078D4]">
+                  Microsoft Azure
+                </span>
+              </h1>
+            </div>
 
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl drop-shadow-sm">
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/azure/azure_hero_datacenter.jpg"
+                alt="Microsoft Azure Enterprise Practice - Azure Cloud Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl drop-shadow-sm">
               Help enterprises build, modernize, and operate secure cloud environments with Microsoft Azure.
               Knooviq supports cloud strategy, application modernization, infrastructure migration,
               identity management, enterprise integration, and data-driven solutions aligned with business and
@@ -552,7 +565,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Modern Architecture for Modern Business
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Explore how core Microsoft Azure services interconnect to form a high-availability, zero-trust cloud foundation
               spanning applications, high-density infrastructure, enterprise data storage, identity security, and operational management.
             </p>
@@ -607,13 +620,13 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                     Auto-cycles • click to pause
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white">
                   {architectureDomains[activeDomainIdx].name}
                 </h3>
-                <p className="text-xs font-mono font-bold text-[#0078D4] dark:text-cyan-400">
+                <p className="font-sora text-xs font-mono font-medium text-[#0078D4] dark:text-cyan-400">
                   {architectureDomains[activeDomainIdx].tagline}
                 </p>
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed pt-1">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] pt-1 font-normal">
                   {architectureDomains[activeDomainIdx].description}
                 </p>
               </div>
@@ -631,11 +644,11 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                     >
                       <div className="flex items-center gap-2">
                         <CheckCircle2 className="w-4 h-4 text-[#0078D4] dark:text-cyan-400 shrink-0" />
-                        <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                        <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                           {svc.name}
                         </h4>
                       </div>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 pl-6 leading-relaxed">
+                      <p className="font-sora text-xs text-slate-600 dark:text-slate-300 pl-6 leading-[1.6] font-normal">
                         {svc.role}
                       </p>
                     </div>
@@ -678,10 +691,10 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                   <span className="text-xs font-mono font-bold text-[#00A3E0] uppercase tracking-wider block">
                     ENTERPRISE INTEGRATION BLUEPRINT
                   </span>
-                  <h3 className="text-2xl font-bold text-white tracking-tight">
+                  <h3 className="font-sora text-2xl font-medium text-white tracking-tight">
                     Unified Multi-Tier Cloud Interconnect
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                     Designed according to the Microsoft Well-Architected Framework, ensuring security, resilience, operational
                     excellence, performance efficiency, and cost optimization across all enterprise subscriptions.
                   </p>
@@ -712,7 +725,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Move to the Cloud with Confidence
                 </h2>
-                <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Migrating mission-critical enterprise workloads requires rigorous dependency mapping, structured landing zones,
                   and automated synchronization. We lead enterprise migrations from discovery through operational handover
                   with minimal disruption to production business processes.
@@ -731,10 +744,10 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                         STEP {step.step}
                       </span>
                     </div>
-                    <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                       {step.title}
                     </h3>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {step.description}
                     </p>
                     <div className="pt-2 border-t border-slate-200/60 dark:border-white/5 text-[11px] font-mono text-slate-500 dark:text-slate-400 flex items-center gap-1">
@@ -765,7 +778,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                       <span className="text-[#0078D4] font-bold">AZURE MIGRATE ACCELERATORS</span>
                       <span className="text-cyan-300 font-semibold">ZERO DISRUPTION</span>
                     </div>
-                    <p className="text-[11px] text-slate-300">
+                    <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                       Continuous block replication, automated schema migration for SQL Server, and non-disruptive cutover smoke testing.
                     </p>
                   </div>
@@ -819,7 +832,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                       <span className="text-cyan-400 font-bold">ZERO-TRUST ARCHITECTURE</span>
                       <span className="text-[#0078D4] font-semibold">DEFENDER FOR CLOUD</span>
                     </div>
-                    <p className="text-[11px] text-slate-300">
+                    <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                       Unified identity perimeter, just-in-time access, cryptographic key isolation, and continuous posture auditing.
                     </p>
                   </div>
@@ -832,7 +845,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                   <Shield className="w-3.5 h-3.5" />
                   <span>REGULATORY ALIGNMENT</span>
                 </div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Automated Azure Policy blueprints enforce continuous compliance with ISO 27001, SOC 2, HIPAA, and the
                   Microsoft Cloud Security Benchmark (MCSB) across all landing zone subscriptions.
                 </p>
@@ -849,7 +862,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Protect Every Layer of Your Cloud
                 </h2>
-                <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Security in Azure is built on a defense-in-depth model where identity is the new security perimeter.
                   We implement robust access controls, cryptographic isolation, policy-driven guardrails, and automated resilience
                   mechanisms across every workload.
@@ -900,11 +913,11 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                         <div className="w-8 h-8 rounded-lg bg-sky-50 dark:bg-cyan-500/10 flex items-center justify-center text-[#0078D4] dark:text-cyan-400">
                           <Icon className="w-4 h-4" />
                         </div>
-                        <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                        <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                           {pillar.title}
                         </h3>
                       </div>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                      <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                         {pillar.desc}
                       </p>
                     </div>
@@ -938,7 +951,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Engineer Applications for the Next Stage
                 </h2>
-                <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Accelerate developer productivity and deployment velocity with modern cloud-native architectures.
                   We architect container fleets on Azure Kubernetes Service (AKS), event-driven serverless backends with
                   Azure Functions, managed API gateways, and automated CI/CD pipelines with Bicep and Terraform.
@@ -984,14 +997,14 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                     className="p-5 rounded-2xl bg-slate-50 dark:bg-[#0B1528] border border-slate-200/80 dark:border-white/10 space-y-2 hover:border-[#0078D4]/40 transition-colors"
                   >
                     <div className="flex items-center justify-between">
-                      <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                         {app.title}
                       </h3>
                     </div>
                     <div className="text-[10px] font-mono font-bold text-[#0078D4] dark:text-cyan-400">
                       {app.tech}
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {app.desc}
                     </p>
                   </div>
@@ -1019,7 +1032,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                       <span className="text-[#0078D4] font-bold">DEVSECOPS PIPELINES</span>
                       <span className="text-cyan-300 font-semibold">GITOPS &amp; BICEP</span>
                     </div>
-                    <p className="text-[11px] text-slate-300">
+                    <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                       Declarative infrastructure definitions, container scanning in ACR, and automated rollback triggers.
                     </p>
                   </div>
@@ -1032,7 +1045,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                   <Terminal className="w-3.5 h-3.5" />
                   <span>DEVELOPER EXPERIENCE EXCELLENCE</span>
                 </div>
-                <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-700 dark:text-slate-300 leading-[1.6] font-normal">
                   Ephemeral testing environments and integrated GitHub Actions workflows enable development teams to push
                   code with confidence, cutting deployment cycle times while preserving architectural integrity.
                 </p>
@@ -1059,7 +1072,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Turn Enterprise Data into Intelligent Decisions
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Build resilient, scalable enterprise data pipelines and machine learning workflows.
               From high-capacity data lake storage and distributed Spark processing to Synapse data warehousing,
               Databricks modeling, and enterprise Azure AI services, transform raw operational telemetry into predictive intelligence.
@@ -1112,11 +1125,11 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                       STAGE 0{activeDataStageIdx + 1} • {dataAiStages[activeDataStageIdx].badge}
                     </span>
                     <span className="text-slate-300 dark:text-slate-600">|</span>
-                    <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                       {dataAiStages[activeDataStageIdx].title}: {dataAiStages[activeDataStageIdx].service}
                     </h3>
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {dataAiStages[activeDataStageIdx].role}
                   </p>
                 </div>
@@ -1144,7 +1157,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                   <div className="text-xs font-mono text-[#0078D4] font-bold">
                     AZURE SYNAPSE &amp; DATABRICKS
                   </div>
-                  <p className="text-[11px] text-slate-300">
+                  <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                     High-throughput delta lake caching with distributed Spark computation and native Azure OpenAI models.
                   </p>
                 </div>
@@ -1152,10 +1165,10 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
             </div>
 
             <div className="lg:col-span-7 space-y-4">
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+              <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white">
                 Scalable Data Governance &amp; Responsible AI
               </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Enterprises running analytics on Azure benefit from native Microsoft Purview data governance,
                 ensuring automated data cataloging, lineage tracking, and compliance classification across multi-cloud
                 and on-premises assets.
@@ -1167,7 +1180,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                     <Database className="w-3.5 h-3.5 text-[#0078D4] dark:text-cyan-400" />
                     <span>Azure Synapse Analytics</span>
                   </div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Limitless analytics service bringing together enterprise data warehousing and big data processing.
                   </p>
                 </div>
@@ -1177,7 +1190,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                     <Sparkles className="w-3.5 h-3.5 text-[#0078D4] dark:text-cyan-400" />
                     <span>Azure AI &amp; Azure OpenAI</span>
                   </div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Enterprise cognitive models, semantic search, and generative AI with private data isolation.
                   </p>
                 </div>
@@ -1203,7 +1216,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Connect Azure with Your Business Technology
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Azure delivers the greatest value when deeply integrated with the wider enterprise technology landscape.
               We architect interconnected solutions uniting Microsoft 365 productivity, Microsoft Entra ID governance,
               Power Platform automation, Microsoft Fabric analytics, and hybrid on-premises environments.
@@ -1221,10 +1234,10 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                   <div className="text-[11px] font-mono font-bold text-[#0078D4] dark:text-cyan-400">
                     {item.tech}
                   </div>
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {item.description}
                   </p>
                 </div>
@@ -1243,11 +1256,11 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
               <span className="text-xs font-mono font-bold text-[#00A3E0] uppercase tracking-wider">
                 HYBRID EXTENSION VIA AZURE ARC
               </span>
-              <h3 className="text-xl font-bold text-white">
+              <h3 className="font-sora text-xl font-medium text-white">
                 Bridge On-Premises &amp; Multi-Cloud with Azure Arc
               </h3>
             </div>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-4xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] max-w-4xl font-normal">
               Azure Arc projects non-Azure servers, Kubernetes clusters, and data services directly into Azure Resource Manager (ARM).
               Apply unified Azure Policy compliance, centralized patching via Azure Update Manager, and threat monitoring through
               Microsoft Defender across your entire heterogeneous enterprise IT footprint.
@@ -1285,7 +1298,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                       <span className="text-[#0078D4] font-bold">AZURE MONITOR &amp; SRE</span>
                       <span className="text-cyan-300 font-semibold">24/7 GOC GOVERNED</span>
                     </div>
-                    <p className="text-[11px] text-slate-300">
+                    <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                       Full-stack APM with distributed tracing, automated self-healing runbooks, and continuous FinOps cost modeling.
                     </p>
                   </div>
@@ -1298,7 +1311,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                   <Gauge className="w-3.5 h-3.5" />
                   <span>CONTINUOUS FINOPS CONTROL</span>
                 </div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Automated cost allocation tagging, budget anomaly alerts, and structured Reserved Instance commitments
                   ensure your Azure investment remains predictable and closely aligned with business unit value.
                 </p>
@@ -1315,7 +1328,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                   Operate Azure with Clarity and Control
                 </h2>
-                <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Running enterprise cloud environments requires active operational discipline.
                   Our managed cloud services combine 24/7 Site Reliability Engineering (SRE), deep Application Insights APM telemetry,
                   automated disaster recovery, and continuous FinOps unit-cost optimization.
@@ -1356,11 +1369,11 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                   >
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-[#0078D4] dark:text-cyan-400 shrink-0" />
-                      <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h3 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                         {op.title}
                       </h3>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {op.desc}
                     </p>
                   </div>
@@ -1389,7 +1402,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Azure Implementation Approach
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Our proven engagement framework moves enterprise initiatives smoothly from strategic workload assessment
               to ongoing cloud optimization across five connected phases.
             </p>
@@ -1425,10 +1438,10 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                       </span>
                     </div>
                     <div>
-                      <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                      <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                         {item.name}
                       </h3>
-                      <p className="text-xs font-mono text-[#0078D4] dark:text-cyan-400 font-medium mt-0.5 line-clamp-1">
+                      <p className="font-sora text-xs font-mono text-[#0078D4] dark:text-cyan-400 font-medium mt-0.5 line-clamp-1">
                         {item.tagline}
                       </p>
                     </div>
@@ -1445,13 +1458,13 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                 <span className="text-xs font-mono font-bold text-[#0078D4] dark:text-cyan-400 uppercase tracking-wider">
                   {implementationTimeline[activePhaseIdx].phase} • ENGAGEMENT MILESTONE
                 </span>
-                <h3 className="text-2xl font-black text-slate-900 dark:text-white">
+                <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white">
                   {implementationTimeline[activePhaseIdx].name} — {implementationTimeline[activePhaseIdx].tagline}
                 </h3>
               </div>
             </div>
 
-            <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed max-w-4xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-700 dark:text-slate-300 leading-[1.6] max-w-4xl font-normal">
               {implementationTimeline[activePhaseIdx].description}
             </p>
 
@@ -1504,7 +1517,7 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
             Plan Your Next Step with Microsoft Azure
           </h2>
 
-          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 max-w-2xl mx-auto leading-[1.6] font-normal">
             Whether you are planning your first Azure migration, modernizing applications, integrating Microsoft technologies,
             or strengthening cloud governance, Knooviq can help you define a practical technical roadmap.
           </p>
@@ -1569,10 +1582,10 @@ export const AzureCloudPage: React.FC<ChildPageProps> = ({ onOpenContact }) => {
                     {lightboxImage.badge}
                   </span>
                 )}
-                <h3 className="text-lg font-bold text-white mt-1">
+                <h3 className="font-sora text-lg font-medium text-white mt-1">
                   {lightboxImage.title}
                 </h3>
-                <p className="text-xs text-slate-400 mt-0.5">
+                <p className="font-sora text-xs text-slate-400 mt-0.5 font-normal leading-[1.6]">
                   {lightboxImage.subtitle}
                 </p>
               </div>

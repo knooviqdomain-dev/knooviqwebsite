@@ -187,7 +187,7 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#040812] text-slate-900 dark:text-slate-100 selection:bg-[#00A3E0]/30 selection:text-[#00A3E0] transition-colors duration-300">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#040812] text-slate-900 dark:text-slate-100 selection:bg-[#00A3E0]/30 selection:text-[#00A3E0] transition-colors duration-300 cloud-sora-scope">
       {/* ============================================================ */}
       {/* 1. HERO SECTION: Full-Screen Panoramic Hero with Full-Bleed Hybrid Image & Text Overlay */}
       {/* ============================================================ */}
@@ -200,6 +200,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
             alt="Enterprise Hybrid Cloud & Orchestration"
             className="w-full h-full object-cover object-center lg:object-[65%_center] filter brightness-105 contrast-105"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#040812]/95 via-[#040812]/90 to-[#040812] pointer-events-none" />
           {/* Directional scrim: smoothly protects text readability on the left while keeping center & right visuals 100% bright */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#040812] via-[#040812]/85 sm:via-[#040812]/70 md:via-[#040812]/50 to-transparent w-full lg:w-3/5" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#040812] via-transparent to-[#040812]/50" />
@@ -208,20 +210,31 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-16 sm:py-20 lg:py-24 space-y-8">
 
-          <div className="max-w-2xl lg:max-w-3xl space-y-6">
+          <div className="max-w-2xl lg:max-w-3xl space-y-5 sm:space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-950/80 border border-cyan-500/40 text-cyan-400 text-xs font-mono font-semibold tracking-wide uppercase backdrop-blur-md">
               <Network className="w-3.5 h-3.5 text-[#00A3E0]" />
               <span>Enterprise Hybrid Cloud &amp; Orchestration</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight text-white leading-[1.12] drop-shadow-md">
-              Connect Your Enterprise.{' '}
-              <span className="bg-gradient-to-r from-[#00A3E0] via-cyan-300 to-sky-400 bg-clip-text text-transparent">
-                Orchestrate Your Cloud.
-              </span>
-            </h1>
+            <div className="space-y-2 sm:space-y-3">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight text-white leading-[1.12] drop-shadow-md">
+                Connect Your Enterprise.{' '}
+                <span className="bg-gradient-to-r from-[#00A3E0] via-cyan-300 to-sky-400 bg-clip-text text-transparent">
+                  Orchestrate Your Cloud.
+                </span>
+              </h1>
+            </div>
 
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl drop-shadow-sm">
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/hybrid_cloud_hero.png"
+                alt="Enterprise Hybrid Cloud & Orchestration - Hybrid Cloud Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl drop-shadow-sm">
               Bring private infrastructure, public cloud services, and on-premises applications together through a
               coordinated hybrid cloud architecture. Knooviq helps enterprises establish secure connectivity,
               intelligent workload placement, and operational consistency across complex IT environments.
@@ -267,7 +280,7 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               A Connected Hybrid Architecture
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Enterprise workloads no longer live in silos. Modern hybrid architecture synchronizes on-premises systems,
               dedicated private cloud hardware, and public cloud platforms into a cohesive operational ecosystem.
               Through dedicated fiber interconnects, federated identity, standardized APIs, and controlled data exchange,
@@ -296,7 +309,7 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
 
               {/* Explanatory Pillars of Connection */}
               <div className="lg:col-span-5 space-y-4">
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-lg font-medium text-slate-900 dark:text-white">
                   Four Pillars of Hybrid Interoperability
                 </h3>
                 <div className="space-y-3">
@@ -306,8 +319,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
                         <Network className="w-4 h-4" />
                       </div>
                       <div>
-                        <h4 className="text-xs font-bold text-slate-900 dark:text-white">Deterministic Connectivity</h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5">
+                        <h4 className="font-sora text-xs font-medium text-slate-900 dark:text-white">Deterministic Connectivity</h4>
+                        <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-0.5 font-normal leading-[1.6]">
                           Direct fiber cross-connects (Direct Connect / ExpressRoute) providing dedicated bandwidth and sub-5ms packet transport.
                         </p>
                       </div>
@@ -320,8 +333,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
                         <KeyRound className="w-4 h-4" />
                       </div>
                       <div>
-                        <h4 className="text-xs font-bold text-slate-900 dark:text-white">Identity &amp; Directory Federation</h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5">
+                        <h4 className="font-sora text-xs font-medium text-slate-900 dark:text-white">Identity &amp; Directory Federation</h4>
+                        <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-0.5 font-normal leading-[1.6]">
                           Single-pane directory integration bridging on-premises Active Directory with Entra ID, Okta, and cloud IAM roles.
                         </p>
                       </div>
@@ -334,8 +347,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
                         <Workflow className="w-4 h-4" />
                       </div>
                       <div>
-                        <h4 className="text-xs font-bold text-slate-900 dark:text-white">Managed API &amp; Service Mesh</h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5">
+                        <h4 className="font-sora text-xs font-medium text-slate-900 dark:text-white">Managed API &amp; Service Mesh</h4>
+                        <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-0.5 font-normal leading-[1.6]">
                           Mutual TLS (mTLS) gateways and Envoy proxy meshes enabling secure cross-boundary service-to-service calls.
                         </p>
                       </div>
@@ -348,8 +361,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
                         <FolderSync className="w-4 h-4" />
                       </div>
                       <div>
-                        <h4 className="text-xs font-bold text-slate-900 dark:text-white">Controlled Data Exchange</h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5">
+                        <h4 className="font-sora text-xs font-medium text-slate-900 dark:text-white">Controlled Data Exchange</h4>
+                        <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-0.5 font-normal leading-[1.6]">
                           Change Data Capture (CDC) streaming pipelines and synchronous replication queues for zero data loss.
                         </p>
                       </div>
@@ -378,7 +391,7 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Choose the Right Environment for Every Workload
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               True hybrid agility isn’t about putting everything in one place—it is about placing every workload where
               it performs best, satisfies regulatory mandates, and delivers the most predictable economic outcome.
             </p>
@@ -399,11 +412,11 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">On-Premises Infrastructure</h3>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Direct Physical &amp; Local Hardware Control</p>
+                  <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">On-Premises Infrastructure</h3>
+                  <p className="font-sora text-xs text-slate-500 dark:text-slate-400 mt-1 font-normal leading-[1.6]">Direct Physical &amp; Local Hardware Control</p>
                 </div>
 
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Best suited for legacy monolithic engines, industrial SCADA systems, factory-floor robotics, and
                   sub-millisecond hardware instrumentation where physical bus proximity is mandatory.
                 </p>
@@ -449,11 +462,11 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">Dedicated Private Cloud</h3>
-                  <p className="text-xs text-blue-600 dark:text-blue-400 mt-1">Sovereign Control with Virtualized Agility</p>
+                  <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">Dedicated Private Cloud</h3>
+                  <p className="font-sora text-xs text-blue-600 dark:text-blue-400 mt-1 font-normal leading-[1.6]">Sovereign Control with Virtualized Agility</p>
                 </div>
 
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Engineered for mission-critical core databases, regulated healthcare records, high-concurrency ERP
                   ledgers, and proprietary R&amp;D IP requiring dedicated physical hypervisors and predictable spend.
                 </p>
@@ -499,11 +512,11 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">Public Cloud Hyperscalers</h3>
-                  <p className="text-xs text-cyan-600 dark:text-cyan-400 mt-1">Infinite Elasticity &amp; Global Acceleration</p>
+                  <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">Public Cloud Hyperscalers</h3>
+                  <p className="font-sora text-xs text-cyan-600 dark:text-cyan-400 mt-1 font-normal leading-[1.6]">Infinite Elasticity &amp; Global Acceleration</p>
                 </div>
 
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Optimized for external customer web and mobile applications, elastic e-commerce spikes, generative AI
                   model training/inference, and global content delivery networks across AWS, Azure, and Google Cloud.
                 </p>
@@ -550,10 +563,10 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
               </div>
 
               <div className="lg:col-span-7 space-y-4">
-                <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                   Multi-Factor Workload Evaluation Criteria
                 </h4>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Our architecture team scores every application across six critical dimensions to prevent architectural
                   mismatches, avoid egress budget surprises, and maintain uninterrupted uptime.
                 </p>
@@ -608,7 +621,7 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
               Secure Connectivity Across Environments
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Extending your network across corporate datacenters and hyperscalers introduces architectural attack
               surfaces if improperly segmented. We deploy zero-trust perimeter boundaries, line-rate MACsec hardware
               encryption, identity federation, and software-defined firewalls to keep every packet authenticated and verified.
@@ -646,8 +659,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
                   <Network className="w-4 h-4 text-[#00A3E0]" />
                   <span>Network Segmentation</span>
                 </div>
-                <h3 className="text-sm font-bold text-white">VRF &amp; Micro-Segmentation</h3>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <h3 className="font-sora text-sm font-medium text-white">VRF &amp; Micro-Segmentation</h3>
+                <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                   Virtual Routing and Forwarding (VRF) isolating sensitive core ERP databases from public-facing DMZ
                   gateways across shared physical interconnects.
                 </p>
@@ -658,8 +671,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
                   <Lock className="w-4 h-4 text-[#00A3E0]" />
                   <span>Line-Rate Encryption</span>
                 </div>
-                <h3 className="text-sm font-bold text-white">MACsec &amp; IPsec Tunnels</h3>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <h3 className="font-sora text-sm font-medium text-white">MACsec &amp; IPsec Tunnels</h3>
+                <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                   Layer 2 IEEE 802.1AE MACsec hardware encryption providing line-rate wire encryption with zero latency
                   overhead, backed by hot-standby IPsec failovers.
                 </p>
@@ -670,8 +683,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
                   <KeyRound className="w-4 h-4 text-[#00A3E0]" />
                   <span>Identity Federation</span>
                 </div>
-                <h3 className="text-sm font-bold text-white">Single Sign-On &amp; PAM</h3>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <h3 className="font-sora text-sm font-medium text-white">Single Sign-On &amp; PAM</h3>
+                <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                   Centralized SAML 2.0 / OIDC identity federation connecting on-prem Active Directory with cloud IAM,
                   backed by session-recorded Privileged Access Management.
                 </p>
@@ -682,8 +695,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
                   <ShieldCheck className="w-4 h-4 text-[#00A3E0]" />
                   <span>API Security</span>
                 </div>
-                <h3 className="text-sm font-bold text-white">mTLS &amp; API Gateways</h3>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <h3 className="font-sora text-sm font-medium text-white">mTLS &amp; API Gateways</h3>
+                <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                   Cryptographic mutual TLS certificate handshakes and schema validation protecting all service-to-service
                   cross-boundary transactions against interception.
                 </p>
@@ -694,8 +707,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
                   <SlidersHorizontal className="w-4 h-4 text-[#00A3E0]" />
                   <span>Access Policies</span>
                 </div>
-                <h3 className="text-sm font-bold text-white">Zero Trust Network Access (ZTNA)</h3>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <h3 className="font-sora text-sm font-medium text-white">Zero Trust Network Access (ZTNA)</h3>
+                <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                   Adaptive context-aware access policies continuously evaluating device health, user identity, and geographic
                   location before granting application access.
                 </p>
@@ -706,8 +719,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
                   <Activity className="w-4 h-4 text-[#00A3E0]" />
                   <span>East-West Inspection</span>
                 </div>
-                <h3 className="text-sm font-bold text-white">Distributed Next-Gen Firewalls</h3>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <h3 className="font-sora text-sm font-medium text-white">Distributed Next-Gen Firewalls</h3>
+                <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                   Deep packet inspection monitoring all lateral traffic moving between on-prem racks and cloud VPCs,
                   quarantining anomalies automatically.
                 </p>
@@ -734,7 +747,7 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Workload Migration &amp; Integration
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Moving workloads across hybrid boundaries requires surgical precision. Our proven 5-stage migration and
               integration workflow guarantees continuous data integrity, zero unplanned business outages, and verified
               service performance.
@@ -786,16 +799,16 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white">
                     {migrationSteps[activeStep].title}: {migrationSteps[activeStep].tagline}
                   </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                  <p className="font-sora text-sm text-slate-600 dark:text-slate-300 mt-2 leading-[1.6] font-normal">
                     {migrationSteps[activeStep].description}
                   </p>
                 </div>
 
                 <div className="space-y-2 pt-2 border-t border-slate-200 dark:border-slate-800">
-                  <h4 className="text-xs font-mono font-bold uppercase text-slate-500 tracking-wider">
+                  <h4 className="font-sora text-xs font-mono font-medium uppercase text-slate-500 tracking-wider">
                     Core Technical Activities &amp; Validations:
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -851,7 +864,7 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Data Flow, Continuity &amp; Resilience
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               When business operations span on-premises datacenters and multiple cloud regions, data architecture must
               guarantee zero data loss, strict transactional ordering, and deterministic disaster recovery.
             </p>
@@ -888,10 +901,10 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
             {/* Editorial Supporting Content */}
             <div className="lg:col-span-6 space-y-6">
               <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white leading-snug">
+                <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white leading-snug">
                   Zero-Data-Loss Synchronization and Cloud-Backed Disaster Recovery
                 </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-sm text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Rather than paying millions for idle duplicate hardware, our hybrid recovery architectures leverage
                   cloud pilot light patterns. Core database transaction logs are replicated continuously over dedicated
                   links, while compute nodes remain spun down until a cutover is triggered.
@@ -904,7 +917,7 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
                     <HardDrive className="w-4 h-4 text-[#00A3E0]" />
                     <span>Synchronous Metro vs. Asynchronous WAN Replication</span>
                   </div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Local sub-5ms fibers support zero-RPO synchronous mirror writes, while WAN links utilize
                     bandwidth-optimized delta compression for geo-separated cloud replication.
                   </p>
@@ -915,7 +928,7 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
                     <Shield className="w-4 h-4 text-[#00A3E0]" />
                     <span>Immutable Air-Gapped Ransomware Vaults</span>
                   </div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Write Once Read Many (WORM) storage policies prevent accidental or malicious snapshot tampering,
                     guaranteeing clean recovery points during security emergencies.
                   </p>
@@ -926,7 +939,7 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
                     <RefreshCw className="w-4 h-4 text-[#00A3E0]" />
                     <span>Non-Disruptive Disaster Recovery Testing</span>
                   </div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Automated sandbox spin-ups allow infosec and compliance teams to validate DR runbooks quarterly
                     without impacting live production systems or data flows.
                   </p>
@@ -953,7 +966,7 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Unified Operations &amp; Governance
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Operating a hybrid cloud cannot mean running fragmented operations teams for every hosting provider.
               We establish a standardized enterprise operational framework that coordinates telemetry, incident resolution,
               configuration drift, policy enforcement, and multi-cloud FinOps under a single discipline.
@@ -980,7 +993,7 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
 
               {/* 5 Core Framework Disciplines (Not cards, but a clean structured table/matrix) */}
               <div className="lg:col-span-7 space-y-4">
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-lg font-medium text-slate-900 dark:text-white">
                   Five Core Operational Disciplines
                 </h3>
                 <div className="divide-y divide-slate-200 dark:divide-slate-800 border-y border-slate-200 dark:border-slate-800">
@@ -1061,7 +1074,7 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
               Modernize Without Disrupting Everything
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Forced "rip-and-replace" cloud migrations frequently result in budget overruns, delayed delivery, and
               catastrophic production disruption. A well-designed hybrid cloud lets you modernize selectively—wrapping
               valuable legacy engines in cloud APIs, adopting hyperscaler AI services where they generate competitive
@@ -1075,8 +1088,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
               <div className="p-2.5 rounded-lg bg-cyan-950/80 text-cyan-400 w-fit">
                 <Workflow className="w-5 h-5" />
               </div>
-              <h3 className="text-base font-bold text-white">Strangler Fig Migration</h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
+              <h3 className="font-sora text-base font-medium text-white">Strangler Fig Migration</h3>
+              <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                 Incrementally route new business features through cloud microservices while leaving core transactional
                 monoliths untouched and stable.
               </p>
@@ -1086,8 +1099,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
               <div className="p-2.5 rounded-lg bg-cyan-950/80 text-cyan-400 w-fit">
                 <Database className="w-5 h-5" />
               </div>
-              <h3 className="text-base font-bold text-white">Legacy System Retention</h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
+              <h3 className="font-sora text-base font-medium text-white">Legacy System Retention</h3>
+              <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                 Retain mature, high-investment ERPs and specialized manufacturing appliances on-premises where their
                 operational economics remain superior.
               </p>
@@ -1097,8 +1110,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
               <div className="p-2.5 rounded-lg bg-cyan-950/80 text-cyan-400 w-fit">
                 <Cpu className="w-5 h-5" />
               </div>
-              <h3 className="text-base font-bold text-white">Plug-and-Play Cloud Services</h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
+              <h3 className="font-sora text-base font-medium text-white">Plug-and-Play Cloud Services</h3>
+              <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                 Connect external hyperscaler services—like generative AI foundation models, serverless event hubs, and
                 analytics lakehouses—via secure API brokers.
               </p>
@@ -1108,8 +1121,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
               <div className="p-2.5 rounded-lg bg-cyan-950/80 text-cyan-400 w-fit">
                 <CheckCircle2 className="w-5 h-5" />
               </div>
-              <h3 className="text-base font-bold text-white">Controlled Pace of Change</h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
+              <h3 className="font-sora text-base font-medium text-white">Controlled Pace of Change</h3>
+              <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                 Eliminate big-bang migration risks by testing, validating, and optimizing each application release
                 independently on its own schedule.
               </p>
@@ -1131,7 +1144,7 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Where Hybrid Cloud Delivers Immediate Business Value
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Real-world deployment scenarios where enterprise organizations leverage Knooviq hybrid architecture
               blueprints to solve mission-critical IT challenges.
             </p>
@@ -1143,8 +1156,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
               <div className="text-xs font-mono font-bold text-[#00A3E0] dark:text-cyan-400 uppercase">
                 SCENARIO 01
               </div>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">Legacy Application Integration</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">Legacy Application Integration</h3>
+              <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Connect mission-critical on-premises ERP databases with customer-facing cloud mobile apps and e-commerce
                 storefronts through real-time, low-latency API gateways.
               </p>
@@ -1154,8 +1167,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
               <div className="text-xs font-mono font-bold text-[#00A3E0] dark:text-cyan-400 uppercase">
                 SCENARIO 02
               </div>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">Sensitive Enterprise Workloads</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">Sensitive Enterprise Workloads</h3>
+              <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Retain customer personally identifiable information (PII) and sovereign payment ledgers on dedicated
                 private infrastructure while offloading stateless compute to the public cloud.
               </p>
@@ -1165,8 +1178,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
               <div className="text-xs font-mono font-bold text-[#00A3E0] dark:text-cyan-400 uppercase">
                 SCENARIO 03
               </div>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">Cloud-Connected Edge &amp; Retail</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">Cloud-Connected Edge &amp; Retail</h3>
+              <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Run autonomous manufacturing execution or retail checkout nodes locally to survive internet outages,
                 synchronizing telemetry and inventory back to cloud analytics hubs.
               </p>
@@ -1176,8 +1189,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
               <div className="text-xs font-mono font-bold text-[#00A3E0] dark:text-cyan-400 uppercase">
                 SCENARIO 04
               </div>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">Cost-Effective Disaster Recovery</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">Cost-Effective Disaster Recovery</h3>
+              <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Replace expensive secondary physical colocation facilities with cloud-based pilot lights that replicate
                 data in real time without incurring continuous compute fees.
               </p>
@@ -1187,8 +1200,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
               <div className="text-xs font-mono font-bold text-[#00A3E0] dark:text-cyan-400 uppercase">
                 SCENARIO 05
               </div>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">Distributed Infrastructure Fabric</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">Distributed Infrastructure Fabric</h3>
+              <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Centrally manage compute capacity spanning headquarters data centers, regional branches, and hyperscaler
                 availability zones through a unified Kubernetes control plane.
               </p>
@@ -1198,8 +1211,8 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
               <div className="text-xs font-mono font-bold text-[#00A3E0] dark:text-cyan-400 uppercase">
                 SCENARIO 06
               </div>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">Gradual Application Modernization</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">Gradual Application Modernization</h3>
+              <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Deconstruct monolithic legacy applications progressively into containerized microservices over quarters
                 rather than forcing a high-risk multi-year waterfall migration.
               </p>
@@ -1317,7 +1330,7 @@ export const HybridCloudPage: React.FC<HybridCloudPageProps> = ({ onOpenContact 
             </div>
 
             <div className="p-4 border-t border-slate-800 bg-slate-950 text-xs text-slate-300 leading-relaxed flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <p className="max-w-2xl">{lightboxImage.subtitle}</p>
+              <p className="font-sora max-w-2xl font-normal leading-[1.6]">{lightboxImage.subtitle}</p>
               <button
                 onClick={handleDiscussRequirements}
                 className="px-4 py-2 rounded-lg bg-[#00A3E0] hover:bg-[#00B4F5] text-white font-semibold text-xs transition-colors shrink-0 cursor-pointer"

@@ -496,7 +496,7 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
     : modularSolutions.filter(s => s.category === activeSolutionCategory);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden selection:bg-[#0070C0] selection:text-white">
+    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden selection:bg-[#0070C0] selection:text-white cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Panoramic Background - Aligned with AI Agents Reference)
@@ -512,6 +512,9 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
           />
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
 
         {/* Hero Top Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12 relative z-10 w-full">
@@ -544,12 +547,21 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
             </h1>
 
             {/* Subheading / Value Proposition */}
-            <p className="text-lg sm:text-xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            <p className="font-sora text-lg sm:text-xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               Synchronizing Pit-to-Port Logistics, Ore Grade Blending & Smelter Operations on One Core.
             </p>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/mining-metals/mining_metals_hero_widescreen.jpg"
+                alt="Intelligent ERP for Mining & Metals"
+                className="w-full h-auto block select-none"
+              />
+            </div>
+
             {/* Clear Open Typography */}
-            <p className="text-sm sm:text-base text-slate-100 font-normal leading-relaxed drop-shadow-sm max-w-2xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm max-w-2xl">
               Optimize mining and metals enterprises with integrated <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, automated <strong className="text-cyan-300 font-semibold">Pit-to-Port Multimodal Logistics</strong>, stockpile assay reconciliation, and <strong className="text-white font-semibold">GISTM-compliant tailings dam governance</strong>.
             </p>
             
@@ -635,12 +647,12 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
               </h2>
 
               <div className="border-l-4 border-amber-500 border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-amber-50/80 via-amber-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-[1.6] italic">
                   &ldquo;Mining margins are defended through flow continuity: matching open-pit shovel production with rail slot capacity, stockyard blending, and ship loader availability.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq integrates mine geology, heavy haul fleets, processing plants, and marine export terminals into SAP S/4HANA. Eliminating operational silos between open pits and ports prevents vessel demurrage, ensures consistent smelter feed chemistry, and delivers auditable tailings dam safety governance.
               </p>
 
@@ -650,8 +662,8 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
                     <Truck className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">End-to-End Multimodal Pit-to-Port Sync</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">End-to-End Multimodal Pit-to-Port Sync</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Unified scheduling orchestrating train loading loops, track slot bookings, and bulk vessel loading with zero port demurrage.
                     </p>
                   </div>
@@ -662,8 +674,8 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
                     <Compass className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Precision Ore Assay Stockpile Blending</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Precision Ore Assay Stockpile Blending</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Dynamic stacker-reclaimer automation guided by lab spectrometer assay data to deliver consistent feed chemistry into processing concentrators.
                     </p>
                   </div>
@@ -674,8 +686,8 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">GISTM Tailings Dam Satellite Surveillance</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">GISTM Tailings Dam Satellite Surveillance</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Satellite InSAR ground displacement tracking and borehole pore pressure monitoring integrated into audit-ready ESG risk registries.
                     </p>
                   </div>
@@ -685,12 +697,12 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
             </div>
 
             <div className="lg:col-span-6 space-y-3.5">
-              <div className="rounded-2xl overflow-hidden border-2 border-slate-300 shadow-md bg-slate-950">
-                <div className="relative aspect-[16/9] w-full bg-slate-950">
+              <div className="rounded-2xl overflow-hidden shadow-md bg-slate-950 border border-slate-800/80">
+                <div className="relative aspect-[16/9] w-full bg-slate-950 overflow-hidden">
                   <img 
                     src={journeySteps[activeJourneyStep].image} 
                     alt={journeySteps[activeJourneyStep].label} 
-                    className="w-full h-full object-contain object-top"
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
                 <div className="p-3.5 sm:p-4 bg-slate-900 border-t border-slate-800 text-white">
@@ -705,7 +717,7 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
                   <div className="text-sm sm:text-base font-bold text-white leading-snug">
                     {journeySteps[activeJourneyStep].label}
                   </div>
-                  <p className="text-xs text-slate-300 mt-1 leading-relaxed line-clamp-2">
+                  <p className="font-sora text-xs text-slate-300 mt-1 leading-[1.6] line-clamp-2 font-normal">
                     {journeySteps[activeJourneyStep].desc}
                   </p>
                 </div>
@@ -757,7 +769,7 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Operational Challenges Across the Mineral Value Chain
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When open-pit haul fleets, laboratory assay grades, rail train movements, and smelters remain disconnected, throughput declines and commodity contract disputes escalate.
             </p>
           </div>
@@ -779,10 +791,10 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 leading-snug">
+                    <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -823,7 +835,7 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Modern Mining
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting open-pit haul telematics, stockyard assay blending, heavy haul rail logistics, and GISTM tailings dam governance into one continuous loop.
             </p>
           </motion.div>
@@ -859,10 +871,10 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1016,10 +1028,10 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
                         }}
                       />
                       <div className="space-y-1 text-right flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1048,7 +1060,7 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Enterprise Mining & Metals Technology Blueprint
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Decoupling open-pit dispatch telematics and rail transportation logistics on SAP BTP while maintaining standard S/4HANA core upgradability.
             </p>
           </div>
@@ -1093,24 +1105,24 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
                   <div className="flex items-center gap-3">
                     <Radio className="w-6 h-6 text-amber-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">Mobile Mining Fleet & Plant SCADA Telemetry</h3>
-                      <p className="text-xs text-slate-400 font-mono">CAN Bus J1939 • Private LTE • Conveyor Scales • Piezometer Radios</p>
+                      <h3 className="font-sora text-lg font-medium text-white">Mobile Mining Fleet & Plant SCADA Telemetry</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">CAN Bus J1939 • Private LTE • Conveyor Scales • Piezometer Radios</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-mono">Real-Time Ingestion</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-amber-300 mb-1">Haul Truck Telematics</h4>
-                    <p className="text-xs text-slate-300">Continuous payload weight, strut pressure, tire heat, and fuel burn telemetry.</p>
+                    <h4 className="font-sora text-sm font-medium text-amber-300 mb-1">Haul Truck Telematics</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Continuous payload weight, strut pressure, tire heat, and fuel burn telemetry.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-amber-300 mb-1">Conveyor XRF Assay Analyzers</h4>
-                    <p className="text-xs text-slate-300">Continuous on-belt elemental analysis tracking copper, iron, silica, and alumina grades.</p>
+                    <h4 className="font-sora text-sm font-medium text-amber-300 mb-1">Conveyor XRF Assay Analyzers</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Continuous on-belt elemental analysis tracking copper, iron, silica, and alumina grades.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-amber-300 mb-1">Tailings Piezometers & InSAR</h4>
-                    <p className="text-xs text-slate-300">Real-time borehole water pressure and satellite millimeter-level embankment movement.</p>
+                    <h4 className="font-sora text-sm font-medium text-amber-300 mb-1">Tailings Piezometers & InSAR</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Real-time borehole water pressure and satellite millimeter-level embankment movement.</p>
                   </div>
                 </div>
               </div>
@@ -1122,24 +1134,24 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
                   <div className="flex items-center gap-3">
                     <Cpu className="w-6 h-6 text-sky-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">SAP S/4HANA Mining & Metals Clean Core</h3>
-                      <p className="text-xs text-slate-400 font-mono">SAP TM • SAP QM • SAP Commodity Management • Universal Journal</p>
+                      <h3 className="font-sora text-lg font-medium text-white">SAP S/4HANA Mining & Metals Clean Core</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">SAP TM • SAP QM • SAP Commodity Management • Universal Journal</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-mono">Clean Core Standard</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-sky-300 mb-1">Pit-to-Port Logistics (SAP TM)</h4>
-                    <p className="text-xs text-slate-300">Unit train track slots, rotary car dumper scheduling, and capesize bulk carrier berthing.</p>
+                    <h4 className="font-sora text-sm font-medium text-sky-300 mb-1">Pit-to-Port Logistics (SAP TM)</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Unit train track slots, rotary car dumper scheduling, and capesize bulk carrier berthing.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-sky-300 mb-1">Commodity Offtake Invoicing</h4>
-                    <p className="text-xs text-slate-300">LME pricing quotation periods, moisture penalties, and automated letters of credit reconciliation.</p>
+                    <h4 className="font-sora text-sm font-medium text-sky-300 mb-1">Commodity Offtake Invoicing</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">LME pricing quotation periods, moisture penalties, and automated letters of credit reconciliation.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-sky-300 mb-1">Fixed Plant & Fleet EAM</h4>
-                    <p className="text-xs text-slate-300">Work orders for primary gyratory crushers, SAG mills, and electric shovel undercarriages.</p>
+                    <h4 className="font-sora text-sm font-medium text-sky-300 mb-1">Fixed Plant & Fleet EAM</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Work orders for primary gyratory crushers, SAG mills, and electric shovel undercarriages.</p>
                   </div>
                 </div>
               </div>
@@ -1151,24 +1163,24 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
                   <div className="flex items-center gap-3">
                     <Zap className="w-6 h-6 text-emerald-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">SAP BTP & Metallurgical AI</h3>
-                      <p className="text-xs text-slate-400 font-mono">SAP DMC • APM Predictive ML • Sustainability Control Tower</p>
+                      <h3 className="font-sora text-lg font-medium text-white">SAP BTP & Metallurgical AI</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">SAP DMC • APM Predictive ML • Sustainability Control Tower</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-mono">Cognitive Layer</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-emerald-300 mb-1">Smelter MES Heat Tracking</h4>
-                    <p className="text-xs text-slate-300">Ladle metallurgy tracking, submerged arc furnace control, and continuous casting genealogy.</p>
+                    <h4 className="font-sora text-sm font-medium text-emerald-300 mb-1">Smelter MES Heat Tracking</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Ladle metallurgy tracking, submerged arc furnace control, and continuous casting genealogy.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-emerald-300 mb-1">Predictive Crusher & Fleet APM</h4>
-                    <p className="text-xs text-slate-300">Machine learning models predicting haul truck wheel motor and crusher mantle wear.</p>
+                    <h4 className="font-sora text-sm font-medium text-emerald-300 mb-1">Predictive Crusher & Fleet APM</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Machine learning models predicting haul truck wheel motor and crusher mantle wear.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-sm font-bold text-emerald-300 mb-1">GISTM Tailings Governance</h4>
-                    <p className="text-xs text-slate-300">Continuous geotechnical risk calculation satisfying Global Tailings Standard audit regimes.</p>
+                    <h4 className="font-sora text-sm font-medium text-emerald-300 mb-1">GISTM Tailings Governance</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Continuous geotechnical risk calculation satisfying Global Tailings Standard audit regimes.</p>
                   </div>
                 </div>
               </div>
@@ -1192,7 +1204,7 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Pre-Configured Enterprise Mining Modules
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Rapidly deployable solution packages engineered for open-pit extraction, heavy haul logistics, metallurgical smelters, and commodity offtake.
             </p>
           </div>
@@ -1226,7 +1238,7 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
                     <img 
                       src={sol.image} 
                       alt={sol.title} 
-                      className="w-full h-full object-contain object-top"
+                      className="w-full h-full object-cover object-center"
                       onError={(e) => {
                         (e.target as HTMLElement).style.display = 'none';
                       }}
@@ -1244,10 +1256,10 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
                       <span className="text-[10px] font-mono font-bold text-amber-700 uppercase tracking-wider bg-amber-50 px-2 py-0.5 rounded border border-amber-100">
                         {sol.categoryLabel}
                       </span>
-                      <h3 className="text-base sm:text-lg font-bold text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug line-clamp-2">
+                      <h3 className="font-sora text-base sm:text-lg font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug line-clamp-2">
                         {sol.title}
                       </h3>
-                      <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
+                      <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-3 font-normal">
                         {sol.description}
                       </p>
                     </div>
@@ -1283,7 +1295,7 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Standardizing Complex Mining Operations
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               How Knooviq eliminates brittle custom code with SAP standard mining and mill industry packages.
             </p>
           </div>
@@ -1361,7 +1373,7 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Four Phases to Autonomous Mining Operations
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Inspect how legacy manual workflows transform into intelligent real-time operations across every phase of the SAP deployment.
             </p>
           </div>
@@ -1398,7 +1410,7 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
                     </div>
 
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide mt-0.5">
@@ -1406,7 +1418,7 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
                       </div>
                     </div>
 
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1484,7 +1496,7 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Enterprise Client Success Stories
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Real operational outcomes delivered for multi-pit iron ore exporters, copper concentrator complexes, and integrated steelworks.
             </p>
           </div>
@@ -1499,13 +1511,13 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
                   <span className="text-[10px] font-mono font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-100 uppercase tracking-wider">
                     {cs.badge}
                   </span>
-                  <h3 className="text-base font-bold text-slate-950 leading-snug">
+                  <h3 className="font-sora text-base font-medium text-slate-950 leading-snug">
                     {cs.title}
                   </h3>
                   <div className="text-xs font-medium text-slate-500">
                     {cs.client}
                   </div>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     {cs.desc}
                   </p>
                 </div>
@@ -1539,7 +1551,7 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Mining & Metals Architecture Advisory
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Technical considerations for mining and metallurgical executives modernizing operations on SAP S/4HANA.
             </p>
           </div>
@@ -1605,7 +1617,7 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
             Ready to Build a Smarter Mining & Metals Enterprise?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your pits, haul fleets, processing smelters, and bulk export ports with Knooviq.
           </p>
 
@@ -1627,7 +1639,7 @@ export const MiningMetalsIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCo
             </Link>
           </div>
 
-          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-200">
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-100">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-300" />
               <span>SAP Certified Clean Core</span>

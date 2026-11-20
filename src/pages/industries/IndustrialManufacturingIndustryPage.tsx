@@ -425,7 +425,7 @@ export const IndustrialManufacturingIndustryPage: React.FC<IndustrialManufacturi
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION
@@ -467,7 +467,7 @@ export const IndustrialManufacturingIndustryPage: React.FC<IndustrialManufacturi
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Powering Zero-Defect Sequencing, Connected Shop-Floor MES & Multi-Plant Clean Core Execution.
               </p>
             </motion.div>
@@ -478,7 +478,7 @@ export const IndustrialManufacturingIndustryPage: React.FC<IndustrialManufacturi
               transition={{ duration: 0.6, delay: 0.1 }}
               className="space-y-3 max-w-2xl"
             >
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Powering zero-defect automotive sequencing, discrete shop-floor execution, process formulation control, and hazardous materials compliance on <strong className="text-white font-semibold">SAP S/4HANA digital core</strong> and <strong className="text-cyan-300 font-semibold">SAP Digital Manufacturing Cloud (DMC)</strong>.
               </p>
               
@@ -541,7 +541,7 @@ export const IndustrialManufacturingIndustryPage: React.FC<IndustrialManufacturi
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Engineering the Autonomous, Zero-Defect Manufacturing Core
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               From high-velocity Tier-1 automotive sequencing to regulated chemical plants, discover how Knooviq harmonizes shop-floor execution with enterprise planning.
             </p>
           </div>
@@ -589,17 +589,17 @@ export const IndustrialManufacturingIndustryPage: React.FC<IndustrialManufacturi
                   {sectors[activeSectorTab].tag}
                 </div>
                 <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <h3 className="text-lg font-bold leading-tight">{sectors[activeSectorTab].name}</h3>
+                  <h3 className="font-sora text-lg font-medium leading-tight">{sectors[activeSectorTab].name}</h3>
                 </div>
               </div>
 
               {/* Right Content (7 cols) */}
               <div className="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-5">
                 <div>
-                  <h4 className="text-xl font-bold text-slate-900 mb-2">
+                  <h4 className="font-sora text-xl font-medium text-slate-900 mb-2">
                     {sectors[activeSectorTab].headline}
                   </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5">
+                  <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] mb-5 font-normal">
                     {sectors[activeSectorTab].desc}
                   </p>
 
@@ -656,7 +656,7 @@ export const IndustrialManufacturingIndustryPage: React.FC<IndustrialManufacturi
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Overcoming High-Stakes Industrial Bottlenecks
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Unplanned downtime, disconnected PLCs, and volatile supply lead times destroy operating margins. Knooviq addresses the 6 core operational hurdles.
             </p>
           </div>
@@ -678,10 +678,10 @@ export const IndustrialManufacturingIndustryPage: React.FC<IndustrialManufacturi
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -711,7 +711,7 @@ export const IndustrialManufacturingIndustryPage: React.FC<IndustrialManufacturi
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               The Connected Factory: From Sensor to S/4HANA Core
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A bi-directional, four-tier architecture synchronizing physical shop-floor robotics with cloud enterprise intelligence.
             </p>
           </div>
@@ -732,7 +732,7 @@ export const IndustrialManufacturingIndustryPage: React.FC<IndustrialManufacturi
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <h3 className="text-sm font-bold">{layer.title}</h3>
+                    <h3 className="font-sora text-sm font-medium">{layer.title}</h3>
                     <ChevronRight className={`w-4 h-4 transition-transform ${activeLayer === idx ? 'rotate-90 text-cyan-300' : 'text-slate-500'}`} />
                   </div>
                   <div className="text-xs text-slate-400 mt-1">{layer.subtitle}</div>
@@ -746,13 +746,13 @@ export const IndustrialManufacturingIndustryPage: React.FC<IndustrialManufacturi
                 <Zap className="w-4 h-4 text-cyan-300" />
                 <span>Layer Blueprint {activeLayer + 1} of 4</span>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="font-sora text-xl font-medium text-white mb-2">
                 {architectureLayers[activeLayer].title}
               </h3>
-              <p className="text-sm text-cyan-200/90 font-medium mb-4">
+              <p className="font-sora text-sm text-cyan-200/90 font-medium leading-[1.6] mb-4">
                 {architectureLayers[activeLayer].subtitle}
               </p>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+              <p className="font-sora text-xs sm:text-sm text-slate-300 leading-[1.6] mb-6 font-normal">
                 {architectureLayers[activeLayer].desc}
               </p>
 
@@ -788,7 +788,7 @@ export const IndustrialManufacturingIndustryPage: React.FC<IndustrialManufacturi
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Pre-Configured Enterprise Manufacturing Modules
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Production-tested capabilities designed for rapid deployment across Automotive, Discrete, Process, Industrial Products, and Chemicals.
             </p>
           </div>
@@ -854,12 +854,12 @@ export const IndustrialManufacturingIndustryPage: React.FC<IndustrialManufacturi
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -901,7 +901,7 @@ export const IndustrialManufacturingIndustryPage: React.FC<IndustrialManufacturi
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Delivering Measurable Industrial ROI
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Real-world operational enhancements measured across plant uptime, sequence precision, and compliance audits.
             </p>
           </div>
@@ -912,10 +912,10 @@ export const IndustrialManufacturingIndustryPage: React.FC<IndustrialManufacturi
                 <div className="text-3xl sm:text-4xl font-mono font-black text-cyan-300 mb-2">
                   {met.value}
                 </div>
-                <h3 className="text-sm font-bold text-white mb-2">
+                <h3 className="font-sora text-sm font-medium text-white mb-2">
                   {met.label}
                 </h3>
-                <p className="text-xs text-slate-400 leading-relaxed">
+                <p className="font-sora text-xs text-slate-400 leading-[1.6] font-normal">
                   {met.desc}
                 </p>
               </div>
@@ -939,7 +939,7 @@ export const IndustrialManufacturingIndustryPage: React.FC<IndustrialManufacturi
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Industrial Transformations in Action
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               See how market leaders modernized shop-floor execution and achieved zero-defect operations with Knooviq.
             </p>
           </div>
@@ -951,13 +951,13 @@ export const IndustrialManufacturingIndustryPage: React.FC<IndustrialManufacturi
                   <div className="inline-block px-2.5 py-0.5 rounded-full bg-sky-50 text-[10px] font-mono font-bold text-[#0070C0] border border-sky-200 mb-3">
                     {cs.badge}
                   </div>
-                  <h3 className="text-base font-bold text-slate-900 mb-2 leading-snug">
+                  <h3 className="font-sora text-base font-medium text-slate-900 mb-2 leading-snug">
                     {cs.title}
                   </h3>
                   <div className="text-xs text-slate-500 font-medium mb-3">
                     {cs.client}
                   </div>
-                  <p className="text-xs text-slate-600 leading-relaxed mb-5">
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] mb-5 font-normal">
                     {cs.desc}
                   </p>
 
@@ -1009,7 +1009,7 @@ export const IndustrialManufacturingIndustryPage: React.FC<IndustrialManufacturi
             Ready to Build a Resilient, Autonomous Factory?
           </h2>
 
-          <p className="text-slate-300 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] max-w-2xl mx-auto leading-[1.6] font-normal">
             Collaborate with our seasoned SAP manufacturing architects to design, prototype, and implement a high-velocity shop-floor execution ecosystem.
           </p>
 

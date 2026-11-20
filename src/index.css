@@ -322,6 +322,53 @@
   }
 }
 
+/* =========================================================================
+   SORA PARAGRAPH & SUBHEADING SYSTEM (Knooviq Cloud Pages)
+   ========================================================================= */
+.cloud-sora-scope {
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+}
+
+.cloud-sora-scope p {
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Light Theme Deep Navy (#102A43) for paragraphs on light surfaces only */
+.cloud-sora-scope p:not([class*="text-slate-100"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-sky"]):not([class*="text-blue"]):not([class*="text-white"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#0070C0]"]):not([class*="text-gray-100"]):not([class*="text-gray-200"]):not([class*="text-gray-300"]):not([class*="text-zinc"]):not([class*="text-neutral"]) {
+  color: #102A43;
+}
+
+
+
+/* Mobile Paragraph Font Size: 15px mobile, 16px desktop */
+@media (max-width: 639px) {
+  .cloud-sora-scope p:not(.text-xs):not(.text-\[10px\]):not(.text-\[11px\]):not(.text-\[12px\]) {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+@media (min-width: 640px) {
+  .cloud-sora-scope p:not(.text-xs):not(.text-\[10px\]):not(.text-\[11px\]):not(.text-\[12px\]) {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
+/* Dark mode paragraph readability */
+.dark .cloud-sora-scope p:not([class*="text-white"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#0070C0]"]) {
+  color: #E2E8F0;
+}
+
+/* Sora Medium (500) for Subheadings */
+.cloud-sora-scope h3,
+.cloud-sora-scope h4,
+.cloud-sora-scope .sora-subheading {
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 500;
+}
+
 /* Custom Sleek Scrollbar */
 ::-webkit-scrollbar {
   width: 7px;
@@ -948,6 +995,7 @@
   white-space: normal !important;
   word-break: normal !important;
   overflow-wrap: break-word !important;
+  text-align: left !important;
 }
 
 @media (min-width: 640px) {
@@ -955,6 +1003,7 @@
     font-size: 0.875rem;
     /* 14px */
     line-height: 1.5;
+    text-align: left !important;
   }
 }
 

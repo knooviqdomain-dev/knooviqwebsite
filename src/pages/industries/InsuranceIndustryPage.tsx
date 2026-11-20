@@ -455,7 +455,7 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Panoramic Background - Aligned with AI Agents Reference)
@@ -472,6 +472,9 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
           />
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
 
         {/* Hero Top Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-12 relative z-10 w-full">
@@ -504,9 +507,18 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
             </h1>
 
             {/* Sub-headline */}
-            <p className="text-sm sm:text-base text-slate-100 font-normal leading-relaxed drop-shadow-sm max-w-2xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm max-w-2xl">
               Modernize multi-line policy administration, streamline IFRS 17 / LDTI actuarial reporting, automate digital claims adjudication, and manage complex reinsurance treaties on clean-core SAP architecture.
             </p>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/insurance/insurance_hero_widescreen.jpg"
+                alt="Quantum Insure Intelligent Insurance & Actuarial Transformation"
+                className="w-full h-auto block select-none"
+              />
+            </div>
 
             {/* Feature Highlight Pills */}
             <div className="flex flex-wrap items-center gap-2.5 pt-1">
@@ -597,12 +609,12 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
 
               {/* Executive Thesis Quote Card */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-xs sm:text-sm font-semibold text-slate-800 italic leading-relaxed">
+                <p className="font-sora text-sm font-medium text-slate-800 italic leading-[1.6]">
                   "Underwriters, actuaries, and financial controllers must operate from a single, shared source of truth where policy transactions, actuarial projections, and Contractual Service Margin (CSM) accounting align seamlessly."
                 </p>
               </div>
 
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 As statutory IFRS 17 guidelines demand unprecedented granularity into insurance contract portfolios, carriers cannot rely on siloed actuarial models and disparate policy ledgers. Enterprise insurance leaders require an integrated sub-ledger architecture that calculates contractual margins in real time, automates reinsurance recoveries, and accelerates touchless digital claims adjudication.
               </p>
 
@@ -614,8 +626,8 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
                     <Scale className="w-4 h-4" />
                   </div>
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-slate-900">Seamless IFRS 17 Compliance</h3>
-                    <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                    <h3 className="font-sora text-xs sm:text-sm font-medium text-slate-900">Seamless IFRS 17 Compliance</h3>
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       Harmonize actuarial cash flow projections and financial postings with automated Contractual Service Margin (CSM) calculations.
                     </p>
                   </div>
@@ -626,8 +638,8 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
                     <HeartHandshake className="w-4 h-4" />
                   </div>
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-slate-900">Touchless Claims Orchestration</h3>
-                    <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                    <h3 className="font-sora text-xs sm:text-sm font-medium text-slate-900">Touchless Claims Orchestration</h3>
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       Deliver instant mobile FNOL intake, automated fraud anomaly screening, and rapid settlement disbursement rails.
                     </p>
                   </div>
@@ -638,8 +650,8 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div>
-                    <h3 className="text-xs sm:text-sm font-bold text-slate-900">Automated Reinsurance Recovery</h3>
-                    <p className="text-[11px] sm:text-xs text-slate-600 leading-relaxed">
+                    <h3 className="font-sora text-xs sm:text-sm font-medium text-slate-900">Automated Reinsurance Recovery</h3>
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       Eliminate recovery leakage with automated treaty calculation, multi-layered cessions, and real-time retrocession tracking.
                     </p>
                   </div>
@@ -653,16 +665,16 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
             <div className="lg:col-span-6 space-y-4">
               
               {/* Dynamic Photo Showcase */}
-              <div className="relative aspect-[16/9] sm:aspect-[1024/558] w-full min-h-[260px] sm:min-h-[300px] rounded-2xl overflow-hidden border-2 border-slate-300 shadow-md bg-slate-950">
+              <div className="relative aspect-[16/9] sm:aspect-[1024/558] w-full min-h-0 sm:min-h-[300px] rounded-2xl overflow-hidden border-2 border-slate-300 shadow-md bg-slate-950 flex items-center justify-center">
                 <img 
                   src={journeySteps[activeJourneyStep].image} 
                   alt={journeySteps[activeJourneyStep].label} 
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-contain sm:object-cover sm:object-top object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 via-45% to-transparent pointer-events-none" />
+                <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 via-45% to-transparent pointer-events-none" />
                 
-                {/* Overlay Text on Image */}
-                <div className="absolute bottom-4 left-4 right-4 text-white">
+                {/* Overlay Text on Image (Desktop only) */}
+                <div className="hidden sm:block absolute bottom-4 left-4 right-4 text-white">
                   <div className="text-[10px] font-mono font-bold text-cyan-400 uppercase tracking-wider">
                     STAGE {activeJourneyStep + 1} OF 6 • {journeySteps[activeJourneyStep].tech}
                   </div>
@@ -673,6 +685,21 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
                     {journeySteps[activeJourneyStep].desc}
                   </div>
                 </div>
+              </div>
+
+              {/* Mobile Info Header (below image so diagram is 100% visible and unblocked) */}
+              <div className="sm:hidden p-3 rounded-xl border border-slate-200 bg-white shadow-xs">
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <span className="text-[10px] font-mono font-bold text-[#0070C0] uppercase tracking-wider bg-sky-50 px-2 py-0.5 rounded border border-sky-100">
+                    STAGE {activeJourneyStep + 1} OF 6 • {journeySteps[activeJourneyStep].tech}
+                  </span>
+                  <span className="text-[10px] font-mono text-slate-500 font-semibold">
+                    {journeySteps[activeJourneyStep].sublabel}
+                  </span>
+                </div>
+                <h3 className="font-sora text-sm sm:text-base font-bold text-slate-950 mt-0.5">
+                  {journeySteps[activeJourneyStep].label}
+                </h3>
               </div>
 
               {/* 6 Stage Navigation Buttons */}
@@ -711,7 +738,7 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
                   <span className="font-bold text-[#0070C0] uppercase">Selected Milestone Detail</span>
                   <span>{journeySteps[activeJourneyStep].sublabel}</span>
                 </div>
-                <p className="text-xs text-slate-700 leading-relaxed font-medium">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -737,7 +764,7 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Operational Pressures Challenging Modern Insurance Carriers
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               From burdensome IFRS 17 actuarial reconciliations to high claims processing costs, carriers must modernize their underlying operational fabric.
             </p>
           </div>
@@ -761,11 +788,11 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
                       </span>
                     </div>
 
-                    <h3 className="text-base font-bold text-slate-900 tracking-tight leading-snug">
+                    <h3 className="font-sora text-base font-medium text-slate-900 tracking-tight leading-snug">
                       {challenge.title}
                     </h3>
 
-                    <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {challenge.desc}
                     </p>
                   </div>
@@ -800,7 +827,7 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
             <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
               Composable Insurance Platform Matrix
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               A synchronized enterprise architecture unifying policy administration, IFRS 17 actuarial ledgers, reinsurance treaties, and touchless claims processing.
             </p>
           </div>
@@ -836,10 +863,10 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1006,10 +1033,10 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
                         }}
                       />
                       <div className="space-y-1 text-right">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1038,7 +1065,7 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for Intelligent Insurance
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Clean-core SAP insurance technology suites layered with real-time actuarial sub-ledgers, AI underwriting models, and touchless claims engines.
             </p>
           </div>
@@ -1052,10 +1079,10 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">POLICY CORE</span>
                 <FileCheck2 className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Policy Management (FS-PM)
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Centralized contract repository orchestrating multi-line insurance policies from initial quote binding to complex midterm modifications.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1070,10 +1097,10 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">ACTUARIAL SUB-LEDGER</span>
                 <Scale className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Financial Products Subledger (FPSL)
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Specialized sub-ledger connecting actuarial models with financial accounting for seamless IFRS 17, LDTI, and local multi-GAAP reporting.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1088,10 +1115,10 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CLAIMS ADJUDICATION</span>
                 <HeartHandshake className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Claims Management (FS-CM)
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 End-to-end claims lifecycle processing with automated damage assessment, fraud screening heuristics, and instant payment settlement.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1106,10 +1133,10 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">REINSURANCE ENGINE</span>
                 <ShieldCheck className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Reinsurance Management (FS-RI)
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automates reinsurance treaty management, multi-layered risk cessions, retrocession tracking, and claims recovery reconciliations.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1124,10 +1151,10 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">BILLING & CLEARING</span>
                 <CreditCard className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Collections & Disbursements (FS-CD)
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 High-volume insurance transactional sub-ledger managing premium payment matching, direct debit sweeps, and broker commission payouts.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1142,10 +1169,10 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">AI & DIGITAL APIs</span>
                 <Zap className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP BTP Digital Insurance Mesh
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Cloud-native API gateway enabling embedded insurance partnerships, telematics IoT ingestion, and automated fraud heuristic scoring.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1173,7 +1200,7 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every Insurance Domain
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize insurance operations across core policy administration, IFRS 17 actuarial sub-ledgers, and digital claims.
             </p>
           </div>
@@ -1245,12 +1272,12 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
                         </div>
 
                         {/* Title - Bold & Compact */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description - Snug & Concise */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1292,7 +1319,7 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Turning Insurance Complexity into Competitive Advantage
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When multi-line policy engines, IFRS 17 sub-ledgers, and digital claims execute in continuous sync, carriers achieve agility, operational savings, and audit readiness.
             </p>
           </div>
@@ -1305,10 +1332,10 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Scale className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Continuous IFRS 17 Actuarial Close
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Compress multi-week actuarial reporting cycles down to continuous sub-ledger postings with full audit transparency into Contractual Service Margin (CSM) shifts.
               </p>
             </div>
@@ -1318,10 +1345,10 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <HeartHandshake className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Same-Day Claims Settlement
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automated digital FNOL assessment and intelligent loss adjuster allocation allow low-complexity claims to be adjudicated and paid within 24 hours.
               </p>
             </div>
@@ -1331,10 +1358,10 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Zero Reinsurance Recovery Leakage
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automated proportional and non-proportional treaty calculations guarantee that every eligible claim dollar is captured and billed to reinsurers.
               </p>
             </div>
@@ -1344,10 +1371,10 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Clock className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Rapid Product Time-to-Market
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Clean-core policy configuration templates allow underwriters to design, rate, and launch innovative parametric and cyber coverages in weeks.
               </p>
             </div>
@@ -1357,10 +1384,10 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Lock className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Proactive Fraud Scheme Prevention
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Continuous AI claims pattern recognition flags staged accidents, inflated medical invoices, and duplicate property submissions before payment release.
               </p>
             </div>
@@ -1370,10 +1397,10 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Users className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Frictionless Broker Collaboration
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Self-service digital partner portals with automated multi-tier commission settlements enhance broker loyalty and accelerate bind ratios.
               </p>
             </div>
@@ -1406,7 +1433,7 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Actuarial Subledger & Policy Architecture
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How global life, health, and P&C carriers advance from legacy policy silos to an integrated, cloud-native insurance enterprise.
             </p>
           </div>
@@ -1458,7 +1485,7 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
@@ -1467,7 +1494,7 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1569,7 +1596,7 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
             Ready to Modernize Your Insurance Business?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Automate policy lifecycle administration, streamline IFRS 17 actuarial reporting, and eliminate reinsurance recovery leakage with Knooviq.
           </p>
 
@@ -1591,7 +1618,7 @@ export const InsuranceIndustryPage: React.FC<InsuranceIndustryPageProps> = ({
             </Link>
           </div>
 
-          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-200">
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-100">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-300" />
               <span>IFRS 17 & LDTI Compliant</span>

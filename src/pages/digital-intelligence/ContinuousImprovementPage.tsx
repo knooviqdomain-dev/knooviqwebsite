@@ -526,7 +526,7 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] cloud-sora-scope selection:text-white font-sans antialiased overflow-x-hidden">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Panoramic Full-Bleed Showcase)
@@ -539,6 +539,10 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
             className="w-full h-full object-cover object-top select-none contrast-[1.02]"
           />
         </div>
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
 
         {/* Lighter Directional Scrim for Maximum Visual Clarity & Text Contrast */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-r from-slate-950/70 via-slate-950/30 to-transparent pointer-events-none" />
@@ -556,7 +560,17 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
                   Sustainable Operational Excellence
                 </span>
               </h1>
-              <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal max-w-2xl pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/continuous_improvement_kaizen_pdca_hero.jpg"
+                alt="Enterprise Continuous Improvement & Sustainable Operational Excellence - Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal max-w-2xl pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
                 Establish an institutionalized operating rhythm that transforms real-time process intelligence into systematic Kaizen initiatives, closed-loop DMAIC execution, and compounding business value.
               </p>
             </motion.div>
@@ -601,11 +615,11 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
                 Evolving from Episodic Audits to <span className="text-[#0070C0]">Continuous Institutional Kaizen</span>
               </h2>
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm sm:text-base font-semibold text-slate-900 leading-snug">
+                <p className="font-sora text-[15px] sm:text-[16px] font-semibold text-slate-900 leading-snug font-normal">
                   Traditional process improvement fails because it operates as a disconnected project. KNOOVIQ institutionalizes improvement into the daily fabric of enterprise execution.
                 </p>
               </div>
-              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 By fusing live process intelligence telemetry with structured DMAIC operating mechanisms, global enterprises eliminate recurring friction, enforce standard operating procedures, and safeguard compounding business value.
               </p>
 
@@ -648,7 +662,7 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
                     </span>
                     <span className="text-slate-400">Institutional Stage</span>
                   </div>
-                  <p className="text-xs text-slate-200 leading-relaxed font-normal">
+                  <p className="font-sora text-xs text-slate-200 leading-[1.6] font-normal">
                     {journeySteps[activeJourneyStep].desc}
                   </p>
                   <div className="pt-1 text-[11px] font-mono text-cyan-300/90 border-t border-slate-800 flex items-center gap-1.5">
@@ -681,7 +695,7 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
                       LIVE GOVERNANCE SENTINEL
                     </span>
                   </div>
-                  <p className="text-xs text-slate-300 font-normal">
+                  <p className="font-sora text-xs text-slate-300 font-normal leading-[1.6]">
                     Enterprise improvement initiatives monitored longitudinally across end-to-end global supply chain, procurement, and financial workstreams.
                   </p>
                 </div>
@@ -705,7 +719,7 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Why Traditional Operational Excellence <span className="text-[#0070C0]">Fails to Stick</span>
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">
               Without automated process intelligence and continuous system-level governance, well-intentioned Kaizen programs collapse under administrative inertia and subjective guesswork.
             </p>
           </div>
@@ -725,10 +739,10 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
                       </span>
                       <IconComp className="w-5 h-5 text-slate-700" />
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 leading-snug">
+                    <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                       {challenge.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {challenge.desc}
                     </p>
                   </div>
@@ -767,7 +781,7 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               An Institutional Operating Rhythm for <span className="text-cyan-400">Perpetual Value</span>
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               An 8-stage closed-loop operational discipline that links real-time process diagnostics directly to sustained value compounding and clean core governance.
             </p>
 
@@ -862,7 +876,7 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
                     <span className="text-[10px] font-mono uppercase tracking-wider text-cyan-400 font-bold">
                       {hoveredWheelIndex !== null ? wheelSegments[hoveredWheelIndex].badge : 'KAIZEN ENGINE'}
                     </span>
-                    <h4 className="text-xs sm:text-sm font-black text-white leading-tight">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-white leading-tight">
                       {hoveredWheelIndex !== null ? wheelSegments[hoveredWheelIndex].title : 'Operational Excellence'}
                     </h4>
                     <span className="text-[9.5px] font-mono text-slate-400">
@@ -897,11 +911,11 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
                     <span className="text-xs font-mono text-slate-400">Stage 0{hoveredWheelIndex + 1} of 08</span>
                   </div>
 
-                  <h3 className="text-xl font-black text-white tracking-tight">
+                  <h3 className="font-sora text-xl font-medium text-white tracking-tight">
                     {wheelSegments[hoveredWheelIndex].title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                     {wheelSegments[hoveredWheelIndex].desc}
                   </p>
 
@@ -925,8 +939,8 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
                   <div className="w-12 h-12 rounded-full bg-cyan-500/10 border border-cyan-400/30 mx-auto flex items-center justify-center">
                     <RefreshCw className="w-6 h-6 text-cyan-400" />
                   </div>
-                  <h3 className="text-lg font-bold text-white">Select Any Segment</h3>
-                  <p className="text-xs text-slate-300 leading-relaxed font-normal">
+                  <h3 className="font-sora text-lg font-medium text-white">Select Any Segment</h3>
+                  <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                     Interact with the circular radial flywheel above to inspect each phase of KNOOVIQ&rsquo;s closed-loop enterprise continuous improvement framework.
                   </p>
                   <div className="pt-2 text-xs font-mono text-cyan-300">
@@ -974,7 +988,7 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Enterprise Continuous Improvement <span className="text-[#0070C0]">Architecture</span>
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               A four-tier operational architecture that ingests transactional telemetry, formulates algorithmic Kaizen recommendations, and orchestrates verified continuous improvement across ERP ecosystems.
             </p>
           </div>
@@ -992,7 +1006,7 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
                 <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">
                   Closed-Loop Kaizen Execution Mesh
                 </span>
-                <p className="text-xs text-slate-300 max-w-2xl font-normal">
+                <p className="font-sora text-xs text-slate-300 max-w-2xl font-normal leading-[1.6]">
                   Fusing enterprise process mining telemetry with intelligent task orchestrators and automated SOP guardians to continuously eradicate waste.
                 </p>
               </div>
@@ -1012,8 +1026,8 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
                 <Database className="w-5 h-5" />
               </div>
               <div className="text-[10px] font-mono text-slate-400 uppercase font-bold">Layer 01</div>
-              <h3 className="text-sm font-bold text-slate-900">Live Telemetry Ingestion</h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-normal">
+              <h3 className="font-sora text-sm font-medium text-slate-900">Live Telemetry Ingestion</h3>
+              <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                 Continuous log streaming from SAP S/4HANA, Salesforce, Coupa, and legacy MES captures atomic execution timestamps and handoff latency.
               </p>
             </div>
@@ -1023,8 +1037,8 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
                 <Brain className="w-5 h-5" />
               </div>
               <div className="text-[10px] font-mono text-slate-400 uppercase font-bold">Layer 02</div>
-              <h3 className="text-sm font-bold text-slate-900">Algorithmic Kaizen Scoping</h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-normal">
+              <h3 className="font-sora text-sm font-medium text-slate-900">Algorithmic Kaizen Scoping</h3>
+              <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                 Algorithmic diagnostic models classify friction into structural waste, master data anomalies, or approval loops, auto-formulating Kaizen opportunities.
               </p>
             </div>
@@ -1034,8 +1048,8 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
                 <Zap className="w-5 h-5" />
               </div>
               <div className="text-[10px] font-mono text-slate-400 uppercase font-bold">Layer 03</div>
-              <h3 className="text-sm font-bold text-slate-900">Sprint Execution Hub</h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-normal">
+              <h3 className="font-sora text-sm font-medium text-slate-900">Sprint Execution Hub</h3>
+              <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                 Agile cross-functional task boards orchestrate solution implementation, automated straight-through rule deployments, and ERP parameter recalibration.
               </p>
             </div>
@@ -1045,8 +1059,8 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <div className="text-[10px] font-mono text-slate-400 uppercase font-bold">Layer 04</div>
-              <h3 className="text-sm font-bold text-slate-900">Value Sentinel &amp; SOP Lock</h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-normal">
+              <h3 className="font-sora text-sm font-medium text-slate-900">Value Sentinel &amp; SOP Lock</h3>
+              <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                 Continuous audit guards verify that improvements stick, institutionalizing updated procedures into ERP clean core extensions and preventing regression.
               </p>
             </div>
@@ -1070,7 +1084,7 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Enterprise Continuous Improvement <span className="text-[#0070C0]">Solution Suite</span>
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Modular, interoperable frameworks designed to institutionalize Kaizen methodologies, empower frontline process owners, and automate operational governance.
             </p>
 
@@ -1119,11 +1133,11 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
                         {sol.categoryLabel}
                       </div>
 
-                      <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                      <h3 className="font-sora text-base sm:text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                         {sol.title}
                       </h3>
 
-                      <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                      <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                         {sol.description}
                       </p>
                     </div>
@@ -1163,7 +1177,7 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Sustained Business Impact of <span className="text-[#0070C0]">Institutional Kaizen</span>
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Transforming operational improvement from a temporary consulting exercise into a permanent, self-sustaining capability that drives enduring enterprise agility.
             </p>
           </div>
@@ -1174,8 +1188,8 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
               <div className="w-10 h-10 rounded-xl bg-[#0070C0]/10 border border-[#0070C0]/30 flex items-center justify-center text-[#0070C0]">
                 <Zap className="w-5 h-5" />
               </div>
-              <h3 className="text-base font-bold text-slate-900">Compounding Velocity</h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-normal">
+              <h3 className="font-sora text-base font-medium text-slate-900">Compounding Velocity</h3>
+              <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                 Continuous cycle time compression across order-to-cash, procurement, and month-end accounting cycles, liberating operational bandwidth.
               </p>
               <div className="pt-2 text-[11px] font-mono text-[#0070C0] font-bold">
@@ -1187,8 +1201,8 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
               <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-600">
                 <Target className="w-5 h-5" />
               </div>
-              <h3 className="text-base font-bold text-slate-900">Permanent Waste Eradication</h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-normal">
+              <h3 className="font-sora text-base font-medium text-slate-900">Permanent Waste Eradication</h3>
+              <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                 Systematic removal of manual staging states, re-keying bottlenecks, and maverick purchasing leaks, safeguarding margins.
               </p>
               <div className="pt-2 text-[11px] font-mono text-emerald-600 font-bold">
@@ -1200,8 +1214,8 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
               <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-600">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="text-base font-bold text-slate-900">Audit-Proof Conformance</h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-normal">
+              <h3 className="font-sora text-base font-medium text-slate-900">Audit-Proof Conformance</h3>
+              <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                 Standard operating procedures locked into core ERP systems prevent unauthorized process drift and simplify regulatory compliance.
               </p>
               <div className="pt-2 text-[11px] font-mono text-purple-600 font-bold">
@@ -1213,8 +1227,8 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
               <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-600">
                 <RefreshCw className="w-5 h-5" />
               </div>
-              <h3 className="text-base font-bold text-slate-900">Agile Operational Resilience</h3>
-              <p className="text-xs text-slate-600 leading-relaxed font-normal">
+              <h3 className="font-sora text-base font-medium text-slate-900">Agile Operational Resilience</h3>
+              <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                 An empowered organizational workforce capable of adapting transactional workflows dynamically to shifting supply chain and market realities.
               </p>
               <div className="pt-2 text-[11px] font-mono text-indigo-600 font-bold">
@@ -1241,7 +1255,7 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Interactive Continuous Improvement <span className="text-cyan-400">Telemetry</span>
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Observe real-time Kaizen interventions, automated straight-through execution rules, and continuous compliance verification across mission-critical enterprise workflows.
             </p>
           </div>
@@ -1291,7 +1305,7 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
                     <span className="text-[10px] font-mono text-cyan-400 font-bold uppercase">
                       Live Telemetry Stream
                     </span>
-                    <p className="text-[11px] text-slate-300">
+                    <p className="font-sora text-[11px] text-slate-300 font-normal leading-[1.6]">
                       {diagnosticProcesses[activeProcessTab].processInfo}
                     </p>
                   </div>
@@ -1303,7 +1317,7 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
                     <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
                     <span>Continuous Kaizen Directive</span>
                   </div>
-                  <p className="text-xs text-cyan-100 leading-relaxed">
+                  <p className="font-sora text-xs text-cyan-100 leading-[1.6] font-normal">
                     {diagnosticProcesses[activeProcessTab].recommendation}
                   </p>
                 </div>
@@ -1330,10 +1344,10 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
                           {finding.source}
                         </span>
                       </div>
-                      <h4 className="text-xs sm:text-sm font-bold text-white">
+                      <h4 className="font-sora text-xs sm:text-sm font-medium text-white">
                         {finding.title}
                       </h4>
-                      <p className="text-xs text-slate-300 leading-relaxed font-normal">
+                      <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                         {finding.desc}
                       </p>
                     </div>
@@ -1364,7 +1378,7 @@ export const ContinuousImprovementPage: React.FC<ContinuousImprovementPageProps>
             Ready to Build a Self-Sustaining Culture of Continuous Process Kaizen?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Partner with KNOOVIQ&rsquo;s Process Intelligence practice to connect live ERP execution telemetry with closed-loop DMAIC governance, safeguarding compounding operational yield.
           </p>
 

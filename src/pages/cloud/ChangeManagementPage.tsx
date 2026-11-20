@@ -472,7 +472,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white cloud-sora-scope">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Immersive Canvas with 16:9 Uncropped HD Visual)
@@ -482,10 +482,12 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
         {/* FULL-SCREEN HERO BACKGROUND IMAGE (16:9 Widescreen Crystal Clear HD Visual) */}
         <div className="absolute inset-0 w-full h-full pointer-events-none select-none overflow-hidden">
           <img
-            src="/images/cloud/change_mgmt_hero_wide.jpg"
+            src="/images/cloud/change_mgmt_hero_wide.jpg?v=2"
             alt="Enterprise Technology Change Management and Digital Transformation"
             className="w-full h-full object-cover object-right lg:object-center brightness-[1.05] contrast-[1.05]"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
           {/* Subtle directional dark gradient on the left ensures pristine text readability without dimming the visual on the right */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/90 via-45% to-transparent w-full lg:w-[65%]" />
           {/* Bottom subtle edge blend */}
@@ -515,13 +517,22 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12]">
                 Change Management
               </h1>
-              <p className="text-lg sm:text-xl font-bold text-cyan-300 tracking-tight">
+              <p className="font-sora text-lg sm:text-xl font-medium text-cyan-300 tracking-tight">
                 Plan with Clarity. Manage Risk. Implement with Confidence.
               </p>
             </div>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/change_mgmt_hero_wide.jpg?v=2"
+                alt="Change Management - Enterprise Technology Change Management Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
             {/* Description */}
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal max-w-2xl">
               Knooviq helps organizations manage IT changes through structured assessment, approval coordination, implementation planning, and post-change validation. Our approach helps teams understand potential impacts, coordinate stakeholders, prepare implementation and rollback plans, and maintain clear records throughout the change lifecycle.
             </p>
 
@@ -582,7 +593,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Every Technology Change Needs a Clear Path.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Changes to applications, infrastructure, integrations, configurations, and business systems can affect dependent services and operational workflows. A structured change management process helps teams assess potential consequences, coordinate approvals, prepare implementation activities, and verify results before closing a change record.
             </p>
           </div>
@@ -594,7 +605,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0] block">
                   GOVERNED CHANGE PATHWAY
                 </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white">
                   Controlled Progression from Intent to Verification
                 </h3>
               </div>
@@ -622,7 +633,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                         </span>
                       </div>
 
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-[#00A3E0] dark:group-hover:text-cyan-300 transition-colors">
+                      <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white group-hover:text-[#00A3E0] dark:group-hover:text-cyan-300 transition-colors">
                         {item.title}
                       </h4>
 
@@ -630,7 +641,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                         {item.tagline}
                       </span>
 
-                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                      <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                         {item.desc}
                       </p>
                     </div>
@@ -664,7 +675,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Control Change Without Losing Operational Clarity.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Managing technology evolution requires balancing agility with stability. Without clear governance, change activities introduce operational confusion and service risk.
             </p>
           </div>
@@ -687,15 +698,15 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                     </div>
 
                     <div className="space-y-1.5">
-                      <h3 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-[#00A3E0] dark:group-hover:text-cyan-300 transition-colors">
+                      <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white group-hover:text-[#00A3E0] dark:group-hover:text-cyan-300 transition-colors">
                         {challenge.title}
                       </h3>
-                      <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 leading-snug">
+                      <p className="font-sora text-xs font-medium text-slate-500 dark:text-slate-400 leading-snug">
                         {challenge.tagline}
                       </p>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {challenge.description}
                     </p>
                   </div>
@@ -727,7 +738,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Govern Changes from Request to Completion
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Knooviq helps organizations establish repeatable change processes that support informed decisions, coordinated implementation, and clear operational records.
             </p>
           </div>
@@ -746,15 +757,15 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[0].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[0].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[0].description}
                   </p>
 
@@ -818,15 +829,15 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[1].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[1].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[1].description}
                   </p>
 
@@ -856,15 +867,15 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[2].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[2].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[2].description}
                   </p>
 
@@ -928,15 +939,15 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[3].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[3].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[3].description}
                   </p>
 
@@ -966,15 +977,15 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[4].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[4].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[4].description}
                   </p>
 
@@ -1030,7 +1041,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               A Controlled Process from Proposal to Validation
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               A disciplined six-stage lifecycle coordinates planning, risk assessment, multi-tier authorization, scheduled execution, and verified closure across enterprise environments.
             </p>
           </div>
@@ -1043,7 +1054,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0] block">
                   GOVERNED CHANGE LIFECYCLE
                 </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white">
                   Connected Six-Stage Change Process
                 </h3>
               </div>
@@ -1083,7 +1094,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                         <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
                           {stage.phase}
                         </span>
-                        <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                        <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                           {stage.title}
                         </h4>
                         <span className="text-[11px] font-semibold text-[#00A3E0] block">
@@ -1091,7 +1102,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                         </span>
                       </div>
 
-                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                      <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                         {stage.description}
                       </p>
                     </div>
@@ -1112,7 +1123,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                   <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0]">
                     STAGE {lifecycleStages[activeLifecycleStage].step} ACTIVITIES &bull; {lifecycleStages[activeLifecycleStage].tagline}
                   </span>
-                  <h4 className="text-lg font-bold text-slate-900 dark:text-white">
+                  <h4 className="font-sora text-lg font-medium text-slate-900 dark:text-white">
                     {lifecycleStages[activeLifecycleStage].title} Execution Details
                   </h4>
                 </div>
@@ -1128,7 +1139,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                       <CheckCircle2 className="w-4 h-4 text-[#00A3E0] shrink-0" />
                       <span>Activity 0{aIdx + 1}</span>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {act}
                     </p>
                   </div>
@@ -1142,7 +1153,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                   <span className="font-bold text-slate-900 dark:text-white block mb-0.5">
                     Clear Distinction: Planned Change vs. Emergency Triage
                   </span>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Change Management governs planned, authorized transitions to preserve production stability. In the event of active disruptions or emergency interventions, coordination operates under expedited Emergency CAB (ECAB) protocols, followed by full retrospective documentation and validation during post-implementation reviews.
                   </p>
                 </div>
@@ -1169,7 +1180,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Apply the Right Level of Control to Each Change.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Not all changes present the same risk. Categorizing requests into risk-appropriate governance tracks enables rapid deployment of routine tasks while focusing thorough oversight on complex, mission-critical alterations.
             </p>
           </div>
@@ -1194,10 +1205,10 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                   </div>
 
                   <div className="space-y-1.5">
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                       {cType.type}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {cType.description}
                     </p>
                   </div>
@@ -1217,7 +1228,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
 
                 <div className="pt-4 border-t border-slate-100 dark:border-white/5 space-y-1">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">Governance Routing</span>
-                  <p className="text-xs font-semibold text-slate-800 dark:text-slate-200">
+                  <p className="font-sora text-xs font-medium text-slate-800 dark:text-slate-200">
                     {cType.governance}
                   </p>
                 </div>
@@ -1225,7 +1236,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
             ))}
           </div>
 
-          <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed italic border-t border-slate-200 dark:border-white/5 pt-4">
+          <p className="font-sora text-xs text-slate-500 dark:text-slate-400 leading-[1.6] italic border-t border-slate-200 dark:border-white/5 pt-4 font-normal">
             Note: These categories serve as an illustrative classification model. Exact criteria, approval thresholds, and delegation rules adapt to each organization's operational governance and compliance standards without rigid predefined mandates.
           </p>
 
@@ -1247,7 +1258,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Prepare for the Change—and for the Unexpected.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               A well-prepared change includes more than an implementation instruction. Teams should understand prerequisites, affected services, validation requirements, communication responsibilities, and the conditions that may require a rollback or recovery action.
             </p>
           </div>
@@ -1272,10 +1283,10 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
 
               <div className="p-6 rounded-2xl bg-white dark:bg-[#0B1528] border border-slate-200/80 dark:border-white/10 space-y-3 shadow-xs">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0] block">RECOVERY ASSURANCE</span>
-                <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                   Pre-Authorized Rollback Paths
                 </h4>
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   Every change authorization includes predefined criteria for when to abort. If key transaction latencies exceed agreed thresholds or automated post-change synthetic assertions fail, the lead engineer possesses pre-authorized mandate to execute the reversal plan immediately, protecting service continuity without waiting for secondary approvals.
                 </p>
               </div>
@@ -1294,11 +1305,11 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                       <Icon className="w-4 h-4" />
                     </div>
 
-                    <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                    <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                       {pillar.title}
                     </h4>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {pillar.description}
                     </p>
 
@@ -1331,7 +1342,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Keep Changes Connected to Operational Reality.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Change Management operates at the center of enterprise IT operations, connecting infrastructure administrators, service desks, incident responders, and problem managers into a unified operational rhythm.
             </p>
           </div>
@@ -1352,7 +1363,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                           <Icon className="w-5 h-5" />
                         </div>
                         <div>
-                          <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                          <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                             {link.title}
                           </h4>
                           <span className="text-[11px] font-semibold text-[#00A3E0]">
@@ -1362,7 +1373,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                       </div>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {link.desc}
                     </p>
                   </div>
@@ -1394,7 +1405,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               More Controlled Changes. Clearer Decisions.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Disciplined change management eliminates deployment anxiety, providing technical teams with predictable schedules, structured risk governance, and auditable operational records.
             </p>
           </div>
@@ -1412,11 +1423,11 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
                     <Icon className="w-5 h-5" />
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     {outcome.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {outcome.description}
                   </p>
 
@@ -1456,7 +1467,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
                 Make Every Change More Deliberate.
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                 Build a structured change management approach that supports risk-aware planning, clear governance, and coordinated implementation across your enterprise technology environment.
               </p>
             </div>
@@ -1513,7 +1524,7 @@ export const ChangeManagementPage: React.FC<ChildPageProps> = ({ onOpenContact }
             </div>
             <div className="relative flex-1 flex items-center justify-center p-2 sm:p-4 overflow-auto bg-black">
               <img
-                src="/images/cloud/change_mgmt_hero_wide.jpg"
+                src="/images/cloud/change_mgmt_hero_wide.jpg?v=2"
                 alt="Change Management"
                 className="max-h-[82vh] w-auto max-w-full object-contain rounded-lg"
               />

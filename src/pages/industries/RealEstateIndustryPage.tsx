@@ -10,7 +10,8 @@ import {
   Gauge, 
   TrendingUp, 
   BarChart3, 
-  CheckCircle2, 
+  CheckCircle2,
+  XCircle, 
   ArrowRight, 
   ChevronRight, 
   ChevronDown, 
@@ -478,7 +479,7 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Real Estate Hero)
@@ -497,6 +498,10 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
         {/* Balanced Cinematic Left & Bottom Scrim */}
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-slate-950/90 via-slate-950/55 sm:via-slate-950/25 to-transparent pointer-events-none" />
         <div className="absolute inset-0 z-10 bg-gradient-to-t from-slate-950/65 via-transparent to-slate-950/15 pointer-events-none" />
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           <div className="max-w-3xl space-y-4">
@@ -520,10 +525,19 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 IFRS 16 Lease Accounting, Dynamic CAM Pooling & REIT Portfolio Optimization.
               </p>
             </motion.div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/real-estate/commercial_real_estate_hero.jpg"
+                alt="Intelligent ERP for Real Estate & Property Development - Architecture Blueprint"
+                className="w-full h-auto block select-none"
+              />
+            </div>
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -532,7 +546,7 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering property developers, commercial asset managers, and global REITs with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA Flexible Real Estate (RE-FX)</strong>, automated{' '}
                 <strong className="text-cyan-300 font-semibold">IFRS 16 / ASC 842 Valuation</strong>, and live portfolio yield intelligence.
@@ -624,12 +638,12 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-[1.6] italic">
                   &ldquo;In commercial real estate, asset valuation is governed by lease hygiene: compliant IFRS 16 accounting, leak-proof CAM expense recoveries, and automated rent escalation execution.&rdquo;
                 </p>
               </div>
 
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Property asset managers frequently suffer revenue erosion from delayed CAM reconciliations, overlooked contractual rent step-ups, and spreadsheet-based IFRS 16 calculations. Knooviq transforms real estate portfolios into an orchestrated, audit-proof operational engine where property management, tenant submeters, and corporate finance operate in real time.
               </p>
 
@@ -666,7 +680,7 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
                       <span className="px-2.5 py-0.5 rounded-full bg-cyan-400 text-slate-950 font-mono text-[10px] font-bold uppercase tracking-wider">
                         {journeySteps[activeJourneyStep].tech}
                       </span>
-                      <h3 className="text-base sm:text-lg font-bold text-white mt-1">
+                      <h3 className="font-sora text-base sm:text-lg font-medium text-white mt-1">
                         {journeySteps[activeJourneyStep].label}
                       </h3>
                     </div>
@@ -676,7 +690,7 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
                   </div>
                 </div>
 
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed min-h-[44px]">
+                <p className="font-sora text-xs sm:text-sm text-[#102A43] leading-[1.6] min-h-[44px] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -728,7 +742,7 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Operational Challenges Across Commercial Real Estate
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Property portfolios experience severe Net Operating Income compression when lease contracts, maintenance pooling, and tenant billings remain disconnected from core ERP.
             </p>
           </div>
@@ -751,11 +765,11 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
                       </div>
                     </div>
 
-                    <h3 className="text-base font-bold text-slate-900 leading-snug">
+                    <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                       {item.title}
                     </h3>
 
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -795,7 +809,7 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               KNOOVIQ Real Estate & REIT Architecture Core
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Hover over any segment in the interlocking wheel to explore how lease contracts, CAM expense pooling, and REIT portfolio analytics operate in continuous real-time synchronization.
             </p>
           </motion.div>
@@ -832,10 +846,10 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1005,10 +1019,10 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
                         }}
                       />
                       <div className="space-y-1 text-right flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1037,7 +1051,7 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Enterprise Real Estate Technology Blueprint
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Decoupling smart building submetering, tenant mobile apps, and retail POS feeds on SAP BTP while preserving an untouched S/4HANA core.
             </p>
           </div>
@@ -1084,24 +1098,24 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
                   <div className="flex items-center gap-3">
                     <Radio className="w-6 h-6 text-sky-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">Smart Building Submeters, BMS & Access Gates</h3>
-                      <p className="text-xs text-slate-400 font-mono">Modbus TCP • BACnet/IP • Smart Chilled Water Flow Meters • Turnstiles</p>
+                      <h3 className="font-sora text-lg font-medium text-white">Smart Building Submeters, BMS & Access Gates</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">Modbus TCP • BACnet/IP • Smart Chilled Water Flow Meters • Turnstiles</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-mono">Real-Time Ingestion</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-sky-300 uppercase font-mono mb-1">Smart Electrical Submetering</h4>
-                    <p className="text-xs text-slate-300">Continuous tenant kilowatt-hour telemetry streams directly to CAM utility recovery accounts.</p>
+                    <h4 className="font-sora text-xs font-medium text-sky-300 uppercase font-mono mb-1">Smart Electrical Submetering</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Continuous tenant kilowatt-hour telemetry streams directly to CAM utility recovery accounts.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-sky-300 uppercase font-mono mb-1">HVAC BTU Cooling Meters</h4>
-                    <p className="text-xs text-slate-300">BTU chilled water meters track exact after-hours air conditioning consumed by individual tenants.</p>
+                    <h4 className="font-sora text-xs font-medium text-sky-300 uppercase font-mono mb-1">HVAC BTU Cooling Meters</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">BTU chilled water meters track exact after-hours air conditioning consumed by individual tenants.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-sky-300 uppercase font-mono mb-1">Occupancy Telemetry</h4>
-                    <p className="text-xs text-slate-300">Zone occupancy sensors monitor office footfall to dynamically optimize common area cleaning runs.</p>
+                    <h4 className="font-sora text-xs font-medium text-sky-300 uppercase font-mono mb-1">Occupancy Telemetry</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Zone occupancy sensors monitor office footfall to dynamically optimize common area cleaning runs.</p>
                   </div>
                 </div>
               </div>
@@ -1113,24 +1127,24 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
                   <div className="flex items-center gap-3">
                     <Server className="w-6 h-6 text-[#0070C0]" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">SAP S/4HANA Flexible Real Estate (RE-FX) & Universal Journal</h3>
-                      <p className="text-xs text-slate-400 font-mono">IFRS 16 / ASC 842 Valuation • CAM Pooling • Rent Escalation • Security Escrow</p>
+                      <h3 className="font-sora text-lg font-medium text-white">SAP S/4HANA Flexible Real Estate (RE-FX) & Universal Journal</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">IFRS 16 / ASC 842 Valuation • CAM Pooling • Rent Escalation • Security Escrow</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-mono">Clean Core Standard</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-cyan-300 uppercase font-mono mb-1">Contract Valuation Engine</h4>
-                    <p className="text-xs text-slate-300">Calculates RoU depreciation and lease liability interest directly inside Universal Journal ACDOCA.</p>
+                    <h4 className="font-sora text-xs font-medium text-cyan-300 uppercase font-mono mb-1">Contract Valuation Engine</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Calculates RoU depreciation and lease liability interest directly inside Universal Journal ACDOCA.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-cyan-300 uppercase font-mono mb-1">Automated Periodic Postings</h4>
-                    <p className="text-xs text-slate-300">Generates monthly base rent, CAM service charges, and utility debit notes in touchless bill runs.</p>
+                    <h4 className="font-sora text-xs font-medium text-cyan-300 uppercase font-mono mb-1">Automated Periodic Postings</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Generates monthly base rent, CAM service charges, and utility debit notes in touchless bill runs.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-cyan-300 uppercase font-mono mb-1">Security Deposit Ledgers</h4>
-                    <p className="text-xs text-slate-300">Escrow liability accounts protect tenant collateral with automated bank guarantee validation.</p>
+                    <h4 className="font-sora text-xs font-medium text-cyan-300 uppercase font-mono mb-1">Security Deposit Ledgers</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Escrow liability accounts protect tenant collateral with automated bank guarantee validation.</p>
                   </div>
                 </div>
               </div>
@@ -1142,24 +1156,24 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
                   <div className="flex items-center gap-3">
                     <Zap className="w-6 h-6 text-amber-400" />
                     <div>
-                      <h3 className="text-lg font-bold text-white">SAP BTP Tenant Engagement & REIT Analytics Suite</h3>
-                      <p className="text-xs text-slate-400 font-mono">BTP Event Mesh • Tenant Mobile App • POS Ingestion Gateway • REIT Analytics</p>
+                      <h3 className="font-sora text-lg font-medium text-white">SAP BTP Tenant Engagement & REIT Analytics Suite</h3>
+                      <p className="font-sora text-xs text-slate-400 font-mono leading-[1.6]">BTP Event Mesh • Tenant Mobile App • POS Ingestion Gateway • REIT Analytics</p>
                     </div>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-mono">Event-Driven Mesh</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-amber-300 uppercase font-mono mb-1">Retail POS Data Ingestion</h4>
-                    <p className="text-xs text-slate-300">Daily sales ingestion from retail tenants for automated turnover rent computation.</p>
+                    <h4 className="font-sora text-xs font-medium text-amber-300 uppercase font-mono mb-1">Retail POS Data Ingestion</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Daily sales ingestion from retail tenants for automated turnover rent computation.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-amber-300 uppercase font-mono mb-1">Tenant Self-Service App</h4>
-                    <p className="text-xs text-slate-300">Tenants log facility work orders, review itemized CAM invoices, and settle balances online.</p>
+                    <h4 className="font-sora text-xs font-medium text-amber-300 uppercase font-mono mb-1">Tenant Self-Service App</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Tenants log facility work orders, review itemized CAM invoices, and settle balances online.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                    <h4 className="text-xs font-bold text-amber-300 uppercase font-mono mb-1">REIT Yield Intelligence</h4>
-                    <p className="text-xs text-slate-300">Machine learning models benchmark Net Operating Income and forecast lease renewal probabilities.</p>
+                    <h4 className="font-sora text-xs font-medium text-amber-300 uppercase font-mono mb-1">REIT Yield Intelligence</h4>
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">Machine learning models benchmark Net Operating Income and forecast lease renewal probabilities.</p>
                   </div>
                 </div>
               </div>
@@ -1183,7 +1197,7 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Knooviq Real Estate Solution Suites
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Targeted capability packages designed to maximize property yields and streamline tenant lease administration.
             </p>
           </div>
@@ -1237,10 +1251,10 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
                       <span className="text-[10px] font-mono font-bold text-[#0070C0] uppercase tracking-wider bg-sky-50 px-2 py-0.5 rounded border border-sky-100">
                         {sol.categoryLabel}
                       </span>
-                      <h3 className="text-base sm:text-lg font-bold text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug line-clamp-2">
+                      <h3 className="font-sora text-base sm:text-lg font-medium text-slate-950 group-hover:text-[#0070C0] transition-colors leading-snug line-clamp-2">
                         {sol.title}
                       </h3>
-                      <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
+                      <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-3 font-normal">
                         {sol.description}
                       </p>
                     </div>
@@ -1276,13 +1290,218 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Legacy Real Estate Spreadsheets vs Knooviq Clean Core
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Compare traditional property management spreadsheets against Knooviq&apos;s real-time SAP S/4HANA Clean Core architecture.
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
-            <table className="w-full text-left text-xs sm:text-sm border-collapse">
+          <div className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+            {/* Mobile Card-Based Comparison View (Zero Cutoff, 100% Fits Inside Screen) */}
+            <div className="sm:hidden space-y-3.5 p-3.5 bg-slate-50/50">
+              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-2.5">
+                <div className="font-bold text-slate-900 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                  <span>IFRS 16 / ASC 842</span>
+                </div>
+
+                {/* KNOOVIQ Clean Core */}
+                <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                    <span>Knooviq S/4HANA Clean Core</span>
+                  </div>
+                  <p className="text-xs text-slate-800 font-semibold leading-relaxed">
+                    Automated SAP RE-FX valuation schedule and RoU ledger.
+                  </p>
+                </div>
+
+                {/* Legacy Approach */}
+                <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                    <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                    <span>Legacy / Fragmented Approach</span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                    Manual Excel formulas prone to error and auditor restatements.
+                  </p>
+                </div>
+
+                {/* Measurable Value Impact */}
+                <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-emerald-700 tracking-wider flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Measurable Value Impact</span>
+                  </div>
+                  <p className="text-xs text-emerald-700 font-semibold leading-relaxed">
+                    Complete audit compliance; automated remeasurements.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-2.5">
+                <div className="font-bold text-slate-900 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                  <span>CAM Expense Settlement</span>
+                </div>
+
+                {/* KNOOVIQ Clean Core */}
+                <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                    <span>Knooviq S/4HANA Clean Core</span>
+                  </div>
+                  <p className="text-xs text-slate-800 font-semibold leading-relaxed">
+                    Monthly automated pro-rata pooling based on verified GLA.
+                  </p>
+                </div>
+
+                {/* Legacy Approach */}
+                <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                    <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                    <span>Legacy / Fragmented Approach</span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                    Annual retrospective audits causing tenant payment withholdings.
+                  </p>
+                </div>
+
+                {/* Measurable Value Impact */}
+                <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-emerald-700 tracking-wider flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Measurable Value Impact</span>
+                  </div>
+                  <p className="text-xs text-emerald-700 font-semibold leading-relaxed">
+                    Eliminated CAM disputes; total operational expense recovery.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-2.5">
+                <div className="font-bold text-slate-900 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                  <span>Retail Turnover Rent</span>
+                </div>
+
+                {/* KNOOVIQ Clean Core */}
+                <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                    <span>Knooviq S/4HANA Clean Core</span>
+                  </div>
+                  <p className="text-xs text-slate-800 font-semibold leading-relaxed">
+                    Automated POS sales ingestion and breakpoint billing.
+                  </p>
+                </div>
+
+                {/* Legacy Approach */}
+                <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                    <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                    <span>Legacy / Fragmented Approach</span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                    Tenant self-reported turnover figures without POS verification.
+                  </p>
+                </div>
+
+                {/* Measurable Value Impact */}
+                <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-emerald-700 tracking-wider flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Measurable Value Impact</span>
+                  </div>
+                  <p className="text-xs text-emerald-700 font-semibold leading-relaxed">
+                    Substantial expansion in captured turnover percentage rent.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-2.5">
+                <div className="font-bold text-slate-900 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                  <span>Contract Escalations</span>
+                </div>
+
+                {/* KNOOVIQ Clean Core */}
+                <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                    <span>Knooviq S/4HANA Clean Core</span>
+                  </div>
+                  <p className="text-xs text-slate-800 font-semibold leading-relaxed">
+                    Rule-based automated step-ups triggered on schedule.
+                  </p>
+                </div>
+
+                {/* Legacy Approach */}
+                <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                    <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                    <span>Legacy / Fragmented Approach</span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                    Missed anniversary dates and untracked CPI adjustments.
+                  </p>
+                </div>
+
+                {/* Measurable Value Impact */}
+                <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-emerald-700 tracking-wider flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Measurable Value Impact</span>
+                  </div>
+                  <p className="text-xs text-emerald-700 font-semibold leading-relaxed">
+                    Eliminated base rent leakage across the portfolio.
+                  </p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-2.5">
+                <div className="font-bold text-slate-900 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
+                  <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                  <span>Portfolio Performance</span>
+                </div>
+
+                {/* KNOOVIQ Clean Core */}
+                <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                    <span>Knooviq S/4HANA Clean Core</span>
+                  </div>
+                  <p className="text-xs text-slate-800 font-semibold leading-relaxed">
+                    Real-time REIT yield dashboards (NOI, FFO, WALE).
+                  </p>
+                </div>
+
+                {/* Legacy Approach */}
+                <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                    <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                    <span>Legacy / Fragmented Approach</span>
+                  </div>
+                  <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                    Quarterly manual aggregation of NOI and occupancy stats.
+                  </p>
+                </div>
+
+                {/* Measurable Value Impact */}
+                <div className="p-3 rounded-xl bg-emerald-50/60 border border-emerald-200/60 space-y-1">
+                  <div className="text-[11px] font-mono font-bold uppercase text-emerald-700 tracking-wider flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>Measurable Value Impact</span>
+                  </div>
+                  <p className="text-xs text-emerald-700 font-semibold leading-relaxed">
+                    Substantially enhanced portfolio Net Operating Income.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop Full-Bleed Comparison Table (100% Preserved) */}
+            <div className="hidden sm:block overflow-x-auto">
+              <table className="w-full text-left text-xs sm:text-sm border-collapse">
               <thead>
                 <tr className="bg-slate-900 text-white font-mono text-[11px] uppercase tracking-wider">
                   <th className="p-4 sm:p-5">Real Estate Dimension</th>
@@ -1324,6 +1543,7 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
 
         </div>
@@ -1343,7 +1563,7 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Phased Roadmap to Autonomous Real Estate Operations
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Inspect how legacy property spreadsheets transform into an intelligent real-time real estate fabric across every stage of the SAP deployment.
             </p>
           </div>
@@ -1381,7 +1601,7 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
                     </div>
 
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide mt-0.5">
@@ -1389,7 +1609,7 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
                       </div>
                     </div>
 
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1418,7 +1638,7 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
                     <span className={`text-[11px] font-mono font-bold uppercase tracking-wider ${currentStage.textColor}`}>
                       {currentStage.badge} ARCHITECTURAL DELTA
                     </span>
-                    <h3 className="text-lg font-bold text-white mt-0.5">
+                    <h3 className="font-sora text-lg font-medium text-white mt-0.5">
                       {currentStage.title} &mdash; {currentStage.subtitle}
                     </h3>
                   </div>
@@ -1430,11 +1650,11 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="p-4 rounded-xl bg-rose-950/30 border border-rose-500/30">
                     <div className="text-xs font-mono font-bold text-rose-400 uppercase tracking-wider mb-1">Legacy State</div>
-                    <p className="text-xs text-slate-200">{currentStage.before}</p>
+                    <p className="font-sora text-xs text-slate-200 leading-[1.6] font-normal">{currentStage.before}</p>
                   </div>
                   <div className="p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/30">
                     <div className="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider mb-1">Modernized Clean Core</div>
-                    <p className="text-xs text-slate-200">{currentStage.after}</p>
+                    <p className="font-sora text-xs text-slate-200 leading-[1.6] font-normal">{currentStage.after}</p>
                   </div>
                 </div>
 
@@ -1468,7 +1688,7 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Strategic Value Drivers & Operational Safeguards
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Architectural outcomes delivered across commercial landlords, retail mall operators, and global REIT portfolios.
             </p>
           </div>
@@ -1479,10 +1699,10 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
                 <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-[#0070C0]">
                   <Receipt className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
+                <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                   IFRS 16 Audit Compliance
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   Automated Right-of-Use asset amortization and lease liability interest recalculations eliminating balance sheet restatement risks.
                 </p>
               </div>
@@ -1497,10 +1717,10 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
                 <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
                   <FileSpreadsheet className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
+                <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                   CAM Cost Recovery
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   Monthly automated pro-rata expense pooling tied directly to smart submeters and verified GLA, eliminating tenant billing disputes.
                 </p>
               </div>
@@ -1515,10 +1735,10 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
                 <div className="w-10 h-10 rounded-xl bg-sky-50 border border-sky-200 flex items-center justify-center text-[#0070C0]">
                   <Coins className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
+                <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                   Turnover Rent Capture
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   Direct electronic POS takeaway ingestion automating percentage rent invoicing above contractual breakpoints with zero revenue leakage.
                 </p>
               </div>
@@ -1533,10 +1753,10 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
                 <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
                   <BarChart3 className="w-5 h-5" />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
+                <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                   Portfolio NOI Expansion
                 </h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   Real-time REIT yield dashboards, proactive lease renewal cycles, and disciplined contract escalations maximizing total investor returns.
                 </p>
               </div>
@@ -1564,7 +1784,7 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Commercial Real Estate Architecture Advisory
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Key considerations for commercial landlords and REIT asset managers evaluating SAP S/4HANA RE-FX.
             </p>
           </div>
@@ -1631,7 +1851,7 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
             Ready to Build Next-Generation Real Estate Operations?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Synchronize your property leases, CAM expense recovery, and REIT portfolio financials with Knooviq.
           </p>
 
@@ -1653,7 +1873,7 @@ export const RealEstateIndustryPage: React.FC<IndustryPageProps> = ({ onOpenCont
             </Link>
           </div>
 
-          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-200">
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-100">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-300" />
               <span>SAP Certified Clean Core</span>

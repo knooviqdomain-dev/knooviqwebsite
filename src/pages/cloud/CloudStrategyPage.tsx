@@ -346,9 +346,8 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
   ];
 
   return (
-    <div className="bg-white dark:bg-[#070E1C] text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div className="bg-white dark:bg-[#070E1C] text-slate-900 dark:text-slate-100 transition-colors duration-300 cloud-sora-scope">
 
-      {/* =========================================================================
       {/* =========================================================================
           SECTION 1: CLOUD STRATEGY HERO (Cinematic Full-Bleed Enterprise Hero)
           Includes breadcrumb: Home → Cloud & Operations → Cloud Strategy
@@ -362,19 +361,21 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             alt="Plan Smarter. Build Stronger. Scale Faster."
             className="w-full h-full object-cover object-right sm:object-[78%_center] lg:object-[center_25%] brightness-105 contrast-[1.02]"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#040B17]/95 via-[#040B17]/90 to-[#040B17] pointer-events-none" />
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00A3E0]/80 to-transparent" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="max-w-2xl lg:max-w-xl space-y-6 relative">
-            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none" />
+          <div className="max-w-2xl lg:max-w-xl space-y-5 sm:space-y-6 relative">
+            <div className="absolute -inset-6 sm:-inset-10 bg-gradient-to-r from-black/85 via-black/50 to-transparent rounded-3xl blur-2xl -z-10 pointer-events-none hidden sm:block" />
 
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/25 text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider backdrop-blur-md">
               <Compass className="w-3.5 h-3.5 text-[#00A3E0]" />
               <span>CLOUD STRATEGY &amp; ADVISORY</span>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               <span className="block text-xs sm:text-sm font-mono font-semibold uppercase tracking-wider text-[#00A3E0]">
                 Cloud Strategy
               </span>
@@ -383,7 +384,16 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
               </h1>
             </div>
 
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl pt-1">
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/strategy_hero.png"
+                alt="Plan Smarter. Build Stronger. Scale Faster. - Cloud Strategy Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] font-normal max-w-2xl pt-1">
               Establish an enterprise cloud strategy aligned to business velocity, resilient architecture, CapEx-to-OpEx economics, and regulatory compliance across public, private, and hybrid estates.
             </p>
 
@@ -422,7 +432,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               A Strategic Approach for a Cloud-First Future
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Moving workloads to the cloud without an overarching strategy frequently produces unpredictable operational spend, fragmented identity silos, security vulnerabilities, and stalled migration programs. Knooviq helps organizations make informed technology decisions, manage enterprise risks, plan capital and operating resources, and establish a scalable cloud foundation tailored to long-term commercial goals.
             </p>
           </div>
@@ -448,10 +458,10 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                           0{idx + 1}
                         </span>
                       </div>
-                      <h3 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-[#00A3E0] transition-colors">
+                      <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white group-hover:text-[#00A3E0] transition-colors">
                         {benefit.title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                         {benefit.description}
                       </p>
                     </div>
@@ -475,7 +485,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     <span className="text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-wider block">
                       Multi-Cloud Collaborative Review
                     </span>
-                    <p className="text-xs text-slate-200 mt-1 font-medium">
+                    <p className="font-sora text-xs text-slate-200 mt-1 font-medium leading-[1.6]">
                       Rigorous architecture sessions resolving systemic dependencies prior to migration wave execution.
                     </p>
                   </div>
@@ -500,14 +510,14 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="text-left max-w-3xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-100/70 dark:bg-cyan-500/15 border border-cyan-300/60 dark:border-cyan-400/30 text-[#00A3E0] dark:text-cyan-300 text-xs font-mono font-bold uppercase tracking-wider">
               <span>SECTION 03 &bull; ARCHITECTURAL PILLARS</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Building a Future-Ready Cloud Strategy
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Sustainable enterprise transformation requires a balanced framework that spans roadmaps, landing zones, security policies, and FinOps economics. Knooviq anchors your cloud journey across five future-ready pillars.
             </p>
           </div>
@@ -560,7 +570,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                         }`}>
                           {pillar.title}
                         </h3>
-                        <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                        <p className="font-sora text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-normal leading-[1.6]">
                           {pillar.tagline}
                         </p>
                       </div>
@@ -569,7 +579,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     {/* Expanded Content Details */}
                     {isActive && (
                       <div className="px-5 pb-5 pt-1 space-y-4 border-t border-slate-100 dark:border-white/5 animate-in fade-in duration-200">
-                        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                           {pillar.description}
                         </p>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
@@ -588,7 +598,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             </div>
 
             {/* Right Side: Unique Image 3 (Architectural concept illustrating cloud progression) */}
-            <div className="lg:col-span-5 sticky top-28">
+            <div className="lg:col-span-5 lg:sticky lg:top-28">
               <div className="rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0B1528] shadow-xl group">
                 <div className="relative h-80 sm:h-96 w-full overflow-hidden">
                   <img
@@ -602,7 +612,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     <span className="text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-wider block">
                       Architectural Modeling &amp; Validation
                     </span>
-                    <p className="text-xs text-slate-200">
+                    <p className="font-sora text-xs text-slate-200 font-normal leading-[1.6]">
                       Multi-tier roadmap models uniting on-premises datacenters, AWS, Azure, and target hybrid landing zones.
                     </p>
                   </div>
@@ -637,7 +647,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               A Structured Approach to Cloud Success
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Our 5-phase strategic framework eliminates guesswork, converting complex multi-tier application estates into sequenced, predictable transformation waves with zero disruption to active business transactions.
             </p>
           </div>
@@ -690,14 +700,14 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                       <span className="text-[10px] font-mono font-bold uppercase text-[#00A3E0] block">
                         {approachSteps[activeApproachStep].tag}
                       </span>
-                      <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+                      <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white">
                         {approachSteps[activeApproachStep].title} Phase
                       </h3>
                     </div>
                   </div>
                 </div>
 
-                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   {approachSteps[activeApproachStep].description}
                 </p>
 
@@ -751,7 +761,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     <span className="text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-wider block">
                       Phase 04: Blueprint Execution Plans
                     </span>
-                    <p className="text-xs text-slate-200 mt-1">
+                    <p className="font-sora text-xs text-slate-200 mt-1 font-normal leading-[1.6]">
                       Translating workload telemetry into definitive migration runbooks and architecture specifications.
                     </p>
                   </div>
@@ -784,7 +794,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               What You Get with Our Cloud Strategy
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               We provide actionable, enterprise-ready engineering assets, executive dossiers, and technical blueprints—not generic presentations. Every deliverable is customized to your existing IT assets and commercial objectives.
             </p>
           </div>
@@ -793,7 +803,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             
             {/* Left Side: Unique Image 5 (Close-up photograph of enterprise strategy binder & documentation) */}
-            <div className="lg:col-span-5 sticky top-28 space-y-4">
+            <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-4">
               <div className="rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0B1528] shadow-xl group">
                 <div className="relative h-80 sm:h-[420px] w-full overflow-hidden">
                   <img
@@ -807,7 +817,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     <span className="text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-wider block">
                       Audit-Ready Deliverables Dossier
                     </span>
-                    <p className="text-xs text-slate-200 mt-1">
+                    <p className="font-sora text-xs text-slate-200 mt-1 font-normal leading-[1.6]">
                       Complete architectural binders ready for executive review, board approval, and migration factory handover.
                     </p>
                   </div>
@@ -847,20 +857,20 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                         <span className="w-5 h-5 rounded-full bg-[#00A3E0]/10 text-[#00A3E0] text-[10px] font-mono font-bold flex items-center justify-center">
                           {idx + 1}
                         </span>
-                        <h3 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-[#00A3E0] transition-colors">
+                        <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white group-hover:text-[#00A3E0] transition-colors">
                           {del.title}
                         </h3>
                         <span className="text-[9px] font-mono uppercase px-2 py-0.5 rounded bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400 ml-auto sm:ml-2">
                           {del.category}
                         </span>
                       </div>
-                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed pl-7">
+                      <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] pl-7 font-normal">
                         {del.summary}
                       </p>
                     </div>
 
                     <div className="pl-7 sm:pl-0 shrink-0">
-                      <span className="text-[11px] font-mono text-slate-400 bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5 px-3 py-1.5 rounded-lg block text-right sm:text-left">
+                      <span className="text-[11px] font-mono text-slate-400 bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5 px-3 py-1.5 rounded-lg block text-left">
                         {del.format}
                       </span>
                     </div>
@@ -893,7 +903,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             <h2 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
               Strategic Services for Your Cloud Journey
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Whether you are architecting a net-new multi-cloud footprint or modernizing legacy mission-critical applications, our consulting practice delivers specialized advisory for every stage of your transformation.
             </p>
           </div>
@@ -912,13 +922,13 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#00A3E0] block">
                       {area.badge}
                     </span>
-                    <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                    <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                       {area.title}
                     </h3>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                    <p className="font-sora text-xs text-slate-500 dark:text-slate-400 font-medium leading-[1.6]">
                       {area.summary}
                     </p>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed pt-1">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] pt-1 font-normal">
                       {area.description}
                     </p>
                   </div>
@@ -927,7 +937,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
             </div>
 
             {/* Right Side: Unique Image 6 (Enterprise architecture multi-cloud command room) */}
-            <div className="lg:col-span-5 sticky top-28">
+            <div className="lg:col-span-5 lg:sticky lg:top-28">
               <div className="rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 bg-white dark:bg-[#0B1528] shadow-xl group">
                 <div className="relative h-80 sm:h-[440px] w-full overflow-hidden">
                   <img
@@ -941,7 +951,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                     <span className="text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-wider block">
                       Global Cloud Network Topologies
                     </span>
-                    <p className="text-xs text-slate-200">
+                    <p className="font-sora text-xs text-slate-200 font-normal leading-[1.6]">
                       Cross-provider connectivity linking AWS, Azure, Google Cloud, and private enterprise datacenters seamlessly.
                     </p>
                   </div>
@@ -997,7 +1007,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                   </h2>
                 </div>
 
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] max-w-xl font-normal">
                   Define your cloud direction, align technology with business priorities, and establish a practical roadmap for sustainable transformation.
                 </p>
 
@@ -1058,7 +1068,7 @@ export const CloudStrategyPage: React.FC<ChildPageProps> = ({ onOpenContact }) =
                       <span className="text-[11px] font-mono font-bold text-cyan-300 uppercase tracking-wider block">
                         Enterprise Infrastructure Ready
                       </span>
-                      <p className="text-xs text-slate-200 mt-1">
+                      <p className="font-sora text-xs text-slate-200 mt-1 font-normal leading-[1.6]">
                         SLA-governed enterprise hosting linking on-premises estates to hyperscaler cloud zones.
                       </p>
                     </div>

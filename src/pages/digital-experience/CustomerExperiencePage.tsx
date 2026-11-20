@@ -567,7 +567,7 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] cloud-sora-scope selection:text-white font-sans antialiased overflow-x-hidden">
 
       {/* =========================================================================
           SECTION 1: HERO SECTION (Clean, High-Contrast, Professional Static Hero)
@@ -586,6 +586,10 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
 
         {/* Lighter Directional Scrim for Crystal-Clear Text Readability & Brighter Visuals */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-r from-slate-950/75 via-slate-950/45 sm:via-slate-950/20 to-transparent pointer-events-none" />
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           <div className="max-w-3xl space-y-4">
@@ -606,8 +610,18 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
               </span>
             </h1>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/customer_experience_omnichannel_transformation_hero.jpg"
+                alt="Enterprise Customer Experience & Omnichannel Transformation - Architecture Blueprint"
+                className="w-full h-full object-cover object-right"
+              />
+            </div>
+
+
             {/* Subtitle with High Legibility */}
-            <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal max-w-2xl pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal max-w-2xl pt-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
               Unified Customer 360 identity graphs, headless digital experience delivery, predictive next-best-action models, and straight-through SAP S/4HANA core execution across global enterprise touchpoints.
             </p>
 
@@ -660,12 +674,12 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
               </h2>
 
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-5 py-3.5 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-2xl">
-                <p className="text-base sm:text-lg font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-base sm:text-lg font-medium text-slate-800 leading-relaxed italic">
                   &ldquo;A competitive customer experience is no longer confined to beautiful digital interfaces—it requires direct, real-time synchronization between front-end consumer touchpoints and operational ERP execution backbones.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 KNOOVIQ helps enterprise leadership transition away from siloed customer channels and fragile spreadsheet quoting toward unified omnichannel architectures. We connect modern headless storefronts, mobile apps, and customer care consoles directly to SAP S/4HANA digital cores, guaranteeing zero context drop and instantaneous fulfillment.
               </p>
 
@@ -676,8 +690,8 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
                     <Globe2 className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Decoupled Headless Experience Mesh</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Decoupled Headless Experience Mesh</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       High-performance edge micro-frontends and reusable design tokens delivered independently from underlying ERP database schemas.
                     </p>
                   </div>
@@ -688,8 +702,8 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
                     <Users className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Deterministic Customer 360 Graph</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Deterministic Customer 360 Graph</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Unified identity resolution harmonizing CRM accounts, anonymous digital browsing, and order history into a single golden profile.
                     </p>
                   </div>
@@ -700,8 +714,8 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
                     <Zap className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-base sm:text-lg font-bold text-slate-950">Straight-Through ERP Core Sync</h4>
-                    <p className="text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-base sm:text-lg font-medium text-slate-950">Straight-Through ERP Core Sync</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Direct transactional API pushdown reserving warehouse inventory, triggering dispatch, and clearing billing disputes without manual staging.
                     </p>
                   </div>
@@ -732,7 +746,7 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
 
                 <div className="absolute bottom-4 left-4 right-4 text-white space-y-1.5 p-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-slate-700/80">
                   <div className="text-xs sm:text-sm font-mono font-bold text-cyan-300">{journeySteps[activeJourneyStep].tech}</div>
-                  <p className="text-xs sm:text-sm text-slate-100 font-normal leading-relaxed line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-100 font-normal leading-[1.6] line-clamp-2">{journeySteps[activeJourneyStep].desc}</p>
                 </div>
               </div>
 
@@ -755,7 +769,7 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
                         <StepIcon className="w-4 h-4" />
                       </div>
                       <div className="min-w-0">
-                        <div className="text-xs sm:text-sm font-bold break-words leading-tight">{step.label}</div>
+                        <div className="text-xs sm:text-sm font-bold truncate">{step.label}</div>
                         <div className={`text-xs truncate ${isSelected ? 'text-sky-100 font-medium' : 'text-slate-500'}`}>{step.sublabel}</div>
                       </div>
                     </button>
@@ -783,7 +797,7 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Strategic Hurdles Facing Legacy Customer Touchpoints
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Why traditional fragmented CRM systems and decoupled portals create execution latency, customer churn, and operational overhead.
             </p>
           </div>
@@ -805,10 +819,10 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
                         <ChallengeIcon className="w-5 h-5" />
                       </div>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -837,7 +851,7 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white">
               The KNOOVIQ Unified Customer Experience Mesh
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Explore the eight mutually reinforcing layers of our modern customer experience foundation. Hover over any segment to inspect its architectural role.
             </p>
           </div>
@@ -864,7 +878,7 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -985,7 +999,7 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
                       <SegIcon className={`w-4 h-4 ${seg.textColor}`} />
                       <span className={`text-sm font-bold ${seg.textColor}`}>{seg.title}</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-slate-300 leading-relaxed line-clamp-2">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] line-clamp-2 font-normal">
                       {seg.desc}
                     </p>
                   </div>
@@ -1011,7 +1025,7 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Omnichannel Mesh &amp; Experience Architecture Matrix
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               Examine the concrete architectural difference between legacy decoupled customer portals and KNOOVIQ closed-loop experience mesh frameworks.
             </p>
           </div>
@@ -1055,8 +1069,46 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
               transition={{ duration: 0.3 }}
               className="rounded-3xl border border-slate-200 overflow-hidden shadow-sm"
             >
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[640px] text-left border-collapse">
+              {/* Mobile Card-Based Comparison View (Zero Cutoff, 100% Fits Inside Screen) */}
+              <div className="sm:hidden space-y-3.5 p-3.5 bg-slate-50/50">
+                {architecturalComparison.map((row, rIdx) => (
+                  <div key={rIdx} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-3">
+                    <div className="flex items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
+                      <div className="font-bold text-slate-900 text-sm flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                        <span>{row.dimension}</span>
+                      </div>
+                      {row.statusBadge && (
+                        <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase bg-sky-100 text-[#0070C0] border border-sky-300 shrink-0">
+                          {row.statusBadge}
+                        </span>
+                      )}
+                    </div>
+                    <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                      <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                        <span>KNOOVIQ Modern Omnichannel Mesh</span>
+                      </div>
+                      <p className="text-xs text-slate-900 font-semibold leading-relaxed">
+                        {row.modernApproach}
+                      </p>
+                    </div>
+                    <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                      <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                        <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                        <span>Legacy Customer Portals</span>
+                      </div>
+                      <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                        {row.legacyApproach}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop Full-Bleed Comparison Table (100% Preserved) */}
+              <div className="hidden sm:block overflow-x-auto">
+                <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="bg-slate-100 border-b border-slate-200 text-xs sm:text-sm font-mono uppercase text-slate-700 tracking-wider">
                       <th className="py-4 px-6 font-bold w-1/4">Experience Dimension</th>
@@ -1132,8 +1184,8 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER ONE: IDENTITY GRAPH
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Unified Customer 360 Fabric</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Unified Customer 360 Fabric</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Deterministic entity resolution unifying anonymous browsing sessions and corporate accounts into a single golden profile.
                     </p>
                   </div>
@@ -1142,8 +1194,8 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER TWO: HEADLESS PRESENTATION
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">High-Velocity Micro-Frontends</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">High-Velocity Micro-Frontends</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Decoupled modern frontend interfaces delivered via global edge CDNs with sub-second page performance.
                     </p>
                   </div>
@@ -1152,8 +1204,8 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER THREE: CONTEXTUAL AI
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Next-Best-Action Re-Ranking</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Next-Best-Action Re-Ranking</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Machine learning intent algorithms delivering contextually tailored product recommendations and proactive care alerts.
                     </p>
                   </div>
@@ -1162,8 +1214,8 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
                     <div className="text-xs font-mono text-[#0070C0] uppercase font-bold mb-1">
                       LAYER FOUR: CORE ORCHESTRATION
                     </div>
-                    <h4 className="text-sm sm:text-base font-bold text-slate-900">Closed-Loop SAP S/4HANA Sync</h4>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1 font-normal">
+                    <h4 className="font-sora text-sm sm:text-base font-medium text-slate-900">Closed-Loop SAP S/4HANA Sync</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mt-1 font-normal">
                       Direct transactional API pushdown reserving warehouse inventory, triggering dispatch, and clearing invoices.
                     </p>
                   </div>
@@ -1228,7 +1280,7 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
                       <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
                       <span>Experience Optimization Directive</span>
                     </div>
-                    <p className="text-xs text-cyan-100 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-cyan-100 leading-[1.6] font-normal">
                       {diagnosticProcesses[activeTelemetryTab].recommendation}
                     </p>
                   </div>
@@ -1255,10 +1307,10 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
                             {finding.source}
                           </span>
                         </div>
-                        <h4 className="text-sm sm:text-base font-bold text-white">
+                        <h4 className="font-sora text-sm sm:text-base font-medium text-white">
                           {finding.title}
                         </h4>
-                        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                        <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                           {finding.desc}
                         </p>
                       </div>
@@ -1286,7 +1338,7 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950">
               Phased Enterprise Implementation Roadmap
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
               A structured, risk-mitigated journey from fragmented touchpoints to an enterprise-wide, governed omnichannel customer experience mesh.
             </p>
           </div>
@@ -1309,11 +1361,11 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
                       </div>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-lg sm:text-xl font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {phase.title}
                     </h3>
 
-                    <p className="text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {phase.focus}
                     </p>
                   </div>
@@ -1352,7 +1404,7 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 tracking-tight">
               Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#005A9C] via-[#0070C0] to-sky-500">Strategic Questions</span>
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal max-w-2xl mx-auto">
               Addressing core omnichannel paradigms, clean core ERP integration, real-time identity graphs, and predictive sentiment telemetry for technology leaders.
             </p>
           </div>
@@ -1427,7 +1479,7 @@ export const CustomerExperiencePage: React.FC<CustomerExperiencePageProps> = ({
             Ready to Unify Your Enterprise Customer Experience?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Collaborate with senior experience architects to eliminate channel disconnects, deploy consumer-grade B2B portals, and integrate customer touchpoints directly with core SAP S/4HANA workflows.
           </p>
 

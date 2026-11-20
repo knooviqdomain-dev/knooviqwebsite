@@ -549,12 +549,12 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
     : industrySolutions.filter(item => item.category === activeSolutionCategory);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Trading Hero)
           ========================================================================= */}
-      <section className="relative w-full min-h-[620px] lg:min-h-[680px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-16 overflow-hidden bg-slate-900">
+      <section className="relative w-full min-h-[620px] lg:min-h-[680px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-16 overflow-hidden bg-slate-900 text-white">
         
         {/* Full-Bleed Enterprise Background Image with Seamless Cinematic Scrim */}
         <div className="absolute inset-0 z-0">
@@ -567,6 +567,10 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 sm:via-slate-950/60 to-transparent pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-slate-950/30 pointer-events-none" />
         </div>
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-3xl space-y-4">
@@ -588,10 +592,19 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Synchronizing Deal Capture, Global Hedging, Maritime Freight & Bank Settlement in Real Time.
               </p>
             </motion.div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/trading_hero.png"
+                alt="Intelligent ERP for Trading & Distribution - Architecture Blueprint"
+                className="w-full h-auto block select-none"
+              />
+            </div>
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -600,7 +613,7 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empower global commodity traders with <strong className="text-white font-semibold">SAP S/4HANA Commodity Clean Core</strong>, <strong className="text-cyan-300 font-semibold">automated treasury FX risk hedging</strong>, and <strong className="text-white font-semibold">touchless trade finance governance</strong>.
               </p>
               
@@ -690,7 +703,7 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
               </h2>
 
               <div className="border-l-4 border-[#0070C0] pl-4 py-2 bg-gradient-to-r from-sky-50/80 to-transparent rounded-r-lg">
-                <p className="text-sm sm:text-base font-semibold text-slate-800 italic">
+                <p className="font-sora text-sm sm:text-base font-medium text-slate-800 italic">
                   "In high-volume international trade, unhedged exchange rate fluctuations and documentary letter of credit delays can wipe out entire gross margins on a voyage before cargo is even discharged."
                 </p>
               </div>
@@ -822,7 +835,7 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">
               Critical Obstacles Constraining <span className="text-[#0070C0]">Trading Houses</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">
               Wholesale trading desks navigate thin spreads, complex maritime logistics, sudden currency shifts, and stringent international compliance gates.
             </p>
           </div>
@@ -845,11 +858,11 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
                       </div>
                     </div>
 
-                    <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base sm:text-lg font-medium text-slate-900 leading-snug group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -888,7 +901,7 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Unified <span className="text-[#38BDF8]">Wholesale & Trading Platform</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 font-normal leading-[1.6]">
               Eight synchronized architectural capabilities orchestrating physical deal booking, hedging, maritime logistics, customs declarations, and banking settlements.
             </p>
           </div>
@@ -933,7 +946,7 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
                         <h4 className={`text-sm font-bold transition-colors ${isHighlighted ? 'text-white' : 'text-slate-200'}`}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed font-normal">
+                        <p className="font-sora text-xs text-slate-300 line-clamp-2 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1056,7 +1069,7 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
                         <h4 className={`text-sm font-bold transition-colors ${isHighlighted ? 'text-white' : 'text-slate-200'}`}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed font-normal">
+                        <p className="font-sora text-xs text-slate-300 line-clamp-2 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1087,7 +1100,7 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">
               Enterprise SAP Architecture for <span className="text-[#0070C0]">Wholesale & Trading</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">
               Built on Clean Core principles, combining SAP S/4HANA Commodity Management, Treasury TRM, and Global Trade Services GTS for complete operational control.
             </p>
           </div>
@@ -1110,11 +1123,11 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
                       </div>
                     </div>
 
-                    <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base sm:text-lg font-medium text-slate-900 leading-snug group-hover:text-[#0070C0] transition-colors">
                       {sol.title}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {sol.desc}
                     </p>
 
@@ -1154,7 +1167,7 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">
               Pre-Packaged Capabilities for <span className="text-[#0070C0]">Trading Houses</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">
               Turnkey functional modules designed for rapid deployment across physical deal capture, treasury risk, maritime freight, and financial reconciliation.
             </p>
 
@@ -1211,10 +1224,10 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
                   {/* Body Content - 50% Height */}
                   <div className="h-1/2 p-4 sm:p-5 flex flex-col justify-between overflow-hidden">
                     <div>
-                      <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                      <h3 className="font-sora text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                         {item.title}
                       </h3>
-                      <p className="text-xs text-slate-600 leading-relaxed font-normal mt-1 line-clamp-2">
+                      <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal mt-1 line-clamp-2">
                         {item.description}
                       </p>
                     </div>
@@ -1250,7 +1263,7 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">
               Measurable ROI Across Global <span className="text-[#0070C0]">Trading Desks</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-600 font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">
               Validated financial returns and operational velocity improvements achieved across international physical trading enterprises.
             </p>
           </div>
@@ -1273,11 +1286,11 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
                       </div>
                     </div>
 
-                    <h3 className="text-base font-bold text-slate-900 leading-snug">
+                    <h3 className="font-sora text-base font-medium text-slate-900 leading-snug">
                       {item.label}
                     </h3>
 
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -1313,7 +1326,7 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Executing the Trading Transformation <span className="text-[#38BDF8]">Roadmap</span>
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 font-normal leading-[1.6]">
               A proven four-stage transition turning high-risk, disconnected commodity trading operations into an autonomous, secured financial powerhouse.
             </p>
           </div>
@@ -1335,7 +1348,7 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">
+                      <span className="text-[10px] font-mono font-bold text-slate-300 uppercase tracking-wider">
                         {stage.phase}
                       </span>
                       <Icon className={`w-4 h-4 ${stage.textColor}`} />
@@ -1343,15 +1356,15 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
 
                     <div className="space-y-1">
                       <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-full ${
-                        isActive ? 'bg-white/20 text-white' : 'bg-slate-800 text-slate-400'
+                        isActive ? 'bg-white/20 text-white' : 'bg-slate-800 text-slate-300'
                       }`}>
                         {stage.badge}
                       </span>
-                      <h3 className="text-base font-bold text-white pt-1">{stage.title}</h3>
-                      <div className="text-xs text-slate-400 font-medium">{stage.subtitle}</div>
+                      <h3 className="font-sora text-base font-medium text-white pt-1">{stage.title}</h3>
+                      <div className="text-xs text-slate-300 font-medium">{stage.subtitle}</div>
                     </div>
 
-                    <p className="text-xs text-slate-300 leading-relaxed font-normal line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal line-clamp-3">
                       {stage.description}
                     </p>
                   </div>
@@ -1394,7 +1407,7 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
 
             {/* Checklist Chips */}
             <div className="flex flex-wrap items-center gap-2 pt-4 mt-4 border-t border-slate-800">
-              <span className="text-xs font-mono text-slate-400 uppercase tracking-wider mr-2">VERIFIED MILESTONES:</span>
+              <span className="text-xs font-mono text-slate-300 uppercase tracking-wider mr-2">VERIFIED MILESTONES:</span>
               {transformationStages[activeTransformStage].metrics.map((m, mIdx) => (
                 <span key={mIdx} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-xs font-medium text-slate-200 border border-slate-700">
                   <CheckCircle2 className="w-3 h-3 text-emerald-400" />
@@ -1430,7 +1443,7 @@ export const TradingIndustryPage: React.FC<TradingIndustryPageProps> = ({
             <span className="text-cyan-200">Global Trading Velocity?</span>
           </h2>
 
-          <p className="text-sm sm:text-base lg:text-lg text-slate-100 max-w-2xl mx-auto font-normal leading-relaxed">
+          <p className="font-sora text-[15px] sm:text-[16px] lg:text-lg text-slate-100 max-w-2xl mx-auto font-normal leading-[1.6]">
             Partner with KNOOVIQ's senior trading and treasury advisors to architect an agile SAP S/4HANA Commodity platform customized for your desks.
           </p>
 

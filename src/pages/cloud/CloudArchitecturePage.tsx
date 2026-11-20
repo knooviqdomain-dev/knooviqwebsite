@@ -370,7 +370,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#040812] text-slate-900 dark:text-slate-100 selection:bg-[#00A3E0]/30 selection:text-[#00A3E0] transition-colors duration-300">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#040812] text-slate-900 dark:text-slate-100 selection:bg-[#00A3E0]/30 selection:text-[#00A3E0] transition-colors duration-300 cloud-sora-scope">
       {/* Breadcrumb Navigation Bar */}
       <div className="bg-slate-50 dark:bg-[#070E1E] border-b border-slate-200 dark:border-white/10 text-xs py-3 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -398,6 +398,8 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
             alt="Enterprise Cloud Architecture & Technical Foundation"
             className="w-full h-full object-cover object-center lg:object-[65%_center] filter brightness-105 contrast-105"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#060D1A]/95 via-[#060D1A]/90 to-[#060D1A] pointer-events-none" />
           {/* Directional scrim: smoothly protects text readability on the left while keeping center & right visuals 100% bright */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#060D1A] via-[#060D1A]/85 sm:via-[#060D1A]/70 md:via-[#060D1A]/50 to-transparent w-full lg:w-3/5" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#060D1A] via-transparent to-[#060D1A]/50" />
@@ -406,18 +408,29 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full py-16 sm:py-20 lg:py-24 space-y-8">
           
-          <div className="max-w-2xl lg:max-w-3xl space-y-6">
+          <div className="max-w-2xl lg:max-w-3xl space-y-5 sm:space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00A3E0]/10 border border-[#00A3E0]/30 text-[#00A3E0] text-xs font-mono font-semibold uppercase tracking-wider backdrop-blur-md">
               <Compass className="w-3.5 h-3.5 text-[#00A3E0]" />
               <span>ENTERPRISE SYSTEMS ARCHITECTURE</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight leading-[1.12] text-white drop-shadow-md">
-              Architect the Foundation of{' '}
-              <span className="text-[#00A3E0]">Your Cloud Future</span>
-            </h1>
+            <div className="space-y-2 sm:space-y-3">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight leading-[1.12] text-white drop-shadow-md">
+                Architect the Foundation of{' '}
+                <span className="text-[#00A3E0]">Your Cloud Future</span>
+              </h1>
+            </div>
 
-            <p className="text-base sm:text-lg text-slate-200 font-normal leading-relaxed max-w-2xl drop-shadow-sm">
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/cloud_architecture_designer_robot.png"
+                alt="Architect the Foundation of Your Cloud Future - Cloud Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 font-normal leading-[1.6] max-w-2xl drop-shadow-sm">
               Design cloud environments around your enterprise applications, infrastructure requirements, security
               policies, and long-term technology objectives. Knooviq helps organizations define cloud architectures that
               connect infrastructure, applications, data, integration, and governance into a coherent technical foundation.
@@ -459,7 +472,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Architecture That Connects Every Technical Layer
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Effective cloud architecture does not treat servers, databases, and networks as disconnected catalog
               items. It provides the structured blueprint that harmonizes infrastructure, applications, data, identity,
               and governance into a coherent, resilient technical engine.
@@ -539,21 +552,21 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                   <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-[#00A3E0]/10 text-[#00A3E0] dark:text-cyan-400 text-xs font-mono font-semibold uppercase">
                     {architectureLayers[activeLayer].number} SPECIFICATION
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white">
                     {architectureLayers[activeLayer].name}
                   </h3>
-                  <p className="text-xs sm:text-sm text-cyan-600 dark:text-cyan-400 font-medium">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-cyan-600 dark:text-cyan-400 font-medium leading-[1.6]">
                     {architectureLayers[activeLayer].tagline}
                   </p>
                 </div>
 
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   {architectureLayers[activeLayer].description}
                 </p>
 
                 {/* Sub-Components */}
                 <div className="space-y-2.5 pt-2 border-t border-slate-200 dark:border-slate-800">
-                  <h4 className="text-xs font-mono font-bold uppercase text-slate-500 tracking-wider">
+                  <h4 className="font-sora text-xs font-mono font-medium uppercase text-slate-500 tracking-wider">
                     Core Architectural Components:
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -603,7 +616,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Enterprise Cloud Architecture Blueprint
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Architecture blueprints bridge the gap between executive business requirements and low-level code deployment.
               We formulate target-state architectural blueprints, establish immutable design principles, and document
               every choice in auditable Architecture Decision Records (ADRs).
@@ -630,7 +643,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
 
               {/* Blueprint Scope Checklist */}
               <div className="lg:col-span-6 space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                   Blueprint Scope &amp; Artifact Deliverables
                 </h3>
                 <div className="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -639,7 +652,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                       <Code2 className="w-4 h-4 text-[#00A3E0]" />
                       <span>Current-State vs. Target-State Topologies</span>
                     </div>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                    <p className="font-sora text-xs text-slate-500 dark:text-slate-400 font-normal leading-[1.6]">
                       Baseline technical audits capturing tech debt, unmapped dependencies, and target multi-region topologies.
                     </p>
                   </div>
@@ -649,7 +662,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                       <GitBranch className="w-4 h-4 text-[#00A3E0]" />
                       <span>Architecture Decision Records (ADRs)</span>
                     </div>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                    <p className="font-sora text-xs text-slate-500 dark:text-slate-400 font-normal leading-[1.6]">
                       Version-controlled records documenting technical trade-offs, technology evaluations, and architectural justifications.
                     </p>
                   </div>
@@ -659,7 +672,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                       <Boxes className="w-4 h-4 text-[#00A3E0]" />
                       <span>Logical &amp; Physical Architecture Views</span>
                     </div>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                    <p className="font-sora text-xs text-slate-500 dark:text-slate-400 font-normal leading-[1.6]">
                       Clear separation between vendor-agnostic logical abstractions and provider-specific physical mappings.
                     </p>
                   </div>
@@ -684,7 +697,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Infrastructure, Compute &amp; Storage Design
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Underpinning every cloud application is a deliberate pairing of compute orchestrators and storage tiers.
               We architect multi-zone container platforms, spot-and-ondemand compute pools, and hierarchical data stores
               tailored to real-world workload access patterns.
@@ -713,10 +726,10 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
 
             {/* Structured Technical Explanations */}
             <div className="lg:col-span-6 space-y-4">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white leading-snug">
+              <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white leading-snug">
                 Capacity Planning, Failure Domains &amp; Tiered Persistence
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Rather than treating storage as an afterthought, we architect multi-tier persistence pipelines that
                 separate sub-millisecond transactional IOPS from cold historical archives.
               </p>
@@ -727,7 +740,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                     <Cpu className="w-4 h-4 text-[#00A3E0]" />
                     <span>Container Platforms &amp; Virtual Machine Sizing</span>
                   </div>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-400 mt-1 font-normal leading-[1.6]">
                     Managed EKS, AKS, and GKE fleets with automated Karpenter node autoscaling, mixing spot and reserved
                     compute for maximum efficiency.
                   </p>
@@ -738,7 +751,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                     <HardDrive className="w-4 h-4 text-[#00A3E0]" />
                     <span>Tiered Storage Lifecycle Automation</span>
                   </div>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-400 mt-1 font-normal leading-[1.6]">
                     Automated data migration from high-IOPS NVMe volumes to warm object storage and glacier archive tiers,
                     minimizing long-term storage spend.
                   </p>
@@ -749,7 +762,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                     <Radio className="w-4 h-4 text-[#00A3E0]" />
                     <span>Availability Zones &amp; Failure Isolation</span>
                   </div>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-400 mt-1 font-normal leading-[1.6]">
                     Workload distribution across minimum three geographically separated availability zones, ensuring zero
                     downtime during localized datacenter outages.
                   </p>
@@ -776,7 +789,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
               Cloud Networking &amp; Connectivity Architecture
             </h2>
-            <p className="text-base text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
               Enterprise network architecture provides the nervous system of cloud systems. We engineer segmented
               Virtual Private Clouds (VPCs), deterministic routing transit hubs, private service endpoints, and secure
               edge gateways that eliminate unnecessary exposure to the public internet.
@@ -812,8 +825,8 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                   <Network className="w-3.5 h-3.5 text-[#00A3E0]" />
                   <span>VPC &amp; Subnet Design</span>
                 </div>
-                <h4 className="text-sm font-bold text-white">Hierarchical CIDR Allocation</h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <h4 className="font-sora text-sm font-medium text-white">Hierarchical CIDR Allocation</h4>
+                <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                   Clean separation between public ingress DMZs, private application compute, and isolated data subnets
                   with non-overlapping RFC 1918 CIDR blocks.
                 </p>
@@ -824,8 +837,8 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                   <Workflow className="w-3.5 h-3.5 text-[#00A3E0]" />
                   <span>Transit Routing</span>
                 </div>
-                <h4 className="text-sm font-bold text-white">Hub-and-Spoke Gateways</h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <h4 className="font-sora text-sm font-medium text-white">Hub-and-Spoke Gateways</h4>
+                <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                   Centralized transit gateway routing traffic between hundreds of spoke VPCs, corporate data centers,
                   and software-as-a-service providers without point-to-point mesh spaghetti.
                 </p>
@@ -836,8 +849,8 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                   <Lock className="w-3.5 h-3.5 text-[#00A3E0]" />
                   <span>Private Connectivity</span>
                 </div>
-                <h4 className="text-sm font-bold text-white">PrivateLink Endpoints</h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <h4 className="font-sora text-sm font-medium text-white">PrivateLink Endpoints</h4>
+                <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                   Consume cloud provider services (S3, KMS, RDS) over private internal IPs, ensuring zero data packets
                   traverse public internet transit lines.
                 </p>
@@ -848,8 +861,8 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                   <Scale className="w-3.5 h-3.5 text-[#00A3E0]" />
                   <span>Traffic Balancing</span>
                 </div>
-                <h4 className="text-sm font-bold text-white">L4 / L7 Ingress Gateways</h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <h4 className="font-sora text-sm font-medium text-white">L4 / L7 Ingress Gateways</h4>
+                <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                   Application load balancers enforcing TLS 1.3 termination, path-based routing, health-checked target
                   groups, and automated DDoS mitigation.
                 </p>
@@ -860,8 +873,8 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                   <ShieldCheck className="w-3.5 h-3.5 text-[#00A3E0]" />
                   <span>Egress Governance</span>
                 </div>
-                <h4 className="text-sm font-bold text-white">Controlled Inspection Firewalls</h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <h4 className="font-sora text-sm font-medium text-white">Controlled Inspection Firewalls</h4>
+                <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                   Centralized inspection VPCs routing all outbound internet traffic through stateful firewalls with domain
                   whitelisting and TLS inspection.
                 </p>
@@ -872,8 +885,8 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                   <RefreshCw className="w-3.5 h-3.5 text-[#00A3E0]" />
                   <span>Failover Resilience</span>
                 </div>
-                <h4 className="text-sm font-bold text-white">BGP Dynamic Routing</h4>
-                <p className="text-xs text-slate-300 leading-relaxed">
+                <h4 className="font-sora text-sm font-medium text-white">BGP Dynamic Routing</h4>
+                <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                   Automated BGP failover across redundant direct connects and hot-standby IPsec VPN tunnels, avoiding
                   manual network routing interventions.
                 </p>
@@ -897,7 +910,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Application &amp; Integration Architecture
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Monolithic tight-coupling is the primary cause of fragile cloud deployments. We design domain-driven
               application boundaries, API-led integration contracts, and asynchronous event streams that allow services
               to scale and evolve independently without breaking upstream dependencies.
@@ -909,13 +922,12 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Supporting Software Architecture Visual 5 */}
               <div className="lg:col-span-5">
-                <div className="relative rounded-xl overflow-hidden border border-slate-300 dark:border-slate-700 aspect-[4/3] bg-slate-950 group shadow-md">
+                <div className="relative rounded-xl overflow-hidden border border-slate-300 dark:border-slate-700 aspect-[4/3] bg-white dark:bg-slate-900 group shadow-md flex items-center justify-center">
                   <img
                     src="/images/cloud/cloud_app_integration.png"
                     alt="Application & Integration Architecture - Engineering teams designing AI neural software architectures, API event streams, and decoupled systems"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-95"
+                    className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
                   <div className="absolute bottom-3 left-3 text-[11px] font-mono text-cyan-300 bg-slate-900/80 px-2.5 py-1 rounded border border-slate-700 select-text">
                     DECOUPLED SERVICE TOPOLOGY
                   </div>
@@ -924,7 +936,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
 
               {/* Interconnected Domain Explanation */}
               <div className="lg:col-span-7 space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                   Four Modern Integration Patterns
                 </h3>
 
@@ -934,10 +946,10 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                       01
                     </div>
                     <div>
-                      <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-900 dark:text-white">
                         API-Led Gateway Architecture
                       </h4>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5 leading-relaxed">
+                      <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-0.5 leading-[1.6] font-normal">
                         Standardized OpenAPI specifications with rate limiting, token validation, and backward-compatible
                         versioning separating consumers from backend implementations.
                       </p>
@@ -949,10 +961,10 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                       02
                     </div>
                     <div>
-                      <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-900 dark:text-white">
                         Event-Driven Architecture (EDA)
                       </h4>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5 leading-relaxed">
+                      <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-0.5 leading-[1.6] font-normal">
                         Apache Kafka and cloud message queues decoupling order ingestion from inventory, billing, and
                         fulfillment, absorbing traffic bursts without downstream lockups.
                       </p>
@@ -964,10 +976,10 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                       03
                     </div>
                     <div>
-                      <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-900 dark:text-white">
                         Strangler Fig Modernization Facade
                       </h4>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5 leading-relaxed">
+                      <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-0.5 leading-[1.6] font-normal">
                         Routing new capabilities to cloud-native microservices while gradually intercepting legacy core
                         calls, avoiding risky all-at-once re-platforming.
                       </p>
@@ -979,10 +991,10 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                       04
                     </div>
                     <div>
-                      <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-900 dark:text-white">
                         Service Mesh &amp; Mutual TLS
                       </h4>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 mt-0.5 leading-relaxed">
+                      <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-0.5 leading-[1.6] font-normal">
                         Envoy sidecar proxies managing cross-service traffic routing, circuit breaking, distributed
                         tracing headers, and automatic mTLS encryption transparently.
                       </p>
@@ -1009,7 +1021,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Security Architecture &amp; Trust Boundaries
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Security must be designed into the architecture from the first blueprint, not retrofitted after deployment.
               We implement defense-in-depth trust boundaries, hardware envelope encryption, automated secrets rotation,
               and strict least-privilege IAM roles aligned with the shared-responsibility model.
@@ -1036,7 +1048,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
 
               {/* 3 Layered Trust Zones */}
               <div className="lg:col-span-7 space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                   Three Concentric Trust Zones
                 </h3>
 
@@ -1047,7 +1059,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                       <span className="text-[10px] font-mono text-slate-500">INGRESS DMZ</span>
                     </div>
                     <div className="text-sm font-bold text-slate-900 dark:text-white">DDoS, WAF &amp; Identity Gateway</div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       Edge inspection inspecting all inbound traffic against OWASP Top 10 exploits, rate limiting API calls,
                       and terminating public TLS certificates before reaching internal workloads.
                     </p>
@@ -1059,7 +1071,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                       <span className="text-[10px] font-mono text-slate-500">APP TIER</span>
                     </div>
                     <div className="text-sm font-bold text-slate-900 dark:text-white">Least-Privilege RBAC &amp; mTLS</div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       Every inter-service call requires cryptographic identity verification. Microservices receive temporary,
                       short-lived IAM credentials tied strictly to their defined functional scope.
                     </p>
@@ -1071,7 +1083,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                       <span className="text-[10px] font-mono text-slate-500">ISOLATED CORE</span>
                     </div>
                     <div className="text-sm font-bold text-slate-900 dark:text-white">Envelope Encryption &amp; Immutable Audit</div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       Customer-managed KMS keys enforce envelope encryption at rest. All database administrative queries and
                       access events stream to tamper-proof, write-once SIEM log repositories.
                     </p>
@@ -1097,7 +1109,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Resilience, Observability &amp; Recovery Architecture
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               True enterprise resilience is engineered at the architecture level, not during a midnight outage.
               We establish multi-region failure-domain separation, health-checked circuit breakers, and distributed
               telemetry pipelines that isolate faults instantly without cascading across services.
@@ -1124,7 +1136,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
 
               {/* Scenario Response Breakdown */}
               <div className="lg:col-span-7 space-y-4">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                   Deterministic Failure-Mode Scenarios
                 </h3>
 
@@ -1135,10 +1147,10 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                         <AlertTriangle className="w-3.5 h-3.5" />
                       </div>
                       <div>
-                        <h4 className="text-xs font-bold text-slate-900 dark:text-white">
+                        <h4 className="font-sora text-xs font-medium text-slate-900 dark:text-white">
                           Scenario A: Single Availability Zone Hardware Outage
                         </h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                        <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-1 leading-[1.6] font-normal">
                           Automated load balancer health checks remove failing zone targets within seconds. Stateless
                           compute scales horizontally across surviving AZs while database synchronous replicas promote instantly.
                         </p>
@@ -1152,10 +1164,10 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                         <RefreshCw className="w-3.5 h-3.5" />
                       </div>
                       <div>
-                        <h4 className="text-xs font-bold text-slate-900 dark:text-white">
+                        <h4 className="font-sora text-xs font-medium text-slate-900 dark:text-white">
                           Scenario B: Catastrophic Regional Disaster
                         </h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                        <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-1 leading-[1.6] font-normal">
                           DNS failover routes traffic to a warm pilot light or secondary recovery region. Asynchronous
                           replicated data stores spin up warm compute pools with strict verified RTO (&lt;15 mins) and RPO (&lt;1 min).
                         </p>
@@ -1169,10 +1181,10 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                         <Activity className="w-3.5 h-3.5" />
                       </div>
                       <div>
-                        <h4 className="text-xs font-bold text-slate-900 dark:text-white">
+                        <h4 className="font-sora text-xs font-medium text-slate-900 dark:text-white">
                           Scenario C: Downstream Microservice Latency Spike
                         </h4>
-                        <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 leading-relaxed">
+                        <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-1 leading-[1.6] font-normal">
                           Envoy proxy circuit breakers open automatically, serving cached responses or degrading gracefully
                           rather than exhausting connection pools and cascading failures to user interfaces.
                         </p>
@@ -1200,7 +1212,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Architecture Governance, Standards &amp; Evolution
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Great cloud architectures are not static artifacts drawn once and forgotten. We establish formal Architecture
               Review Boards (ARB), automated Policy-as-Code guardrails, FinOps unit economics, and quarterly evolution
               reviews to prevent technical debt from accumulating.
@@ -1212,11 +1224,11 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               {/* Supporting Visual 8: Architecture Governance */}
               <div className="lg:col-span-5">
-                <div className="relative rounded-xl overflow-hidden border border-slate-300 dark:border-slate-700 aspect-[4/3] bg-slate-950 group shadow-md">
+                <div className="relative rounded-xl overflow-hidden border border-slate-300 dark:border-slate-700 aspect-[4/5] bg-slate-950 group shadow-md">
                   <img
                     src="/images/cloud/cloud_architecture_governance.png"
                     alt="Architecture Governance, Standards & Evolution - AI Code Generator holographic interface with robotic engineering assistant"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-95"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 opacity-95"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
                   <div className="absolute bottom-3 left-3 text-[11px] font-mono text-cyan-300 bg-slate-900/80 px-2.5 py-1 rounded border border-slate-700 select-text">
@@ -1230,7 +1242,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                 <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800">
                   <div className="text-xs font-mono font-bold text-[#00A3E0] dark:text-cyan-400">01. Architecture Review Board (ARB)</div>
                   <div className="text-sm font-bold text-slate-900 dark:text-white mt-0.5">Formal Technical Evaluation</div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 mt-1">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-1 font-normal leading-[1.6]">
                     Bi-weekly peer reviews evaluating new service proposals against security, compliance, data sovereignty,
                     and operational scalability standards.
                   </p>
@@ -1239,7 +1251,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                 <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800">
                   <div className="text-xs font-mono font-bold text-[#00A3E0] dark:text-cyan-400">02. Automated Policy-as-Code (OPA)</div>
                   <div className="text-sm font-bold text-slate-900 dark:text-white mt-0.5">Programmatic Guardrails</div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 mt-1">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-1 font-normal leading-[1.6]">
                     Open Policy Agent and Conftest rules embedded in CI/CD pipelines, preventing unencrypted disks, public
                     subnets, or non-compliant resource types from deploying.
                   </p>
@@ -1248,7 +1260,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                 <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800">
                   <div className="text-xs font-mono font-bold text-[#00A3E0] dark:text-cyan-400">03. FinOps Architectural Economics</div>
                   <div className="text-sm font-bold text-slate-900 dark:text-white mt-0.5">Cost-Aware Technical Decisions</div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 mt-1">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-1 font-normal leading-[1.6]">
                     Architectural evaluation of data transfer egress costs, managed service premium fees versus self-hosted
                     operational overhead, and reserved capacity commitments.
                   </p>
@@ -1257,7 +1269,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                 <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800">
                   <div className="text-xs font-mono font-bold text-[#00A3E0] dark:text-cyan-400">04. Technical Debt &amp; Modernization Roadmap</div>
                   <div className="text-sm font-bold text-slate-900 dark:text-white mt-0.5">Continuous Evolution</div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 mt-1">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 mt-1 font-normal leading-[1.6]">
                     Quarterly Well-Architected Framework reviews identifying aging runtimes, deprecated APIs, and
                     infrastructure components requiring orderly deprecation.
                   </p>
@@ -1283,7 +1295,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Make Architecture Decisions with Clear Technical Priorities
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Every architectural decision involves trade-offs. Rather than making subjective choices or relying on
               vendor marketing, Knooviq evaluates cloud architecture choices through a structured six-pillar decision
               framework that balances business outcomes with technical reality.
@@ -1340,7 +1352,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                   <div className="text-xs font-mono font-bold text-[#00A3E0] dark:text-cyan-400 uppercase">
                     {decisionFactors[activeDecisionFactor].badge}
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white">
                     {decisionFactors[activeDecisionFactor].title}
                   </h3>
                 </div>
@@ -1350,7 +1362,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                 </div>
 
                 <div className="space-y-2.5 pt-1">
-                  <h4 className="text-xs font-mono font-bold uppercase text-slate-500 tracking-wider">
+                  <h4 className="font-sora text-xs font-mono font-medium uppercase text-slate-500 tracking-wider">
                     Core Architectural Inquiry &amp; Validation:
                   </h4>
                   <ul className="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
@@ -1367,7 +1379,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                   <div className="font-mono font-bold text-cyan-800 dark:text-cyan-300">
                     ARCHITECTURAL TRADE-OFF BALANCING:
                   </div>
-                  <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-slate-700 dark:text-slate-300 leading-[1.6] font-normal">
                     {decisionFactors[activeDecisionFactor].architecturalTradeoff}
                   </p>
                 </div>
@@ -1392,7 +1404,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               From Technical Discovery to Architecture Validation
             </h2>
-            <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Our structured engagement process ensures no component is left undocumented and no trade-off is made
               in isolation. Here is how Knooviq partners with enterprise engineering teams from initial audit to continuous evolution.
             </p>
@@ -1433,7 +1445,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                   <div className="text-xs font-mono font-bold text-[#00A3E0] dark:text-cyan-400 uppercase">
                     STAGE {engagementStages[activeProcessStage].step} ARCHITECTURAL ACTIVITY
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-0.5">
+                  <h3 className="font-sora text-2xl font-medium text-slate-900 dark:text-white mt-0.5">
                     {engagementStages[activeProcessStage].name}: {engagementStages[activeProcessStage].tagline}
                   </h3>
                 </div>
@@ -1442,7 +1454,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                 </div>
               </div>
 
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 {engagementStages[activeProcessStage].description}
               </p>
 
@@ -1464,7 +1476,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
                   <div className="text-sm font-bold text-slate-900 dark:text-white">
                     {engagementStages[activeProcessStage].deliverable}
                   </div>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                  <p className="font-sora text-xs text-slate-500 dark:text-slate-400 font-normal leading-[1.6]">
                     Signed off by the Architecture Review Board (ARB) and executive stakeholders prior to proceeding to subsequent phases.
                   </p>
                 </div>
@@ -1583,7 +1595,7 @@ export const CloudArchitecturePage: React.FC<CloudArchitecturePageProps> = ({ on
             </div>
 
             <div className="p-4 border-t border-slate-800 bg-slate-950 text-xs text-slate-300 leading-relaxed flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <p className="max-w-2xl">{lightboxImage.subtitle}</p>
+              <p className="font-sora max-w-2xl font-normal leading-[1.6]">{lightboxImage.subtitle}</p>
               <button
                 onClick={handleDiscussArchitecture}
                 className="px-4 py-2 rounded-lg bg-[#00A3E0] hover:bg-[#00B4F5] text-white font-semibold text-xs transition-colors shrink-0 cursor-pointer"

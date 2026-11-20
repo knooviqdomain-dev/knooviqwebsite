@@ -20,7 +20,8 @@ import {
   CheckSquare,
   LineChart,
   Maximize2,
-  X
+  X,
+  XCircle,
 } from 'lucide-react';
 
 interface BusinessPerformanceInsightsPageProps {
@@ -206,7 +207,7 @@ export const BusinessPerformanceInsightsPage: React.FC<BusinessPerformanceInsigh
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-[#0070C0] selection:text-white antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 font-sans cloud-sora-scope selection:bg-[#0070C0] selection:text-white antialiased overflow-x-hidden">
       
       {/* ========================================================================= */}
       {/* SECTION 1: HERO SECTION (AI Agents Style Full Bleed Panoramic Background) */}
@@ -224,6 +225,10 @@ export const BusinessPerformanceInsightsPage: React.FC<BusinessPerformanceInsigh
           {/* Lighter directional scrim for readable text and natural clear visual */}
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-slate-950/30 to-transparent pointer-events-none" />
         </div>
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-2xl lg:max-w-xl space-y-6">
@@ -251,8 +256,18 @@ export const BusinessPerformanceInsightsPage: React.FC<BusinessPerformanceInsigh
                 </span>
               </h1>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/digital-intelligence/business_performance_insights_value_driver_trees_mobile.png"
+                alt="Enterprise Business Performance Insights & Value Driver Trees - Architecture Blueprint"
+                className="w-full h-auto block select-none"
+              />
+            </div>
+
+
               {/* Subtitle with High Legibility */}
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal pt-1 drop-shadow-md">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 text-white/90 leading-[1.6] font-normal pt-1 drop-shadow-md">
                 Transform static corporate scorecards into active operational value-driver trees. Unify real-time margin observability, autonomous variance root-cause diagnostics, and strategic capital allocation across your enterprise with SAP Clean Core.
               </p>
             </motion.div>
@@ -295,7 +310,7 @@ export const BusinessPerformanceInsightsPage: React.FC<BusinessPerformanceInsigh
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Algorithmic Performance Observability for Executive Clarity
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Traditional executive reports deliver disconnected historical snapshots. Our performance architecture maps operational drivers directly to financial outcomes in real time.
             </p>
           </div>
@@ -311,10 +326,10 @@ export const BusinessPerformanceInsightsPage: React.FC<BusinessPerformanceInsigh
                   <div className="rounded-xl bg-sky-50 border border-sky-100 p-3 text-[#0070C0] w-fit mb-5">
                     <pillar.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 mb-2">
                     {pillar.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                     {pillar.desc}
                   </p>
                 </div>
@@ -343,7 +358,7 @@ export const BusinessPerformanceInsightsPage: React.FC<BusinessPerformanceInsigh
                 Connect Frontline Operational Work to Boardroom Performance
               </h2>
               
-              <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+              <p className="font-sora text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
                 In most enterprises, executive strategy and shop-floor execution are separated by latency and disconnected reporting silos. KNOOVIQ Business Performance Insights bridges this divide, establishing a living digital ledger that reflects how day-to-day decisions compound into bottom-line shareholder value.
               </p>
 
@@ -351,24 +366,24 @@ export const BusinessPerformanceInsightsPage: React.FC<BusinessPerformanceInsigh
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[#0070C0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Automated Multi-Horizon Reconciliation</h4>
-                    <p className="text-xs sm:text-sm text-slate-600">Continuously reconciles operational run-rates against long-term strategic plans and financial guidance.</p>
+                    <h4 className="font-sora text-sm font-medium text-slate-900">Automated Multi-Horizon Reconciliation</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">Continuously reconciles operational run-rates against long-term strategic plans and financial guidance.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[#0070C0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Sub-Ledger Granularity</h4>
-                    <p className="text-xs sm:text-sm text-slate-600">Drills seamlessly from global executive summary indices into line-item general ledger postings and inventory batches.</p>
+                    <h4 className="font-sora text-sm font-medium text-slate-900">Sub-Ledger Granularity</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">Drills seamlessly from global executive summary indices into line-item general ledger postings and inventory batches.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-[#0070C0] shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900">Actionable Remediation Triggers</h4>
-                    <p className="text-xs sm:text-sm text-slate-600">Suggests targeted managerial interventions when operational units deviate from target performance corridors.</p>
+                    <h4 className="font-sora text-sm font-medium text-slate-900">Actionable Remediation Triggers</h4>
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] font-normal leading-[1.6]">Suggests targeted managerial interventions when operational units deviate from target performance corridors.</p>
                   </div>
                 </div>
               </div>
@@ -403,7 +418,7 @@ export const BusinessPerformanceInsightsPage: React.FC<BusinessPerformanceInsigh
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               A Continuous Performance Optimization Cycle
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Experience how enterprise telemetry is synthesized, diagnosed for variance root causes, and translated into targeted operational adjustments.
             </p>
           </div>
@@ -424,10 +439,10 @@ export const BusinessPerformanceInsightsPage: React.FC<BusinessPerformanceInsigh
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 mb-2">
                     {ws.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                     {ws.desc}
                   </p>
                 </div>
@@ -451,7 +466,7 @@ export const BusinessPerformanceInsightsPage: React.FC<BusinessPerformanceInsigh
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Engineered for Comprehensive Enterprise Visibility
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Pre-configured performance frameworks and value-driver trees tailored to primary operational pillars across the organization.
             </p>
           </div>
@@ -470,12 +485,12 @@ export const BusinessPerformanceInsightsPage: React.FC<BusinessPerformanceInsigh
                     </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2.5 mb-2">
+                  <h3 className="font-sora text-lg font-medium text-slate-900 flex items-center gap-2.5 mb-2">
                     <domain.icon className="h-5 w-5 text-[#0070C0] shrink-0" />
                     <span>{domain.title}</span>
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mb-6 font-normal">
                     {domain.desc}
                   </p>
                 </div>
@@ -504,7 +519,7 @@ export const BusinessPerformanceInsightsPage: React.FC<BusinessPerformanceInsigh
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Topological Architecture &amp; Comparative Analysis
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed text-sm sm:text-base">
+            <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
               Contrast dynamic algorithmic performance insights against legacy static scorecards, and inspect our full-stack enterprise observability architecture.
             </p>
 
@@ -536,8 +551,43 @@ export const BusinessPerformanceInsightsPage: React.FC<BusinessPerformanceInsigh
           {/* TAB 1: Comparison Matrix */}
           {activeTab === 'comparison' && (
             <div className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[640px] text-left border-collapse">
+              {/* Mobile Card-Based Comparison View (Zero Cutoff, 100% Fits Inside Screen) */}
+              <div className="sm:hidden space-y-3.5 p-3.5 bg-slate-50/50">
+                {comparisonRows.map((row, i) => (
+                  <div key={i} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-xs space-y-2.5">
+                    <div className="font-bold text-slate-900 text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
+                      <span className="w-2 h-2 rounded-full bg-[#0070C0] shrink-0" />
+                      <span>{row.feature}</span>
+                    </div>
+
+                    {/* KNOOVIQ Modern Approach */}
+                    <div className="p-3 rounded-xl bg-sky-50/70 border border-sky-200/60 space-y-1">
+                      <div className="text-[11px] font-mono font-bold uppercase text-[#0070C0] tracking-wider flex items-center gap-1.5">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-[#0070C0] shrink-0" />
+                        <span>KNOOVIQ Algorithmic Performance Insights</span>
+                      </div>
+                      <p className="text-xs text-slate-800 font-semibold leading-relaxed">
+                        {row.knooviq}
+                      </p>
+                    </div>
+
+                    {/* Legacy Approach */}
+                    <div className="p-3 rounded-xl bg-rose-50/50 border border-rose-200/60 space-y-1">
+                      <div className="text-[11px] font-mono font-bold uppercase text-rose-700 tracking-wider flex items-center gap-1.5">
+                        <XCircle className="w-3.5 h-3.5 text-rose-500 shrink-0 mt-0.5" />
+                        <span>Static Periodic Scorecards</span>
+                      </div>
+                      <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                        {row.legacy}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop Full-Bleed Comparison Table (100% Preserved) */}
+              <div className="hidden sm:block overflow-x-auto">
+                <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="border-b border-slate-200 bg-slate-50 text-[11px] font-extrabold uppercase tracking-wider text-slate-600">
                       <th className="py-4 px-6">Architectural Dimension</th>
@@ -575,20 +625,20 @@ export const BusinessPerformanceInsightsPage: React.FC<BusinessPerformanceInsigh
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="text-sm font-bold text-slate-900 mb-2">Universal Telemetry Ingestion</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Universal Telemetry Ingestion</h4>
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     Connects directly to SAP Universal Journal (ACDOCA) and operational sub-ledgers with zero data latency.
                   </p>
                 </div>
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="text-sm font-bold text-slate-900 mb-2">Value-Driver Diagnostic Core</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Value-Driver Diagnostic Core</h4>
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     Graph neural networks mapping operational cause-and-effect paths to corporate financial outcomes.
                   </p>
                 </div>
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="text-sm font-bold text-slate-900 mb-2">Clean-Core Governance Sync</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Clean-Core Governance Sync</h4>
+                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                     High-security executive workspace enabling interactive variance exploration and automated budget recalibration via BAPIs.
                   </p>
                 </div>
@@ -612,7 +662,7 @@ export const BusinessPerformanceInsightsPage: React.FC<BusinessPerformanceInsigh
             <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Executive FAQs: Business Performance Insights
             </h2>
-            <p className="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora mt-4 text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               Essential answers addressing variance decomposition, value-driver tree modeling, operational drill-down, and SAP Clean Core integration.
             </p>
           </div>
@@ -662,7 +712,7 @@ export const BusinessPerformanceInsightsPage: React.FC<BusinessPerformanceInsigh
             Ready to Transform Enterprise Scorecards into Active Value Engines?
           </h2>
 
-          <p className="mt-4 text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sora mt-4 text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Partner with KNOOVIQ to map your corporate value-driver trees, deploy autonomous variance diagnostics, and achieve real-time performance observability with SAP S/4HANA.
           </p>
 

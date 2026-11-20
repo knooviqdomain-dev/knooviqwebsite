@@ -269,10 +269,10 @@ export const IndustrialProductsIndustryPage: React.FC<IndustrialProductsIndustry
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* SECTION 1: HERO */}
-      <section className="relative w-full min-h-[620px] lg:min-h-[680px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-16 overflow-hidden bg-slate-900">
+      <section className="relative w-full min-h-[620px] lg:min-h-[680px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-16 overflow-hidden bg-slate-900 text-white">
         
         {/* Full-Bleed Background Image with Seamless Cinematic Scrim */}
         <div className="absolute inset-0 z-0">
@@ -285,6 +285,10 @@ export const IndustrialProductsIndustryPage: React.FC<IndustrialProductsIndustry
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 via-40% to-transparent pointer-events-none" />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent pointer-events-none" />
         </div>
+
+        {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
+
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           
@@ -308,10 +312,19 @@ export const IndustrialProductsIndustryPage: React.FC<IndustrialProductsIndustry
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Unifying Engineer-To-Order Projects, Milestone Billing & Lifecycle Aftermarket Portals.
               </p>
             </motion.div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/industrial_products_hero.jpg"
+                alt="Intelligent ERP for Industrial Products - Architecture Blueprint"
+                className="w-full h-auto block select-none"
+              />
+            </div>
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -319,7 +332,7 @@ export const IndustrialProductsIndustryPage: React.FC<IndustrialProductsIndustry
               transition={{ duration: 0.6, delay: 0.1 }}
               className="space-y-3 max-w-2xl"
             >
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empower capital equipment manufacturers with <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, <strong className="text-cyan-300 font-semibold">Project Systems (PS) milestone accounting</strong>, 3D interactive spare parts catalogs, and <strong className="text-white font-semibold">predictive IoT telematics</strong>.
               </p>
               
@@ -383,7 +396,7 @@ export const IndustrialProductsIndustryPage: React.FC<IndustrialProductsIndustry
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight leading-tight">
                 Transforming Capital Machinery Builds into High-Margin Aftermarket Engines
               </h2>
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
+              <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                 Industrial equipment leaders know that 60% of lifetime profits occur after machine commissioning. Knooviq harmonizes ETO milestone builds with connected IoT telematics, mobile field service execution, and 3D visual spare parts catalogs to secure customer loyalty.
               </p>
               
@@ -430,7 +443,7 @@ export const IndustrialProductsIndustryPage: React.FC<IndustrialProductsIndustry
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Overcoming Industrial Equipment Hurdles
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Project cost slippages, lost aftermarket spare parts revenue, and unmonitored equipment failures erode operating margins.
             </p>
           </div>
@@ -452,10 +465,10 @@ export const IndustrialProductsIndustryPage: React.FC<IndustrialProductsIndustry
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-950 leading-snug group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-950 leading-snug group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -480,7 +493,7 @@ export const IndustrialProductsIndustryPage: React.FC<IndustrialProductsIndustry
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Integrated Machinery Core: From Asset IoT to S/4HANA
             </h2>
-            <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] max-w-2xl mx-auto font-normal">
               Harmonizing IoT sensor streams, mobile field technician dispatch, and S/4HANA Project Systems.
             </p>
           </div>
@@ -498,7 +511,7 @@ export const IndustrialProductsIndustryPage: React.FC<IndustrialProductsIndustry
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <h3 className="text-sm sm:text-base font-bold text-white">{layer.title}</h3>
+                    <h3 className="font-sora text-sm sm:text-base font-medium text-white">{layer.title}</h3>
                     <ChevronRight className={`w-4 h-4 transition-transform ${activeLayer === idx ? 'rotate-90 text-cyan-300' : 'text-slate-400'}`} />
                   </div>
                   <div className="text-xs sm:text-sm text-slate-300 mt-1">{layer.subtitle}</div>
@@ -511,18 +524,18 @@ export const IndustrialProductsIndustryPage: React.FC<IndustrialProductsIndustry
                 <Zap className="w-4 h-4 text-cyan-300" />
                 <span>Architecture Tier {activeLayer + 1} of 4</span>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-cyan-300 mb-2">
+              <h3 className="font-sora text-lg sm:text-xl font-medium text-cyan-300 mb-2">
                 {architectureLayers[activeLayer].title}
               </h3>
-              <p className="text-sm sm:text-base text-cyan-200/90 font-medium mb-3">
+              <p className="font-sora text-[15px] sm:text-[16px] text-cyan-200/90 font-medium mb-3 leading-[1.6]">
                 {architectureLayers[activeLayer].subtitle}
               </p>
-              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed mb-6">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-200 leading-[1.6] mb-6 font-normal">
                 {architectureLayers[activeLayer].desc}
               </p>
 
               <div className="space-y-2 pt-4 border-t border-slate-800">
-                <div className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">Integrated Standards & Protocols</div>
+                <div className="text-xs font-mono font-bold uppercase tracking-wider text-slate-300">Integrated Standards & Protocols</div>
                 <div className="flex flex-wrap gap-2">
                   {architectureLayers[activeLayer].tags.map((t, tIdx) => (
                     <span key={tIdx} className="px-2.5 py-1 rounded-md bg-white/10 text-xs font-mono font-semibold text-cyan-300 border border-white/15">
@@ -548,7 +561,7 @@ export const IndustrialProductsIndustryPage: React.FC<IndustrialProductsIndustry
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Pre-Configured Industrial Products Modules
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Turnkey components for engineered-to-order machinery builders, aftermarket spare parts distribution, and field service fleets.
             </p>
           </div>
@@ -626,11 +639,11 @@ export const IndustrialProductsIndustryPage: React.FC<IndustrialProductsIndustry
                           </div>
                         </div>
 
-                        <h3 className="text-base sm:text-lg font-bold text-slate-950 line-clamp-2 leading-snug group-hover:text-[#0070C0] transition-colors" title={sol.title}>
+                        <h3 className="font-sora text-base sm:text-lg font-medium text-slate-950 line-clamp-2 leading-snug group-hover:text-[#0070C0] transition-colors" title={sol.title}>
                           {sol.title}
                         </h3>
 
-                        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -663,7 +676,7 @@ export const IndustrialProductsIndustryPage: React.FC<IndustrialProductsIndustry
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Machinery Leaders Modernizing with Knooviq
             </h2>
-            <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] max-w-2xl mx-auto font-normal">
               Real results delivered for global turbomachinery, mining equipment, and packaging line builders.
             </p>
           </div>
@@ -675,20 +688,20 @@ export const IndustrialProductsIndustryPage: React.FC<IndustrialProductsIndustry
                   <div className="inline-block px-2.5 py-1 rounded-md bg-sky-50 text-xs font-mono font-bold text-[#0070C0] border border-sky-200 mb-3">
                     {cs.badge}
                   </div>
-                  <h3 className="text-base font-bold text-slate-950 mb-2 leading-snug">
+                  <h3 className="font-sora text-base font-medium text-slate-950 mb-2 leading-snug">
                     {cs.title}
                   </h3>
                   <div className="text-xs font-mono text-slate-500 font-medium mb-3">
                     {cs.client}
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-700 leading-relaxed mb-5">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-[#102A43] leading-[1.6] mb-5 font-normal">
                     {cs.desc}
                   </p>
                 </div>
 
                 <div className="pt-3 border-t border-slate-100">
                   <span className="text-xs font-mono uppercase font-bold text-emerald-700 block mb-1">Delivered Outcome</span>
-                  <p className="text-sm font-semibold text-slate-950 leading-relaxed">{cs.impact}</p>
+                  <p className="font-sora text-[15px] sm:text-[16px] font-semibold text-slate-950 leading-[1.6] font-normal">{cs.impact}</p>
                 </div>
               </div>
             ))}
@@ -738,7 +751,7 @@ export const IndustrialProductsIndustryPage: React.FC<IndustrialProductsIndustry
             Ready to Build a Smarter Industrial Machinery Operation?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your ETO project schedules, 3D spare parts catalogs, warranty automation, and asset telematics with Knooviq.
           </p>
 
@@ -760,7 +773,7 @@ export const IndustrialProductsIndustryPage: React.FC<IndustrialProductsIndustry
             </Link>
           </div>
 
-          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-200">
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-100">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-300" />
               <span>SAP Certified Clean Core</span>

@@ -472,7 +472,7 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Hospitality Hero)
@@ -491,6 +491,9 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
         {/* Seamless Cinematic Left & Vertical Scrim */}
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-slate-950/90 via-slate-950/70 sm:via-slate-950/40 to-transparent pointer-events-none" />
         <div className="absolute inset-0 z-10 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
+
+                {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           
@@ -515,10 +518,19 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Unified Guest Folios, Property PMS Sync & Multi-Entity Ledger on SAP Clean Core.
               </p>
             </motion.div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/hospitality_resorts_hero.jpg"
+                alt="Intelligent ERP for Hospitality, Hotels & Resorts"
+                className="w-full h-auto block select-none"
+              />
+            </div>
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -527,7 +539,7 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering hotel chains, luxury resorts, and hospitality management groups with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA Clean Core</strong>, automated{' '}
                 <strong className="text-cyan-300 font-semibold">Continuous Night Audit</strong>, dynamic RevPAR yield optimization, and precision culinary costing.
@@ -627,12 +639,12 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
 
               {/* Executive Thesis Quote */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 italic leading-[1.6]">
                   &ldquo;Modern hospitality profitability is defined by operational synchronization: unifying guest folios, real-time property management systems, and agile culinary supply chains into one cohesive digital ledger.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers an integrated hospitality platform on SAP S/4HANA Clean Core. By bridging data across property management systems, POS terminals, and distribution networks, hotel leaders gain continuous visibility, automated night audit clearing, and responsive guest operations.
               </p>
 
@@ -643,8 +655,8 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
                     <Hotel className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Unified Guest Folio & CRS Backbone</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Unified Guest Folio & CRS Backbone</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Single-pane coordination across front-desk PMS, channel managers, and mobile apps with zero room inventory latency.
                     </p>
                   </div>
@@ -655,8 +667,8 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
                     <UtensilsCrossed className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Intelligent F&B & Culinary Yield</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Intelligent F&B & Culinary Yield</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Recipe-level ingredient depletion, banquet order booking, and contracted bulk OS&E procurement without waste.
                     </p>
                   </div>
@@ -667,8 +679,8 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Operational Financial & Municipal Governance</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Operational Financial & Municipal Governance</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Continuous multi-property night audit, automated bed tax filings, and verified franchise royalty reconciliation.
                     </p>
                   </div>
@@ -731,7 +743,7 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
                     {journeySteps[activeJourneyStep].tech}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -763,7 +775,7 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating the Complexity of Modern Hospitality
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Disjointed property installations and siloed PMS databases constrain guest satisfaction. Knooviq addresses the six systemic challenges hotel and resort operators face.
             </p>
           </motion.div>
@@ -790,10 +802,10 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -835,7 +847,7 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Modern Hospitality
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting guest touchpoints, PMS reservations, culinary supply chains, clean ERP ledgers, and dynamic yield pricing into one continuous loop.
             </p>
           </motion.div>
@@ -872,10 +884,10 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1036,10 +1048,10 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
                         }}
                       />
                       <div className="space-y-1 text-left flex-1">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1068,7 +1080,7 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for Intelligent Hospitality
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               We engineer clean-core SAP technology suites layered with modern cloud extensions, role-based interfaces, and autonomous business AI.
             </p>
           </div>
@@ -1082,10 +1094,10 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CORE ERP SUITE</span>
                 <Cpu className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP S/4HANA
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Integrated enterprise core uniting property ledgers, guest folios, procurement contracts, and multi-currency financials into an in-memory ledger.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1100,10 +1112,10 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">DOMAIN SOLUTION</span>
                 <Hotel className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Hospitality Suite
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Hospitality-specific capabilities purpose-built for centralized CRS rate distribution, room inventory allocation, and franchisee owner settlements.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1118,10 +1130,10 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">INTEGRATION & EXTENSIONS</span>
                 <Cloud className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Business Technology Platform
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Seamless side-by-side extensibility keeping the ERP core clean while connecting point-of-sale systems, keyless mobile entry, and guest loyalty apps.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1136,10 +1148,10 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">BUSINESS INTELLIGENCE</span>
                 <BarChart3 className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Analytics Cloud
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Real-time visibility into RevPAR yield, average daily rates (ADR), culinary gross margins, and property energy consumption telemetry.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1154,10 +1166,10 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">ROLE-BASED UX</span>
                 <Scan className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Fiori
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Intuitive mobile and tablet applications designed specifically for front-desk agents, housekeeping supervisors, kitchen chefs, and property controllers.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1172,10 +1184,10 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">COGNITIVE ENGINES</span>
                 <Sparkles className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 AI & Automation
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Dynamic RevPAR price optimization algorithms, predictive occupancy roster scheduling, and touchless municipal occupancy tax calculations.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1203,7 +1215,7 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every Stage of Hospitality
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize hotel execution across guest touchpoints, property operations, and corporate financials.
             </p>
           </div>
@@ -1275,12 +1287,12 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
                         </div>
 
                         {/* Title - Bold & Compact */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description - Snug & Concise */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1323,7 +1335,7 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Turning Hospitality Complexity into Business Advantage
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When reservations, guest folios, kitchen stocks, and financial ledgers operate in unison, hotel groups achieve sustainable operational and commercial performance.
             </p>
           </div>
@@ -1336,10 +1348,10 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Clock className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Continuous Financial Close
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Eliminate midnight audit freezes. Streaming real-time micro-postings ensure property ledgers are continually balanced and ready for executive review.
               </p>
             </div>
@@ -1349,10 +1361,10 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Hotel className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Rate Parity Integrity
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Bi-directional synchronization with global distribution systems and OTAs eliminates costly overbooking situations and channel rate parity penalties.
               </p>
             </div>
@@ -1362,10 +1374,10 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Users className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Enhanced Guest Satisfaction
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Deliver frictionless mobile check-in, instantaneous room key provisioning, and consolidated billing folios with zero front-desk checkout delays.
               </p>
             </div>
@@ -1375,10 +1387,10 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <UtensilsCrossed className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Reduced Culinary Shrinkage
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Ingredient-level kitchen tracking and automated batch depletion safeguard F&B operating margins and curtail costly perishable food waste.
               </p>
             </div>
@@ -1388,10 +1400,10 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Workflow className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Optimized Labor Scheduling
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 AI rostering aligns front office, housekeeping, and culinary shifts dynamically with forecasted arrival curves and banquet room bookings.
               </p>
             </div>
@@ -1401,10 +1413,10 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Globe2 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Multi-Property Scalability
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Rapidly onboard new franchise hotel properties and international resort acquisitions onto a standardized, compliant enterprise ledger foundation.
               </p>
             </div>
@@ -1437,7 +1449,7 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Intelligent Hospitality & Resort Architecture
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How luxury hotel portfolios advance from fragmented property silos to an integrated clean-core event ecosystem.
             </p>
           </div>
@@ -1489,7 +1501,7 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
@@ -1498,7 +1510,7 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1600,7 +1612,7 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
             Ready to Build a Smarter Hospitality Enterprise?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your property reservations, guest folios, culinary procurement, and central general ledger with Knooviq.
           </p>
 
@@ -1622,7 +1634,7 @@ export const HospitalityIndustryPage: React.FC<HospitalityIndustryPageProps> = (
             </Link>
           </div>
 
-          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-200">
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-100">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-300" />
               <span>SAP Certified Clean Core</span>

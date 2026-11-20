@@ -455,7 +455,7 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Warehouse & Warehousing Hero)
@@ -473,6 +473,9 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
 
         {/* Seamless Cinematic Left Scrim */}
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-slate-950/95 via-slate-950/80 sm:via-slate-950/60 to-transparent pointer-events-none" />
+
+                {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+        <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
           
@@ -497,10 +500,19 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
               </h1>
 
               {/* Subheading / Value Proposition */}
-              <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <p className="font-sora text-lg sm:text-xl lg:text-2xl font-medium text-white tracking-tight leading-snug pt-0.5 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
                 Autonomous Fulfillment, Dynamic Wave Slotting & Real-Time Yard Cross-Docking.
               </p>
             </motion.div>
+
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/warehouse_intelligent_erp_hero.png"
+                alt="Intelligent ERP for Warehouse & Warehousing"
+                className="w-full h-auto block select-none"
+              />
+            </div>
 
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -509,7 +521,7 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
               className="space-y-3 max-w-2xl"
             >
               {/* Clear Open Typography */}
-              <p className="text-sm sm:text-base lg:text-[17px] text-slate-100 font-normal leading-relaxed drop-shadow-sm">
+              <p className="font-sora text-[15px] sm:text-[16px] lg:text-[17px] text-slate-100 font-normal leading-[1.6] drop-shadow-sm">
                 Empowering distribution centers, third-party logistics providers (3PL), and automated fulfillment hubs with{' '}
                 <strong className="text-white font-semibold">SAP S/4HANA EWM Clean Core</strong>, sub-second{' '}
                 <strong className="text-cyan-300 font-semibold">MFS Robotics Telegrams</strong>, AI velocity slotting, and touchless yard cross-docking.
@@ -609,12 +621,12 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
 
               {/* Executive Thesis Quote */}
               <div className="border-l-4 border-[#0070C0] border-y border-r border-slate-300 pl-4 py-2 bg-gradient-to-r from-sky-50/80 via-sky-50/30 to-transparent rounded-r-xl">
-                <p className="text-sm font-semibold text-slate-800 leading-relaxed italic">
+                <p className="font-sora text-sm font-medium text-slate-800 leading-[1.6] italic">
                   &ldquo;High-velocity fulfillment fails when automated cranes and robotic shuttles run isolated from enterprise demand signals. KNOOVIQ connects material flow systems, dynamic wave slotting, and mobile RF execution into one unified S/4HANA EWM core.&rdquo;
                 </p>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Knooviq engineers an integrated distribution ecosystem on SAP S/4HANA Clean Core. By bridging data across yard arrivals, high-bay automated storage, and mobile picking crews, fulfillment leaders gain continuous visibility, automated order flow, and 99.98% inventory accuracy.
               </p>
 
@@ -625,8 +637,8 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
                     <Cpu className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Sub-Second Material Flow & Robotics</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Sub-Second Material Flow & Robotics</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Direct PLC telegram communication connecting SAP EWM to AS/RS cranes, conveyors, and AMRs without middleware latency.
                     </p>
                   </div>
@@ -637,8 +649,8 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
                     <Boxes className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Dynamic ABC Velocity Slotting</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Dynamic ABC Velocity Slotting</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Continuously reorganize warehouse storage bins based on seasonal product turns, eliminating deadhead travel for forklifts.
                     </p>
                   </div>
@@ -649,8 +661,8 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
                     <Truck className="w-4 h-4" />
                   </div>
                   <div className="space-y-0.5">
-                    <h4 className="text-xs sm:text-sm font-bold text-slate-950">Integrated Yard & Gate Synchronization</h4>
-                    <p className="text-xs text-slate-500 leading-relaxed">
+                    <h4 className="font-sora text-xs sm:text-sm font-medium text-slate-950">Integrated Yard & Gate Synchronization</h4>
+                    <p className="font-sora text-xs text-slate-500 leading-[1.6] font-normal">
                       Carrier appointment booking, automated driver kiosks, and dynamic dock door scheduling completely eliminating detention penalties.
                     </p>
                   </div>
@@ -713,7 +725,7 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
                     {journeySteps[activeJourneyStep].tech}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                   {journeySteps[activeJourneyStep].desc}
                 </p>
               </div>
@@ -745,7 +757,7 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-950 tracking-tight">
               Navigating the Complexity of Modern Warehousing
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Disjointed warehouse management systems and siloed automation constrain fulfillment speed. Knooviq addresses the six systemic challenges logistics leaders face.
             </p>
           </motion.div>
@@ -772,10 +784,10 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
                         {item.tag}
                       </span>
                     </div>
-                    <h3 className="text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+                    <h3 className="font-sora text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -817,7 +829,7 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Modern Warehousing
             </h2>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting dock appointments, velocity slotting, MFS robotics, voice picking, and clean ERP ledgers into one continuous loop.
             </p>
           </motion.div>
@@ -854,10 +866,10 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="space-y-1 text-left">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1023,10 +1035,10 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
                         }}
                       />
                       <div className="space-y-1 text-right">
-                        <h4 className="text-sm sm:text-base font-bold tracking-tight" style={{ color: item.color }}>
+                        <h4 className="font-sora text-sm sm:text-base font-medium tracking-tight" style={{ color: item.color }}>
                           {item.title}
                         </h4>
-                        <p className="text-xs text-slate-300 leading-relaxed font-medium">
+                        <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1055,7 +1067,7 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Technology Foundation for Intelligent Warehousing
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               We engineer clean-core SAP technology suites layered with modern PLC robotics connections, role-based mobile RF apps, and autonomous business AI.
             </p>
           </div>
@@ -1069,10 +1081,10 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">CORE WAREHOUSE SUITE</span>
                 <Warehouse className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP S/4HANA EWM
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Integrated enterprise warehouse execution supporting both embedded and decentralized deployment models on in-memory Universal Journal.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1087,10 +1099,10 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">ROBOTICS AUTOMATION</span>
                 <Cpu className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Material Flow System (MFS)
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Direct bidirectional telegram communication connecting SAP EWM to high-bay stacker cranes, conveyor PLCs, and AMR fleets without middleware.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1105,10 +1117,10 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">SLOTTING OPTIMIZATION</span>
                 <Boxes className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Warehouse Insights
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Continuous machine learning slotting analyzing SKU demand velocity to automatically recommend optimal bin reassignments and cut travel miles.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1123,10 +1135,10 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">SUPPLY CHAIN SYNC</span>
                 <Truck className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 Native TM Interlock
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Direct cross-system synchronization uniting inbound freight orders, carrier capacity bookings, dock doors, and trailer gate releases.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1141,10 +1153,10 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">ROLE-BASED UX</span>
                 <ScanLine className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 SAP Fiori Mobile RF
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Ergonomic mobile scanning screens and voice-directed workflows optimized for ruggedized wearable scanners, smart glasses, and forklifts.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1159,10 +1171,10 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
                 <span className="text-xs font-mono font-extrabold text-[#0070C0] uppercase tracking-wider">YARD INTELLIGENCE</span>
                 <Sparkles className="w-5 h-5 text-[#0070C0]" />
               </div>
-              <h3 className="text-lg font-extrabold text-slate-900 group-hover:text-[#0070C0] transition-colors">
+              <h3 className="font-sora text-lg font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors">
                 Digital Yard & IoT
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Automated driver check-in kiosks, RFID trailer door clearance, reefer temperature telemetry, and digital shunter move dispatching.
               </p>
               <div className="pt-3 border-t border-slate-200 text-xs font-medium text-slate-700 space-y-1">
@@ -1190,7 +1202,7 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
             <h2 className="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
               Solutions for Every Stage of Warehousing
             </h2>
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               Explore specialized enterprise functional modules engineered to modernize warehouse execution across yard logistics, dynamic wave slotting, and automated robotics.
             </p>
           </div>
@@ -1262,12 +1274,12 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
                         </div>
 
                         {/* Title - Bold & Compact */}
-                        <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
+                        <h3 className="font-sora text-sm sm:text-base font-medium text-slate-900 group-hover:text-[#0070C0] transition-colors leading-snug">
                           {sol.title}
                         </h3>
 
                         {/* Description - Snug & Concise */}
-                        <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                        <p className="font-sora text-xs text-[#102A43] leading-[1.6] line-clamp-2 font-normal">
                           {sol.description}
                         </p>
                       </div>
@@ -1309,7 +1321,7 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
               Turning Warehouse Complexity into Fulfillment Advantage
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
               When trailer arrivals, dynamic slotting, MFS robotics, and enterprise ledgers operate in unison, logistics organizations achieve sustainable throughput speed.
             </p>
           </div>
@@ -1322,10 +1334,10 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Boxes className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Rapid Dock-to-Stock Velocity
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Compress inbound receipt-to-putaway and outbound pick-to-ship fulfillment cycles from multiple shifts down to under 90 minutes with zero stock drift.
               </p>
             </div>
@@ -1335,10 +1347,10 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <CheckCircle2 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 99.98% Pick Precision
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Interleaved barcode verification, voice check digits, and real-time inventory adjustments eliminate mispicks, phantom stock, and return logistics.
               </p>
             </div>
@@ -1348,10 +1360,10 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <TrendingUp className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 30%+ Travel Distance Reduction
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Dynamic AI slotting and automated task interleaving eliminate unnecessary deadhead forklift journeys across distribution center aisles.
               </p>
             </div>
@@ -1361,10 +1373,10 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Zap className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Sub-Second PLC Robotics Response
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Direct PLC telegram communication via native SAP EWM-MFS eliminates third-party middleware bottlenecks and crane synchronization delays.
               </p>
             </div>
@@ -1374,10 +1386,10 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <Truck className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Zero Trailer Detention Fees
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Digital yard gate appointments and automated dock door scheduling ensure carrier drivers clear inbound inspection in under 30 minutes.
               </p>
             </div>
@@ -1387,10 +1399,10 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
               <div className="w-10 h-10 rounded-2xl bg-[#0070C0]/10 flex items-center justify-center text-[#0070C0]">
                 <ShieldCheck className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-black text-slate-900">
+              <h3 className="font-sora text-lg font-medium text-slate-900">
                 Audit-Proof Serialized Lot Traceability
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="font-sora text-[#102A43] text-[15px] sm:text-[16px] leading-[1.6] font-normal">
                 Instant genealogy tracking from supplier pallet receipts down to customer delivery scans guarantees 100% compliance audit readiness.
               </p>
             </div>
@@ -1423,7 +1435,7 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Intelligent Extended Warehouse Architecture
             </div>
-            <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How high-volume distribution centers advance from legacy paper processes to an integrated clean-core automated logistics ecosystem.
             </p>
           </div>
@@ -1475,7 +1487,7 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
 
                     {/* Stage Title & Subtitle */}
                     <div>
-                      <h3 className="text-sm sm:text-base font-bold text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                      <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
                       <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
@@ -1484,7 +1496,7 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
                     </div>
 
                     {/* Concise Narrative */}
-                    <p className="text-xs text-slate-300 leading-relaxed line-clamp-3">
+                    <p className="font-sora text-xs text-slate-300 leading-[1.6] line-clamp-3 font-normal">
                       {stage.description}
                     </p>
                   </div>
@@ -1586,7 +1598,7 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
             Ready to Build a Smarter Warehouse Business?
           </h2>
 
-          <p className="text-base sm:text-lg text-sky-100 max-w-2xl mx-auto leading-relaxed font-normal">
+          <p className="font-sora text-[15px] sm:text-[16px] text-sky-100 max-w-2xl mx-auto leading-[1.6] font-normal">
             Connect your dock scheduling, velocity slotting, MFS robotics, and enterprise inventory ledgers with Knooviq.
           </p>
 
@@ -1608,7 +1620,7 @@ export const WarehouseEwmIndustryPage: React.FC<WarehouseEwmIndustryPageProps> =
             </Link>
           </div>
 
-          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-200">
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-100">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-300" />
               <span>SAP Certified Clean Core</span>

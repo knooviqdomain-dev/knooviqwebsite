@@ -131,7 +131,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
       tagline: 'Systematic report intake, initial validation, categorization, and appropriate routing.',
       description:
         'Knooviq helps organizations establish rapid, dependable intake channels that capture disruption signals from monitoring tools, support tickets, and service desk notifications. We categorize reports according to business urgency and potential operational reach, validating raw signals to filter false alarms and route genuine disruptions directly to qualified responders.',
-      image: '/images/cloud/incident_mgmt_triage.png',
+      image: '/images/cloud/incident_mgmt_triage.png?v=2',
       points: [
         'Multi-source ingestion aggregating telemetry alerts, user reports, and system exceptions',
         'Initial signal validation and correlation to prevent alert fatigue and redundant ticket creation',
@@ -146,7 +146,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
       tagline: 'Evaluate service dependencies, estimate blast radius, and escalate to technical specialists.',
       description:
         'Understanding how a localized component disruption affects downstream applications and business operations is critical for proper prioritization. We help teams analyze service dependencies, determine user impact, and execute tiered escalation paths that bring the right domain experts and decision-makers together without organizational friction.',
-      image: '/images/cloud/incident_mgmt_impact.png',
+      image: '/images/cloud/incident_mgmt_impact.png?v=2',
       points: [
         'Interdependent service mapping to evaluate whether core business transactions are compromised',
         'Impact estimation assessing affected user populations, transactional throughput, and regulatory exposure',
@@ -421,7 +421,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#050B17] text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-[#00A3E0] selection:text-white cloud-sora-scope">
 
       {/* =========================================================================
       {/* =========================================================================
@@ -436,6 +436,8 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
             alt="Enterprise Incident Response &amp; Service Restoration"
             className="w-full h-full object-cover object-right lg:object-center brightness-[1.05] contrast-[1.05]"
           />
+          {/* Mobile dark scrim overlay so content is 100% visible and readable with zero glare */}
+          <div className="absolute inset-0 sm:hidden bg-gradient-to-b from-[#030712]/95 via-[#030712]/90 to-[#030712] pointer-events-none" />
           {/* Subtle directional dark gradient on the left ensures pristine text readability without dimming the visual on the right */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/90 via-45% to-transparent w-full lg:w-[65%]" />
           {/* Bottom subtle edge blend */}
@@ -465,13 +467,22 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white tracking-tight leading-[1.12]">
                 Incident Management
               </h1>
-              <p className="text-lg sm:text-xl font-bold text-cyan-300 tracking-tight">
+              <p className="font-sora text-lg sm:text-xl font-medium text-cyan-300 tracking-tight">
                 Respond with Clarity. Restore Services with Confidence.
               </p>
             </div>
 
+            {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
+            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+              <img
+                src="/images/cloud/incident_mgmt_hero_wide.jpg"
+                alt="Incident Management - Enterprise Incident Response Architecture Blueprint"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
             {/* Description */}
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal max-w-2xl">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal max-w-2xl">
               Knooviq helps organizations coordinate incident response through structured triage, impact assessment, clear ownership, technical collaboration, and service restoration procedures. Our approach helps teams understand the scope of disruptions, communicate effectively, coordinate corrective actions, and capture operational lessons to strengthen future response readiness.
             </p>
 
@@ -532,7 +543,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               When Services Are Disrupted, Every Decision Matters.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Technology incidents can affect applications, infrastructure, integrations, and business workflows. Without clear triage, ownership, and communication, teams may struggle to establish impact, coordinate investigation, and restore normal service.
             </p>
           </div>
@@ -555,15 +566,15 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                     </div>
 
                     <div className="space-y-1.5">
-                      <h3 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-[#00A3E0] dark:group-hover:text-cyan-300 transition-colors">
+                      <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white group-hover:text-[#00A3E0] dark:group-hover:text-cyan-300 transition-colors">
                         {challenge.title}
                       </h3>
-                      <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 leading-snug">
+                      <p className="font-sora text-xs font-medium text-slate-500 dark:text-slate-400 leading-snug">
                         {challenge.tagline}
                       </p>
                     </div>
 
-                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {challenge.description}
                     </p>
                   </div>
@@ -595,7 +606,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Coordinated Response from Detection to Restoration
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Knooviq helps organizations establish a clear incident-handling process that brings together technical investigation, service ownership, stakeholder communication, and restoration activities.
             </p>
           </div>
@@ -614,15 +625,15 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[0].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[0].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[0].description}
                   </p>
 
@@ -639,8 +650,8 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                 </div>
 
                 <div className="lg:col-span-6 flex flex-col justify-center">
-                  <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-slate-950 group flex flex-col">
-                    <div className="w-full overflow-hidden bg-slate-950">
+                  <div className="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-white dark:bg-slate-900 group flex flex-col">
+                    <div className="w-full overflow-hidden bg-white dark:bg-slate-900">
                       <img
                         src={capabilities[0].image}
                         alt="Enterprise incident coordination workspace focused on incoming incident reports and structured triage"
@@ -686,15 +697,15 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[1].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[1].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[1].description}
                   </p>
 
@@ -724,15 +735,15 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[2].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[2].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[2].description}
                   </p>
 
@@ -796,15 +807,15 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[3].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[3].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[3].description}
                   </p>
 
@@ -834,15 +845,15 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                    <h3 className="font-sora text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                       {capabilities[4].title}
                     </h3>
-                    <p className="text-sm sm:text-base font-bold text-[#00A3E0] dark:text-cyan-300">
+                    <p className="font-sora text-sm sm:text-base font-medium text-[#00A3E0] dark:text-cyan-300">
                       {capabilities[4].tagline}
                     </p>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {capabilities[4].description}
                   </p>
 
@@ -898,7 +909,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               A Clear Path from Detection to Recovery
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               A disciplined, connected six-stage workflow guides responders through rapid triage, structured investigation, authorized restoration, and systematic operational learning.
             </p>
           </div>
@@ -911,7 +922,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0] block">
                   STRUCTURED INCIDENT RESPONSE TIMELINE
                 </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-xl sm:text-2xl font-medium text-slate-900 dark:text-white">
                   Connected Response Lifecycle
                 </h3>
               </div>
@@ -948,7 +959,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                       </div>
 
                       <div className="space-y-1">
-                        <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                        <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                           {stage.title}
                         </h4>
                         <span className="text-[11px] font-semibold text-[#00A3E0] block">
@@ -956,7 +967,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                         </span>
                       </div>
 
-                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                      <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                         {stage.description}
                       </p>
                     </div>
@@ -977,7 +988,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                   <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0]">
                     STAGE {lifecycleStages[activeLifecycleStage].step} FOCUS &bull; {lifecycleStages[activeLifecycleStage].tagline}
                   </span>
-                  <h4 className="text-lg font-bold text-slate-900 dark:text-white">
+                  <h4 className="font-sora text-lg font-medium text-slate-900 dark:text-white">
                     {lifecycleStages[activeLifecycleStage].title} Operational Activities
                   </h4>
                 </div>
@@ -993,7 +1004,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                       <CheckCircle2 className="w-4 h-4 text-[#00A3E0] shrink-0" />
                       <span>Activity 0{dIdx + 1}</span>
                     </div>
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {detail}
                     </p>
                   </div>
@@ -1007,7 +1018,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                   <span className="font-bold text-slate-900 dark:text-white block mb-0.5">
                     Clear Distinction: Incident Management vs. Problem Management
                   </span>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     Incident Management focuses strictly on coordinating the response and restoring service availability as rapidly and safely as possible. Once operations are restored, underlying architectural flaws, recurring bug patterns, and complex technical root causes transition to Problem Management for comprehensive investigation and permanent mitigation.
                   </p>
                 </div>
@@ -1034,7 +1045,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Prioritize by Impact. Coordinate by Responsibility.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Effective incident management requires structured decision-making that evaluates real business consequences rather than reacting solely to subjective urgency.
             </p>
           </div>
@@ -1045,8 +1056,8 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
               <div className="w-9 h-9 rounded-xl bg-cyan-500/10 border border-cyan-400/20 text-[#00A3E0] flex items-center justify-center">
                 <Server className="w-4 h-4" />
               </div>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">Business Service Impact</h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+              <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">Business Service Impact</h3>
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Evaluating whether core revenue-generating systems, external customer workflows, or internal productivity tools are impaired.
               </p>
             </div>
@@ -1055,8 +1066,8 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
               <div className="w-9 h-9 rounded-xl bg-cyan-500/10 border border-cyan-400/20 text-[#00A3E0] flex items-center justify-center">
                 <Users className="w-4 h-4" />
               </div>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">Number &amp; Type of Affected Users</h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+              <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">Number &amp; Type of Affected Users</h3>
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Distinguishing between enterprise-wide outages affecting thousands of concurrent users and isolated local workstation issues.
               </p>
             </div>
@@ -1065,8 +1076,8 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
               <div className="w-9 h-9 rounded-xl bg-cyan-500/10 border border-cyan-400/20 text-[#00A3E0] flex items-center justify-center">
                 <Clock className="w-4 h-4" />
               </div>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">Urgency of Disruption</h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+              <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">Urgency of Disruption</h3>
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Assessing time sensitivity—such as time-critical billing cycles, payroll runs, or market open hours—demanding expedited recovery.
               </p>
             </div>
@@ -1075,8 +1086,8 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
               <div className="w-9 h-9 rounded-xl bg-cyan-500/10 border border-cyan-400/20 text-[#00A3E0] flex items-center justify-center">
                 <RefreshCw className="w-4 h-4" />
               </div>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">Availability of Workarounds</h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+              <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">Availability of Workarounds</h3>
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Determining whether viable secondary procedures, backup routing, or alternative interfaces allow users to proceed safely.
               </p>
             </div>
@@ -1085,8 +1096,8 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
               <div className="w-9 h-9 rounded-xl bg-cyan-500/10 border border-cyan-400/20 text-[#00A3E0] flex items-center justify-center">
                 <Network className="w-4 h-4" />
               </div>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">Dependencies &amp; Downstream Effects</h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+              <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">Dependencies &amp; Downstream Effects</h3>
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Tracing whether a minor database query timeout has the potential to cascade into message queue overflows and application halts.
               </p>
             </div>
@@ -1095,8 +1106,8 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
               <div className="w-9 h-9 rounded-xl bg-cyan-500/10 border border-cyan-400/20 text-[#00A3E0] flex items-center justify-center">
                 <ShieldAlert className="w-4 h-4" />
               </div>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">Required Technical Escalation</h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+              <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">Required Technical Escalation</h3>
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                 Identifying the specific domain expertise, infrastructure access privileges, or vendor coordination necessary for remediation.
               </p>
             </div>
@@ -1109,7 +1120,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0] block">
                   CONCEPTUAL IMPACT VS. URGENCY MODEL
                 </span>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-sora text-xl font-medium text-slate-900 dark:text-white">
                   Illustrative Incident Prioritization Framework
                 </h3>
               </div>
@@ -1137,22 +1148,22 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                     </div>
 
                     <div className="space-y-1">
-                      <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-sm font-medium text-slate-900 dark:text-white">
                         {matrixItem.priority}
                       </h4>
-                      <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                      <p className="font-sora text-[11px] text-slate-500 dark:text-slate-400 font-normal leading-[1.6]">
                         {matrixItem.impact} &bull; {matrixItem.urgency}
                       </p>
                     </div>
 
-                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                    <p className="font-sora text-xs text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                       {matrixItem.description}
                     </p>
                   </div>
 
                   <div className="pt-3 border-t border-slate-100 dark:border-white/5 space-y-1">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-[#00A3E0] block">Response Posture</span>
-                    <p className="text-[11px] text-slate-700 dark:text-slate-300 leading-snug">
+                    <p className="font-sora text-[11px] text-slate-700 dark:text-slate-300 leading-snug font-normal">
                       {matrixItem.action}
                     </p>
                   </div>
@@ -1160,7 +1171,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
               ))}
             </div>
 
-            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed italic border-t border-slate-200 dark:border-white/5 pt-4">
+            <p className="font-sora text-xs text-slate-500 dark:text-slate-400 leading-[1.6] italic border-t border-slate-200 dark:border-white/5 pt-4 font-normal">
               Note: This impact-versus-urgency framework serves as an illustrative conceptual prioritization structure. Actual priority classifications, escalation criteria, and response workflows are tailored to each organization's operational governance without predefined contractual resolution guarantees.
             </p>
           </div>
@@ -1183,7 +1194,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Keep the Right People Connected.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Effective incident coordination relies on defined responsibilities that keep responders aligned, eliminate confusion, and ensure stakeholders receive accurate updates throughout the disruption.
             </p>
           </div>
@@ -1208,10 +1219,10 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
 
               <div className="p-6 rounded-2xl bg-white dark:bg-[#0B1528] border border-slate-200/80 dark:border-white/10 space-y-3 shadow-xs">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00A3E0] block">OPERATING PRINCIPLE</span>
-                <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                   Adapted to Your Operating Model
                 </h4>
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                   These roles represent core operational functions that can be adapted to your organization's team size, existing ITSM tooling, and operational structure. In smaller teams, roles may be combined, while in large enterprises they represent dedicated operational personnel.
                 </p>
               </div>
@@ -1229,7 +1240,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                       <span className="w-6 h-6 rounded-lg bg-cyan-500/10 border border-cyan-400/20 text-[#00A3E0] text-xs font-bold flex items-center justify-center">
                         0{idx + 1}
                       </span>
-                      <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                      <h4 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                         {r.role}
                       </h4>
                     </div>
@@ -1238,7 +1249,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                     </span>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {r.description}
                   </p>
 
@@ -1274,7 +1285,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Better Coordination During Critical Moments.
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+            <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
               Structured incident management turns operational pressure into calm, coordinated restoration, supporting dependable business continuity and organizational learning.
             </p>
           </div>
@@ -1294,11 +1305,11 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
                     <Icon className="w-5 h-5" />
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="font-sora text-base font-medium text-slate-900 dark:text-white">
                     {outcome.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  <p className="font-sora text-[15px] sm:text-[16px] text-slate-600 dark:text-slate-300 leading-[1.6] font-normal">
                     {outcome.description}
                   </p>
 
@@ -1338,7 +1349,7 @@ export const IncidentManagementPage: React.FC<ChildPageProps> = ({ onOpenContact
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-snug">
                 Be Ready to Respond When It Matters.
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+              <p className="font-sora text-[15px] sm:text-[16px] text-slate-300 leading-[1.6] font-normal">
                 Build a structured incident response approach that clarifies ownership, supports effective communication, and helps teams coordinate service restoration.
               </p>
             </div>
