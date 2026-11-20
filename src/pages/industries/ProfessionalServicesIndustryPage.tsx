@@ -666,11 +666,11 @@ export const ProfessionalServicesIndustryPage: React.FC<ProfessionalServicesIndu
             <div className="lg:col-span-6 space-y-4">
               
               {/* Dynamic Photo Showcase */}
-              <div className="relative aspect-[16/9] sm:aspect-[1024/558] w-full min-h-[260px] sm:min-h-[300px] rounded-2xl overflow-hidden border-2 border-slate-300 shadow-md bg-slate-950">
+              <div className="relative aspect-[16/9] sm:aspect-[1024/558] w-full min-h-0 sm:min-h-[300px] rounded-2xl overflow-hidden border-2 border-slate-300 shadow-md bg-slate-950 flex items-center justify-center">
                 <img 
                   src={journeySteps[activeJourneyStep].image} 
                   alt={journeySteps[activeJourneyStep].label} 
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-contain sm:object-cover sm:object-top object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 via-45% to-transparent pointer-events-none" />
                 
