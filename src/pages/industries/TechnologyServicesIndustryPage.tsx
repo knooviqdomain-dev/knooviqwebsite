@@ -688,11 +688,11 @@ export const TechnologyServicesIndustryPage: React.FC<TechnologyServicesIndustry
             <div className="lg:col-span-6 space-y-3.5">
               
               {/* Pure High-Resolution Photography Showcase with Defined Dark Border */}
-              <div className="relative h-60 sm:h-72 w-full rounded-2xl overflow-hidden border-2 border-slate-300 shadow-md bg-slate-100">
+              <div className="relative aspect-[16/10] sm:aspect-auto sm:h-72 w-full min-h-0 rounded-2xl overflow-hidden border-2 border-slate-300 shadow-md bg-slate-950 flex items-center justify-center">
                 <img 
                   src={journeySteps[activeJourneyStep].image} 
                   alt={journeySteps[activeJourneyStep].label} 
-                  className="w-full h-full object-cover object-center transition-all duration-500"
+                  className="w-full h-full object-contain sm:object-cover object-center transition-all duration-500"
                 />
               </div>
 
