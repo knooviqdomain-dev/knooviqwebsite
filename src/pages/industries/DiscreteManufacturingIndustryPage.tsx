@@ -273,7 +273,7 @@ export const DiscreteManufacturingIndustryPage: React.FC<DiscreteManufacturingIn
     <div className="min-h-screen bg-white text-slate-900 selection:bg-[#0070C0] selection:text-white font-sans antialiased overflow-x-hidden cloud-sora-scope">
       
       {/* SECTION 1: HERO */}
-      <section className="relative w-full min-h-[680px] lg:min-h-[760px] flex flex-col justify-center pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 overflow-hidden bg-slate-900">
+      <section className="relative w-full min-h-[680px] lg:min-h-[760px] flex flex-col justify-center pt-32 sm:pt-36 lg:pt-40 pb-16 sm:pb-20 overflow-hidden bg-slate-900 text-white">
         
         {/* Full-Bleed Background Image with Seamless Cinematic Scrim */}
         <div className="absolute inset-0 z-0">
@@ -536,7 +536,7 @@ export const DiscreteManufacturingIndustryPage: React.FC<DiscreteManufacturingIn
               </p>
 
               <div className="space-y-2 pt-4 border-t border-slate-800">
-                <div className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">Integrated Standards & Connectors</div>
+                <div className="text-xs font-mono font-bold uppercase tracking-wider text-slate-300">Integrated Standards & Connectors</div>
                 <div className="flex flex-wrap gap-2">
                   {architectureLayers[activeLayer].tags.map((t, tIdx) => (
                     <span key={tIdx} className="px-2.5 py-1 rounded-md bg-white/10 text-xs font-mono font-semibold text-cyan-300 border border-white/15">
@@ -773,7 +773,7 @@ export const DiscreteManufacturingIndustryPage: React.FC<DiscreteManufacturingIn
             </Link>
           </div>
 
-          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-200">
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-100">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-300" />
               <span>SAP Certified Clean Core</span>

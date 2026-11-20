@@ -558,7 +558,7 @@ export const TextileIndustryPage: React.FC<TextileIndustryPageProps> = ({
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Textile Hero)
           ========================================================================= */}
-      <section className="relative w-full min-h-[620px] lg:min-h-[680px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-16 overflow-hidden bg-slate-900">
+      <section className="relative w-full min-h-[620px] lg:min-h-[680px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-16 overflow-hidden bg-slate-900 text-white">
         
         {/* Full-Bleed Enterprise Background Image with Seamless Scrim */}
         <div className="absolute inset-0 z-0">
@@ -949,7 +949,7 @@ export const TextileIndustryPage: React.FC<TextileIndustryPageProps> = ({
                         <h4 className={`text-sm font-bold transition-colors ${isHighlighted ? 'text-white' : 'text-slate-200'}`}>
                           {item.title}
                         </h4>
-                        <p className="font-sora text-xs text-slate-400 line-clamp-2 leading-[1.6] font-normal">
+                        <p className="font-sora text-xs text-slate-300 line-clamp-2 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1072,7 +1072,7 @@ export const TextileIndustryPage: React.FC<TextileIndustryPageProps> = ({
                         <h4 className={`text-sm font-bold transition-colors ${isHighlighted ? 'text-white' : 'text-slate-200'}`}>
                           {item.title}
                         </h4>
-                        <p className="font-sora text-xs text-slate-400 line-clamp-2 leading-[1.6] font-normal">
+                        <p className="font-sora text-xs text-slate-300 line-clamp-2 leading-[1.6] font-normal">
                           {item.desc}
                         </p>
                       </div>
@@ -1351,7 +1351,7 @@ export const TextileIndustryPage: React.FC<TextileIndustryPageProps> = ({
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">
+                      <span className="text-[10px] font-mono font-bold text-slate-300 uppercase tracking-wider">
                         {stage.phase}
                       </span>
                       <Icon className={`w-4 h-4 ${stage.textColor}`} />
@@ -1359,12 +1359,12 @@ export const TextileIndustryPage: React.FC<TextileIndustryPageProps> = ({
 
                     <div className="space-y-1">
                       <span className={`text-[10px] font-mono font-bold px-2 py-0.5 rounded-full ${
-                        isActive ? 'bg-white/20 text-white' : 'bg-slate-800 text-slate-400'
+                        isActive ? 'bg-white/20 text-white' : 'bg-slate-800 text-slate-300'
                       }`}>
                         {stage.badge}
                       </span>
                       <h3 className="font-sora text-base font-medium text-white pt-1">{stage.title}</h3>
-                      <div className="text-xs text-slate-400 font-medium">{stage.subtitle}</div>
+                      <div className="text-xs text-slate-300 font-medium">{stage.subtitle}</div>
                     </div>
 
                     <p className="font-sora text-xs text-slate-300 leading-[1.6] font-normal line-clamp-3">
@@ -1410,7 +1410,7 @@ export const TextileIndustryPage: React.FC<TextileIndustryPageProps> = ({
 
             {/* Checklist Chips */}
             <div className="flex flex-wrap items-center gap-2 pt-4 mt-4 border-t border-slate-800">
-              <span className="text-xs font-mono text-slate-400 uppercase tracking-wider mr-2">VERIFIED MILESTONES:</span>
+              <span className="text-xs font-mono text-slate-300 uppercase tracking-wider mr-2">VERIFIED MILESTONES:</span>
               {transformationStages[activeTransformStage].metrics.map((m, mIdx) => (
                 <span key={mIdx} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800 text-xs font-medium text-slate-200 border border-slate-700">
                   <CheckCircle2 className="w-3 h-3 text-emerald-400" />

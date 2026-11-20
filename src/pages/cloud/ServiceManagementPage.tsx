@@ -421,11 +421,11 @@ export const ServiceManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
             </div>
 
             {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
-            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
               <img
                 src="/images/cloud/service_mgmt_hero_wide.jpg"
                 alt="Service Management - Structured IT Service Delivery Architecture Blueprint"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-auto object-contain block"
               />
             </div>
 
@@ -1053,19 +1053,19 @@ export const ServiceManagementPage: React.FC<ChildPageProps> = ({ onOpenContact 
           </div>
 
           {/* Wide Relationship Visual */}
-          <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-2xl bg-slate-900 aspect-[21/9] sm:aspect-[16/7] group">
+          <div className="relative rounded-3xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-2xl bg-slate-900 aspect-[4/5] sm:aspect-[16/7] group">
             <img
               src="/images/cloud/service_mgmt_across_org.png"
               alt="Connected enterprise service ecosystem bridging business users, IT support, apps, and infrastructure"
-              className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700"
+              className="w-full h-full object-cover object-top sm:object-center group-hover:scale-102 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#050B17]/95 via-[#050B17]/40 to-transparent pointer-events-none" />
-            <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-[#070E1E]/90 backdrop-blur-md border border-white/15 flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs text-slate-300">
+            <div className="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#070E1E]/95 sm:bg-[#070E1E]/90 backdrop-blur-md border border-white/15 flex flex-col md:flex-row md:items-center justify-between gap-2.5 sm:gap-4 text-xs text-slate-300">
               <div className="space-y-0.5">
-                <span className="font-bold text-white text-sm">Cross-Organizational Service Management Relationship Model</span>
-                <p className="font-sora text-slate-300 text-xs font-normal leading-[1.6]">Business Users &bull; IT Service Desk &bull; Application Engineering &bull; Infrastructure Teams &bull; External Vendors</p>
+                <span className="font-bold text-white text-xs sm:text-sm">Cross-Organizational Service Management Relationship Model</span>
+                <p className="font-sora text-slate-300 text-[11px] sm:text-xs font-normal leading-[1.5] sm:leading-[1.6]">Business Users &bull; IT Service Desk &bull; Application Engineering &bull; Infrastructure Teams &bull; External Vendors</p>
               </div>
-              <span className="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-400/20 text-cyan-300 font-bold shrink-0">
+              <span className="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-400/20 text-cyan-300 text-xs font-bold shrink-0 self-start md:self-auto">
                 Unified Service Mesh
               </span>
             </div>

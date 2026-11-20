@@ -49,8 +49,6 @@ export const RiskIntelligencePage: React.FC<RiskIntelligencePageProps> = ({
     };
   }, [isHeroModalOpen]);
 
-  // State for Architecture Comparison Tabs
-  const [activeTab, setActiveTab] = useState<'comparison' | 'architecture'>('comparison');
 
   // State for Executive FAQs Accordion
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
@@ -520,37 +518,13 @@ export const RiskIntelligencePage: React.FC<RiskIntelligencePageProps> = ({
               Topological Architecture &amp; Comparative Analysis
             </h2>
             <p className="font-sora mt-4 text-[#102A43] leading-[1.6] text-[15px] sm:text-[16px] font-normal">
-              Contrast autonomous continuous risk intelligence against periodic manual audits, and inspect our full-stack enterprise risk architecture.
+              Contrast autonomous continuous risk intelligence against periodic manual audits across core governance dimensions.
             </p>
 
-            {/* Simple Tab Switcher */}
-            <div className="flex justify-center gap-2 mt-8">
-              <button
-                onClick={() => setActiveTab('comparison')}
-                className={`rounded-xl px-5 py-2.5 text-xs font-bold transition-all ${
-                  activeTab === 'comparison'
-                    ? 'bg-[#0070C0] text-white shadow-md'
-                    : 'bg-white text-slate-600 hover:bg-slate-200 border border-slate-200'
-                }`}
-              >
-                Transformation Comparison Matrix
-              </button>
-              <button
-                onClick={() => setActiveTab('architecture')}
-                className={`rounded-xl px-5 py-2.5 text-xs font-bold transition-all ${
-                  activeTab === 'architecture'
-                    ? 'bg-[#0070C0] text-white shadow-md'
-                    : 'bg-white text-slate-600 hover:bg-slate-200 border border-slate-200'
-                }`}
-              >
-                Full-Stack Architecture Visual
-              </button>
-            </div>
           </div>
 
-          {/* TAB 1: Comparison Matrix */}
-          {activeTab === 'comparison' && (
-            <div className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
+          {/* Comparison Matrix */}
+          <div className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm">
               {/* Mobile Card-Based Comparison View (Zero Cutoff, 100% Fits Inside Screen) */}
               <div className="sm:hidden space-y-3.5 p-3.5 bg-slate-50/50">
                 {comparisonRows.map((row, i) => (
@@ -610,41 +584,6 @@ export const RiskIntelligencePage: React.FC<RiskIntelligencePageProps> = ({
                 </table>
               </div>
             </div>
-          )}
-
-          {/* TAB 2: Full-Stack Architecture Visual */}
-          {activeTab === 'architecture' && (
-            <div className="space-y-8">
-              <div className="rounded-2xl border border-slate-200 bg-slate-950 p-3 shadow-xl overflow-hidden">
-                <img
-                  src="/images/sap_btp_architecture_3d.jpg"
-                  alt="KNOOVIQ Full-Stack Risk Intelligence Architecture"
-                  className="w-full h-[400px] sm:h-[480px] object-cover rounded-xl"
-                />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Threat Radar &amp; Signal Bus</h4>
-                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
-                    High-throughput ingestion connecting credit feeds, regulatory watchlists, news feeds, and environmental sensors with zero lag.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Systemic Graph Analytics Core</h4>
-                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
-                    Graph neural networks mapping enterprise balance sheets, dependency matrices, and multi-tier supplier relationships.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-sora text-sm font-medium text-slate-900 mb-2">Clean-Core Mitigation Engine</h4>
-                  <p className="font-sora text-xs text-[#102A43] leading-[1.6] font-normal">
-                    Secure connectors executing automated credit adjustments, vendor holds, and executive escalations in SAP S/4HANA via native BAPIs.
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
 
         </div>
       </section>

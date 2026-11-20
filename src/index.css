@@ -140,10 +140,12 @@
   line-height: 1.6;
 }
 
-/* Light Theme Deep Navy (#102A43) for paragraphs on light surfaces */
-.cloud-sora-scope p:not([class*="text-slate-100"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-white"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#0070C0]"]) {
+/* Light Theme Deep Navy (#102A43) for paragraphs on light surfaces only */
+.cloud-sora-scope p:not([class*="text-slate-100"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-sky"]):not([class*="text-blue"]):not([class*="text-white"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#0070C0]"]):not([class*="text-gray-100"]):not([class*="text-gray-200"]):not([class*="text-gray-300"]):not([class*="text-zinc"]):not([class*="text-neutral"]) {
   color: #102A43;
 }
+
+
 
 /* Mobile Paragraph Font Size: 15px mobile, 16px desktop */
 @media (max-width: 639px) {

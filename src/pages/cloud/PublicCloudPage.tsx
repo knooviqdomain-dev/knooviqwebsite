@@ -367,11 +367,11 @@ export const PublicCloudPage: React.FC<PublicCloudPageProps> = ({ onOpenContact 
             </div>
 
             {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
-            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+            <div className="sm:hidden relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
               <img
                 src="/images/cloud/public_cloud_hero.png"
                 alt="Build and Run Your Business on Public Cloud - Public Cloud Architecture Blueprint"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-auto object-contain block"
               />
             </div>
 
@@ -510,26 +510,26 @@ export const PublicCloudPage: React.FC<PublicCloudPageProps> = ({ onOpenContact 
                 <div className={`lg:col-span-6 ${service.imageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
                   <div className="group relative rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-xl bg-slate-900 transition-all">
                     {/* Fixed High-DPI Aspect Ratio Container */}
-                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-950">
+                    <div className="relative aspect-auto lg:aspect-[16/10] w-full overflow-hidden bg-slate-950 flex items-center justify-center">
                       <img
                         src={service.image}
                         alt={service.imageAlt}
-                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 filter brightness-100 contrast-105"
+                        className="w-full h-auto lg:h-full object-contain lg:object-cover transform group-hover:scale-105 transition-transform duration-700 filter brightness-100 contrast-105 block"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent lg:from-slate-950/80 lg:via-transparent pointer-events-none" />
 
                       {/* Floating Badge (Top Left) */}
-                      <div className="absolute top-3.5 left-3.5">
-                        <span className="px-3 py-1 rounded-lg bg-black/75 backdrop-blur-md border border-cyan-400/30 text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-300 flex items-center gap-1.5">
+                      <div className="absolute top-2.5 sm:top-3.5 left-2.5 sm:left-3.5">
+                        <span className="px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-lg bg-black/75 backdrop-blur-md border border-cyan-400/30 text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-300 flex items-center gap-1 sm:gap-1.5">
                           <Sparkles className="w-3 h-3 text-[#00A3E0]" />
                           <span>{service.badge}</span>
                         </span>
                       </div>
 
                       {/* Floating Subtitle / Tech Spec on Image (Bottom Left) */}
-                      <div className="absolute bottom-3 left-3.5 right-3.5 flex items-center justify-between text-xs text-slate-200 select-text">
-                        <span className="font-mono text-[11px] text-cyan-200 truncate">
+                      <div className="absolute bottom-2.5 sm:bottom-3 left-2.5 sm:left-3.5 right-2.5 sm:right-3.5 flex items-center justify-between text-xs text-slate-200 select-text">
+                        <span className="font-mono text-[10px] sm:text-[11px] text-cyan-200 truncate">
                           {service.subheading}
                         </span>
                       </div>

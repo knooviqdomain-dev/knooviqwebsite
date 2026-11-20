@@ -479,7 +479,7 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
       {/* =========================================================================
           SECTION 1: HERO SECTION (Pure Enterprise Fashion Hero - Zero Shading on Image)
           ========================================================================= */}
-      <section className="relative w-full min-h-[620px] lg:min-h-[680px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-16 overflow-hidden bg-slate-900">
+      <section className="relative w-full min-h-[620px] lg:min-h-[680px] flex items-center pt-28 sm:pt-32 lg:pt-36 pb-12 sm:pb-16 overflow-hidden bg-slate-900 text-white">
         
         {/* Full-bleed High Resolution Background Image */}
         <div className="absolute inset-0 z-0">
@@ -846,7 +846,7 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
               Capabilities Designed for Fashion & Lifestyle
             </h2>
-            <p className="font-sora text-slate-400 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               A synchronized, circular enterprise platform uniting concept PLM, ethical factory CMT sourcing, pre-pack ratio distribution, store clienteling, and cognitive markdown AI into one continuous loop.
             </p>
           </motion.div>
@@ -1451,7 +1451,7 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
             <div className="text-xs sm:text-sm font-semibold text-cyan-400 font-mono tracking-wider uppercase">
               Fashion Matrix & Omnichannel Allocation Architecture
             </div>
-            <p className="font-sora text-slate-400 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
+            <p className="font-sora text-slate-300 text-[15px] sm:text-[16px] leading-[1.6] max-w-2xl mx-auto font-normal">
               How an international fashion label transformed from siloed spreadsheets and heavy clearance write-downs into an agile clean-core operating model.
             </p>
           </div>
@@ -1506,7 +1506,7 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
                       <h3 className="font-sora text-sm sm:text-base font-medium text-white group-hover:text-cyan-300 transition-colors leading-snug">
                         {stage.title}
                       </h3>
-                      <div className="text-[10px] font-mono text-slate-400 uppercase tracking-wide">
+                      <div className="text-[10px] font-mono text-slate-300 uppercase tracking-wide">
                         {stage.subtitle}
                       </div>
                     </div>
@@ -1519,7 +1519,7 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
 
                   {/* Bottom Deliverable Pillar */}
                   <div className="pt-2.5 mt-3 border-t border-white/10 flex items-center justify-between">
-                    <span className="text-[9.5px] font-mono font-medium text-slate-400">
+                    <span className="text-[9.5px] font-mono font-medium text-slate-300">
                       {stage.tag}
                     </span>
                     <span className={`text-[9.5px] font-mono font-bold uppercase tracking-wider ${stage.textColor} group-hover:translate-x-0.5 transition-transform inline-flex items-center gap-0.5`}>
@@ -1637,7 +1637,7 @@ export const FashionLifestyleIndustryPage: React.FC<FashionLifestyleIndustryPage
             </Link>
           </div>
 
-          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-200">
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-100">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-300" />
               <span>SAP Certified Clean Core</span>

@@ -1604,7 +1604,7 @@ export const FinTechIndustryPage: React.FC<FinTechIndustryPageProps> = ({
             </Link>
           </div>
 
-          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-200">
+          <div className="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-mono text-sky-100">
             <span className="flex items-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-emerald-300" />
               <span>ISO 20022 Compliant Architecture</span>
