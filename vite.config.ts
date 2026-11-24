@@ -20,35 +20,59 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('three') || id.includes('@react-three')) {
+          const normalized = id.replace(/\\/g, '/');
+          if (normalized.includes('node_modules')) {
+            if (normalized.includes('three') || normalized.includes('@react-three')) {
               return 'three-bundle';
             }
-            if (id.includes('framer-motion') || id.includes('gsap') || id.includes('lenis')) {
+            if (normalized.includes('framer-motion') || normalized.includes('gsap') || normalized.includes('lenis')) {
               return 'framer-motion-bundle';
             }
-            if (id.includes('@supabase')) {
+            if (normalized.includes('@supabase')) {
               return 'supabase-bundle';
             }
-            if (id.includes('lucide-react')) {
+            if (normalized.includes('lucide-react')) {
               return 'icons-bundle';
             }
             return 'vendor-libs';
           }
-          if (id.includes('/src/pages/industries/')) {
+          if (normalized.includes('/src/pages/industries/')) {
             return 'chunk-industries';
           }
-          if (id.includes('/src/pages/digital-intelligence/')) {
+          if (normalized.includes('/src/pages/digital-intelligence/')) {
             return 'chunk-intelligence';
           }
-          if (id.includes('/src/pages/cloud-operations/')) {
-            return 'chunk-cloud-ops';
+          if (normalized.includes('/src/pages/cloud-operations/')) {
+            return 'chunk-cloud-operations';
           }
-          if (id.includes('/src/pages/about/')) {
+          if (normalized.includes('/src/pages/cloud/')) {
+            return 'chunk-cloud';
+          }
+          if (normalized.includes('/src/pages/about/')) {
             return 'chunk-about';
           }
-          if (id.includes('/src/pages/ai/')) {
+          if (normalized.includes('/src/pages/ai/')) {
             return 'chunk-ai-products';
+          }
+          if (normalized.includes('/src/pages/transformation/')) {
+            return 'chunk-transformation';
+          }
+          if (normalized.includes('/src/pages/technology/')) {
+            return 'chunk-technology';
+          }
+          if (normalized.includes('/src/pages/advisory/')) {
+            return 'chunk-advisory';
+          }
+          if (normalized.includes('/src/pages/experience/')) {
+            return 'chunk-experience';
+          }
+          if (
+            normalized.includes('/src/pages/enterprise-products/') ||
+            normalized.includes('IntelligencePage') ||
+            normalized.includes('ManagementPage') ||
+            normalized.includes('Page.tsx') && !normalized.includes('HomePage.tsx')
+          ) {
+            return 'chunk-subpages';
           }
         },
       },

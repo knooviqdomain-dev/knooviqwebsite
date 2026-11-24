@@ -49,7 +49,7 @@ export const FeaturedSolutionsSection: React.FC<{ onOpenContact?: (service?: str
               </h3>
 
               {/* Supporting Text (Exact Requested Copy) */}
-              <p className="mt-3.5 text-sm sm:text-base text-slate-300 leading-relaxed max-w-xl mx-auto lg:mx-0 font-normal">
+              <p className="mt-3.5 text-sm sm:text-base text-[#E2EAF4] leading-relaxed max-w-xl mx-auto lg:mx-0 font-normal">
                 Turn complex business challenges into intelligent, scalable digital solutions with Knooviq.
               </p>
 
@@ -66,7 +66,7 @@ export const FeaturedSolutionsSection: React.FC<{ onOpenContact?: (service?: str
               </div>
 
               {/* Enterprise Trust Highlights */}
-              <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-[11.5px] text-slate-300/90 font-medium">
+              <div className="mt-8 pt-6 border-t border-white/10 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-[11.5px] text-[#B8C7D9] font-medium">
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                   <span>Clean Core SAP Strategy</span>

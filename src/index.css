@@ -124,63 +124,143 @@
   }
 
   /* ========================================================================= */
-  /* UNIVERSAL TYPOGRAPHY & CONTRAST GOVERNANCE                                */
-  /* Ensures crystal-clear legibility on both light surfaces and dark heroes   */
+  /* WEBSITE-WIDE CONTRAST & VISIBILITY SPECIFICATION                           */
+  /* 1. Main headings: Pure White (#FFFFFF) on dark backgrounds                */
+  /* 2. Paragraph & body text: Light Grey-White (#E2EAF4) on dark backgrounds  */
+  /* 3. Highlighted words & important text: Light Blue (#48C8F5)               */
+  /* 4. Secondary descriptions & supporting text: #B8C7D9                      */
+  /* 5. Fix low opacity (opacity-30, 40, 50, text-white/30..50)               */
+  /* 6. Remove dark text colors accidentally placed on dark navy backgrounds   */
+  /* 7. Preserve readable dark text on light backgrounds (#102A43)             */
   /* ========================================================================= */
 
-  /* 1. DARK SURFACES: Hero banners, obsidian containers & dark cards         */
-  /* All text inside dark containers must remain bright, crisp, and high-contrast */
-  section[class*="bg-slate-900"] p,
-  section[class*="bg-slate-950"] p,
-  section[class*="bg-[#030712]"] p,
-  section[class*="bg-[#071322]"] p,
-  section[class*="bg-[#0A1931]"] p,
-  section[class*="bg-[#0a0f1d]"] p,
-  section[class*="bg-[#0B1528]"] p,
-  section[class*="bg-black"] p,
-  div[class*="bg-slate-900"] p,
-  div[class*="bg-slate-950"] p,
-  div[class*="bg-[#030712]"] p,
-  div[class*="bg-[#071322]"] p,
-  div[class*="bg-[#0A1931]"] p,
-  div[class*="bg-[#0a0f1d]"] p,
-  div[class*="bg-[#0B1528]"] p,
-  div[class*="bg-black"] p,
-  div[class*="from-[#061426]"] p,
-  div[class*="from-[#071322]"] p,
-  div[class*="from-[#0A1931]"] p,
-  div[class*="from-[#030712]"] p,
-  .dark-hero p,
-  .hero-dark-text p {
-    color: #E2E8F0 !important;
-  }
-
-  section[class*="bg-slate-900"] h1, section[class*="bg-slate-900"] h2, section[class*="bg-slate-900"] h3, section[class*="bg-slate-900"] h4,
-  section[class*="bg-slate-950"] h1, section[class*="bg-slate-950"] h2, section[class*="bg-slate-950"] h3, section[class*="bg-slate-950"] h4,
-  section[class*="bg-[#030712]"] h1, section[class*="bg-[#030712]"] h2, section[class*="bg-[#030712]"] h3, section[class*="bg-[#030712]"] h4,
-  section[class*="bg-[#071322]"] h1, section[class*="bg-[#071322]"] h2, section[class*="bg-[#071322]"] h3, section[class*="bg-[#071322]"] h4,
-  section[class*="bg-[#0A1931]"] h1, section[class*="bg-[#0A1931]"] h2, section[class*="bg-[#0A1931]"] h3, section[class*="bg-[#0A1931]"] h4,
-  section[class*="bg-black"] h1, section[class*="bg-black"] h2, section[class*="bg-black"] h3, section[class*="bg-black"] h4,
-  div[class*="bg-slate-900"] h1, div[class*="bg-slate-900"] h2, div[class*="bg-slate-900"] h3,
-  div[class*="bg-slate-950"] h1, div[class*="bg-slate-950"] h2, div[class*="bg-slate-950"] h3,
-  div[class*="bg-[#030712]"] h1, div[class*="bg-[#030712]"] h2, div[class*="bg-[#030712]"] h3,
-  div[class*="bg-[#071322]"] h1, div[class*="bg-[#071322]"] h2, div[class*="bg-[#071322]"] h3,
-  div[class*="bg-black"] h1, div[class*="bg-black"] h2, div[class*="bg-black"] h3 {
+  /* 1. DARK SURFACES: Headings pure white (#FFFFFF) */
+  :is(section, div, header)[class*="bg-slate-900"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(section, div, header)[class*="bg-slate-950"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(section, div, header)[class*="bg-[#020617]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(section, div, header)[class*="bg-[#030712]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(section, div, header)[class*="bg-[#071322]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(section, div, header)[class*="bg-[#070E1C]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(section, div, header)[class*="bg-[#0A1931]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(section, div, header)[class*="bg-[#0a0f1d]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(section, div, header)[class*="bg-[#0B1528]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(section, div, header)[class*="bg-[#061426]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(section, div, header)[class*="bg-[#040A17]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(section, div, header)[class*="bg-black"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(div, section)[class*="from-[#061426]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(div, section)[class*="from-[#071322]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(div, section)[class*="from-[#0A1931]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(div, section)[class*="from-[#030712]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(div, section)[class*="from-[#020617]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(div, section)[class*="from-slate-950"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(div, section)[class*="from-slate-900"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  #hero :is(h1, h2, h3, h4, h5, h6, .font-display),
+  .dark-hero :is(h1, h2, h3, h4, h5, h6, .font-display) {
     color: #FFFFFF !important;
   }
 
-  /* Light cards or modals embedded inside dark sections: ensure text is dark */
-  section[class*="bg-slate-900"] div[class*="bg-white"] p,
-  section[class*="bg-slate-950"] div[class*="bg-white"] p,
-  section[class*="bg-[#030712]"] div[class*="bg-white"] p,
-  section[class*="bg-[#071322]"] div[class*="bg-white"] p,
-  section[class*="bg-black"] div[class*="bg-white"] p,
-  section[class*="bg-slate-900"] div[class*="bg-slate-50"] p,
-  section[class*="bg-slate-950"] div[class*="bg-slate-50"] p {
+  /* 2. DARK SURFACES: Paragraph and body text -> Light Grey-White (#E2EAF4) */
+  :is(section, div)[class*="bg-slate-900"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(section, div)[class*="bg-slate-950"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(section, div)[class*="bg-[#020617]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(section, div)[class*="bg-[#030712]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(section, div)[class*="bg-[#071322]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(section, div)[class*="bg-[#070E1C]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(section, div)[class*="bg-[#0A1931]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(section, div)[class*="bg-[#0a0f1d]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(section, div)[class*="bg-[#0B1528]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(section, div)[class*="bg-[#061426]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(section, div)[class*="bg-[#040A17]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(section, div)[class*="bg-black"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(div, section)[class*="from-[#061426]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(div, section)[class*="from-[#071322]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(div, section)[class*="from-[#0A1931]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(div, section)[class*="from-[#030712]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(div, section)[class*="from-[#020617]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(div, section)[class*="from-slate-950"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(div, section)[class*="from-slate-900"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  #hero p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  .dark-hero p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]) {
+    color: #E2EAF4 !important;
+  }
+
+  /* 3. Highlighted words & important text on dark -> Light Blue (#48C8F5) */
+  :is(section, div)[class*="bg-slate-900"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
+  :is(section, div)[class*="bg-slate-950"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
+  :is(section, div)[class*="bg-[#020617]"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
+  :is(section, div)[class*="bg-[#030712]"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
+  :is(section, div)[class*="bg-[#071322]"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
+  :is(section, div)[class*="bg-[#0A1931]"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
+  :is(section, div)[class*="bg-[#0B1528]"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
+  #hero :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]) {
+    color: #48C8F5 !important;
+  }
+
+  /* 4. Secondary descriptions & supporting text -> #B8C7D9 */
+  :is(section, div)[class*="bg-slate-900"] :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
+  :is(section, div)[class*="bg-slate-950"] :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
+  :is(section, div)[class*="bg-[#020617]"] :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
+  :is(section, div)[class*="bg-[#030712]"] :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
+  :is(section, div)[class*="bg-[#071322]"] :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
+  :is(section, div)[class*="bg-[#0A1931]"] :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
+  :is(section, div)[class*="bg-[#0B1528]"] :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
+  :is(section, div)[class*="bg-[#040A17]"] :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
+  :is(section, div)[class*="bg-black"] :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
+  #hero :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark) {
+    color: #B8C7D9 !important;
+  }
+
+  /* 5. Fix all low-opacity text elements on dark backgrounds */
+  :is(section, div)[class*="bg-slate-900"] :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
+  :is(section, div)[class*="bg-slate-950"] :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
+  :is(section, div)[class*="bg-[#020617]"] :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
+  :is(section, div)[class*="bg-[#030712]"] :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
+  :is(section, div)[class*="bg-[#071322]"] :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
+  :is(section, div)[class*="bg-[#0A1931]"] :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
+  :is(section, div)[class*="bg-[#0B1528]"] :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
+  #hero :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]) {
+    color: #E2EAF4 !important;
+    opacity: 1 !important;
+  }
+
+  /* 6. Remove dark text colors from dark backgrounds */
+  :is(section, div)[class*="bg-slate-900"] :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
+  :is(section, div)[class*="bg-slate-950"] :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
+  :is(section, div)[class*="bg-[#020617]"] :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
+  :is(section, div)[class*="bg-[#030712]"] :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
+  :is(section, div)[class*="bg-[#071322]"] :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
+  :is(section, div)[class*="bg-[#0A1931]"] :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
+  :is(section, div)[class*="bg-[#0B1528]"] :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
+  #hero :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]) {
+    color: #E2EAF4 !important;
+  }
+
+  /* 7. Light cards or modals embedded inside dark sections: preserve crisp dark text (#102A43 / #0A1931) */
+  :is(section, div)[class*="bg-slate-900"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) p,
+  :is(section, div)[class*="bg-slate-950"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) p,
+  :is(section, div)[class*="bg-[#020617]"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) p,
+  :is(section, div)[class*="bg-[#030712]"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) p,
+  :is(section, div)[class*="bg-[#071322]"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) p,
+  :is(section, div)[class*="bg-black"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) p {
     color: #102A43 !important;
   }
 
-  /* 2. LIGHT SURFACES: High-contrast Deep Navy Blue (#102A43) across all pages  */
+  :is(section, div)[class*="bg-slate-900"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) :is(h1, h2, h3, h4, h5, h6),
+  :is(section, div)[class*="bg-slate-950"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) :is(h1, h2, h3, h4, h5, h6),
+  :is(section, div)[class*="bg-[#020617]"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) :is(h1, h2, h3, h4, h5, h6),
+  :is(section, div)[class*="bg-[#030712]"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) :is(h1, h2, h3, h4, h5, h6),
+  :is(section, div)[class*="bg-[#071322]"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) :is(h1, h2, h3, h4, h5, h6),
+  :is(section, div)[class*="bg-black"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) :is(h1, h2, h3, h4, h5, h6) {
+    color: #0A1931 !important;
+  }
+
+  /* 8. LIGHT SURFACES: High-contrast Deep Navy Blue (#102A43) across desktop & mobile */
+  :is(section, div)[class*="bg-white"]:not([class*="dark:"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-red"]):not([class*="text-sky"]):not([class*="text-blue"]):not([class*="text-indigo"]):not([class*="text-purple"]):not([class*="text-violet"]):not([class*="text-transparent"]):not([class*="text-white"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]),
+  :is(section, div)[class*="bg-slate-50"]:not([class*="dark:"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-red"]):not([class*="text-sky"]):not([class*="text-blue"]):not([class*="text-indigo"]):not([class*="text-purple"]):not([class*="text-violet"]):not([class*="text-transparent"]):not([class*="text-white"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]),
+  :is(section, div)[class*="bg-slate-100"]:not([class*="dark:"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-red"]):not([class*="text-sky"]):not([class*="text-blue"]):not([class*="text-indigo"]):not([class*="text-purple"]):not([class*="text-violet"]):not([class*="text-transparent"]):not([class*="text-white"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]) {
+    color: #102A43;
+  }
+
   @media screen and (max-width: 639.98px) {
     p:not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-red"]):not([class*="text-sky"]):not([class*="text-blue"]):not([class*="text-indigo"]):not([class*="text-purple"]):not([class*="text-violet"]):not([class*="text-transparent"]):not([class*="text-white"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]) {
       color: #102A43;

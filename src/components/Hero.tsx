@@ -49,6 +49,16 @@ export const Hero: React.FC<HeroProps> = () => {
   const desktopVideoRef = useRef<HTMLVideoElement>(null);
   const mobileVideoRef = useRef<HTMLVideoElement>(null);
   const [phraseIndex, setPhraseIndex] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(() => typeof window !== 'undefined' ? window.innerWidth >= 1024 : true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize, { passive: true });
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Rotating dynamic heading timer (changes smoothly every 3.2s)
   useEffect(() => {
@@ -94,27 +104,29 @@ export const Hero: React.FC<HeroProps> = () => {
       id="hero"
       className="relative w-full overflow-hidden bg-[#020617] flex items-center justify-center select-none pt-[72px] sm:pt-[80px] lg:pt-[84px] min-h-[600px] sm:min-h-[660px] lg:h-screen lg:min-h-[680px] lg:max-h-[1080px]"
     >
-      {/* 100% Screen Cover Background Video for Laptops & Desktops (Crystal Clear High-Definition) */}
-      <video
-        ref={desktopVideoRef}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="metadata"
-        disablePictureInPicture
-        disableRemotePlayback
-        className="hidden lg:block absolute inset-0 w-full h-full object-cover object-top pointer-events-none"
-        style={{
-          willChange: 'transform',
-          imageRendering: '-webkit-optimize-contrast',
-          filter: 'contrast(1.05) brightness(1.02)',
-        }}
-      >
-        <source src="/videos/hero-video-web.mp4" type="video/mp4" />
-        <source src="/videos/hero-video.mp4?v=20261114_AD4A88FC" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      {/* 100% Screen Cover Background Video for Laptops & Desktops - Only mounted on desktop to eliminate duplicate mobile payload */}
+      {isDesktop && (
+        <video
+          ref={desktopVideoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          disablePictureInPicture
+          disableRemotePlayback
+          className="absolute inset-0 w-full h-full object-cover object-top pointer-events-none"
+          style={{
+            willChange: 'transform',
+            imageRendering: '-webkit-optimize-contrast',
+            filter: 'contrast(1.05) brightness(1.02)',
+          }}
+        >
+          <source src="/videos/hero-video-web.mp4" type="video/mp4" />
+          <source src="/videos/hero-video.mp4?v=20261114_AD4A88FC" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      )}
 
       {/* Clean Subtle Contrast Shade: Preserves 100% Video Clarity Without Any Fog or Grid Distortion */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/60 via-[#020617]/10 to-[#020617]/25 z-10 pointer-events-none" />
@@ -123,23 +135,23 @@ export const Hero: React.FC<HeroProps> = () => {
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-10 lg:py-16 flex flex-col justify-center items-start text-left">
         
         {/* Live Status Pill with Pulsing Indicator */}
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-950/70 border border-cyan-400/35 text-cyan-300 text-xs font-semibold tracking-wide backdrop-blur-md mb-4 sm:mb-6 shadow-[0_0_20px_rgba(0,163,224,0.25)]">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-950/70 border border-[#48C8F5]/35 text-[#48C8F5] text-xs font-semibold tracking-wide backdrop-blur-md mb-4 sm:mb-6 shadow-[0_0_20px_rgba(72,200,245,0.25)]">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#48C8F5] opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#48C8F5]" />
           </span>
-          <span className="font-mono uppercase tracking-wider text-[10px] sm:text-[11px] text-cyan-200">
+          <span className="font-mono uppercase tracking-wider text-[10px] sm:text-[11px] text-[#48C8F5]">
             Active Enterprise Platform
           </span>
-          <span className="text-white/30">•</span>
-          <Sparkles className="w-3 h-3 text-cyan-400" />
-          <span className="font-mono text-[10px] sm:text-[11px] text-slate-300 hidden sm:inline">
+          <span className="text-[#B8C7D9]">•</span>
+          <Sparkles className="w-3 h-3 text-[#48C8F5]" />
+          <span className="font-mono text-[10px] sm:text-[11px] text-[#B8C7D9] hidden sm:inline">
             Real-Time Intelligence
           </span>
         </div>
 
         {/* Dynamic Changing Headline: Transforms Smoothly Between Core Domains */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black font-display tracking-tight text-white leading-[1.22] sm:leading-[1.18] pb-1 sm:pb-2 max-w-5xl drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] overflow-visible">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black font-display tracking-tight text-[#FFFFFF] leading-[1.22] sm:leading-[1.18] pb-1 sm:pb-2 max-w-5xl drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] overflow-visible">
           Transforming Enterprises Through{' '}
           <span className="inline-block relative min-h-[1.25em] overflow-visible pb-1">
             <AnimatePresence mode="wait">
@@ -149,7 +161,7 @@ export const Hero: React.FC<HeroProps> = () => {
                 animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 exit={{ opacity: 0, y: -18, filter: 'blur(6px)' }}
                 transition={{ duration: 0.45, ease: 'easeInOut' }}
-                className={`inline-block pb-2.5 sm:pb-3.5 -mb-2.5 sm:-mb-3.5 pr-2 overflow-visible bg-gradient-to-r ${dynamicPhrases[phraseIndex].gradient} bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(0,163,224,0.65)]`}
+                className={`inline-block pb-2.5 sm:pb-3.5 -mb-2.5 sm:-mb-3.5 pr-2 overflow-visible bg-gradient-to-r ${dynamicPhrases[phraseIndex].gradient} bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(72,200,245,0.65)]`}
               >
                 {dynamicPhrases[phraseIndex].text}
               </motion.span>
@@ -158,33 +170,35 @@ export const Hero: React.FC<HeroProps> = () => {
         </h1>
 
         {/* Supporting Subheading */}
-        <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-3xl font-normal leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">
+        <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg lg:text-xl text-[#E2EAF4] max-w-3xl font-normal leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">
           Empowering global businesses through SAP solutions, enterprise transformation, intelligent automation and next-generation digital technologies to accelerate innovation and sustainable growth.
         </p>
 
-        {/* Mobile & Tablet Dedicated Showcase Video: 100% Full Uncut Logo & 16:9 Aspect Ratio */}
-        <div className="lg:hidden w-full max-w-4xl mx-auto my-6 sm:my-8 rounded-2xl sm:rounded-3xl overflow-hidden border border-cyan-500/35 shadow-[0_0_35px_rgba(0,163,224,0.22)] bg-slate-950 relative aspect-video">
-          <video
-            ref={mobileVideoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            disablePictureInPicture
-            disableRemotePlayback
-            className="w-full h-full object-contain bg-slate-950"
-            style={{
-              willChange: 'transform',
-              imageRendering: '-webkit-optimize-contrast',
-              filter: 'contrast(1.05) brightness(1.02)',
-            }}
-          >
-            <source src="/videos/hero-video-web.mp4" type="video/mp4" />
-            <source src="/videos/hero-video.mp4?v=20261114_AD4A88FC" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+        {/* Mobile & Tablet Dedicated Showcase Video: Only mounted on mobile/tablet screens */}
+        {!isDesktop && (
+          <div className="w-full max-w-4xl mx-auto my-6 sm:my-8 rounded-2xl sm:rounded-3xl overflow-hidden border border-cyan-500/35 shadow-[0_0_35px_rgba(0,163,224,0.22)] bg-slate-950 relative aspect-video">
+            <video
+              ref={mobileVideoRef}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              disablePictureInPicture
+              disableRemotePlayback
+              className="w-full h-full object-contain bg-slate-950"
+              style={{
+                willChange: 'transform',
+                imageRendering: '-webkit-optimize-contrast',
+                filter: 'contrast(1.05) brightness(1.02)',
+              }}
+            >
+              <source src="/videos/hero-video-web.mp4" type="video/mp4" />
+              <source src="/videos/hero-video.mp4?v=20261114_AD4A88FC" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        )}
 
         {/* Floating Enterprise Telemetry Highlights Strip (Fills Space with High-Credibility Architecture Metrics) */}
         <div className="mt-2 sm:mt-4 lg:mt-8 xl:mt-12 w-full grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 pointer-events-auto">
@@ -202,7 +216,7 @@ export const Hero: React.FC<HeroProps> = () => {
                   <h4 className="text-xs sm:text-sm font-bold text-white tracking-tight truncate font-display">
                     {item.title}
                   </h4>
-                  <p className="text-[10px] sm:text-xs text-slate-400 truncate font-mono">
+                  <p className="text-[10px] sm:text-xs text-[#B8C7D9] truncate font-mono">
                     {item.desc}
                   </p>
                 </div>

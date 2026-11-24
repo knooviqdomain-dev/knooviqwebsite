@@ -1285,14 +1285,14 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
               className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.12] drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]"
             >
               Enterprise-Grade <br />
-              <span className="text-[#00A3E0]">SAP Transformation Practices</span>
+              <span className="text-[#48C8F5]">SAP Transformation Practices</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-xl pt-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
+              className="text-base sm:text-lg text-[#E2EAF4] leading-relaxed font-normal max-w-xl pt-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]"
             >
               Explore Knooviq's specialized transformation practices across cloud ERP, architecture, automation, clean-core migrations, and enterprise modernization.
             </motion.p>
@@ -1337,14 +1337,14 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center max-w-3xl mx-auto mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-xs font-mono font-bold uppercase text-cyan-300 mb-3">
-              <Bot className="w-3.5 h-3.5 text-cyan-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-[#48C8F5]/30 text-xs font-mono font-bold uppercase text-[#48C8F5] mb-3">
+              <Bot className="w-3.5 h-3.5 text-[#48C8F5]" />
               <span>AI-POWERED ARCHITECTURE NAVIGATOR</span>
             </div>
             <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
               Interactive Transformation AI Synthesis
             </h2>
-            <p className="text-xs sm:text-sm text-slate-400 mt-2">
+            <p className="text-xs sm:text-sm text-[#E2EAF4] mt-2">
               Select your current enterprise ERP baseline and transformation priority to generate a tailored target cloud architecture and AI injection blueprint.
             </p>
           </div>
@@ -1353,7 +1353,7 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
 
             {/* Step 1: Select ERP Baseline */}
             <div className="space-y-2">
-              <span className="text-xs font-mono text-cyan-400 uppercase font-bold block">
+              <span className="text-xs font-mono text-[#48C8F5] uppercase font-bold block">
                 1. Select Current ERP Foundation:
               </span>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -1368,11 +1368,11 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
                     onClick={() => setSelectedErp(item.id)}
                     className={`p-3 rounded-xl text-left border transition-all ${selectedErp === item.id
                         ? 'bg-[#00A3E0]/20 border-[#00A3E0] shadow-sm'
-                        : 'bg-black/30 border-white/5 hover:border-white/20 text-slate-400'
+                        : 'bg-black/30 border-white/5 hover:border-white/20 text-[#B8C7D9]'
                       }`}
                   >
                     <span className="text-xs font-bold text-white block">{item.label}</span>
-                    <span className="text-[10px] text-slate-400 block mt-0.5">{item.sub}</span>
+                    <span className="text-[10px] text-[#B8C7D9] block mt-0.5">{item.sub}</span>
                   </button>
                 ))}
               </div>
@@ -1380,7 +1380,7 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
 
             {/* Step 2: Select Strategic Goal */}
             <div className="space-y-2">
-              <span className="text-xs font-mono text-cyan-400 uppercase font-bold block">
+              <span className="text-xs font-mono text-[#48C8F5] uppercase font-bold block">
                 2. Select Primary Transformation Driver:
               </span>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -1395,11 +1395,11 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
                     onClick={() => setSelectedGoal(item.id)}
                     className={`p-3 rounded-xl text-left border transition-all ${selectedGoal === item.id
                         ? 'bg-purple-600/20 border-purple-400 shadow-sm'
-                        : 'bg-black/30 border-white/5 hover:border-white/20 text-slate-400'
+                        : 'bg-black/30 border-white/5 hover:border-white/20 text-[#B8C7D9]'
                       }`}
                   >
                     <span className="text-xs font-bold text-white block">{item.label}</span>
-                    <span className="text-[10px] text-slate-400 block mt-0.5">{item.sub}</span>
+                    <span className="text-[10px] text-[#B8C7D9] block mt-0.5">{item.sub}</span>
                   </button>
                 ))}
               </div>
@@ -1409,8 +1409,8 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
             <div className="p-5 rounded-xl bg-black/60 border border-white/10 space-y-4">
               <div className="flex items-center justify-between border-b border-white/10 pb-3">
                 <div className="flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-cyan-400" />
-                  <span className="text-xs font-mono font-bold text-cyan-300 uppercase">
+                  <Sparkles className="w-4 h-4 text-[#48C8F5]" />
+                  <span className="text-xs font-mono font-bold text-[#48C8F5] uppercase">
                     AI SENSING ENGINE &bull; GENERATED TARGET BLUEPRINT
                   </span>
                 </div>
@@ -1421,38 +1421,38 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
                 <div className="p-3 rounded-lg bg-white/5 border border-white/5 space-y-1">
-                  <span className="text-[10px] font-mono uppercase text-slate-400 font-bold block">Recommended Architecture</span>
+                  <span className="text-[10px] font-mono uppercase text-[#B8C7D9] font-bold block">Recommended Architecture</span>
                   <div className="text-sm font-bold text-white">
                     {selectedErp === 'ecc-custom' ? 'Selective Data Transition + Clean Core' :
                       selectedErp === 'ecc-hana' ? 'RISE with SAP S/4HANA Private Cloud' :
                         selectedErp === 's4-onprem' ? 'Cloud Upgrade & BTP Side-by-Side Decoupling' :
                           'Greenfield S/4HANA Public Cloud Fit-to-Standard'}
                   </div>
-                  <span className="text-[11px] text-slate-400 block">Universal Journal (ACDOCA) single source of truth</span>
+                  <span className="text-[11px] text-[#B8C7D9] block">Universal Journal (ACDOCA) single source of truth</span>
                 </div>
 
                 <div className="p-3 rounded-lg bg-white/5 border border-white/5 space-y-1">
-                  <span className="text-[10px] font-mono uppercase text-slate-400 font-bold block">Autonomous AI Injections</span>
-                  <div className="text-sm font-bold text-cyan-300">
+                  <span className="text-[10px] font-mono uppercase text-[#B8C7D9] font-bold block">Autonomous AI Injections</span>
+                  <div className="text-sm font-bold text-[#48C8F5]">
                     {selectedGoal === 'ai-agents' ? 'Multi-Agent Autonomous Swarms + Joule' :
                       selectedGoal === 'clean-core' ? 'Automated ABAP RAP Transpiler + DOX' :
                         selectedGoal === 'rise-cloud' ? 'Joule Copilot + BTP Event Mesh' :
                           'SAP IBP Machine Learning Demand Sensing'}
                   </div>
-                  <span className="text-[11px] text-slate-400 block">Native embedding with zero customer data training</span>
+                  <span className="text-[11px] text-[#B8C7D9] block">Native embedding with zero customer data training</span>
                 </div>
 
                 <div className="p-3 rounded-lg bg-white/5 border border-white/5 space-y-1">
-                  <span className="text-[10px] font-mono uppercase text-slate-400 font-bold block">Projected Business Impact</span>
+                  <span className="text-[10px] font-mono uppercase text-[#B8C7D9] font-bold block">Projected Business Impact</span>
                   <div className="text-sm font-bold text-emerald-400">
                     -76% Custom Code Debt &bull; 6-8 Mos
                   </div>
-                  <span className="text-[11px] text-slate-400 block">Near-Zero Downtime Cutover Protocol</span>
+                  <span className="text-[11px] text-[#B8C7D9] block">Near-Zero Downtime Cutover Protocol</span>
                 </div>
               </div>
 
               <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-                <span className="text-slate-400 italic">
+                <span className="text-[#B8C7D9] italic">
                   Deterministic recommendation based on Knooviq verified enterprise benchmarks.
                 </span>
                 <button
