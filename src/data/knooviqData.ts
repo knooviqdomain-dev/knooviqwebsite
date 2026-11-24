@@ -8,7 +8,7 @@ export const COMPANY_INFO = {
     address: '1210, One World by Sanjar, Near NL College, SV Road, Malad West',
     city: 'Mumbai',
     state: 'Maharashtra',
-    postalCode: '400065',
+    postalCode: '400064',
     country: 'India',
   },
   contact: {

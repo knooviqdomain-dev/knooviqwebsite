@@ -68,7 +68,7 @@ Status:            Pending Review
 Governing Terms:   Standard Enterprise NDA & ISO 27001 Data Security Guidelines
 Official Website:  https://knooviq.com
 Head Office:       1210, One World by Sanjar, Near NL College, SV Road,
-                   Malad West, Mumbai 400065, India
+                   Malad West, Mumbai 400064, India
 ================================================================================
 `;
 
@@ -123,7 +123,7 @@ Response SLA:      Within 24 Business Hours
 Confidentiality:   Pre-Signed Non-Disclosure Agreement (NDA)
 Official Website:  https://knooviq.com
 Head Office:       1210, One World by Sanjar, Near NL College, SV Road,
-                   Malad West, Mumbai 400065, India
+                   Malad West, Mumbai 400064, India
 ================================================================================
 `;
 
@@ -192,7 +192,7 @@ Privacy Consent:   Granted (GDPR & IT Act Compliance)
 Talent Desk:       careers@knooviq.com
 Official Portal:   https://knooviq.com
 Corporate Office:  1210, One World by Sanjar, Near NL College, SV Road,
-                   Malad West, Mumbai 400065, India
+                   Malad West, Mumbai 400064, India
 ================================================================================
 `;
 

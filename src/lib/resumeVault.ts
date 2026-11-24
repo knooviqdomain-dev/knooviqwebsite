@@ -206,7 +206,7 @@ export function generateCandidateDossierPdf(data: {
 
   lines.push(`--------------------------------------------------------------------------------`);
   lines.push(`CORPORATE OFFICE: 1210, One World by Sanjar, Near NL College,`);
-  lines.push(`                  SV Road, Malad West, Mumbai 400065, India`);
+  lines.push(`                  SV Road, Malad West, Mumbai 400064, India`);
   lines.push(`CONTACT:          careers@knooviq.com | +91-7900073410`);
 
   // Build compliant PDF content stream
