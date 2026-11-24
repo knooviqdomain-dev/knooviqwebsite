@@ -123,40 +123,6 @@
     text-wrap: pretty;
   }
 
-  /* Mobile View (<640px): High-contrast Deep Navy Blue (#102A43) for paragraph text on white & light-blue surfaces */
-  @media screen and (max-width: 639.98px) {
-    p:not([class*="text-white"]):not([class*="text-slate-50"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-red"]):not([class*="text-sky"]):not([class*="text-blue"]):not([class*="text-indigo"]):not([class*="text-purple"]):not([class*="text-violet"]):not([class*="text-gray-50"]):not([class*="text-gray-100"]):not([class*="text-gray-200"]):not([class*="text-zinc"]):not([class*="text-neutral"]):not([class*="text-stone"]) {
-      color: #102A43 !important;
-    }
-
-    /* Hero & Dark Sections on Mobile: Ensure text remains crisp, bright and fully legible */
-    section[class*="bg-slate-900"] p,
-    section[class*="bg-slate-950"] p,
-    section[class*="bg-[#030712]"] p,
-    section[class*="bg-black"] p,
-    div[class*="bg-slate-900"] p,
-    div[class*="bg-slate-950"] p {
-      color: inherit;
-    }
-
-    /* Explicit guarantee for light text utility classes on mobile */
-    p[class*="text-slate-100"],
-    .cloud-sora-scope p[class*="text-slate-100"] {
-      color: #f1f5f9 !important;
-    }
-    p[class*="text-slate-50"],
-    .cloud-sora-scope p[class*="text-slate-50"] {
-      color: #f8fafc !important;
-    }
-    p[class*="text-slate-200"],
-    .cloud-sora-scope p[class*="text-slate-200"] {
-      color: #e2e8f0 !important;
-    }
-    p[class*="text-white"],
-    .cloud-sora-scope p[class*="text-white"] {
-      color: #ffffff !important;
-    }
-  }
 
   /* About Sections & Pages Typography Standards (Sora Family Integration) */
   .about-typography {
@@ -191,10 +157,6 @@
       letter-spacing: normal !important;
     }
 
-    .about-typography p:not([class*="text-white"]):not([class*="text-slate-50"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]),
-    #about p:not([class*="text-white"]):not([class*="text-slate-50"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]) {
-      color: #102A43 !important;
-    }
   }
 
   /* Product Sections & Pages Typography Standards (Sora Family Integration) */
@@ -252,13 +214,6 @@
       letter-spacing: normal !important;
     }
 
-    .product-typography p:not([class*="text-white"]):not([class*="text-slate-50"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]),
-    .products-nav-typography a:not([class*="text-white"]):not([class*="text-slate-50"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]),
-    .products-nav-typography p:not([class*="text-white"]):not([class*="text-slate-50"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]),
-    #products p:not([class*="text-white"]):not([class*="text-slate-50"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]),
-    [data-section="products"] p:not([class*="text-white"]):not([class*="text-slate-50"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]) {
-      color: #102A43 !important;
-    }
   }
 
   /* Transformation Sections & Pages Typography Standards (Sora Family Integration) */
@@ -318,12 +273,6 @@
       letter-spacing: normal !important;
     }
 
-    .transformation-typography p:not([class*="text-white"]):not([class*="text-slate-50"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-rose"]),
-    .transformation-section p:not([class*="text-white"]):not([class*="text-slate-50"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-rose"]),
-    #transformation p:not([class*="text-white"]):not([class*="text-slate-50"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-rose"]),
-    [data-section="transformation"] p:not([class*="text-white"]):not([class*="text-slate-50"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-rose"]) {
-      color: #102A43 !important;
-    }
   }
 
   button,
@@ -377,6 +326,7 @@
     line-height: 1.6;
   }
 }
+
 @media (min-width: 640px) {
   .cloud-sora-scope p:not(.text-xs):not(.text-\[10px\]):not(.text-\[11px\]):not(.text-\[12px\]) {
     font-size: 16px;

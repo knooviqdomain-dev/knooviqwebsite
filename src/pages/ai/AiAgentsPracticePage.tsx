@@ -723,18 +723,6 @@ export const AiAgentsPracticePage: React.FC<AiAgentsPracticePageProps> = ({
                 <span>Closed-Loop S/4HANA Action</span>
               </div>
             </motion.div>
-
-            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
-            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
-              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
-                <img
-                  src="/images/ai_agents_hero_widescreen.jpg"
-                  alt="Autonomous Enterprise AI Agents"
-                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
-                  loading="eager"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </section>
