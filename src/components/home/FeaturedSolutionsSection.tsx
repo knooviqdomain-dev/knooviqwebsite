@@ -23,7 +23,7 @@ export const FeaturedSolutionsSection: React.FC<{ onOpenContact?: (service?: str
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#061224] via-[#0A1931] to-[#003B73] border border-sky-500/25 shadow-2xl shadow-sky-950/40 p-8 sm:p-10 lg:p-14"
+          className="dark-enterprise-cta relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#061224] via-[#0A1931] to-[#003B73] border border-sky-500/25 shadow-2xl shadow-sky-950/40 p-8 sm:p-10 lg:p-14"
         >
           {/* Subtle Ambient Background Glows */}
           <div className="absolute -top-32 -right-32 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl pointer-events-none" />

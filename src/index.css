@@ -131,139 +131,147 @@
   /* 4. Secondary descriptions & supporting text: #B8C7D9                      */
   /* 5. Fix low opacity (opacity-30, 40, 50, text-white/30..50)               */
   /* 6. Remove dark text colors accidentally placed on dark navy backgrounds   */
-  /* 7. Preserve readable dark text on light backgrounds (#102A43)             */
+  /* 7. ALL LIGHT SURFACES: High-contrast Deep Navy (#102A43 / #0A1931)        */
   /* ========================================================================= */
 
   /* 1. DARK SURFACES: Headings pure white (#FFFFFF) */
-  :is(section, div, header)[class*="bg-slate-900"] :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(section, div, header)[class*="bg-slate-950"] :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(section, div, header)[class*="bg-[#020617]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(section, div, header)[class*="bg-[#030712]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(section, div, header)[class*="bg-[#071322]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(section, div, header)[class*="bg-[#070E1C]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(section, div, header)[class*="bg-[#0A1931]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(section, div, header)[class*="bg-[#0a0f1d]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(section, div, header)[class*="bg-[#0B1528]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(section, div, header)[class*="bg-[#061426]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(section, div, header)[class*="bg-[#040A17]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(section, div, header)[class*="bg-black"] :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(div, section)[class*="from-[#061426]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(div, section)[class*="from-[#071322]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(div, section)[class*="from-[#0A1931]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(div, section)[class*="from-[#030712]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(div, section)[class*="from-[#020617]"] :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(div, section)[class*="from-slate-950"] :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(div, section)[class*="from-slate-900"] :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(section, div, header)[class*="bg-[#020617]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(section, div, header)[class*="bg-[#030712]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(section, div, header)[class*="bg-[#040A17]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(section, div, header)[class*="bg-[#061426]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(section, div, header)[class*="bg-[#08152B]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(section, div, header)[class*="bg-[#0B1528]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(section, div, header)[class*="bg-slate-950"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(div, section)[class*="from-[#061426]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(div, section)[class*="from-[#071322]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
+  :is(div, section)[class*="from-[#020617]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
   #hero :is(h1, h2, h3, h4, h5, h6, .font-display),
   .dark-hero :is(h1, h2, h3, h4, h5, h6, .font-display) {
     color: #FFFFFF !important;
   }
 
   /* 2. DARK SURFACES: Paragraph and body text -> Light Grey-White (#E2EAF4) */
-  :is(section, div)[class*="bg-slate-900"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(section, div)[class*="bg-slate-950"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(section, div)[class*="bg-[#020617]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(section, div)[class*="bg-[#030712]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(section, div)[class*="bg-[#071322]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(section, div)[class*="bg-[#070E1C]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(section, div)[class*="bg-[#0A1931]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(section, div)[class*="bg-[#0a0f1d]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(section, div)[class*="bg-[#0B1528]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(section, div)[class*="bg-[#061426]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(section, div)[class*="bg-[#040A17]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(section, div)[class*="bg-black"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(div, section)[class*="from-[#061426]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(div, section)[class*="from-[#071322]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(div, section)[class*="from-[#0A1931]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(div, section)[class*="from-[#030712]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(div, section)[class*="from-[#020617]"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(div, section)[class*="from-slate-950"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(div, section)[class*="from-slate-900"] p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(section, div)[class*="bg-[#020617]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(section, div)[class*="bg-[#030712]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(section, div)[class*="bg-[#040A17]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(section, div)[class*="bg-[#061426]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(section, div)[class*="bg-[#08152B]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(section, div)[class*="bg-[#0B1528]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(section, div)[class*="bg-slate-950"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(div, section)[class*="from-[#061426]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(div, section)[class*="from-[#071322]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  :is(div, section)[class*="from-[#020617]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
   #hero p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
   .dark-hero p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]) {
     color: #E2EAF4 !important;
   }
 
   /* 3. Highlighted words & important text on dark -> Light Blue (#48C8F5) */
-  :is(section, div)[class*="bg-slate-900"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
-  :is(section, div)[class*="bg-slate-950"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
   :is(section, div)[class*="bg-[#020617]"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
-  :is(section, div)[class*="bg-[#030712]"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
-  :is(section, div)[class*="bg-[#071322]"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
-  :is(section, div)[class*="bg-[#0A1931]"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
-  :is(section, div)[class*="bg-[#0B1528]"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
+  :is(section, div)[class*="bg-[#040A17]"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
+  :is(section, div)[class*="bg-[#061426]"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
+  :is(section, div)[class*="bg-[#08152B]"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
+  :is(section, div)[class*="bg-slate-950"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
   #hero :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]) {
     color: #48C8F5 !important;
   }
 
-  /* 4. Secondary descriptions & supporting text -> #B8C7D9 */
-  :is(section, div)[class*="bg-slate-900"] :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
-  :is(section, div)[class*="bg-slate-950"] :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
-  :is(section, div)[class*="bg-[#020617]"] :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
-  :is(section, div)[class*="bg-[#030712]"] :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
-  :is(section, div)[class*="bg-[#071322]"] :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
-  :is(section, div)[class*="bg-[#0A1931]"] :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
-  :is(section, div)[class*="bg-[#0B1528]"] :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
-  :is(section, div)[class*="bg-[#040A17]"] :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
-  :is(section, div)[class*="bg-black"] :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
+  /* 4. Secondary descriptions & supporting text on dark -> #B8C7D9 */
+  :is(section, div)[class*="bg-[#020617]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
+  :is(section, div)[class*="bg-[#040A17]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
+  :is(section, div)[class*="bg-[#061426]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
+  :is(section, div)[class*="bg-[#08152B]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
+  :is(section, div)[class*="bg-slate-950"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
   #hero :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark) {
     color: #B8C7D9 !important;
   }
 
-  /* 5. Fix all low-opacity text elements on dark backgrounds */
-  :is(section, div)[class*="bg-slate-900"] :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
-  :is(section, div)[class*="bg-slate-950"] :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
-  :is(section, div)[class*="bg-[#020617]"] :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
-  :is(section, div)[class*="bg-[#030712]"] :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
-  :is(section, div)[class*="bg-[#071322]"] :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
-  :is(section, div)[class*="bg-[#0A1931]"] :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
-  :is(section, div)[class*="bg-[#0B1528]"] :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
+  /* 5. Fix low-opacity text elements on dark backgrounds */
+  :is(section, div)[class*="bg-[#020617]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
+  :is(section, div)[class*="bg-[#040A17]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
+  :is(section, div)[class*="bg-[#061426]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
+  :is(section, div)[class*="bg-[#08152B]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
+  :is(section, div)[class*="bg-slate-950"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
   #hero :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]) {
     color: #E2EAF4 !important;
     opacity: 1 !important;
   }
 
   /* 6. Remove dark text colors from dark backgrounds */
-  :is(section, div)[class*="bg-slate-900"] :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
-  :is(section, div)[class*="bg-slate-950"] :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
-  :is(section, div)[class*="bg-[#020617]"] :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
-  :is(section, div)[class*="bg-[#030712]"] :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
-  :is(section, div)[class*="bg-[#071322]"] :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
-  :is(section, div)[class*="bg-[#0A1931]"] :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
-  :is(section, div)[class*="bg-[#0B1528]"] :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
+  :is(section, div)[class*="bg-[#020617]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
+  :is(section, div)[class*="bg-[#040A17]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
+  :is(section, div)[class*="bg-[#061426]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
+  :is(section, div)[class*="bg-[#08152B]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
+  :is(section, div)[class*="bg-slate-950"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
   #hero :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]) {
     color: #E2EAF4 !important;
   }
 
-  /* 7. Light cards or modals embedded inside dark sections: preserve crisp dark text (#102A43 / #0A1931) */
-  :is(section, div)[class*="bg-slate-900"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) p,
-  :is(section, div)[class*="bg-slate-950"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) p,
-  :is(section, div)[class*="bg-[#020617]"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) p,
-  :is(section, div)[class*="bg-[#030712]"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) p,
-  :is(section, div)[class*="bg-[#071322]"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) p,
-  :is(section, div)[class*="bg-black"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) p {
+  /* 7. ALL LIGHT SURFACES: High-contrast Deep Navy Blue (#102A43 / #0A1931) */
+  /* Ensures white/light cards and sections NEVER show white or faded text */
+  :is(section, div, footer)[class*="bg-white"] p,
+  :is(section, div, footer)[class*="bg-slate-50"] p,
+  :is(section, div, footer)[class*="bg-slate-100"] p,
+  div[class*="bg-white"] p,
+  div[class*="bg-slate-50"] p,
+  div[class*="bg-slate-100"] p,
+  #what-knooviq-does p,
+  #about p {
     color: #102A43 !important;
   }
 
-  :is(section, div)[class*="bg-slate-900"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) :is(h1, h2, h3, h4, h5, h6),
-  :is(section, div)[class*="bg-slate-950"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) :is(h1, h2, h3, h4, h5, h6),
-  :is(section, div)[class*="bg-[#020617]"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) :is(h1, h2, h3, h4, h5, h6),
-  :is(section, div)[class*="bg-[#030712]"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) :is(h1, h2, h3, h4, h5, h6),
-  :is(section, div)[class*="bg-[#071322]"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) :is(h1, h2, h3, h4, h5, h6),
-  :is(section, div)[class*="bg-black"] :is(div[class*="bg-white"], div[class*="bg-slate-50"], div[class*="bg-slate-100"]) :is(h1, h2, h3, h4, h5, h6) {
+  .footer-contact-card p,
+  .footer-contact-card a,
+  .footer-contact-card span,
+  .footer-contact-card div {
+    color: #0F172A !important;
+  }
+
+  .dark .footer-contact-card p,
+  .dark .footer-contact-card a,
+  .dark .footer-contact-card span,
+  .dark .footer-contact-card div {
+    color: #FFFFFF !important;
+  }
+
+  /* Embedded Dark CTA Banner in Home Section */
+  .dark-enterprise-cta p {
+    color: #E2EAF4 !important;
+  }
+  .dark-enterprise-cta :is(h1, h2, h3, h4, h5, h6) {
+    color: #FFFFFF !important;
+  }
+
+  :is(section, div, footer)[class*="bg-white"] :is(h1, h2, h3, h4, h5, h6),
+  :is(section, div, footer)[class*="bg-slate-50"] :is(h1, h2, h3, h4, h5, h6),
+  :is(section, div, footer)[class*="bg-slate-100"] :is(h1, h2, h3, h4, h5, h6),
+  div[class*="bg-white"] :is(h1, h2, h3, h4, h5, h6),
+  div[class*="bg-slate-50"] :is(h1, h2, h3, h4, h5, h6),
+  div[class*="bg-slate-100"] :is(h1, h2, h3, h4, h5, h6) {
     color: #0A1931 !important;
   }
 
-  /* 8. LIGHT SURFACES: High-contrast Deep Navy Blue (#102A43) across desktop & mobile */
-  :is(section, div)[class*="bg-white"]:not([class*="dark:"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-red"]):not([class*="text-sky"]):not([class*="text-blue"]):not([class*="text-indigo"]):not([class*="text-purple"]):not([class*="text-violet"]):not([class*="text-transparent"]):not([class*="text-white"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]),
-  :is(section, div)[class*="bg-slate-50"]:not([class*="dark:"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-red"]):not([class*="text-sky"]):not([class*="text-blue"]):not([class*="text-indigo"]):not([class*="text-purple"]):not([class*="text-violet"]):not([class*="text-transparent"]):not([class*="text-white"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]),
-  :is(section, div)[class*="bg-slate-100"]:not([class*="dark:"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-red"]):not([class*="text-sky"]):not([class*="text-blue"]):not([class*="text-indigo"]):not([class*="text-purple"]):not([class*="text-violet"]):not([class*="text-transparent"]):not([class*="text-white"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]) {
-    color: #102A43;
-  }
-
+  /* 8. MOBILE VIEW: Background-Aware Contrast Protection */
   @media screen and (max-width: 639.98px) {
-    p:not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-red"]):not([class*="text-sky"]):not([class*="text-blue"]):not([class*="text-indigo"]):not([class*="text-purple"]):not([class*="text-violet"]):not([class*="text-transparent"]):not([class*="text-white"]):not([class*="text-slate-100"]):not([class*="text-slate-200"]) {
-      color: #102A43;
+    /* Mobile Light Surfaces -> Deep Navy Text */
+    :is(section, div)[class*="bg-white"] p,
+    :is(section, div)[class*="bg-slate-50"] p,
+    :is(section, div)[class*="bg-slate-100"] p,
+    #what-knooviq-does p,
+    #about p {
+      color: #102A43 !important;
+    }
+
+    /* Mobile Dark Surfaces -> Light Grey-White Text */
+    #hero p,
+    .dark-enterprise-cta p,
+    :is(section, div)[class*="bg-[#020617]"] p,
+    :is(section, div)[class*="bg-[#040A17]"] p,
+    :is(section, div)[class*="bg-[#061426]"] p,
+    :is(section, div)[class*="bg-[#08152B]"] p,
+    :is(section, div)[class*="from-[#061426]"] p,
+    :is(section, div)[class*="from-[#061224]"] p {
+      color: #E2EAF4 !important;
     }
   }
 
@@ -291,6 +299,7 @@
   }
 
   @media screen and (max-width: 639.98px) {
+
     .about-typography p:not([class*="text-xs"]):not([class*="text-["]):not([class*="text-sm"]):not([class*="font-mono"]),
     #about p:not([class*="text-xs"]):not([class*="text-["]):not([class*="text-sm"]):not([class*="font-mono"]) {
       font-size: 15.5px !important;
@@ -341,6 +350,7 @@
   }
 
   @media screen and (max-width: 639.98px) {
+
     .product-typography p:not([class*="text-xs"]):not([class*="text-["]):not([class*="text-sm"]):not([class*="font-mono"]),
     #products p:not([class*="text-xs"]):not([class*="text-["]):not([class*="text-sm"]):not([class*="font-mono"]),
     [data-section="products"] p:not([class*="text-xs"]):not([class*="text-["]):not([class*="text-sm"]):not([class*="font-mono"]) {
@@ -416,6 +426,7 @@
   }
 
   @media screen and (max-width: 639.98px) {
+
     .transformation-typography p:not([class*="text-xs"]):not([class*="text-["]):not([class*="text-sm"]):not([class*="font-mono"]),
     .transformation-section p:not([class*="text-xs"]):not([class*="text-["]):not([class*="text-sm"]):not([class*="font-mono"]),
     #transformation p:not([class*="text-xs"]):not([class*="text-["]):not([class*="text-sm"]):not([class*="font-mono"]),
@@ -486,6 +497,7 @@
     line-height: 1.6;
   }
 }
+
 @media (min-width: 640px) {
   .cloud-sora-scope p:not(.text-xs):not(.text-\[10px\]):not(.text-\[11px\]):not(.text-\[12px\]) {
     font-size: 16px;

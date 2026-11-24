@@ -389,7 +389,7 @@ export const Footer: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
             
             {/* Card 1: CALL US */}
-            <div className="rounded-2xl p-4 sm:p-5 bg-slate-50 dark:bg-[#071322] border border-slate-200 dark:border-cyan-500/20 shadow-xs flex items-center gap-4 transition-all hover:border-sky-300 dark:hover:border-cyan-500/40">
+            <div className="footer-contact-card rounded-2xl p-4 sm:p-5 bg-slate-50 dark:bg-[#071322] border border-slate-200 dark:border-cyan-500/20 shadow-xs flex items-center gap-4 transition-all hover:border-sky-300 dark:hover:border-cyan-500/40">
               <div className="w-12 h-12 rounded-xl bg-cyan-500/10 dark:bg-cyan-500/15 border border-cyan-500/30 text-[#0077CC] dark:text-cyan-400 flex items-center justify-center shrink-0">
                 <Phone className="w-5 h-5" />
               </div>
@@ -410,7 +410,7 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* Card 2: EMAIL US */}
-            <div className="rounded-2xl p-4 sm:p-5 bg-slate-50 dark:bg-[#071322] border border-slate-200 dark:border-cyan-500/20 shadow-xs flex items-center gap-4 transition-all hover:border-sky-300 dark:hover:border-cyan-500/40">
+            <div className="footer-contact-card rounded-2xl p-4 sm:p-5 bg-slate-50 dark:bg-[#071322] border border-slate-200 dark:border-cyan-500/20 shadow-xs flex items-center gap-4 transition-all hover:border-sky-300 dark:hover:border-cyan-500/40">
               <div className="w-12 h-12 rounded-xl bg-cyan-500/10 dark:bg-cyan-500/15 border border-cyan-500/30 text-[#0077CC] dark:text-cyan-400 flex items-center justify-center shrink-0">
                 <Mail className="w-5 h-5" />
               </div>
@@ -427,7 +427,7 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* Card 3: HEAD OFFICE */}
-            <div className="rounded-2xl p-4 sm:p-5 bg-slate-50 dark:bg-[#071322] border border-slate-200 dark:border-cyan-500/20 shadow-xs flex items-center gap-4 transition-all hover:border-sky-300 dark:hover:border-cyan-500/40">
+            <div className="footer-contact-card rounded-2xl p-4 sm:p-5 bg-slate-50 dark:bg-[#071322] border border-slate-200 dark:border-cyan-500/20 shadow-xs flex items-center gap-4 transition-all hover:border-sky-300 dark:hover:border-cyan-500/40">
               <div className="w-12 h-12 rounded-xl bg-cyan-500/10 dark:bg-cyan-500/15 border border-cyan-500/30 text-[#0077CC] dark:text-cyan-400 flex items-center justify-center shrink-0">
                 <MapPin className="w-5 h-5" />
               </div>
