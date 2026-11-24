@@ -94,23 +94,21 @@ export const Hero: React.FC<HeroProps> = () => {
       id="hero"
       className="relative w-full overflow-hidden bg-[#020617] flex items-center justify-center select-none pt-[72px] sm:pt-[80px] lg:pt-[84px] min-h-[600px] sm:min-h-[660px] lg:h-screen lg:min-h-[680px] lg:max-h-[1080px]"
     >
-      {/* 100% Screen Cover Background Video for Laptops & Desktops (Seamless 60fps Loop) */}
+      {/* 100% Screen Cover Background Video for Laptops & Desktops (Crystal Clear High-Definition) */}
       <video
         ref={desktopVideoRef}
         autoPlay
         loop
         muted
         playsInline
-        preload="auto"
+        preload="metadata"
         disablePictureInPicture
         disableRemotePlayback
         className="hidden lg:block absolute inset-0 w-full h-full object-cover object-top pointer-events-none"
         style={{
           willChange: 'transform',
-          transform: 'translate3d(0, 0, 0)',
-          WebkitTransform: 'translate3d(0, 0, 0)',
-          backfaceVisibility: 'hidden',
-          WebkitBackfaceVisibility: 'hidden',
+          imageRendering: '-webkit-optimize-contrast',
+          filter: 'contrast(1.05) brightness(1.02)',
         }}
       >
         <source src="/videos/hero-video.mp4?v=20261114_AD4A88FC" type="video/mp4" />
@@ -118,19 +116,8 @@ export const Hero: React.FC<HeroProps> = () => {
         Your browser does not support the video tag.
       </video>
 
-      {/* Multi-layered Translucent Dark Blue Shade with Ambient Cyan Glow (Lightened for video clarity) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#020b22]/50 via-[#041538]/20 to-[#020a1c]/35 z-10 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_45%,rgba(0,163,224,0.15),transparent_65%)] z-10 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/60 via-transparent to-[#020617]/15 z-10 pointer-events-none" />
-
-      {/* Subtle Optical Scanline Grid for depth without obscuring video clarity */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-15 z-10"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)',
-          backgroundSize: '48px 48px',
-        }}
-      />
+      {/* Clean Subtle Contrast Shade: Preserves 100% Video Clarity Without Any Fog or Grid Distortion */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/60 via-[#020617]/10 to-[#020617]/25 z-10 pointer-events-none" />
 
       {/* Hero Foreground Content: Dynamic Heading, Subtitle & Interactive Telemetry Highlights */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-10 lg:py-16 flex flex-col justify-center items-start text-left">
@@ -183,16 +170,14 @@ export const Hero: React.FC<HeroProps> = () => {
             loop
             muted
             playsInline
-            preload="auto"
+            preload="metadata"
             disablePictureInPicture
             disableRemotePlayback
             className="w-full h-full object-contain bg-slate-950"
             style={{
               willChange: 'transform',
-              transform: 'translate3d(0, 0, 0)',
-              WebkitTransform: 'translate3d(0, 0, 0)',
-              backfaceVisibility: 'hidden',
-              WebkitBackfaceVisibility: 'hidden',
+              imageRendering: '-webkit-optimize-contrast',
+              filter: 'contrast(1.05) brightness(1.02)',
             }}
           >
             <source src="/videos/hero-video.mp4?v=20261114_AD4A88FC" type="video/mp4" />
