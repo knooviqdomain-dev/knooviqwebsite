@@ -19,11 +19,37 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
-        manualChunks: {
-          three: ['three', '@react-three/fiber', '@react-three/drei'],
-          framer: ['framer-motion', 'gsap', 'lenis'],
-          supabase: ['@supabase/supabase-js'],
-          vendor: ['react', 'react-dom', 'lucide-react', 'zod', 'dompurify'],
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('three') || id.includes('@react-three')) {
+              return 'three-bundle';
+            }
+            if (id.includes('framer-motion') || id.includes('gsap') || id.includes('lenis')) {
+              return 'framer-motion-bundle';
+            }
+            if (id.includes('@supabase')) {
+              return 'supabase-bundle';
+            }
+            if (id.includes('lucide-react')) {
+              return 'icons-bundle';
+            }
+            return 'vendor-libs';
+          }
+          if (id.includes('/src/pages/industries/')) {
+            return 'chunk-industries';
+          }
+          if (id.includes('/src/pages/digital-intelligence/')) {
+            return 'chunk-intelligence';
+          }
+          if (id.includes('/src/pages/cloud-operations/')) {
+            return 'chunk-cloud-ops';
+          }
+          if (id.includes('/src/pages/about/')) {
+            return 'chunk-about';
+          }
+          if (id.includes('/src/pages/ai/')) {
+            return 'chunk-ai-products';
+          }
         },
       },
     },

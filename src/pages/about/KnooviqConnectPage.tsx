@@ -778,8 +778,8 @@ export const KnooviqConnectPage: React.FC<{ onOpenContact: (topic?: string) => v
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="p-4 rounded-2xl bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/15 hover:border-cyan-400/50 transition-colors shadow-xs">
                   <span className="text-[11px] font-sans font-bold tracking-wider text-slate-600 dark:text-slate-300 uppercase block mb-0.5">Phone Hotline</span>
-                  <a href="tel:+917900073410" className="text-sm font-bold text-[#0A2540] dark:text-cyan-300 font-sans hover:underline">
-                    +91-7900073410
+                  <a href="tel:+919892646003" className="text-sm font-bold text-[#0A2540] dark:text-cyan-300 font-sans hover:underline">
+                    +91 9892646003 / +91 9892014002
                   </a>
                 </div>
                 <div className="p-4 rounded-2xl bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/15 hover:border-cyan-400/50 transition-colors shadow-xs">

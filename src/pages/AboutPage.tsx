@@ -234,11 +234,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
                 <span className="text-gradient-cyan text-[16px] font-medium font-sora block mt-1">Knooviq's Journey and Vision</span>
               </h2>
 
-              <p className="text-[15.5px] sm:text-[14px] text-[#102A43] sm:text-slate-700 dark:text-slate-200 leading-[1.6] font-sora font-normal text-left [word-spacing:normal] tracking-normal">
+              <p className="text-[15.5px] sm:text-[15px] text-[#102A43] leading-[1.6] font-sora font-normal text-left [word-spacing:normal] tracking-normal">
                 At Knooviq, we’ve been your trusted partner in SAP Consulting and Solutions since our establishment in 2006. With a firm foundation in strong technical skills and unmatched domain expertise, we have consistently delivered excellence in project management, project support, customized application development, manpower outsourcing, and augmentation. Our project implementation exposure across diverse industries, including Retail, Metals & Mining, Oil & Gas, Manufacturing, and more, has solidified our reputation in the market.
               </p>
 
-              <p className="text-[15.5px] sm:text-[14px] text-[#102A43] sm:text-slate-600 dark:text-slate-200 leading-[1.6] font-sora font-normal text-left [word-spacing:normal] tracking-normal">
+              <p className="text-[15.5px] sm:text-[15px] text-[#102A43] leading-[1.6] font-sora font-normal text-left [word-spacing:normal] tracking-normal">
                 We take pride in our recognized quality of services, on-time delivery, and our expertise in turnkey business solutions. Knooviq is committed to providing strategic guidance to key sectors like Automotive, Manufacturing & Trading, Distribution, Design, and beyond. We are more than just a company; we are your partner in success, ready to empower your organization with innovative strategies and SAP excellence.
               </p>
 
@@ -272,21 +272,21 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
                     <span className="absolute -left-[31px] top-0 h-4 w-4 rounded-full bg-[#0A2540] ring-4 ring-white" />
                     <span className="text-[14px] font-mono font-bold text-[#0A2540] uppercase">2006 • Establishment</span>
                     <h4 className="font-sora text-[16px] font-medium text-slate-900 mt-0.5">Foundational Genesis & Domain Leadership</h4>
-                    <p className="text-[15.5px] sm:text-[14px] text-[#102A43] sm:text-slate-600 dark:text-slate-200 mt-1 font-sora leading-[1.6] font-normal text-left [word-spacing:normal] tracking-normal">Established with strong technical skills, delivering excellence in project management, SAP ECC support, and manpower augmentation.</p>
+                    <p className="text-[15.5px] sm:text-[14px] text-[#102A43] mt-1 font-sora leading-[1.6] font-normal text-left [word-spacing:normal] tracking-normal">Established with strong technical skills, delivering excellence in project management, SAP ECC support, and manpower augmentation.</p>
                   </div>
 
                   <div className="relative">
                     <span className="absolute -left-[31px] top-0 h-4 w-4 rounded-full bg-[#0052CC] ring-4 ring-white" />
                     <span className="text-[14px] font-mono font-bold text-[#0052CC] uppercase">Industry Exposure</span>
                     <h4 className="font-sora text-[16px] font-medium text-slate-900 mt-0.5">Diverse Multi-Sector Expansion</h4>
-                    <p className="text-[15.5px] sm:text-[14px] text-[#102A43] sm:text-slate-600 dark:text-slate-200 mt-1 font-sora leading-[1.6] font-normal text-left [word-spacing:normal] tracking-normal">Delivered turnkey implementations across Metals & Mining, Oil & Gas, Retail, Automotive, Manufacturing & Trading, and Distribution.</p>
+                    <p className="text-[15.5px] sm:text-[14px] text-[#102A43] mt-1 font-sora leading-[1.6] font-normal text-left [word-spacing:normal] tracking-normal">Delivered turnkey implementations across Metals & Mining, Oil & Gas, Retail, Automotive, Manufacturing & Trading, and Distribution.</p>
                   </div>
 
                   <div className="relative">
                     <span className="absolute -left-[31px] top-0 h-4 w-4 rounded-full bg-emerald-600 ring-4 ring-white" />
                     <span className="text-[14px] font-mono font-bold text-emerald-600 uppercase">Modern Era</span>
                     <h4 className="font-sora text-[16px] font-medium text-slate-900 mt-0.5">Clean-Core S/4HANA & Turnkey Innovation</h4>
-                    <p className="text-[15.5px] sm:text-[14px] text-[#102A43] sm:text-slate-600 dark:text-slate-200 mt-1 font-sora leading-[1.6] font-normal text-left [word-spacing:normal] tracking-normal">International technology partner powering zero-disruption SAP migrations, customized development, and 24/7 strategic advisory.</p>
+                    <p className="text-[15.5px] sm:text-[14px] text-[#102A43] mt-1 font-sora leading-[1.6] font-normal text-left [word-spacing:normal] tracking-normal">International technology partner powering zero-disruption SAP migrations, customized development, and 24/7 strategic advisory.</p>
                   </div>
                 </div>
               </div>
@@ -850,8 +850,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
                 </p>
               </div>
               <div className="pt-4 border-t border-slate-200 dark:border-white/10">
-                <a href="tel:+917900073410" className="text-sm font-bold text-[#0077B6] dark:text-cyan-300 hover:underline font-mono">
-                  +91-7900073410
+                <a href="tel:+919892646003" className="text-sm font-bold text-[#0077B6] dark:text-cyan-300 hover:underline font-mono">
+                  +91 9892646003
                 </a>
               </div>
             </motion.div>
@@ -956,7 +956,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
                     </div>
                     <div className="flex items-center gap-2.5">
                       <Phone className="h-4 w-4 text-[#00A3E0] dark:text-cyan-400 flex-shrink-0" />
-                      <span>+91-7900073410</span>
+                      <span>+91 9892646003 / +91 9892014002</span>
                     </div>
                     <div className="flex items-center gap-2.5">
                       <Mail className="h-4 w-4 text-[#00A3E0] dark:text-cyan-400 flex-shrink-0" />

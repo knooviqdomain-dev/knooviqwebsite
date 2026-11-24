@@ -398,12 +398,12 @@ export const Footer: React.FC = () => {
                   CALL US
                 </span>
                 <div className="text-sm sm:text-base font-semibold text-[#0F172A] dark:text-white leading-[1.7]">
-                  <a href="tel:+917900073410" className="hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors">
-                    +91-7900073410
+                  <a href="tel:+919892646003" className="hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors">
+                    +91 9892646003
                   </a>
                   <span className="text-slate-400 mx-1">/</span>
-                  <a href="tel:+918976697001" className="hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors">
-                    +91 89766 97001
+                  <a href="tel:+919892014002" className="hover:text-[#0077CC] dark:hover:text-cyan-400 transition-colors">
+                    +91 9892014002
                   </a>
                 </div>
               </div>

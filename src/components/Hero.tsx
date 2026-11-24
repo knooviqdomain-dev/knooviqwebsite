@@ -64,14 +64,28 @@ export const Hero: React.FC<HeroProps> = () => {
     videos.forEach((video) => {
       if (!video) return;
       video.muted = true;
-      const playVideo = async () => {
-        try {
-          await video.play();
-        } catch (err) {
-          console.warn('Autoplay waiting for user gesture or loading:', err);
+      video.defaultMuted = true;
+      video.playsInline = true;
+
+      const attemptPlay = () => {
+        const promise = video.play();
+        if (promise !== undefined) {
+          promise.catch((err) => {
+            console.warn('Autoplay waiting for user gesture or loading:', err);
+            const handleCanPlay = () => {
+              video.play().catch(() => {});
+              video.removeEventListener('canplay', handleCanPlay);
+            };
+            video.addEventListener('canplay', handleCanPlay);
+          });
         }
       };
-      playVideo();
+
+      if (video.readyState >= 2) {
+        attemptPlay();
+      } else {
+        video.addEventListener('loadeddata', attemptPlay, { once: true });
+      }
     });
   }, []);
 
@@ -80,40 +94,30 @@ export const Hero: React.FC<HeroProps> = () => {
       id="hero"
       className="relative w-full overflow-hidden bg-[#020617] flex items-center justify-center select-none pt-[72px] sm:pt-[80px] lg:pt-[84px] min-h-[600px] sm:min-h-[660px] lg:h-screen lg:min-h-[680px] lg:max-h-[1080px]"
     >
-      {/* 100% Screen Cover Background Video for Laptops & Desktops (Seamless 60fps Loop) */}
+      {/* 100% Screen Cover Background Video for Laptops & Desktops (Crystal Clear High-Definition) */}
       <video
         ref={desktopVideoRef}
         autoPlay
         loop
         muted
         playsInline
-        preload="auto"
-        className="hidden xl:block absolute inset-0 w-full h-full object-cover object-top"
+        preload="metadata"
+        disablePictureInPicture
+        disableRemotePlayback
+        className="hidden lg:block absolute inset-0 w-full h-full object-cover object-top pointer-events-none"
         style={{
-          transform: 'translateZ(0)',
-          WebkitTransform: 'translateZ(0)',
-          backfaceVisibility: 'hidden',
-          WebkitBackfaceVisibility: 'hidden',
+          willChange: 'transform',
+          imageRendering: '-webkit-optimize-contrast',
+          filter: 'contrast(1.05) brightness(1.02)',
         }}
       >
+        <source src="/videos/hero-video-web.mp4" type="video/mp4" />
         <source src="/videos/hero-video.mp4?v=20261114_AD4A88FC" type="video/mp4" />
-        <source src="/videos/Hero-section-video.MOV?v=20261114_AD4A88FC" type="video/quicktime" />
         Your browser does not support the video tag.
       </video>
 
-      {/* Multi-layered Translucent Dark Blue Shade with Ambient Cyan Glow (Lightened for video clarity) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#020b22]/50 via-[#041538]/20 to-[#020a1c]/35 z-10 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_45%,rgba(0,163,224,0.15),transparent_65%)] z-10 pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/60 via-transparent to-[#020617]/15 z-10 pointer-events-none" />
-
-      {/* Subtle Optical Scanline Grid for depth without obscuring video clarity */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-15 z-10"
-        style={{
-          backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)',
-          backgroundSize: '48px 48px',
-        }}
-      />
+      {/* Clean Subtle Contrast Shade: Preserves 100% Video Clarity Without Any Fog or Grid Distortion */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/60 via-[#020617]/10 to-[#020617]/25 z-10 pointer-events-none" />
 
       {/* Hero Foreground Content: Dynamic Heading, Subtitle & Interactive Telemetry Highlights */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-10 lg:py-16 flex flex-col justify-center items-start text-left">
@@ -159,30 +163,31 @@ export const Hero: React.FC<HeroProps> = () => {
         </p>
 
         {/* Mobile & Tablet Dedicated Showcase Video: 100% Full Uncut Logo & 16:9 Aspect Ratio */}
-        <div className="xl:hidden w-full max-w-4xl mx-auto my-6 sm:my-8 rounded-2xl sm:rounded-3xl overflow-hidden border border-cyan-500/35 shadow-[0_0_35px_rgba(0,163,224,0.22)] bg-slate-950 relative aspect-video">
+        <div className="lg:hidden w-full max-w-4xl mx-auto my-6 sm:my-8 rounded-2xl sm:rounded-3xl overflow-hidden border border-cyan-500/35 shadow-[0_0_35px_rgba(0,163,224,0.22)] bg-slate-950 relative aspect-video">
           <video
             ref={mobileVideoRef}
             autoPlay
             loop
             muted
             playsInline
-            preload="auto"
+            preload="metadata"
+            disablePictureInPicture
+            disableRemotePlayback
             className="w-full h-full object-contain bg-slate-950"
             style={{
-              transform: 'translateZ(0)',
-              WebkitTransform: 'translateZ(0)',
-              backfaceVisibility: 'hidden',
-              WebkitBackfaceVisibility: 'hidden',
+              willChange: 'transform',
+              imageRendering: '-webkit-optimize-contrast',
+              filter: 'contrast(1.05) brightness(1.02)',
             }}
           >
+            <source src="/videos/hero-video-web.mp4" type="video/mp4" />
             <source src="/videos/hero-video.mp4?v=20261114_AD4A88FC" type="video/mp4" />
-            <source src="/videos/Hero-section-video.MOV?v=20261114_AD4A88FC" type="video/quicktime" />
             Your browser does not support the video tag.
           </video>
         </div>
 
         {/* Floating Enterprise Telemetry Highlights Strip (Fills Space with High-Credibility Architecture Metrics) */}
-        <div className="mt-2 sm:mt-4 xl:mt-12 w-full grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 pointer-events-auto">
+        <div className="mt-2 sm:mt-4 lg:mt-8 xl:mt-12 w-full grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 pointer-events-auto">
           {highlights.map((item, idx) => {
             const Icon = item.icon;
             return (

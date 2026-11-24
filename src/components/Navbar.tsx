@@ -924,7 +924,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
   const isTransparent = isHomePage && !isScrolled && !activeMenu && !mobileMenuOpen;
 
   const navLinkClass = (isActive: boolean) =>
-    `flex items-center gap-1 px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl transition-all whitespace-nowrap shrink-0 text-xs xl:text-sm ${
+    `flex items-center gap-0.5 xl:gap-1 px-1 lg:px-1.5 xl:px-2.5 2xl:px-3 py-1.5 xl:py-2 rounded-xl transition-all whitespace-nowrap text-[11px] lg:text-[11px] xl:text-[13px] 2xl:text-sm ${
       isActive
         ? 'text-white bg-[#00A3E0] font-bold shadow-md shadow-[#00A3E0]/25'
         : isTransparent
@@ -933,7 +933,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
     }`;
 
   const navChevronClass = (isOpen: boolean) =>
-    `h-3.5 w-3.5 transition-transform duration-200 ${
+    `h-3 w-3 xl:h-3.5 xl:w-3.5 transition-transform duration-200 ${
       isOpen ? 'rotate-180 text-white' : isTransparent ? 'text-white/70' : 'text-slate-400'
     }`;
 
@@ -955,14 +955,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
             : 'bg-white/90 dark:bg-[#030712]/90 backdrop-blur-md border-b border-slate-200/80 dark:border-cyan-500/20 shadow-md py-3'
         }`}
       >
-        <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-3 xl:px-6 2xl:px-8">
           <div className="flex items-center justify-between">
 
             {/* Brand Logo */}
             <Link
               to="/"
               onClick={() => { setActiveMenu(null); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-              className="group flex-shrink-0 mr-4 flex items-center justify-center my-auto self-center"
+              className="group flex-shrink-0 mr-2 xl:mr-4 flex items-center justify-center my-auto self-center"
             >
               <KnooviqLogo size="md" forceDark={isTransparent} />
             </Link>
@@ -975,16 +975,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                 5. Services
                 6. Industries
             */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-2 text-xs xl:text-sm font-semibold">
+            <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5 2xl:gap-2 text-xs xl:text-sm font-semibold min-w-0 flex-1 justify-end">
 
-              {/* Primary Navigation Links Group: Home to Industries (shifted slightly left via margins, without CSS transforms to preserve position:fixed mega menus) */}
-              <div className="flex items-center gap-0.5 xl:gap-2 -ml-2 sm:-ml-3 lg:-ml-4 xl:-ml-6 mr-1 sm:mr-2 lg:mr-3 xl:mr-5">
+              {/* Primary Navigation Links Group: Home to Industries */}
+              <div className="flex items-center gap-0 lg:gap-0.5 xl:gap-1.5 2xl:gap-2 mr-0.5 lg:mr-1 xl:mr-3 min-w-0 flex-nowrap">
 
                 {/* 1. HOME */}
               <Link
                 to="/"
                 onClick={() => { setActiveMenu(null); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                className={`px-2 xl:px-3 py-1.5 xl:py-2 rounded-xl transition-all text-xs xl:text-sm ${
+                className={`px-1 lg:px-1.5 xl:px-2.5 2xl:px-3 py-1.5 xl:py-2 rounded-xl transition-all text-[11px] lg:text-[11px] xl:text-[13px] 2xl:text-sm ${
                   isTransparent
                     ? 'text-white hover:text-cyan-300 hover:bg-white/10'
                     : 'text-slate-800 dark:text-slate-200 hover:text-[#00A3E0] dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-white/5'
@@ -1327,10 +1327,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
               {/* CONTACT US -> Pill Button (matching user image) */}
               <button
                 onClick={() => onOpenContact && onOpenContact()}
-                className="btn-primary-gradient shimmer-sweep rounded-full px-3.5 xl:px-5 py-1.5 xl:py-2 text-[11px] xl:text-xs font-bold uppercase tracking-wider text-white transition-all shadow-md shadow-blue-500/25 flex items-center gap-1.5 xl:gap-2 active:scale-95 font-display ml-1 shrink-0"
+                className="btn-primary-gradient shimmer-sweep rounded-full px-2 lg:px-2.5 xl:px-4 2xl:px-5 py-1.5 xl:py-2 text-[10px] lg:text-[10.5px] xl:text-xs font-bold uppercase tracking-wider text-white transition-all shadow-md shadow-blue-500/25 flex items-center gap-1 xl:gap-1.5 active:scale-95 font-display ml-1 xl:ml-2 flex-shrink-0 shrink-0"
               >
                 <span>CONTACT US</span>
-                <ArrowRight className="h-3.5 w-3.5" />
+                <ArrowRight className="h-3 w-3 xl:h-3.5 xl:w-3.5" />
               </button>
 
             </nav>

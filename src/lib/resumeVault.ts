@@ -207,7 +207,7 @@ export function generateCandidateDossierPdf(data: {
   lines.push(`--------------------------------------------------------------------------------`);
   lines.push(`CORPORATE OFFICE: 1210, One World by Sanjar, Near NL College,`);
   lines.push(`                  SV Road, Malad West, Mumbai 400064, India`);
-  lines.push(`CONTACT:          careers@knooviq.com | +91-7900073410`);
+  lines.push(`CONTACT:          careers@knooviq.com | +91 9892646003 / +91 9892014002`);
 
   // Build compliant PDF content stream
   let streamContent = 'BT\n/F1 15 Tf\n50 745 Td\n(KNOOVIQ INDUSTRIES PVT LTD) Tj\n/F2 9 Tf\n0 -18 Td\n(Official Candidate Application & Talent Acquisition Dossier) Tj\n0 -16 Td\n(Allocated to Official Website: https://knooviq.com) Tj\n0 -16 Td\n(================================================================================) Tj\n';
