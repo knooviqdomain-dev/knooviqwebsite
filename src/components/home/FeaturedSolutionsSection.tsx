@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  ArrowRight, 
+import {
+  ArrowRight,
   Sparkles
 } from 'lucide-react';
 import { IndustriesGlobe3D } from '../3d/IndustriesGlobe3D';
@@ -9,12 +9,12 @@ import { IndustriesGlobe3D } from '../3d/IndustriesGlobe3D';
 export const FeaturedSolutionsSection: React.FC<{ onOpenContact?: (service?: string) => void }> = ({ onOpenContact }) => {
   return (
     <section id="home-cta" className="relative py-16 sm:py-20 bg-white text-slate-900 overflow-hidden select-none border-b border-slate-200/80">
-      
+
       {/* Background Soft Radiance */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-gradient-to-r from-sky-100/40 via-blue-100/30 to-indigo-100/30 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* ========================================================================= */}
         {/* PREMIUM FULL-WIDTH CTA BANNER (Cinematic Enterprise Website Ending)       */}
         {/* ========================================================================= */}
@@ -31,7 +31,7 @@ export const FeaturedSolutionsSection: React.FC<{ onOpenContact?: (service?: str
           <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:28px_28px] opacity-10 pointer-events-none" />
 
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-12">
-            
+
             {/* Left Content Area */}
             <div className="flex-1 text-center lg:text-left">
               {/* Eyebrow Tag */}
