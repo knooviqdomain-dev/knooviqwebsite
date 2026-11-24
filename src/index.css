@@ -651,11 +651,21 @@
 /* Left to Right Continuous Rotating Animation (Smooth & Calibrated Speed) */
 @keyframes rotateLeftToRight {
   0% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 
   100% {
-    transform: translateX(0%);
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+@-webkit-keyframes rotateLeftToRight {
+  0% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0%, 0, 0);
   }
 }
 
@@ -663,6 +673,7 @@
   display: flex;
   width: max-content;
   animation: rotateLeftToRight 70s linear infinite;
+  -webkit-animation: rotateLeftToRight 70s linear infinite;
   will-change: transform;
 }
 
@@ -670,6 +681,7 @@
   display: flex;
   width: max-content;
   animation: rotateLeftToRight 75s linear infinite;
+  -webkit-animation: rotateLeftToRight 75s linear infinite;
   will-change: transform;
 }
 
@@ -677,13 +689,15 @@
   display: flex;
   width: max-content;
   animation: rotateLeftToRight 88s linear infinite;
+  -webkit-animation: rotateLeftToRight 88s linear infinite;
   will-change: transform;
 }
 
 .animate-rotate-ltr-all {
   display: flex;
   width: max-content;
-  animation: rotateLeftToRight 175s linear infinite;
+  animation: rotateLeftToRight 95s linear infinite !important;
+  -webkit-animation: rotateLeftToRight 95s linear infinite !important;
   will-change: transform;
 }
 
@@ -692,17 +706,6 @@
 .animate-rotate-ltr-slower:hover,
 .animate-rotate-ltr-all:hover {
   animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-  .animate-rotate-ltr,
-  .animate-rotate-ltr-slow,
-  .animate-rotate-ltr-slower,
-  .animate-rotate-ltr-all {
-    animation: none !important;
-    transform: none !important;
-  }
 }
 
 /* Single-Pass Left-to-Right Floating Motion (No Duplicate Text) */

@@ -181,16 +181,16 @@ export const LanguageTranslator: React.FC<LanguageTranslatorProps> = ({ isMobile
           isMobile
             ? 'flex h-10 px-2.5 items-center gap-1.5 rounded-xl border border-slate-300 dark:border-sky-500/20 bg-slate-100 dark:bg-[#0B1528] text-slate-800 dark:text-slate-200 text-xs font-semibold'
             : isTransparentHeader
-            ? 'flex items-center gap-1 px-2.5 py-2 rounded-xl transition-all text-white hover:text-cyan-300 hover:bg-white/10 select-none font-semibold whitespace-nowrap shrink-0'
-            : 'flex items-center gap-1 px-2.5 py-2 rounded-xl transition-all text-slate-800 dark:text-slate-200 hover:text-[#00A3E0] dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-white/5 select-none font-semibold whitespace-nowrap shrink-0'
+            ? 'flex items-center gap-1 px-1.5 lg:px-1.5 xl:px-2.5 py-1.5 xl:py-2 rounded-xl transition-all text-white hover:text-cyan-300 hover:bg-white/10 select-none font-semibold whitespace-nowrap shrink-0'
+            : 'flex items-center gap-1 px-1.5 lg:px-1.5 xl:px-2.5 py-1.5 xl:py-2 rounded-xl transition-all text-slate-800 dark:text-slate-200 hover:text-[#00A3E0] dark:hover:text-cyan-400 hover:bg-slate-100 dark:hover:bg-white/5 select-none font-semibold whitespace-nowrap shrink-0'
         }
         title="Change Language"
         aria-label="Select language"
         aria-expanded={isOpen}
       >
-        <Globe className={`h-3.5 w-3.5 ${isTransparentHeader ? 'text-cyan-400' : 'text-[#00A3E0]'} shrink-0`} />
-        <span className="uppercase text-[11px] font-bold tracking-wider">{currentLangObj.code}</span>
-        <ChevronDown className={`h-3 w-3 ${isTransparentHeader ? 'text-white/70' : 'text-slate-400'} transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+        <Globe className={`h-3 w-3 xl:h-3.5 xl:w-3.5 ${isTransparentHeader ? 'text-cyan-400' : 'text-[#00A3E0]'} shrink-0`} />
+        <span className="uppercase text-[10px] lg:text-[10px] xl:text-[11px] font-bold tracking-wider">{currentLangObj.code}</span>
+        <ChevronDown className={`h-2.5 w-2.5 xl:h-3 xl:w-3 ${isTransparentHeader ? 'text-white/70' : 'text-slate-400'} transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       {/* Language Dropdown Menu */}

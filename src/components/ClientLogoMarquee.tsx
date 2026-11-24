@@ -282,7 +282,6 @@ export const ClientLogoMarquee: React.FC<{
 }> = ({
   className = ""
 }) => {
-  const [isHovered, setIsHovered] = React.useState(false);
   const [isClickPaused, setIsClickPaused] = React.useState(false);
   const clickTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
 
@@ -317,9 +316,6 @@ export const ClientLogoMarquee: React.FC<{
       }
     };
   }, []);
-
-  // Combined pause state: active while mouse hovers OR while 2-second click-pause is running
-  const isPaused = isHovered || isClickPaused;
 
   const renderClientCard = (client: ClientLogoItem, key: string, isDuplicate = false) => {
     return (
@@ -365,11 +361,7 @@ export const ClientLogoMarquee: React.FC<{
       <div className="absolute -bottom-24 right-1/4 w-[500px] h-[350px] bg-blue-600/15 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Single Unified Continuous Horizontal Rotating Track: All 40 Clients */}
-      <div
-        className="relative w-full overflow-hidden py-3"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
+      <div className="relative w-full overflow-hidden py-3 select-none">
         {/* Crisp Edge Soft Fade (Matching the Deep Dark Navy Blue Background) */}
         <div className="absolute top-0 left-0 bottom-0 w-6 sm:w-12 bg-gradient-to-r from-[#061224] to-transparent z-20 pointer-events-none" />
         <div className="absolute top-0 right-0 bottom-0 w-6 sm:w-12 bg-gradient-to-l from-[#002B5B] to-transparent z-20 pointer-events-none" />
@@ -378,7 +370,7 @@ export const ClientLogoMarquee: React.FC<{
         <div className="flex overflow-hidden py-2">
           <div
             className="animate-rotate-ltr-all flex items-center will-change-transform"
-            style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
+            style={{ animationPlayState: isClickPaused ? 'paused' : 'running' }}
           >
             {/* Primary Track with all 40 authentic clients */}
             <div className="flex items-center gap-6 pr-6 flex-shrink-0">
