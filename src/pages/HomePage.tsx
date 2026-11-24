@@ -23,7 +23,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onOpenContact }) => {
   };
 
   return (
-    <div className="space-y-0 bg-white min-h-screen">
+    <div className="space-y-0 min-h-screen">
       {/* 1. Hero Section with 3D Globe Centerpiece (Preserved Untouched) */}
       <Hero 
         onOpenContact={onOpenContact}

@@ -322,11 +322,11 @@ export const DataToIntelligenceSection: React.FC = () => {
               </span>
             </div>
 
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-white tracking-tight leading-tight">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-[46px] font-extrabold text-[#FFFFFF] tracking-tight leading-tight">
               From <span className="bg-gradient-to-r from-[#38BDF8] via-[#00A3E0] to-[#0070C0] bg-clip-text text-transparent">Data to Intelligence</span>
             </h2>
 
-            <p className="mt-3.5 text-sm sm:text-base text-slate-400 leading-relaxed max-w-2xl mx-auto font-normal">
+            <p className="mt-3.5 text-sm sm:text-base text-[#E2EAF4] leading-relaxed max-w-2xl mx-auto font-normal">
               Connecting global operational data to autonomous decision execution through a proven 5-stage transformation pipeline.
             </p>
           </motion.div>
@@ -582,10 +582,10 @@ export const DataToIntelligenceSection: React.FC = () => {
 
                 {/* Main Transformational Statement */}
                 <div>
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#FFFFFF] tracking-tight leading-tight">
                     {currentStage.description}
                   </h3>
-                  <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                  <p className="mt-3 text-sm sm:text-base text-[#E2EAF4] leading-relaxed font-normal">
                     {currentStage.narrative}
                   </p>
                 </div>

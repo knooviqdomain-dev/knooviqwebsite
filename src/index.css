@@ -134,96 +134,107 @@
   /* 7. ALL LIGHT SURFACES: High-contrast Deep Navy (#102A43 / #0A1931)        */
   /* ========================================================================= */
 
-  /* 1. DARK SURFACES: Headings pure white (#FFFFFF) */
-  :is(section, div, header)[class*="bg-[#020617]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(section, div, header)[class*="bg-[#030712]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(section, div, header)[class*="bg-[#040A17]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(section, div, header)[class*="bg-[#061426]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(section, div, header)[class*="bg-[#08152B]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(section, div, header)[class*="bg-[#0B1528]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(section, div, header)[class*="bg-slate-950"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(div, section)[class*="from-[#061426]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(div, section)[class*="from-[#071322]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
-  :is(div, section)[class*="from-[#020617]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is(h1, h2, h3, h4, h5, h6, .font-display),
+  /* 1. PERMANENTLY DARK CONTAINERS & DARK MODE HEADINGS: Pure White (#FFFFFF) */
   #hero :is(h1, h2, h3, h4, h5, h6, .font-display),
-  .dark-hero :is(h1, h2, h3, h4, h5, h6, .font-display) {
+  #data-to-intelligence :is(h1, h2, h3, h4, h5, h6, .font-display),
+  .dark-enterprise-cta :is(h1, h2, h3, h4, h5, h6, .font-display),
+  #ai-navigator :is(h1, h2, h3, h4, h5, h6, .font-display),
+  .dark-hero :is(h1, h2, h3, h4, h5, h6, .font-display),
+  .enterprise-showcase-card :is(h1, h2, h3, h4, h5, h6, .font-display),
+  .dark :is(#hero, #data-to-intelligence, .dark-enterprise-cta, #ai-navigator, .dark-hero, section, div) :is(h1, h2, h3, h4, h5, h6, .font-display):not([class*="text-[#0A1931]"]) {
     color: #FFFFFF !important;
   }
 
-  /* 2. DARK SURFACES: Paragraph and body text -> Light Grey-White (#E2EAF4) */
-  :is(section, div)[class*="bg-[#020617]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(section, div)[class*="bg-[#030712]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(section, div)[class*="bg-[#040A17]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(section, div)[class*="bg-[#061426]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(section, div)[class*="bg-[#08152B]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(section, div)[class*="bg-[#0B1528]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(section, div)[class*="bg-slate-950"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(div, section)[class*="from-[#061426]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(div, section)[class*="from-[#071322]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  :is(div, section)[class*="from-[#020617]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]):not([class*="bg-slate-100"]) p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  /* 2. PERMANENTLY DARK CONTAINERS: Paragraphs & Body -> Light Grey-White (#E2EAF4) */
   #hero p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
-  .dark-hero p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]) {
+  #data-to-intelligence p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  .dark-enterprise-cta p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  #ai-navigator p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  .dark-hero p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]),
+  .enterprise-showcase-card p:not([class*="text-[#48C8F5]"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#B8C7D9]"]) {
     color: #E2EAF4 !important;
   }
 
-  /* 3. Highlighted words & important text on dark -> Light Blue (#48C8F5) */
-  :is(section, div)[class*="bg-[#020617]"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
-  :is(section, div)[class*="bg-[#040A17]"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
-  :is(section, div)[class*="bg-[#061426]"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
-  :is(section, div)[class*="bg-[#08152B]"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
-  :is(section, div)[class*="bg-slate-950"] :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
-  #hero :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]) {
+  /* 3. HIGHLIGHTED WORDS & ACCENTS ON DARK: Light Blue (#48C8F5) */
+  #hero :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
+  #data-to-intelligence :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
+  .dark-enterprise-cta :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
+  #ai-navigator :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]),
+  .dark :is(.text-highlight-cyan, [class*="text-cyan-300"], [class*="text-cyan-400"], [class*="text-sky-300"], [class*="text-sky-400"]) {
     color: #48C8F5 !important;
   }
 
-  /* 4. Secondary descriptions & supporting text on dark -> #B8C7D9 */
-  :is(section, div)[class*="bg-[#020617]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
-  :is(section, div)[class*="bg-[#040A17]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
-  :is(section, div)[class*="bg-[#061426]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
-  :is(section, div)[class*="bg-[#08152B]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
-  :is(section, div)[class*="bg-slate-950"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
-  #hero :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark) {
+  /* 4. SECONDARY DESCRIPTIONS & SUPPORTING TEXT ON DARK: #B8C7D9 */
+  #hero :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
+  #data-to-intelligence :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
+  .dark-enterprise-cta :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark),
+  #ai-navigator :is([class*="text-slate-400"], [class*="text-slate-500"], [class*="text-gray-400"], .text-secondary-dark) {
     color: #B8C7D9 !important;
   }
 
-  /* 5. Fix low-opacity text elements on dark backgrounds */
-  :is(section, div)[class*="bg-[#020617]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
-  :is(section, div)[class*="bg-[#040A17]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
-  :is(section, div)[class*="bg-[#061426]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
-  :is(section, div)[class*="bg-[#08152B]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
-  :is(section, div)[class*="bg-slate-950"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
-  #hero :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]) {
+  /* 5. FIX LOW-OPACITY TEXT ELEMENTS ON DARK BACKGROUNDS */
+  #hero :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
+  #data-to-intelligence :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
+  .dark-enterprise-cta :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]),
+  #ai-navigator :is([class*="text-white/"], [class*="text-slate-300/"], [class*="text-slate-400/"]) {
     color: #E2EAF4 !important;
     opacity: 1 !important;
   }
 
-  /* 6. Remove dark text colors from dark backgrounds */
-  :is(section, div)[class*="bg-[#020617]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
-  :is(section, div)[class*="bg-[#040A17]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
-  :is(section, div)[class*="bg-[#061426]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
-  :is(section, div)[class*="bg-[#08152B]"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
-  :is(section, div)[class*="bg-slate-950"]:not([class*="bg-white"]):not([class*="bg-slate-50"]) :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
-  #hero :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]) {
+  /* 6. REMOVE DARK TEXT COLORS ACCIDENTALLY PLACED ON DARK BACKGROUNDS */
+  #hero :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
+  #data-to-intelligence :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
+  .dark-enterprise-cta :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]),
+  #ai-navigator :is([class*="text-slate-800"], [class*="text-slate-900"], [class*="text-[#0A1931]"], [class*="text-[#102A43]"], [class*="text-gray-900"], [class*="text-black"]):not([class*="dark:text-"]) {
     color: #E2EAF4 !important;
   }
 
-  /* 7. ALL LIGHT SURFACES: High-contrast Deep Navy Blue (#102A43 / #0A1931) */
-  /* Ensures white/light cards and sections NEVER show white or faded text */
-  :is(section, div, footer)[class*="bg-white"] p,
-  :is(section, div, footer)[class*="bg-slate-50"] p,
-  :is(section, div, footer)[class*="bg-slate-100"] p,
-  div[class*="bg-white"] p,
-  div[class*="bg-slate-50"] p,
-  div[class*="bg-slate-100"] p,
-  #what-knooviq-does p,
-  #about p {
+  /* 7. ALL LIGHT SURFACES: High-contrast Deep Navy Blue (#102A43 body, #0A1931 headings) */
+  html:not(.dark) #what-knooviq-does p,
+  html:not(.dark) #intelligent-erp p,
+  html:not(.dark) #industries p,
+  html:not(.dark) #why-knooviq p,
+  html:not(.dark) #home-cta:not(.dark-enterprise-cta) p:not(.dark-enterprise-cta *),
+  html:not(.dark) #story p,
+  html:not(.dark) #leadership p,
+  html:not(.dark) #excellence p,
+  html:not(.dark) #network p,
+  html:not(.dark) #grow-with-us p,
+  html:not(.dark) #connect p,
+  html:not(.dark) #presence p,
+  html:not(.dark) #about p,
+  html:not(.dark) .about-typography p:not(.text-white),
+  html:not(.dark) .product-typography p,
+  html:not(.dark) .transformation-typography section:not(#ai-navigator):not(:first-of-type) p,
+  html:not(.dark) .light-surface p {
     color: #102A43 !important;
   }
 
-  .footer-contact-card p,
-  .footer-contact-card a,
-  .footer-contact-card span,
-  .footer-contact-card div {
+  html:not(.dark) #what-knooviq-does :is(h1, h2, h3, h4, h5, h6),
+  html:not(.dark) #intelligent-erp :is(h1, h2, h3, h4, h5, h6),
+  html:not(.dark) #industries :is(h1, h2, h3, h4, h5, h6),
+  html:not(.dark) #why-knooviq :is(h1, h2, h3, h4, h5, h6),
+  html:not(.dark) #home-cta:not(.dark-enterprise-cta) :is(h1, h2, h3, h4, h5, h6):not(.dark-enterprise-cta *),
+  html:not(.dark) #story :is(h1, h2, h3, h4, h5, h6),
+  html:not(.dark) #leadership :is(h1, h2, h3, h4, h5, h6),
+  html:not(.dark) #excellence :is(h1, h2, h3, h4, h5, h6),
+  html:not(.dark) #network :is(h1, h2, h3, h4, h5, h6),
+  html:not(.dark) #grow-with-us :is(h1, h2, h3, h4, h5, h6),
+  html:not(.dark) #connect :is(h1, h2, h3, h4, h5, h6),
+  html:not(.dark) #presence :is(h1, h2, h3, h4, h5, h6),
+  html:not(.dark) #about :is(h1, h2, h3, h4, h5, h6),
+  html:not(.dark) .about-typography :is(h1, h2, h3, h4, h5, h6):not(.text-white):not([class*="text-white"]),
+  html:not(.dark) .product-typography :is(h1, h2, h3, h4, h5, h6),
+  html:not(.dark) .transformation-typography section:not(#ai-navigator):not(:first-of-type) :is(h1, h2, h3, h4, h5, h6),
+  html:not(.dark) .light-surface :is(h1, h2, h3, h4, h5, h6) {
+    color: #0A1931 !important;
+  }
+
+  /* Footer 3 Contact Cards: High-Contrast Dark Navy on Light Background */
+  html:not(.dark) .footer-contact-card p,
+  html:not(.dark) .footer-contact-card a,
+  html:not(.dark) .footer-contact-card span,
+  html:not(.dark) .footer-contact-card div {
     color: #0F172A !important;
   }
 
@@ -238,39 +249,51 @@
   .dark-enterprise-cta p {
     color: #E2EAF4 !important;
   }
+
   .dark-enterprise-cta :is(h1, h2, h3, h4, h5, h6) {
     color: #FFFFFF !important;
   }
 
-  :is(section, div, footer)[class*="bg-white"] :is(h1, h2, h3, h4, h5, h6),
-  :is(section, div, footer)[class*="bg-slate-50"] :is(h1, h2, h3, h4, h5, h6),
-  :is(section, div, footer)[class*="bg-slate-100"] :is(h1, h2, h3, h4, h5, h6),
-  div[class*="bg-white"] :is(h1, h2, h3, h4, h5, h6),
-  div[class*="bg-slate-50"] :is(h1, h2, h3, h4, h5, h6),
-  div[class*="bg-slate-100"] :is(h1, h2, h3, h4, h5, h6) {
-    color: #0A1931 !important;
-  }
-
-  /* 8. MOBILE VIEW: Background-Aware Contrast Protection */
+  /* 8. MOBILE VIEW: Strict Background-Aware Visibility Guarantee (No Layout/Size Changes) */
   @media screen and (max-width: 639.98px) {
+
     /* Mobile Light Surfaces -> Deep Navy Text */
-    :is(section, div)[class*="bg-white"] p,
-    :is(section, div)[class*="bg-slate-50"] p,
-    :is(section, div)[class*="bg-slate-100"] p,
-    #what-knooviq-does p,
-    #about p {
+    html:not(.dark) #what-knooviq-does p,
+    html:not(.dark) #intelligent-erp p,
+    html:not(.dark) #industries p,
+    html:not(.dark) #why-knooviq p,
+    html:not(.dark) #story p,
+    html:not(.dark) #about p,
+    html:not(.dark) .about-typography p:not(.text-white),
+    html:not(.dark) .product-typography p,
+    html:not(.dark) .transformation-typography section:not(#ai-navigator):not(:first-of-type) p {
       color: #102A43 !important;
     }
 
-    /* Mobile Dark Surfaces -> Light Grey-White Text */
+    html:not(.dark) #what-knooviq-does :is(h1, h2, h3, h4, h5, h6),
+    html:not(.dark) #intelligent-erp :is(h1, h2, h3, h4, h5, h6),
+    html:not(.dark) #industries :is(h1, h2, h3, h4, h5, h6),
+    html:not(.dark) #why-knooviq :is(h1, h2, h3, h4, h5, h6),
+    html:not(.dark) #story :is(h1, h2, h3, h4, h5, h6),
+    html:not(.dark) #about :is(h1, h2, h3, h4, h5, h6),
+    html:not(.dark) .about-typography :is(h1, h2, h3, h4, h5, h6):not(.text-white):not([class*="text-white"]),
+    html:not(.dark) .product-typography :is(h1, h2, h3, h4, h5, h6),
+    html:not(.dark) .transformation-typography section:not(#ai-navigator):not(:first-of-type) :is(h1, h2, h3, h4, h5, h6) {
+      color: #0A1931 !important;
+    }
+
+    /* Mobile Dark Surfaces -> 100% Bright White Headings & Light Grey-White Body */
+    #hero :is(h1, h2, h3, h4, h5, h6),
+    #data-to-intelligence :is(h1, h2, h3, h4, h5, h6),
+    .dark-enterprise-cta :is(h1, h2, h3, h4, h5, h6),
+    #ai-navigator :is(h1, h2, h3, h4, h5, h6) {
+      color: #FFFFFF !important;
+    }
+
     #hero p,
+    #data-to-intelligence p,
     .dark-enterprise-cta p,
-    :is(section, div)[class*="bg-[#020617]"] p,
-    :is(section, div)[class*="bg-[#040A17]"] p,
-    :is(section, div)[class*="bg-[#061426]"] p,
-    :is(section, div)[class*="bg-[#08152B]"] p,
-    :is(section, div)[class*="from-[#061426]"] p,
-    :is(section, div)[class*="from-[#061224]"] p {
+    #ai-navigator p {
       color: #E2EAF4 !important;
     }
   }
