@@ -852,8 +852,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
                 </p>
               </div>
               <div className="pt-4 border-t border-slate-200 dark:border-white/10">
-                <a href="tel:+917900073410" className="text-sm font-bold text-[#0077B6] dark:text-cyan-300 hover:underline font-mono">
-                  +91-7900073410
+                <a href="tel:+919892646003" className="text-sm font-bold text-[#0077B6] dark:text-cyan-300 hover:underline font-mono">
+                  +91 9892646003
                 </a>
               </div>
             </motion.div>
@@ -958,7 +958,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
                     </div>
                     <div className="flex items-center gap-2.5">
                       <Phone className="h-4 w-4 text-[#00A3E0] dark:text-cyan-400 flex-shrink-0" />
-                      <span>+91-7900073410</span>
+                      <span>+91 9892646003 / +91 9892014002</span>
                     </div>
                     <div className="flex items-center gap-2.5">
                       <Mail className="h-4 w-4 text-[#00A3E0] dark:text-cyan-400 flex-shrink-0" />

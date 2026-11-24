@@ -13,7 +13,7 @@ export const COMPANY_INFO = {
   },
   contact: {
     email: 'admin@knooviq.com',
-    phone: '+91-7900073410',
+    phone: '+91 9892646003 / +91 9892014002',
     secondaryPhone: '+91-8047795745',
     hours: 'Monday – Friday, 9:00 AM – 6:30 PM IST',
   },

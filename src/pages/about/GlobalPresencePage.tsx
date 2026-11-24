@@ -43,7 +43,7 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
       address: '1210, One World by Sanjar, Near NL College, SV Road, Malad West, Mumbai 400064',
       mapQuery: 'One World by Sanjar, SV Road, Malad West, Mumbai 400064',
       role: 'Corporate Headquarters, Executive Leadership & Strategic Governance',
-      phone: '+91-7900073410',
+      phone: '+91 9892646003 / +91 9892014002',
       email: 'admin@knooviq.com',
       cin: 'U72900MH2023PTC410884',
       timezone: 'IST (UTC +5:30)',

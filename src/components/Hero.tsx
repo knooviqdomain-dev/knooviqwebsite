@@ -111,8 +111,8 @@ export const Hero: React.FC<HeroProps> = () => {
           filter: 'contrast(1.05) brightness(1.02)',
         }}
       >
-        <source src="/videos/hero-video.mp4?v=20261114_AD4A88FC" type="video/mp4" />
         <source src="/videos/hero-video-web.mp4" type="video/mp4" />
+        <source src="/videos/hero-video.mp4?v=20261114_AD4A88FC" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -180,8 +180,8 @@ export const Hero: React.FC<HeroProps> = () => {
               filter: 'contrast(1.05) brightness(1.02)',
             }}
           >
-            <source src="/videos/hero-video.mp4?v=20261114_AD4A88FC" type="video/mp4" />
             <source src="/videos/hero-video-web.mp4" type="video/mp4" />
+            <source src="/videos/hero-video.mp4?v=20261114_AD4A88FC" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
