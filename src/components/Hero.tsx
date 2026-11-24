@@ -64,14 +64,28 @@ export const Hero: React.FC<HeroProps> = () => {
     videos.forEach((video) => {
       if (!video) return;
       video.muted = true;
-      const playVideo = async () => {
-        try {
-          await video.play();
-        } catch (err) {
-          console.warn('Autoplay waiting for user gesture or loading:', err);
+      video.defaultMuted = true;
+      video.playsInline = true;
+
+      const attemptPlay = () => {
+        const promise = video.play();
+        if (promise !== undefined) {
+          promise.catch((err) => {
+            console.warn('Autoplay waiting for user gesture or loading:', err);
+            const handleCanPlay = () => {
+              video.play().catch(() => {});
+              video.removeEventListener('canplay', handleCanPlay);
+            };
+            video.addEventListener('canplay', handleCanPlay);
+          });
         }
       };
-      playVideo();
+
+      if (video.readyState >= 2) {
+        attemptPlay();
+      } else {
+        video.addEventListener('loadeddata', attemptPlay, { once: true });
+      }
     });
   }, []);
 
@@ -88,16 +102,19 @@ export const Hero: React.FC<HeroProps> = () => {
         muted
         playsInline
         preload="auto"
-        className="hidden xl:block absolute inset-0 w-full h-full object-cover object-top"
+        disablePictureInPicture
+        disableRemotePlayback
+        className="hidden lg:block absolute inset-0 w-full h-full object-cover object-top pointer-events-none"
         style={{
-          transform: 'translateZ(0)',
-          WebkitTransform: 'translateZ(0)',
+          willChange: 'transform',
+          transform: 'translate3d(0, 0, 0)',
+          WebkitTransform: 'translate3d(0, 0, 0)',
           backfaceVisibility: 'hidden',
           WebkitBackfaceVisibility: 'hidden',
         }}
       >
         <source src="/videos/hero-video.mp4?v=20261114_AD4A88FC" type="video/mp4" />
-        <source src="/videos/Hero-section-video.MOV?v=20261114_AD4A88FC" type="video/quicktime" />
+        <source src="/videos/hero-video-web.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -159,7 +176,7 @@ export const Hero: React.FC<HeroProps> = () => {
         </p>
 
         {/* Mobile & Tablet Dedicated Showcase Video: 100% Full Uncut Logo & 16:9 Aspect Ratio */}
-        <div className="xl:hidden w-full max-w-4xl mx-auto my-6 sm:my-8 rounded-2xl sm:rounded-3xl overflow-hidden border border-cyan-500/35 shadow-[0_0_35px_rgba(0,163,224,0.22)] bg-slate-950 relative aspect-video">
+        <div className="lg:hidden w-full max-w-4xl mx-auto my-6 sm:my-8 rounded-2xl sm:rounded-3xl overflow-hidden border border-cyan-500/35 shadow-[0_0_35px_rgba(0,163,224,0.22)] bg-slate-950 relative aspect-video">
           <video
             ref={mobileVideoRef}
             autoPlay
@@ -167,22 +184,25 @@ export const Hero: React.FC<HeroProps> = () => {
             muted
             playsInline
             preload="auto"
+            disablePictureInPicture
+            disableRemotePlayback
             className="w-full h-full object-contain bg-slate-950"
             style={{
-              transform: 'translateZ(0)',
-              WebkitTransform: 'translateZ(0)',
+              willChange: 'transform',
+              transform: 'translate3d(0, 0, 0)',
+              WebkitTransform: 'translate3d(0, 0, 0)',
               backfaceVisibility: 'hidden',
               WebkitBackfaceVisibility: 'hidden',
             }}
           >
             <source src="/videos/hero-video.mp4?v=20261114_AD4A88FC" type="video/mp4" />
-            <source src="/videos/Hero-section-video.MOV?v=20261114_AD4A88FC" type="video/quicktime" />
+            <source src="/videos/hero-video-web.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
 
         {/* Floating Enterprise Telemetry Highlights Strip (Fills Space with High-Credibility Architecture Metrics) */}
-        <div className="mt-2 sm:mt-4 xl:mt-12 w-full grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 pointer-events-auto">
+        <div className="mt-2 sm:mt-4 lg:mt-8 xl:mt-12 w-full grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 pointer-events-auto">
           {highlights.map((item, idx) => {
             const Icon = item.icon;
             return (

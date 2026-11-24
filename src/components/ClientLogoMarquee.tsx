@@ -282,66 +282,183 @@ export const ClientLogoMarquee: React.FC<{
 }> = ({
   className = ""
 }) => {
-  const [isClickPaused, setIsClickPaused] = React.useState(false);
-  const clickTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = React.useState(false);
+  const [selectedClientId, setSelectedClientId] = React.useState<string | null>(null);
+  const [isUserDragging, setIsUserDragging] = React.useState(false);
 
-  // Pause on click for exactly 2 seconds (2000ms), then automatically resume scrolling
-  const handleLogoClick = (_e: React.MouseEvent, _client: ClientLogoItem) => {
-    if (clickTimeoutRef.current) {
-      clearTimeout(clickTimeoutRef.current);
-      clickTimeoutRef.current = null;
+  // Drag tracking refs
+  const isMouseDownRef = React.useRef(false);
+  const startXRef = React.useRef(0);
+  const startScrollLeftRef = React.useRef(0);
+  const dragMovedRef = React.useRef(false);
+  const isHoveredRef = React.useRef(false);
+  const selectedClientIdRef = React.useRef<string | null>(null);
+  const isUserDraggingRef = React.useRef(false);
+
+  // Synchronize refs for 60fps RAF loop without re-subscribing
+  React.useEffect(() => {
+    isHoveredRef.current = isHovered;
+  }, [isHovered]);
+
+  React.useEffect(() => {
+    selectedClientIdRef.current = selectedClientId;
+  }, [selectedClientId]);
+
+  React.useEffect(() => {
+    isUserDraggingRef.current = isUserDragging;
+  }, [isUserDragging]);
+
+  // Infinite loop wrapping helper
+  const wrapScroll = React.useCallback(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    const halfWidth = container.scrollWidth / 2;
+    if (halfWidth > 100) {
+      if (container.scrollLeft >= halfWidth) {
+        container.scrollLeft -= halfWidth;
+        startScrollLeftRef.current -= halfWidth;
+      } else if (container.scrollLeft <= 0) {
+        container.scrollLeft += halfWidth;
+        startScrollLeftRef.current += halfWidth;
+      }
     }
+  }, []);
 
-    setIsClickPaused(true);
+  // Continuous auto-scroll loop (pauses on hover, drag, or clicked client)
+  React.useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
 
-    clickTimeoutRef.current = setTimeout(() => {
-      setIsClickPaused(false);
-      clickTimeoutRef.current = null;
-    }, 2000);
+    let animId: number;
+    let lastTime = performance.now();
+    const speed = 95; // Crisp & smooth speed (fast, responsive, elegant)
+
+    const step = (now: number) => {
+      const delta = Math.min((now - lastTime) / 1000, 0.1); // Guard against tab background jumps
+      lastTime = now;
+
+      const isPaused = isHoveredRef.current || isUserDraggingRef.current || isMouseDownRef.current || selectedClientIdRef.current !== null;
+
+      if (!isPaused && container) {
+        const halfWidth = container.scrollWidth / 2;
+        if (halfWidth > 100) {
+          container.scrollLeft += speed * delta;
+          if (container.scrollLeft >= halfWidth) {
+            container.scrollLeft -= halfWidth;
+          } else if (container.scrollLeft <= 0) {
+            container.scrollLeft += halfWidth;
+          }
+        }
+      }
+
+      animId = requestAnimationFrame(step);
+    };
+
+    animId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(animId);
+  }, []);
+
+  // Mouse Wheel (horizontal or vertical scroll support)
+  const handleWheel = (e: React.WheelEvent) => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+    if (Math.abs(delta) > 0) {
+      container.scrollLeft += delta * 0.8;
+      wrapScroll();
+    }
+  };
+
+  // Mouse Drag Handlers
+  const handleMouseDown = (e: React.MouseEvent) => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    isMouseDownRef.current = true;
+    dragMovedRef.current = false;
+    startXRef.current = e.pageX - container.offsetLeft;
+    startScrollLeftRef.current = container.scrollLeft;
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isMouseDownRef.current) return;
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - startXRef.current) * 1.4;
+    if (Math.abs(walk) > 4) {
+      dragMovedRef.current = true;
+      setIsUserDragging(true);
+    }
+    container.scrollLeft = startScrollLeftRef.current - walk;
+    wrapScroll();
+  };
+
+  const handleMouseUp = () => {
+    isMouseDownRef.current = false;
+    setTimeout(() => {
+      setIsUserDragging(false);
+      dragMovedRef.current = false;
+    }, 60);
+  };
+
+  // Click on a client card to pause / inspect
+  const handleCardClick = (_e: React.MouseEvent, client: ClientLogoItem) => {
+    if (dragMovedRef.current) return; // User was dragging, do not treat as click
+    if (selectedClientId === client.id) {
+      setSelectedClientId(null); // Click again to resume
+    } else {
+      setSelectedClientId(client.id); // Pause on this client
+    }
   };
 
   // Keyboard accessibility (Enter / Space)
   const handleLogoKeyDown = (e: React.KeyboardEvent, client: ClientLogoItem) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      handleLogoClick(e as unknown as React.MouseEvent, client);
+      handleCardClick(e as unknown as React.MouseEvent, client);
     }
   };
 
-  // Cleanup active timer on unmount
-  React.useEffect(() => {
-    return () => {
-      if (clickTimeoutRef.current) {
-        clearTimeout(clickTimeoutRef.current);
-      }
-    };
-  }, []);
-
   const renderClientCard = (client: ClientLogoItem, key: string, isDuplicate = false) => {
+    const isSelected = selectedClientId === client.id;
+
     return (
       <div
         key={key}
         role="button"
         tabIndex={0}
-        aria-label={`${client.name} - ${client.category}`}
+        aria-label={`${client.name} - ${client.category}${isSelected ? ' (Selected - Paused)' : ''}`}
         aria-hidden={isDuplicate ? true : undefined}
-        onClick={(e) => handleLogoClick(e, client)}
+        onClick={(e) => handleCardClick(e, client)}
         onKeyDown={(e) => handleLogoKeyDown(e, client)}
-        className="bg-white border border-slate-200/90 hover:border-sky-400 rounded-2xl px-3.5 py-2.5 sm:px-5 sm:py-3 flex flex-col items-center justify-between min-w-[260px] sm:min-w-[280px] h-[132px] sm:h-[136px] flex-shrink-0 transition-all duration-200 shadow-[0_4px_18px_-2px_rgba(0,0,0,0.18)] hover:shadow-xl hover:scale-[1.01] group/card relative cursor-pointer select-none outline-none focus:outline-none focus:ring-0 focus-visible:outline-none ring-0"
+        className={`bg-white rounded-2xl px-3.5 py-2.5 sm:px-5 sm:py-3 flex flex-col items-center justify-between min-w-[260px] sm:min-w-[280px] h-[132px] sm:h-[136px] flex-shrink-0 transition-all duration-200 select-none outline-none focus:outline-none ring-0 relative cursor-pointer ${
+          isSelected
+            ? 'border-2 border-[#00A3E0] shadow-[0_0_25px_rgba(0,163,224,0.45)] scale-[1.03] z-10'
+            : 'border border-slate-200/90 hover:border-sky-400 shadow-[0_4px_18px_-2px_rgba(0,0,0,0.18)] hover:shadow-xl hover:scale-[1.01]'
+        }`}
       >
-        {/* Exact Authentic Logo Image - Sized & Centered to Maximize Box Usage Without Ever Overflowing */}
+        {/* Selected Active Indicator Pill */}
+        {isSelected && (
+          <div className="absolute -top-2.5 px-2.5 py-0.5 rounded-full bg-[#00A3E0] text-white text-[9.5px] font-bold uppercase tracking-wider shadow-md pointer-events-none animate-in fade-in zoom-in-95 duration-150">
+            PAUSED • CLICK TO RESUME
+          </div>
+        )}
+
+        {/* Exact Authentic Logo Image */}
         <div className="h-[82px] sm:h-[86px] flex items-center justify-center w-full px-2 pointer-events-none">
           <img
             src={client.logoSrc}
             alt={client.name}
-            className="max-h-[74px] sm:max-h-[76px] max-w-[225px] sm:max-w-[240px] w-auto h-auto object-contain select-none"
+            draggable={false}
+            className="max-h-[74px] sm:max-h-[76px] max-w-[225px] sm:max-w-[240px] w-auto h-auto object-contain select-none pointer-events-none"
             style={{ imageRendering: '-webkit-optimize-contrast' }}
             loading="lazy"
             decoding="async"
           />
         </div>
 
-        {/* Crisp, Highly Readable Category Label Across Mobile, Tablet & Desktop */}
+        {/* Crisp, Highly Readable Category Label */}
         <div className="flex items-center justify-center w-full pt-1 pointer-events-none">
           <span className="text-[11.5px] sm:text-[12.5px] font-bold text-slate-800 dark:text-slate-900 tracking-tight text-center leading-snug line-clamp-1 px-1">
             {client.category}
@@ -352,7 +469,14 @@ export const ClientLogoMarquee: React.FC<{
   };
 
   return (
-    <section className={`py-6 sm:py-8 relative overflow-hidden bg-gradient-to-r from-[#061224] via-[#0A1931] to-[#002B5B] border-t border-b border-sky-500/20 ${className}`}>
+    <section
+      className={`py-6 sm:py-8 relative overflow-hidden bg-gradient-to-r from-[#061224] via-[#0A1931] to-[#002B5B] border-t border-b border-sky-500/20 select-none ${className}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        handleMouseUp();
+      }}
+    >
       {/* Background Architectural Dot Matrix Grid Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px] opacity-15 pointer-events-none" />
 
@@ -360,29 +484,39 @@ export const ClientLogoMarquee: React.FC<{
       <div className="absolute -top-24 left-1/4 w-[500px] h-[350px] bg-sky-500/15 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute -bottom-24 right-1/4 w-[500px] h-[350px] bg-blue-600/15 rounded-full blur-[120px] pointer-events-none" />
 
-      {/* Single Unified Continuous Horizontal Rotating Track: All 40 Clients */}
-      <div className="relative w-full overflow-hidden py-3 select-none">
-        {/* Crisp Edge Soft Fade (Matching the Deep Dark Navy Blue Background) */}
-        <div className="absolute top-0 left-0 bottom-0 w-6 sm:w-12 bg-gradient-to-r from-[#061224] to-transparent z-20 pointer-events-none" />
-        <div className="absolute top-0 right-0 bottom-0 w-6 sm:w-12 bg-gradient-to-l from-[#002B5B] to-transparent z-20 pointer-events-none" />
+      {/* Crisp Edge Soft Fade (Matching the Deep Dark Navy Blue Background) */}
+      <div className="absolute top-0 left-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-[#061224] to-transparent z-20 pointer-events-none" />
+      <div className="absolute top-0 right-0 bottom-0 w-8 sm:w-16 bg-gradient-to-l from-[#002B5B] to-transparent z-20 pointer-events-none" />
 
-        {/* Single Seamless Row: Every Client Scrolling in One Smooth Continuous Loop */}
-        <div className="flex overflow-hidden py-2">
-          <div
-            className="animate-rotate-ltr-all flex items-center will-change-transform"
-            style={{ animationPlayState: isClickPaused ? 'paused' : 'running' }}
-          >
-            {/* Primary Track with all 40 authentic clients */}
-            <div className="flex items-center gap-6 pr-6 flex-shrink-0">
-              {ALL_CLIENTS.map((client, idx) => renderClientCard(client, `primary-${client.id}-${idx}`))}
-            </div>
-            {/* Seamless Infinite Loop Duplicate Track with all 40 authentic clients */}
-            <div className="flex items-center gap-6 pr-6 flex-shrink-0" aria-hidden="true">
-              {ALL_CLIENTS.map((client, idx) => renderClientCard(client, `duplicate-${client.id}-${idx}`, true))}
-            </div>
-          </div>
+      {/* Interactive Drag & Scrollable Track Container */}
+      <div
+        ref={scrollContainerRef}
+        onWheel={handleWheel}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onTouchStart={wrapScroll}
+        onTouchMove={wrapScroll}
+        className={`w-full overflow-x-auto no-scrollbar py-3 select-none ${
+          isUserDragging ? 'cursor-grabbing' : 'cursor-grab'
+        }`}
+        style={{
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+          WebkitOverflowScrolling: 'touch',
+          touchAction: 'pan-x pan-y',
+          scrollBehavior: 'auto',
+          willChange: 'scroll-position',
+          transform: 'translateZ(0)',
+        }}
+      >
+        <div className="flex items-center gap-6 px-4 w-max">
+          {/* Primary Track with all 40 authentic clients */}
+          {ALL_CLIENTS.map((client, idx) => renderClientCard(client, `primary-${client.id}-${idx}`))}
+
+          {/* Seamless Infinite Loop Duplicate Track with all 40 authentic clients */}
+          {ALL_CLIENTS.map((client, idx) => renderClientCard(client, `duplicate-${client.id}-${idx}`, true))}
         </div>
-
       </div>
     </section>
   );
