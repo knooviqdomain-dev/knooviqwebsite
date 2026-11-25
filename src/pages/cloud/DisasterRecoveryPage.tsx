@@ -235,7 +235,7 @@ export const DisasterRecoveryPage: React.FC<ChildPageProps> = ({ onOpenContact }
       {/* =========================================================================
           SECTION 1: HERO SECTION (Panoramic Full-Screen Cinematic Hero)
           ========================================================================= */}
-      <section className="relative w-full min-h-[85vh] lg:min-h-[92vh] flex items-center overflow-hidden bg-[#030712] border-b border-white/10 pt-28 pb-16 sm:pt-32 sm:pb-20">
+      <section className="relative w-full min-h-[85vh] lg:min-h-[92vh] flex items-center overflow-hidden bg-[#030712] text-white border-b border-white/10 pt-28 pb-16 sm:pt-32 sm:pb-20">
 
         {/* 100% Full-Bleed Panoramic Background Image — Spans Corner to Corner */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">

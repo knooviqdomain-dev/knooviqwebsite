@@ -79,10 +79,10 @@ export async function saveUploadedResume(
       try {
         const tx = db.transaction(STORE_NAME, 'readwrite');
         const store = tx.objectStore(STORE_NAME);
-        
+
         // Store under recordId
         store.put(record);
-        
+
         // Also store secondary keys for flexible lookup
         store.put({ ...record, key: cleanPath });
         store.put({ ...record, key: cleanFileName });
@@ -131,9 +131,9 @@ export async function getStoredResume(
       if (record && record.data) {
         const mimeType = record.fileType || (
           record.fileName.endsWith('.pdf') ? 'application/pdf' :
-          record.fileName.endsWith('.docx') ? 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' :
-          record.fileName.endsWith('.doc') ? 'application/msword' :
-          'application/octet-stream'
+            record.fileName.endsWith('.docx') ? 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' :
+              record.fileName.endsWith('.doc') ? 'application/msword' :
+                'application/octet-stream'
         );
         const blob = new Blob([record.data], { type: mimeType });
         return {

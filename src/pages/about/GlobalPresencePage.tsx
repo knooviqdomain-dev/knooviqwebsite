@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Globe2, 
-  Building2, 
-  Clock, 
-  CheckCircle2, 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Globe2,
+  Building2,
+  Clock,
+  CheckCircle2,
   ArrowRight,
   ExternalLink,
   ShieldCheck,
@@ -412,7 +412,7 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
 
   return (
     <div className="about-typography font-sora relative w-full max-w-full pb-20 bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden overflow-x-clip">
-      
+
       {/* Background Aurora */}
       <div className="aurora-sphere-1 top-20 left-1/4 bg-[#00A3E0]/15 dark:bg-[#00F0FF]/15 pointer-events-none" />
       <div className="aurora-sphere-2 top-96 right-10 bg-[#6366F1]/15 dark:bg-[#8B5CF6]/20 pointer-events-none" />
@@ -424,8 +424,8 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
       <section className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-20 min-h-[560px] lg:min-h-[620px] flex items-center overflow-hidden bg-gradient-to-b from-slate-950 via-[#0B132B] to-slate-950 text-white">
         {/* Full-Screen Ambient Image Glow & Soft Neutral Scrim */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <img 
-            src="/images/global_presence_hero.jpg" 
+          <img
+            src="/images/global_presence_hero.jpg"
             alt="Worldwide Presence and Global Office Hubs Ambient Backdrop"
             className="w-full h-full object-cover blur-3xl opacity-20 scale-110"
           />
@@ -435,8 +435,8 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
         {/* Full-Screen Desktop Visual — Zero Cropping, No Artificial Dark-Blue Shadow */}
         <div className="hidden lg:block absolute inset-0 z-[1] pointer-events-none overflow-hidden">
           <div className="absolute inset-y-0 right-0 w-[58%] xl:w-[52%] h-full flex items-center justify-end">
-            <img 
-              src="/images/global_presence_hero_hd.jpg" 
+            <img
+              src="/images/global_presence_hero_hd.jpg"
               alt="Worldwide Presence and Global Office Hubs Network - International Footprint"
               className="w-full h-full object-contain object-right select-none"
             />
@@ -445,7 +445,7 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-            
+
             {/* Left Column: Executive Typography & Strategic Infrastructure */}
             <div className="lg:col-span-6 space-y-6 relative z-10">
               <motion.div
@@ -458,7 +458,7 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
                 <span className="font-mono uppercase text-xs tracking-wider font-bold">Headquarters &amp; International Footprint</span>
               </motion.div>
 
-              <motion.h1 
+              <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
@@ -467,7 +467,7 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
                 Global <span className="hero-gradient-cyan font-black">Presence</span>
               </motion.h1>
 
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -476,7 +476,7 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
                 Rooted at our corporate headquarters in Mumbai, Maharashtra, KNOOVIQ orchestrates high-assurance delivery across specialized offshore engineering centers, regional client hubs, and cross-border SAP transformation networks.
               </motion.p>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
@@ -505,8 +505,8 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
               className="lg:hidden relative flex justify-center items-center mt-6"
             >
               <div className="relative w-full max-w-lg aspect-[16/9] rounded-2xl sm:rounded-3xl overflow-hidden border border-white/15 bg-slate-900/60">
-                <img 
-                  src="/images/global_presence_hero.jpg" 
+                <img
+                  src="/images/global_presence_hero.jpg"
                   alt="KNOOVIQ Global Presence - Worldwide Cloud Network & Connected Footprint"
                   className="w-full h-full object-cover object-center select-none"
                 />
@@ -529,7 +529,7 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
         <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[300px] bg-cyan-400/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
             <p className="text-xs sm:text-sm font-bold text-[#0066CC] dark:text-cyan-400 font-mono uppercase tracking-widest mb-2">
@@ -564,7 +564,7 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
           ========================================================================= */}
       <section className="py-14 sm:py-16 relative overflow-hidden bg-gradient-to-b from-[#EEF5FC] via-white to-[#F5F3FF] text-slate-900 border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-10">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase bg-indigo-50 text-indigo-700 border border-indigo-200 shadow-sm mb-3">
@@ -581,11 +581,11 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
 
           {/* Interactive Network Graph Arena */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-            
+
             {/* Left: Constellation Canvas (7 Cols) */}
             <div className="lg:col-span-7">
               <div className="relative rounded-3xl p-6 bg-white border border-slate-200 shadow-xl h-[380px] sm:h-[430px] flex items-center justify-center overflow-hidden">
-                
+
                 {/* SVG Circuit Connectors */}
                 <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100">
                   <defs>
@@ -630,19 +630,17 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
                       whileHover={{ scale: 1.12 }}
                       className="absolute z-20 cursor-pointer flex flex-col items-center group transition-all duration-300"
                     >
-                      <div className={`h-11 w-11 sm:h-12 sm:w-12 rounded-2xl flex items-center justify-center shadow-md transition-all duration-300 ${
-                        isActive
-                          ? 'bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-xl scale-115 border-2 border-white'
-                          : 'bg-white text-slate-700 border border-slate-200 hover:border-blue-500 hover:text-blue-600'
-                      }`}>
+                      <div className={`h-11 w-11 sm:h-12 sm:w-12 rounded-2xl flex items-center justify-center shadow-md transition-all duration-300 ${isActive
+                        ? 'bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-xl scale-115 border-2 border-white'
+                        : 'bg-white text-slate-700 border border-slate-200 hover:border-blue-500 hover:text-blue-600'
+                        }`}>
                         <NodeIcon className="h-5 w-5" />
                       </div>
-                      
-                      <span className={`mt-1 px-2 py-0.5 rounded-md font-mono text-[10px] font-bold uppercase tracking-wider transition-all duration-200 ${
-                        isActive
-                          ? 'bg-blue-600 text-white shadow-sm'
-                          : 'bg-white text-slate-600 border border-slate-200 group-hover:bg-blue-50'
-                      }`}>
+
+                      <span className={`mt-1 px-2 py-0.5 rounded-md font-mono text-[10px] font-bold uppercase tracking-wider transition-all duration-200 ${isActive
+                        ? 'bg-blue-600 text-white shadow-sm'
+                        : 'bg-white text-slate-600 border border-slate-200 group-hover:bg-blue-50'
+                        }`}>
                         {node.label}
                       </span>
                     </motion.div>
@@ -676,7 +674,7 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
                     <h3 className="font-display text-2xl sm:text-3xl font-black text-slate-900 mb-2">
                       Connected {activeNodeData.label}
                     </h3>
-                    
+
                     <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 mb-4">
                       <span className="font-mono text-[10px] text-slate-500 uppercase block mb-1">Scale Metric</span>
                       <span className="font-display text-base font-bold text-indigo-700">{activeNodeData.metrics}</span>
@@ -705,7 +703,7 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
           ========================================================================= */}
       <section className="py-14 sm:py-16 relative overflow-hidden bg-gradient-to-b from-[#F5F3FF] via-white to-[#F0FDF4] text-slate-900 border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-10">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase bg-emerald-50 text-emerald-700 border border-emerald-200 shadow-sm mb-3">
@@ -722,7 +720,7 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
 
           {/* 8 Distinctly Colored Industry Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-            
+
             {/* Left: 8 Colorful Industry Buttons (7 Cols) */}
             <div className="lg:col-span-7">
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -747,11 +745,10 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
                       key={ind.id}
                       onClick={() => handleIndustryClick(idx)}
                       whileHover={{ y: -3 }}
-                      className={`p-4 rounded-2xl border cursor-pointer transition-all duration-300 flex flex-col justify-between ${colorThemes[idx % colorThemes.length]} ${
-                        isSelected
-                          ? 'border-2 border-slate-900 shadow-md scale-102 font-bold'
-                          : 'border-slate-200'
-                      }`}
+                      className={`p-4 rounded-2xl border cursor-pointer transition-all duration-300 flex flex-col justify-between ${colorThemes[idx % colorThemes.length]} ${isSelected
+                        ? 'border-2 border-slate-900 shadow-md scale-102 font-bold'
+                        : 'border-slate-200'
+                        }`}
                     >
                       <div className="flex items-center justify-between mb-3">
                         <div className="h-9 w-9 rounded-xl bg-white shadow-sm flex items-center justify-center">
@@ -830,7 +827,7 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
           ========================================================================= */}
       <section className="py-14 sm:py-16 relative overflow-hidden bg-gradient-to-b from-[#F0FDF4] via-slate-50 to-[#EFF6FF] text-slate-900 border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-10">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold uppercase bg-blue-50 text-blue-700 border border-blue-200 shadow-sm mb-3">
@@ -847,7 +844,7 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
 
           {/* Desktop Horizontal Connected Flowchart */}
           <div className="relative mb-6">
-            
+
             {/* Continuous Laser Connection Rail (Desktop) */}
             <div className="hidden lg:block absolute top-[52px] left-[8%] right-[8%] h-[2px] bg-slate-200 z-0 rounded-full overflow-hidden">
               <motion.div
@@ -875,18 +872,16 @@ export const GlobalPresencePage: React.FC<{ onOpenContact: (topic?: string) => v
                     key={step.step}
                     onClick={() => setActiveCollabStep(idx)}
                     whileHover={{ y: -4 }}
-                    className={`rounded-2xl p-5 border cursor-pointer transition-all duration-300 flex flex-col justify-between bg-white ${
-                      isSelected
-                        ? `shadow-lg scale-102 border-2 ${stepColors[idx % stepColors.length]}`
-                        : 'border-slate-200 hover:border-slate-300 shadow-sm'
-                    }`}
+                    className={`rounded-2xl p-5 border cursor-pointer transition-all duration-300 flex flex-col justify-between bg-white ${isSelected
+                      ? `shadow-lg scale-102 border-2 ${stepColors[idx % stepColors.length]}`
+                      : 'border-slate-200 hover:border-slate-300 shadow-sm'
+                      }`}
                   >
                     <div>
                       {/* Step Number Circle */}
                       <div className="flex items-center justify-between mb-3">
-                        <div className={`w-9 h-9 rounded-xl flex items-center justify-center font-mono text-xs font-black shadow-sm ${
-                          isSelected ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-700'
-                        }`}>
+                        <div className={`w-9 h-9 rounded-xl flex items-center justify-center font-mono text-xs font-black shadow-sm ${isSelected ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-700'
+                          }`}>
                           {step.step}
                         </div>
                         <span className="font-mono text-[9px] uppercase font-bold text-slate-500 px-2 py-0.5 rounded bg-slate-100 border border-slate-200">

@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { 
-  Building2, 
-  Target, 
-  Users, 
-  CheckCircle2, 
+import {
+  Building2,
+  Target,
+  Users,
+  CheckCircle2,
   ArrowRight,
-  Layers, 
-  Clock, 
-  Award, 
-  Globe2, 
-  Sparkles, 
-  TrendingUp, 
-  PhoneCall, 
-  MapPin, 
-  ShieldCheck, 
-  Cpu, 
-  Mail, 
+  Layers,
+  Clock,
+  Award,
+  Globe2,
+  Sparkles,
+  TrendingUp,
+  PhoneCall,
+  MapPin,
+  ShieldCheck,
+  Cpu,
+  Mail,
   Phone,
   Compass,
   Briefcase,
@@ -91,7 +91,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
 
   return (
     <div className="about-typography font-sora relative w-full max-w-full pb-20 bg-[#F8FAFC] dark:bg-[#030712] text-slate-900 dark:text-white transition-colors duration-500 overflow-hidden overflow-x-clip">
-      
+
       {/* Ambient Aurora Glows */}
       <div className="aurora-sphere-1 top-20 left-1/4 bg-[#00A3E0]/15 dark:bg-[#00F0FF]/15 pointer-events-none" />
       <div className="aurora-sphere-2 top-96 right-10 bg-[#6366F1]/15 dark:bg-[#8B5CF6]/20 pointer-events-none" />
@@ -100,8 +100,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
       <section className="relative pt-32 pb-20 lg:pt-36 lg:pb-20 min-h-[540px] lg:h-[580px] lg:min-h-[580px] flex items-center overflow-hidden">
         {/* Clean Background Image with Directional Left Contrast Scrim */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070&auto=format&fit=crop" 
+          <img
+            src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2070&auto=format&fit=crop"
             alt="About KNOOVIQ Enterprise Architecture"
             className="w-full h-full object-cover object-center"
           />
@@ -111,7 +111,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-3xl lg:max-w-4xl">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -121,7 +121,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
               <span className="font-mono uppercase text-xs tracking-wider">Enterprise Architecture & Transformation Partner</span>
             </motion.div>
 
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
@@ -131,7 +131,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
               <span className="hero-gradient-cyan font-black">Enterprise Technology</span>
             </motion.h1>
 
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -140,7 +140,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
               From our headquarters in Mumbai to enterprise landscapes worldwide, KNOOVIQ unifies clean-core engineering, 24/7 SLA-governed support, and deep SAP functional governance to build resilient, future-ready business ecosystems.
             </motion.p>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
@@ -184,18 +184,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
                 <button
                   key={`${sec.id}-${idx}`}
                   onClick={() => scrollToSection(sec.id)}
-                  className={`group relative flex items-center gap-2.5 px-4 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 font-display flex-shrink-0 cursor-pointer ${
-                    isActive
+                  className={`group relative flex items-center gap-2.5 px-4 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all duration-300 font-display flex-shrink-0 cursor-pointer ${isActive
                       ? 'bg-[#0A2540] text-white shadow-md border border-[#0A2540] scale-105'
                       : 'bg-white text-slate-700 hover:text-[#0A2540] hover:bg-slate-50 border border-slate-200/90 shadow-sm hover:border-[#0A2540]/40 hover:shadow-md hover:scale-105'
-                  }`}
+                    }`}
                 >
                   {/* Compact Icon Container Tile */}
-                  <div className={`flex items-center justify-center h-6 w-6 rounded-lg transition-all duration-300 shadow-sm ${
-                    isActive
+                  <div className={`flex items-center justify-center h-6 w-6 rounded-lg transition-all duration-300 shadow-sm ${isActive
                       ? 'bg-white/15 text-white'
                       : 'bg-slate-100 text-[#0A2540] border border-slate-200 group-hover:bg-[#0A2540] group-hover:text-white group-hover:border-[#0A2540]'
-                  }`}>
+                    }`}>
                     <Icon className="h-3.5 w-3.5" />
                   </div>
 
@@ -221,16 +219,16 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
           ========================================================================= */}
       <section id="story" className="py-24 border-b border-slate-200 dark:border-white/10 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Main Who We Are Narrative */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
-            
+
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 text-[14px] font-bold text-[#0A2540] font-mono uppercase tracking-wider bg-transparent">
                 <Sparkles className="h-3.5 w-3.5 text-[#0052CC]" />
                 <span>WHO WE ARE • ESTABLISHED 2006</span>
               </div>
-              
+
               <h2 className="font-sora text-[18px] font-bold text-slate-900 tracking-tight leading-[1.2]">
                 Empowering Success: <br />
                 <span className="text-gradient-cyan text-[16px] font-medium font-sora block mt-1">Knooviq's Journey and Vision</span>
@@ -315,7 +313,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
               {/* Card 1: SERVICES */}
-              <motion.div 
+              <motion.div
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.2 }}
                 className="glass-panel rounded-3xl p-8 border-t-4 border-t-slate-700 flex flex-col justify-between relative overflow-hidden"
@@ -350,7 +348,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
               </motion.div>
 
               {/* Card 2: SOLUTIONS */}
-              <motion.div 
+              <motion.div
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.2 }}
                 className="glass-panel rounded-3xl p-8 border-t-4 border-t-emerald-600 flex flex-col justify-between relative overflow-hidden"
@@ -385,7 +383,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
               </motion.div>
 
               {/* Card 3: INDUSTRY SPECIFIC SOLUTIONS */}
-              <motion.div 
+              <motion.div
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.2 }}
                 className="glass-panel rounded-3xl p-8 border-t-4 border-t-[#0A2540] flex flex-col justify-between relative overflow-hidden"
@@ -432,8 +430,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
               CLIENT LOGO CONTINUOUS ROTATING MARQUEE TICKER (LEFT TO RIGHT)
               ========================================================================= */}
           <div className="pt-8 pb-4">
-            <ClientLogoMarquee 
-              title="Trusted by Leading Enterprises & Industry Titans" 
+            <ClientLogoMarquee
+              title="Trusted by Leading Enterprises & Industry Titans"
               subtitle="MARQUEE CLIENT PORTFOLIO • ESTABLISHED 2006"
               className="rounded-3xl border border-slate-200/90 shadow-sm"
             />
@@ -444,12 +442,12 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
               ========================================================================= */}
           <div className="pt-16 pb-6 border-t border-slate-200">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-              
+
               {/* Left Column: Team Collaboration Image with Executive KNOOVIQ Badge */}
               <div className="lg:col-span-5">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" 
+                  <img
+                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop"
                     alt="Knooviq Dedicated Professionals Team"
                     className="w-full h-[400px] object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
@@ -605,9 +603,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
           ========================================================================= */}
       <section id="excellence" className="py-24 border-b border-slate-200 dark:border-white/10 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             <div className="lg:col-span-5 space-y-6">
               <div className="inline-flex items-center gap-2 rounded-full bg-[#00A3E0]/15 dark:bg-cyan-400/20 border border-[#00A3E0]/30 dark:border-cyan-400/30 px-3.5 py-1 text-xs font-bold text-[#0077B6] dark:text-cyan-300 font-mono">
                 <Sparkles className="h-3 w-3" />
@@ -745,7 +743,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
             <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-emerald-500/15 via-cyan-400/10 to-transparent rounded-bl-full pointer-events-none" />
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
-              
+
               <div className="lg:col-span-8 space-y-6">
                 <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/15 border border-emerald-500/30 px-3.5 py-1 text-xs font-bold text-emerald-600 dark:text-emerald-400 font-mono">
                   <TrendingUp className="h-3 w-3" />
@@ -927,7 +925,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenContact }) => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            
+
             {/* Headquarters Card */}
             <div className="lg:col-span-6">
               <div className="glass-panel rounded-3xl p-8 sm:p-10 shadow-2xl relative overflow-hidden h-full flex flex-col justify-between">

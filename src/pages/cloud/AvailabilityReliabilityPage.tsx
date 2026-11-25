@@ -326,7 +326,7 @@ export const AvailabilityReliabilityPage: React.FC<ChildPageProps> = ({ onOpenCo
       {/* =========================================================================
           SECTION 1: HERO SECTION (Full-Screen Immersive Canvas with 16:9 Uncropped HD Visual)
           ========================================================================= */}
-      <section className="relative w-full min-h-[660px] lg:min-h-[740px] flex flex-col justify-between pt-28 sm:pt-32 lg:pt-36 pb-10 overflow-hidden bg-[#030712] border-b border-white/10">
+      <section className="relative w-full min-h-[660px] lg:min-h-[740px] flex flex-col justify-between pt-28 sm:pt-32 lg:pt-36 pb-10 overflow-hidden bg-[#030712] text-white border-b border-white/10">
 
         {/* FULL-SCREEN HERO BACKGROUND IMAGE (16:9 Widescreen Crystal Clear HD Visual) */}
         <div className="absolute inset-0 w-full h-full pointer-events-none select-none overflow-hidden">

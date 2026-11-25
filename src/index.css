@@ -310,7 +310,6 @@
     line-height: 1.6 !important;
     word-spacing: normal !important;
     letter-spacing: normal !important;
-    color: #102A43;
   }
 
   .about-typography h3,
@@ -332,10 +331,6 @@
       letter-spacing: normal !important;
     }
 
-    .about-typography p:not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-red"]):not([class*="text-blue"]):not([class*="text-indigo"]),
-    #about p:not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-red"]):not([class*="text-blue"]):not([class*="text-indigo"]) {
-      color: #102A43 !important;
-    }
   }
 
   /* Product Sections & Pages Typography Standards (Sora Family Integration) */
@@ -357,7 +352,6 @@
     line-height: 1.6 !important;
     word-spacing: normal !important;
     letter-spacing: normal !important;
-    color: #102A43;
   }
 
   .product-typography h3,
@@ -394,13 +388,6 @@
       letter-spacing: normal !important;
     }
 
-    .product-typography p:not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-red"]):not([class*="text-blue"]):not([class*="text-indigo"]),
-    .products-nav-typography a:not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-red"]):not([class*="text-blue"]):not([class*="text-indigo"]),
-    .products-nav-typography p:not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-red"]):not([class*="text-blue"]):not([class*="text-indigo"]),
-    #products p:not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-red"]):not([class*="text-blue"]):not([class*="text-indigo"]),
-    [data-section="products"] p:not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-red"]):not([class*="text-blue"]):not([class*="text-indigo"]) {
-      color: #102A43 !important;
-    }
   }
 
   /* Transformation Sections & Pages Typography Standards (Sora Family Integration) */
@@ -420,14 +407,13 @@
     line-height: 1.6 !important;
     word-spacing: normal !important;
     letter-spacing: normal !important;
-    color: #102A43;
   }
 
   /* Deep Navy (#102A43) for paragraphs on light surfaces across desktop and mobile */
-  .transformation-typography p:not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-rose"]):not([class*="font-mono"]),
-  .transformation-section p:not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-rose"]):not([class*="font-mono"]),
-  #transformation p:not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-rose"]):not([class*="font-mono"]),
-  [data-section="transformation"] p:not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-rose"]):not([class*="font-mono"]) {
+  .transformation-typography p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-rose"]):not([class*="font-mono"]),
+  .transformation-section p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-rose"]):not([class*="font-mono"]),
+  #transformation p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-rose"]):not([class*="font-mono"]),
+  [data-section="transformation"] p:not([class*="text-white"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-blue"]):not([class*="text-purple"]):not([class*="text-rose"]):not([class*="font-mono"]) {
     color: #102A43;
   }
 
@@ -461,12 +447,6 @@
       letter-spacing: normal !important;
     }
 
-    .transformation-typography p:not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-rose"]),
-    .transformation-section p:not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-rose"]),
-    #transformation p:not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-rose"]),
-    [data-section="transformation"] p:not([class*="text-cyan"]):not([class*="text-sky"]):not([class*="text-emerald"]):not([class*="text-amber"]):not([class*="text-indigo"]):not([class*="text-rose"]) {
-      color: #102A43 !important;
-    }
   }
 
   button,
@@ -507,7 +487,7 @@
 }
 
 /* Light Theme Deep Navy (#102A43) for paragraphs on light surfaces only */
-.cloud-sora-scope p:not([class*="text-sky"]):not([class*="text-blue"]):not([class*="text-white"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#0070C0]"]) {
+.cloud-sora-scope p:not([class*="text-slate-100"]):not([class*="text-slate-200"]):not([class*="text-slate-300"]):not([class*="text-slate-400"]):not([class*="text-sky"]):not([class*="text-blue"]):not([class*="text-white"]):not([class*="text-cyan"]):not([class*="text-emerald"]):not([class*="text-[#00A3E0]"]):not([class*="text-[#0070C0]"]):not([class*="text-gray-100"]):not([class*="text-gray-200"]):not([class*="text-gray-300"]):not([class*="text-zinc"]):not([class*="text-neutral"]) {
   color: #102A43;
 }
 
@@ -823,21 +803,11 @@
 /* Left to Right Continuous Rotating Animation (Smooth & Calibrated Speed) */
 @keyframes rotateLeftToRight {
   0% {
-    transform: translate3d(-50%, 0, 0);
+    transform: translateX(-50%);
   }
 
   100% {
-    transform: translate3d(0%, 0, 0);
-  }
-}
-
-@-webkit-keyframes rotateLeftToRight {
-  0% {
-    -webkit-transform: translate3d(-50%, 0, 0);
-  }
-
-  100% {
-    -webkit-transform: translate3d(0%, 0, 0);
+    transform: translateX(0%);
   }
 }
 
@@ -845,7 +815,6 @@
   display: flex;
   width: max-content;
   animation: rotateLeftToRight 70s linear infinite;
-  -webkit-animation: rotateLeftToRight 70s linear infinite;
   will-change: transform;
 }
 
@@ -853,7 +822,6 @@
   display: flex;
   width: max-content;
   animation: rotateLeftToRight 75s linear infinite;
-  -webkit-animation: rotateLeftToRight 75s linear infinite;
   will-change: transform;
 }
 
@@ -861,15 +829,13 @@
   display: flex;
   width: max-content;
   animation: rotateLeftToRight 88s linear infinite;
-  -webkit-animation: rotateLeftToRight 88s linear infinite;
   will-change: transform;
 }
 
 .animate-rotate-ltr-all {
   display: flex;
   width: max-content;
-  animation: rotateLeftToRight 95s linear infinite !important;
-  -webkit-animation: rotateLeftToRight 95s linear infinite !important;
+  animation: rotateLeftToRight 175s linear infinite;
   will-change: transform;
 }
 
@@ -878,6 +844,17 @@
 .animate-rotate-ltr-slower:hover,
 .animate-rotate-ltr-all:hover {
   animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .animate-rotate-ltr,
+  .animate-rotate-ltr-slow,
+  .animate-rotate-ltr-slower,
+  .animate-rotate-ltr-all {
+    animation: none !important;
+    transform: none !important;
+  }
 }
 
 /* Single-Pass Left-to-Right Floating Motion (No Duplicate Text) */
