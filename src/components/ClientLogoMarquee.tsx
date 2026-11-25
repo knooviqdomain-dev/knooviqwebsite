@@ -448,7 +448,7 @@ export const ClientLogoMarquee: React.FC<{
         {/* Exact Authentic Logo Image - Uses Full Box Size with Ultra-Crisp Rendering */}
         <div className="flex-1 w-full flex items-center justify-center px-1 py-0.5 pointer-events-none overflow-hidden">
           <img
-            src={`${client.logoSrc}?v=20261125_ultra_hd`}
+            src={`${client.logoSrc}?v=20261125_ultra_hd_v2`}
             alt={client.name}
             draggable={false}
             className="w-full h-full max-h-[92px] sm:max-h-[96px] max-w-[250px] sm:max-w-[265px] object-contain select-none pointer-events-none"
