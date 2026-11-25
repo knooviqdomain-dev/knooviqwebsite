@@ -445,16 +445,20 @@ export const ClientLogoMarquee: React.FC<{
           </div>
         )}
 
-        {/* Exact Authentic Logo Image - Uses Full Box Size */}
-        <div className="flex-1 w-full flex items-center justify-center px-1.5 py-0.5 pointer-events-none overflow-hidden">
+        {/* Exact Authentic Logo Image - Uses Full Box Size with Ultra-Crisp Rendering */}
+        <div className="flex-1 w-full flex items-center justify-center px-1 py-0.5 pointer-events-none overflow-hidden">
           <img
-            src={client.logoSrc}
+            src={`${client.logoSrc}?v=20261125_ultra_hd`}
             alt={client.name}
             draggable={false}
-            className="w-full h-full max-h-[88px] sm:max-h-[92px] max-w-[245px] sm:max-w-[260px] object-contain select-none pointer-events-none"
-            style={{ imageRendering: '-webkit-optimize-contrast' }}
-            loading="lazy"
-            decoding="async"
+            className="w-full h-full max-h-[92px] sm:max-h-[96px] max-w-[250px] sm:max-w-[265px] object-contain select-none pointer-events-none"
+            style={{
+              imageRendering: 'auto',
+              WebkitBackfaceVisibility: 'hidden',
+              transform: 'translateZ(0)',
+            }}
+            loading="eager"
+            decoding="sync"
           />
         </div>
 
