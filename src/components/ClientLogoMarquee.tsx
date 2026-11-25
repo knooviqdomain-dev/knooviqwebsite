@@ -432,7 +432,7 @@ export const ClientLogoMarquee: React.FC<{
         aria-hidden={isDuplicate ? true : undefined}
         onClick={(e) => handleCardClick(e, client)}
         onKeyDown={(e) => handleLogoKeyDown(e, client)}
-        className={`bg-white rounded-2xl px-3.5 py-2.5 sm:px-5 sm:py-3 flex flex-col items-center justify-between min-w-[260px] sm:min-w-[280px] h-[132px] sm:h-[136px] flex-shrink-0 transition-all duration-200 select-none outline-none focus:outline-none ring-0 relative cursor-pointer ${
+        className={`bg-white rounded-2xl p-2.5 sm:p-3 flex flex-col items-center justify-between min-w-[260px] sm:min-w-[280px] h-[136px] sm:h-[140px] flex-shrink-0 transition-all duration-200 select-none outline-none focus:outline-none ring-0 relative cursor-pointer ${
           isSelected
             ? 'border-2 border-[#00A3E0] shadow-[0_0_25px_rgba(0,163,224,0.45)] scale-[1.03] z-10'
             : 'border border-slate-200/90 hover:border-sky-400 shadow-[0_4px_18px_-2px_rgba(0,0,0,0.18)] hover:shadow-xl hover:scale-[1.01]'
@@ -445,13 +445,13 @@ export const ClientLogoMarquee: React.FC<{
           </div>
         )}
 
-        {/* Exact Authentic Logo Image */}
-        <div className="h-[82px] sm:h-[86px] flex items-center justify-center w-full px-2 pointer-events-none">
+        {/* Exact Authentic Logo Image - Uses Full Box Size */}
+        <div className="flex-1 w-full flex items-center justify-center px-1.5 py-0.5 pointer-events-none overflow-hidden">
           <img
             src={client.logoSrc}
             alt={client.name}
             draggable={false}
-            className="max-h-[74px] sm:max-h-[76px] max-w-[225px] sm:max-w-[240px] w-auto h-auto object-contain select-none pointer-events-none"
+            className="w-full h-full max-h-[88px] sm:max-h-[92px] max-w-[245px] sm:max-w-[260px] object-contain select-none pointer-events-none"
             style={{ imageRendering: '-webkit-optimize-contrast' }}
             loading="lazy"
             decoding="async"
