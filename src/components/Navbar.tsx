@@ -1051,7 +1051,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
 
                 {/* Products Mega Menu Dropdown */}
                 {activeMenu === 'products' && (
-                  <div className="products-nav-typography font-sora fixed left-0 right-0 top-[68px] w-full transition-all animate-in fade-in slide-in-from-top-1 duration-150 z-50 px-4 whitespace-normal">
+                  <div className="fixed left-0 right-0 top-[68px] w-full transition-all animate-in fade-in slide-in-from-top-1 duration-150 z-50 px-4 whitespace-normal">
                     <div data-lenis-prevent="true" className="max-w-7xl mx-auto rounded-2xl border-2 border-slate-200 dark:border-[#00A3E0]/30 bg-white dark:bg-[#070E1C] p-4 lg:p-5 shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto custom-scrollbar overscroll-contain">
                       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-2.5 lg:gap-3">
                         {PRODUCTS_NAV_CATEGORIES.map((cat) => (
@@ -1061,18 +1061,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                           >
                             <div className="pb-1 mb-1.5 border-b border-slate-200/60 dark:border-white/10 flex items-center justify-between">
                               <h4
-                                className="font-sora font-medium text-[13px] tracking-wide uppercase text-[#102A43] dark:text-white select-none py-0.5 leading-snug"
+                                className="font-[800] font-extrabold text-[13px] tracking-wide uppercase text-[#0A1931] dark:text-white select-none py-0.5 leading-snug"
+                                style={{ fontWeight: 800 }}
                               >
                                 {cat.title}
                               </h4>
                             </div>
-                            <ul className="space-y-0.5 font-sora">
+                            <ul className="space-y-0.5">
                               {cat.items.map((item) => (
                                 <li key={item.name}>
                                   <Link
                                     to={item.path}
                                     onClick={() => setActiveMenu(null)}
-                                    className="font-sora font-normal px-2 py-0.5 rounded-lg block text-left transition-colors text-[#102A43] dark:text-slate-200 hover:text-[#00A3E0] dark:hover:text-cyan-300 hover:bg-white dark:hover:bg-white/10 text-[11.5px] leading-[1.6]"
+                                    className="industry-category-item px-2 py-0.5 rounded-lg block text-left transition-colors text-slate-700 dark:text-slate-200 hover:text-[#00A3E0] dark:hover:text-cyan-300 hover:bg-white dark:hover:bg-white/10 text-[11px] font-medium leading-snug"
                                   >
                                     <span className="block text-left">{item.name}</span>
                                   </Link>
