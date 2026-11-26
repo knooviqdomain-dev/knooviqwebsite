@@ -89,11 +89,11 @@ export const WhatKnooviqDoesSection: React.FC<WhatKnooviqDoesSectionProps> = ({ 
             <div className="absolute -inset-2 bg-gradient-to-tr from-sky-400/20 via-blue-500/15 to-indigo-500/10 rounded-3xl blur-2xl -z-10 opacity-70" />
 
             {/* Main Showcase Image Frame - Fully responsive natural aspect ratio without distortion */}
-            <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden border border-slate-200/90 shadow-2xl bg-white aspect-[16/10] sm:aspect-[16/9] w-full">
+            <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden border border-slate-200/90 shadow-2xl bg-white w-full">
               <img
                 src="/images/what_we_do_strategic_partner.jpg"
                 alt="Your Strategic Partner for SAP & Digital Transformation"
-                className="w-full h-full object-cover object-center block"
+                className="w-full h-auto block select-none"
                 loading="lazy"
               />
             </div>
