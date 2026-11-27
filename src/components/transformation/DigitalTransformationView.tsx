@@ -245,7 +245,7 @@ export const DigitalTransformationView: React.FC<DigitalTransformationViewProps>
       </section>
 
       {/* =========================================================================
-          2. THE SIGNATURE SAVIC SPLIT: "WHAT WE DELIVER" vs "KEY OUTCOMES"
+          2. THE SIGNATURE Knooviq Industries Pvt Ltd SPLIT: "WHAT WE DELIVER" vs "KEY OUTCOMES"
           ========================================================================= */}
       <section className="space-y-8">
         <div>
@@ -646,16 +646,16 @@ export const DigitalTransformationView: React.FC<DigitalTransformationViewProps>
       </section>
 
       {/* =========================================================================
-          6. SAVIC ONE PIECE FLOW FRAMEWORK FOR DIGITAL TRANSFORMATION (5-Phase Delivery)
+          6. Knooviq Industries Pvt Ltd ONE PIECE FLOW FRAMEWORK FOR DIGITAL TRANSFORMATION (5-Phase Delivery)
           ========================================================================= */}
       <section className="bg-white dark:bg-[#0B1528] rounded-3xl border border-slate-200/80 dark:border-white/10 p-8 sm:p-12 shadow-sm space-y-8">
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold text-cyan-600 dark:text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 mb-2">
             <Workflow className="w-3.5 h-3.5" />
-            <span>SAVIC PROPRIETARY DELIVERY METHODOLOGY</span>
+            <span>Knooviq Industries Pvt Ltd PROPRIETARY DELIVERY METHODOLOGY</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0A1931] dark:text-white tracking-tight">
-            SAVIC One Piece Flow for Digital Transformation
+            Knooviq Industries Pvt Ltd One Piece Flow for Digital Transformation
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-2xl mt-1">
             An agile, iterative delivery framework engineered to compress deployment timelines, de-risk cloud architecture, and realize measurable ROI rapidly.
@@ -779,7 +779,7 @@ export const DigitalTransformationView: React.FC<DigitalTransformationViewProps>
       </section>
 
       {/* =========================================================================
-          8. REAL ENTERPRISE DIGITAL CASE STUDIES (Savic Benchmark)
+          8. REAL ENTERPRISE DIGITAL CASE STUDIES (Knooviq Industries Pvt Ltd Benchmark)
           ========================================================================= */}
       <section className="space-y-8">
         <div>
@@ -875,7 +875,7 @@ export const DigitalTransformationView: React.FC<DigitalTransformationViewProps>
       </section>
 
       {/* =========================================================================
-          10. FREQUENTLY ASKED QUESTIONS (Savic FAQ Accordion)
+          10. FREQUENTLY ASKED QUESTIONS (Knooviq Industries Pvt Ltd FAQ Accordion)
           ========================================================================= */}
       <section className="bg-white dark:bg-[#0B1528] rounded-3xl border border-slate-200/80 dark:border-white/10 p-8 sm:p-12 shadow-sm space-y-8">
         <div>

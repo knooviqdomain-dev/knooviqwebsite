@@ -326,7 +326,7 @@ function updateSapFinanceSolutionView() {
                 <span className="text-slate-400 text-xs font-mono hidden sm:inline">/</span>
                 <span className="inline-flex items-center gap-1.5 text-[11px] font-mono font-bold text-slate-200 uppercase tracking-wider bg-black/50 px-2.5 py-1 rounded-full border border-white/20 backdrop-blur-md shadow-md">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>SAVIC FINANCIAL METHODOLOGY</span>
+                  <span>Knooviq Industries Pvt Ltd FINANCIAL METHODOLOGY</span>
                 </span>
               </div>
 

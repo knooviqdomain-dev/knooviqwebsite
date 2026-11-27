@@ -1472,7 +1472,7 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
       </section>
 
       {/* =========================================================================
-          2. STICKY SUB-NAVIGATION BAR (Exact Savic Format)
+          2. STICKY SUB-NAVIGATION BAR (Exact Knooviq Industries Pvt Ltd Format)
           Sticky bar with clean pill links and Lucide SVG icons (14x14)
           ========================================================================= */}
       <section className="bg-white dark:bg-[#070E1C] border-b border-gray-200 dark:border-white/10 sticky top-16 sm:top-20 z-40 shadow-sm transition-colors duration-200">
@@ -1506,7 +1506,7 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
       </section>
 
       {/* =========================================================================
-          3. ALL 10 TRANSFORMATION SUB-SECTIONS (Exact Savic 5-Column Structure)
+          3. ALL 10 TRANSFORMATION SUB-SECTIONS (Exact Knooviq Industries Pvt Ltd 5-Column Structure)
           Clean & compact: NO extra 10-card subgrids underneath!
           Left 60%: Icon, Tagline, Title, Summary, 2-Col Capabilities vs Benefits, CTAs
           Right 40%: Gradient Strategic Value Card + 2 Action Cards
@@ -1524,7 +1524,7 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                {/* Savic 5-Column Grid */}
+                {/* Knooviq Industries Pvt Ltd 5-Column Grid */}
                 <div className="grid lg:grid-cols-5 gap-12 items-start">
 
                   {/* Left Column (3 of 5 cols = 60%) */}
@@ -1851,7 +1851,7 @@ export const TransformationPage: React.FC<{ onOpenContact: (service?: string) =>
       </section>
 
       {/* =========================================================================
-          5. BOTTOM DISCOVERY WORKSHOP CTA BANNER (Exact Savic Format)
+          5. BOTTOM DISCOVERY WORKSHOP CTA BANNER (Exact Knooviq Industries Pvt Ltd Format)
           ========================================================================= */}
       <section className="py-16 sm:py-20 bg-[#F8FAFC] dark:bg-[#040813] text-center border-t border-slate-200/80 dark:border-white/10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

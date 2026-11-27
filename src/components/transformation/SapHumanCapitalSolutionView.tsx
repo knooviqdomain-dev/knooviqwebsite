@@ -666,7 +666,7 @@ export const SapHumanCapitalSolutionView: React.FC<SapHumanCapitalSolutionViewPr
                 Ready to Modernize Your People Architecture?
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">
-                Partner with SAVIC’s certified SAP SuccessFactors architects to assess your skills ontology readiness, multi-country payroll compliance, and talent mobility roadmap.
+                Partner with Knooviq Industries Pvt Ltd’s certified SAP SuccessFactors architects to assess your skills ontology readiness, multi-country payroll compliance, and talent mobility roadmap.
               </p>
             </div>
 

@@ -661,7 +661,7 @@ export const SapCustomerExperienceSolutionView: React.FC<SapCustomerExperienceSo
                 Ready to Modernize Your Customer Experience?
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">
-                Partner with SAVIC’s certified SAP Commerce Cloud and CDP architects to evaluate your composable storefront latency, CPQ rules engine, and omnichannel conversion roadmap.
+                Partner with Knooviq Industries Pvt Ltd’s certified SAP Commerce Cloud and CDP architects to evaluate your composable storefront latency, CPQ rules engine, and omnichannel conversion roadmap.
               </p>
             </div>
 

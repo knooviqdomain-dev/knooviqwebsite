@@ -223,7 +223,7 @@ export const InfrastructureIndustryPage: React.FC<IndustryPageProps> = ({ onOpen
       sublabel: 'Progressive Verification',
       tech: 'SAP Earned Value Engine',
       desc: 'Certifying major civil engineering milestones, tunnel breakthrough tranches, and viaduct erection progress for payment release.',
-      image: '/images/infra_epc_disbursement.png',
+      image: '/images/infra_epc_disbursement.jpg',
       icon: TrendingUp
     },
     {

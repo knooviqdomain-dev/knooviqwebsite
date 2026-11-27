@@ -918,7 +918,7 @@ export const SapS4HanaPage: React.FC<SapS4HanaPageProps> = ({
 
         {activeDomain === 'erp' ? (
           /* =========================================================================
-             SAVIC-ALIGNED ENTERPRISE FORMAT FOR ERP TRANSFORMATION
+             Knooviq Industries Pvt Ltd-ALIGNED ENTERPRISE FORMAT FOR ERP TRANSFORMATION
              ========================================================================= */
           <>
 
@@ -992,7 +992,7 @@ export const SapS4HanaPage: React.FC<SapS4HanaPageProps> = ({
               </div>
             </section>
 
-            {/* 3. THE SIGNATURE SAVIC SPLIT: "WHAT WE DELIVER" vs "KEY OUTCOMES" */}
+            {/* 3. THE SIGNATURE Knooviq Industries Pvt Ltd SPLIT: "WHAT WE DELIVER" vs "KEY OUTCOMES" */}
             <section className="space-y-8">
               <div>
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -1071,7 +1071,7 @@ export const SapS4HanaPage: React.FC<SapS4HanaPageProps> = ({
 
                     <div className="space-y-4">
                       {[
-                        { title: 'Up to 40% Faster Go-Live Timelines', desc: 'Accelerated implementation cycles driven by pre-configured industry accelerators and the SAVIC One Piece Flow methodology.' },
+                        { title: 'Up to 40% Faster Go-Live Timelines', desc: 'Accelerated implementation cycles driven by pre-configured industry accelerators and the Knooviq Industries Pvt Ltd One Piece Flow methodology.' },
                         { title: 'Predictable, Optimized Cloud TCO', desc: 'Single transparent subscription economics eliminating surprise infrastructure costs and expensive hardware refreshes.' },
                         { title: 'Continuous Automated Innovation', desc: 'Direct, zero-disruption access to bi-annual SAP innovations without protracted regression testing cycles.' },
                         { title: 'Sub-Second Real-Time Analytics', desc: 'Instant enterprise-wide operational and financial insights powered by in-memory SAP HANA and embedded Joule AI.' },
@@ -1338,7 +1338,7 @@ export const SapS4HanaPage: React.FC<SapS4HanaPageProps> = ({
               </div>
             </section>
 
-            {/* 7. SAVIC ONE PIECE FLOW METHODOLOGY (5-Stage Visual Workflow) */}
+            {/* 7. Knooviq Industries Pvt Ltd ONE PIECE FLOW METHODOLOGY (5-Stage Visual Workflow) */}
             <section className="bg-white dark:bg-[#0B1528] rounded-3xl border border-slate-200/80 dark:border-white/10 p-8 sm:p-12 shadow-sm space-y-8">
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold text-cyan-500 bg-cyan-500/10 border border-cyan-500/20 mb-2">
@@ -1346,7 +1346,7 @@ export const SapS4HanaPage: React.FC<SapS4HanaPageProps> = ({
                   <span>PROPRIETARY DELIVERY METHODOLOGY</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0A1931] dark:text-white tracking-tight">
-                  SAVIC One Piece Flow Framework
+                  Knooviq Industries Pvt Ltd One Piece Flow Framework
                 </h2>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-2xl mt-1">
                   A transformation-led delivery framework engineered to compress time-to-value, eliminate operational disruption, and enforce clean core standards.
@@ -1382,7 +1382,7 @@ export const SapS4HanaPage: React.FC<SapS4HanaPageProps> = ({
               </div>
             </section>
 
-            {/* 8. REAL ENTERPRISE CASE STUDIES (Savic Benchmark) */}
+            {/* 8. REAL ENTERPRISE CASE STUDIES (Knooviq Industries Pvt Ltd Benchmark) */}
             <section className="space-y-8">
               <div>
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -1488,7 +1488,7 @@ export const SapS4HanaPage: React.FC<SapS4HanaPageProps> = ({
               </div>
             </section>
 
-            {/* 10. FREQUENTLY ASKED QUESTIONS (Savic FAQ Accordion) */}
+            {/* 10. FREQUENTLY ASKED QUESTIONS (Knooviq Industries Pvt Ltd FAQ Accordion) */}
             <section className="bg-white dark:bg-[#0B1528] rounded-3xl border border-slate-200/80 dark:border-white/10 p-8 sm:p-12 shadow-sm space-y-8">
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold text-[#00A3E0] bg-[#00A3E0]/10 border border-[#00A3E0]/20 mb-2">
@@ -1556,17 +1556,17 @@ export const SapS4HanaPage: React.FC<SapS4HanaPageProps> = ({
           </>
         ) : activeDomain === 'digital' ? (
           /* =========================================================================
-             SAVIC-ALIGNED ENTERPRISE FORMAT FOR DIGITAL TRANSFORMATION
+             Knooviq Industries Pvt Ltd-ALIGNED ENTERPRISE FORMAT FOR DIGITAL TRANSFORMATION
              ========================================================================= */
           <DigitalTransformationView onOpenContact={onOpenContact} />
         ) : activeDomain === 'rise' ? (
           /* =========================================================================
-             SAVIC-ALIGNED ENTERPRISE FORMAT FOR RISE WITH SAP
+             Knooviq Industries Pvt Ltd-ALIGNED ENTERPRISE FORMAT FOR RISE WITH SAP
              ========================================================================= */
           <RiseWithSapView onOpenContact={onOpenContact} />
         ) : (
           /* =========================================================================
-             SAVIC-ALIGNED ENTERPRISE FORMAT FOR SAP S/4HANA TRANSFORMATION
+             Knooviq Industries Pvt Ltd-ALIGNED ENTERPRISE FORMAT FOR SAP S/4HANA TRANSFORMATION
              ========================================================================= */
           <SapS4HanaView onOpenContact={onOpenContact} />
         )}

@@ -576,16 +576,16 @@ export const RiseWithSapView: React.FC<RiseWithSapViewProps> = ({ onOpenContact 
       </section>
 
       {/* =========================================================================
-          SECTION 5: SAVIC ONE PIECE FLOW DELIVERY FRAMEWORK FOR RISE
+          SECTION 5: Knooviq Industries Pvt Ltd ONE PIECE FLOW DELIVERY FRAMEWORK FOR RISE
           ========================================================================= */}
       <section className="bg-white dark:bg-[#0B1528] rounded-3xl border border-slate-200/80 dark:border-white/10 p-8 sm:p-12 shadow-sm space-y-8">
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold text-cyan-600 dark:text-cyan-400 bg-cyan-500/10 border border-cyan-500/20 mb-2">
             <Workflow className="w-3.5 h-3.5" />
-            <span>SAVIC PROPRIETARY DELIVERY METHODOLOGY</span>
+            <span>Knooviq Industries Pvt Ltd PROPRIETARY DELIVERY METHODOLOGY</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0A1931] dark:text-white tracking-tight">
-            SAVIC One Piece Flow for RISE with SAP
+            Knooviq Industries Pvt Ltd One Piece Flow for RISE with SAP
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-2xl mt-1">
             A battle-tested transformation framework engineered to de-risk cloud cutovers, eliminate operational downtime, and ensure Day-1 productivity.
@@ -718,7 +718,7 @@ export const RiseWithSapView: React.FC<RiseWithSapViewProps> = ({ onOpenContact 
       </section>
 
       {/* =========================================================================
-          SECTION 8: FREQUENTLY ASKED QUESTIONS (Savic FAQ Accordion)
+          SECTION 8: FREQUENTLY ASKED QUESTIONS (Knooviq Industries Pvt Ltd FAQ Accordion)
           ========================================================================= */}
       <section className="bg-white dark:bg-[#0B1528] rounded-3xl border border-slate-200/80 dark:border-white/10 p-8 sm:p-12 shadow-sm space-y-8">
         <div>
@@ -754,7 +754,7 @@ export const RiseWithSapView: React.FC<RiseWithSapViewProps> = ({ onOpenContact 
             },
             {
               q: 'How does Knooviq accelerate the RISE with SAP migration timeline?',
-              a: 'Using our SAVIC One Piece Flow delivery framework and pre-configured industry accelerators, we compress typical RISE migration timelines by up to 40%. We execute automated readiness audits, automated data cleansing, parallel financial reconciliations, and multiple rehearsal cutovers to guarantee a secure, near-zero downtime transition.'
+              a: 'Using our Knooviq Industries Pvt Ltd One Piece Flow delivery framework and pre-configured industry accelerators, we compress typical RISE migration timelines by up to 40%. We execute automated readiness audits, automated data cleansing, parallel financial reconciliations, and multiple rehearsal cutovers to guarantee a secure, near-zero downtime transition.'
             }
           ].map((faq, idx) => {
             const isOpen = expandedFaq === idx;

@@ -39,7 +39,7 @@ export const SapFinanceSolutionView: React.FC<SapFinanceSolutionViewProps> = ({ 
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const [isFullscreenImageOpen, setIsFullscreenImageOpen] = useState<boolean>(false);
 
-  // 1. Core CFO Strategic Value Pillars (6 SAVIC Financial Domains)
+  // 1. Core CFO Strategic Value Pillars (6 Knooviq Industries Pvt Ltd Financial Domains)
   const financialPillars = [
     {
       id: 'universal-journal',
@@ -213,7 +213,7 @@ export const SapFinanceSolutionView: React.FC<SapFinanceSolutionViewProps> = ({ 
     }
   ];
 
-  // 4. Real Enterprise Client Case Studies (SAVIC Portfolio Proof)
+  // 4. Real Enterprise Client Case Studies (Knooviq Industries Pvt Ltd Portfolio Proof)
   const clientStories = [
     {
       client: 'Vascon Engineers Ltd',
@@ -251,8 +251,8 @@ export const SapFinanceSolutionView: React.FC<SapFinanceSolutionViewProps> = ({ 
       a: 'In legacy SAP ECC and other ERP systems, Financial Accounting (FI) and Controlling (CO) existed in separate tables (BSEG, BKPF, COEP), requiring lengthy period-end reconciliation runs. In S/4HANA, the Universal Journal (ACDOCA) combines all financial and managerial dimensions into a single line-item table. Every transaction simultaneously writes GL accounts, cost centers, profit centers, and market segments in real time, making reconciliation structurally redundant.'
     },
     {
-      q: 'How does SAVIC FAST accelerate GROW with SAP Finance implementation in 8–12 weeks?',
-      a: 'SAVIC FAST provides pre-configured, battle-tested financial templates covering ~70 SAP-validated best-practice finance and supply chain processes. By adopting a Fit-to-Standard Clean Core methodology, your organization skips months of custom blueprinting and moves directly to validation, data migration, and activation.'
+      q: 'How does Knooviq Industries Pvt Ltd FAST accelerate GROW with SAP Finance implementation in 8–12 weeks?',
+      a: 'Knooviq Industries Pvt Ltd FAST provides pre-configured, battle-tested financial templates covering ~70 SAP-validated best-practice finance and supply chain processes. By adopting a Fit-to-Standard Clean Core methodology, your organization skips months of custom blueprinting and moves directly to validation, data migration, and activation.'
     },
     {
       q: 'Can SAP S/4HANA Finance manage both local statutory GAAP and IFRS simultaneously?',
@@ -263,8 +263,8 @@ export const SapFinanceSolutionView: React.FC<SapFinanceSolutionViewProps> = ({ 
       a: 'SAP DRC is a centralized compliance engine natively embedded within S/4HANA. It automates electronic invoice generation, digital signatures, and direct tax authority submission across 25+ jurisdictions (including India GST, Saudi Arabia ZATCA Phase 2, EU Peppol, and Latin American electronic invoices) without requiring custom point-to-point integration middleware.'
     },
     {
-      q: 'How does SAVIC MAXCare AMS support the CFO organization post-go-live?',
-      a: 'SAVIC MAXCare provides dedicated 24/7 technical and functional AMS support with guaranteed SLAs for period-end and year-end financial closes. Our senior SAP FI/CO specialists actively monitor background jobs, maintain tax schemas, optimize banking APIs, and ensure zero downtime during critical reporting windows.'
+      q: 'How does Knooviq Industries Pvt Ltd MAXCare AMS support the CFO organization post-go-live?',
+      a: 'Knooviq Industries Pvt Ltd MAXCare provides dedicated 24/7 technical and functional AMS support with guaranteed SLAs for period-end and year-end financial closes. Our senior SAP FI/CO specialists actively monitor background jobs, maintain tax schemas, optimize banking APIs, and ensure zero downtime during critical reporting windows.'
     }
   ];
 
@@ -309,7 +309,7 @@ export const SapFinanceSolutionView: React.FC<SapFinanceSolutionViewProps> = ({ 
               <span className="text-slate-400 text-xs font-mono hidden sm:inline">/</span>
               <span className="inline-flex items-center gap-1.5 text-[11px] font-mono font-bold text-slate-200 uppercase tracking-wider bg-black/50 px-2.5 py-1 rounded-full border border-white/20 backdrop-blur-md shadow-md">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>SAVIC FINANCIAL METHODOLOGY</span>
+                <span>Knooviq Industries Pvt Ltd FINANCIAL METHODOLOGY</span>
               </span>
             </div>
 
@@ -394,7 +394,7 @@ export const SapFinanceSolutionView: React.FC<SapFinanceSolutionViewProps> = ({ 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 space-y-24">
 
         {/* =========================================================================
-            2. CORE CFO STRATEGIC PILLARS (SAVIC 6 Financial Domains)
+            2. CORE CFO STRATEGIC PILLARS (Knooviq Industries Pvt Ltd 6 Financial Domains)
             ========================================================================= */}
         <section className="space-y-8">
         <div>
@@ -406,7 +406,7 @@ export const SapFinanceSolutionView: React.FC<SapFinanceSolutionViewProps> = ({ 
             Six Pillars of Modern Autonomous Financial Management
           </h2>
           <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 max-w-3xl">
-            SAVIC architectures replace fragmented divisional ledgers and spreadsheet-heavy accounting with a single, intelligent financial backbone.
+            Knooviq Industries Pvt Ltd architectures replace fragmented divisional ledgers and spreadsheet-heavy accounting with a single, intelligent financial backbone.
           </p>
         </div>
 
@@ -666,19 +666,19 @@ export const SapFinanceSolutionView: React.FC<SapFinanceSolutionViewProps> = ({ 
       </section>
 
       {/* =========================================================================
-          5. SAVIC DELIVERY & ACCELERATION METHODOLOGY
+          5. Knooviq Industries Pvt Ltd DELIVERY & ACCELERATION METHODOLOGY
           ========================================================================= */}
       <section className="bg-gradient-to-br from-slate-900 via-[#0A1931] to-[#050C1A] rounded-3xl border border-cyan-500/20 p-8 sm:p-12 lg:p-14 shadow-2xl text-white space-y-10">
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 mb-3">
             <Workflow className="w-3.5 h-3.5 text-cyan-400" />
-            <span>SAVIC PROPRIETARY DELIVERY FRAMEWORK</span>
+            <span>Knooviq Industries Pvt Ltd PROPRIETARY DELIVERY FRAMEWORK</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
-            SAVIC One Piece Flow for SAP Finance
+            Knooviq Industries Pvt Ltd One Piece Flow for SAP Finance
           </h2>
           <p className="text-xs sm:text-sm text-slate-300 max-w-3xl mt-2 leading-relaxed">
-            De-risk your finance transformation with SAVIC FAST for GROW with SAP. Over 70 pre-configured standard finance best practices enable go-lives in weeks rather than quarters.
+            De-risk your finance transformation with Knooviq Industries Pvt Ltd FAST for GROW with SAP. Over 70 pre-configured standard finance best practices enable go-lives in weeks rather than quarters.
           </p>
         </div>
 
@@ -689,7 +689,7 @@ export const SapFinanceSolutionView: React.FC<SapFinanceSolutionViewProps> = ({ 
             { step: '02', title: 'Fit-to-Standard Sprints', desc: 'Activating 70+ pre-configured best practice finance flows with zero custom modifications.' },
             { step: '03', title: 'BTP Banking & Tax Mesh', desc: 'Configuring SWIFT bank statement ingestion, payment encryption, and DRC e-invoicing.' },
             { step: '04', title: 'Dual-Run Cutover', desc: 'Mock closing rehearsal, automated balance reconciliation, and near-zero downtime live cutover.' },
-            { step: '05', title: 'SAVIC MAXCare AMS', desc: '24/7 post-go-live hypercare, period-end close guarantee, and continuous optimization.' }
+            { step: '05', title: 'Knooviq Industries Pvt Ltd MAXCare AMS', desc: '24/7 post-go-live hypercare, period-end close guarantee, and continuous optimization.' }
           ].map((phase, pIdx) => (
             <div key={pIdx} className="p-5 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between">
               <div>
@@ -719,7 +719,7 @@ export const SapFinanceSolutionView: React.FC<SapFinanceSolutionViewProps> = ({ 
             </div>
             <div>
               <h4 className="text-base font-extrabold text-white">
-                SAVIC MAXCare Period-End Close Guarantee
+                Knooviq Industries Pvt Ltd MAXCare Period-End Close Guarantee
               </h4>
               <p className="text-xs text-slate-300 mt-0.5">
                 Dedicated senior FI/CO consultants standby during monthly, quarterly, and annual book closures with strict response SLAs.
@@ -733,7 +733,7 @@ export const SapFinanceSolutionView: React.FC<SapFinanceSolutionViewProps> = ({ 
       </section>
 
       {/* =========================================================================
-          6. REAL-WORLD CLIENT CASE STUDIES (SAVIC Proof)
+          6. REAL-WORLD CLIENT CASE STUDIES (Knooviq Industries Pvt Ltd Proof)
           ========================================================================= */}
       <section className="space-y-8">
         <div>
@@ -747,7 +747,7 @@ export const SapFinanceSolutionView: React.FC<SapFinanceSolutionViewProps> = ({ 
             Measurable Outcomes from Leading CFO Organizations
           </h2>
           <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 max-w-2xl">
-            Real enterprise transformations executed by SAVIC across capital-intensive engineering, manufacturing, and high-volume retail.
+            Real enterprise transformations executed by Knooviq Industries Pvt Ltd across capital-intensive engineering, manufacturing, and high-volume retail.
           </p>
         </div>
 
@@ -784,7 +784,7 @@ export const SapFinanceSolutionView: React.FC<SapFinanceSolutionViewProps> = ({ 
 
                   <div className="p-3 rounded-xl bg-slate-50 dark:bg-[#0B1528] border border-slate-200/60 dark:border-white/5">
                     <span className="text-[10px] font-mono uppercase font-bold text-[#00A3E0] block mb-1">
-                      SAVIC SOLUTION
+                      Knooviq Industries Pvt Ltd SOLUTION
                     </span>
                     <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                       {story.solution}
@@ -909,7 +909,7 @@ export const SapFinanceSolutionView: React.FC<SapFinanceSolutionViewProps> = ({ 
               Ready to Modernize Your Financial Architecture?
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">
-              Engage with SAVIC’s certified SAP Finance Solution Architects for a 1-day executive discovery session assessing your chart of accounts, clean core migration path, and AI potential.
+              Engage with Knooviq Industries Pvt Ltd’s certified SAP Finance Solution Architects for a 1-day executive discovery session assessing your chart of accounts, clean core migration path, and AI potential.
             </p>
           </div>
 

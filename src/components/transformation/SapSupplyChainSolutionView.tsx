@@ -241,8 +241,8 @@ export const SapSupplyChainSolutionView: React.FC<SapSupplyChainSolutionViewProp
       a: 'SAP TM incorporates multi-objective optimization algorithms that evaluate carrier rate matrices alongside verified GHG emission factors across transport modes (ocean, rail, intermodal, road). The system automatically recommends optimal consolidation routes that satisfy both arrival deadlines and sustainability targets.'
     },
     {
-      q: 'What is the implementation timeline for a SAVIC Digital Supply Chain transformation?',
-      a: 'Using SAVIC’s pre-configured FAST templates and One Piece Flow agile delivery methodology, core SAP IBP and EWM modules can be deployed in 12 to 16 weeks, followed by iterative multi-echelon optimization releases without business disruption.'
+      q: 'What is the implementation timeline for a Knooviq Industries Pvt Ltd Digital Supply Chain transformation?',
+      a: 'Using Knooviq Industries Pvt Ltd’s pre-configured FAST templates and One Piece Flow agile delivery methodology, core SAP IBP and EWM modules can be deployed in 12 to 16 weeks, followed by iterative multi-echelon optimization releases without business disruption.'
     }
   ];
 
@@ -625,7 +625,7 @@ export const SapSupplyChainSolutionView: React.FC<SapSupplyChainSolutionViewProp
               </span>
             </div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0A1931] dark:text-white tracking-tight">
-              SAVIC Industry SCM Execution Blueprints
+              Knooviq Industries Pvt Ltd Industry SCM Execution Blueprints
             </h2>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 max-w-3xl">
               Pre-configured business process flows and master data templates built to satisfy exact vertical regulatory and operational requirements.
@@ -755,7 +755,7 @@ export const SapSupplyChainSolutionView: React.FC<SapSupplyChainSolutionViewProp
                 Ready to Modernize Your Supply Chain Architecture?
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">
-                Engage with SAVIC’s certified SAP Digital Supply Chain architects to evaluate your IBP demand sensing accuracy, warehouse automation readiness, and multi-modal freight costs.
+                Engage with Knooviq Industries Pvt Ltd’s certified SAP Digital Supply Chain architects to evaluate your IBP demand sensing accuracy, warehouse automation readiness, and multi-modal freight costs.
               </p>
             </div>
 
