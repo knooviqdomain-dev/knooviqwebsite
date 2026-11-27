@@ -124,9 +124,8 @@ export const Hero: React.FC<HeroProps> = () => {
         >
           <source src="/videos/hero-4k-uhd.mp4" type="video/mp4" />
           <source src="/videos/hero-video.mp4" type="video/mp4" />
-          <source src="/videos/hero-video-web.mp4" type="video/mp4" />
-          <source src="/videos/4k-video-2.MOV" type="video/quicktime" />
-          <source src="/videos/4k-video-2.MOV" type='video/mp4; codecs="hevc"' />
+          <source src="/videos/4k-short.MOV" type="video/quicktime" />
+          <source src="/videos/4k-short.MOV" type='video/mp4; codecs="hevc"' />
           Your browser does not support the video tag.
         </video>
       )}
@@ -198,9 +197,8 @@ export const Hero: React.FC<HeroProps> = () => {
             >
               <source src="/videos/hero-4k-uhd.mp4" type="video/mp4" />
               <source src="/videos/hero-video.mp4" type="video/mp4" />
-              <source src="/videos/hero-video-web.mp4" type="video/mp4" />
-              <source src="/videos/4k-video-2.MOV" type="video/quicktime" />
-              <source src="/videos/4k-video-2.MOV" type='video/mp4; codecs="hevc"' />
+              <source src="/videos/4k-short.MOV" type="video/quicktime" />
+              <source src="/videos/4k-short.MOV" type='video/mp4; codecs="hevc"' />
               Your browser does not support the video tag.
             </video>
           </div>
