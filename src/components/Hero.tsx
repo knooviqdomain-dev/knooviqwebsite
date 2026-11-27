@@ -83,7 +83,7 @@ export const Hero: React.FC<HeroProps> = () => {
           promise.catch((err) => {
             console.warn('Autoplay waiting for user gesture or loading:', err);
             const handleCanPlay = () => {
-              video.play().catch(() => {});
+              video.play().catch(() => { });
               video.removeEventListener('canplay', handleCanPlay);
             };
             video.addEventListener('canplay', handleCanPlay);
@@ -124,8 +124,7 @@ export const Hero: React.FC<HeroProps> = () => {
         >
           <source src="/videos/hero-4k-uhd.mp4" type="video/mp4" />
           <source src="/videos/hero-video.mp4" type="video/mp4" />
-          <source src="/videos/4k-short.MOV" type="video/quicktime" />
-          <source src="/videos/4k-short.MOV" type='video/mp4; codecs="hevc"' />
+          <source src="/videos/gemini_generated_video_eb43d9cd.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       )}
@@ -135,7 +134,7 @@ export const Hero: React.FC<HeroProps> = () => {
 
       {/* Hero Foreground Content: Dynamic Heading, Subtitle & Interactive Telemetry Highlights */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-10 lg:py-16 flex flex-col justify-center items-start text-left">
-        
+
         {/* Live Status Pill with Pulsing Indicator */}
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-950/70 border border-[#48C8F5]/35 text-[#48C8F5] text-xs font-semibold tracking-wide backdrop-blur-md mb-4 sm:mb-6 shadow-[0_0_20px_rgba(72,200,245,0.25)]">
           <span className="relative flex h-2 w-2">
@@ -197,8 +196,7 @@ export const Hero: React.FC<HeroProps> = () => {
             >
               <source src="/videos/hero-4k-uhd.mp4" type="video/mp4" />
               <source src="/videos/hero-video.mp4" type="video/mp4" />
-              <source src="/videos/4k-short.MOV" type="video/quicktime" />
-              <source src="/videos/4k-short.MOV" type='video/mp4; codecs="hevc"' />
+              <source src="/videos/gemini_generated_video_eb43d9cd.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
