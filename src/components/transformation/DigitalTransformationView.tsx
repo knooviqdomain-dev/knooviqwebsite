@@ -268,7 +268,7 @@ export const DigitalTransformationView: React.FC<DigitalTransformationViewProps>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           {/* Left Column: What We Deliver */}
-          <div className="bg-white dark:bg-[#0B1528] rounded-3xl border border-slate-200/80 dark:border-white/10 p-8 sm:p-10 shadow-sm flex flex-col">
+          <div className="bg-white dark:bg-[#0B1528] rounded-3xl border border-slate-200/80 dark:border-white/10 p-5 sm:p-8 lg:p-10 shadow-sm flex flex-col">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#00A3E0]/10 text-[#00A3E0] border border-[#00A3E0]/20">
@@ -296,7 +296,7 @@ export const DigitalTransformationView: React.FC<DigitalTransformationViewProps>
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200/50 dark:border-white/5">
                     <CheckCircle2 className="w-4 h-4 text-[#00A3E0] shrink-0 mt-0.5" />
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">{item.title}</h4>
                       <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5 leading-relaxed">{item.desc}</p>
                     </div>
@@ -307,7 +307,7 @@ export const DigitalTransformationView: React.FC<DigitalTransformationViewProps>
           </div>
 
           {/* Right Column: Key Business Outcomes */}
-          <div className="bg-white dark:bg-[#0B1528] rounded-3xl border border-slate-200/80 dark:border-white/10 p-8 sm:p-10 shadow-sm flex flex-col">
+          <div className="bg-white dark:bg-[#0B1528] rounded-3xl border border-slate-200/80 dark:border-white/10 p-5 sm:p-8 lg:p-10 shadow-sm flex flex-col">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-mono font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
@@ -332,11 +332,11 @@ export const DigitalTransformationView: React.FC<DigitalTransformationViewProps>
                   { metric: '60% Order Turnaround Gain', title: 'Connected Dealer & B2B Portals', desc: 'Real-time dealer self-service ordering, credit validation, and automated dispatch notices compress order-to-delivery cycles.' },
                   { metric: '30% Inventory Optimization', title: 'Predictive Demand Sensing', desc: 'Dynamic safety stock calibration, multi-echelon stock balancing, and stock-out prevention using machine learning signals.' }
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3.5 p-3 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200/50 dark:border-white/5">
-                    <div className="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono font-black text-xs shrink-0 whitespace-nowrap">
+                  <div key={idx} className="flex flex-col sm:flex-row items-start gap-2.5 sm:gap-3.5 p-3.5 sm:p-3 rounded-xl bg-slate-50 dark:bg-white/[0.03] border border-slate-200/50 dark:border-white/5">
+                    <div className="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono font-black text-xs shrink-0 whitespace-nowrap self-start">
                       {item.metric}
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">{item.title}</h4>
                       <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5 leading-relaxed">{item.desc}</p>
                     </div>

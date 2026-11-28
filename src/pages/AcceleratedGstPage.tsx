@@ -201,7 +201,7 @@ export const AcceleratedGstPage: React.FC<AcceleratedGstPageProps> = ({ onOpenCo
       title: 'File & Settle',
       label: 'SETTLEMENT & REPORTING',
       summary: 'Synchronize electronic cash & credit ledgers, complete filing, and post financial settlements into SAP.',
-      image: '/images/einvoice-stage6-record.jpg',
+      image: '/images/gst_stage6_settlement_reporting.jpg?v=2',
       tcode: 'SAP FI-CO • ACDOCA Universal Journal',
       technicalDesc: 'Validates cash/credit utilization against statutory liability, executes return submission, retrieves official Acknowledgement Reference Numbers (ARN), and posts reconciled settlement entries directly into SAP general ledgers.',
       checkpoints: [
@@ -457,7 +457,7 @@ export const AcceleratedGstPage: React.FC<AcceleratedGstPageProps> = ({ onOpenCo
 
               <div className="relative w-full max-w-[620px] aspect-[16/9] sm:aspect-auto sm:h-[480px] lg:h-[530px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 dark:border-cyan-500/30 bg-[#020817] group">
                 <img
-                  src="/images/gst_hero_visual.jpg"
+                  src="/images/gst_hero_visual.jpg?v=2"
                   alt="Intelligent SAP GST Solution & Compliance"
                   className="w-full h-full object-cover object-center rounded-3xl group-hover:scale-105 transition-transform duration-700"
                 />

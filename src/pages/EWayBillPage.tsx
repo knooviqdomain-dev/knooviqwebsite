@@ -719,18 +719,12 @@ export const EWayBillPage: React.FC<EWayBillPageProps> = ({ onOpenContact }) => 
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="relative w-full max-w-lg lg:max-w-none rounded-3xl overflow-hidden shadow-2xl border border-slate-200 dark:border-cyan-500/30 bg-slate-900 group"
               >
-                {/* Commercial Cargo Logistics Video Stream */}
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  poster="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1200&auto=format&fit=crop"
+                {/* Commercial Cargo Logistics Hero Visual */}
+                <img
+                  src="/images/ewaybill_hero_goods_movement.jpg?v=2"
+                  alt="Move Goods. Manage Compliance. Stay in Control."
                   className="w-full h-[390px] sm:h-[450px] lg:h-[490px] object-cover rounded-3xl group-hover:scale-104 transition-transform duration-700"
-                >
-                  <source src="/videos/ewaybill-hero.mp4" type="video/mp4" />
-                  <source src="https://videos.pexels.com/video-files/32536402/13875215_1920_1080_24fps.mp4" type="video/mp4" />
-                </video>
+                />
 
                 {/* Transparent Subtle Darkening Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-slate-900/10 pointer-events-none" />

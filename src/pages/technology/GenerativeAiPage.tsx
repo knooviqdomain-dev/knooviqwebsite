@@ -294,7 +294,7 @@ export const GenerativeAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact 
                 <span className="text-[#00A3E0]">GenAI With Sovereign Privacy</span>
               </h1>
             {/* Mobile Dedicated Hero Visual Card (Ensures the image is 100% visible and uncropped on mobile without any watermark or overlay) */}
-            <div className="sm:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
+            <div className="lg:hidden relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-900 my-3">
               <img
                 src="/images/generative_ai_hero.jpg"
                 alt="Knooviq Enterprise Generative AI Command Center - Architecture Blueprint"
@@ -322,18 +322,6 @@ export const GenerativeAiPage: React.FC<TechnologyPageProps> = ({ onOpenContact 
                 <span>SAP HANA Vector Grounding</span>
               </div>
             </motion.div>
-
-            {/* Mobile-Only Showcase Card (Hidden on Desktop, Visible on Phone/Tablet) */}
-            <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
-              <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
-                <img
-                  src="/images/generative_ai_hero.jpg"
-                  alt="Knooviq Enterprise Generative AI Command Center"
-                  className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
-                  loading="eager"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </section>

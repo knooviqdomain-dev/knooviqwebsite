@@ -142,7 +142,7 @@ export const SalesForceAutomationPage: React.FC<SalesForceAutomationPageProps> =
       sapContext: 'SAP Accounts Receivable (FI-AR)',
       role: 'Finance Operations Manager',
       icon: Receipt,
-      image: '/images/sfa_sap_closing_cloud.png',
+      image: '/images/sfa_sap_closing_cloud.png?v=2',
       imageAlt: 'SAP S/4HANA Cloud digital ledger core and financial accounts receivable closing',
       summary: 'Collect digital payments via QR codes, capture electronic signatures on screen, reconcile daily collections, and post ledger entries directly into SAP FI-AR.',
       auditTrace: 'Digital payment collected and accounts receivable ledger reconciled in real time.',

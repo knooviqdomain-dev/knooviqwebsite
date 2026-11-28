@@ -714,21 +714,20 @@ export const SapBasisPage: React.FC<SapBasisPageProps> = ({ onOpenContact }) => 
 
             {/* Right 4 Cols: SAP HANA Cloud Datacenter & Memory Optimization Visual */}
             <div className="lg:col-span-4 rounded-3xl overflow-hidden border border-slate-200 shadow-sm bg-white flex flex-col justify-between">
-              <div className="h-60 sm:h-64 lg:h-72 relative overflow-hidden group bg-slate-950">
-                <img
-                  src="/images/basis/sap_hana_datacenter_cloud.png"
-                  alt="SAP HANA Database Administration, Cloud Infrastructure, and Memory Optimization"
-                  className="w-full h-full object-cover object-center brightness-105 contrast-105 transform group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-                <div className="absolute bottom-3 left-3 right-3 text-white">
-                  <span className="text-[10px] font-mono text-cyan-300 font-bold uppercase block">
+              <div className="p-6 sm:p-7 relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 text-white flex-1 flex flex-col justify-between min-h-[200px]">
+                <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4">
+                  <Database className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-mono text-cyan-300 font-bold uppercase block tracking-wider mb-1.5">
                     SAP HANA INFRASTRUCTURE
                   </span>
-                  <span className="text-sm font-bold">In-Memory Engine &amp; Cloud Datacenter</span>
+                  <span className="text-base sm:text-lg font-bold text-white block leading-snug">
+                    In-Memory Engine &amp; Cloud Datacenter
+                  </span>
                 </div>
               </div>
-              <div className="p-4 text-xs text-slate-600 flex items-center justify-between">
+              <div className="p-4 text-xs text-slate-600 flex items-center justify-between border-t border-slate-100 bg-white">
                 <span>Memory Allocation</span>
                 <span className="text-emerald-700 font-mono font-bold">92% Column Store</span>
               </div>
@@ -846,23 +845,22 @@ export const SapBasisPage: React.FC<SapBasisPageProps> = ({ onOpenContact }) => 
               </div>
             </div>
 
-            {/* Right 4 Cols: Compact Landscape Image */}
+            {/* Right 4 Cols: Compact Landscape Visual */}
             <div className="lg:col-span-4 rounded-3xl overflow-hidden border border-slate-200 shadow-sm bg-white flex flex-col justify-between">
-              <div className="h-52 sm:h-56 relative overflow-hidden group">
-                <img
-                  src="/images/basis/sap-basis-landscape-transport.jpg"
-                  alt="SAP STMS 3-System Landscape Architecture DEV QAS PRD Release Pipeline"
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-                <div className="absolute bottom-3 left-3 right-3 text-white">
-                  <span className="text-[10px] font-mono text-blue-300 font-bold uppercase block">
+              <div className="p-6 sm:p-7 relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 text-white flex-1 flex flex-col justify-between min-h-[180px]">
+                <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4">
+                  <GitBranch className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-mono text-blue-300 font-bold uppercase block tracking-wider mb-1.5">
                     LANDSCAPE ARCHITECTURE
                   </span>
-                  <span className="text-sm font-bold">DEV &rarr; QAS &rarr; PRD Release Pipeline</span>
+                  <span className="text-base sm:text-lg font-bold text-white block leading-snug">
+                    DEV &rarr; QAS &rarr; PRD Release Pipeline
+                  </span>
                 </div>
               </div>
-              <div className="p-4 text-xs text-slate-600 flex items-center justify-between">
+              <div className="p-4 text-xs text-slate-600 flex items-center justify-between border-t border-slate-100 bg-white">
                 <span>Transport Route</span>
                 <span className="text-emerald-700 font-mono font-bold">Queue Block-Free</span>
               </div>

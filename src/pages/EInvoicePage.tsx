@@ -242,7 +242,7 @@ export const EInvoicePage: React.FC<EInvoicePageProps> = ({ onOpenContact }) => 
       title: 'Record',
       label: 'STATUTORY RECONCILIATION',
       summary: 'Auto-reconciles GSTR-1, generates E-Way Bill, and updates SAP General Ledger.',
-      image: '/images/einvoice-stage6-record.jpg',
+      image: '/images/einvoice_stage6_record.jpg?v=2',
       tcode: 'Reconciliation: GSTR-1 & ACDOCA Universal Journal',
       technicalDesc: 'IRP automatically syncs e-invoice data into GSTN GSTR-1 Table 4A/4B and enables parallel Part-A/Part-B E-Way Bill generation with vehicle number assignment without re-entering consignment details.',
       checkpoints: [

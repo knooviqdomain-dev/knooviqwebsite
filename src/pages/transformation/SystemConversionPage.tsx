@@ -830,7 +830,7 @@ export const SystemConversionPage: React.FC<SystemConversionPageProps> = ({ onOp
           SECTION 5: THE 5-PHASE CONVERSION EXECUTION METHODOLOGY & REHEARSALS
           ========================================================================= */}
       <section className="py-20 lg:py-28 relative bg-slate-50 dark:bg-[#050B17] border-b border-slate-200 dark:border-slate-800 transition-colors">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/30 text-emerald-700 dark:text-emerald-300 text-xs font-mono font-bold uppercase tracking-wider">
@@ -843,25 +843,6 @@ export const SystemConversionPage: React.FC<SystemConversionPageProps> = ({ onOp
             <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
               Every conversion project executes through strict SAP Activate milestones, governed by two complete dry-run conversions on production-copy databases.
             </p>
-          </div>
-
-          {/* Mission Control Visual Frame */}
-          <div className="rounded-3xl overflow-hidden border border-slate-700/80 shadow-2xl bg-[#060D1A] group">
-            <div className="px-5 py-3.5 bg-[#0A1628] border-b border-slate-800 flex items-center justify-between text-xs font-mono">
-              <div className="flex items-center gap-2 text-emerald-400 font-bold">
-                <CheckCheck className="w-4 h-4 text-emerald-400" />
-                <span>MISSION CONTROL ROADMAP: 5 STAGES OF GO-LIVE CERTAINTY</span>
-              </div>
-              <span className="text-cyan-400 font-mono text-[11px]">SAP Activate Compliant</span>
-            </div>
-
-            <div className="relative p-2.5 bg-[#060D1A]">
-              <img
-                src="/images/system_conversion_methodology_roadmap.jpg"
-                alt="SAP S/4HANA System Conversion 5-phase roadmap displayed in high-tech enterprise mission control center"
-                className="w-full h-auto aspect-[16/10] sm:aspect-auto sm:h-96 lg:h-[420px] object-contain sm:object-cover rounded-2xl border border-slate-800 bg-slate-950 transition-transform duration-700 group-hover:scale-102"
-              />
-            </div>
           </div>
 
           {/* Stepper Navigation */}

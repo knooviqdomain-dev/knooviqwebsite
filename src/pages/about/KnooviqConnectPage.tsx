@@ -342,7 +342,8 @@ export const KnooviqConnectPage: React.FC<{ onOpenContact: (topic?: string) => v
                 desc: 'Long-term co-innovation, joint market expansion, and combined advisory capability.',
                 icon: Handshake,
                 accent: '#00A3E0',
-                image: '/images/strategic_partnerships_connect.png'
+                image: '/images/strategic_partnerships_connect.png',
+                imgPosition: 'object-center'
               },
               {
                 title: 'Technology Collaboration',
@@ -350,7 +351,8 @@ export const KnooviqConnectPage: React.FC<{ onOpenContact: (topic?: string) => v
                 desc: 'Cross-platform cloud integration, SAP BTP extensions, and API interoperability.',
                 icon: Cpu,
                 accent: '#6366F1',
-                image: '/images/technology_collaboration_connect.jpg'
+                image: '/images/technology_collaboration_connect.jpg',
+                imgPosition: 'object-center'
               },
               {
                 title: 'Solution Ecosystem',
@@ -358,7 +360,8 @@ export const KnooviqConnectPage: React.FC<{ onOpenContact: (topic?: string) => v
                 desc: 'End-to-end enterprise software, certified connectors, and automated workflow solutions.',
                 icon: Layers,
                 accent: '#10B981',
-                image: '/images/solution_ecosystem_connect.jpg'
+                image: '/images/solution_ecosystem_connect.jpg',
+                imgPosition: 'object-center'
               },
               {
                 title: 'Business Opportunities',
@@ -366,7 +369,8 @@ export const KnooviqConnectPage: React.FC<{ onOpenContact: (topic?: string) => v
                 desc: 'Scalable enterprise ventures, joint cutover scheduling, and collaborative bids.',
                 icon: TrendingUp,
                 accent: '#F59E0B',
-                image: '/images/business_opportunities_connect.png'
+                image: '/images/business_opportunities_connect.png',
+                imgPosition: 'object-top sm:object-center'
               }
             ].map((node, idx) => {
               const IconComp = node.icon;
@@ -382,11 +386,11 @@ export const KnooviqConnectPage: React.FC<{ onOpenContact: (topic?: string) => v
                 >
                   <div>
                     {/* Visual Image Banner with Clean Gradient Scrim */}
-                    <div className="relative h-36 w-full overflow-hidden">
+                    <div className="relative h-44 sm:h-36 w-full overflow-hidden">
                       <img 
                         src={node.image} 
                         alt={node.title}
-                        className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500"
+                        className={`w-full h-full object-cover ${node.imgPosition || 'object-center'} group-hover:scale-108 transition-transform duration-500`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent" />
                       

@@ -148,7 +148,7 @@ export const SapStrategyPage: React.FC<SapStrategyPageProps> = ({ onOpenContact 
         {/* Desktop-Only Full-Bleed Background Visual (Zero changes to desktop) */}
         <div className="hidden lg:block absolute inset-0 z-0 pointer-events-none">
           <img
-            src="/images/strategy/sap-strategy-hero.jpg"
+            src="/images/strategy/sap-strategy-hero.jpg?v=2"
             alt="Knooviq Executive SAP Strategy Advisory Boardroom"
             className="w-full h-full object-cover object-top lg:object-[82%_top] brightness-105 contrast-105 select-none"
           />
@@ -190,7 +190,7 @@ export const SapStrategyPage: React.FC<SapStrategyPageProps> = ({ onOpenContact 
             <div className="lg:hidden relative flex items-center justify-center pt-4 w-full">
               <div className="relative z-10 w-full max-w-[360px] xs:max-w-[400px] sm:max-w-[480px] mx-auto rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_12px_40px_rgba(0,112,192,0.2)] border border-slate-200/20 dark:border-cyan-500/30 bg-[#0B1528] dark:bg-[#071324] enterprise-showcase-card">
                 <img
-                  src="/images/strategy/sap-strategy-hero.jpg"
+                  src="/images/strategy/sap-strategy-hero.jpg?v=2"
                   alt="Knooviq Executive SAP Strategy Advisory Boardroom"
                   className="w-full h-auto object-contain block rounded-2xl sm:rounded-3xl enterprise-showcase-img"
                   loading="eager"
@@ -548,15 +548,6 @@ export const SapStrategyPage: React.FC<SapStrategyPageProps> = ({ onOpenContact 
             <p className="text-slate-600 text-base mt-2 font-sans">
               A Clean Core strategy decouples core ERP operations from customized business logic, enabling zero-downtime upgrades, cloud agility, and seamless integration with emerging AI capabilities.
             </p>
-          </div>
-
-          {/* IMAGE 5: Enterprise Clean Core Architecture Diagram */}
-          <div className="mb-12 rounded-3xl overflow-hidden border border-slate-200 shadow-md bg-white">
-            <img
-              src="/images/strategy/sap-clean-core.jpg"
-              alt="Enterprise Clean Core Architecture for SAP S/4HANA"
-              className="w-full h-auto object-cover"
-            />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
