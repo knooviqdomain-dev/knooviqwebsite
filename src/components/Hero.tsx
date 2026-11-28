@@ -70,9 +70,10 @@ export const Hero: React.FC<HeroProps> = () => {
 
   // Video autoplay for both desktop background and mobile/tablet showcase
   useEffect(() => {
-    const videos = [desktopVideoRef.current, mobileVideoRef.current];
+    const videos = [desktopVideoRef.current, mobileVideoRef.current].filter(Boolean) as HTMLVideoElement[];
+    const cleanupFns: Array<() => void> = [];
+
     videos.forEach((video) => {
-      if (!video) return;
       video.muted = true;
       video.defaultMuted = true;
       video.playsInline = true;
@@ -81,7 +82,7 @@ export const Hero: React.FC<HeroProps> = () => {
         const promise = video.play();
         if (promise !== undefined) {
           promise.catch((err) => {
-            console.warn('Autoplay waiting for user gesture or loading:', err);
+            console.warn('Autoplay waiting for buffer or user gesture:', err);
             const handleCanPlay = () => {
               video.play().catch(() => { });
               video.removeEventListener('canplay', handleCanPlay);
@@ -91,13 +92,34 @@ export const Hero: React.FC<HeroProps> = () => {
         }
       };
 
-      if (video.readyState >= 2) {
+      const handleWaiting = () => {
+        const resumePlay = () => {
+          video.play().catch(() => { });
+          video.removeEventListener('canplaythrough', resumePlay);
+        };
+        video.addEventListener('canplaythrough', resumePlay, { once: true });
+      };
+
+      video.addEventListener('waiting', handleWaiting);
+      cleanupFns.push(() => video.removeEventListener('waiting', handleWaiting));
+
+      if (video.readyState >= 3) {
         attemptPlay();
       } else {
-        video.addEventListener('loadeddata', attemptPlay, { once: true });
+        const handleReady = () => {
+          attemptPlay();
+          video.removeEventListener('canplay', handleReady);
+        };
+        video.addEventListener('canplay', handleReady, { once: true });
+        // Fallback if canplay already fired
+        attemptPlay();
       }
     });
-  }, []);
+
+    return () => {
+      cleanupFns.forEach((fn) => fn());
+    };
+  }, [isDesktop]);
 
   return (
     <section
@@ -112,7 +134,7 @@ export const Hero: React.FC<HeroProps> = () => {
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
           disablePictureInPicture
           disableRemotePlayback
           className="absolute inset-0 w-full h-full object-cover object-top pointer-events-none"
@@ -122,8 +144,10 @@ export const Hero: React.FC<HeroProps> = () => {
             filter: 'contrast(1.03) brightness(1.07)',
           }}
         >
-          <source src="/videos/hero-4k-uhd.mp4" type="video/mp4" />
+          <source src="/videos/hero-video.webm" type="video/webm" />
+          <source src="/videos/hero-video-web.mp4" type="video/mp4" />
           <source src="/videos/hero-video.mp4" type="video/mp4" />
+          <source src="/videos/hero-4k-uhd.mp4" type="video/mp4" />
           <source src="/videos/gemini_generated_video_eb43d9cd.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -184,7 +208,7 @@ export const Hero: React.FC<HeroProps> = () => {
               loop
               muted
               playsInline
-              preload="metadata"
+              preload="auto"
               disablePictureInPicture
               disableRemotePlayback
               className="w-full h-full object-contain bg-slate-950"
@@ -194,7 +218,8 @@ export const Hero: React.FC<HeroProps> = () => {
                 filter: 'contrast(1.03) brightness(1.07)',
               }}
             >
-              <source src="/videos/hero-4k-uhd.mp4" type="video/mp4" />
+              <source src="/videos/hero-mobile.mp4" type="video/mp4" />
+              <source src="/videos/hero-video-web.mp4" type="video/mp4" />
               <source src="/videos/hero-video.mp4" type="video/mp4" />
               <source src="/videos/gemini_generated_video_eb43d9cd.mp4" type="video/mp4" />
               Your browser does not support the video tag.
