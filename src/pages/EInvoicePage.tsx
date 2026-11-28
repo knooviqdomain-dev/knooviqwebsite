@@ -126,8 +126,41 @@ export const EInvoicePage: React.FC<EInvoicePageProps> = ({ onOpenContact }) => 
     };
   }, [startArchAutoCycle]);
 
-  // State for Section 5 Before/After Switcher
+  // State for Section 5 Before/After Switcher (3s auto-rotation, 5s click pause)
   const [impactView, setImpactView] = useState<'after' | 'before'>('after');
+  const impactIntervalRef = React.useRef<NodeJS.Timeout | null>(null);
+  const impactPauseTimerRef = React.useRef<NodeJS.Timeout | null>(null);
+
+  // Auto-cycle through the 2 comparison views every 3 seconds
+  const startImpactAutoCycle = React.useCallback(() => {
+    if (impactIntervalRef.current) clearInterval(impactIntervalRef.current);
+    impactIntervalRef.current = setInterval(() => {
+      setImpactView((prev) => (prev === 'after' ? 'before' : 'after'));
+    }, 3000);
+  }, []);
+
+  // On manual click, pause rotation for 5 seconds on the clicked view, then resume
+  const handleImpactViewClick = (view: 'after' | 'before') => {
+    setImpactView(view);
+    if (impactIntervalRef.current) {
+      clearInterval(impactIntervalRef.current);
+      impactIntervalRef.current = null;
+    }
+    if (impactPauseTimerRef.current) {
+      clearTimeout(impactPauseTimerRef.current);
+    }
+    impactPauseTimerRef.current = setTimeout(() => {
+      startImpactAutoCycle();
+    }, 5000);
+  };
+
+  React.useEffect(() => {
+    startImpactAutoCycle();
+    return () => {
+      if (impactIntervalRef.current) clearInterval(impactIntervalRef.current);
+      if (impactPauseTimerRef.current) clearTimeout(impactPauseTimerRef.current);
+    };
+  }, [startImpactAutoCycle]);
 
   // ==========================================
   // SECTION 2: Interactive Invoice Journey with Technical Depth & Imagery
@@ -903,7 +936,7 @@ export const EInvoicePage: React.FC<EInvoicePageProps> = ({ onOpenContact }) => 
               {/* View Toggle */}
               <div className="flex items-center gap-1.5 p-1 rounded-xl bg-slate-100 dark:bg-[#07101E] border border-slate-200 dark:border-white/5 font-mono text-xs">
                 <button
-                  onClick={() => setImpactView('after')}
+                  onClick={() => handleImpactViewClick('after')}
                   className={`px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
                     impactView === 'after' ? 'bg-emerald-600 text-white shadow' : 'text-slate-500'
                   }`}
@@ -911,7 +944,7 @@ export const EInvoicePage: React.FC<EInvoicePageProps> = ({ onOpenContact }) => 
                   Automated SAP Model
                 </button>
                 <button
-                  onClick={() => setImpactView('before')}
+                  onClick={() => handleImpactViewClick('before')}
                   className={`px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
                     impactView === 'before' ? 'bg-rose-600 text-white shadow' : 'text-slate-500'
                   }`}
@@ -921,71 +954,87 @@ export const EInvoicePage: React.FC<EInvoicePageProps> = ({ onOpenContact }) => 
               </div>
             </div>
 
-            {impactView === 'after' ? (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="p-4 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800/40">
-                  <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-300 font-display font-bold text-sm mb-1">
-                    <CheckCircle2 className="h-4 w-4 shrink-0" />
-                    <span>Real-Time Sub-Second IRN</span>
+            <AnimatePresence mode="wait">
+              {impactView === 'after' ? (
+                <motion.div
+                  key="after"
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.35, ease: 'easeInOut' }}
+                  className="grid grid-cols-1 md:grid-cols-3 gap-4"
+                >
+                  <div className="p-4 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800/40">
+                    <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-300 font-display font-bold text-sm mb-1">
+                      <CheckCircle2 className="h-4 w-4 shrink-0" />
+                      <span>Real-Time Sub-Second IRN</span>
+                    </div>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 font-mono">
+                      Billing creation triggers instantaneous IRP API call. Truck drivers receive gate-pass with signed QR code immediately.
+                    </p>
                   </div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 font-mono">
-                    Billing creation triggers instantaneous IRP API call. Truck drivers receive gate-pass with signed QR code immediately.
-                  </p>
-                </div>
 
-                <div className="p-4 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800/40">
-                  <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-300 font-display font-bold text-sm mb-1">
-                    <CheckCircle2 className="h-4 w-4 shrink-0" />
-                    <span>Zero Data Transcription</span>
+                  <div className="p-4 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800/40">
+                    <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-300 font-display font-bold text-sm mb-1">
+                      <CheckCircle2 className="h-4 w-4 shrink-0" />
+                      <span>Zero Data Transcription</span>
+                    </div>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 font-mono">
+                      Direct mapping from SAP VBRK/VBRP tables. Eliminates CSV spreadsheets, offline JSON tools, and manual errors.
+                    </p>
                   </div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 font-mono">
-                    Direct mapping from SAP VBRK/VBRP tables. Eliminates CSV spreadsheets, offline JSON tools, and manual errors.
-                  </p>
-                </div>
 
-                <div className="p-4 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800/40">
-                  <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-300 font-display font-bold text-sm mb-1">
-                    <CheckCircle2 className="h-4 w-4 shrink-0" />
-                    <span>Automatic GSTR-1 & E-Way Bill</span>
+                  <div className="p-4 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800/40">
+                    <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-300 font-display font-bold text-sm mb-1">
+                      <CheckCircle2 className="h-4 w-4 shrink-0" />
+                      <span>Automatic GSTR-1 & E-Way Bill</span>
+                    </div>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 font-mono">
+                      Single payload simultaneously creates e-invoice and Part-A E-Way Bill while auto-populating GSTR-1 return tables.
+                    </p>
                   </div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 font-mono">
-                    Single payload simultaneously creates e-invoice and Part-A E-Way Bill while auto-populating GSTR-1 return tables.
-                  </p>
-                </div>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="p-4 rounded-2xl bg-rose-50/70 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-800/40">
-                  <div className="flex items-center gap-2 text-rose-700 dark:text-rose-300 font-display font-bold text-sm mb-1">
-                    <X className="h-4 w-4 shrink-0" />
-                    <span>15–30 Min Batch Delays</span>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="before"
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.35, ease: 'easeInOut' }}
+                  className="grid grid-cols-1 md:grid-cols-3 gap-4"
+                >
+                  <div className="p-4 rounded-2xl bg-rose-50/70 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-800/40">
+                    <div className="flex items-center gap-2 text-rose-700 dark:text-rose-300 font-display font-bold text-sm mb-1">
+                      <X className="h-4 w-4 shrink-0" />
+                      <span>15–30 Min Batch Delays</span>
+                    </div>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 font-mono">
+                      Accounts team extracts Excel sheets, converts to JSON manually, and uploads batches. Dispatches stall at warehouse gates.
+                    </p>
                   </div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 font-mono">
-                    Accounts team extracts Excel sheets, converts to JSON manually, and uploads batches. Dispatches stall at warehouse gates.
-                  </p>
-                </div>
 
-                <div className="p-4 rounded-2xl bg-rose-50/70 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-800/40">
-                  <div className="flex items-center gap-2 text-rose-700 dark:text-rose-300 font-display font-bold text-sm mb-1">
-                    <X className="h-4 w-4 shrink-0" />
-                    <span>Frequent Schema Rejections</span>
+                  <div className="p-4 rounded-2xl bg-rose-50/70 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-800/40">
+                    <div className="flex items-center gap-2 text-rose-700 dark:text-rose-300 font-display font-bold text-sm mb-1">
+                      <X className="h-4 w-4 shrink-0" />
+                      <span>Frequent Schema Rejections</span>
+                    </div>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 font-mono">
+                      Portal rejects invoices due to decimal rounding differences, inactive buyer GSTINs, or invalid HSN digit lengths.
+                    </p>
                   </div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 font-mono">
-                    Portal rejects invoices due to decimal rounding differences, inactive buyer GSTINs, or invalid HSN digit lengths.
-                  </p>
-                </div>
 
-                <div className="p-4 rounded-2xl bg-rose-50/70 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-800/40">
-                  <div className="flex items-center gap-2 text-rose-700 dark:text-rose-300 font-display font-bold text-sm mb-1">
-                    <X className="h-4 w-4 shrink-0" />
-                    <span>Month-End Reco Nightmares</span>
+                  <div className="p-4 rounded-2xl bg-rose-50/70 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-800/40">
+                    <div className="flex items-center gap-2 text-rose-700 dark:text-rose-300 font-display font-bold text-sm mb-1">
+                      <X className="h-4 w-4 shrink-0" />
+                      <span>Month-End Reco Nightmares</span>
+                    </div>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 font-mono">
+                      Sales register in SAP diverges from GSTR-1 portal numbers, risking audit penalties and delaying buyer Input Tax Credit.
+                    </p>
                   </div>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 font-mono">
-                    Sales register in SAP diverges from GSTR-1 portal numbers, risking audit penalties and delaying buyer Input Tax Credit.
-                  </p>
-                </div>
-              </div>
-            )}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
         </div>

@@ -91,7 +91,7 @@ export const WhatKnooviqDoesSection: React.FC<WhatKnooviqDoesSectionProps> = ({ 
             {/* Main Showcase Image Frame - Fully responsive natural aspect ratio without distortion */}
             <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden border border-slate-200/90 shadow-2xl bg-white w-full">
               <img
-                src="/images/what_we_do_strategic_partner.jpg"
+                src="/images/what_we_do_strategic_partner.jpg?v=2"
                 alt="Your Strategic Partner for SAP & Digital Transformation"
                 className="w-full h-auto block select-none"
                 loading="lazy"

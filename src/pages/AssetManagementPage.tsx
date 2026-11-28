@@ -305,27 +305,27 @@ export const AssetManagementPage: React.FC<AssetManagementPageProps> = ({ onOpen
 
               {/* Real-Time Industrial KPI Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-slate-200">
-                <div className="bg-white p-3 xl:p-3.5 rounded-xl border border-slate-200 shadow-sm min-w-0">
+                <div className="bg-white p-3 rounded-xl border border-slate-200 shadow-sm min-w-0 overflow-hidden">
                   <p className="text-xs text-slate-500 font-normal">Critical Asset OEE</p>
-                  <p className="text-lg sm:text-xl lg:text-base xl:text-xl 2xl:text-2xl font-bold text-slate-900 mt-1 font-display tracking-tight leading-tight">World-Class</p>
+                  <p className="text-base sm:text-base lg:text-sm xl:text-base font-bold text-slate-900 mt-1 font-display tracking-tight leading-tight">World-Class</p>
                   <p className="text-xs text-[#0077B6] font-medium mt-1">High Availability</p>
                 </div>
 
-                <div className="bg-white p-3 xl:p-3.5 rounded-xl border border-slate-200 shadow-sm min-w-0">
+                <div className="bg-white p-3 rounded-xl border border-slate-200 shadow-sm min-w-0 overflow-hidden">
                   <p className="text-xs text-slate-500 font-normal">Mean Time to Repair</p>
-                  <p className="text-lg sm:text-xl lg:text-base xl:text-xl 2xl:text-2xl font-bold text-slate-900 mt-1 font-display tracking-tight leading-tight">&lt; 1.8 Hrs</p>
+                  <p className="text-base sm:text-base lg:text-sm xl:text-base font-bold text-slate-900 mt-1 font-display tracking-tight leading-tight">&lt; 1.8 Hrs</p>
                   <p className="text-xs text-emerald-600 font-medium mt-1">Pre-Kitted MRO BOM</p>
                 </div>
 
-                <div className="bg-white p-3 xl:p-3.5 rounded-xl border border-slate-200 shadow-sm min-w-0">
+                <div className="bg-white p-3 rounded-xl border border-slate-200 shadow-sm min-w-0 overflow-hidden">
                   <p className="text-xs text-slate-500 font-normal">Unplanned Outages</p>
-                  <p className="text-lg sm:text-xl lg:text-base xl:text-xl 2xl:text-2xl font-bold text-slate-900 mt-1 font-display tracking-tight leading-tight">Autonomous</p>
+                  <p className="text-base sm:text-base lg:text-sm xl:text-base font-bold text-slate-900 mt-1 font-display tracking-tight leading-tight">Autonomous</p>
                   <p className="text-xs text-[#0077B6] font-medium mt-1">28-Day Horizon</p>
                 </div>
 
-                <div className="bg-white p-3 xl:p-3.5 rounded-xl border border-slate-200 shadow-sm min-w-0">
+                <div className="bg-white p-3 rounded-xl border border-slate-200 shadow-sm min-w-0 overflow-hidden">
                   <p className="text-xs text-slate-500 font-normal">MRO Inventory Waste</p>
-                  <p className="text-lg sm:text-xl lg:text-base xl:text-xl 2xl:text-2xl font-bold text-slate-900 mt-1 font-display tracking-tight leading-tight">Just-in-Time</p>
+                  <p className="text-base sm:text-base lg:text-sm xl:text-base font-bold text-slate-900 mt-1 font-display tracking-tight leading-tight">Just-in-Time</p>
                   <p className="text-xs text-emerald-600 font-medium mt-1">Zero Dead Capital</p>
                 </div>
               </div>

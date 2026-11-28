@@ -8,10 +8,10 @@ interface HeroProps {
 }
 
 const dynamicPhrases = [
-  { text: 'Intelligent Technology', gradient: 'from-[#00F0FF] via-[#00A3E0] to-[#818CF8]' },
-  { text: 'Clean Core SAP Systems', gradient: 'from-[#38BDF8] via-[#00A3E0] to-[#6366F1]' },
-  { text: 'Autonomous AI Ecosystems', gradient: 'from-[#22D3EE] via-[#0284C7] to-[#A855F7]' },
-  { text: 'Next-Gen Cloud Architecture', gradient: 'from-[#67E8F9] via-[#0284C7] to-[#3B82F6]' },
+  { text: 'Intelligent Technology', gradient: 'from-[#BAE6FD] via-[#38BDF8] to-[#00D2FF]' },
+  { text: 'Clean Core SAP Systems', gradient: 'from-[#E0F2FE] via-[#00F0FF] to-[#38BDF8]' },
+  { text: 'Autonomous AI Ecosystems', gradient: 'from-[#BAE6FD] via-[#00D2FF] to-[#60A5FA]' },
+  { text: 'Next-Gen Cloud Architecture', gradient: 'from-[#E0F2FE] via-[#38BDF8] to-[#00F0FF]' },
 ];
 
 const highlights = [
@@ -119,7 +119,7 @@ export const Hero: React.FC<HeroProps> = () => {
           style={{
             willChange: 'transform',
             imageRendering: '-webkit-optimize-contrast',
-            filter: 'contrast(1.05) brightness(1.02)',
+            filter: 'contrast(1.03) brightness(1.07)',
           }}
         >
           <source src="/videos/hero-4k-uhd.mp4" type="video/mp4" />
@@ -130,7 +130,7 @@ export const Hero: React.FC<HeroProps> = () => {
       )}
 
       {/* Clean Subtle Contrast Shade: Preserves 100% Video Clarity Without Any Fog or Grid Distortion */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/60 via-[#020617]/10 to-[#020617]/25 z-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/40 via-[#020617]/15 to-[#020617]/20 z-10 pointer-events-none" />
 
       {/* Hero Foreground Content: Dynamic Heading, Subtitle & Interactive Telemetry Highlights */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-10 lg:py-16 flex flex-col justify-center items-start text-left">
@@ -162,7 +162,7 @@ export const Hero: React.FC<HeroProps> = () => {
                 animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
                 exit={{ opacity: 0, y: -18, filter: 'blur(6px)' }}
                 transition={{ duration: 0.45, ease: 'easeInOut' }}
-                className={`inline-block pb-2.5 sm:pb-3.5 -mb-2.5 sm:-mb-3.5 pr-2 overflow-visible bg-gradient-to-r ${dynamicPhrases[phraseIndex].gradient} bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(72,200,245,0.65)]`}
+                className={`inline-block pb-2.5 sm:pb-3.5 -mb-2.5 sm:-mb-3.5 pr-2 overflow-visible bg-gradient-to-r ${dynamicPhrases[phraseIndex].gradient} bg-clip-text text-transparent drop-shadow-[0_4px_24px_rgba(0,0,0,0.98)] drop-shadow-[0_0_35px_rgba(0,210,255,0.75)]`}
               >
                 {dynamicPhrases[phraseIndex].text}
               </motion.span>
@@ -191,7 +191,7 @@ export const Hero: React.FC<HeroProps> = () => {
               style={{
                 willChange: 'transform',
                 imageRendering: '-webkit-optimize-contrast',
-                filter: 'contrast(1.05) brightness(1.02)',
+                filter: 'contrast(1.03) brightness(1.07)',
               }}
             >
               <source src="/videos/hero-4k-uhd.mp4" type="video/mp4" />
